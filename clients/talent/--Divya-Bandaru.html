@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Divya Bandaru — Actor · Writer · Director | MC Joint</title>
+  <meta name="description" content="Divya Bandaru is an actor, writer, and director represented by MC Joint. Known for Pickpocket (2022), Etthulu (2022), Ranganaayaki, and Nirudyoga Natulu.">
+  <meta property="og:title" content="Divya Bandaru — MC Joint">
+  <meta property="og:description" content="Actor · Writer · Director. Pickpocket, Etthulu, Ranganaayaki.">
+  <meta property="og:type" content="profile">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .talent-profile-hero {
+      background:var(--black); padding-top:100px; padding-bottom:0;
+      display:grid; grid-template-columns:1fr; min-height:70vh; position:relative;
+    }
+    @media(min-width:1024px){ .talent-profile-hero { grid-template-columns:1fr 480px; } }
+    .talent-profile-info { padding:4rem 0 4rem; display:flex; flex-direction:column; justify-content:center; }
+    .talent-profile-info h1 { color:white; font-size:clamp(2.5rem,6vw,4rem); }
+    .talent-profile-role { font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.15em; color:var(--red); margin-bottom:1rem; display:block; }
+    .talent-profile-info p { color:#aaa; max-width:520px; }
+    .talent-profile-img {
+      background:linear-gradient(160deg,#1a1a2e,#0d0d1a);
+      overflow:hidden; min-height:400px; position:relative;
+    }
+    @media(min-width:1024px){ .talent-profile-img { min-height:auto; } }
+    .talent-profile-img img { width:100%; height:100%; object-fit:cover; object-position:top; }
+    .talent-profile-img .initial-bg {
+      position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+      font-family:'Montserrat',sans-serif; font-weight:900; font-size:8rem; color:rgba(225,6,0,0.15);
+    }
+    .profile-body { display:grid; grid-template-columns:1fr; gap:3rem; }
+    @media(min-width:1024px){ .profile-body { grid-template-columns:2fr 1fr; } }
+
+    /* Filmography / credits list */
+    .discography { list-style:none; }
+    .discography li { padding:1rem 0; border-bottom:1px solid #eee; display:flex; justify-content:space-between; align-items:center; gap:1rem; }
+    .discography li:last-child { border:none; }
+    .disc-title { font-weight:600; font-size:0.9rem; }
+    .disc-type { font-size:0.75rem; color:var(--grey); text-transform:uppercase; letter-spacing:0.05em; margin-top:0.2rem; }
+
+    /* Role badge */
+    .role-badge { display:inline-block; font-size:0.68rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; padding:0.25rem 0.65rem; border-radius:2px; }
+    .role-director { background:var(--red); color:#fff; }
+    .role-actor { background:#222; color:#fff; border:1px solid #444; }
+
+    /* Sidebar */
+    .sidebar-card { background:var(--light-bg); padding:2rem; }
+    .sidebar-card h3 { font-size:1rem; margin-bottom:1.25rem; }
+    .sidebar-card .info-row { display:flex; justify-content:space-between; padding:0.6rem 0; border-bottom:1px solid #e0e0e0; font-size:0.875rem; }
+    .sidebar-card .info-row:last-child { border:none; }
+    .sidebar-card .info-label { color:var(--grey); }
+    .sidebar-card .info-value { font-weight:600; text-align:right; }
+
+    .back-link { display:inline-flex; align-items:center; gap:0.5rem; color:var(--grey); text-decoration:none; font-size:0.8rem; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; margin-bottom:1.5rem; }
+    .back-link:hover { color:var(--red); }
+
+    /* Video embeds */
+    .video-section { background:#0a0a0a; padding:5rem 0; }
+    .video-section .section-label { color:var(--red); font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.2em; margin-bottom:0.5rem; }
+    .video-section h2 { color:#fff; margin-bottom:0.5rem; }
+    .video-section .video-sub { color:#777; font-size:0.9rem; margin-bottom:2.5rem; }
+    .video-grid { display:grid; grid-template-columns:1fr; gap:2.5rem; }
+    @media(min-width:900px){ .video-grid { grid-template-columns:2fr 1fr; gap:2rem; } }
+    .video-wrap { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:4px; background:#111; }
+    .video-wrap iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+    .video-card-label { font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:var(--red); margin-bottom:0.6rem; }
+    .video-card-title { color:#fff; font-size:1rem; font-weight:700; margin-bottom:0.4rem; }
+    .video-card-desc { color:#666; font-size:0.82rem; line-height:1.6; }
+    .video-card-meta { margin-top:1rem; }
+
+    .fade-in { opacity:0; transform:translateY(20px); transition:opacity 0.6s,transform 0.6s; }
+    .fade-in.visible { opacity:1; transform:none; }
+
+    /* Section divider style */
+    .credits-block { margin-top:2.5rem; }
+    .credits-block h3 { font-size:1rem; font-weight:800; text-transform:uppercase; letter-spacing:0.1em; color:var(--dark); margin-bottom:1rem; padding-bottom:0.5rem; border-bottom:2px solid var(--red); display:inline-block; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Divya Bandaru",
+    "alternateName": "Divya Bakshi",
+    "jobTitle": "Actor, Writer, Director",
+    "description": "Telugu actor, writer and director known for Pickpocket (2022) and Etthulu (2022). Represented by MC Joint.",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "MC Joint",
+      "url": "https://www.mcjoint.in"
+    },
+    "url": "https://www.mcjoint.in/clients/talent/divya-bandaru.html"
+  }
+  </script>
+</head>
+<body>
+<header>
+  <div class="container"><div class="header-content">
+    <a class="logo" href="../../index.html"><span>MC</span> Joint</a>
+    <nav>
+      <a href="../../index.html">Home</a><a href="../../about.html">About</a><a href="../../services.html">Services</a>
+      <div class="nav-dropdown">
+        <a href="../index.html" class="active">Clients &#9662;</a>
+        <div class="nav-dropdown-menu">
+          <a href="../businesses.html">Businesses</a>
+          <a href="../talent.html">Talent</a>
+          <a href="../associates.html">Associates</a>
+        </div>
+      </div>
+      <a href="../../works.html">Our Works</a><a href="../../blog.html">Blog</a><a href="../../contact.html">Contact</a>
+    </nav>
+    <a href="../../contact.html" class="btn btn-primary header-cta">Work With Us</a>
+    <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+  </div></div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../../index.html">Home</a><a href="../../about.html">About</a><a href="../../services.html">Services</a>
+  <a href="../index.html">Clients</a><a href="../../works.html">Our Works</a>
+  <a href="../../blog.html">Blog</a><a href="../../contact.html">Contact</a>
+</div>
+
+<!-- HERO -->
+<div class="talent-profile-hero">
+  <div class="container">
+    <div class="talent-profile-info">
+      <a class="back-link" href="../talent.html"><i class="fas fa-arrow-left"></i> All Talent</a>
+      <span class="talent-profile-role">Actor &middot; Writer &middot; Director</span>
+      <h1>Divya Bandaru</h1>
+      <p style="margin-top:1rem;">A multi-hyphenate creative from Hyderabad making her mark on Telugu independent cinema — stepping behind the camera as writer-director and in front of it as an actor across film and short-form content.</p>
+    </div>
+  </div>
+  <div class="talent-profile-img">
+    <img src="" alt="Divya Bandaru" onerror="this.style.display='none'">
+    <div class="initial-bg">DB</div>
+  </div>
+</div>
+
+<!-- PROFILE BODY -->
+<section>
+  <div class="container">
+    <div class="profile-body">
+
+      <!-- MAIN CONTENT -->
+      <div class="fade-in">
+        <h2>About Divya Bandaru</h2>
+        <div class="divider"></div>
+        <p style="color:var(--dark-grey);margin-bottom:1rem;">Divya Bandaru is an actor, writer, and director working at the intersection of indie Telugu cinema and short-form storytelling. She co-wrote and directed <strong>Etthulu</strong> (2022) alongside Camp Sasi, and wrote and directed <strong>Pickpocket</strong> (2022) — a crime short that went on to garner enough attention to spawn a sequel.</p>
+        <p style="color:var(--dark-grey);margin-bottom:1rem;">As an actress, she has appeared in <strong>Ranganaayaki</strong> and <strong>Nirudyoga Natulu</strong>, where she played the role of <em>The Landlord</em> under the screen name <strong>Divya Bakshi</strong>. Her work spans both sides of the camera, reflecting a deep investment in storytelling at every level of production.</p>
+
+        <!-- DIRECTORIAL CREDITS -->
+        <div class="credits-block">
+          <h3>As Director &amp; Writer</h3>
+          <ul class="discography">
+            <li>
+              <div>
+                <div class="disc-title">Pickpocket</div>
+                <div class="disc-type">Short Film · Writer-Director · 2022</div>
+              </div>
+              <span class="role-badge role-director">Director</span>
+            </li>
+            <li>
+              <div>
+                <div class="disc-title">Etthulu</div>
+                <div class="disc-type">Short Film · Writer-Director (with Camp Sasi) · 2022</div>
+              </div>
+              <span class="role-badge role-director">Director</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ACTING CREDITS -->
+        <div class="credits-block">
+          <h3>As Actress</h3>
+          <ul class="discography">
+            <li>
+              <div>
+                <div class="disc-title">Ranganaayaki</div>
+                <div class="disc-type">Film</div>
+              </div>
+              <span class="role-badge role-actor">Actress</span>
+            </li>
+            <li>
+              <div>
+                <div class="disc-title">Nirudyoga Natulu</div>
+                <div class="disc-type">Film · as The Landlord (as Divya Bakshi)</div>
+              </div>
+              <span class="role-badge role-actor">Actress</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="fade-in">
+        <div class="sidebar-card">
+          <h3>Quick Info</h3>
+          <div class="info-row"><span class="info-label">Roles</span><span class="info-value">Actor · Writer · Director</span></div>
+          <div class="info-row"><span class="info-label">City</span><span class="info-value">Hyderabad</span></div>
+          <div class="info-row"><span class="info-label">Screen Name</span><span class="info-value">Divya Bakshi</span></div>
+          <div class="info-row"><span class="info-label">Known For</span><span class="info-value">Pickpocket (2022)</span></div>
+          <div class="info-row"><span class="info-label">Management</span><span class="info-value">MC Joint</span></div>
+        </div>
+        <div style="margin-top:1.5rem;">
+          <a href="../../contact.html" class="btn btn-primary" style="width:100%;text-align:center;display:block;">Enquire About Booking</a>
+        </div>
+        <div style="margin-top:1rem;">
+          <a href="../talent.html" class="btn btn-outline" style="width:100%;text-align:center;display:block;">View All Talent</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO SECTION -->
+<section class="video-section">
+  <div class="container">
+    <p class="section-label">Films</p>
+    <h2>Watch Divya's Work</h2>
+    <p class="video-sub">Pickpocket (2022) — full film — and the trailer for its sequel, The Murder Plan.</p>
+
+    <div class="video-grid">
+
+      <!-- Full Film -->
+      <div>
+        <p class="video-card-label">Full Film</p>
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/1qOmyk9oI-Y" title="Pickpocket (2022) — Full Film" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        </div>
+        <div class="video-card-meta">
+          <div class="video-card-title">Pickpocket (2022)</div>
+          <div class="video-card-desc">Written &amp; Directed by Divya Bandaru. A crime short produced under the MC Joint umbrella, distributed via Chai Bisket.</div>
+        </div>
+      </div>
+
+      <!-- Sequel Trailer -->
+      <div>
+        <p class="video-card-label">Sequel · Trailer</p>
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/4vFj38ncr7s" title="Pickpocket 2: The Murder Plan — Official Trailer" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        </div>
+        <div class="video-card-meta">
+          <div class="video-card-title">Pickpocket 2: The Murder Plan</div>
+          <div class="video-card-desc">Official trailer for the sequel to Pickpocket. The story continues.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <div class="footer-logo"><span>MC</span> Joint</div>
+        <p class="footer-desc">Masters of Ceremonies.<br>Music &middot; Talent &middot; Cinema &middot; Strategy</p>
+        <div class="social-links" style="margin-top:1.5rem">
+          <a href="https://www.instagram.com/mcjoint.in/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://in.linkedin.com/company/mcjoint-in" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/mcjointin" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.youtube.com/@MCJoint" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-section"><h4>Navigate</h4><ul>
+        <li><a href="../../about.html">About Us</a></li>
+        <li><a href="../../services.html">Services</a></li>
+        <li><a href="../../works.html">Our Works</a></li>
+        <li><a href="../../blog.html">Blog</a></li>
+      </ul></div>
+      <div class="footer-section"><h4>Clients</h4><ul>
+        <li><a href="../businesses.html">Businesses</a></li>
+        <li><a href="../talent.html">Talent</a></li>
+        <li><a href="../associates.html">Associates</a></li>
+      </ul></div>
+      <div class="footer-section"><h4>Contact</h4><ul>
+        <li><a href="mailto:info@mcjoint.in">info@mcjoint.in</a></li>
+        <li><a href="tel:+919014414114">+91 90144 14114</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> MC Joint &mdash; Masters of Ceremonies. All rights reserved.</p>
+      <a href="https://www.mcjoint.in">www.mcjoint.in</a>
+    </div>
+  </div>
+</footer>
+<script src="../../js/main.js"></script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const faders = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  faders.forEach(f => observer.observe(f));
+</script>
+</body>
+</html>

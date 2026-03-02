@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sindhu Dakavarapu — MC Joint</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .talent-profile-hero {
+      background:var(--black); padding-top:100px; padding-bottom:0;
+      display:grid; grid-template-columns:1fr; min-height:70vh; position:relative;
+    }
+    @media(min-width:1024px){ .talent-profile-hero { grid-template-columns:1fr 480px; } }
+    .talent-profile-info { padding:4rem 0 4rem; display:flex; flex-direction:column; justify-content:center; }
+    .talent-profile-info h1 { color:white; font-size:clamp(2.5rem,6vw,4rem); }
+    .talent-profile-role { font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.15em; color:var(--red); margin-bottom:1rem; display:block; }
+    .talent-profile-info p { color:#aaa; max-width:520px; }
+    .talent-profile-img {
+      background:linear-gradient(160deg,#1a1a2e,#0d0d1a);
+      overflow:hidden; min-height:400px; position:relative;
+    }
+    @media(min-width:1024px){ .talent-profile-img { min-height:auto; } }
+    .talent-profile-img img { width:100%; height:100%; object-fit:cover; object-position:top; }
+    .talent-profile-img .initial-bg {
+      position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+      font-family:'Montserrat',sans-serif; font-weight:900; font-size:8rem; color:rgba(225,6,0,0.15);
+    }
+    .profile-body { display:grid; grid-template-columns:1fr; gap:3rem; }
+    @media(min-width:1024px){ .profile-body { grid-template-columns:2fr 1fr; } }
+    .discography { list-style:none; }
+    .discography li { padding:1rem 0; border-bottom:1px solid #eee; display:flex; justify-content:space-between; align-items:center; gap:1rem; }
+    .discography li:last-child { border:none; }
+    .disc-title { font-weight:600; font-size:0.9rem; }
+    .disc-type { font-size:0.75rem; color:var(--grey); text-transform:uppercase; letter-spacing:0.05em; }
+    .sidebar-card { background:var(--light-bg); padding:2rem; }
+    .sidebar-card h3 { font-size:1rem; margin-bottom:1.25rem; }
+    .sidebar-card .info-row { display:flex; justify-content:space-between; padding:0.6rem 0; border-bottom:1px solid #e0e0e0; font-size:0.875rem; }
+    .sidebar-card .info-row:last-child { border:none; }
+    .sidebar-card .info-label { color:var(--grey); }
+    .sidebar-card .info-value { font-weight:600; }
+    .back-link { display:inline-flex; align-items:center; gap:0.5rem; color:var(--grey); text-decoration:none; font-size:0.8rem; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; margin-bottom:1.5rem; }
+    .back-link:hover { color:var(--red); }
+    .tag-upcoming { background:#1a3a1a; color:#4caf50; padding:0.2rem 0.6rem; font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; }
+    .fade-in { opacity:0; transform:translateY(20px); transition:opacity 0.6s,transform 0.6s; }
+    .fade-in.visible { opacity:1; transform:none; }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container"><div class="header-content">
+    <a class="logo" href="../../index.html"><span>MC</span> Joint</a>
+    <nav>
+      <a href="../../index.html">Home</a><a href="../../about.html">About</a><a href="../../services.html">Services</a>
+      <div class="nav-dropdown">
+        <a href="../index.html" class="active">Clients &#9662;</a>
+        <div class="nav-dropdown-menu">
+          <a href="../businesses.html">Businesses</a>
+          <a href="../talent.html">Talent</a>
+          <a href="../associates.html">Associates</a>
+        </div>
+      </div>
+      <a href="../../works.html">Our Works</a><a href="../../blog.html">Blog</a><a href="../../contact.html">Contact</a>
+    </nav>
+    <a href="../../contact.html" class="btn btn-primary header-cta">Work With Us</a>
+    <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+  </div></div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../../index.html">Home</a><a href="../../about.html">About</a><a href="../../services.html">Services</a>
+  <a href="../index.html">Clients</a><a href="../../works.html">Our Works</a>
+  <a href="../../blog.html">Blog</a><a href="../../contact.html">Contact</a>
+</div>
+
+<div class="talent-profile-hero">
+  <div class="container">
+    <div class="talent-profile-info">
+      <a class="back-link" href="../talent.html"><i class="fas fa-arrow-left"></i> All Talent</a>
+      <span class="talent-profile-role">Theatre Artist · Film Actress</span>
+      <h1>Sindhu Dakavarapu</h1>
+      <p style="margin-top:1rem;">A trained theatre artist and film actress whose stage background lends her screen work a depth and physicality that goes beyond the ordinary. MC Joint manages Sindhu Dakavarapu's talent representation and professional bookings.</p>
+    </div>
+  </div>
+  <div class="talent-profile-img">
+    <img src="../../images/talent-Sindhu-Dakavarapu.jpg" alt="Sindhu Dakavarapu" onerror="this.style.display='none'">
+    <div class="initial-bg">SD</div>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="profile-body">
+      <div class="fade-in">
+        <h2>About Sindhu Dakavarapu</h2>
+        <div class="divider"></div>
+        <p style="color:var(--dark-grey);margin-bottom:1rem;">Sindhu Dakavarapu is a Hyderabad-based theatre artist and film actress whose creative foundation lies in the discipline and expressiveness of stage performance. Theatre training provides actors with a unique set of skills — command of the body, voice, and emotional truth — that translates powerfully to the screen, and Sindhu brings all of these qualities to her work.</p>
+        <p style="color:var(--dark-grey);margin-bottom:1rem;">Her theatre work has given her experience across diverse productions and performance styles, building the kind of technical and emotional range that directors seek out for complex roles. Her transition to film connects her to the broader Telugu independent cinema ecosystem that MC Joint works within.</p>
+        <p style="color:var(--dark-grey);margin-bottom:1rem;">MC Joint represents Sindhu Dakavarapu for talent management — handling professional enquiries, connecting her with film and theatre productions appropriate to her skills, and building her public profile as she continues to expand her screen presence alongside her stage career.</p>
+        <h3 style="margin-top:2.5rem;margin-bottom:1rem;">Work &amp; Performances</h3>
+        <ul class="discography">
+          <li>
+            <div><div class="disc-title">Theatre Productions</div><div class="disc-type">Stage Actress · Hyderabad · Ongoing</div></div>
+            <span class="tag tag-red">Credited</span>
+          </li>
+          <li>
+            <div><div class="disc-title">Telugu Film Productions</div><div class="disc-type">Film Actress · Various</div></div>
+            <span class="tag tag-red">Credited</span>
+          </li>
+          <li>
+            <div><div class="disc-title">Independent Telugu Cinema</div><div class="disc-type">Character Roles · Ongoing</div></div>
+            <span class="tag tag-red">Credited</span>
+          </li>
+        </ul>
+      </div>
+      <div class="fade-in">
+        <div class="sidebar-card">
+          <h3>Quick Info</h3>
+          <div class="info-row"><span class="info-label">Category</span><span class="info-value">Theatre Artist · Actress</span></div>
+          <div class="info-row"><span class="info-label">City</span><span class="info-value">Hyderabad</span></div>
+          <div class="info-row"><span class="info-label">Background</span><span class="info-value">Theatre · Film</span></div>
+          <div class="info-row"><span class="info-label">Services</span><span class="info-value">Talent Representation · Bookings</span></div>
+        </div>
+        <div style="margin-top:1.5rem;">
+          <a href="../../contact.html" class="btn btn-primary" style="width:100%;text-align:center;display:block;">Enquire About Booking</a>
+        </div>
+        <div style="margin-top:1rem;">
+          <a href="../talent.html" class="btn btn-outline" style="width:100%;text-align:center;display:block;">View All Talent</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <div class="footer-logo"><span>MC</span> Joint</div>
+        <p class="footer-desc">Masters of Ceremonies.<br>Music &middot; Talent &middot; Cinema &middot; Strategy</p>
+        <div class="social-links" style="margin-top:1.5rem">
+          <a href="https://www.instagram.com/mcjoint.in/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://in.linkedin.com/company/mcjoint-in" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/mcjointin" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.youtube.com/@MCJoint" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-section"><h4>Navigate</h4><ul>
+        <li><a href="../../about.html">About Us</a></li>
+        <li><a href="../../services.html">Services</a></li>
+        <li><a href="../../works.html">Our Works</a></li>
+        <li><a href="../../blog.html">Blog</a></li>
+      </ul></div>
+      <div class="footer-section"><h4>Clients</h4><ul>
+        <li><a href="../businesses.html">Businesses</a></li>
+        <li><a href="../talent.html">Talent</a></li>
+        <li><a href="../associates.html">Associates</a></li>
+      </ul></div>
+      <div class="footer-section"><h4>Contact</h4><ul>
+        <li><a href="mailto:info@mcjoint.in">info@mcjoint.in</a></li>
+        <li><a href="tel:+919014414114">+91 90144 14114</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> MC Joint &mdash; Masters of Ceremonies. All rights reserved.</p>
+      <a href="https://www.mcjoint.in">www.mcjoint.in</a>
+    </div>
+  </div>
+</footer>
+<script src="../../js/main.js"></script>
+</body>
+</html>

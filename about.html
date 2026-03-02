@@ -3,22 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us — MC Joint</title>
-  <meta name="description" content="Learn about MC Joint — a Hyderabad-based creative agency founded by Sonu Mohkh, NJay and Sai Charan.">
+  <title>About MC Joint — Creative Agency Founded in Hyderabad</title>
+  <meta name="description" content="Meet the team behind MC Joint — Sonu Mohkh, NJay and Sai Charan. Founded 2018 in Hyderabad to connect artists, composers, and filmmakers with the right opportunities.">
+  <meta name="keywords" content="MC Joint founders, Sonu Mohkh, creative agency Hyderabad, talent management team India">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="MC Joint">
+  <meta name="geo.region" content="IN-TG">
+  <meta name="geo.placename" content="Hyderabad">
+  <meta name="geo.position" content="17.3850;78.4867">
+  <meta name="ICBM" content="17.3850, 78.4867">
+  <link rel="canonical" href="https://www.mcjoint.in/about.html">
+  <link rel="icon" type="image/png" href="">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.mcjoint.in/about.html">
+  <meta property="og:title" content="About MC Joint — More than an agency. We are storytellers.">
+  <meta property="og:description" content="Born in Hyderabad, built on passion. MC Joint connects artists with the right reach, strategy, and representation since 2018.">
+  <meta property="og:image" content="">
+  <meta property="og:locale" content="en_IN">
+  <meta property="og:site_name" content="MC Joint">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@mcjointin">
+  <meta name="twitter:title" content="About MC Joint">
+  <meta name="twitter:image" content="">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <!-- Organisation Schema -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"MC Joint","alternateName":"Masters of Ceremonies","url":"https://www.mcjoint.in","logo":"","description":"Hyderabad-based creative agency for music distribution, talent management, and cinema strategy.","foundingDate":"2018","address":{"@type":"PostalAddress","addressLocality":"Hyderabad","addressRegion":"Telangana","addressCountry":"IN"},"contactPoint":{"@type":"ContactPoint","telephone":"+91-90144-14114","email":"info@mcjoint.in","contactType":"customer service"},"sameAs":["https://www.instagram.com/mcjoint.in/","https://in.linkedin.com/company/mcjoint-in","https://x.com/mcjointin","https://www.youtube.com/@MCJoint"]}
+  </script>
   <style>
-    /* STORY SECTION */
+    .logo img { height: 42px; width: auto; display:block; }
     .story-grid { display:grid; grid-template-columns:1fr; gap:3rem; align-items:start; }
     @media(min-width:1024px){ .story-grid { grid-template-columns:1fr 1fr; } }
     .story-copy p { color:var(--dark-grey); margin-bottom:1rem; }
     .story-image { width:100%; aspect-ratio:4/3; object-fit:cover; background: linear-gradient(135deg,#1a1a2e,#0d0d1a); }
     .story-image img { width:100%; height:100%; object-fit:cover; }
-
-    /* VALUES */
     .values-section { background:var(--black); color:var(--white); }
     .values-section h2 { color:var(--white); }
     .values-grid { display:grid; grid-template-columns:1fr; gap:2rem; margin-top:2.5rem; }
@@ -27,48 +51,25 @@
     .value-card { border-left:3px solid var(--red); padding:1.5rem; }
     .value-card h3 { font-size:1rem; color:var(--white); margin-bottom:0.75rem; }
     .value-card p { font-size:0.875rem; color:var(--grey); }
-
-    /* FOUNDERS */
     .founder-card { display:grid; grid-template-columns:1fr; gap:2.5rem; align-items:start; padding:3rem 0; border-top:1px solid #eee; }
     @media(min-width:768px){ .founder-card { grid-template-columns:220px 1fr; } }
     .founder-card:first-child { border-top:none; }
-    .founder-photo {
-      width:100%; aspect-ratio:1; background: linear-gradient(135deg,#1a1a2e,#16213e);
-      position:relative; overflow:hidden;
-    }
-    .founder-photo img { width:100%; height:100%; object-fit:cover; }
-    .founder-photo .founder-initial {
-      position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-      font-family:'Montserrat',sans-serif; font-weight:900; font-size:4rem; color:var(--red);
-    }
+    .founder-photo { width:100%; aspect-ratio:1; background: linear-gradient(135deg,#1a1a2e,#16213e); position:relative; overflow:hidden; }
+    .founder-photo img { width:100%; height:100%; object-fit:cover; object-position: top center; }
+    .founder-photo .founder-initial { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-family:'Montserrat',sans-serif; font-weight:900; font-size:4rem; color:var(--red); }
     .founder-info h3 { font-size:1.5rem; margin-bottom:0.25rem; }
     .founder-role { font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-bottom:1.25rem; display:block; }
     .founder-info p { color:var(--dark-grey); margin-bottom:0.75rem; font-size:0.95rem; }
-
-    /* TIMELINE */
     .timeline { position:relative; }
     .timeline::before { content:''; position:absolute; left:24px; top:0; bottom:0; width:2px; background:#eee; }
     @media(min-width:768px){ .timeline::before { left:50%; } }
     .timeline-item { display:flex; gap:2rem; margin-bottom:2.5rem; position:relative; }
-    @media(min-width:768px){
-      .timeline-item:nth-child(even) { flex-direction:row-reverse; }
-      .timeline-item:nth-child(even) .timeline-content { text-align:right; }
-    }
-    .timeline-dot {
-      width:50px; height:50px; background:var(--red); border-radius:50%;
-      display:flex; align-items:center; justify-content:center;
-      flex-shrink:0; font-family:'Montserrat',sans-serif; font-weight:900;
-      font-size:0.75rem; color:white; position:relative; z-index:1;
-    }
-    @media(min-width:768px){
-      .timeline-dot { position:absolute; left:50%; transform:translateX(-50%); }
-      .timeline-item { padding:0 calc(50% + 40px) 0 0; }
-      .timeline-item:nth-child(even) { padding:0 0 0 calc(50% + 40px); }
-    }
+    @media(min-width:768px){ .timeline-item:nth-child(even) { flex-direction:row-reverse; } .timeline-item:nth-child(even) .timeline-content { text-align:right; } }
+    .timeline-dot { width:50px; height:50px; background:var(--red); border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-family:'Montserrat',sans-serif; font-weight:900; font-size:0.75rem; color:white; position:relative; z-index:1; }
+    @media(min-width:768px){ .timeline-dot { position:absolute; left:50%; transform:translateX(-50%); } .timeline-item { padding:0 calc(50% + 40px) 0 0; } .timeline-item:nth-child(even) { padding:0 0 0 calc(50% + 40px); } }
     .timeline-content { flex:1; padding-top:0.5rem; }
     .timeline-content h3 { font-size:1rem; margin-bottom:0.5rem; }
     .timeline-content p { font-size:0.875rem; color:var(--dark-grey); }
-
     .fade-in { opacity:0; transform:translateY(20px); transition:opacity 0.6s,transform 0.6s; }
     .fade-in.visible { opacity:1; transform:none; }
   </style>
@@ -78,7 +79,9 @@
 <header>
   <div class="container">
     <div class="header-content">
-      <a class="logo" href="index.html"><span>MC</span> Joint</a>
+      <a class="logo" href="index.html">
+        <img src="" alt="MC Joint — Masters of Ceremonies" onerror="this.outerHTML='<span>MC</span> Joint'">
+      </a>
       <nav>
         <a href="index.html">Home</a>
         <a href="about.html" class="active">About</a>
@@ -131,7 +134,7 @@
       </div>
       <div class="story-image fade-in">
         <div style="width:100%;aspect-ratio:4/3;background:linear-gradient(135deg,#1a1a2e,#0d0d1a);overflow:hidden;">
-          <img src="images/story.jpg" alt="MC Joint Office" onerror="this.style.display='none'">
+          <img src="" alt="MC Joint — Beyond Physical Documentary BTS" style="width:100%;height:100%;object-fit:cover;">
         </div>
         <div style="background:var(--light-bg);padding:2rem;margin-top:1px;">
           <blockquote style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:1.25rem;color:var(--black);border-left:4px solid var(--red);padding-left:1.25rem;margin:0;">
@@ -179,24 +182,22 @@
 
     <div class="founder-card fade-in">
       <div class="founder-photo">
-        <img src="images/team-sonu.jpg" alt="Sonu Mohkh" onerror="this.style.display='none'">
-        <div class="founder-initial">S</div>
+        <img src="" alt="Sonu Mohkh — Founder, MC Joint">
       </div>
       <div class="founder-info">
         <h3>Sonu Mohkh</h3>
-        <span class="founder-role">Founder · Talent Agent · Marketing Specialist</span>
+        <span class="founder-role">Founder · Talent Agent · Comic Book Writer · Marketing Specialist</span>
         <p>A seasoned marketing strategist with expertise in digital branding, talent representation, and content marketing. Sonu has worked extensively with film production houses, OTT platforms, and brands to enhance their digital presence and audience engagement.</p>
-        <p>His vision for MC Joint was simple — build a creative home where artists are treated as partners, not products.</p>
+        <p>His vision for MC Joint was simple — build a creative home where artists are treated as partners, not products. He is also the creator behind original comic book IP developed under the MC Joint banner.</p>
       </div>
     </div>
 
     <div class="founder-card fade-in">
       <div class="founder-photo">
-        <img src="images/team-njay.jpg" alt="NJay" onerror="this.style.display='none'">
-        <div class="founder-initial">N</div>
+        <img src="" alt="NJay — Navathanjay Yamjala, Co-Founder, MC Joint">
       </div>
       <div class="founder-info">
-        <h3>NJay</h3>
+        <h3>NJay <span style="font-size:0.9rem;font-weight:400;color:var(--grey)">(Navathanjay Yamjala)</span></h3>
         <span class="founder-role">Co-Founder · Business Manager</span>
         <p>NJay brings a strong foundation in account management and digital marketing to the team, with years of experience shaping brand communication and audience engagement across diverse digital channels.</p>
         <p>Skilled in strategic planning, social media marketing, online advertising, and content development, he has played key roles managing client relationships and delivering results-driven campaigns.</p>
@@ -205,8 +206,7 @@
 
     <div class="founder-card fade-in">
       <div class="founder-photo">
-        <img src="images/team-sai.jpg" alt="Sai Charan" onerror="this.style.display='none'">
-        <div class="founder-initial">SC</div>
+        <img src="" alt="Sai Charan — Co-Founder, MC Joint">
       </div>
       <div class="founder-info">
         <h3>Sai Charan</h3>
@@ -284,7 +284,9 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-section">
-        <div class="footer-logo"><span>MC</span> Joint</div>
+        <div class="footer-logo">
+          <img src="" alt="MC Joint" style="height:48px;width:auto;filter:brightness(0) invert(1);" onerror="this.outerHTML='<span>MC</span> Joint'">
+        </div>
         <p class="footer-desc">Masters of Ceremonies.<br>Music · Talent · Cinema · Strategy</p>
         <div class="social-links" style="margin-top:1.5rem">
           <a href="https://www.instagram.com/mcjoint.in/" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -293,31 +295,20 @@
           <a href="https://www.youtube.com/@MCJoint" target="_blank"><i class="fab fa-youtube"></i></a>
         </div>
       </div>
-      <div class="footer-section">
-        <h4>Navigate</h4>
-        <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="works.html">Our Works</a></li>
-          <li><a href="blog.html">Blog</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Clients</h4>
-        <ul>
-          <li><a href="clients/businesses.html">Businesses</a></li>
-          <li><a href="clients/talent.html">Talent</a></li>
-          <li><a href="clients/associates.html">Associates</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:info@mcjoint.in">info@mcjoint.in</a></li>
-          <li><a href="tel:+919014414114">+91 90144 14114</a></li>
-          <li><a href="contact.html">Get In Touch</a></li>
-        </ul>
-      </div>
+      <div class="footer-section"><h4>Navigate</h4><ul>
+        <li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li>
+        <li><a href="works.html">Our Works</a></li><li><a href="blog.html">Blog</a></li>
+      </ul></div>
+      <div class="footer-section"><h4>Clients</h4><ul>
+        <li><a href="clients/businesses.html">Businesses</a></li>
+        <li><a href="clients/talent.html">Talent</a></li>
+        <li><a href="clients/associates.html">Associates</a></li>
+      </ul></div>
+      <div class="footer-section"><h4>Contact</h4><ul>
+        <li><a href="mailto:info@mcjoint.in">info@mcjoint.in</a></li>
+        <li><a href="tel:+919014414114">+91 90144 14114</a></li>
+        <li><a href="contact.html">Get In Touch</a></li>
+      </ul></div>
     </div>
     <div class="footer-bottom">
       <p>&copy; <span id="year"></span> MC Joint — Masters of Ceremonies. All rights reserved.</p>
