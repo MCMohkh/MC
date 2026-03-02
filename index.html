@@ -239,6 +239,26 @@
     .fade-in { opacity:0; transform:translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .fade-in.visible { opacity:1; transform:translateY(0); }
 
+
+    /* INTRO IMAGE SLIDER */
+    .intro-slider { position: relative; overflow: hidden; }
+    .intro-slide {
+      position: absolute; inset: 0;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+      pointer-events: none;
+    }
+    .intro-slide:first-child { position: relative; } /* keeps box height */
+    .intro-slide--active { opacity: 1; pointer-events: auto; }
+    .intro-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .intro-slide .img-label {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: rgba(225,6,0,0.9); color: white;
+      padding: 1rem 1.5rem;
+      font-family: 'Montserrat', sans-serif; font-weight: 700;
+      font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em;
+    }
+
     /* YOUTUBE VIDEO BACKGROUND */
     .hero-video-bg {
       position: absolute;
@@ -383,16 +403,62 @@
             <div class="intro-stat-label">Projects</div>
           </div>
           <div>
-            <div class="intro-stat-number" data-target="2018">0</div>
+            <div class="intro-stat-number" data-target="2018" data-nofmt="true">0</div>
             <div class="intro-stat-label">Founded</div>
           </div>
         </div>
         <a href="about.html" class="btn btn-outline" style="margin-top:2rem">Our Story</a>
       </div>
       <div class="intro-visual fade-in">
-        <div class="intro-image-box">
-          <img src="" alt="MC Joint — Vivek Sagar at work">
-          <div class="img-label">MC Joint · Hyderabad</div>
+        <div class="intro-image-box intro-slider" id="introSlider">
+          <div class="intro-slide intro-slide--active">
+            <img src="" alt="Raju Shivaratri">
+            <div class="img-label">Raju Shivaratri</div>
+          </div>
+          <div class="intro-slide">
+            <img src="" alt="Pawon Ramesh">
+            <div class="img-label">Pawon Ramesh</div>
+          </div>
+          <div class="intro-slide">
+            <img src="" alt="Vivek Sagar">
+            <div class="img-label">Vivek Sagar</div>
+          </div>
+          <div class="intro-slide">
+            <img src="" alt="Raj Tirandasu">
+            <div class="img-label">Raj Tirandasu</div>
+          </div>
+          <div class="intro-slide">
+            <img src="" alt="Rohit Penumatsa">
+            <div class="img-label">Rohit Penumatsa</div>
+          </div>
+          <div class="intro-slide">
+            <img src="" alt="Ravi Nidamarthy">
+            <div class="img-label">Ravi Nidamarthy</div>
+          </div>
+          <div class="intro-slide">
+            <img src="" alt="Camp Sasi">
+            <div class="img-label">Camp Sasi</div>
+          </div>
+          <div class="intro-slide">
+            <img src="" alt="Anvesh Michael">
+            <div class="img-label">Anvesh Michael</div>
+          </div>
+          <div class="intro-slide">
+            <img src="" alt="Thanmai Bolt">
+            <div class="img-label">Thanmai Bolt</div>
+          </div>
+          <div class="intro-slide">
+            <img src="" alt="Jagadeesh Prathap Bandari">
+            <div class="img-label">Jagadeesh Prathap Bandari</div>
+          </div>
+          <div class="intro-slide">
+            <img src="" alt="Prashanth Podagatlapalli">
+            <div class="img-label">Prashanth Podagatlapalli</div>
+          </div>
+          <div class="intro-slide">
+            <img src="" alt="Smaran">
+            <div class="img-label">Smaran</div>
+          </div>
         </div>
         <div class="intro-badge">
           <strong>6+</strong>
@@ -446,9 +512,9 @@
       <a href="works.html" class="btn btn-outline">View All</a>
     </div>
     <div class="works-grid fade-in">
-      <div class="work-card">
+      <a href="works.html" class="work-card" style="text-decoration:none;color:inherit;display:block;">
         <div class="work-thumb">
-          <img src="" alt="Avanti Cinema — MC Joint Partner">
+          <img src="" alt="Rohit Penumatsa &amp; Camp Sasi — MC Joint">
           <div class="work-thumb-overlay"><i class="fas fa-arrow-right"></i></div>
         </div>
         <div class="work-info">
@@ -456,8 +522,8 @@
           <h3>Avanti Cinema — Full Service Partnership</h3>
           <p>Social media, music distribution &amp; screenings since 2018</p>
         </div>
-      </div>
-      <div class="work-card">
+      </a>
+      <a href="works.html" class="work-card" style="text-decoration:none;color:inherit;display:block;">
         <div class="work-thumb">
           <img src="" alt="Vivek Sagar — Tapeloop Records">
           <div class="work-thumb-overlay"><i class="fas fa-arrow-right"></i></div>
@@ -467,8 +533,8 @@
           <h3>Vivek Sagar / Tapeloop Records</h3>
           <p>Sheeshmahal, Chivaraku Migiledhi, A Love Letter to Cinema</p>
         </div>
-      </div>
-      <div class="work-card">
+      </a>
+      <a href="works.html" class="work-card" style="text-decoration:none;color:inherit;display:block;">
         <div class="work-thumb">
           <img src="" alt="Pickpocket — MC Joint Marketing Partner">
           <div class="work-thumb-overlay"><i class="fas fa-arrow-right"></i></div>
@@ -478,7 +544,7 @@
           <h3>Pickpocket — Marketing Partnership</h3>
           <p>MC Joint as marketing partner of Divya Bandaru's film Pickpocket</p>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -591,7 +657,7 @@
     <div class="footer-grid">
       <div class="footer-section">
         <div class="footer-logo">
-          <img src="" alt="MC Joint" style="height:48px;width:auto;filter:brightness(0) invert(1);" onerror="this.outerHTML='<span>MC</span> Joint'">
+          <img src="" alt="MC Joint" style="height:44px;width:auto;">
         </div>
         <p class="footer-desc">Masters of Ceremonies.<br>Music · Talent · Cinema · Strategy</p>
         <div class="social-links" style="margin-top:1.5rem">
@@ -635,10 +701,52 @@
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/main.js"></script>
+</script>
+
 <script>
-  // Hero word rotation
-  const words = ['MUSIC','MEDIA','MOTION','CRAFTS','COLLABORATIONS','COMMUNITY','CELEBRATIONS'];
-  const heroWord = document.getElementById('heroWord');
-  let idx = 0;
-  setInterval(() => {
-    heroWord.style.opacity = 0
+  // ── Intro talent image auto-scroller ──
+  (function () {
+    const slides = document.querySelectorAll('#introSlider .intro-slide');
+    if (!slides.length) return;
+    let cur = 0;
+    setInterval(function () {
+      slides[cur].classList.remove('intro-slide--active');
+      cur = (cur + 1) % slides.length;
+      slides[cur].classList.add('intro-slide--active');
+    }, 3000);
+  })();
+
+  // ── Animated counters ──
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target, 10);
+    const suffix = el.dataset.suffix || '';
+    const noFmt  = el.dataset.nofmt === 'true';
+    let start = 0;
+    const inc = target / 80;
+    const iv = setInterval(function () {
+      start += inc;
+      if (start >= target) { start = target; clearInterval(iv); }
+      const val = Math.floor(start);
+      el.textContent = (noFmt ? val : val.toLocaleString('en-IN')) + suffix;
+    }, 20);
+    el.dataset.animated = 'true';
+  }
+
+  const cObs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting && !entry.target.dataset.animated) {
+        animateCounter(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.intro-stat-number').forEach(function (el) {
+    cObs.observe(el);
+  });
+
+  // ── Year in footer ──
+  var yrEl = document.getElementById('year');
+  if (yrEl) yrEl.textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
