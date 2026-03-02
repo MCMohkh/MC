@@ -101,49 +101,33 @@
   </script>
 
   <style>
-    /* HERO VIDEO BACKGROUND */
-.hero-video-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-.hero-video-bg iframe {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 177.78vh;   /* 16:9 ratio trick */
-  height: 56.25vw;
-  min-width: 100%;
-  min-height: 100%;
-  transform: translate(-50%, -50%);
-  opacity: 0.35;
-}
-.hero-bg-pattern,
-.hero-accent,
-.hero .container,
-.hero-scroll {
-  position: relative;
-  z-index: 1;
-}
-    
-    /* HERO */<section class="hero">
-  <div class="hero-bg-pattern"></div>
-  <div class="hero-accent"></div>
-
-  <!-- YouTube autoplay background -->
-  <div class="hero-video-bg">
-    <iframe
-      src="https://www.youtube.com/embed/2xAvoEPNN2w?autoplay=1&mute=1&loop=1&playlist=2xAvoEPNN2w&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
-      frameborder="0"
-      allow="autoplay; encrypted-media"
-      allowfullscreen>
-    </iframe>
-  </div>
-
-  <div class="container">
-    
+    /* HERO */
+    .hero {
+      background: var(--black); color: var(--white);
+      min-height: 100vh; display: flex; align-items: center;
+      padding-top: 80px; padding-bottom: 60px; position: relative; overflow: hidden;
+    }
+    .hero-bg-pattern {
+      position: absolute; inset: 0; pointer-events: none;
+      background: repeating-linear-gradient(135deg, rgba(225,6,0,0.03) 0, rgba(225,6,0,0.03) 1px, transparent 0, transparent 50%);
+      background-size: 30px 30px;
+    }
+    .hero-accent {
+      position: absolute; right: -100px; top: 50%; transform: translateY(-50%);
+      width: 500px; height: 500px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(225,6,0,0.12) 0%, transparent 70%);
+    }
+    .hero .container { position: relative; z-index: 1; }
+    .hero-content { max-width: 750px; }
+    .hero-eyebrow { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: var(--red); margin-bottom: 1.5rem; display: block; }
+    .hero h1 { color: var(--white); margin-bottom: 1rem; }
+    .hero-word { color: var(--red); display: inline-block; min-width: 320px; }
+    .hero-tagline { color: #aaa; font-size: 1.1rem; font-weight: 300; margin-bottom: 0.5rem; max-width: 560px; }
+    .hero-meta { color: var(--grey); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 2.5rem; }
+    .hero-buttons { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .hero-scroll { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); text-align: center; color: var(--grey); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; animation: bounce 2s infinite; }
+    .hero-scroll i { display: block; font-size: 1.2rem; margin-bottom: 0.25rem; }
+    @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
 
     /* MARQUEE */
     .marquee-bar { background: var(--red); padding: 0.75rem 0; overflow: hidden; white-space: nowrap; }
@@ -254,6 +238,42 @@
     /* FADE-IN */
     .fade-in { opacity:0; transform:translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .fade-in.visible { opacity:1; transform:translateY(0); }
+
+    /* YOUTUBE VIDEO BACKGROUND */
+    .hero-video-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .hero-video-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: 1;
+    }
+    .hero-video-bg iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      /* 16:9 ratio — always covers the viewport */
+      width: 177.78vh;   /* 100vh * 16/9 */
+      height: 56.25vw;   /* 100vw * 9/16 */
+      min-width: 100%;
+      min-height: 100%;
+      transform: translate(-50%, -50%);
+      border: 0;
+    }
+    /* All hero content sits above the video */
+    .hero-bg-pattern,
+    .hero-accent,
+    .hero > .container,
+    .hero-scroll {
+      position: relative;
+      z-index: 2;
+    }
   </style>
 </head>
 <body>
@@ -304,6 +324,17 @@
 <section class="hero">
   <div class="hero-bg-pattern"></div>
   <div class="hero-accent"></div>
+
+  <!-- YOUTUBE VIDEO BACKGROUND -->
+  <div class="hero-video-bg">
+    <iframe
+      src="https://www.youtube.com/embed/2xAvoEPNN2w?autoplay=1&mute=1&loop=1&playlist=2xAvoEPNN2w&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+      title="MC Joint Background Video">
+    </iframe>
+  </div>
+
   <div class="container">
     <div class="hero-content">
       <span class="hero-eyebrow">Hyderabad · Est. 2018</span>
@@ -590,7 +621,7 @@
       <div class="footer-section">
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:info@mcjoint.in">info@mcjoint.in</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#0861666e6748656b626761667c266166"><span class="__cf_email__" data-cfemail="e0898e868fa08d838a8f898e94ce898e">[email&#160;protected]</span></a></li>
           <li><a href="tel:+919014414114">+91 90144 14114</a></li>
           <li><a href="contact.html">Get In Touch</a></li>
         </ul>
@@ -603,21 +634,11 @@
   </div>
 </footer>
 
-<script src="js/main.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/main.js"></script>
 <script>
   // Hero word rotation
   const words = ['MUSIC','MEDIA','MOTION','CRAFTS','COLLABORATIONS','COMMUNITY','CELEBRATIONS'];
   const heroWord = document.getElementById('heroWord');
   let idx = 0;
   setInterval(() => {
-    heroWord.style.opacity = 0;
-    setTimeout(() => {
-      idx = (idx + 1) % words.length;
-      heroWord.textContent = words[idx];
-      heroWord.style.opacity = 1;
-    }, 300);
-  }, 2500);
-  heroWord.style.transition = 'opacity 0.3s';
-</script>
-</body>
-</html>
+    heroWord.style.opacity = 0
