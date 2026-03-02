@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — MC Joint</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .contact-grid { display:grid; grid-template-columns:1fr; gap:4rem; }
+    @media(min-width:1024px){ .contact-grid { grid-template-columns:1fr 1fr; } }
+
+    .contact-form { }
+    .form-group { margin-bottom:1.5rem; }
+    .form-group label { display:block; font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.5rem; }
+    .form-group input, .form-group textarea, .form-group select {
+      width:100%; padding:0.875rem 1rem;
+      border:2px solid #eee; background:var(--white); font-family:'Inter',sans-serif; font-size:0.9rem;
+      transition:border-color 0.3s; outline:none;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color:var(--red); }
+    .form-group textarea { min-height:140px; resize:vertical; }
+    .form-row { display:grid; grid-template-columns:1fr; gap:1rem; }
+    @media(min-width:640px){ .form-row { grid-template-columns:1fr 1fr; } }
+
+    .contact-info-block { }
+    .contact-info-item { display:flex; gap:1.25rem; margin-bottom:2rem; padding-bottom:2rem; border-bottom:1px solid #eee; }
+    .contact-info-item:last-child { border:none; }
+    .contact-info-icon { width:48px; height:48px; background:var(--red); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .contact-info-icon i { color:white; font-size:1.1rem; }
+    .contact-info-label { font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--grey); margin-bottom:0.35rem; }
+    .contact-info-value { font-size:0.95rem; font-weight:600; }
+    .contact-info-value a { color:var(--black); text-decoration:none; }
+    .contact-info-value a:hover { color:var(--red); }
+
+    .inquiry-types { display:grid; grid-template-columns:repeat(2,1fr); gap:0.75rem; margin-bottom:2rem; }
+    .inquiry-type { padding:1rem; border:2px solid #eee; cursor:pointer; text-align:center; transition:all 0.2s; }
+    .inquiry-type:hover, .inquiry-type.selected { border-color:var(--red); background:rgba(225,6,0,0.05); }
+    .inquiry-type i { display:block; font-size:1.25rem; color:var(--red); margin-bottom:0.5rem; }
+    .inquiry-type span { font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; }
+
+    .fade-in { opacity:0; transform:translateY(20px); transition:opacity 0.6s,transform 0.6s; }
+    .fade-in.visible { opacity:1; transform:none; }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container"><div class="header-content">
+    <a class="logo" href="index.html"><span>MC</span> Joint</a>
+    <nav>
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+      <div class="nav-dropdown">
+        <a href="clients/index.html">Clients ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="clients/businesses.html">Businesses</a>
+          <a href="clients/talent.html">Talent</a>
+          <a href="clients/associates.html">Associates</a>
+        </div>
+      </div>
+      <a href="works.html">Our Works</a><a href="blog.html">Blog</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <a href="contact.html" class="btn btn-primary header-cta">Work With Us</a>
+    <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+  </div></div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+  <a href="clients/index.html">Clients</a><a href="works.html">Our Works</a>
+  <a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+</div>
+
+<div class="page-hero">
+  <div class="container">
+    <span class="page-hero-eyebrow">Get In Touch</span>
+    <h1>Let's Create<br>Something.</h1>
+    <p>Tell us about your project, your work, or your career. We respond to every enquiry personally.</p>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="contact-grid">
+      <!-- FORM -->
+      <div class="fade-in">
+        <span class="section-label">Enquiry Type</span>
+        <div class="inquiry-types" id="inquiryTypes">
+          <div class="inquiry-type selected" data-type="General">
+            <i class="fas fa-comments"></i><span>General</span>
+          </div>
+          <div class="inquiry-type" data-type="Music Distribution">
+            <i class="fas fa-music"></i><span>Music Distribution</span>
+          </div>
+          <div class="inquiry-type" data-type="Talent Representation">
+            <i class="fas fa-star"></i><span>Talent</span>
+          </div>
+          <div class="inquiry-type" data-type="Brand Partnership">
+            <i class="fas fa-handshake"></i><span>Brand Partnership</span>
+          </div>
+        </div>
+
+        <form name="contact" method="POST" data-netlify="true" action="/thanks.html">
+          <input type="hidden" name="form-name" value="contact">
+          <input type="hidden" name="inquiry-type" id="inquiryTypeField" value="General">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@email.com" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone (Optional)</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX">
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Brief subject line" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" placeholder="Tell us about your project, your music, or what you're looking for..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;padding:1rem;font-size:0.85rem;">Send Message →</button>
+          <p style="font-size:0.78rem;color:var(--grey);margin-top:1rem;text-align:center;">We aim to respond within 24 hours.</p>
+        </form>
+      </div>
+
+      <!-- INFO -->
+      <div class="fade-in">
+        <span class="section-label">Contact Details</span>
+        <h2 style="margin-bottom:2rem;">Find Us</h2>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+          <div>
+            <div class="contact-info-label">Email</div>
+            <div class="contact-info-value"><a href="mailto:info@mcjoint.in">info@mcjoint.in</a></div>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fas fa-phone"></i></div>
+          <div>
+            <div class="contact-info-label">Phone</div>
+            <div class="contact-info-value"><a href="tel:+919014414114">+91 90144 14114</a></div>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div>
+            <div class="contact-info-label">Location</div>
+            <div class="contact-info-value">Hyderabad, Telangana, India</div>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fas fa-globe"></i></div>
+          <div>
+            <div class="contact-info-label">Website</div>
+            <div class="contact-info-value"><a href="https://www.mcjoint.in" target="_blank">www.mcjoint.in</a></div>
+          </div>
+        </div>
+
+        <div style="margin-top:2rem;">
+          <span class="section-label">Social Media</span>
+          <div class="social-links" style="margin-top:1rem;gap:1.5rem;">
+            <a href="https://www.instagram.com/mcjoint.in/" target="_blank" style="color:var(--black);font-size:1.5rem;"><i class="fab fa-instagram"></i></a>
+            <a href="https://in.linkedin.com/company/mcjoint-in" target="_blank" style="color:var(--black);font-size:1.5rem;"><i class="fab fa-linkedin"></i></a>
+            <a href="https://x.com/mcjointin" target="_blank" style="color:var(--black);font-size:1.5rem;"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/@MCJoint" target="_blank" style="color:var(--black);font-size:1.5rem;"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div style="margin-top:3rem;background:var(--black);padding:2rem;">
+          <h3 style="color:white;font-size:1rem;margin-bottom:0.75rem;">What Happens After You Reach Out?</h3>
+          <ul style="list-style:none;color:#aaa;font-size:0.875rem;">
+            <li style="padding:0.4rem 0;border-bottom:1px solid #222;">1. We read every message personally</li>
+            <li style="padding:0.4rem 0;border-bottom:1px solid #222;">2. We respond within 24 hours</li>
+            <li style="padding:0.4rem 0;border-bottom:1px solid #222;">3. We schedule an introductory call if it's a fit</li>
+            <li style="padding:0.4rem 0;">4. We build a plan together from there</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <div class="footer-logo"><span>MC</span> Joint</div>
+        <p class="footer-desc">Masters of Ceremonies.<br>Music · Talent · Cinema · Strategy</p>
+        <div class="social-links" style="margin-top:1.5rem">
+          <a href="https://www.instagram.com/mcjoint.in/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://in.linkedin.com/company/mcjoint-in" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/mcjointin" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.youtube.com/@MCJoint" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-section"><h4>Navigate</h4><ul>
+        <li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li>
+        <li><a href="works.html">Our Works</a></li><li><a href="blog.html">Blog</a></li>
+      </ul></div>
+      <div class="footer-section"><h4>Clients</h4><ul>
+        <li><a href="clients/businesses.html">Businesses</a></li>
+        <li><a href="clients/talent.html">Talent</a></li>
+        <li><a href="clients/associates.html">Associates</a></li>
+      </ul></div>
+      <div class="footer-section"><h4>Contact</h4><ul>
+        <li><a href="mailto:info@mcjoint.in">info@mcjoint.in</a></li>
+        <li><a href="tel:+919014414114">+91 90144 14114</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> MC Joint — Masters of Ceremonies. All rights reserved.</p>
+      <a href="https://www.mcjoint.in">www.mcjoint.in</a>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+<script>
+  document.querySelectorAll('.inquiry-type').forEach(el => {
+    el.addEventListener('click', () => {
+      document.querySelectorAll('.inquiry-type').forEach(e => e.classList.remove('selected'));
+      el.classList.add('selected');
+      document.getElementById('inquiryTypeField').value = el.dataset.type;
+    });
+  });
+</script>
+</body>
+</html>

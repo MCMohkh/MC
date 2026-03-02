@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Associates — MC Joint</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .associate-card { padding:2rem; border:1px solid #eee; transition:all 0.3s; }
+    .associate-card:hover { border-color:var(--red); transform:translateY(-3px); box-shadow:0 8px 24px rgba(0,0,0,0.08); }
+    .associate-icon { width:56px; height:56px; background:var(--red); display:flex; align-items:center; justify-content:center; margin-bottom:1.25rem; }
+    .associate-icon i { font-size:1.4rem; color:white; }
+    .associate-card h3 { font-size:1rem; margin-bottom:0.5rem; }
+    .associate-card .role { font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-bottom:0.75rem; display:block; }
+    .associate-card p { font-size:0.875rem; color:var(--dark-grey); }
+    .fade-in { opacity:0; transform:translateY(20px); transition:opacity 0.6s,transform 0.6s; }
+    .fade-in.visible { opacity:1; transform:none; }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container"><div class="header-content">
+    <a class="logo" href="../index.html"><span>MC</span> Joint</a>
+    <nav>
+      <a href="../index.html">Home</a><a href="../about.html">About</a><a href="../services.html">Services</a>
+      <div class="nav-dropdown">
+        <a href="index.html" class="active">Clients ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="businesses.html">Businesses</a>
+          <a href="talent.html">Talent</a>
+          <a href="associates.html">Associates</a>
+        </div>
+      </div>
+      <a href="../works.html">Our Works</a><a href="../blog.html">Blog</a><a href="../contact.html">Contact</a>
+    </nav>
+    <a href="../contact.html" class="btn btn-primary header-cta">Work With Us</a>
+    <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+  </div></div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html">Home</a><a href="../about.html">About</a><a href="../services.html">Services</a>
+  <a href="index.html">Clients</a><a href="../works.html">Our Works</a>
+  <a href="../blog.html">Blog</a><a href="../contact.html">Contact</a>
+</div>
+
+<div class="page-hero">
+  <div class="container">
+    <span class="page-hero-eyebrow"><a href="index.html" style="color:var(--grey);text-decoration:none;">Clients</a> / Associates</span>
+    <h1>Associates</h1>
+    <p>Strategic partners and collaborators who form the extended MC Joint ecosystem — bringing specialist expertise across film, music, and digital.</p>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="grid-3">
+
+      <div class="associate-card fade-in">
+        <div class="associate-icon"><i class="fas fa-film"></i></div>
+        <h3>Rohit Penumatsa</h3>
+        <span class="role">Filmmaker · Avanti Cinema</span>
+        <p>Director and creative head of Avanti Cinema. Long-time collaborator and the creative force behind multiple MC Joint co-produced campaigns.</p>
+      </div>
+
+      <div class="associate-card fade-in">
+        <div class="associate-icon"><i class="fas fa-music"></i></div>
+        <h3>Falah Faisal</h3>
+        <span class="role">Creator · Musalman Comix</span>
+        <p>Creator of India's first Muslim superhero comic. We handle digital representation, brand sponsorships, and promotional strategy for the Musalman Comix universe.</p>
+      </div>
+
+      <div class="associate-card fade-in">
+        <div class="associate-icon"><i class="fas fa-chart-bar"></i></div>
+        <h3>Hari Kasula</h3>
+        <span class="role">Founder · Pramanya Strategy Co.</span>
+        <p>Business strategist and consultant. We prepare pitch documentation and strategy reports for government and startup incubator submissions.</p>
+      </div>
+
+      <div class="associate-card fade-in">
+        <div class="associate-icon"><i class="fas fa-headphones"></i></div>
+        <h3>Tapeloop Records</h3>
+        <span class="role">Independent Music Label</span>
+        <p>Vivek Sagar's independent label. MC Joint serves as the exclusive distribution and marketing partner for Tapeloop Records' artist catalogue.</p>
+      </div>
+
+      <div class="associate-card fade-in">
+        <div class="associate-icon"><i class="fas fa-guitar"></i></div>
+        <h3>Wolfgang Studios</h3>
+        <span class="role">Recording Studio · Barkatpura, Hyderabad</span>
+        <p>Smaran's creative home and recording studio. MC Joint manages music distribution for all Wolfgang Studios projects and albums.</p>
+      </div>
+
+      <div class="associate-card fade-in">
+        <div class="associate-icon"><i class="fas fa-users"></i></div>
+        <h3>B12 Collective</h3>
+        <span class="role">Hip-Hop Collective</span>
+        <p>The group formed by Faraz OG, Kiyaan, and INK Toxic. MC Joint handles representation, distribution, and brand partnerships for the collective.</p>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-top:4rem;" class="fade-in">
+      <p style="color:var(--grey);margin-bottom:1.5rem;">Interested in becoming an MC Joint associate partner?</p>
+      <a href="../contact.html" class="btn btn-primary">Let's Talk</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <div class="footer-logo"><span>MC</span> Joint</div>
+        <p class="footer-desc">Masters of Ceremonies.<br>Music · Talent · Cinema · Strategy</p>
+        <div class="social-links" style="margin-top:1.5rem">
+          <a href="https://www.instagram.com/mcjoint.in/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://in.linkedin.com/company/mcjoint-in" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/mcjointin" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.youtube.com/@MCJoint" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-section"><h4>Navigate</h4><ul>
+        <li><a href="../about.html">About Us</a></li><li><a href="../services.html">Services</a></li>
+        <li><a href="../works.html">Our Works</a></li><li><a href="../blog.html">Blog</a></li>
+      </ul></div>
+      <div class="footer-section"><h4>Clients</h4><ul>
+        <li><a href="businesses.html">Businesses</a></li>
+        <li><a href="talent.html">Talent</a></li>
+        <li><a href="associates.html">Associates</a></li>
+      </ul></div>
+      <div class="footer-section"><h4>Contact</h4><ul>
+        <li><a href="mailto:info@mcjoint.in">info@mcjoint.in</a></li>
+        <li><a href="tel:+919014414114">+91 90144 14114</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> MC Joint — Masters of Ceremonies. All rights reserved.</p>
+      <a href="https://www.mcjoint.in">www.mcjoint.in</a>
+    </div>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Works — MC Joint</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .filter-bar { display:flex; gap:0.75rem; flex-wrap:wrap; margin-bottom:2.5rem; }
+    .filter-btn { padding:0.5rem 1.25rem; font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; border:2px solid #ddd; background:none; cursor:pointer; font-family:'Montserrat',sans-serif; transition:all 0.2s; }
+    .filter-btn:hover, .filter-btn.active { border-color:var(--red); color:var(--red); }
+    .filter-btn.active { background:var(--red); color:white; border-color:var(--red); }
+
+    .works-masonry { display:grid; grid-template-columns:1fr; gap:2rem; }
+    @media(min-width:768px){ .works-masonry { grid-template-columns:repeat(2,1fr); } }
+    @media(min-width:1024px){ .works-masonry { grid-template-columns:repeat(3,1fr); } }
+
+    .work-item { overflow:hidden; border:1px solid #eee; transition:transform 0.3s,box-shadow 0.3s; }
+    .work-item:hover { transform:translateY(-4px); box-shadow:0 12px 32px rgba(0,0,0,0.1); }
+    .work-item.featured { grid-column:1/-1; }
+    @media(min-width:768px){ .work-item.featured { display:grid; grid-template-columns:1fr 1fr; } }
+
+    .work-thumb { aspect-ratio:16/9; background:linear-gradient(135deg,#1a1a2e,#0d0d1a); overflow:hidden; position:relative; }
+    .work-item.featured .work-thumb { aspect-ratio:auto; min-height:300px; }
+    .work-thumb img { width:100%; height:100%; object-fit:cover; transition:transform 0.5s; }
+    .work-item:hover .work-thumb img { transform:scale(1.04); }
+    .work-thumb-cat {
+      position:absolute; top:1rem; left:1rem;
+      background:var(--red); color:white; padding:0.3rem 0.75rem;
+      font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em;
+    }
+    .work-body { padding:1.5rem; }
+    .work-item.featured .work-body { padding:2.5rem; display:flex; flex-direction:column; justify-content:center; }
+    .work-body h3 { font-size:1.1rem; margin-bottom:0.5rem; line-height:1.3; }
+    .work-item.featured .work-body h3 { font-size:1.5rem; }
+    .work-body .client-name { font-size:0.78rem; color:var(--red); font-weight:700; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.5rem; display:block; }
+    .work-body p { font-size:0.875rem; color:var(--dark-grey); }
+    .work-body .work-tags { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1rem; }
+
+    .fade-in { opacity:0; transform:translateY(20px); transition:opacity 0.6s,transform 0.6s; }
+    .fade-in.visible { opacity:1; transform:none; }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container"><div class="header-content">
+    <a class="logo" href="index.html"><span>MC</span> Joint</a>
+    <nav>
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+      <div class="nav-dropdown">
+        <a href="clients/index.html">Clients ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="clients/businesses.html">Businesses</a>
+          <a href="clients/talent.html">Talent</a>
+          <a href="clients/associates.html">Associates</a>
+        </div>
+      </div>
+      <a href="works.html" class="active">Our Works</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+    </nav>
+    <a href="contact.html" class="btn btn-primary header-cta">Work With Us</a>
+    <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+  </div></div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+  <a href="clients/index.html">Clients</a><a href="works.html">Our Works</a>
+  <a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+</div>
+
+<div class="page-hero">
+  <div class="container">
+    <span class="page-hero-eyebrow">Portfolio</span>
+    <h1>Our Works</h1>
+    <p>A selection of projects across music distribution, talent management, digital campaigns, and content production.</p>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="filter-bar fade-in">
+      <button class="filter-btn active" data-filter="all">All Work</button>
+      <button class="filter-btn" data-filter="music">Music</button>
+      <button class="filter-btn" data-filter="cinema">Cinema</button>
+      <button class="filter-btn" data-filter="digital">Digital</button>
+      <button class="filter-btn" data-filter="talent">Talent</button>
+    </div>
+
+    <div class="works-masonry" id="worksGrid">
+
+      <!-- FEATURED -->
+      <div class="work-item featured fade-in" data-cat="cinema talent music">
+        <div class="work-thumb">
+          <img src="images/work-avanti-full.jpg" alt="Avanti Cinema" onerror="this.style.display='none'">
+          <div class="work-thumb-cat">Flagship Partnership</div>
+        </div>
+        <div class="work-body">
+          <span class="client-name">Avanti Cinema</span>
+          <h3>6 Years of Craft — Storytelling, Distribution &amp; Community</h3>
+          <p>From social media management to music distribution to theatrical campaigns — our most comprehensive partnership. Back-to-back releases in 2024 with <em>Double Engine</em>, <em>Sheeshmahal</em>, and <em>Chivaraku Migiledhi</em>.</p>
+          <div class="work-tags">
+            <span class="tag">Cinema</span>
+            <span class="tag">Music Distribution</span>
+            <span class="tag">Digital</span>
+            <span class="tag tag-red">Since 2018</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-item fade-in" data-cat="music">
+        <div class="work-thumb">
+          <img src="images/work-viveksagar.jpg" alt="Vivek Sagar" onerror="this.style.display='none'">
+          <div class="work-thumb-cat">Music Distribution</div>
+        </div>
+        <div class="work-body">
+          <span class="client-name">Vivek Sagar / Tapeloop Records</span>
+          <h3>Independent Music Distribution</h3>
+          <p>Managing the distribution and marketing of Vivek Sagar's independent catalogue across all major streaming platforms.</p>
+          <div class="work-tags"><span class="tag">Spotify</span><span class="tag">Apple Music</span></div>
+        </div>
+      </div>
+
+      <div class="work-item fade-in" data-cat="music">
+        <div class="work-thumb">
+          <img src="images/work-smaran.jpg" alt="Smaran" onerror="this.style.display='none'">
+          <div class="work-thumb-cat">Music Distribution</div>
+        </div>
+        <div class="work-body">
+          <span class="client-name">Smaran / Wolfgang Studios</span>
+          <h3>Albums &amp; OST Distribution</h3>
+          <p>Ramachandra, Mohana, Alakanaka (ft. Thanmai Bolt), and original soundtracks for Pickpocket and Etthulu.</p>
+          <div class="work-tags"><span class="tag">Albums</span><span class="tag">OST</span></div>
+        </div>
+      </div>
+
+      <div class="work-item fade-in" data-cat="digital">
+        <div class="work-thumb">
+          <img src="images/work-musalman.jpg" alt="Musalman Comix" onerror="this.style.display='none'">
+          <div class="work-thumb-cat">Digital Representation</div>
+        </div>
+        <div class="work-body">
+          <span class="client-name">Musalman Comix</span>
+          <h3>India's First Muslim Superhero Comic</h3>
+          <p>Digital representation, PR, interviews and brand sponsorship facilitation for this groundbreaking creative property.</p>
+          <div class="work-tags"><span class="tag">Digital PR</span><span class="tag">Brand Sponsorships</span></div>
+        </div>
+      </div>
+
+      <div class="work-item fade-in" data-cat="music">
+        <div class="work-thumb">
+          <img src="images/work-narsanna.jpg" alt="Nalgonda Gaddar Narsanna" onerror="this.style.display='none'">
+          <div class="work-thumb-cat">Music Distribution</div>
+        </div>
+        <div class="work-body">
+          <span class="client-name">Nalgonda Gaddar Narsanna</span>
+          <h3>Folk Music Catalogue</h3>
+          <p>Building and distributing the musical archive of Nalgonda's premier folk singer — preserving cultural heritage for future generations.</p>
+          <div class="work-tags"><span class="tag">Folk</span><span class="tag">Distribution</span></div>
+        </div>
+      </div>
+
+      <div class="work-item fade-in" data-cat="digital">
+        <div class="work-thumb">
+          <img src="images/work-arha.jpg" alt="Arha Media" onerror="this.style.display='none'">
+          <div class="work-thumb-cat">Digital Footprint</div>
+        </div>
+        <div class="work-body">
+          <span class="client-name">Arha Media</span>
+          <h3>Digital Presence — IMDb, Wikipedia &amp; Knowledge Panels</h3>
+          <p>Creating and managing complete digital assets for Arha Media's productions on Aha streaming platform.</p>
+          <div class="work-tags"><span class="tag">IMDb</span><span class="tag">Wikipedia</span><span class="tag">Google</span></div>
+        </div>
+      </div>
+
+      <div class="work-item fade-in" data-cat="talent">
+        <div class="work-thumb">
+          <img src="images/work-b12.jpg" alt="B12 Collective" onerror="this.style.display='none'">
+          <div class="work-thumb-cat">Artist Development</div>
+        </div>
+        <div class="work-body">
+          <span class="client-name">B12 Collective</span>
+          <h3>Building India's Next Rap Wave</h3>
+          <p>Faraz OG, Kiyaan, INK Toxic and Lazy — four independent rappers identified from local cypher events, now under MC Joint management.</p>
+          <div class="work-tags"><span class="tag">Hip-Hop</span><span class="tag">Distribution</span><span class="tag">Management</span></div>
+        </div>
+      </div>
+
+      <div class="work-item fade-in" data-cat="digital">
+        <div class="work-thumb">
+          <img src="images/work-permitroom.jpg" alt="Permit Room" onerror="this.style.display='none'">
+          <div class="work-thumb-cat">Brand Partnerships</div>
+        </div>
+        <div class="work-body">
+          <span class="client-name">Permit Room Podcast</span>
+          <h3>Brand Sponsorships &amp; Advertising Integration</h3>
+          <p>Setting up brand meetings, defining ROI metrics, and facilitating seamless advertising integrations for podcast episodes.</p>
+          <div class="work-tags"><span class="tag">Podcast</span><span class="tag">Brand Deals</span></div>
+        </div>
+      </div>
+
+      <div class="work-item fade-in" data-cat="music">
+        <div class="work-thumb">
+          <img src="images/work-ravi.jpg" alt="Ravi Nidamarthy" onerror="this.style.display='none'">
+          <div class="work-thumb-cat">Music Distribution</div>
+        </div>
+        <div class="work-body">
+          <span class="client-name">Ravi Nidamarthy</span>
+          <h3>Original Soundtracks</h3>
+          <p>Distribution partner for <em>Akrama Sambandham</em>, <em>Gopi Galla Goa Trip</em>, and <em>Viral Video</em> — exclusively on the right terms.</p>
+          <div class="work-tags"><span class="tag">OST</span><span class="tag">Distribution</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--red);padding:4rem 0;">
+  <div class="container" style="text-align:center;">
+    <h2 style="color:white;margin-bottom:1rem;">Have a Project in Mind?</h2>
+    <p style="color:rgba(255,255,255,0.85);margin-bottom:2rem;">Let's talk about what we can build together.</p>
+    <a href="contact.html" class="btn btn-white">Start a Conversation</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <div class="footer-logo"><span>MC</span> Joint</div>
+        <p class="footer-desc">Masters of Ceremonies.<br>Music · Talent · Cinema · Strategy</p>
+        <div class="social-links" style="margin-top:1.5rem">
+          <a href="https://www.instagram.com/mcjoint.in/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://in.linkedin.com/company/mcjoint-in" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/mcjointin" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.youtube.com/@MCJoint" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-section"><h4>Navigate</h4><ul>
+        <li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li>
+        <li><a href="works.html">Our Works</a></li><li><a href="blog.html">Blog</a></li>
+      </ul></div>
+      <div class="footer-section"><h4>Clients</h4><ul>
+        <li><a href="clients/businesses.html">Businesses</a></li>
+        <li><a href="clients/talent.html">Talent</a></li>
+        <li><a href="clients/associates.html">Associates</a></li>
+      </ul></div>
+      <div class="footer-section"><h4>Contact</h4><ul>
+        <li><a href="mailto:info@mcjoint.in">info@mcjoint.in</a></li>
+        <li><a href="tel:+919014414114">+91 90144 14114</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> MC Joint — Masters of Ceremonies. All rights reserved.</p>
+      <a href="https://www.mcjoint.in">www.mcjoint.in</a>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+<script>
+  // Filter functionality
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.work-item').forEach(item => {
+        if (filter === 'all' || item.dataset.cat.includes(filter)) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>

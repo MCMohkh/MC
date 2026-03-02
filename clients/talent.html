@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Talent Roster — MC Joint</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .talent-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; }
+    @media(min-width:768px){ .talent-grid { grid-template-columns:repeat(3,1fr); } }
+    @media(min-width:1024px){ .talent-grid { grid-template-columns:repeat(4,1fr); } }
+
+    .talent-card {
+      border:1px solid #eee; overflow:hidden;
+      text-decoration:none; color:inherit; display:block;
+      transition:transform 0.3s, box-shadow 0.3s;
+    }
+    .talent-card:hover { transform:translateY(-4px); box-shadow:0 12px 32px rgba(0,0,0,0.1); }
+    .talent-photo {
+      aspect-ratio:3/4; background:linear-gradient(160deg,#1a1a2e,#0d0d1a);
+      overflow:hidden; position:relative;
+    }
+    .talent-photo img { width:100%; height:100%; object-fit:cover; transition:transform 0.4s; }
+    .talent-card:hover .talent-photo img { transform:scale(1.04); }
+    .talent-photo-initial {
+      position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+      font-family:'Montserrat',sans-serif; font-weight:900; font-size:3rem; color:rgba(225,6,0,0.4);
+      pointer-events:none;
+    }
+    .talent-photo-overlay {
+      position:absolute; bottom:0; left:0; right:0;
+      background:linear-gradient(transparent, rgba(0,0,0,0.8));
+      padding:2rem 1rem 1rem;
+    }
+    .talent-cat { font-size:0.65rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); }
+    .talent-info { padding:1rem; }
+    .talent-info h3 { font-size:0.9rem; margin-bottom:0.25rem; line-height:1.3; }
+    .talent-info p { font-size:0.78rem; color:var(--grey); }
+    .talent-info a { display:inline-block; margin-top:0.5rem; font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--red); text-decoration:none; }
+
+    .section-divider { padding:3rem 0 1rem; border-top:3px solid var(--red); }
+    .section-divider h2 { font-size:1.5rem; }
+
+    .rap-section { background:var(--black); padding:5rem 0; }
+    .rap-section h2 { color:white; }
+    .rap-section .section-label { color:var(--grey); }
+    .rap-card { border:1px solid #333; overflow:hidden; color:white; }
+    .rap-card .talent-photo { background:linear-gradient(160deg,#0d0d0d,#1a0a0a); }
+    .rap-card .talent-info { background:transparent; padding:1rem; }
+    .rap-card .talent-info h3 { color:white; }
+    .rap-card .talent-info p { color:#888; }
+
+    .fade-in { opacity:0; transform:translateY(20px); transition:opacity 0.6s,transform 0.6s; }
+    .fade-in.visible { opacity:1; transform:none; }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container"><div class="header-content">
+    <a class="logo" href="../index.html"><span>MC</span> Joint</a>
+    <nav>
+      <a href="../index.html">Home</a><a href="../about.html">About</a><a href="../services.html">Services</a>
+      <div class="nav-dropdown">
+        <a href="index.html" class="active">Clients ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="businesses.html">Businesses</a>
+          <a href="talent.html">Talent</a>
+          <a href="associates.html">Associates</a>
+        </div>
+      </div>
+      <a href="../works.html">Our Works</a><a href="../blog.html">Blog</a><a href="../contact.html">Contact</a>
+    </nav>
+    <a href="../contact.html" class="btn btn-primary header-cta">Work With Us</a>
+    <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+  </div></div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html">Home</a><a href="../about.html">About</a><a href="../services.html">Services</a>
+  <a href="index.html">Clients</a><a href="../works.html">Our Works</a>
+  <a href="../blog.html">Blog</a><a href="../contact.html">Contact</a>
+</div>
+
+<div class="page-hero">
+  <div class="container">
+    <span class="page-hero-eyebrow"><a href="index.html" style="color:var(--grey);text-decoration:none;">Clients</a> / Talent</span>
+    <h1>Talent Roster</h1>
+    <p>Musicians, composers, actors and filmmakers we represent — from acclaimed cinema composers to the next generation of independent rap artists.</p>
+  </div>
+</div>
+
+<!-- FILM & MUSIC TALENT -->
+<section>
+  <div class="container">
+    <div class="section-divider fade-in">
+      <span class="section-label">Film &amp; Music</span>
+      <h2>Established Talent</h2>
+    </div>
+    <div class="talent-grid" style="margin-top:2rem;">
+
+      <a class="talent-card fade-in" href="talent/vivek-sagar.html">
+        <div class="talent-photo">
+          <img src="../images/talent-viveksagar.jpg" alt="Vivek Sagar" onerror="this.style.display='none'">
+          <div class="talent-photo-initial">VS</div>
+          <div class="talent-photo-overlay">
+            <span class="talent-cat">Music Composer</span>
+          </div>
+        </div>
+        <div class="talent-info">
+          <h3>Vivek Sagar</h3>
+          <p>Tapeloop Records · Pelli Choopulu · Sheeshmahal</p>
+          <span>View Profile →</span>
+        </div>
+      </a>
+
+      <a class="talent-card fade-in" href="talent/smaran.html">
+        <div class="talent-photo">
+          <img src="../images/talent-smaran.jpg" alt="Smaran" onerror="this.style.display='none'">
+          <div class="talent-photo-initial">SM</div>
+          <div class="talent-photo-overlay">
+            <span class="talent-cat">Singer &amp; Composer</span>
+          </div>
+        </div>
+        <div class="talent-info">
+          <h3>Smaran</h3>
+          <p>Wolfgang Studios · Ranganaayaki · Pickpocket</p>
+          <span>View Profile →</span>
+        </div>
+      </a>
+
+      <a class="talent-card fade-in" href="talent/jagadeesh.html">
+        <div class="talent-photo">
+          <img src="../images/talent-jagadeesh.jpg" alt="Jagadeesh Prathap Bandari" onerror="this.style.display='none'">
+          <div class="talent-photo-initial">JPB</div>
+          <div class="talent-photo-overlay">
+            <span class="talent-cat">Actor</span>
+          </div>
+        </div>
+        <div class="talent-info">
+          <h3>Jagadeesh Prathap Bandari</h3>
+          <p>Pushpa · Pushpa 2</p>
+          <span>View Profile →</span>
+        </div>
+      </a>
+
+      <a class="talent-card fade-in" href="talent/raj-tirandasu.html">
+        <div class="talent-photo">
+          <img src="../images/talent-raj.jpg" alt="Raj Tirandasu" onerror="this.style.display='none'">
+          <div class="talent-photo-initial">RT</div>
+          <div class="talent-photo-overlay">
+            <span class="talent-cat">Actor</span>
+          </div>
+        </div>
+        <div class="talent-info">
+          <h3>Raj Tirandasu</h3>
+          <p>Pushpa · Pareshan</p>
+          <span>View Profile →</span>
+        </div>
+      </a>
+
+      <a class="talent-card fade-in" href="talent/ravi-nidamarthy.html">
+        <div class="talent-photo">
+          <img src="../images/talent-ravi.jpg" alt="Ravi Nidamarthy" onerror="this.style.display='none'">
+          <div class="talent-photo-initial">RN</div>
+          <div class="talent-photo-overlay">
+            <span class="talent-cat">Composer</span>
+          </div>
+        </div>
+        <div class="talent-info">
+          <h3>Ravi Nidamarthy</h3>
+          <p>Akrama Sambandham · Gopi Galla Goa Trip</p>
+          <span>View Profile →</span>
+        </div>
+      </a>
+
+      <a class="talent-card fade-in" href="talent/pawon-ramesh.html">
+        <div class="talent-photo">
+          <img src="../images/talent-pawon.jpg" alt="Pawon Ramesh" onerror="this.style.display='none'">
+          <div class="talent-photo-initial">PR</div>
+          <div class="talent-photo-overlay">
+            <span class="talent-cat">Actor</span>
+          </div>
+        </div>
+        <div class="talent-info">
+          <h3>Pawon Ramesh</h3>
+          <p>Actor — Talent Representation</p>
+          <span>View Profile →</span>
+        </div>
+      </a>
+
+      <a class="talent-card fade-in" href="talent/ajith-mohan.html">
+        <div class="talent-photo">
+          <img src="../images/talent-ajith.jpg" alt="Ajith Mohan" onerror="this.style.display='none'">
+          <div class="talent-photo-initial">AM</div>
+          <div class="talent-photo-overlay">
+            <span class="talent-cat">Actor</span>
+          </div>
+        </div>
+        <div class="talent-info">
+          <h3>Ajith Mohan</h3>
+          <p>Double Engine (2024)</p>
+          <span>View Profile →</span>
+        </div>
+      </a>
+
+      <a class="talent-card fade-in" href="talent/thanmai-bolt.html">
+        <div class="talent-photo">
+          <img src="../images/talent-thanmai.jpg" alt="Thanmai Bolt" onerror="this.style.display='none'">
+          <div class="talent-photo-initial">TB</div>
+          <div class="talent-photo-overlay">
+            <span class="talent-cat">Singer</span>
+          </div>
+        </div>
+        <div class="talent-info">
+          <h3>Thanmai Bolt</h3>
+          <p>Alakanaka · Wolfgang Studios</p>
+          <span>View Profile →</span>
+        </div>
+      </a>
+
+      <a class="talent-card fade-in" href="talent/nalgonda-narsanna.html">
+        <div class="talent-photo">
+          <img src="../images/talent-narsanna.jpg" alt="Nalgonda Gaddar Narsanna" onerror="this.style.display='none'">
+          <div class="talent-photo-initial">NGN</div>
+          <div class="talent-photo-overlay">
+            <span class="talent-cat">Folk Singer</span>
+          </div>
+        </div>
+        <div class="talent-info">
+          <h3>Nalgonda Gaddar Narsanna</h3>
+          <p>Political Folk Music · Music Distribution</p>
+          <span>View Profile →</span>
+        </div>
+      </a>
+
+      <a class="talent-card fade-in" href="talent/Camp Sasi.html">
+        <div class="talent-photo">
+          <img src="../images/talent-narsanna.jpg" alt="Camp Sasi" onerror="this.style.display='none'">
+          <div class="talent-photo-initial">CS</div>
+          <div class="talent-photo-overlay">
+            <span class="talent-cat">Lyricist · Writer · Director</span>
+          </div>
+        </div>
+        <div class="talent-info">
+          <h3>Camp Sasi</h3>
+          <p>Lyricist · Writer · Director</p>
+          <span>View Profile →</span>
+        </div>
+      </a>
+
+      <a class="talent-card fade-in" href="talent/Faraz OG.html">
+        <div class="talent-photo">
+          <img src="../images/talent-Faraz.jpg" alt="Faraz OG" onerror="this.style.display='none'">
+          <div class="talent-photo-initial">CS</div>
+          <div class="talent-photo-overlay">
+            <span class="talent-cat">Rapper · Lyricist</span>
+          </div>
+        </div>
+        <div class="talent-info">
+          <h3>Faraz OG</h3>
+          <p>Rapper · Lyricist</p>
+          <span>View Profile →</span>
+        </div>
+      </a>
+
+      <a class="talent-card fade-in" href="talent/INK Toxic.html">
+        <div class="talent-photo">
+          <img src="../images/talent-INK-Toxic.jpg" alt="INK Toxic" onerror="this.style.display='none'">
+          <div class="talent-photo-initial">CS</div>
+          <div class="talent-photo-overlay">
+            <span class="talent-cat">Rapper · Lyricist</span>
+          </div>
+        </div>
+        <div class="talent-info">
+          <h3>INK Toxic</h3>
+          <p>Rapper · Lyricist</p>
+          <span>View Profile →</span>
+        </div>
+      </a>
+
+      <a class="talent-card fade-in" href="talent/Manoj Juloori.html">
+        <div class="talent-photo">
+          <img src="../images/talent-Manoj-Juloori.jpg" alt="Manoj Juloori" onerror="this.style.display='none'">
+          <div class="talent-photo-initial">CS</div>
+          <div class="talent-photo-overlay">
+            <span class="talent-cat">Lyricist</span>
+          </div>
+        </div>
+        <div class="talent-info">
+          <h3>Manoj Juloori</h3>
+          <p>Lyricist</p>
+          <span>View Profile →</span>
+        </div>
+      </a>
+
+      <a class="talent-card fade-in" href="talent/Niklesh Sunkoji.html">
+        <div class="talent-photo">
+          <img src="../images/talent-Niklesh-Sunkoji.jpg" alt="Niklesh Sunkoji" onerror="this.style.display='none'">
+          <div class="talent-photo-initial">CS</div>
+          <div class="talent-photo-overlay">
+            <span class="talent-cat">Lyricist</span>
+          </div>
+        </div>
+        <div class="talent-info">
+          <h3>Niklesh Sunkoji</h3>
+          <p>Lyricist</p>
+          <span>View Profile →</span>
+        </div>
+      </a>
+
+      <a class="talent-card fade-in" href="talent/Prashanth Podagatlapalli.html">
+        <div class="talent-photo">
+          <img src="../images/talent-Prashanth-Podagatlapalli.jpg" alt="Prashanth Podagatlapalli" onerror="this.style.display='none'">
+          <div class="talent-photo-initial">CS</div>
+          <div class="talent-photo-overlay">
+            <span class="talent-cat">Director · Executive Producer</span>
+          </div>
+        </div>
+        <div class="talent-info">
+          <h3>Prashanth Podagatlapalli</h3>
+          <p>Director · Executive Producer</p>
+          <span>View Profile →</span>
+        </div>
+      </a>
+
+      <a class="talent-card fade-in" href="talent/Raju Shivaratri.html">
+        <div class="talent-photo">
+          <img src="../images/talent-Raju-Shivaratri.jpg" alt="Raju Shivaratri" onerror="this.style.display='none'">
+          <div class="talent-photo-initial">CS</div>
+          <div class="talent-photo-overlay">
+            <span class="talent-cat">Actor</span>
+          </div>
+        </div>
+        <div class="talent-info">
+          <h3>Raju Shivaratri</h3>
+          <p>Actor</p>
+          <span>View Profile →</span>
+        </div>
+      </a>
+
+      <a class="talent-card fade-in" href="talent/Rohit Penumatsa.html">
+        <div class="talent-photo">
+          <img src="../images/talent-Rohit-Penumatsa.jpg" alt="Rohit Penumatsa" onerror="this.style.display='none'">
+          <div class="talent-photo-initial">CS</div>
+          <div class="talent-photo-overlay">
+            <span class="talent-cat">Director · Editor · Writer</span>
+          </div>
+        </div>
+        <div class="talent-info">
+          <h3>Rohit Penumatsa</h3>
+          <p>Director · Editor · Writer</p>
+          <span>View Profile →</span>
+        </div>
+      </a>
+
+      <a class="talent-card fade-in" href="talent/Sai Prasanna K.html">
+        <div class="talent-photo">
+          <img src="../images/talent-Sai-Prasanna-K.jpg" alt="Sai Prasanna K" onerror="this.style.display='none'">
+          <div class="talent-photo-initial">CS</div>
+          <div class="talent-photo-overlay">
+            <span class="talent-cat">Actor</span>
+          </div>
+        </div>
+        <div class="talent-info">
+          <h3>Sai Prasanna K</h3>
+          <p>Actor</p>
+          <span>View Profile →</span>
+        </div>
+      </a>
+
+      <a class="talent-card fade-in" href="talent/Sai Yogi G.html">
+        <div class="talent-photo">
+          <img src="../images/talent-Sai-Yogi-G.jpg" alt="Sai Yogi G" onerror="this.style.display='none'">
+          <div class="talent-photo-initial">CS</div>
+          <div class="talent-photo-overlay">
+            <span class="talent-cat">Actor · Lyricist · Writer</span>
+          </div>
+        </div>
+        <div class="talent-info">
+          <h3>Sai Yogi G</h3>
+          <p>Actor · Lyricist · Writer</p>
+          <span>View Profile →</span>
+        </div>
+      </a>
+
+      <a class="talent-card fade-in" href="talent/Sindhu Dakavarapu.html">
+        <div class="talent-photo">
+          <img src="../images/talent-Sindhu-Dakavarapu.jpg" alt="Sindhu Dakavarapu" onerror="this.style.display='none'">
+          <div class="talent-photo-initial">CS</div>
+          <div class="talent-photo-overlay">
+            <span class="talent-cat">Theatre Artist · Actor</span>
+          </div>
+        </div>
+        <div class="talent-info">
+          <h3>Sindhu Dakavarapu</h3>
+          <p>Theatre Artist · Actor</p>
+          <span>View Profile →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- RAP ARTISTS -->
+<section class="rap-section">
+  <div class="container">
+    <div class="section-divider" style="border-color:#333;margin-bottom:0;">
+      <span class="section-label">Independent Hip-Hop</span>
+      <h2 style="color:white;">Rising Rap Artists</h2>
+      <p style="color:#888;margin-top:0.5rem;">Faraz, Kiyaan, INK Toxic and Lazy — independent rappers we identified from local cypher events. Each one comes from a different place in India and brings their own flair.</p>
+    </div>
+    <div class="talent-grid" style="margin-top:2rem;">
+
+      <a class="talent-card rap-card fade-in" href="talent/faraz-og.html">
+        <div class="talent-photo">
+          <img src="../images/talent-faraz.jpg" alt="Faraz OG" onerror="this.style.display='none'">
+          <div class="talent-photo-initial">FZ</div>
+          <div class="talent-photo-overlay"><span class="talent-cat">Rapper</span></div>
+        </div>
+        <div class="talent-info">
+          <h3>Faraz OG</h3>
+          <p style="color:#888;">B12 Band · Independent Rapper</p>
+        </div>
+      </a>
+
+      <a class="talent-card rap-card fade-in" href="talent/kiyaan.html">
+        <div class="talent-photo">
+          <img src="../images/talent-kiyaan.jpg" alt="Kiyaan" onerror="this.style.display='none'">
+          <div class="talent-photo-initial">KY</div>
+          <div class="talent-photo-overlay"><span class="talent-cat">Rapper</span></div>
+        </div>
+        <div class="talent-info">
+          <h3>Kiyaan</h3>
+          <p style="color:#888;">B12 Band · Independent Rapper</p>
+        </div>
+      </a>
+
+      <a class="talent-card rap-card fade-in" href="talent/ink-toxic.html">
+        <div class="talent-photo">
+          <img src="../images/talent-inktoxic.jpg" alt="INK Toxic" onerror="this.style.display='none'">
+          <div class="talent-photo-initial">IT</div>
+          <div class="talent-photo-overlay"><span class="talent-cat">Rapper</span></div>
+        </div>
+        <div class="talent-info">
+          <h3>INK Toxic</h3>
+          <p style="color:#888;">B12 Band · Independent Rapper</p>
+        </div>
+      </a>
+
+      <a class="talent-card rap-card fade-in" href="talent/lazy.html">
+        <div class="talent-photo">
+          <img src="../images/talent-lazy.jpg" alt="Lazy (Sharath Pawar)" onerror="this.style.display='none'">
+          <div class="talent-photo-initial">LZ</div>
+          <div class="talent-photo-overlay"><span class="talent-cat">Rapper</span></div>
+        </div>
+        <div class="talent-info">
+          <h3>Lazy (Sharath Pawar)</h3>
+          <p style="color:#888;">Independent Rapper</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--red);padding:4rem 0;">
+  <div class="container" style="text-align:center;">
+    <h2 style="color:white;margin-bottom:1rem;">Looking for Representation?</h2>
+    <p style="color:rgba(255,255,255,0.85);margin-bottom:2rem;">We're always open to meeting exceptional artists. Let's talk about your work.</p>
+    <a href="../contact.html" class="btn btn-white">Get in Touch</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <div class="footer-logo"><span>MC</span> Joint</div>
+        <p class="footer-desc">Masters of Ceremonies.<br>Music · Talent · Cinema · Strategy</p>
+        <div class="social-links" style="margin-top:1.5rem">
+          <a href="https://www.instagram.com/mcjoint.in/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://in.linkedin.com/company/mcjoint-in" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/mcjointin" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.youtube.com/@MCJoint" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-section"><h4>Navigate</h4><ul>
+        <li><a href="../about.html">About Us</a></li><li><a href="../services.html">Services</a></li>
+        <li><a href="../works.html">Our Works</a></li><li><a href="../blog.html">Blog</a></li>
+      </ul></div>
+      <div class="footer-section"><h4>Clients</h4><ul>
+        <li><a href="businesses.html">Businesses</a></li>
+        <li><a href="talent.html">Talent</a></li>
+        <li><a href="associates.html">Associates</a></li>
+      </ul></div>
+      <div class="footer-section"><h4>Contact</h4><ul>
+        <li><a href="mailto:info@mcjoint.in">info@mcjoint.in</a></li>
+        <li><a href="tel:+919014414114">+91 90144 14114</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> MC Joint — Masters of Ceremonies. All rights reserved.</p>
+      <a href="https://www.mcjoint.in">www.mcjoint.in</a>
+    </div>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

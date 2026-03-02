@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[ARTIST NAME] — MC Joint</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    /* ─── HERO ─── */
+    .talent-profile-hero {
+      background: var(--black); padding-top: 100px; padding-bottom: 0;
+      display: grid; grid-template-columns: 1fr; min-height: 70vh; position: relative;
+    }
+    @media(min-width:1024px){ .talent-profile-hero { grid-template-columns: 1fr 480px; } }
+
+    .talent-profile-info { padding: 4rem 0; display: flex; flex-direction: column; justify-content: center; }
+    .talent-profile-info h1 { color: white; font-size: clamp(2.5rem,6vw,4rem); }
+
+    .talent-roles { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; }
+    .talent-role-tag {
+      font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em;
+      color: var(--red); border: 1px solid var(--red); padding: 0.2rem 0.65rem;
+    }
+
+    .talent-profile-info p { color: #aaa; max-width: 520px; line-height: 1.75; }
+
+    /* Acting style / medium keywords */
+    .keyword-cloud { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }
+    .keyword-tag {
+      font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;
+      color: #888; border: 1px solid #333; padding: 0.2rem 0.6rem;
+    }
+
+    /* Photo — portrait framing is critical for actors */
+    .talent-profile-img {
+      background: linear-gradient(160deg,#0a0a0a,#1a1000);
+      overflow: hidden; min-height: 500px; position: relative;
+    }
+    @media(min-width:1024px){ .talent-profile-img { min-height: auto; } }
+    .talent-profile-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      object-position: top center; /* adjust for best framing */
+    }
+    .talent-profile-img .initial-bg {
+      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+      font-family: 'Montserrat',sans-serif; font-weight: 900; font-size: 8rem; color: rgba(225,6,0,0.12);
+    }
+
+    /* ─── BODY ─── */
+    .profile-body { display: grid; grid-template-columns: 1fr; gap: 3rem; }
+    @media(min-width:1024px){ .profile-body { grid-template-columns: 2fr 1fr; } }
+
+    /* ─── FILMOGRAPHY TABLE ─── */
+    .filmography { list-style: none; }
+    .filmography li {
+      padding: 1rem 0; border-bottom: 1px solid #eee;
+      display: grid; grid-template-columns: 1fr auto; align-items: flex-start; gap: 1rem;
+    }
+    .filmography li:last-child { border: none; }
+    .film-title { font-weight: 600; font-size: 0.9rem; margin-bottom: 0.2rem; }
+    /* Character name · Director · Medium */
+    .film-meta { font-size: 0.75rem; color: var(--grey); }
+    .film-meta em { font-style: italic; color: #555; }
+    /* Medium badge: Film / Web Series / Short Film / Theatre / OTT */
+    .film-medium {
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--red); border: 1px solid var(--red); padding: 0.18rem 0.55rem; white-space: nowrap; align-self: start;
+    }
+    /* Pinned role — lead, supporting, cameo */
+    /* Optionally add a second small badge below film-medium */
+    .film-role-note { font-size: 0.65rem; color: #999; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.25rem; text-align: right; }
+
+    /* Theatre / Training section — shows only for theatre-trained actors */
+    .training-block { margin-top: 2rem; }
+    .training-block h3 { margin-bottom: 1rem; }
+    .training-list { list-style: none; }
+    .training-list li { padding: 0.6rem 0; border-bottom: 1px solid #eee; font-size: 0.875rem; color: var(--dark-grey); }
+    .training-list li:last-child { border: none; }
+
+    /* ─── SIDEBAR ─── */
+    .sidebar-card { background: var(--light-bg); padding: 2rem; }
+    .sidebar-card h3 { font-size: 1rem; margin-bottom: 1.25rem; }
+    .sidebar-card .info-row {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0; font-size: 0.875rem; gap: 1rem;
+    }
+    .sidebar-card .info-row:last-child { border: none; }
+    .sidebar-card .info-label { color: var(--grey); flex-shrink: 0; }
+    .sidebar-card .info-value { font-weight: 600; text-align: right; }
+    .service-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; justify-content: flex-end; }
+    .service-chip { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; background: var(--red); color: white; padding: 0.18rem 0.55rem; }
+
+    /* ─── ASSOCIATION BLOCK ─── */
+    .association-block {
+      background: var(--black); padding: 2rem; margin-top: 2rem; border-left: 3px solid var(--red);
+    }
+    .association-block h3 { color: white; font-size: 0.95rem; margin-bottom: 0.75rem; }
+    .association-block p { color: #999; font-size: 0.875rem; line-height: 1.7; margin: 0; }
+
+    .back-link {
+      display: inline-flex; align-items: center; gap: 0.5rem; color: var(--grey);
+      text-decoration: none; font-size: 0.8rem; text-transform: uppercase;
+      letter-spacing: 0.08em; font-weight: 600; margin-bottom: 1.5rem;
+    }
+    .back-link:hover { color: var(--red); }
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s, transform 0.6s; }
+    .fade-in.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container"><div class="header-content">
+    <a class="logo" href="../../index.html"><span>MC</span> Joint</a>
+    <nav>
+      <a href="../../index.html">Home</a>
+      <a href="../../about.html">About</a>
+      <a href="../../services.html">Services</a>
+      <div class="nav-dropdown">
+        <a href="../index.html" class="active">Clients ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="../businesses.html">Businesses</a>
+          <a href="../talent.html">Talent</a>
+          <a href="../associates.html">Associates</a>
+        </div>
+      </div>
+      <a href="../../works.html">Our Works</a>
+      <a href="../../blog.html">Blog</a>
+      <a href="../../contact.html">Contact</a>
+    </nav>
+    <a href="../../contact.html" class="btn btn-primary header-cta">Work With Us</a>
+    <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+  </div></div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../../index.html">Home</a><a href="../../about.html">About</a>
+  <a href="../../services.html">Services</a><a href="../index.html">Clients</a>
+  <a href="../../works.html">Our Works</a><a href="../../blog.html">Blog</a>
+  <a href="../../contact.html">Contact</a>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<div class="talent-profile-hero">
+  <div class="container">
+    <div class="talent-profile-info">
+      <a class="back-link" href="../talent.html"><i class="fas fa-arrow-left"></i> All Talent</a>
+
+      <!-- Roles — show applicable tags -->
+      <div class="talent-roles">
+        <span class="talent-role-tag">Actor</span>              <!-- or "Actress" -->
+        <span class="talent-role-tag">Theatre Artist</span>     <!-- remove if not applicable -->
+        <span class="talent-role-tag">Singer</span>             <!-- remove if not applicable -->
+        <span class="talent-role-tag">Director</span>           <!-- remove if not applicable -->
+      </div>
+
+      <h1>[ARTIST FULL NAME]</h1>
+      <p style="margin-top:1rem;">[One or two sentences that capture screen presence and range. E.g. "[Name] brings a rare emotional honesty to every role — from intense drama to dry comedic timing, they hold the frame without effort."]</p>
+
+      <!-- Medium / acting style keywords -->
+      <div class="keyword-cloud">
+        <span class="keyword-tag">Telugu Cinema</span>
+        <span class="keyword-tag">Character Actor</span>
+        <span class="keyword-tag">Drama</span>
+        <span class="keyword-tag">Theatre-Trained</span>
+        <!-- Add: OTT · Action · Comedy · Method · etc. -->
+      </div>
+    </div>
+  </div>
+  <div class="talent-profile-img">
+    <img src="../../images/talent-[filename].jpg" alt="[ARTIST NAME]" onerror="this.style.display='none'">
+    <div class="initial-bg">[INITIALS]</div>
+  </div>
+</div>
+
+<!-- ═══ BODY ═══ -->
+<section>
+  <div class="container">
+    <div class="profile-body">
+
+      <!-- MAIN COLUMN -->
+      <div class="fade-in">
+        <h2>About [FIRST NAME]</h2>
+        <div class="divider"></div>
+
+        <!-- BIO: P1 background & training. P2 acting style/range. P3 key roles/films. P4 MC Joint context. -->
+        <p style="color:var(--dark-grey);margin-bottom:1rem;">[P1 — Origin story: where they trained (theatre, NSD, workshop, self-taught), what drew them to acting.]</p>
+        <p style="color:var(--dark-grey);margin-bottom:1rem;">[P2 — Range and style: genre versatility, method/approach, whether they come from theatre tradition, what kind of roles suit them.]</p>
+        <p style="color:var(--dark-grey);margin-bottom:1rem;">[P3 — Filmography highlights: name the notable films, directors worked with, pivotal roles that defined their career.]</p>
+        <p style="color:var(--dark-grey);">[P4 — MC Joint's role: talent management, booking, brand partnerships, casting pitches, media handling, etc.]</p>
+
+        <!-- FILMOGRAPHY TABLE -->
+        <h3 style="margin-top:2.5rem;margin-bottom:1rem;">Filmography</h3>
+        <ul class="filmography">
+
+          <!-- Feature Film example -->
+          <li>
+            <div>
+              <div class="film-title">[Film Title]</div>
+              <div class="film-meta">as <em>[Character Name]</em> · Dir. [Director] · [Year]</div>
+            </div>
+            <div>
+              <div class="film-medium">Film</div>
+              <div class="film-role-note">Lead / Supporting / etc.</div>
+            </div>
+          </li>
+
+          <!-- Web Series example -->
+          <li>
+            <div>
+              <div class="film-title">[Series Title]</div>
+              <div class="film-meta">as <em>[Character Name]</em> · [Platform] · [Year]</div>
+            </div>
+            <div>
+              <div class="film-medium">Web Series</div>
+              <div class="film-role-note">Lead</div>
+            </div>
+          </li>
+
+          <!-- Short Film example -->
+          <li>
+            <div>
+              <div class="film-title">[Short Film Title]</div>
+              <div class="film-meta">Dir. [Director] · [Year]</div>
+            </div>
+            <div>
+              <div class="film-medium">Short Film</div>
+            </div>
+          </li>
+
+          <!-- Theatre example — for theatre artists -->
+          <li>
+            <div>
+              <div class="film-title">[Play Title]</div>
+              <div class="film-meta">[Theatre Company / Festival] · [Year]</div>
+            </div>
+            <div>
+              <div class="film-medium">Theatre</div>
+            </div>
+          </li>
+
+          <!-- Duplicate as needed -->
+
+        </ul>
+
+        <!-- TRAINING & WORKSHOPS — remove entire block if not applicable -->
+        <!--
+        <div class="training-block">
+          <h3>Training &amp; Theatre Background</h3>
+          <ul class="training-list">
+            <li>[Workshop / Institution / Training Programme] — [Year]</li>
+            <li>[Theatre Group or Production Company] — [Duration]</li>
+          </ul>
+        </div>
+        -->
+
+        <!-- MC JOINT ASSOCIATION -->
+        <div class="association-block">
+          <h3>Our Association</h3>
+          <p>[How MC Joint manages this actor — talent representation, casting pitches to directors/producers, brand endorsements, media strategy, appearance bookings, etc.]</p>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="fade-in">
+        <div class="sidebar-card">
+          <h3>Quick Info</h3>
+          <div class="info-row">
+            <span class="info-label">Category</span>
+            <span class="info-value">Actor</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">City</span>
+            <span class="info-value">Hyderabad</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">With MC Joint Since</span>
+            <span class="info-value">[YEAR]</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Language(s)</span>
+            <span class="info-value">Telugu · Hindi</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Medium</span>
+            <!-- Film / OTT / Theatre / Short Film / Mixed -->
+            <span class="info-value">Film · OTT</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Genre</span>
+            <span class="info-value">[Drama / Comedy / Action / Thriller / etc.]</span>
+          </div>
+          <!-- If theatre trained, add a row -->
+          <!--
+          <div class="info-row">
+            <span class="info-label">Training</span>
+            <span class="info-value">Theatre / [Institution]</span>
+          </div>
+          -->
+          <div class="info-row">
+            <span class="info-label">Services</span>
+            <div class="service-chips">
+              <span class="service-chip">Talent Mgmt</span>
+              <span class="service-chip">Casting</span>
+              <!-- Add: Brand · Endorsements · Media -->
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:1.5rem;">
+          <a href="../../contact.html" class="btn btn-primary" style="width:100%;text-align:center;display:block;">
+            Enquire About Booking
+          </a>
+        </div>
+        <div style="margin-top:1rem;">
+          <a href="../talent.html" class="btn btn-outline" style="width:100%;text-align:center;display:block;">
+            View All Talent
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <div class="footer-logo"><span>MC</span> Joint</div>
+        <p class="footer-desc">Masters of Ceremonies.<br>Music · Talent · Cinema · Strategy</p>
+        <div class="social-links" style="margin-top:1.5rem">
+          <a href="https://www.instagram.com/mcjoint.in/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://in.linkedin.com/company/mcjoint-in" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/mcjointin" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.youtube.com/@MCJoint" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-section"><h4>Navigate</h4><ul>
+        <li><a href="../../about.html">About Us</a></li>
+        <li><a href="../../services.html">Services</a></li>
+        <li><a href="../../works.html">Our Works</a></li>
+        <li><a href="../../blog.html">Blog</a></li>
+      </ul></div>
+      <div class="footer-section"><h4>Clients</h4><ul>
+        <li><a href="../businesses.html">Businesses</a></li>
+        <li><a href="../talent.html">Talent</a></li>
+        <li><a href="../associates.html">Associates</a></li>
+      </ul></div>
+      <div class="footer-section"><h4>Contact</h4><ul>
+        <li><a href="mailto:info@mcjoint.in">info@mcjoint.in</a></li>
+        <li><a href="tel:+919014414114">+91 90144 14114</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> MC Joint — Masters of Ceremonies. All rights reserved.</p>
+      <a href="https://www.mcjoint.in">www.mcjoint.in</a>
+    </div>
+  </div>
+</footer>
+<script src="../../js/main.js"></script>
+</body>
+</html>

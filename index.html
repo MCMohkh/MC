@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MC Joint — Masters of Ceremonies</title>
+  <meta name="description" content="MC Joint is a Hyderabad-based creative agency specialising in talent management, music distribution, digital strategy and content production.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* HERO */
+    .hero {
+      background: var(--black); color: var(--white);
+      min-height: 100vh; display: flex; align-items: center;
+      padding-top: 80px; padding-bottom: 60px; position: relative; overflow: hidden;
+    }
+    .hero-bg-pattern {
+      position: absolute; inset: 0; pointer-events: none;
+      background: repeating-linear-gradient(135deg, rgba(225,6,0,0.03) 0, rgba(225,6,0,0.03) 1px, transparent 0, transparent 50%);
+      background-size: 30px 30px;
+    }
+    .hero-accent {
+      position: absolute; right: -100px; top: 50%; transform: translateY(-50%);
+      width: 500px; height: 500px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(225,6,0,0.12) 0%, transparent 70%);
+    }
+    .hero .container { position: relative; z-index: 1; }
+    .hero-content { max-width: 750px; }
+    .hero-eyebrow { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: var(--red); margin-bottom: 1.5rem; display: block; }
+    .hero h1 { color: var(--white); margin-bottom: 1rem; }
+    .hero-word { color: var(--red); display: inline-block; min-width: 320px; }
+    .hero-tagline { color: #aaa; font-size: 1.1rem; font-weight: 300; margin-bottom: 0.5rem; max-width: 560px; }
+    .hero-meta { color: var(--grey); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 2.5rem; }
+    .hero-buttons { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .hero-scroll { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); text-align: center; color: var(--grey); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; animation: bounce 2s infinite; }
+    .hero-scroll i { display: block; font-size: 1.2rem; margin-bottom: 0.25rem; }
+    @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+
+    /* MARQUEE */
+    .marquee-bar { background: var(--red); padding: 0.75rem 0; overflow: hidden; white-space: nowrap; }
+    .marquee-track { display: inline-flex; animation: marquee 30s linear infinite; }
+    .marquee-track span { font-family:'Montserrat',sans-serif; font-weight:700; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--white); padding:0 2rem; }
+    .marquee-track span::after { content:'•'; margin-left:2rem; }
+    @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+    /* INTRO */
+    .intro { background: var(--white); }
+    .intro-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; }
+    @media(min-width:1024px){ .intro-grid { grid-template-columns: 1fr 1fr; } }
+    .intro-copy h2 { margin-bottom: 1.5rem; }
+    .intro-copy p { color: var(--dark-grey); margin-bottom: 1rem; }
+    .intro-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 2.5rem; }
+    .intro-stat-number { font-family:'Montserrat',sans-serif; font-size: 2rem; font-weight:900; color:var(--red); }
+    .intro-stat-label { font-size:0.8rem; color:var(--grey); text-transform:uppercase; letter-spacing:0.05em; }
+    .intro-visual { position:relative; }
+    .intro-image-box {
+      width:100%; aspect-ratio:4/5;
+      background: linear-gradient(160deg, #1a1a2e, #0d0d1a);
+      position:relative; overflow:hidden;
+    }
+    .intro-image-box img { width:100%; height:100%; object-fit:cover; }
+    .intro-image-box .img-label {
+      position:absolute; bottom:0; left:0; right:0;
+      background:rgba(225,6,0,0.9); color:white;
+      padding:1rem 1.5rem;
+      font-family:'Montserrat',sans-serif; font-weight:700;
+      font-size:0.85rem; text-transform:uppercase; letter-spacing:0.1em;
+    }
+    .intro-badge {
+      position:absolute; top:-1rem; right:-1rem;
+      background:var(--red); color:white;
+      width:100px; height:100px; border-radius:50%;
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      font-family:'Montserrat',sans-serif; font-weight:900; text-align:center;
+      font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em;
+    }
+    .intro-badge strong { font-size:1.5rem; line-height:1; }
+
+    /* SERVICES STRIP */
+    .services-strip { background: var(--light-bg); }
+    .services-grid { display: grid; grid-template-columns: 1fr; gap: 0; border: 1px solid #e0e0e0; }
+    @media(min-width:768px){ .services-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .services-grid { grid-template-columns: repeat(4,1fr); } }
+    .service-card {
+      padding: 2.5rem 2rem; border-right: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0;
+      transition: background 0.3s; cursor:default;
+    }
+    .service-card:hover { background: var(--black); }
+    .service-card:hover h3, .service-card:hover p, .service-card:hover .service-icon { color: var(--white); }
+    .service-icon { font-size: 2rem; color: var(--red); margin-bottom: 1rem; display:block; }
+    .service-card h3 { font-size: 1rem; margin-bottom: 0.75rem; }
+    .service-card p { font-size: 0.875rem; color: var(--dark-grey); line-height: 1.6; }
+    .service-card a { display:inline-block; margin-top:1rem; font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--red); text-decoration:none; }
+
+    /* WORKS */
+    .works-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+    @media(min-width:768px){ .works-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(min-width:1024px){ .works-grid { grid-template-columns: repeat(3,1fr); } }
+    .work-card { overflow: hidden; cursor: pointer; }
+    .work-thumb { position:relative; aspect-ratio:16/9; overflow:hidden; background: linear-gradient(135deg, #1a1a2e, #0d0d1a); }
+    .work-thumb img { width:100%; height:100%; object-fit:cover; transition: transform 0.5s; }
+    .work-card:hover .work-thumb img { transform: scale(1.05); }
+    .work-thumb-overlay { position:absolute; inset:0; background:rgba(225,6,0,0); transition:background 0.3s; display:flex; align-items:center; justify-content:center; }
+    .work-card:hover .work-thumb-overlay { background:rgba(225,6,0,0.7); }
+    .work-thumb-overlay i { color:white; font-size:2rem; opacity:0; transition:opacity 0.3s; }
+    .work-card:hover .work-thumb-overlay i { opacity:1; }
+    .work-info { padding: 1.25rem; background: var(--white); border: 1px solid #eee; border-top: none; }
+    .work-info .tag { margin-bottom:0.5rem; }
+    .work-info h3 { font-size:0.95rem; margin-bottom:0.25rem; }
+    .work-info p { font-size:0.8rem; color:var(--grey); }
+
+    /* TALENT */
+    .talent-section { background: var(--black); color: var(--white); }
+    .talent-section h2 { color: var(--white); }
+    .talent-marquee-outer { overflow:hidden; margin: 2rem 0; }
+    .talent-marquee { display:flex; animation: marquee 25s linear infinite; }
+    .talent-pill {
+      white-space:nowrap; padding:0.75rem 1.5rem; margin:0 0.5rem;
+      border: 1px solid #333; font-family:'Montserrat',sans-serif;
+      font-weight:600; font-size:0.9rem; text-transform:uppercase; letter-spacing:0.05em;
+      color:#ccc; flex-shrink:0; transition:all 0.3s;
+    }
+    .talent-pill:hover { border-color:var(--red); color:var(--white); }
+
+    /* INSIGHTS */
+    .insight-card { border: 1px solid #eee; overflow: hidden; }
+    .insight-img { aspect-ratio:16/9; overflow:hidden; background: linear-gradient(135deg, #1a1a2e, #0d0d1a); }
+    .insight-img img { width:100%; height:100%; object-fit:cover; transition:transform 0.4s; }
+    .insight-card:hover .insight-img img { transform:scale(1.04); }
+    .insight-body { padding: 1.5rem; }
+    .insight-body .tag { margin-bottom: 0.75rem; }
+    .insight-body h3 { font-size:1rem; margin-bottom:0.5rem; line-height:1.4; }
+    .insight-body p { font-size:0.875rem; color:var(--dark-grey); }
+    .insight-body a { display:inline-block; margin-top:1rem; font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--red); text-decoration:none; }
+
+    /* CTA BAND */
+    .cta-band { background: var(--red); color: var(--white); padding: 5rem 0; }
+    .cta-band h2 { color:var(--white); margin-bottom: 1rem; }
+    .cta-band p { color:rgba(255,255,255,0.85); margin-bottom:2rem; max-width:600px; }
+    .cta-buttons { display:flex; flex-wrap:wrap; gap:1rem; }
+
+/* HERO VIDEO BACKGROUND */
+.hero-video-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-video-bg iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 177.78vh;
+  height: 56.25vw;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  opacity: 0.3;
+}
+
+.hero-bg-pattern,
+.hero-accent,
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+
+    /* FADE-IN */
+    .fade-in { opacity:0; transform:translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity:1; transform:translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container">
+    <div class="header-content">
+      <a class="logo" href="index.html"><span>MC</span> Joint</a>
+      <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <div class="nav-dropdown">
+          <a href="clients/index.html">Clients ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="clients/businesses.html">Businesses</a>
+            <a href="clients/talent.html">Talent</a>
+            <a href="clients/associates.html">Associates</a>
+          </div>
+        </div>
+        <a href="works.html">Our Works</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="contact.html" class="btn btn-primary header-cta">Work With Us</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="clients/index.html">Clients</a>
+  <a href="works.html">Our Works</a>
+  <a href="blog.html">Blog</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-accent"></div>
+
+  <!-- VIDEO BACKGROUND -->
+  <div class="hero-video-bg">
+    <iframe
+      src="https://www.youtube.com/embed/2xAvoEPNN2w?autoplay=1&mute=1&loop=1&playlist=2xAvoEPNN2w&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <div class="container">
+    <div class="hero-content">
+      <span class="hero-eyebrow">Hyderabad · Est. 2018</span>
+      <h1>Masters of<br><span class="hero-word" id="heroWord">MUSIC</span></h1>
+      <p class="hero-tagline">A creative powerhouse bridging artists, studios and brands through storytelling, strategy and scale.</p>
+      <p class="hero-meta">Music &nbsp;·&nbsp; Talent &nbsp;·&nbsp; Cinema &nbsp;·&nbsp; Strategy</p>
+      <div class="hero-buttons">
+        <a href="works.html" class="btn btn-primary">See Our Work</a>
+        <a href="contact.html" class="btn btn-white">Work With Us</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <i class="fas fa-chevron-down"></i>
+    Scroll
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-bar">
+  <div class="marquee-track">
+    <span>Talent Management</span><span>Music Distribution</span><span>Content Production</span>
+    <span>Digital Strategy</span><span>Brand Partnerships</span><span>Cinema</span>
+    <span>Talent Management</span><span>Music Distribution</span><span>Content Production</span>
+    <span>Digital Strategy</span><span>Brand Partnerships</span><span>Cinema</span>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="intro">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-copy fade-in">
+        <span class="section-label">Who We Are</span>
+        <h2>Create. Collaborate. Innovate.</h2>
+        <div class="divider"></div>
+        <p>MC Joint is a Hyderabad-based creative agency specialising in original content, branded entertainment, music distribution, and talent management. We bridge the gap between vision and execution.</p>
+        <p>With deep roots in film, digital media, and entertainment, we bring ideas to life — turning concepts into impactful experiences across web series, podcasts, digital campaigns, and music releases.</p>
+        <div class="intro-stats">
+          <div>
+            <div class="intro-stat-number" data-target="50" data-suffix="+">0+</div>
+            <div class="intro-stat-label">Music Releases</div>
+          </div>
+          <div>
+            <div class="intro-stat-number" data-target="200" data-suffix="+">0+</div>
+            <div class="intro-stat-label">Projects</div>
+          </div>
+          <div>
+            <div class="intro-stat-number" data-target="2018" data-nofmt="true">0</div>
+            <div class="intro-stat-label">Founded</div>
+          </div>
+        </div>
+        <a href="about.html" class="btn btn-outline" style="margin-top:2rem">Our Story</a>
+      </div>
+      <div class="intro-visual fade-in">
+        <div class="intro-image-box">
+          <!-- Replace src with actual image -->
+          <img src="images/about-hero.jpg" alt="MC Joint Team" onerror="this.style.display='none'">
+          <div class="img-label">MC Joint · Hyderabad</div>
+        </div>
+        <div class="intro-badge">
+          <strong>6+</strong>
+          Years of<br>Craft
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES STRIP -->
+<section class="services-strip">
+  <div class="container">
+    <span class="section-label">What We Do</span>
+    <h2>Our Services</h2>
+    <div class="services-grid fade-in">
+      <div class="service-card">
+        <span class="service-icon"><i class="fas fa-film"></i></span>
+        <h3>Content Production</h3>
+        <p>Original IP creation, script development, and full-service video production from pre to post.</p>
+        <a href="services.html">Learn More →</a>
+      </div>
+      <div class="service-card">
+        <span class="service-icon"><i class="fas fa-music"></i></span>
+        <h3>Music Distribution</h3>
+        <p>Digital distribution across Spotify, Apple Music, Amazon Music and all major platforms.</p>
+        <a href="services.html">Learn More →</a>
+      </div>
+      <div class="service-card">
+        <span class="service-icon"><i class="fas fa-star"></i></span>
+        <h3>Talent Management</h3>
+        <p>Connecting artists, musicians, actors and filmmakers with the right opportunities.</p>
+        <a href="services.html">Learn More →</a>
+      </div>
+      <div class="service-card">
+        <span class="service-icon"><i class="fas fa-chart-line"></i></span>
+        <h3>Digital Strategy</h3>
+        <p>Digital footprint management, brand partnerships, and audience growth at scale.</p>
+        <a href="services.html">Learn More →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECENT WORKS -->
+<section>
+  <div class="container">
+    <span class="section-label">Portfolio</span>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2rem;flex-wrap:wrap;gap:1rem;">
+      <h2 style="margin-bottom:0">Recent Works</h2>
+      <a href="works.html" class="btn btn-outline">View All</a>
+    </div>
+    <div class="works-grid fade-in">
+      <div class="work-card">
+        <div class="work-thumb">
+          <img src="images/work-avanti.jpg" alt="Avanti Cinema" onerror="this.style.display='none'">
+          <div class="work-thumb-overlay"><i class="fas fa-arrow-right"></i></div>
+        </div>
+        <div class="work-info">
+          <span class="tag tag-red">Talent · Cinema</span>
+          <h3>Avanti Cinema — Full Service Partnership</h3>
+          <p>Social media, music distribution &amp; screenings since 2018</p>
+        </div>
+      </div>
+      <div class="work-card">
+        <div class="work-thumb">
+          <img src="images/work-viveksagar.jpg" alt="Vivek Sagar" onerror="this.style.display='none'">
+          <div class="work-thumb-overlay"><i class="fas fa-arrow-right"></i></div>
+        </div>
+        <div class="work-info">
+          <span class="tag tag-red">Music Distribution</span>
+          <h3>Vivek Sagar / Tapeloop Records</h3>
+          <p>Sheeshmahal, Chivaraku Migiledhi, A Love Letter to Cinema</p>
+        </div>
+      </div>
+      <div class="work-card">
+        <div class="work-thumb">
+          <img src="images/work-musalman.jpg" alt="Musalman Comix" onerror="this.style.display='none'">
+          <div class="work-thumb-overlay"><i class="fas fa-arrow-right"></i></div>
+        </div>
+        <div class="work-info">
+          <span class="tag tag-red">Digital · Brand</span>
+          <h3>Musalman Comix</h3>
+          <p>India's first Muslim superhero comic — digital representation &amp; sponsorships</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TALENT MARQUEE -->
+<section class="talent-section">
+  <div class="container">
+    <span class="section-label" style="color:var(--grey)">Talent Roster</span>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;">
+      <h2 style="margin-bottom:0">Artists We Represent</h2>
+      <a href="clients/talent.html" class="btn btn-white">Full Roster</a>
+    </div>
+  </div>
+  <div class="talent-marquee-outer" style="margin-top:2.5rem;">
+    <div class="talent-marquee">
+      <div class="talent-pill">Jagadeesh Prathap Bandari</div>
+      <div class="talent-pill">Vivek Sagar</div>
+      <div class="talent-pill">Smaran</div>
+      <div class="talent-pill">Raj Tirandasu</div>
+      <div class="talent-pill">Ravi Nidamarthy</div>
+      <div class="talent-pill">Raju Shivaratri</div>
+      <div class="talent-pill">Prashanth Podagatlapalli</div>
+      <div class="talent-pill">Pawon Ramesh</div>
+      <div class="talent-pill">Faraz OG</div>
+      <div class="talent-pill">Kiyaan</div>
+      <div class="talent-pill">INK Toxic</div>
+      <div class="talent-pill">Lazy 500006</div>
+      <div class="talent-pill">Ajith Mohan</div>
+      <div class="talent-pill">Thanmai Bolt</div>
+      <div class="talent-pill">Niklesh Sunkoji</div>
+      <div class="talent-pill">Manoj Juloori</div>
+      <div class="talent-pill">Sai Prasanna K</div>
+      <div class="talent-pill">Sindhu Dakavarapu</div>
+      <div class="talent-pill">Sai Yogi G</div>
+      <div class="talent-pill">Camp Sasi</div>
+      <div class="talent-pill">Rohit Penumatsa</div>
+      <!-- duplicate for seamless loop -->
+      <div class="talent-pill">Jagadeesh Prathap Bandari</div>
+      <div class="talent-pill">Vivek Sagar</div>
+      <div class="talent-pill">Smaran</div>
+      <div class="talent-pill">Raj Tirandasu</div>
+      <div class="talent-pill">Ravi Nidamarthy</div>
+      <div class="talent-pill">Raju Shivaratri</div>
+      <div class="talent-pill">Prashanth Podagatlapalli</div>
+      <div class="talent-pill">Pawon Ramesh</div>
+      <div class="talent-pill">Faraz OG</div>
+      <div class="talent-pill">Kiyaan</div>
+      <div class="talent-pill">INK Toxic</div>
+      <div class="talent-pill">Lazy 500006</div>
+      <div class="talent-pill">Ajith Mohan</div>
+      <div class="talent-pill">Thanmai Bolt</div>
+      <div class="talent-pill">Niklesh Sunkoji</div>
+      <div class="talent-pill">Manoj Juloori</div>
+      <div class="talent-pill">Sai Prasanna K</div>
+      <div class="talent-pill">Sindhu Dakavarapu</div>
+      <div class="talent-pill">Sai Yogi G</div>
+      <div class="talent-pill">Camp Sasi</div>
+      <div class="talent-pill">Rohit Penumatsa</div>
+    </div>
+  </div>
+  <div class="container" style="margin-top:2rem; display:flex; justify-content:flex-end;">
+    <a href="clients/talent.html" class="btn btn-outline">Meet the Artists</a>
+  </div>
+</section>
+
+<!-- INSIGHTS -->
+<section>
+  <div class="container">
+    <span class="section-label">Blog</span>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2rem;flex-wrap:wrap;gap:1rem;">
+      <h2 style="margin-bottom:0">Inside the MC Circle</h2>
+      <a href="blog.html" class="btn btn-outline">All Posts</a>
+    </div>
+    <div class="grid-3 fade-in">
+      <div class="insight-card">
+        <div class="insight-img">
+          <img src="images/blog-avanti.jpg" alt="Avanti Cinema" onerror="this.style.display='none'">
+        </div>
+        <div class="insight-body">
+          <span class="tag tag-red">Cinema</span>
+          <h3>Transforming Avanti Cinema during lockdown</h3>
+          <p>How we reimagined cinema experiences in unprecedented times.</p>
+          <a href="blog.html">Read More →</a>
+        </div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-img">
+          <img src="images/blog-story.jpg" alt="Story Discussion" onerror="this.style.display='none'">
+        </div>
+        <div class="insight-body">
+          <span class="tag tag-red">Music</span>
+          <h3>Story Discussion Season 2: A community-first release</h3>
+          <p>Building narratives that resonate with audiences worldwide.</p>
+          <a href="blog.html">Read More →</a>
+        </div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-img">
+          <img src="images/blog-folk.jpg" alt="Folk Music" onerror="this.style.display='none'">
+        </div>
+        <div class="insight-body">
+          <span class="tag tag-red">Distribution</span>
+          <h3>Building a folk catalogue with Nalgonda Gaddar Narsanna</h3>
+          <p>Preserving cultural heritage through music distribution.</p>
+          <a href="blog.html">Read More →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="container">
+    <h2>Have a Story, Sound,<br>or Career to Build?</h2>
+    <p>If you're looking for a vendor, we're not it. If you're looking for a partner who understands craft, structure, and scale — we should talk.</p>
+    <div class="cta-buttons">
+      <a href="contact.html" class="btn btn-white">Work with MC</a>
+      <a href="services.html#distribution" class="btn btn-outline" style="border-color:rgba(255,255,255,0.5);color:white;">Distribute Your Music</a>
+      <a href="clients/talent.html" class="btn btn-outline" style="border-color:rgba(255,255,255,0.5);color:white;">Get Represented</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <div class="footer-logo"><span>MC</span> Joint</div>
+        <p class="footer-desc">Masters of Ceremonies.<br>Music · Talent · Cinema · Strategy</p>
+        <div class="social-links" style="margin-top:1.5rem">
+          <a href="https://www.instagram.com/mcjoint.in/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://in.linkedin.com/company/mcjoint-in" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/mcjointin" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.youtube.com/@MCJoint" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="works.html">Our Works</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Clients</h4>
+        <ul>
+          <li><a href="clients/businesses.html">Businesses</a></li>
+          <li><a href="clients/talent.html">Talent</a></li>
+          <li><a href="clients/associates.html">Associates</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@mcjoint.in">info@mcjoint.in</a></li>
+          <li><a href="tel:+919014414114">+91 90144 14114</a></li>
+          <li><a href="contact.html">Get In Touch</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> MC Joint — Masters of Ceremonies. All rights reserved.</p>
+      <a href="https://www.mcjoint.in">www.mcjoint.in</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // Hero word rotation
+  const words = ['MUSIC','MEDIA','MARKETING','CRAFTS','COMMUNITY','CELEBRATIONS','COLLABORATIONS'];
+  const heroWord = document.getElementById('heroWord');
+  let idx = 0;
+  setInterval(() => {
+    heroWord.style.opacity = 0;
+    setTimeout(() => {
+      idx = (idx + 1) % words.length;
+      heroWord.textContent = words[idx];
+      heroWord.style.opacity = 1;
+    }, 300);
+  }, 2500);
+  heroWord.style.transition = 'opacity 0.3s';
+
+  // Animated counters
+  function animateCounter(el, target, prefix, suffix) {
+    let start = 0;
+    const inc = target / 80;
+    const iv = setInterval(() => {
+      start += inc;
+      if (start >= target) { start = target; clearInterval(iv); }
+      // Skip comma formatting if data-nofmt is set
+      const formatted = el.dataset.nofmt
+        ? Math.floor(start)
+        : Math.floor(start).toLocaleString('en-IN');
+      el.textContent = (prefix || '') + formatted + (suffix || '');
+    }, 20);
+  }
+
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.dataset.animated) {
+        const el = entry.target;
+        animateCounter(el, parseInt(el.dataset.target), el.dataset.prefix, el.dataset.suffix);
+        el.dataset.animated = 'true';
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
+</script>
+</body>
+</html>

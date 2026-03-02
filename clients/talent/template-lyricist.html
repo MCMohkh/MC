@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[ARTIST NAME] — MC Joint</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    /* ─── HERO ─── */
+    .talent-profile-hero {
+      background: var(--black); padding-top: 100px; padding-bottom: 0;
+      display: grid; grid-template-columns: 1fr; min-height: 70vh; position: relative;
+    }
+    @media(min-width:1024px){ .talent-profile-hero { grid-template-columns: 1fr 480px; } }
+
+    .talent-profile-info { padding: 4rem 0; display: flex; flex-direction: column; justify-content: center; }
+    .talent-profile-info h1 { color: white; font-size: clamp(2.5rem,6vw,4rem); }
+
+    .talent-roles { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; }
+    .talent-role-tag {
+      font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em;
+      color: var(--red); border: 1px solid var(--red); padding: 0.2rem 0.65rem;
+    }
+
+    .talent-profile-info p { color: #aaa; max-width: 520px; line-height: 1.75; }
+
+    /* Writing style keywords */
+    .keyword-cloud { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }
+    .keyword-tag {
+      font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;
+      color: #888; border: 1px solid #333; padding: 0.2rem 0.6rem;
+    }
+
+    .talent-profile-img {
+      background: linear-gradient(160deg,#0f0f1a,#1a1000);
+      overflow: hidden; min-height: 400px; position: relative;
+    }
+    @media(min-width:1024px){ .talent-profile-img { min-height: auto; } }
+    .talent-profile-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .talent-profile-img .initial-bg {
+      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+      font-family: 'Montserrat',sans-serif; font-weight: 900; font-size: 8rem; color: rgba(225,6,0,0.12);
+    }
+
+    /* ─── BODY ─── */
+    .profile-body { display: grid; grid-template-columns: 1fr; gap: 3rem; }
+    @media(min-width:1024px){ .profile-body { grid-template-columns: 2fr 1fr; } }
+
+    /* ─── SONGS / CREDITS TABLE ─── */
+    .credits-list { list-style: none; }
+    .credits-list li {
+      padding: 1rem 0; border-bottom: 1px solid #eee;
+      display: grid; grid-template-columns: 1fr auto; align-items: flex-start; gap: 1rem;
+    }
+    .credits-list li:last-child { border: none; }
+    .credit-song { font-weight: 600; font-size: 0.9rem; margin-bottom: 0.2rem; }
+    /* Film/Album context + composer collaborator */
+    .credit-context { font-size: 0.75rem; color: var(--grey); }
+    .credit-context em { font-style: normal; color: #555; }
+    /* Genre badge on the song */
+    .credit-genre {
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--red); border: 1px solid var(--red); padding: 0.18rem 0.55rem; white-space: nowrap; align-self: start;
+    }
+
+    /* ─── NOTABLE COLLABORATORS ─── */
+    .collab-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+    .collab-tag {
+      font-size: 0.78rem; font-weight: 600; background: var(--light-bg);
+      padding: 0.3rem 0.75rem; color: var(--dark);
+    }
+
+    /* ─── SIDEBAR ─── */
+    .sidebar-card { background: var(--light-bg); padding: 2rem; }
+    .sidebar-card h3 { font-size: 1rem; margin-bottom: 1.25rem; }
+    .sidebar-card .info-row {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0; font-size: 0.875rem; gap: 1rem;
+    }
+    .sidebar-card .info-row:last-child { border: none; }
+    .sidebar-card .info-label { color: var(--grey); flex-shrink: 0; }
+    .sidebar-card .info-value { font-weight: 600; text-align: right; }
+    .service-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; justify-content: flex-end; }
+    .service-chip { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; background: var(--red); color: white; padding: 0.18rem 0.55rem; }
+
+    /* ─── ASSOCIATION BLOCK ─── */
+    .association-block {
+      background: var(--black); padding: 2rem; margin-top: 2rem; border-left: 3px solid var(--red);
+    }
+    .association-block h3 { color: white; font-size: 0.95rem; margin-bottom: 0.75rem; }
+    .association-block p { color: #999; font-size: 0.875rem; line-height: 1.7; margin: 0; }
+
+    .back-link {
+      display: inline-flex; align-items: center; gap: 0.5rem; color: var(--grey);
+      text-decoration: none; font-size: 0.8rem; text-transform: uppercase;
+      letter-spacing: 0.08em; font-weight: 600; margin-bottom: 1.5rem;
+    }
+    .back-link:hover { color: var(--red); }
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s, transform 0.6s; }
+    .fade-in.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container"><div class="header-content">
+    <a class="logo" href="../../index.html"><span>MC</span> Joint</a>
+    <nav>
+      <a href="../../index.html">Home</a>
+      <a href="../../about.html">About</a>
+      <a href="../../services.html">Services</a>
+      <div class="nav-dropdown">
+        <a href="../index.html" class="active">Clients ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="../businesses.html">Businesses</a>
+          <a href="../talent.html">Talent</a>
+          <a href="../associates.html">Associates</a>
+        </div>
+      </div>
+      <a href="../../works.html">Our Works</a>
+      <a href="../../blog.html">Blog</a>
+      <a href="../../contact.html">Contact</a>
+    </nav>
+    <a href="../../contact.html" class="btn btn-primary header-cta">Work With Us</a>
+    <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+  </div></div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../../index.html">Home</a><a href="../../about.html">About</a>
+  <a href="../../services.html">Services</a><a href="../index.html">Clients</a>
+  <a href="../../works.html">Our Works</a><a href="../../blog.html">Blog</a>
+  <a href="../../contact.html">Contact</a>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<div class="talent-profile-hero">
+  <div class="container">
+    <div class="talent-profile-info">
+      <a class="back-link" href="../talent.html"><i class="fas fa-arrow-left"></i> All Talent</a>
+
+      <!-- Roles — lyricists often also rap or act -->
+      <div class="talent-roles">
+        <span class="talent-role-tag">Lyricist</span>          <!-- always -->
+        <span class="talent-role-tag">Song Writer</span>       <!-- if applicable -->
+        <span class="talent-role-tag">Rapper</span>            <!-- remove if not applicable -->
+      </div>
+
+      <h1>[ARTIST FULL NAME]</h1>
+      <!-- If the artist has an alias or pen name, show it: -->
+      <!-- <p style="font-size:0.85rem;color:#555;text-transform:uppercase;letter-spacing:0.1em;margin-top:-0.25rem;margin-bottom:0.75rem;">aka [Alias]</p> -->
+
+      <p style="margin-top:1rem;">[One or two sentences on their voice as a lyricist — their themes, language style, poetic flavour. E.g. "[Name] writes with the precision of a poet and the pulse of the street — Telugu, Urdu, Hindi and English weaving together in every verse."]</p>
+
+      <!-- Writing style / thematic keywords -->
+      <div class="keyword-cloud">
+        <span class="keyword-tag">Telugu</span>
+        <span class="keyword-tag">Urdu Influence</span>
+        <span class="keyword-tag">Folk</span>
+        <span class="keyword-tag">Romantic</span>
+        <!-- Add: Protest · Devotional · Street · Hip-Hop · Cinematic · etc. -->
+      </div>
+    </div>
+  </div>
+  <div class="talent-profile-img">
+    <img src="../../images/talent-[filename].jpg" alt="[ARTIST NAME]" onerror="this.style.display='none'">
+    <div class="initial-bg">[INITIALS]</div>
+  </div>
+</div>
+
+<!-- ═══ BODY ═══ -->
+<section>
+  <div class="container">
+    <div class="profile-body">
+
+      <!-- MAIN COLUMN -->
+      <div class="fade-in">
+        <h2>About [FIRST NAME]</h2>
+        <div class="divider"></div>
+
+        <!-- BIO: P1 background & how they started. P2 writing style, languages, influences. P3 notable songs/films/collaborations. P4 MC Joint context. -->
+        <p style="color:var(--dark-grey);margin-bottom:1rem;">[P1 — Origins: how they found their voice, formal training or self-taught, early writing experience.]</p>
+        <p style="color:var(--dark-grey);margin-bottom:1rem;">[P2 — Craft: their approach to writing lyrics — language, meter, imagery, thematic territory. What distinguishes their pen from others.]</p>
+        <p style="color:var(--dark-grey);margin-bottom:1rem;">[P3 — Credits: notable songs, films, composers they've worked with. Any recognition or viral moments.]</p>
+        <p style="color:var(--dark-grey);">[P4 — MC Joint: how we connected and what we do for them — management, opportunity creation, brand association, etc.]</p>
+
+        <!-- SONGS / CREDITS TABLE -->
+        <h3 style="margin-top:2.5rem;margin-bottom:1rem;">Songs &amp; Writing Credits</h3>
+        <ul class="credits-list">
+
+          <li>
+            <div>
+              <div class="credit-song">"[Song Title]"</div>
+              <!-- Film/album context and composer collaborator -->
+              <div class="credit-context"><em>[Film/Album Name]</em> · Music by [Composer] · [Year]</div>
+            </div>
+            <!-- Genre tag: Romantic / Folk / Item / Background / Rap Verse / etc. -->
+            <span class="credit-genre">Romantic</span>
+          </li>
+
+          <li>
+            <div>
+              <div class="credit-song">"[Song Title]"</div>
+              <div class="credit-context"><em>[Film/Album Name]</em> · Music by [Composer] · [Year]</div>
+            </div>
+            <span class="credit-genre">Folk</span>
+          </li>
+
+          <li>
+            <div>
+              <div class="credit-song">"[Song Title]"</div>
+              <div class="credit-context">Independent Single · [Year]</div>
+            </div>
+            <span class="credit-genre">Hip-Hop</span>
+          </li>
+
+          <!-- Duplicate as needed -->
+
+        </ul>
+
+        <!-- NOTABLE COLLABORATORS — Optional -->
+        <div style="margin-top:2rem;">
+          <p style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--grey);margin-bottom:0.75rem;">Collaborated With</p>
+          <div class="collab-list">
+            <span class="collab-tag">[Composer / Director Name]</span>
+            <span class="collab-tag">[Composer / Director Name]</span>
+            <!-- Add more -->
+          </div>
+        </div>
+
+        <!-- MC JOINT ASSOCIATION -->
+        <div class="association-block">
+          <h3>Our Association</h3>
+          <p>[How MC Joint works with this lyricist — management, connecting them with composers/producers, brand association, content creation, workshop facilitation, etc.]</p>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="fade-in">
+        <div class="sidebar-card">
+          <h3>Quick Info</h3>
+          <div class="info-row">
+            <span class="info-label">Category</span>
+            <span class="info-value">Lyricist</span>
+          </div>
+          <!-- Alias row — if the artist writes under a pen name -->
+          <!--
+          <div class="info-row">
+            <span class="info-label">Also Known As</span>
+            <span class="info-value">[Alias / Pen Name]</span>
+          </div>
+          -->
+          <div class="info-row">
+            <span class="info-label">Language(s)</span>
+            <span class="info-value">Telugu · Hindi</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">City</span>
+            <span class="info-value">Hyderabad</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">With MC Joint Since</span>
+            <span class="info-value">[YEAR]</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Song Count</span>
+            <!-- Approximate total songs written -->
+            <span class="info-value">[X]+ Songs</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Services</span>
+            <div class="service-chips">
+              <span class="service-chip">Management</span>
+              <span class="service-chip">Pitching</span>
+              <!-- Add: Brand · Workshops · PR -->
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:1.5rem;">
+          <a href="../../contact.html" class="btn btn-primary" style="width:100%;text-align:center;display:block;">
+            Enquire About This Talent
+          </a>
+        </div>
+        <div style="margin-top:1rem;">
+          <a href="../talent.html" class="btn btn-outline" style="width:100%;text-align:center;display:block;">
+            View All Talent
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <div class="footer-logo"><span>MC</span> Joint</div>
+        <p class="footer-desc">Masters of Ceremonies.<br>Music · Talent · Cinema · Strategy</p>
+        <div class="social-links" style="margin-top:1.5rem">
+          <a href="https://www.instagram.com/mcjoint.in/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://in.linkedin.com/company/mcjoint-in" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/mcjointin" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.youtube.com/@MCJoint" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-section"><h4>Navigate</h4><ul>
+        <li><a href="../../about.html">About Us</a></li>
+        <li><a href="../../services.html">Services</a></li>
+        <li><a href="../../works.html">Our Works</a></li>
+        <li><a href="../../blog.html">Blog</a></li>
+      </ul></div>
+      <div class="footer-section"><h4>Clients</h4><ul>
+        <li><a href="../businesses.html">Businesses</a></li>
+        <li><a href="../talent.html">Talent</a></li>
+        <li><a href="../associates.html">Associates</a></li>
+      </ul></div>
+      <div class="footer-section"><h4>Contact</h4><ul>
+        <li><a href="mailto:info@mcjoint.in">info@mcjoint.in</a></li>
+        <li><a href="tel:+919014414114">+91 90144 14114</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> MC Joint — Masters of Ceremonies. All rights reserved.</p>
+      <a href="https://www.mcjoint.in">www.mcjoint.in</a>
+    </div>
+  </div>
+</footer>
+<script src="../../js/main.js"></script>
+</body>
+</html>

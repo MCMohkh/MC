@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — MC Joint</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .blog-grid { display:grid; grid-template-columns:1fr; gap:2rem; }
+    @media(min-width:768px){ .blog-grid { grid-template-columns:repeat(2,1fr); } }
+    @media(min-width:1024px){ .blog-grid { grid-template-columns:repeat(3,1fr); } }
+
+    .blog-card { border:1px solid #eee; overflow:hidden; display:flex; flex-direction:column; transition:transform 0.3s,box-shadow 0.3s; }
+    .blog-card:hover { transform:translateY(-4px); box-shadow:0 12px 32px rgba(0,0,0,0.1); }
+    .blog-card.featured { grid-column:1/-1; }
+    @media(min-width:768px){
+      .blog-card.featured { display:grid; grid-template-columns:1fr 1fr; }
+      .blog-card.featured .blog-card-img { aspect-ratio:auto; min-height:340px; }
+    }
+    .blog-card-img { aspect-ratio:16/9; background:linear-gradient(135deg,#1a1a2e,#0d0d1a); overflow:hidden; }
+    .blog-card-img img { width:100%; height:100%; object-fit:cover; transition:transform 0.4s; }
+    .blog-card:hover .blog-card-img img { transform:scale(1.04); }
+    .blog-card-body { padding:1.75rem; flex:1; display:flex; flex-direction:column; }
+    .blog-card.featured .blog-card-body { padding:2.5rem; justify-content:center; }
+    .blog-card-body .tag { margin-bottom:0.75rem; }
+    .blog-card-body h3 { font-size:1rem; line-height:1.4; margin-bottom:0.75rem; }
+    .blog-card.featured .blog-card-body h3 { font-size:1.5rem; }
+    .blog-card-body p { font-size:0.875rem; color:var(--dark-grey); flex:1; }
+    .blog-card-footer { display:flex; align-items:center; justify-content:space-between; margin-top:1.25rem; padding-top:1.25rem; border-top:1px solid #f0f0f0; }
+    .blog-date { font-size:0.78rem; color:var(--grey); }
+    .blog-read-more { font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--red); text-decoration:none; }
+
+    .blog-sidebar { position:sticky; top:90px; }
+    .sidebar-section { margin-bottom:2.5rem; padding-bottom:2.5rem; border-bottom:1px solid #eee; }
+    .sidebar-section:last-child { border:none; }
+    .sidebar-section h4 { font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--grey); margin-bottom:1rem; }
+    .category-pills { display:flex; flex-wrap:wrap; gap:0.5rem; }
+    .category-pill { padding:0.4rem 0.9rem; border:1px solid #ddd; font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.06em; cursor:pointer; transition:all 0.2s; text-decoration:none; color:var(--black); }
+    .category-pill:hover { border-color:var(--red); color:var(--red); }
+
+    .blog-layout { display:grid; grid-template-columns:1fr; gap:3rem; }
+    @media(min-width:1024px){ .blog-layout { grid-template-columns:1fr 300px; } }
+
+    .fade-in { opacity:0; transform:translateY(20px); transition:opacity 0.6s,transform 0.6s; }
+    .fade-in.visible { opacity:1; transform:none; }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container"><div class="header-content">
+    <a class="logo" href="index.html"><span>MC</span> Joint</a>
+    <nav>
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+      <div class="nav-dropdown">
+        <a href="clients/index.html">Clients ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="clients/businesses.html">Businesses</a>
+          <a href="clients/talent.html">Talent</a>
+          <a href="clients/associates.html">Associates</a>
+        </div>
+      </div>
+      <a href="works.html">Our Works</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="contact.html" class="btn btn-primary header-cta">Work With Us</a>
+    <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+  </div></div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+  <a href="clients/index.html">Clients</a><a href="works.html">Our Works</a>
+  <a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+</div>
+
+<div class="page-hero">
+  <div class="container">
+    <span class="page-hero-eyebrow">Insights &amp; Stories</span>
+    <h1>Inside the<br>MC Circle</h1>
+    <p>Insights, stories, and learnings from the MC Joint universe — cinema, music, talent, and beyond.</p>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="blog-layout">
+      <div>
+        <div class="blog-grid">
+
+          <!-- FEATURED POST -->
+          <div class="blog-card featured fade-in">
+            <div class="blog-card-img">
+              <img src="images/blog-avanti.jpg" alt="Avanti Cinema" onerror="this.style.display='none'">
+            </div>
+            <div class="blog-card-body">
+              <span class="tag tag-red">Cinema</span>
+              <h3>Transforming Avanti Cinema during the Lockdown — A Story of Adaptation</h3>
+              <p>In 2020, when the world shut down, we didn't sit still. Here's how we helped Avanti Cinema reinvent what a film release could look like in unprecedented times.</p>
+              <div class="blog-card-footer">
+                <span class="blog-date">2020 · MC Joint Team</span>
+                <a class="blog-read-more" href="#">Read More →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="blog-card fade-in">
+            <div class="blog-card-img">
+              <img src="images/blog-story.jpg" alt="Story Discussion" onerror="this.style.display='none'">
+            </div>
+            <div class="blog-card-body">
+              <span class="tag tag-red">Music</span>
+              <h3>Story Discussion Season 2: A Community-First Release</h3>
+              <p>Building narratives that resonate with audiences worldwide — and what made Story Discussion something truly special.</p>
+              <div class="blog-card-footer">
+                <span class="blog-date">2021 · Sonu Mohkh</span>
+                <a class="blog-read-more" href="#">Read More →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="blog-card fade-in">
+            <div class="blog-card-img">
+              <img src="images/blog-folk.jpg" alt="Folk Music" onerror="this.style.display='none'">
+            </div>
+            <div class="blog-card-body">
+              <span class="tag tag-red">Distribution</span>
+              <h3>Building a Folk Catalogue with Nalgonda Gaddar Narsanna</h3>
+              <p>Preserving cultural heritage through music distribution — why it matters and how we did it.</p>
+              <div class="blog-card-footer">
+                <span class="blog-date">2022 · MC Joint Team</span>
+                <a class="blog-read-more" href="#">Read More →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="blog-card fade-in">
+            <div class="blog-card-img">
+              <img src="images/blog-rap.jpg" alt="Rap Scene" onerror="this.style.display='none'">
+            </div>
+            <div class="blog-card-body">
+              <span class="tag tag-red">Hip-Hop</span>
+              <h3>Finding B12: Scouting India's Next Rap Wave at Local Cyphers</h3>
+              <p>How we spotted Faraz OG, Kiyaan, INK Toxic and Lazy — and why we're betting big on the indie rap scene.</p>
+              <div class="blog-card-footer">
+                <span class="blog-date">2023 · NJay</span>
+                <a class="blog-read-more" href="#">Read More →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="blog-card fade-in">
+            <div class="blog-card-img">
+              <img src="images/blog-digital.jpg" alt="Digital Footprint" onerror="this.style.display='none'">
+            </div>
+            <div class="blog-card-body">
+              <span class="tag tag-red">Digital</span>
+              <h3>Why Your IMDb Page Matters More Than You Think</h3>
+              <p>A practical guide to digital footprint management for filmmakers and production houses in the streaming era.</p>
+              <div class="blog-card-footer">
+                <span class="blog-date">2023 · Sai Charan</span>
+                <a class="blog-read-more" href="#">Read More →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="blog-card fade-in">
+            <div class="blog-card-img">
+              <img src="images/blog-2024.jpg" alt="2024 Films" onerror="this.style.display='none'">
+            </div>
+            <div class="blog-card-body">
+              <span class="tag tag-red">Cinema</span>
+              <h3>Three Theatrical Releases in One Year — What We Learned</h3>
+              <p>Double Engine, Sheeshmahal, Chivaraku Migiledhi. 2024 was a year of firsts. Here's our honest debrief.</p>
+              <div class="blog-card-footer">
+                <span class="blog-date">Jan 2025 · Sonu Mohkh</span>
+                <a class="blog-read-more" href="#">Read More →</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="blog-sidebar">
+        <div class="sidebar-section">
+          <h4>Categories</h4>
+          <div class="category-pills">
+            <a class="category-pill" href="#">Cinema</a>
+            <a class="category-pill" href="#">Music</a>
+            <a class="category-pill" href="#">Distribution</a>
+            <a class="category-pill" href="#">Talent</a>
+            <a class="category-pill" href="#">Digital</a>
+            <a class="category-pill" href="#">Hip-Hop</a>
+            <a class="category-pill" href="#">Strategy</a>
+          </div>
+        </div>
+        <div class="sidebar-section">
+          <h4>About MC Joint</h4>
+          <p style="font-size:0.875rem;color:var(--dark-grey);margin-bottom:1rem;">We are a Hyderabad-based creative agency — music distribution, talent management, content production, and digital strategy.</p>
+          <a href="about.html" class="btn btn-outline" style="font-size:0.78rem;">Our Story</a>
+        </div>
+        <div class="sidebar-section">
+          <h4>Get in Touch</h4>
+          <p style="font-size:0.875rem;color:var(--dark-grey);margin-bottom:1rem;">Have a project? Want to collaborate?</p>
+          <a href="contact.html" class="btn btn-primary" style="font-size:0.78rem;">Contact Us</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <div class="footer-logo"><span>MC</span> Joint</div>
+        <p class="footer-desc">Masters of Ceremonies.<br>Music · Talent · Cinema · Strategy</p>
+        <div class="social-links" style="margin-top:1.5rem">
+          <a href="https://www.instagram.com/mcjoint.in/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://in.linkedin.com/company/mcjoint-in" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/mcjointin" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.youtube.com/@MCJoint" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-section"><h4>Navigate</h4><ul>
+        <li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li>
+        <li><a href="works.html">Our Works</a></li><li><a href="blog.html">Blog</a></li>
+      </ul></div>
+      <div class="footer-section"><h4>Clients</h4><ul>
+        <li><a href="clients/businesses.html">Businesses</a></li>
+        <li><a href="clients/talent.html">Talent</a></li>
+        <li><a href="clients/associates.html">Associates</a></li>
+      </ul></div>
+      <div class="footer-section"><h4>Contact</h4><ul>
+        <li><a href="mailto:info@mcjoint.in">info@mcjoint.in</a></li>
+        <li><a href="tel:+919014414114">+91 90144 14114</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> MC Joint — Masters of Ceremonies. All rights reserved.</p>
+      <a href="https://www.mcjoint.in">www.mcjoint.in</a>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

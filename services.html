@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — MC Joint</title>
+  <meta name="description" content="MC Joint services: content production, music distribution, talent management, and digital strategy.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .service-block { display:grid; grid-template-columns:1fr; gap:3rem; align-items:start; padding:5rem 0; border-top:1px solid #eee; }
+    @media(min-width:1024px){ .service-block { grid-template-columns:1fr 1fr; } }
+    .service-block:nth-child(even) .service-block-visual { order:-1; }
+    @media(min-width:1024px){ .service-block:nth-child(even) .service-block-visual { order:initial; } }
+    .service-block-icon { width:64px; height:64px; background:var(--red); display:flex; align-items:center; justify-content:center; margin-bottom:1.5rem; }
+    .service-block-icon i { font-size:1.75rem; color:white; }
+    .service-block h2 { font-size:2rem; margin-bottom:1rem; }
+    .service-block p { color:var(--dark-grey); margin-bottom:1rem; }
+    .service-list { list-style:none; margin-top:1.5rem; }
+    .service-list li { padding:0.6rem 0; border-bottom:1px solid #f0f0f0; font-size:0.9rem; display:flex; align-items:center; gap:0.75rem; }
+    .service-list li::before { content:''; width:6px; height:6px; background:var(--red); border-radius:50%; flex-shrink:0; }
+    .service-block-visual { background:linear-gradient(135deg,#1a1a2e,#0d0d1a); aspect-ratio:4/3; overflow:hidden; }
+    .service-block-visual img { width:100%; height:100%; object-fit:cover; }
+
+    .platforms-grid { display:flex; flex-wrap:wrap; gap:1rem; margin-top:1.5rem; }
+    .platform-badge { display:flex; align-items:center; gap:0.5rem; background:#f5f5f5; padding:0.5rem 1rem; font-size:0.8rem; font-weight:600; }
+
+    .process-grid { display:grid; grid-template-columns:1fr; gap:0; }
+    @media(min-width:768px){ .process-grid { grid-template-columns:repeat(2,1fr); } }
+    @media(min-width:1024px){ .process-grid { grid-template-columns:repeat(4,1fr); } }
+    .process-step { padding:2rem; border-right:1px solid #eee; border-bottom:1px solid #eee; position:relative; }
+    .process-step-num { font-family:'Montserrat',sans-serif; font-weight:900; font-size:3rem; color:rgba(225,6,0,0.1); line-height:1; margin-bottom:1rem; }
+    .process-step h3 { font-size:0.95rem; margin-bottom:0.5rem; }
+    .process-step p { font-size:0.85rem; color:var(--grey); }
+
+    .fade-in { opacity:0; transform:translateY(20px); transition:opacity 0.6s,transform 0.6s; }
+    .fade-in.visible { opacity:1; transform:none; }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container"><div class="header-content">
+    <a class="logo" href="index.html"><span>MC</span> Joint</a>
+    <nav>
+      <a href="index.html">Home</a><a href="about.html">About</a>
+      <a href="services.html" class="active">Services</a>
+      <div class="nav-dropdown">
+        <a href="clients/index.html">Clients ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="clients/businesses.html">Businesses</a>
+          <a href="clients/talent.html">Talent</a>
+          <a href="clients/associates.html">Associates</a>
+        </div>
+      </div>
+      <a href="works.html">Our Works</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+    </nav>
+    <a href="contact.html" class="btn btn-primary header-cta">Work With Us</a>
+    <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+  </div></div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+  <a href="clients/index.html">Clients</a><a href="works.html">Our Works</a>
+  <a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+</div>
+
+<div class="page-hero">
+  <div class="container">
+    <span class="page-hero-eyebrow">What We Do</span>
+    <h1>End-to-End Creative<br>Services</h1>
+    <p>From concept to distribution, we provide the full stack of services needed to make your work reach the right audience.</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- SERVICE 1 -->
+  <div class="service-block fade-in" id="production">
+    <div>
+      <div class="service-block-icon"><i class="fas fa-film"></i></div>
+      <span class="section-label">Service 01</span>
+      <h2>Content Production &amp; Development</h2>
+      <div class="divider"></div>
+      <p>We craft compelling original content — web series, short films, branded entertainment and digital-first narratives. Our team handles everything from concept to camera to cut.</p>
+      <ul class="service-list">
+        <li>Original IP Creation — web series, short films, digital-first narratives</li>
+        <li>Script &amp; Concept Development — platform-ready storytelling</li>
+        <li>Full-Service Video Production — pre to post</li>
+        <li>High-quality video editing, colour grading and VFX</li>
+        <li>E-learning video production with precision editing</li>
+        <li>Branded content with sharp storytelling and visual finesse</li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary" style="margin-top:1.5rem">Enquire About Production</a>
+    </div>
+    <div class="service-block-visual">
+      <img src="images/service-production.jpg" alt="Content Production" onerror="this.style.display='none'">
+    </div>
+  </div>
+
+  <!-- SERVICE 2 -->
+  <div class="service-block fade-in" id="distribution">
+    <div class="service-block-visual">
+      <img src="images/service-music.jpg" alt="Music Distribution" onerror="this.style.display='none'">
+    </div>
+    <div>
+      <div class="service-block-icon"><i class="fas fa-music"></i></div>
+      <span class="section-label">Service 02</span>
+      <h2>Music Distribution &amp; Sound Production</h2>
+      <div class="divider"></div>
+      <p>We distribute music across every major platform globally, manage releases, and help artists build a sustainable music career with the right partnerships and promotion strategy.</p>
+      <ul class="service-list">
+        <li>Digital distribution — Spotify, Apple Music, Amazon Music and more</li>
+        <li>Original scores, theme music and OST production</li>
+        <li>Artist collaborations &amp; music promotions</li>
+        <li>Catalogue management and royalty tracking</li>
+        <li>Release strategy and platform pitching</li>
+      </ul>
+      <div class="platforms-grid">
+        <span class="platform-badge"><i class="fab fa-spotify" style="color:#1DB954"></i> Spotify</span>
+        <span class="platform-badge"><i class="fab fa-apple" style="color:#000"></i> Apple Music</span>
+        <span class="platform-badge"><i class="fab fa-amazon" style="color:#FF9900"></i> Amazon Music</span>
+        <span class="platform-badge"><i class="fab fa-youtube" style="color:#FF0000"></i> YouTube Music</span>
+      </div>
+      <a href="contact.html" class="btn btn-primary" style="margin-top:1.5rem">Distribute Your Music</a>
+    </div>
+  </div>
+
+  <!-- SERVICE 3 -->
+  <div class="service-block fade-in" id="talent">
+    <div>
+      <div class="service-block-icon"><i class="fas fa-star"></i></div>
+      <span class="section-label">Service 03</span>
+      <h2>Talent Management &amp; Representation</h2>
+      <div class="divider"></div>
+      <p>We manage careers — not just gigs. We connect artists, musicians, actors and filmmakers with the right opportunities and represent them at the highest level.</p>
+      <ul class="service-list">
+        <li>Audition and meeting management</li>
+        <li>Brand endorsements and event appearances</li>
+        <li>Press relations and digital PR</li>
+        <li>Liaison between studios, brands and production houses</li>
+        <li>OTT platform pitching and content representation</li>
+        <li>Social media and digital footprint management</li>
+      </ul>
+      <a href="clients/talent.html" class="btn btn-outline" style="margin-top:1.5rem">View Our Talent Roster</a>
+    </div>
+    <div class="service-block-visual">
+      <img src="images/service-talent.jpg" alt="Talent Management" onerror="this.style.display='none'">
+    </div>
+  </div>
+
+  <!-- SERVICE 4 -->
+  <div class="service-block fade-in" id="digital">
+    <div class="service-block-visual">
+      <img src="images/service-digital.jpg" alt="Digital Strategy" onerror="this.style.display='none'">
+    </div>
+    <div>
+      <div class="service-block-icon"><i class="fas fa-chart-line"></i></div>
+      <span class="section-label">Service 04</span>
+      <h2>Digital Strategy &amp; Brand Partnerships</h2>
+      <div class="divider"></div>
+      <p>We build digital presence, manage brand collaborations, and create measurable marketing strategies that connect your work with the right audience at scale.</p>
+      <ul class="service-list">
+        <li>Digital footprint management (IMDb, Wikipedia, Google Knowledge Panels)</li>
+        <li>Social media strategy and management</li>
+        <li>Brand sponsorships and advertising integrations</li>
+        <li>Podcast and web show brand partnerships</li>
+        <li>Business strategy reports and government pitch documentation</li>
+        <li>Content writing and editorial services</li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary" style="margin-top:1.5rem">Build Your Digital Presence</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- PROCESS -->
+<section style="background:var(--black);">
+  <div class="container">
+    <span class="section-label" style="color:var(--grey)">How We Work</span>
+    <h2 style="color:white">Our Process</h2>
+    <div class="process-grid fade-in">
+      <div class="process-step">
+        <div class="process-step-num">01</div>
+        <h3 style="color:white">Discovery</h3>
+        <p>We listen. Understanding your goals, your work, your audience, and your timeline is step one.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">02</div>
+        <h3 style="color:white">Strategy</h3>
+        <p>We build a tailored plan — distribution strategy, talent roadmap, content calendar, or brand deck.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">03</div>
+        <h3 style="color:white">Execution</h3>
+        <p>Our team executes with precision — on time, on brand, and with clear communication throughout.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-num">04</div>
+        <h3 style="color:white">Growth</h3>
+        <p>We measure results, iterate, and keep pushing — because a good partnership is always evolving.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--red);padding:4rem 0;">
+  <div class="container" style="text-align:center;">
+    <h2 style="color:white;margin-bottom:1rem;">Not Sure Which Service You Need?</h2>
+    <p style="color:rgba(255,255,255,0.85);margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto;">Let's talk. We'll figure out the best path together.</p>
+    <a href="contact.html" class="btn btn-white">Start a Conversation</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <div class="footer-logo"><span>MC</span> Joint</div>
+        <p class="footer-desc">Masters of Ceremonies.<br>Music · Talent · Cinema · Strategy</p>
+        <div class="social-links" style="margin-top:1.5rem">
+          <a href="https://www.instagram.com/mcjoint.in/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://in.linkedin.com/company/mcjoint-in" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/mcjointin" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.youtube.com/@MCJoint" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-section"><h4>Navigate</h4><ul>
+        <li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li>
+        <li><a href="works.html">Our Works</a></li><li><a href="blog.html">Blog</a></li>
+      </ul></div>
+      <div class="footer-section"><h4>Clients</h4><ul>
+        <li><a href="clients/businesses.html">Businesses</a></li>
+        <li><a href="clients/talent.html">Talent</a></li>
+        <li><a href="clients/associates.html">Associates</a></li>
+      </ul></div>
+      <div class="footer-section"><h4>Contact</h4><ul>
+        <li><a href="mailto:info@mcjoint.in">info@mcjoint.in</a></li>
+        <li><a href="tel:+919014414114">+91 90144 14114</a></li>
+        <li><a href="contact.html">Get In Touch</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> MC Joint — Masters of Ceremonies. All rights reserved.</p>
+      <a href="https://www.mcjoint.in">www.mcjoint.in</a>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

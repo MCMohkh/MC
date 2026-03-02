@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Clients — MC Joint</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .client-card { border:1px solid #eee; overflow:hidden; }
+    .client-card-header { background:linear-gradient(135deg,#1a1a2e,#0d0d1a); aspect-ratio:16/7; display:flex; align-items:center; justify-content:center; overflow:hidden; position:relative; }
+    .client-card-header img { width:100%; height:100%; object-fit:cover; }
+    .client-card-logo {
+      position:absolute; top:1rem; left:1rem;
+      background:rgba(0,0,0,0.7); padding:0.5rem 1rem;
+      font-family:'Montserrat',sans-serif; font-weight:900; font-size:1.1rem; color:white;
+    }
+    .client-card-logo span { color:var(--red); }
+    .client-card-body { padding:1.75rem; }
+    .client-card-body h3 { font-size:1.1rem; margin-bottom:0.5rem; }
+    .client-card-body .client-role { font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-bottom:1rem; display:block; }
+    .client-card-body p { font-size:0.875rem; color:var(--dark-grey); margin-bottom:1rem; }
+    .client-works { list-style:none; }
+    .client-works li { font-size:0.8rem; color:var(--grey); padding:0.3rem 0; border-bottom:1px dotted #eee; }
+    .client-works li em { color:var(--black); font-style:italic; }
+
+    .clients-grid { display:grid; grid-template-columns:1fr; gap:2rem; }
+    @media(min-width:768px){ .clients-grid { grid-template-columns:repeat(2,1fr); } }
+    @media(min-width:1024px){ .clients-grid { grid-template-columns:repeat(3,1fr); } }
+
+    .fade-in { opacity:0; transform:translateY(20px); transition:opacity 0.6s,transform 0.6s; }
+    .fade-in.visible { opacity:1; transform:none; }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container"><div class="header-content">
+    <a class="logo" href="../index.html"><span>MC</span> Joint</a>
+    <nav>
+      <a href="../index.html">Home</a><a href="../about.html">About</a><a href="../services.html">Services</a>
+      <div class="nav-dropdown">
+        <a href="index.html" class="active">Clients ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="businesses.html">Businesses</a>
+          <a href="talent.html">Talent</a>
+          <a href="associates.html">Associates</a>
+        </div>
+      </div>
+      <a href="../works.html">Our Works</a><a href="../blog.html">Blog</a><a href="../contact.html">Contact</a>
+    </nav>
+    <a href="../contact.html" class="btn btn-primary header-cta">Work With Us</a>
+    <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+  </div></div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html">Home</a><a href="../about.html">About</a><a href="../services.html">Services</a>
+  <a href="index.html">Clients</a><a href="../works.html">Our Works</a>
+  <a href="../blog.html">Blog</a><a href="../contact.html">Contact</a>
+</div>
+
+<div class="page-hero">
+  <div class="container">
+    <span class="page-hero-eyebrow"><a href="index.html" style="color:var(--grey);text-decoration:none;">Clients</a> / Businesses</span>
+    <h1>Business Clients</h1>
+    <p>Production houses, studios, brands and institutions we proudly partner with.</p>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="clients-grid">
+
+      <div class="client-card card fade-in">
+        <div class="client-card-header">
+          <img src="../images/client-avanti.jpg" alt="Avanti Cinema" onerror="this.style.display='none'">
+          <div class="client-card-logo">Avanti Cinema</div>
+        </div>
+        <div class="client-card-body">
+          <h3>Avanti Cinema</h3>
+          <span class="client-role">Talent Representation · Music Distribution · Digital</span>
+          <p>Our flagship partnership since 2018. We manage social media, organise screenings and masterclass events, and distribute all music from Avanti Cinema's film catalogue.</p>
+          <ul class="client-works">
+            <li><em>Story Discussion</em> — Music Distribution</li>
+            <li><em>Nirudyoga Natulu</em> — Music Distribution</li>
+            <li><em>Chivaraku Migiledhi</em> — Music Distribution</li>
+            <li><em>Pickpocket</em> — Music Distribution</li>
+            <li><em>Double Engine</em> (2024) — Campaign</li>
+            <li><em>Sheeshmahal</em> (2024) — Campaign</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="client-card card fade-in">
+        <div class="client-card-header">
+          <img src="../images/client-arha.jpg" alt="Arha Media" onerror="this.style.display='none'">
+          <div class="client-card-logo">Arha Media</div>
+        </div>
+        <div class="client-card-body">
+          <h3>Arha Media</h3>
+          <span class="client-role">Digital Footprint Management</span>
+          <p>We create and manage digital assets, ensuring content produced and published by Arha Media is accessible to audiences — IMDb, Wikipedia, Google Knowledge Panels for their Aha releases.</p>
+        </div>
+      </div>
+
+      <div class="client-card card fade-in">
+        <div class="client-card-header">
+          <img src="../images/client-firstshow.jpg" alt="First Show / Chai Bisket" onerror="this.style.display='none'">
+          <div class="client-card-logo">First Show</div>
+        </div>
+        <div class="client-card-body">
+          <h3>First Show / Chai Bisket</h3>
+          <span class="client-role">Digital Footprint Management</span>
+          <p>We manage their online presence across digital platforms, ensuring content is optimised and accessible — similar to our approach with Arha Media.</p>
+        </div>
+      </div>
+
+      <div class="client-card card fade-in">
+        <div class="client-card-header">
+          <img src="../images/client-permitroom.jpg" alt="Permit Room" onerror="this.style.display='none'">
+          <div class="client-card-logo">Permit Room</div>
+        </div>
+        <div class="client-card-body">
+          <h3>Permit Room</h3>
+          <span class="client-role">Brand Sponsorships &amp; Advertising</span>
+          <p>We represent Permit Room, facilitating brand sponsorships and advertisements for their podcast episodes. We set up meetings with brands and define clear ROI metrics.</p>
+        </div>
+      </div>
+
+      <div class="client-card card fade-in">
+        <div class="client-card-header">
+          <img src="../images/client-sasi.jpg" alt="Sasi Group" onerror="this.style.display='none'">
+          <div class="client-card-logo">Sasi Group</div>
+        </div>
+        <div class="client-card-body">
+          <h3>Sasi Group of Institutes, Velivennu</h3>
+          <span class="client-role">Content Writing Services</span>
+          <p>What started as a part-time engagement evolved into a long-term partnership. Clear expectations, timely deliverables, and a professional approach have made this collaboration seamless.</p>
+        </div>
+      </div>
+
+      <div class="client-card card fade-in">
+        <div class="client-card-header">
+          <img src="../images/client-musalman.jpg" alt="Musalman Comix" onerror="this.style.display='none'">
+          <div class="client-card-logo">Musalman Comix</div>
+        </div>
+        <div class="client-card-body">
+          <h3>Musalman Comix</h3>
+          <span class="client-role">Digital Representation &amp; Brand Sponsorships</span>
+          <p>We handle digital representation, interviews, and promotions for India's first Muslim superhero comic. We also work on securing brand sponsorships and integrations.</p>
+        </div>
+      </div>
+
+      <div class="client-card card fade-in">
+        <div class="client-card-header">
+          <img src="../images/client-pramanya.jpg" alt="Pramanya Strategy" onerror="this.style.display='none'">
+          <div class="client-card-logo">Pramanya Strategy</div>
+        </div>
+        <div class="client-card-body">
+          <h3>Pramanya Strategy Co.</h3>
+          <span class="client-role">Strategic Consultancy</span>
+          <p>We provide business strategy reports and project documentation for Hari Kasula's consultancy — presenting viable projects to Indian state governments or startup incubators.</p>
+        </div>
+      </div>
+
+      <div class="client-card card fade-in">
+        <div class="client-card-header">
+          <img src="../images/client-brandhill.jpg" alt="Brand Hill" onerror="this.style.display='none'">
+          <div class="client-card-logo">Brand Hill</div>
+        </div>
+        <div class="client-card-body">
+          <h3>Brand Hill</h3>
+          <span class="client-role">Digital Footprint for Business &amp; Public Figures</span>
+          <p>We help businesses and influential public figures establish a strong online presence — corporate branding and personal reputation management at scale.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--red);padding:4rem 0;">
+  <div class="container" style="text-align:center;">
+    <h2 style="color:white;margin-bottom:1rem;">Want to Work With MC Joint?</h2>
+    <p style="color:rgba(255,255,255,0.85);margin-bottom:2rem;">Let's talk about how we can help your business grow.</p>
+    <a href="../contact.html" class="btn btn-white">Get in Touch</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <div class="footer-logo"><span>MC</span> Joint</div>
+        <p class="footer-desc">Masters of Ceremonies.<br>Music · Talent · Cinema · Strategy</p>
+        <div class="social-links" style="margin-top:1.5rem">
+          <a href="https://www.instagram.com/mcjoint.in/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://in.linkedin.com/company/mcjoint-in" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/mcjointin" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.youtube.com/@MCJoint" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-section"><h4>Navigate</h4><ul>
+        <li><a href="../about.html">About Us</a></li><li><a href="../services.html">Services</a></li>
+        <li><a href="../works.html">Our Works</a></li><li><a href="../blog.html">Blog</a></li>
+      </ul></div>
+      <div class="footer-section"><h4>Clients</h4><ul>
+        <li><a href="businesses.html">Businesses</a></li>
+        <li><a href="talent.html">Talent</a></li>
+        <li><a href="associates.html">Associates</a></li>
+      </ul></div>
+      <div class="footer-section"><h4>Contact</h4><ul>
+        <li><a href="mailto:info@mcjoint.in">info@mcjoint.in</a></li>
+        <li><a href="tel:+919014414114">+91 90144 14114</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> MC Joint — Masters of Ceremonies. All rights reserved.</p>
+      <a href="https://www.mcjoint.in">www.mcjoint.in</a>
+    </div>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>
