@@ -704,6 +704,25 @@
   </div>
 </footer>
 
+
+<script src="js/main.js"></script>
+<script>
+  // Hero word rotation
+  const words = ['MUSIC','CRAFTS','MOTION','COLLABORATIONS','MEDIA','COMMUNITY','MARKETING','CELEBRATIONS'];
+  const heroWord = document.getElementById('heroWord');
+  let idx = 0;
+  setInterval(() => {
+    heroWord.style.opacity = 0;
+    setTimeout(() => {
+      idx = (idx + 1) % words.length;
+      heroWord.textContent = words[idx];
+      heroWord.style.opacity = 1;
+    }, 300);
+  }, 2500);
+  heroWord.style.transition = 'opacity 0.3s';
+</script>
+
+  
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/main.js"></script>
 </script>
 
