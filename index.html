@@ -298,6 +298,53 @@
       position: relative;
       z-index: 2;
     }
+
+    /* Partner Logo Strip */
+.partner-strip {
+  background: var(--red);
+  padding: 3rem 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.partner-track {
+  display: flex;
+  width: max-content;
+  animation: scrollLogos 40s linear infinite;
+  gap: 4rem;
+  align-items: center;
+}
+
+.partner-track a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.partner-track img {
+  height: 60px;
+  width: auto;
+  opacity: 0.6;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+}
+
+.partner-track img:hover {
+  transform: scale(1.08);
+  filter: none;
+  opacity: 1;
+}
+
+@keyframes scrollLogos {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+    
   </style>
 </head>
 <body>
@@ -552,6 +599,109 @@
     </div>
   </div>
 </section>
+
+<!-- PARTNER LOGOS -->
+<section class="partner-strip">
+  <div class="partner-track">
+
+    <!-- Set 1 -->
+    <a href="https://www.chaibisket.com/" target="_blank">
+      <img src="" alt="Chai Bisket">
+    </a>
+
+    <a href="https://www.designdistricthyd.com/" target="_blank">
+      <img src="" alt="Design District Hyd">
+    </a>
+
+    <a href="https://viralvideofilm.netlify.app/" target="_blank">
+      <img src="" alt="H2O Arts">
+    </a>
+
+    <a href="https://www.avanticinema.com/" target="_blank">
+      <img src="" alt="Avanti Cinema">
+    </a>
+
+    <a href="https://www.instagram.com/wolfgangstudio.in/" target="_blank">
+      <img src="" alt="Wolfgang Studio">
+    </a>
+
+    <a href="https://www.instagram.com/tapelooprecords/?hl=en" target="_blank">
+      <img src="" alt="Tapeloop Records">
+    </a>
+
+    <a href="https://www.raastafilms.com/" target="_blank">
+      <img src="" alt="Raasta Films">
+    </a>
+
+    <a href="https://in.linkedin.com/in/harikasula" target="_blank">
+      <img src="" alt="Psybe Labs">
+    </a>
+
+    <a href="https://petrichorinvestments.in/" target="_blank">
+      <img src="" alt="Petrichor Investments">
+    </a>
+
+    <a href="https://www.brandhill.com/" target="_blank">
+      <img src="" alt="Brand Hill">
+    </a>
+
+    <a href="https://www.arhamedia.in/" target="_blank">
+      <img src="" alt="Arha Media">
+    </a>
+
+    <!-- Duplicate for seamless loop -->
+    <!-- Copy same logos again -->
+    
+    <!-- Just duplicate the above block once more below this line -->
+    
+    <a href="https://www.chaibisket.com/" target="_blank">
+      <img src="" alt="Chai Bisket">
+    </a>
+
+    <a href="https://www.designdistricthyd.com/" target="_blank">
+      <img src="" alt="Design District Hyd">
+    </a>
+
+    <a href="https://viralvideofilm.netlify.app/" target="_blank">
+      <img src="" alt="H2O Arts">
+    </a>
+
+    <a href="https://www.avanticinema.com/" target="_blank">
+      <img src="" alt="Avanti Cinema">
+    </a>
+
+    <a href="https://www.instagram.com/wolfgangstudio.in/" target="_blank">
+      <img src="" alt="Wolfgang Studio">
+    </a>
+
+    <a href="https://www.instagram.com/tapelooprecords/?hl=en" target="_blank">
+      <img src="" alt="Tapeloop Records">
+    </a>
+
+    <a href="https://www.raastafilms.com/" target="_blank">
+      <img src="" alt="Raasta Films">
+    </a>
+
+    <a href="https://in.linkedin.com/in/harikasula" target="_blank">
+      <img src="" alt="Psybe Labs">
+    </a>
+
+    <a href="https://petrichorinvestments.in/" target="_blank">
+      <img src="" alt="Petrichor Investments">
+    </a>
+
+    <a href="https://www.brandhill.com/" target="_blank">
+      <img src="" alt="Brand Hill">
+    </a>
+
+    <a href="https://www.arhamedia.in/" target="_blank">
+      <img src="" alt="Arha Media">
+    </a>
+
+    
+  </div>
+</section>
+  
 
 <!-- TALENT MARQUEE -->
 <section class="talent-section">
