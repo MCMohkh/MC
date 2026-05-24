@@ -211,17 +211,66 @@
     .work-info p { font-size:0.8rem; color:var(--grey); }
 
     /* TALENT */
-    .talent-section { background: var(--black); color: var(--white); }
+    .talent-section { background: var(--red); color: var(--white); padding: 4rem 0; }
     .talent-section h2 { color: var(--white); }
-    .talent-marquee-outer { overflow:hidden; margin: 2rem 0; }
-    .talent-marquee { display:flex; animation: marquee 25s linear infinite; }
+    .talent-section .section-label { color: rgba(255,255,255,0.65); }
+    .talent-section .btn-white { background:var(--white); color:var(--red); border-color:var(--white); }
+    .talent-section .btn-white:hover { background:transparent; color:var(--white); }
+    .talent-section .btn-outline { border-color:rgba(255,255,255,0.5); color:var(--white); }
+    .talent-section .btn-outline:hover { background:var(--white); color:var(--red); }
+
+    /* Marquee outer keeps overflow hidden */
+    .talent-marquee-outer { overflow:hidden; margin: 2.5rem 0; }
+    .talent-marquee { display:flex; animation: marquee 32s linear infinite; gap: 0; }
+    .talent-marquee:hover { animation-play-state: paused; }
+
+    /* Each pill is now a clickable card with thumbnail */
     .talent-pill {
-      white-space:nowrap; padding:0.75rem 1.5rem; margin:0 0.5rem;
-      border: 1px solid #333; font-family:'Montserrat',sans-serif;
-      font-weight:600; font-size:0.9rem; text-transform:uppercase; letter-spacing:0.05em;
-      color:#ccc; flex-shrink:0; transition:all 0.3s;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      width: 160px;
+      margin: 0 0.75rem;
+      cursor: pointer;
+      transition: transform 0.25s;
     }
-    .talent-pill:hover { border-color:var(--red); color:var(--white); }
+    .talent-pill:hover { transform: translateY(-4px); }
+
+    .talent-pill-thumb {
+      width: 160px;
+      height: 160px;
+      overflow: hidden;
+      border: 3px solid rgba(255,255,255,0.2);
+      position: relative;
+      background: rgba(0,0,0,0.3);
+      flex-shrink: 0;
+    }
+    .talent-pill-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      transition: transform 0.35s;
+      filter: grayscale(20%);
+    }
+    .talent-pill:hover .talent-pill-thumb { border-color: rgba(255,255,255,0.9); }
+    .talent-pill:hover .talent-pill-thumb img { transform: scale(1.07); filter: grayscale(0%); }
+
+    .talent-pill-label {
+      margin-top: 0.65rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--white);
+      text-align: center;
+      white-space: nowrap;
+      background: rgba(0,0,0,0.25);
+      padding: 0.3rem 0.6rem;
+    }
 
     /* INSIGHTS */
     .insight-card { border: 1px solid #eee; overflow: hidden; }
@@ -308,7 +357,7 @@
 
     /* Partner Logo Strip */
 .partner-strip {
-  background: var(--red);
+  background: var(--black);
   padding: 3rem 0;
   overflow: hidden;
   position: relative;
@@ -331,15 +380,15 @@
 .partner-track img {
   height: 60px;
   width: auto;
-  opacity: 0.6;
-  filter: brightness(1) invert(0);
+  opacity: 0.75;
+  filter: brightness(0) invert(1);
   transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
 }
 
 .partner-track img:hover {
   transform: scale(1.08);
-  filter: none;
-  opacity: 51;
+  filter: brightness(0) invert(1);
+  opacity: 1;
 }
 
 @keyframes scrollLogos {
@@ -723,34 +772,227 @@
       <a href="clients/talent.html" class="btn btn-white">Full Roster</a>
     </div>
   </div>
-  <div class="talent-marquee-outer" style="margin-top:2.5rem;">
+    <div class="talent-marquee-outer" style="margin-top:2.5rem;">
     <div class="talent-marquee">
-      <div class="talent-pill">Jagadeesh Prathap Bandari</div>
-      <div class="talent-pill">Vivek Sagar</div>
-      <div class="talent-pill">Smaran</div>
-      <div class="talent-pill">Raj Tirandasu</div>
-      <div class="talent-pill">Ravi Nidamarthy</div>
-      <div class="talent-pill">Pawon Ramesh</div>
-      <div class="talent-pill">Faraz OG</div>
-      <div class="talent-pill">Kiyaan</div>
-      <div class="talent-pill">INK Toxic</div>
-      <div class="talent-pill">Lazy (Sharath Pawar)</div>
-      <div class="talent-pill">Ajith Mohan</div>
-      <div class="talent-pill">Thanmai Bolt</div>
-      <!-- duplicate for seamless loop -->
-      <div class="talent-pill">Jagadeesh Prathap Bandari</div>
-      <div class="talent-pill">Vivek Sagar</div>
-      <div class="talent-pill">Smaran</div>
-      <div class="talent-pill">Raj Tirandasu</div>
-      <div class="talent-pill">Ravi Nidamarthy</div>
-      <div class="talent-pill">Pawon Ramesh</div>
-      <div class="talent-pill">Faraz OG</div>
-      <div class="talent-pill">Kiyaan</div>
-      <div class="talent-pill">INK Toxic</div>
-      <div class="talent-pill">Lazy (Sharath Pawar)</div>
-      <div class="talent-pill">Ajith Mohan</div>
-      <div class="talent-pill">Thanmai Bolt</div>
+      <a class="talent-pill" href="clients/talent/jagadeesh.html" aria-label="Jagadeesh Prathap Bandari — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Jagadeesh Prathap Bandari" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Jagadeesh Prathap Bandari</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/vivek-sagar.html" aria-label="Vivek Sagar — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Vivek Sagar" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Vivek Sagar</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/smaran.html" aria-label="Smaran — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Smaran" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Smaran</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/raj-tirandasu.html" aria-label="Raj Tirandasu — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Raj Tirandasu" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Raj Tirandasu</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/ravi-nidamarthy.html" aria-label="Ravi Nidamarthy — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Ravi Nidamarthy" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Ravi Nidamarthy</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/pawon-ramesh.html" aria-label="Pawon Ramesh — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Pawon Ramesh" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Pawon Ramesh</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/ajith-mohan.html" aria-label="Ajith Mohan — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Ajith Mohan" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Ajith Mohan</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/rohit-penumatsa.html" aria-label="Rohit Penumatsa — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Rohit Penumatsa" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Rohit Penumatsa</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/camp-sasi.html" aria-label="Camp Sasi — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Camp Sasi" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Camp Sasi</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/raju-shivaratri.html" aria-label="Raju Shivaratri — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Raju Shivaratri" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Raju Shivaratri</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/anvesh-michael.html" aria-label="Anvesh Michael — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Anvesh Michael" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Anvesh Michael</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/muni-myatari.html" aria-label="Muni Myatari — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Muni Myatari" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Muni Myatari</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/" aria-label="Faraz OG — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Faraz OG" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Faraz OG</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/" aria-label="Thanmai Bolt — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Thanmai Bolt" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Thanmai Bolt</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/" aria-label="Prashanth Podagatlapalli — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Prashanth Podagatlapalli" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Prashanth Podagatlapalli</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/" aria-label="Kiyaan — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Kiyaan" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Kiyaan</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/" aria-label="INK Toxic — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="INK Toxic" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">INK Toxic</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/" aria-label="Lazy (Sharath Pawar) — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Lazy (Sharath Pawar)" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Lazy (Sharath Pawar)</span>
+      </a>
+      <!-- duplicate for seamless infinite scroll -->
+      <a class="talent-pill" href="clients/talent/jagadeesh.html" aria-label="Jagadeesh Prathap Bandari — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Jagadeesh Prathap Bandari" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Jagadeesh Prathap Bandari</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/vivek-sagar.html" aria-label="Vivek Sagar — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Vivek Sagar" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Vivek Sagar</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/smaran.html" aria-label="Smaran — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Smaran" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Smaran</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/raj-tirandasu.html" aria-label="Raj Tirandasu — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Raj Tirandasu" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Raj Tirandasu</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/ravi-nidamarthy.html" aria-label="Ravi Nidamarthy — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Ravi Nidamarthy" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Ravi Nidamarthy</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/pawon-ramesh.html" aria-label="Pawon Ramesh — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Pawon Ramesh" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Pawon Ramesh</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/ajith-mohan.html" aria-label="Ajith Mohan — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Ajith Mohan" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Ajith Mohan</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/rohit-penumatsa.html" aria-label="Rohit Penumatsa — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Rohit Penumatsa" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Rohit Penumatsa</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/camp-sasi.html" aria-label="Camp Sasi — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Camp Sasi" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Camp Sasi</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/raju-shivaratri.html" aria-label="Raju Shivaratri — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Raju Shivaratri" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Raju Shivaratri</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/anvesh-michael.html" aria-label="Anvesh Michael — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Anvesh Michael" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Anvesh Michael</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/muni-myatari.html" aria-label="Muni Myatari — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Muni Myatari" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Muni Myatari</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/" aria-label="Faraz OG — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Faraz OG" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Faraz OG</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/" aria-label="Thanmai Bolt — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Thanmai Bolt" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Thanmai Bolt</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/" aria-label="Prashanth Podagatlapalli — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Prashanth Podagatlapalli" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Prashanth Podagatlapalli</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/" aria-label="Kiyaan — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Kiyaan" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Kiyaan</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/" aria-label="INK Toxic — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="INK Toxic" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">INK Toxic</span>
+      </a>
+      <a class="talent-pill" href="clients/talent/" aria-label="Lazy (Sharath Pawar) — MC Joint Talent">
+        <div class="talent-pill-thumb">
+          <img src="" alt="Lazy (Sharath Pawar)" width="160" height="160" loading="lazy">
+        </div>
+        <span class="talent-pill-label">Lazy (Sharath Pawar)</span>
+      </a>
     </div>
+  </div>
   </div>
   <div class="container" style="margin-top:2rem; display:flex; justify-content:flex-end;">
     <a href="clients/talent.html" class="btn btn-outline">Meet the Artists</a>
