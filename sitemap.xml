@@ -272,4 +272,17 @@
     </image:image>
   </url>
 
+
+  <url>
+    <loc>https://www.mcjoint.in/clients/talent/muni-myatari.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc></image:loc>
+      <image:title>Muni Myatari — Telugu Actor</image:title>
+      <image:caption>Muni Myatari is a Telugu theatre and film actor represented by MC Joint. Known for Double Engine, Disha Encounter and Kotha Poradu.</image:caption>
+    </image:image>
+  </url>
+
 </urlset>
