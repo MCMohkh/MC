@@ -1,29 +1,275 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <url><loc>https://www.mcjoint.in/</loc><lastmod>2026-03-12</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://www.mcjoint.in/services.html</loc><lastmod>2026-03-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.mcjoint.in/clients/talent.html</loc><lastmod>2026-03-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.mcjoint.in/about.html</loc><lastmod>2026-03-12</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.mcjoint.in/works.html</loc><lastmod>2026-03-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.mcjoint.in/clients/talent/vivek-sagar.html</loc><lastmod>2026-03-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.mcjoint.in/clients/talent/smaran.html</loc><lastmod>2026-03-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.mcjoint.in/clients/talent/jagadeesh.html</loc><lastmod>2026-03-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.mcjoint.in/clients/talent/raj-tirandasu.html</loc><lastmod>2026-03-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.mcjoint.in/clients/talent/ravi-nidamarthy.html</loc><lastmod>2026-03-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.mcjoint.in/clients/talent/pawon-ramesh.html</loc><lastmod>2026-03-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.mcjoint.in/clients/talent/rohit-penumatsa.html</loc><lastmod>2026-03-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.mcjoint.in/clients/talent/anvesh-michael.html</loc><lastmod>2026-03-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.mcjoint.in/clients/talent/camp-sasi.html</loc><lastmod>2026-03-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.mcjoint.in/clients/talent/raju-shivaratri.html</loc><lastmod>2026-03-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.mcjoint.in/contact.html</loc><lastmod>2026-03-12</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.mcjoint.in/clients/</loc><lastmod>2026-03-12</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.mcjoint.in/clients/businesses.html</loc><lastmod>2026-03-12</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.mcjoint.in/clients/associates.html</loc><lastmod>2026-03-12</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.mcjoint.in/blog.html</loc><lastmod>2026-03-12</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.mcjoint.in/nalgonda-gaddar-narsanna.html</loc><lastmod>2026-03-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.mcjoint.in/story-discussion-s2.html</loc><lastmod>2026-03-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.mcjoint.in/tapeloop-music-distribution.html</loc><lastmod>2026-03-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.mcjoint.in/viral-video-screening.html</loc><lastmod>2026-03-12</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <!-- Core pages -->
+  <url>
+    <loc>https://www.mcjoint.in/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc></image:loc>
+      <image:title>MC Joint — Music, Talent &amp; Cinema Agency, Hyderabad</image:title>
+      <image:caption>MC Joint is Hyderabad's premier creative agency for music distribution, talent management and cinema strategy.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.mcjoint.in/services.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.mcjoint.in/about.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc></image:loc>
+      <image:title>MC Joint Founder Sonu Mohkh</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.mcjoint.in/works.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.mcjoint.in/blog.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.mcjoint.in/contact.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Clients -->
+  <url>
+    <loc>https://www.mcjoint.in/clients/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.mcjoint.in/clients/talent.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc></image:loc>
+      <image:title>MC Joint Talent Roster — Telugu Actors, Musicians and Filmmakers</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.mcjoint.in/clients/businesses.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.mcjoint.in/clients/associates.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Talent profiles -->
+  <url>
+    <loc>https://www.mcjoint.in/clients/talent/vivek-sagar.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc></image:loc>
+      <image:title>Vivek Sagar — Music Composer, Tapeloop Records</image:title>
+      <image:caption>Vivek Sagar is a music composer and founder of Tapeloop Records, represented by MC Joint. Known for Pelli Choopulu and Sheeshmahal.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.mcjoint.in/clients/talent/smaran.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc></image:loc>
+      <image:title>Smaran — Singer &amp; Composer, Wolfgang Studios</image:title>
+      <image:caption>Smaran is a singer and composer at Wolfgang Studios, represented by MC Joint. Known for Ranganaayaki, Pickpocket and Alakanaka.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.mcjoint.in/clients/talent/rohit-penumatsa.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc></image:loc>
+      <image:title>Rohit Penumatsa — Director &amp; Filmmaker, Avanti Cinema</image:title>
+      <image:caption>Rohit Penumatsa is a Telugu filmmaker and director at Avanti Cinema, represented by MC Joint.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.mcjoint.in/clients/talent/camp-sasi.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc></image:loc>
+      <image:title>Camp Sasi — Director &amp; Filmmaker</image:title>
+      <image:caption>Camp Sasi is a Telugu filmmaker represented by MC Joint, known for Sheeshmahal and Gopi Galla Goa Trip.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.mcjoint.in/clients/talent/ajith-mohan.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc></image:loc>
+      <image:title>Ajith Mohan — Telugu Actor</image:title>
+      <image:caption>Ajith Mohan is a Telugu actor represented by MC Joint, known for Double Engine and Gopi Galla Goa Trip.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.mcjoint.in/clients/talent/jagadeesh.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc></image:loc>
+      <image:title>Jagadeesh Prathap Bandari — Telugu Actor</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.mcjoint.in/clients/talent/raj-tirandasu.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc></image:loc>
+      <image:title>Raj Tirandasu — Telugu Actor</image:title>
+      <image:caption>Raj Tirandasu is a Telugu actor represented by MC Joint, known for Kotha Poradu and Madhu Babu.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.mcjoint.in/clients/talent/raju-shivaratri.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc></image:loc>
+      <image:title>Raju Shivaratri — Telugu Actor</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.mcjoint.in/clients/talent/ravi-nidamarthy.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc></image:loc>
+      <image:title>Ravi Nidamarthy — Telugu Actor</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.mcjoint.in/clients/talent/pawon-ramesh.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc></image:loc>
+      <image:title>Pawon Ramesh — Telugu Actor</image:title>
+      <image:caption>Pawon Ramesh is a Telugu actor represented by MC Joint, known for George Reddy and Rakshasakavyam.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.mcjoint.in/clients/talent/anvesh-michael.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc></image:loc>
+      <image:title>Anvesh Michael — Telugu Actor</image:title>
+    </image:image>
+  </url>
+
+  <!-- Blog / Works articles -->
+  <url>
+    <loc>https://www.mcjoint.in/avanti-cinema-transformation.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc></image:loc>
+      <image:title>Avanti Cinema Transformation — Rohit Penumatsa &amp; Camp Sasi</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.mcjoint.in/story-discussion-s2.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc></image:loc>
+      <image:title>Story Discussion Season 2 with Smaran</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.mcjoint.in/nalgonda-gaddar-narsanna.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc></image:loc>
+      <image:title>Nalgonda Gaddar Narsanna — Folk Artist</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.mcjoint.in/tapeloop-music-distribution.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc></image:loc>
+      <image:title>Tapeloop Music Distribution by Vivek Sagar</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.mcjoint.in/viral-video-screening.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc></image:loc>
+      <image:title>Viral Video Screening — MC Joint Projects</image:title>
+    </image:image>
+  </url>
 
 </urlset>
