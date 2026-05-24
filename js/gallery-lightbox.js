@@ -1,6 +1,5 @@
 /**
  * MC Joint — Gallery Lightbox
- * Initialises on any .mc-gallery grid. Works with inline grids too.
  */
 (function () {
   'use strict';
@@ -39,7 +38,7 @@
     lbImg.src = item.src;
     lbImg.alt = item.alt || '';
     lbCaption.textContent = item.alt || '';
-    lbCounter.textContent = `${current + 1} / ${images.length}`;
+    lbCounter.textContent = (current + 1) + ' / ' + images.length;
     lbPrev.style.display = images.length > 1 ? '' : 'none';
     lbNext.style.display = images.length > 1 ? '' : 'none';
   }
@@ -59,65 +58,42 @@
   }
 
   lbClose.addEventListener('click', close);
-  lbPrev.addEventListener('click', () => show(current - 1));
-  lbNext.addEventListener('click', () => show(current + 1));
+  lbPrev.addEventListener('click', function(e) { e.stopPropagation(); show(current - 1); });
+  lbNext.addEventListener('click', function(e) { e.stopPropagation(); show(current + 1); });
 
-  // Click backdrop to close
   lb.addEventListener('click', function (e) {
-    if (e.target === lb || e.target === lb.querySelector('.mc-lightbox-inner')) close();
+    if (e.target === lb) close();
   });
 
-  // Keyboard navigation
   document.addEventListener('keydown', function (e) {
     if (!lb.classList.contains('active')) return;
-    if (e.key === 'Escape' || e.key === 'Esc') close();
+    if (e.key === 'Escape') close();
     if (e.key === 'ArrowLeft')  show(current - 1);
     if (e.key === 'ArrowRight') show(current + 1);
   });
 
-  // Touch/swipe support
   let touchStartX = 0;
-  lb.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
-  lb.addEventListener('touchend', e => {
+  lb.addEventListener('touchstart', function(e) { touchStartX = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', function(e) {
     const dx = e.changedTouches[0].clientX - touchStartX;
-    if (Math.abs(dx) > 50) dx < 0 ? show(current + 1) : show(current - 1);
+    if (Math.abs(dx) > 50) { dx < 0 ? show(current + 1) : show(current - 1); }
   });
 
-  // ─── Initialise all galleries ──────────────────────────────────────────────
+  // ── Init ──────────────────────────────────────────────────────────────────
   function initGalleries() {
-    // 1. Grids with class .mc-gallery (new)
-    document.querySelectorAll('.mc-gallery').forEach(grid => {
-      const imgs = Array.from(grid.querySelectorAll('img'));
-      imgs.forEach((img, i) => {
-        if (img.closest('.mc-gallery-item')) return; // already wrapped
-        const wrap = document.createElement('div');
-        wrap.className = 'mc-gallery-item';
-        img.parentNode.insertBefore(wrap, img);
-        wrap.appendChild(img);
-        wrap.addEventListener('click', () => open(i, imgs.map(el => ({ src: el.src, alt: el.alt }))));
-      });
-    });
-
-    // 2. Legacy inline grids: <div style="display:grid..."> containing only <img> tags
-    document.querySelectorAll('div[style*="display:grid"], div[style*="display: grid"]').forEach(grid => {
-      const imgs = Array.from(grid.querySelectorAll('img'));
-      if (imgs.length < 2) return;
-      // Only grids in the gallery/photos section
-      const section = grid.closest('section');
-      if (!section) return;
-      const label = section.querySelector('.section-label');
-      if (!label || !label.textContent.toLowerCase().includes('gallery')) return;
-
-      imgs.forEach((img, i) => {
-        if (img.closest('.mc-gallery-item')) return;
-        img.style.cursor = 'zoom-in';
-        img.addEventListener('click', () => open(i, imgs.map(el => ({ src: el.src, alt: el.alt }))));
+    document.querySelectorAll('.mc-gallery').forEach(function(grid) {
+      // Collect all images in this gallery
+      var items = Array.from(grid.querySelectorAll('.mc-gallery-item'));
+      var imgData = items.map(function(item) {
+        var img = item.querySelector('img');
+        return { src: img ? img.src : '', alt: img ? img.alt : '' };
       });
 
-      // Wrap for hover zoom effect
-      imgs.forEach(img => {
-        img.addEventListener('mouseenter', () => { img.style.transform = 'scale(1.03)'; img.style.transition = 'transform 0.3s'; });
-        img.addEventListener('mouseleave', () => { img.style.transform = ''; });
+      items.forEach(function(item, i) {
+        // Attach click to the wrapper div (already exists in HTML)
+        item.addEventListener('click', function() {
+          open(i, imgData);
+        });
       });
     });
   }
@@ -127,4 +103,5 @@
   } else {
     initGalleries();
   }
+
 })();
