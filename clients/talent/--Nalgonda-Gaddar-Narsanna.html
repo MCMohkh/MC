@@ -45,7 +45,23 @@
     .tag-upcoming { background:#1a3a1a; color:#4caf50; padding:0.2rem 0.6rem; font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; }
     .fade-in { opacity:0; transform:translateY(20px); transition:opacity 0.6s,transform 0.6s; }
     .fade-in.visible { opacity:1; transform:none; }
-  </style>
+  
+    .social-platform-links{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem;margin-bottom:2rem;}
+    .social-platform-links a{display:inline-flex;align-items:center;gap:.45rem;padding:.45rem .9rem;border:1px solid #ddd;border-radius:4px;text-decoration:none;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--dark-grey);transition:all .2s;}
+    .social-platform-links a:hover{border-color:var(--red);color:var(--red);}
+    .social-platform-links a svg{flex-shrink:0;}
+    .on-screen-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.5rem;margin-top:1.5rem;}
+    .screen-card{position:relative;border-radius:4px;overflow:hidden;background:#111;}
+    .screen-card a{display:block;text-decoration:none;}
+    .screen-card img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .3s;}
+    .screen-card:hover img{transform:scale(1.03);}
+    .screen-card-label{padding:.7rem;background:rgba(0,0,0,.85);}
+    .screen-card-label .role{font-size:.7rem;color:var(--red);font-weight:700;text-transform:uppercase;letter-spacing:.08em;}
+    .screen-card-label .film{font-size:.83rem;color:#fff;font-weight:600;margin-top:.15rem;}
+    .screen-card-label .detail{font-size:.73rem;color:#888;margin-top:.1rem;}
+    .play-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:42px;height:42px;background:rgba(225,6,0,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.9rem;pointer-events:none;}
+
+    </style>
 </head>
 <body>
 <header>
@@ -77,9 +93,9 @@
   <div class="container">
     <div class="talent-profile-info">
       <a class="back-link" href="../talent.html"><i class="fas fa-arrow-left"></i> All Talent</a>
-      <span class="talent-profile-role">Folk Singer · Political Music · Music Distribution</span>
+      <span class="talent-profile-role">Folk Singer · Vocalist · Balladeer</span>
       <h1>Nalgonda Gaddar Narsanna</h1>
-      <p style="margin-top:1rem;">A powerful voice from the folk and political music traditions of Telangana — Nalgonda Gaddar Narsanna carries forward the legacy of songs rooted in the land, the people, and the struggle for justice. MC Joint manages the distribution of his music.</p>
+      <p style="margin-top:1rem;">The voice of Nalgonda — raw, rooted, and impossible to ignore. Nalgonda Gaddar Narsanna carries the folk traditions of Telangana into every performance, and 131,000 Spotify listeners agree.</p>
     </div>
   </div>
   <div class="talent-profile-img">
@@ -92,25 +108,23 @@
   <div class="container">
     <div class="profile-body">
       <div class="fade-in">
-        <h2>About Nalgonda Gaddar Narsanna</h2>
+                <h2>About Nalgonda Gaddar Narsanna</h2>
         <div class="divider"></div>
-        <p style="color:var(--dark-grey);margin-bottom:1rem;">Nalgonda Gaddar Narsanna is a folk singer based in Nalgonda, Telangana, who belongs to the tradition of jana padalu — Telugu folk songs historically used to express the concerns, aspirations, and political consciousness of common people. His music sits within a lineage that includes legendary figures such as Gaddar, the revolutionary folk singer whose work became central to Telangana's cultural and political movements.</p>
-        <p style="color:var(--dark-grey);margin-bottom:1rem;">His songs are rooted in Telangana's rural life, its struggles, and its distinct cultural identity — combining traditional musical forms with direct, emotionally resonant language. His performances carry the weight of lived experience and connect with audiences who rarely see their stories reflected in mainstream media.</p>
-        <p style="color:var(--dark-grey);margin-bottom:1rem;">MC Joint manages the music distribution for Nalgonda Gaddar Narsanna — placing his recordings on digital streaming platforms, handling metadata and artwork, and ensuring that folk and political music from Telangana reaches listeners across India and the diaspora.</p>
-        <h3 style="margin-top:2.5rem;margin-bottom:1rem;">Music Distribution</h3>
+        <p style="color:var(--dark-grey);margin-bottom:1rem;">Kasala Narsanna — known widely as <strong>Nalgonda Gaddar Narsanna</strong> — is a Telugu folk singer and balladeer from Nalgonda, Telangana. Drawing from the Gaddar tradition of socially conscious, people-rooted music, he has built a body of work that speaks directly to the soil and struggles of Telangana life.</p>
+        <p style="color:var(--dark-grey);margin-bottom:1rem;">With over 20 albums and 21 tracks, his catalogue spans folk anthems, devotional songs, political commentaries, and tribal folk traditions. Albums like <em>Matti Vasana</em>, <em>Saani</em>, <em>Evvadidira Ee Bhoomi</em>, and <em>Maa Bhoomi Kosam Maa Nela Kosam</em> reflect his commitment to singing about land, community, and belonging. His voice has found its way into cinema too — he is credited on the Dasara soundtrack.</p>
+        <p style="color:var(--dark-grey);margin-bottom:1rem;">With 131,000+ monthly listeners on Spotify and a Facebook community of over 94,000 fans, his reach extends well beyond Nalgonda. MC Joint represents Nalgonda Gaddar Narsanna for live performances, studio collaborations, and music distribution.</p>
+        <div class="social-platform-links">
+          <a href="https://open.spotify.com/artist/25WzzaACKIw8c7I0B6NEgg" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#1DB954" style="height:16px;width:16px;"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg> Spotify</a>
+          <a href="https://www.instagram.com/nalgondagaddarnarsanna/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" style="height:16px;width:16px;"><defs><linearGradient id="igGx" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="50%" stop-color="#e6683c"/><stop offset="75%" stop-color="#cc2366"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><path fill="url(#igGx)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg> Instagram</a>
+        </div>
+        <h3 style="margin-top:2.5rem;margin-bottom:1rem;">Selected Discography</h3>
         <ul class="discography">
-          <li>
-            <div><div class="disc-title">Jana Padalu Recordings</div><div class="disc-type">Telugu Folk Music · MC Joint Distribution</div></div>
-            <span class="tag tag-red">Credited</span>
-          </li>
-          <li>
-            <div><div class="disc-title">Political &amp; Cultural Songs</div><div class="disc-type">Telangana Folk Tradition · Ongoing</div></div>
-            <span class="tag tag-red">Credited</span>
-          </li>
-          <li>
-            <div><div class="disc-title">Original Folk Compositions</div><div class="disc-type">Independent Releases · MC Joint</div></div>
-            <span class="tag tag-red">Credited</span>
-          </li>
+          <li><div><div class="disc-title">Matti Vasana</div><div class="disc-type">Folk Album</div></div><span class="tag tag-red">MC Joint</span></li>
+          <li><div><div class="disc-title">Saani</div><div class="disc-type">Folk Album</div></div><span class="tag tag-red">MC Joint</span></li>
+          <li><div><div class="disc-title">Evvadidira Ee Bhoomi</div><div class="disc-type">Folk Album</div></div><span class="tag tag-red">MC Joint</span></li>
+          <li><div><div class="disc-title">Maa Bhoomi Kosam Maa Nela Kosam</div><div class="disc-type">Folk Album</div></div><span class="tag tag-red">MC Joint</span></li>
+          <li><div><div class="disc-title">KCR Katha Ganam</div><div class="disc-type">Folk Political Song</div></div><span class="tag tag-red">MC Joint</span></li>
+          <li><div><div class="disc-title">RTC Karmikula Akali Poratam</div><div class="disc-type">2023 · Labour Rights Song</div></div><span class="tag tag-red">MC Joint</span></li>
         </ul>
       </div>
       <div class="fade-in">

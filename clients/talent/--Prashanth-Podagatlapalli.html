@@ -45,7 +45,23 @@
     .tag-upcoming { background:#1a3a1a; color:#4caf50; padding:0.2rem 0.6rem; font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; }
     .fade-in { opacity:0; transform:translateY(20px); transition:opacity 0.6s,transform 0.6s; }
     .fade-in.visible { opacity:1; transform:none; }
-  </style>
+  
+    .social-platform-links{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem;margin-bottom:2rem;}
+    .social-platform-links a{display:inline-flex;align-items:center;gap:.45rem;padding:.45rem .9rem;border:1px solid #ddd;border-radius:4px;text-decoration:none;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--dark-grey);transition:all .2s;}
+    .social-platform-links a:hover{border-color:var(--red);color:var(--red);}
+    .social-platform-links a svg{flex-shrink:0;}
+    .on-screen-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.5rem;margin-top:1.5rem;}
+    .screen-card{position:relative;border-radius:4px;overflow:hidden;background:#111;}
+    .screen-card a{display:block;text-decoration:none;}
+    .screen-card img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .3s;}
+    .screen-card:hover img{transform:scale(1.03);}
+    .screen-card-label{padding:.7rem;background:rgba(0,0,0,.85);}
+    .screen-card-label .role{font-size:.7rem;color:var(--red);font-weight:700;text-transform:uppercase;letter-spacing:.08em;}
+    .screen-card-label .film{font-size:.83rem;color:#fff;font-weight:600;margin-top:.15rem;}
+    .screen-card-label .detail{font-size:.73rem;color:#888;margin-top:.1rem;}
+    .play-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:42px;height:42px;background:rgba(225,6,0,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.9rem;pointer-events:none;}
+
+    </style>
 </head>
 <body>
 <header>
@@ -79,7 +95,7 @@
       <a class="back-link" href="../talent.html"><i class="fas fa-arrow-left"></i> All Talent</a>
       <span class="talent-profile-role">Actor · Writer · Director</span>
       <h1>Prashanth Podagatlapalli</h1>
-      <p style="margin-top:1rem;">A multi-talented filmmaker and actor who has carved a distinctive space in Telugu indie cinema — both in front of and behind the camera. MC Joint manages his talent representation and supported the campaign for his directorial debut.</p>
+      <p style="margin-top:1rem;">An actor who decided to direct, a director who hasn't stopped acting — Prashanth Podagatlapalli's debut behind the camera with <em>Viral Video</em> is the statement of someone who had been saving up ideas for a long time.</p>
     </div>
   </div>
   <div class="talent-profile-img">
@@ -92,30 +108,24 @@
   <div class="container">
     <div class="profile-body">
       <div class="fade-in">
-        <h2>About Prashanth Podagatlapalli</h2>
+                <h2>About Prashanth Podagatlapalli</h2>
         <div class="divider"></div>
-        <p style="color:var(--dark-grey);margin-bottom:1rem;">Prashanth Podagatlapalli is a Hyderabad-based actor, writer, and director whose creative range spans performance and storytelling in equal measure. As an actor, he has appeared in Telugu productions including <em>Ranganaayaki</em> and <em>Vellipomakey</em> — works rooted in the independent Telugu film circuit that he has long been a part of.</p>
-        <p style="color:var(--dark-grey);margin-bottom:1rem;">His ambitions behind the camera came to fruition with <em>Viral Video</em> — a multi-story Telugu dramedy anthology that he wrote and directed. Produced by H2O Arts and SB Motion Pictures, the film is a comedic examination of how digital media and mobile phones shape human behaviour. The ensemble cast and episodic structure mark it as a genuinely original entry in contemporary Telugu independent cinema.</p>
-        <p style="color:var(--dark-grey);margin-bottom:1rem;">MC Joint manages Prashanth's talent representation — handling professional enquiries, coordinating with production houses, and building his digital profile. We also supported the promotional campaign for <em>Viral Video</em>, the film's music distribution, and the social media strategy around its release.</p>
+        <p style="color:var(--dark-grey);margin-bottom:1rem;">Prashanth Podagatlapalli is a Hyderabad-based actor, writer, and filmmaker whose creative instincts sit squarely in the world of Telugu independent cinema. He came up through the Avanti Cinema orbit — appearing in <em>Ranganaayaki</em> (2021, dir. Rohit–Sasi) alongside Divya Bandaru, Thanmai Bolt, and other members of the extended MC Joint family.</p>
+        <p style="color:var(--dark-grey);margin-bottom:1rem;">His directorial debut arrived with <em>Viral Video</em> (2025) — a multi-story Telugu comedy-drama anthology he wrote, directed, and produced through H2O Arts. The film takes a sharp, comedic look at how mobile phones and digital media rewire human behaviour, using an ensemble of actors and interlocking stories to make its point. The cast includes Muni Myatari, and the music was distributed by MC Joint.</p>
+        <p style="color:var(--dark-grey);margin-bottom:1rem;">MC Joint manages Prashanth's talent representation — handling professional enquiries, coordinating with production houses, supporting film campaigns, and building his creative profile. We were part of the promotional strategy and music distribution for <em>Viral Video</em>.</p>
+        <div class="social-platform-links">
+          <a href="https://www.imdb.com/name/nm9827649/" target="_blank" rel="noopener"><svg viewBox="0 0 48 20" fill="none" style="height:16px;"><rect width="48" height="20" rx="3" fill="#F5C518"/><text x="4" y="15" font-family="Arial Black,Arial" font-weight="900" font-size="13" fill="#000">IMDb</text></svg> IMDb</a>
+          <a href="https://www.instagram.com/prashanth_podagatlapalli/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" style="height:16px;width:16px;"><defs><linearGradient id="igGx" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="50%" stop-color="#e6683c"/><stop offset="75%" stop-color="#cc2366"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><path fill="url(#igGx)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg> Instagram</a>
+        </div>
         <h3 style="margin-top:2.5rem;margin-bottom:1rem;">Filmography</h3>
         <ul class="discography">
-          <li>
-            <div><div class="disc-title">Viral Video</div><div class="disc-type">Writer &amp; Director · H2O Arts · 2025</div></div>
-            <span class="tag tag-red">Credited</span>
-          </li>
-          <li>
-            <div><div class="disc-title">Ranganaayaki</div><div class="disc-type">Actor · Telugu Feature</div></div>
-            <span class="tag tag-red">Credited</span>
-          </li>
-          <li>
-            <div><div class="disc-title">Vellipomakey</div><div class="disc-type">Actor · Telugu Feature</div></div>
-            <span class="tag tag-red">Credited</span>
-          </li>
-          <li>
-            <div><div class="disc-title">Telugu Independent Productions</div><div class="disc-type">Actor · Various</div></div>
-            <span class="tag tag-red">Credited</span>
-          </li>
+          <li><div><div class="disc-title">Ranganaayaki</div><div class="disc-type">2021 · Actor · Dir. Rohit–Sasi · Avanti Cinema</div></div><span class="tag tag-red">MC Joint</span></li>
+          <li><div><div class="disc-title">Viral Video</div><div class="disc-type">2025 · Writer, Director & Producer · H2O Arts</div></div><span class="tag tag-red">MC Joint</span></li>
         </ul>
+        <h3 style="margin-top:2.5rem;margin-bottom:1rem;">On Screen</h3>
+        <div class="on-screen-grid">
+          <div class="screen-card"><a href="https://www.youtube.com/watch?v=qcDDTfzzoSo" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/qcDDTfzzoSo/hqdefault.jpg" alt="Viral Video" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2025</div><div class="film">Viral Video</div><div class="detail">Writer & Director</div></div></a></div>
+        </div>
       </div>
       <div class="fade-in">
         <div class="sidebar-card">

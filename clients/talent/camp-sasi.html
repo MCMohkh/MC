@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Camp Sasi — Actor & Director | MC Joint</title>
-  <meta name="description" content="Camp Sasi is a Telugu actor and indie filmmaker from Hyderabad, represented by MC Joint. Works with Avanti Cinema.">
+  <meta name="description" content="Camp Sasi is a Telugu writer, director, and actor at Avanti Cinema, Hyderabad. Known for Sheeshmahal, Gopi Galla Goa Trip, Nirudyoga Natulu, and Story Discussion. Represented by MC Joint.">
   <meta name="keywords" content="Camp Sasi actor, Camp Sasi director Hyderabad, Telugu indie filmmaker, Avanti Cinema, MC Joint">
   <meta name="robots" content="index, follow">
   <meta name="author" content="MC Joint">
@@ -17,12 +17,17 @@
   <meta property="og:title" content="Camp Sasi — Actor & Director | MC Joint">
   <meta property="og:description" content="Camp Sasi is a Telugu actor and indie filmmaker from Hyderabad, represented by MC Joint. Works with Avanti Cinema.">
   <meta property="og:image" content="">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Camp Sasi — Director, MC Joint Hyderabad">
+  <meta property="og:image:type" content="image/jpeg">
   <meta property="og:locale" content="en_IN">
   <meta property="og:site_name" content="MC Joint">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@mcjointin">
   <meta name="twitter:title" content="Camp Sasi — Actor & Director | MC Joint">
   <meta name="twitter:image" content="">
+  <meta name="twitter:image:alt" content="Camp Sasi — Director, MC Joint Hyderabad">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -61,7 +66,23 @@
     .back-link:hover { color:var(--red); }
     .fade-in { opacity:0; transform:translateY(20px); transition:opacity 0.6s,transform 0.6s; }
     .fade-in.visible { opacity:1; transform:none; }
-  </style>
+  
+    .social-platform-links{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem;margin-bottom:2rem;}
+    .social-platform-links a{display:inline-flex;align-items:center;gap:.45rem;padding:.45rem .9rem;border:1px solid #ddd;border-radius:4px;text-decoration:none;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--dark-grey);transition:all .2s;}
+    .social-platform-links a:hover{border-color:var(--red);color:var(--red);}
+    .social-platform-links a svg{flex-shrink:0;}
+    .on-screen-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.5rem;margin-top:1.5rem;}
+    .screen-card{position:relative;border-radius:4px;overflow:hidden;background:#111;}
+    .screen-card a{display:block;text-decoration:none;}
+    .screen-card img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .3s;}
+    .screen-card:hover img{transform:scale(1.03);}
+    .screen-card-label{padding:.7rem;background:rgba(0,0,0,.85);}
+    .screen-card-label .role{font-size:.7rem;color:var(--red);font-weight:700;text-transform:uppercase;letter-spacing:.08em;}
+    .screen-card-label .film{font-size:.83rem;color:#fff;font-weight:600;margin-top:.15rem;}
+    .screen-card-label .detail{font-size:.73rem;color:#888;margin-top:.1rem;}
+    .play-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:42px;height:42px;background:rgba(225,6,0,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.9rem;pointer-events:none;}
+
+    </style>
 </head>
 <body>
 <header>
@@ -95,9 +116,9 @@
   <div class="container">
     <div class="talent-profile-info">
       <a class="back-link" href="../talent.html"><i class="fas fa-arrow-left"></i> All Talent</a>
-      <span class="talent-profile-role">Actor · Director · Indie Filmmaker</span>
+      <span class="talent-profile-role">Writer · Director · Actor · Avanti Cinema</span>
       <h1>Camp Sasi</h1>
-      <p style="margin-top:1rem;">Camp Sasi is a Telugu indie filmmaker and actor from Hyderabad, associated with Avanti Cinema. Represented by MC Joint.</p>
+      <p style="margin-top:1rem;">The storytelling mind of Avanti Cinema. Camp Sasi writes worlds that feel lived-in, directs with a hand steady enough to catch lightning, and isn't afraid to step in front of the camera either.</p>
     </div>
   </div>
   <div class="talent-profile-img">
@@ -111,16 +132,50 @@
       <div class="fade-in">
         <h2>About Camp Sasi</h2>
         <div class="divider"></div>
-        <p style="color:var(--dark-grey);margin-bottom:1rem;">Camp Sasi is a Hyderabad-based actor and filmmaker associated with the Avanti Cinema universe. He brings an indie spirit to his work — both in front of and behind the camera.</p><p style="color:var(--dark-grey);margin-bottom:1rem;">MC Joint handles his talent representation, connecting him with the right roles and productions across Telugu film and digital content.</p>
-        <h3 style="margin-top:2.5rem;margin-bottom:1rem;">Projects</h3>
-    <ul class="discography">
-      <li><div><div class="disc-title">Gopi Galla Goa Trip</div><div class="disc-type">Film · Avanti Cinema</div></div><span class="tag tag-red">Represented</span></li>
-    </ul>
+        <p style="color:var(--dark-grey);margin-bottom:1rem;">Camp Sasi is the writer and creative anchor of <strong>Rohit–Sasi</strong>, Avanti Cinema's celebrated filmmaking duo. Where Rohit brings visual precision, Sasi brings the stories — grounded, layered, and built from close observation of ordinary Telugu life.</p>
+        <p style="color:var(--dark-grey);margin-bottom:1rem;">He wrote the stories and screenplays for <em>Nirudyoga Natulu</em> (2018), <em>Story Discussion</em> (both seasons), <em>Double Engine</em> (2024), and <em>Gopi Galla Goa Trip</em> (2025). The latter — which he co-directed — premiered to widespread critical acclaim in November 2025. It was described by reviewers as 'exactly what Telugu cinema needed right now' and praised for its organic performances and beautifully written characters.</p>
+        <p style="color:var(--dark-grey);margin-bottom:1rem;">As a director, Sasi helmed <em>Sheeshmahal</em> — an anthology film shot in 2013 and theatrically released in 2024, featuring Piyush Mishra and Rahul Ram of Indian Ocean, with music by Vivek Sagar. The film stands as one of the most unusual and personal projects in recent Telugu indie cinema.</p>
+        <p style="color:var(--dark-grey);margin-bottom:1rem;">He also acts — playing <strong>Jack Daniels 'JD'</strong> in <em>Gopi Galla Goa Trip</em> — and has appeared in multiple Avanti Cinema productions. His Facebook group <em>Story Discussion</em> pioneered story-critique culture among Telugu independent filmmakers. MC Joint represents Sasi for creative partnerships, project development, and talent bookings.</p>
+        <div class="social-platform-links"><a href="https://www.imdb.com/name/nm8412332/" target="_blank" rel="noopener"><svg viewBox="0 0 48 20" fill="none" style="height:16px;"><rect width="48" height="20" rx="3" fill="#F5C518"/><text x="4" y="15" font-family="Arial Black,Arial" font-weight="900" font-size="13" fill="#000">IMDb</text></svg> IMDb</a><a href="https://www.instagram.com/campsasi/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" style="height:16px;width:16px;"><defs><linearGradient id="igG" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="50%" stop-color="#e6683c"/><stop offset="75%" stop-color="#cc2366"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><path fill="url(#igG)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg> Instagram</a></div>
+        
+        <h3 style="margin-top:2.5rem;margin-bottom:1rem;">Filmography</h3>
+        <ul class="discography">
+          <li>
+            <div><div class="disc-title">Story Discussion S1 & S2</div><div class="disc-type">2017–2021 · Creator & Writer · Avanti Cinema</div></div>
+            <span class="tag tag-red">MC Joint</span>
+          </li>
+          <li>
+            <div><div class="disc-title">Nirudyoga Natulu</div><div class="disc-type">2018 · Writer & Actor · Avanti Cinema</div></div>
+            <span class="tag tag-red">MC Joint</span>
+          </li>
+          <li>
+            <div><div class="disc-title">Double Engine</div><div class="disc-type">2024 · Writer — Dir. Rohit Penumatsa</div></div>
+            <span class="tag tag-red">MC Joint</span>
+          </li>
+          <li>
+            <div><div class="disc-title">Sheeshmahal</div><div class="disc-type">2024 · Director & Writer · Avanti Cinema</div></div>
+            <span class="tag tag-red">MC Joint</span>
+          </li>
+          <li>
+            <div><div class="disc-title">Gopi Galla Goa Trip</div><div class="disc-type">2025 · Co-Director, Writer & Actor · Avanti Cinema</div></div>
+            <span class="tag tag-red">MC Joint</span>
+          </li>
+        </ul>
+        
+        <h3 style="margin-top:2.5rem;margin-bottom:1rem;">On Screen</h3>
+        <div class="on-screen-grid">
+          <div class="screen-card"><a href="https://www.youtube.com/watch?v=L_Wo0Rj-UjQ" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/L_Wo0Rj-UjQ/hqdefault.jpg" alt="Nirudyoga Natulu" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2018</div><div class="film">Nirudyoga Natulu</div><div class="detail">Writer & Actor</div></div></a></div>
+          <div class="screen-card"><a href="https://www.youtube.com/watch?v=oLHjl3F7YSM" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/oLHjl3F7YSM/hqdefault.jpg" alt="Sheeshmahal" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2024</div><div class="film">Sheeshmahal</div><div class="detail">Director — Avanti Cinema</div></div></a></div>
+          <div class="screen-card"><a href="https://www.youtube.com/watch?v=An-vMK16QlA" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/An-vMK16QlA/hqdefault.jpg" alt="Gopi Galla Goa Trip" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2025</div><div class="film">Gopi Galla Goa Trip</div><div class="detail">Co-Director, Writer & Actor</div></div></a></div>
+        </div>
       </div>
       <div class="fade-in">
         <div class="sidebar-card">
           <h3>Quick Info</h3>
-          <div class="info-row"><span class="info-label">Category</span><span class="info-value">Actor / Director</span></div><div class="info-row"><span class="info-label">Based In</span><span class="info-value">Hyderabad</span></div><div class="info-row"><span class="info-label">Services</span><span class="info-value">Talent Representation</span></div>
+          <div class="info-row"><span class="info-label">Category</span><span class="info-value">Writer / Director / Actor</span></div>
+          <div class="info-row"><span class="info-label">House</span><span class="info-value">Avanti Cinema</span></div>
+          <div class="info-row"><span class="info-label">City</span><span class="info-value">Hyderabad</span></div>
+          <div class="info-row"><span class="info-label">Partnership</span><span class="info-value">Talent Representation</span></div>
         </div>
         <div style="margin-top:1.5rem;">
           <a href="../../contact.html" class="btn btn-primary" style="width:100%;text-align:center;display:block;">Enquire About Booking</a>
@@ -128,6 +183,7 @@
         <div style="margin-top:1rem;">
           <a href="../talent.html" class="btn btn-outline" style="width:100%;text-align:center;display:block;">View All Talent</a>
         </div>
+      </div>
       </div>
     </div>
   </div>
