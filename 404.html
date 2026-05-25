@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page Not Found | MC Joint</title>
+  <meta name="description" content="The page you're looking for doesn't exist. Head back to MC Joint — Hyderabad's creative agency for music, talent and cinema.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://www.mcjoint.in/404.html">
+  <link rel="icon" type="image/png" href="">
+  <meta property="og:title" content="404 — Page Not Found | MC Joint">
+  <meta property="og:description" content="The page you're looking for doesn't exist. Head back to MC Joint.">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="https://www.mcjoint.in/404.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-404 {
+      background: var(--black);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 1.5rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle grid pattern */
+    .page-404::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        135deg,
+        rgba(225,6,0,0.04) 0,
+        rgba(225,6,0,0.04) 1px,
+        transparent 0,
+        transparent 50%
+      );
+      background-size: 30px 30px;
+      pointer-events: none;
+    }
+
+    /* Giant 404 watermark */
+    .four-o-four-bg {
+      position: absolute;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(12rem, 35vw, 28rem);
+      font-weight: 900;
+      color: rgba(225,6,0,0.06);
+      letter-spacing: -0.05em;
+      line-height: 1;
+      user-select: none;
+      pointer-events: none;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+    }
+
+    .page-404-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+    }
+
+    .error-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--red);
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .error-code {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(5rem, 20vw, 9rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.04em;
+    }
+
+    .error-code span {
+      color: var(--red);
+    }
+
+    .error-headline {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .error-body {
+      color: #888;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .error-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .error-actions .btn {
+      min-width: 160px;
+    }
+
+    /* Quick links */
+    .error-links {
+      border-top: 1px solid #1a1a1a;
+      padding-top: 2rem;
+    }
+
+    .error-links p {
+      color: #555;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+
+    .error-link-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      justify-content: center;
+    }
+
+    .error-link-grid a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.45rem 1rem;
+      border: 1px solid #222;
+      border-radius: 4px;
+      color: #aaa;
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .error-link-grid a:hover {
+      border-color: var(--red);
+      color: var(--white);
+    }
+
+    .error-link-grid a i {
+      font-size: 0.7rem;
+      color: var(--red);
+    }
+
+    /* Animated red line accent */
+    .red-line {
+      width: 60px;
+      height: 4px;
+      background: var(--red);
+      margin: 0 auto 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .red-line::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.4);
+      animation: shimmer 2s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(200%); }
+    }
+
+    /* Countdown redirect */
+    .redirect-note {
+      margin-top: 2rem;
+      font-size: 0.78rem;
+      color: #444;
+    }
+
+    .redirect-note span {
+      color: var(--red);
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="header-content">
+      <a class="logo" href="index.html">
+        <img src="" alt="MC Joint — Masters of Ceremonies" width="160" height="42" fetchpriority="high" onerror="this.outerHTML='<span>MC</span> Joint'">
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <div class="nav-dropdown">
+          <a href="clients/index.html">Clients ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="clients/businesses.html">Businesses</a>
+            <a href="clients/talent.html">Talent</a>
+            <a href="clients/associates.html">Associates</a>
+          </div>
+        </div>
+        <a href="works.html">Our Works</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="contact.html" class="btn btn-primary header-cta">Work With Us</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="clients/index.html">Clients</a>
+  <a href="works.html">Our Works</a>
+  <a href="blog.html">Blog</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<main class="page-404" role="main">
+  <div class="four-o-four-bg" aria-hidden="true">404</div>
+
+  <div class="page-404-inner">
+    <span class="error-label">Error 404</span>
+    <div class="error-code">4<span>0</span>4</div>
+    <div class="red-line"></div>
+    <h1 class="error-headline">Scene Not Found</h1>
+    <p class="error-body">
+      Looks like this page got cut from the final edit. It might have moved,
+      been renamed, or never made it past the script stage.
+    </p>
+
+    <div class="error-actions">
+      <a href="index.html" class="btn btn-primary">
+        <i class="fas fa-home" style="margin-right:0.5rem;"></i> Back to Home
+      </a>
+      <a href="contact.html" class="btn btn-outline btn-white">
+        <i class="fas fa-envelope" style="margin-right:0.5rem;"></i> Contact Us
+      </a>
+    </div>
+
+    <div class="error-links">
+      <p>Or find what you're looking for</p>
+      <div class="error-link-grid">
+        <a href="clients/talent.html"><i class="fas fa-chevron-right"></i> Talent</a>
+        <a href="works.html"><i class="fas fa-chevron-right"></i> Our Works</a>
+        <a href="services.html"><i class="fas fa-chevron-right"></i> Services</a>
+        <a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a>
+        <a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a>
+        <a href="clients/businesses.html"><i class="fas fa-chevron-right"></i> Businesses</a>
+        <a href="clients/associates.html"><i class="fas fa-chevron-right"></i> Associates</a>
+      </div>
+    </div>
+
+    <p class="redirect-note">
+      Redirecting to home in <span id="countdown">10</span> seconds…
+    </p>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <div class="footer-logo">
+          <img src="" alt="MC Joint — Masters of Ceremonies, Hyderabad" width="160" height="44" loading="lazy">
+        </div>
+        <p class="footer-desc">Masters of Ceremonies.<br>Music · Talent · Cinema · Strategy</p>
+        <div class="social-links" style="margin-top:1.5rem">
+          <a href="https://www.instagram.com/mcjoint.in/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://in.linkedin.com/company/mcjoint-in" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/mcjointin" target="_blank" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.youtube.com/@MCJoint" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="works.html">Our Works</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Clients</h4>
+        <ul>
+          <li><a href="clients/businesses.html">Businesses</a></li>
+          <li><a href="clients/talent.html">Talent</a></li>
+          <li><a href="clients/associates.html">Associates</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@mcjoint.in">info@mcjoint.in</a></li>
+          <li><a href="tel:+919014414114">+91 90144 14114</a></li>
+          <li><a href="contact.html">Get In Touch</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> MC Joint — Masters of Ceremonies. All rights reserved.</p>
+      <a href="https://www.mcjoint.in">www.mcjoint.in</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Countdown redirect
+  let seconds = 10;
+  const el = document.getElementById('countdown');
+  const timer = setInterval(function() {
+    seconds--;
+    if (el) el.textContent = seconds;
+    if (seconds <= 0) {
+      clearInterval(timer);
+      window.location.href = 'index.html';
+    }
+  }, 1000);
+
+  // Cancel redirect if user interacts
+  ['click','keydown','touchstart','mousemove'].forEach(function(evt) {
+    document.addEventListener(evt, function cancelRedirect() {
+      clearInterval(timer);
+      const note = document.querySelector('.redirect-note');
+      if (note) note.style.display = 'none';
+      document.removeEventListener(evt, cancelRedirect);
+    }, { once: true });
+  });
+</script>
+</body>
+</html>

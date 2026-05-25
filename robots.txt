@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /thanks.html
+Disallow: /404.html
 Disallow: /admin/
 
 Sitemap: https://www.mcjoint.in/sitemap.xml
