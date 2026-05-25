@@ -66,6 +66,29 @@
     .back-link:hover { color:var(--red); }
     .fade-in { opacity:0; transform:translateY(20px); transition:opacity 0.6s,transform 0.6s; }
     .fade-in.visible { opacity:1; transform:none; }
+  
+    /* ── Gallery lightbox (shared) ─────────────────────────────────────── */
+    .mc-gallery { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:1rem; }
+    .mc-gallery-item { position:relative; aspect-ratio:1; overflow:hidden; cursor:zoom-in; background:#111; }
+    .mc-gallery-item img { width:100%; height:100%; object-fit:cover; object-position:top; transition:transform 0.35s; display:block; }
+    .mc-gallery-item:hover img { transform:scale(1.06); }
+    .mc-gallery-item::after {
+      content:'\f00e'; font-family:'Font Awesome 6 Free'; font-weight:900;
+      position:absolute; bottom:8px; right:10px; color:rgba(255,255,255,0.7);
+      font-size:1rem; pointer-events:none; opacity:0; transition:opacity 0.2s;
+    }
+    .mc-gallery-item:hover::after { opacity:1; }
+    /* Lightbox overlay */
+    .mc-lightbox { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.94); z-index:9999; align-items:center; justify-content:center; }
+    .mc-lightbox.active { display:flex; }
+    .mc-lightbox-inner { max-width:90vw; max-height:90vh; display:flex; align-items:center; justify-content:center; }
+    .mc-lightbox-inner img { max-width:90vw; max-height:88vh; object-fit:contain; box-shadow:0 8px 40px rgba(0,0,0,0.6); }
+    .mc-lb-btn { position:fixed; top:20px; right:24px; background:none; border:none; color:#fff; font-size:1.6rem; cursor:pointer; z-index:10001; padding:8px; line-height:1; }
+    .mc-lb-prev, .mc-lb-next { position:fixed; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); color:#fff; font-size:1.4rem; cursor:pointer; z-index:10001; padding:12px 16px; transition:background 0.2s; }
+    .mc-lb-prev { left:16px; } .mc-lb-next { right:16px; }
+    .mc-lb-prev:hover, .mc-lb-next:hover { background:rgba(255,255,255,0.2); }
+    .mc-lb-caption { position:fixed; bottom:48px; left:50%; transform:translateX(-50%); color:rgba(255,255,255,0.7); font-size:0.85rem; font-family:'Montserrat',sans-serif; max-width:80vw; text-align:center; pointer-events:none; }
+    .mc-lb-counter { position:fixed; bottom:24px; left:50%; transform:translateX(-50%); color:rgba(255,255,255,0.45); font-size:0.78rem; font-family:'Montserrat',sans-serif; pointer-events:none; letter-spacing:0.05em; }
   </style>
 </head>
 <body>
@@ -144,8 +167,8 @@
   <div class="container">
     <span class="section-label">Gallery</span>
     <h3 style="margin-bottom:1.5rem;">Photos</h3>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;">
-      <img src="" alt="Jagadeesh Prathap Bandari" style="width:100%;aspect-ratio:1;object-fit:cover;object-position:top;"><img src="" alt="Jagadeesh and Anvesh Michael on the sets of Mallesham" style="width:100%;aspect-ratio:1;object-fit:cover;object-position:top;">
+    <div class="mc-gallery">
+      <div class="mc-gallery-item"><img loading="lazy" src="" alt="Jagadeesh Prathap Bandari"></div><div class="mc-gallery-item"><img loading="lazy" src="" alt="Jagadeesh and Anvesh Michael on the sets of Mallesham"></div>
     </div>
   </div>
 </section>
