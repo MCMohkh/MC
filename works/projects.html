@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — MC Joint Portfolio</title>
+  <meta name="description" content="Explore MC Joint's flagship projects — Avanti Cinema, Story Discussion Season 2, Gopi Galla Goa Trip, Sheeshmahal, Chivaraku Migiledhi, and Viral Video. Six years of independent Telugu cinema.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.mcjoint.in/works/projects.html">
+  <link rel="icon" type="image/png" href="">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.mcjoint.in/works/projects.html">
+  <meta property="og:title" content="Projects — MC Joint Portfolio">
+  <meta property="og:description" content="Six flagship projects across independent Telugu cinema, OTT, and music distribution.">
+  <meta property="og:image" content="">
+  <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ── Project grid — 16:9 thumbnails, 3-col ── */
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    @media(min-width: 640px)  { .project-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media(min-width: 1024px) { .project-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    /* Featured card spans full row */
+    .project-card-featured {
+      grid-column: 1 / -1;
+    }
+    @media(min-width: 768px) {
+      .project-card-featured .pc-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .project-card-featured .pc-thumb { aspect-ratio: auto; min-height: 340px; }
+    }
+
+    /* Base card */
+    .project-card {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      border: 1px solid #eee;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .project-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,0.12); }
+
+    .pc-inner { display: flex; flex-direction: column; height: 100%; }
+
+    /* Thumbnail */
+    .pc-thumb {
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(160deg, #1a1a2e, #0d0d1a);
+    }
+    .pc-thumb img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
+      transition: transform 0.45s ease;
+      display: block;
+    }
+    .project-card:hover .pc-thumb img { transform: scale(1.05); }
+
+    /* Category badge */
+    .pc-badge {
+      position: absolute; top: 1rem; left: 1rem;
+      background: var(--red); color: #fff;
+      font-size: 0.65rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      padding: 0.3rem 0.75rem;
+    }
+
+    /* Year badge */
+    .pc-year {
+      position: absolute; top: 1rem; right: 1rem;
+      background: rgba(0,0,0,0.7); color: rgba(255,255,255,0.8);
+      font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 0.3rem 0.6rem;
+      backdrop-filter: blur(4px);
+    }
+
+    /* Gradient overlay on featured */
+    .pc-thumb-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.5), transparent 60%);
+      pointer-events: none;
+    }
+
+    /* Body */
+    .pc-body {
+      padding: 1.5rem;
+      display: flex; flex-direction: column;
+      flex: 1;
+    }
+    .project-card-featured .pc-body {
+      padding: 2.5rem;
+      justify-content: center;
+    }
+
+    .pc-client {
+      font-size: 0.72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--red); margin-bottom: 0.4rem;
+      display: block;
+    }
+
+    .pc-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem; font-weight: 800;
+      line-height: 1.25; margin-bottom: 0.6rem;
+      color: var(--black);
+    }
+    .project-card-featured .pc-title { font-size: 1.75rem; }
+
+    .pc-desc {
+      font-size: 0.85rem; color: var(--dark-grey);
+      line-height: 1.65; flex: 1;
+    }
+    .project-card-featured .pc-desc { font-size: 0.95rem; max-width: 440px; }
+
+    .pc-tags {
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+      margin-top: 1rem;
+    }
+    .pc-tag {
+      font-size: 0.68rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.05em;
+      padding: 0.28rem 0.7rem;
+      border: 1px solid #ddd; color: #888;
+    }
+    .pc-tag-r { border-color: var(--red); color: var(--red); }
+
+    .pc-cta {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      margin-top: 1.25rem;
+      font-size: 0.75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--red); text-decoration: none;
+    }
+    .pc-cta i { font-size: 0.65rem; transition: transform 0.2s; }
+    .project-card:hover .pc-cta i { transform: translateX(4px); }
+
+    /* Result pills on featured */
+    .pc-results {
+      display: flex; flex-wrap: wrap; gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+    .pc-result {
+      text-align: center;
+      background: var(--black); color: #fff;
+      padding: 0.75rem 1.25rem;
+      min-width: 90px;
+    }
+    .pc-result .r-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.4rem; font-weight: 900;
+      color: var(--red); line-height: 1;
+      display: block;
+    }
+    .pc-result .r-lbl {
+      font-size: 0.62rem; text-transform: uppercase;
+      letter-spacing: 0.07em; color: #aaa;
+      margin-top: 0.2rem; display: block;
+    }
+
+    .fade-in { opacity:0; transform:translateY(20px); transition:opacity .6s,transform .6s; }
+    .fade-in.visible { opacity:1; transform:none; }
+
+    /* Section divider */
+    .works-divider {
+      display: flex; align-items: center; gap: 1.25rem;
+      margin: 3.5rem 0 2rem;
+    }
+    .works-divider h2 { font-size: 1.1rem; white-space: nowrap; margin: 0; }
+    .works-divider::after {
+      content: ''; flex: 1; height: 1px; background: #eee;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container"><div class="header-content">
+    <a class="logo" href="../index.html">
+      <img src="" alt="MC Joint — Masters of Ceremonies" style="height:42px;width:auto;" onerror="this.outerHTML='<span>MC</span> Joint'">
+    </a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../services.html">Services</a>
+      <div class="nav-dropdown">
+        <a href="../clients/index.html">Clients ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="../clients/businesses.html">Businesses</a>
+          <a href="../clients/talent.html">Talent</a>
+          <a href="../clients/associates.html">Associates</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <a href="../works.html" class="active">Our Works ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="projects.html">Projects</a>
+        </div>
+      </div>
+      <a href="../blog.html">Blog</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+    <a href="../contact.html" class="btn btn-primary header-cta">Work With Us</a>
+    <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+  </div></div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html">Home</a>
+  <a href="../about.html">About</a>
+  <a href="../services.html">Services</a>
+  <a href="../clients/index.html">Clients</a>
+  <a href="../works.html">Our Works</a>
+  <a href="projects.html">→ Projects</a>
+  <a href="../blog.html">Blog</a>
+  <a href="../contact.html">Contact</a>
+</div>
+
+<div class="page-hero">
+  <div class="container">
+    <span class="page-hero-eyebrow">Our Works</span>
+    <h1>Projects</h1>
+    <p>Six flagship projects across independent Telugu cinema, OTT development, and music distribution — built from the ground up with the artists who made them.</p>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+
+    <!-- ── FEATURED: Avanti Cinema ── -->
+    <div class="works-divider fade-in">
+      <h2>Flagship Partnership</h2>
+    </div>
+
+    <a class="project-card project-card-featured fade-in" href="avanti-cinema.html">
+      <div class="pc-inner">
+        <div class="pc-thumb">
+          <img src="" alt="Avanti Cinema — MC Joint flagship partnership" loading="eager">
+          <div class="pc-thumb-overlay"></div>
+          <span class="pc-badge">Flagship</span>
+          <span class="pc-year">Since 2018</span>
+        </div>
+        <div class="pc-body">
+          <span class="pc-client">Avanti Cinema</span>
+          <h2 class="pc-title">6 Years of Craft — Storytelling, Distribution &amp; Community</h2>
+          <p class="pc-desc">From social media unification to building an independent OTT platform, distributing a full music catalogue, and supporting four theatrical releases in one year — our most comprehensive creative partnership.</p>
+          <div class="pc-results">
+            <div class="pc-result"><span class="r-num">₹4.5L</span><span class="r-lbl">SD2 Revenue</span></div>
+            <div class="pc-result"><span class="r-num">₹0</span><span class="r-lbl">Marketing Spend</span></div>
+            <div class="pc-result"><span class="r-num">12+</span><span class="r-lbl">Music Releases</span></div>
+            <div class="pc-result"><span class="r-num">4</span><span class="r-lbl">Films (2024)</span></div>
+          </div>
+          <div class="pc-tags" style="margin-top:1.25rem;">
+            <span class="pc-tag pc-tag-r">Digital Strategy</span>
+            <span class="pc-tag pc-tag-r">Music Distribution</span>
+            <span class="pc-tag">OTT Development</span>
+            <span class="pc-tag">Film Campaigns</span>
+          </div>
+          <span class="pc-cta">Explore Partnership <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- ── AVANTI SUB-PROJECTS ── -->
+    <div class="works-divider fade-in" style="margin-top:3.5rem;">
+      <h2>Avanti Cinema Projects</h2>
+    </div>
+
+    <div class="project-grid">
+
+      <!-- Story Discussion S2 -->
+      <a class="project-card fade-in" href="story-discussion-s2.html">
+        <div class="pc-inner">
+          <div class="pc-thumb">
+            <img src="" alt="Story Discussion Season 2 — Avanti Cinema" loading="lazy">
+            <span class="pc-badge">OTT Campaign</span>
+            <span class="pc-year">2020–2021</span>
+          </div>
+          <div class="pc-body">
+            <span class="pc-client">Avanti Cinema</span>
+            <h3 class="pc-title">Story Discussion — Season 2</h3>
+            <p class="pc-desc">We built an independent OTT platform and launched the most unusual subscription model in Telugu independent cinema — pay as you like. ₹4.5 lakhs. Zero marketing spend.</p>
+            <div class="pc-tags">
+              <span class="pc-tag pc-tag-r">₹4.5L Revenue</span>
+              <span class="pc-tag">Pay As You Like</span>
+              <span class="pc-tag">Zero Spend</span>
+            </div>
+            <span class="pc-cta">Read the Story <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Gopi Galla Goa Trip -->
+      <a class="project-card fade-in" href="gopi-galla-goa-trip.html">
+        <div class="pc-inner">
+          <div class="pc-thumb">
+            <img src="" alt="Gopi Galla Goa Trip — Avanti Cinema 2025" loading="lazy">
+            <span class="pc-badge">Film Campaign</span>
+            <span class="pc-year">2025</span>
+          </div>
+          <div class="pc-body">
+            <span class="pc-client">Avanti Cinema</span>
+            <h3 class="pc-title">Gopi Galla Goa Trip</h3>
+            <p class="pc-desc">15 days. 15 locations. Gadwal to Goa. Critically acclaimed as one of 2025's finest Telugu films. Music by Ravi Nidamarthy, distributed by MC Joint.</p>
+            <div class="pc-tags">
+              <span class="pc-tag pc-tag-r">Music Distribution</span>
+              <span class="pc-tag">Film Campaign</span>
+              <span class="pc-tag">2025</span>
+            </div>
+            <span class="pc-cta">View Project <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Sheeshmahal -->
+      <a class="project-card fade-in" href="sheeshmahal.html">
+        <div class="pc-inner">
+          <div class="pc-thumb">
+            <img src=")%20-%20Tapeloop%20Records%20-%20MC%20Joint.jpg" alt="Sheeshmahal OST — Tapeloop Records · MC Joint" loading="lazy">
+            <span class="pc-badge">Music Distribution</span>
+            <span class="pc-year">2024</span>
+          </div>
+          <div class="pc-body">
+            <span class="pc-client">Avanti Cinema · Tapeloop Records</span>
+            <h3 class="pc-title">Sheeshmahal</h3>
+            <p class="pc-desc">A multilingual anthology shot in 2013, released in theatres in 2024. Featuring Piyush Mishra and Rahul Ram of Indian Ocean. Music by Vivek Sagar — global distribution by MC Joint.</p>
+            <div class="pc-tags">
+              <span class="pc-tag pc-tag-r">Music Distribution</span>
+              <span class="pc-tag">Telugu · Hindi · English</span>
+            </div>
+            <span class="pc-cta">View Project <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Chivaraku Migiledhi -->
+      <a class="project-card fade-in" href="chivaraku-migiledhi.html">
+        <div class="pc-inner">
+          <div class="pc-thumb">
+            <img src="" alt="Chivaraku Migiledhi OST — Tapeloop Records · MC Joint" loading="lazy">
+            <span class="pc-badge">Music Distribution</span>
+            <span class="pc-year">2024</span>
+          </div>
+          <div class="pc-body">
+            <span class="pc-client">Tapeloop Records · MC Joint</span>
+            <h3 class="pc-title">Chivaraku Migiledhi</h3>
+            <p class="pc-desc">Original motion picture soundtrack distributed by MC Joint via Tapeloop Records across Spotify, Apple Music, JioSaavn, and all major streaming platforms worldwide.</p>
+            <div class="pc-tags">
+              <span class="pc-tag pc-tag-r">Music Distribution</span>
+              <span class="pc-tag">Tapeloop Records</span>
+            </div>
+            <span class="pc-cta">View Project <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+    </div><!-- /avanti project-grid -->
+
+    <!-- ── INDEPENDENT PROJECTS ── -->
+    <div class="works-divider fade-in" style="margin-top:4rem;">
+      <h2>Independent Projects</h2>
+    </div>
+
+    <div class="project-grid">
+
+      <!-- Viral Video -->
+      <a class="project-card fade-in" href="viral-video.html">
+        <div class="pc-inner">
+          <div class="pc-thumb">
+            <img src="" alt="Viral Video 2025 — H2O Arts" loading="lazy">
+            <span class="pc-badge">Film Campaign</span>
+            <span class="pc-year">2025</span>
+          </div>
+          <div class="pc-body">
+            <span class="pc-client">H2O Arts</span>
+            <h3 class="pc-title">Viral Video</h3>
+            <p class="pc-desc">A sharp Telugu comedy-drama anthology about what mobile phones do to people. Directorial debut of Prashanth Podagatlapalli — music distribution and campaign support by MC Joint.</p>
+            <div class="pc-tags">
+              <span class="pc-tag pc-tag-r">Film Campaign</span>
+              <span class="pc-tag">Music Distribution</span>
+              <span class="pc-tag">2025</span>
+            </div>
+            <span class="pc-cta">View Project <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+    </div><!-- /independent project-grid -->
+
+    <div style="text-align:center;margin-top:4rem;padding-top:2rem;border-top:1px solid #eee;">
+      <p style="color:var(--grey);font-size:.9rem;margin-bottom:1.25rem;">See everything across music, talent, and digital</p>
+      <a href="../works.html" class="btn btn-outline">View Full Portfolio</a>
+    </div>
+
+  </div>
+</section>
+
+<section style="background:var(--red);padding:4rem 0;text-align:center;">
+  <div class="container">
+    <h2 style="color:#fff;font-size:1.75rem;margin-bottom:.75rem;">Got a project in mind?</h2>
+    <p style="color:rgba(255,255,255,0.85);margin-bottom:2rem;">From concept to campaign — we build creative partnerships that last.</p>
+    <a href="../contact.html" class="btn btn-white">Work With MC Joint</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <div class="footer-logo">
+          <img src="" alt="MC Joint" style="height:48px;width:auto;" loading="lazy">
+        </div>
+        <p class="footer-desc">Masters of Ceremonies.<br>Music · Talent · Cinema · Strategy</p>
+        <div class="social-links" style="margin-top:1.5rem">
+          <a href="https://www.instagram.com/mcjoint.in/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://in.linkedin.com/company/mcjoint-in" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/mcjointin" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.youtube.com/@MCJoint" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-section"><h4>Navigate</h4><ul>
+        <li><a href="../about.html">About Us</a></li>
+        <li><a href="../services.html">Services</a></li>
+        <li><a href="../works.html">Our Works</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+      </ul></div>
+      <div class="footer-section"><h4>Clients</h4><ul>
+        <li><a href="../clients/businesses.html">Businesses</a></li>
+        <li><a href="../clients/talent.html">Talent</a></li>
+        <li><a href="../clients/associates.html">Associates</a></li>
+      </ul></div>
+      <div class="footer-section"><h4>Contact</h4><ul>
+        <li><a href="mailto:info@mcjoint.in">info@mcjoint.in</a></li>
+        <li><a href="tel:+919014414114">+91 90144 14114</a></li>
+        <li><a href="../contact.html">Get In Touch</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> MC Joint — Masters of Ceremonies. All rights reserved.</p>
+      <a href="https://www.mcjoint.in">www.mcjoint.in</a>
+    </div>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
