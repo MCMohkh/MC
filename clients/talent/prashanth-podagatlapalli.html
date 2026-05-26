@@ -78,9 +78,36 @@
     .mc-lb-prev { left:16px; } .mc-lb-next { right:16px; }
     .mc-lb-caption { position:fixed; bottom:48px; left:50%; transform:translateX(-50%); color:rgba(255,255,255,0.7); font-size:0.85rem; max-width:80vw; text-align:center; pointer-events:none; }
     .mc-lb-counter { position:fixed; bottom:24px; left:50%; transform:translateX(-50%); color:rgba(255,255,255,0.45); font-size:0.78rem; pointer-events:none; }
+  
+    /* ── YouTube inline modal ─────────────────────────────────────────── */
+    .yt-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center;padding:1rem;}
+    .yt-modal.active{display:flex;}
+    .yt-modal-inner{position:relative;width:100%;max-width:900px;aspect-ratio:16/9;}
+    .yt-modal-inner iframe{width:100%;height:100%;border:none;}
+    .yt-modal-close{position:absolute;top:-40px;right:0;background:none;border:none;color:white;font-size:1.5rem;cursor:pointer;padding:4px 8px;line-height:1;opacity:0.8;transition:opacity 0.2s;}
+    .yt-modal-close:hover{opacity:1;}
+    /* ── On-screen / video cards ──────────────────────────────────────── */
+    .on-screen-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.25rem;margin-top:1.5rem;}
+    .screen-card{position:relative;overflow:hidden;background:#111;cursor:pointer;}
+    .screen-card img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform 0.3s;display:block;}
+    .screen-card:hover img{transform:scale(1.04);}
+    .screen-card-label{padding:0.75rem;background:rgba(0,0,0,0.88);}
+    .screen-card-label .role{font-size:0.7rem;color:var(--red);font-weight:700;text-transform:uppercase;letter-spacing:0.08em;}
+    .screen-card-label .film{font-size:0.85rem;color:#fff;font-weight:600;margin-top:0.2rem;}
+    .screen-card-label .detail{font-size:0.75rem;color:#888;margin-top:0.15rem;}
+    .play-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);width:44px;height:44px;background:rgba(225,6,0,0.92);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:1rem;pointer-events:none;transition:background 0.2s,transform 0.2s;}
+    .screen-card:hover .play-icon{background:var(--red);transform:translate(-50%,-60%) scale(1.12);}
   </style>
 </head>
 <body>
+<!-- ── YouTube inline modal ─────────────────────────────────── -->
+<div class="yt-modal" id="ytModal" role="dialog" aria-modal="true" aria-label="Video player">
+  <div class="yt-modal-inner">
+    <button class="yt-modal-close" id="ytModalClose" aria-label="Close video"><i class="fas fa-times"></i></button>
+    <iframe id="ytModalFrame" src="" allow="autoplay; encrypted-media" allowfullscreen title="Video"></iframe>
+  </div>
+</div>
+
 <header>
   <div class="container"><div class="header-content">
     <a class="logo" href="../../index.html" style="display:flex;align-items:center;">
@@ -127,7 +154,7 @@
         <h2>About Prashanth</h2>
         <div class="divider"></div>
         <p style="color:var(--dark-grey);margin-bottom:1rem;">
-          Prashanth Podagatlapalli is a Telugu writer, director, and occasional actor whose sensibility is distinctive in the best way — he tells stories that are light-hearted and deeply human, tinged with an ironic wit that never tips into cynicism. His films observe life as it actually is: a little absurd, a little funny, and quietly meaningful.
+          Prashanth Podagatlapalli is a Telugu writer, director, and occasional actor whose sensibility is hard to pin down in the best way — he makes films that are light-hearted and ironic, that observe life as it actually is: a little absurd, quietly funny, and somehow always meaningful. He is a Rama Naidu Film School graduate (Masters in Film Technology, 2006–2010, 2012–2015) whose craft was shaped long before most of his contemporaries had decided what kind of films they wanted to make.
         </p>
         <p style="color:var(--dark-grey);margin-bottom:1rem;">
           He made his on-screen debut as an actor in <em>Vellipomakey</em> (2017), and went on to appear in Rohit Penumatsa and Camp Sasi's <em>Ranganaayaki</em> — a film that cemented his place within the <a href="../../works/avanti-cinema.html">Avanti Cinema</a> creative family. His instinct for storytelling, however, always pointed toward the director's chair.
@@ -136,7 +163,7 @@
           His debut directorial, <em><a href="../../works/viral-video.html">Viral Video</a></em>, is currently in post-production and is one of the projects we are most excited about at MC Joint. It carries the same signature quality you sense in Prashanth the person — something ironic and observational, the kind of film that reflects everyday life back at you with a knowing smile. Release is anticipated soon.
         </p>
         <p style="color:var(--dark-grey);">
-          Simultaneously, Prashanth is serving as an assistant director on <em>Illu</em> — an upcoming ETV Win web project by Rohit Penumatsa and Camp Sasi, also expected to release shortly. His involvement across multiple creative roles in the same orbit speaks to the trust his collaborators place in his judgment. We represent him for both acting opportunities and directorial projects.
+          His debut directorial, <em>Viral Video</em>, is currently in post-production and is one of the projects we are most excited about at MC Joint. It carries the same signature quality you sense in Prashanth the person — something ironic and observational, the kind of film that holds a mirror up to ordinary life and makes you laugh at the reflection. Release is anticipated soon.
         </p>
 
         <h3 style="margin-top:2.5rem;margin-bottom:1rem;">Credits</h3>
@@ -161,6 +188,47 @@
           </li>
           <li>
             <div>
+              <div class="disc-title">Beyond Physical</div>
+              <div class="disc-type">Documentary Series · Flintstory</div>
+              <div class="disc-role">Director · Parkour · Boxing · BMX Cycling &amp; Fitness Disciplines</div>
+            </div>
+            <span class="tag tag-red">Represented</span>
+          </li>
+          <li>
+            <div>
+              <div class="disc-title">Paytm — Brand Ad</div>
+              <div class="disc-type">Commercial · Atom Studios</div>
+              <div class="disc-role">Director</div>
+            </div>
+            <span class="tag tag-red">Represented</span>
+          </li>
+          <li>
+            <div>
+              <div class="disc-title">TVS — Brand Ad</div>
+              <div class="disc-type">Commercial · Paar Immersives</div>
+              <div class="disc-role">Director</div>
+            </div>
+            <span class="tag tag-red">Represented</span>
+          </li>
+          <li>
+            <div>
+              <div class="disc-title">Neramu Siksha</div>
+              <div class="disc-type">Short Film · Avanti Cinema</div>
+              <div class="disc-role">Producer · Dir. Rohit Penumatsa &amp; Camp Sasi</div>
+              <div class="disc-role" style="margin-top:0.35rem;font-size:0.75rem;color:#777;">Cast: Sai Yogi, Pawon Ramesh · A director and friends bracing for a producer meeting on a blazing summer day</div>
+            </div>
+            <span class="tag tag-red">Represented</span>
+          </li>
+          <li>
+            <div>
+              <div class="disc-title">Story Discussion — Season 2</div>
+              <div class="disc-type">Web Series · Avanti Cinema</div>
+              <div class="disc-role">First Assistant Director</div>
+            </div>
+            <span class="tag tag-red">Represented</span>
+          </li>
+          <li>
+            <div>
               <div class="disc-title">Ranganaayaki</div>
               <div class="disc-type">Film · 2021 · <a href="../../works/avanti-cinema.html">Avanti Cinema</a></div>
               <div class="disc-role">Actor · Dir. Rohit Penumatsa &amp; Camp Sasi</div>
@@ -175,18 +243,86 @@
             </div>
             <span class="tag tag-red">Represented</span>
           </li>
+          <li>
+            <div>
+              <div class="disc-title">Muddapappu Avakaya</div>
+              <div class="disc-type">Film · Pink Elephant · 2015–2016</div>
+              <div class="disc-role">Assistant Director · Scripting in pre-production · On-set actor coordination</div>
+            </div>
+            <span class="tag tag-red">Represented</span>
+          </li>
         </ul>
+
+        <h3 style="margin-top:2.5rem;margin-bottom:1rem;">Awards &amp; Recognition</h3>
+        <ul class="discography">
+          <li>
+            <div>
+              <div class="disc-title">Special Mention — 48 Hour Film Project</div>
+              <div class="disc-type">Annapurna Studios, Hyderabad · 2012</div>
+            </div>
+            <span style="font-size:1.2rem;">🏆</span>
+          </li>
+          <li>
+            <div>
+              <div class="disc-title">Winner — Airtel Ad Contest</div>
+              <div class="disc-type">GITAM University · 2010</div>
+            </div>
+            <span style="font-size:1.2rem;">🏆</span>
+          </li>
+        </ul>
+
+        <h3 style="margin-top:2.5rem;margin-bottom:1rem;">Education</h3>
+        <ul class="discography">
+          <li>
+            <div>
+              <div class="disc-title">Rama Naidu Film School</div>
+              <div class="disc-type">Masters in Film Technology · 2006–2010 &amp; 2012–2015</div>
+            </div>
+          </li>
+        </ul>
+        <h3 style="margin-top:2.5rem;margin-bottom:1rem;">On Screen</h3>
+        <div class="on-screen-grid">
+          <div class="screen-card" data-yt="9z6iIruFiAI">
+            <img src="https://img.youtube.com/vi/9z6iIruFiAI/hqdefault.jpg" alt="Neramu Siksha — Prashanth Podagatlapalli" loading="lazy">
+            <div class="play-icon"><i class="fas fa-play"></i></div>
+            <div class="screen-card-label">
+              <div class="role">Short Film · Avanti Cinema · Producer</div>
+              <div class="film">Neramu Siksha</div>
+              <div class="detail">Dir. Rohit &amp; Sasi · Cast: Sai Yogi, Pawon Ramesh</div>
+            </div>
+          </div>
+          <div class="screen-card" data-yt="SQv_-MlApB4">
+            <img src="https://img.youtube.com/vi/SQv_-MlApB4/hqdefault.jpg" alt="Ranganaayaki" loading="lazy">
+            <div class="play-icon"><i class="fas fa-play"></i></div>
+            <div class="screen-card-label">
+              <div class="role">Film · 2021 · Avanti Cinema</div>
+              <div class="film">Ranganaayaki</div>
+              <div class="detail">Actor · Dir. Rohit & Sasi</div>
+            </div>
+          </div>
+          <div class="screen-card" data-yt="F3iU2GrwRHs">
+            <img src="https://img.youtube.com/vi/F3iU2GrwRHs/hqdefault.jpg" alt="Vellipomakey" loading="lazy">
+            <div class="play-icon"><i class="fas fa-play"></i></div>
+            <div class="screen-card-label">
+              <div class="role">Feature Film · 2017</div>
+              <div class="film">Vellipomakey</div>
+              <div class="detail">Actor — Screen Debut</div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="fade-in">
         <div class="sidebar-card">
           <h3>Talent Info</h3>
-          <div class="info-row"><span class="info-label">Category</span><span class="info-value">Writer · Director · Actor</span></div>
+          <div class="info-row"><span class="info-label">Category</span><span class="info-value">Writer · Director · Producer · Actor</span></div>
           <div class="info-row"><span class="info-label">Style</span><span class="info-value">Light-hearted · Ironic Satire</span></div>
-          <div class="info-row"><span class="info-label">Industry</span><span class="info-value">Telugu Independent Cinema</span></div>
+          <div class="info-row"><span class="info-label">Education</span><span class="info-value">Rama Naidu Film School · MFT</span></div>
+          <div class="info-row"><span class="info-label">Commercial</span><span class="info-value">Paytm · TVS Ads</span></div>
+          <div class="info-row"><span class="info-label">Documentary</span><span class="info-value">Beyond Physical · Flintstory</span></div>
           <div class="info-row"><span class="info-label">Collaborators</span><span class="info-value">Rohit Penumatsa · Camp Sasi</span></div>
+          <div class="info-row"><span class="info-label">Awards</span><span class="info-value">48Hr Film Project · Airtel Ad Contest</span></div>
           <div class="info-row"><span class="info-label">Upcoming</span><span class="info-value">Viral Video · Illu (ETV Win)</span></div>
-          <div class="info-row"><span class="info-label">Services</span><span class="info-value">Talent Representation · Bookings</span></div>
         </div>
         <div style="margin-top:1.5rem;">
           <a href="../../contact.html" class="btn btn-primary" style="width:100%;text-align:center;display:block;">Enquire About Booking</a>
@@ -243,5 +379,24 @@
 </footer>
 <script src="../../js/main.js"></script>
 <script src="../../js/gallery-lightbox.js"></script>
+
+<script>
+  (function(){
+    var modal=document.getElementById('ytModal');
+    var frame=document.getElementById('ytModalFrame');
+    var close=document.getElementById('ytModalClose');
+    document.querySelectorAll('.screen-card[data-yt]').forEach(function(card){
+      card.addEventListener('click',function(){
+        frame.src='https://www.youtube.com/embed/'+card.dataset.yt+'?autoplay=1&rel=0';
+        modal.classList.add('active');
+        document.body.style.overflow='hidden';
+      });
+    });
+    function closeModal(){modal.classList.remove('active');frame.src='';document.body.style.overflow='';}
+    close.addEventListener('click',closeModal);
+    modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+  })();
+</script>
 </body>
 </html>
