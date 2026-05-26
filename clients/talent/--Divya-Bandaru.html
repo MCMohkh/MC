@@ -82,18 +82,29 @@
     .social-platform-links a{display:inline-flex;align-items:center;gap:.45rem;padding:.45rem .9rem;border:1px solid #ddd;border-radius:4px;text-decoration:none;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--dark-grey);transition:all .2s;}
     .social-platform-links a:hover{border-color:var(--red);color:var(--red);}
     .social-platform-links a svg{flex-shrink:0;}
-    .on-screen-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.5rem;margin-top:1.5rem;}
-    .screen-card{position:relative;border-radius:4px;overflow:hidden;background:#111;}
-    .screen-card a{display:block;text-decoration:none;}
-    .screen-card img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .3s;}
-    .screen-card:hover img{transform:scale(1.03);}
-    .screen-card-label{padding:.7rem;background:rgba(0,0,0,.85);}
-    .screen-card-label .role{font-size:.7rem;color:var(--red);font-weight:700;text-transform:uppercase;letter-spacing:.08em;}
-    .screen-card-label .film{font-size:.83rem;color:#fff;font-weight:600;margin-top:.15rem;}
-    .screen-card-label .detail{font-size:.73rem;color:#888;margin-top:.1rem;}
+    
     .play-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:42px;height:42px;background:rgba(225,6,0,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.9rem;pointer-events:none;}
 
-    </style>
+    
+    /* ── YouTube inline modal ─────────────────────────────────────────── */
+    .yt-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center;padding:1rem;}
+    .yt-modal.active{display:flex;}
+    .yt-modal-inner{position:relative;width:100%;max-width:900px;aspect-ratio:16/9;}
+    .yt-modal-inner iframe{width:100%;height:100%;border:none;}
+    .yt-modal-close{position:absolute;top:-40px;right:0;background:none;border:none;color:white;font-size:1.5rem;cursor:pointer;padding:4px 8px;line-height:1;opacity:0.8;transition:opacity 0.2s;}
+    .yt-modal-close:hover{opacity:1;}
+    /* ── On-screen / video cards ──────────────────────────────────────── */
+    .on-screen-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.25rem;margin-top:1.5rem;}
+    .screen-card{position:relative;overflow:hidden;background:#111;cursor:pointer;}
+    .screen-card img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform 0.3s;display:block;}
+    .screen-card:hover img{transform:scale(1.04);}
+    .screen-card-label{padding:0.75rem;background:rgba(0,0,0,0.88);}
+    .screen-card-label .role{font-size:0.7rem;color:var(--red);font-weight:700;text-transform:uppercase;letter-spacing:0.08em;}
+    .screen-card-label .film{font-size:0.85rem;color:#fff;font-weight:600;margin-top:0.2rem;}
+    .screen-card-label .detail{font-size:0.75rem;color:#888;margin-top:0.15rem;}
+    .play-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);width:44px;height:44px;background:rgba(225,6,0,0.92);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:1rem;pointer-events:none;transition:background 0.2s,transform 0.2s;}
+    .screen-card:hover .play-icon{background:var(--red);transform:translate(-50%,-60%) scale(1.12);}
+  </style>
 
   <script type="application/ld+json">
   {
@@ -113,6 +124,14 @@
   </script>
 </head>
 <body>
+<!-- ── YouTube inline modal ─────────────────────────────────── -->
+<div class="yt-modal" id="ytModal" role="dialog" aria-modal="true" aria-label="Video player">
+  <div class="yt-modal-inner">
+    <button class="yt-modal-close" id="ytModalClose" aria-label="Close video"><i class="fas fa-times"></i></button>
+    <iframe id="ytModalFrame" src="" allow="autoplay; encrypted-media" allowfullscreen title="Video"></iframe>
+  </div>
+</div>
+
 <header>
   <div class="container"><div class="header-content">
     <a class="logo" href="../../index.html"><span>MC</span> Joint</a>
@@ -231,39 +250,49 @@
   </div>
 </section>
 
-<!-- VIDEO SECTION -->
-<section class="video-section">
+<!-- ON SCREEN -->
+<section style="background:var(--black);padding:3rem 0;">
   <div class="container">
-    <p class="section-label">Films</p>
-    <h2>Watch Divya's Work</h2>
-    <p class="video-sub">Pickpocket (2022) — full film — and the trailer for its sequel, The Murder Plan.</p>
-
-    <div class="video-grid">
-
-      <!-- Full Film -->
-      <div>
-        <p class="video-card-label">Full Film</p>
-        <div class="video-wrap">
-          <iframe src="https://www.youtube.com/embed/1qOmyk9oI-Y" title="Pickpocket (2022) — Full Film" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-        </div>
-        <div class="video-card-meta">
-          <div class="video-card-title">Pickpocket (2022)</div>
-          <div class="video-card-desc">Written &amp; Directed by Divya Bandaru. A crime short produced under the MC Joint umbrella, distributed via Chai Bisket.</div>
+    <p class="section-label" style="color:rgba(255,255,255,0.5);">Films</p>
+    <h2 style="color:white;margin-bottom:0.5rem;">Watch Divya's Work</h2>
+    <p style="color:#888;margin-bottom:0;font-size:0.9rem;">Click any card to watch inline.</p>
+    <div class="on-screen-grid">
+      <div class="screen-card" data-yt="1qOmyk9oI-Y">
+        <img src="https://img.youtube.com/vi/1qOmyk9oI-Y/hqdefault.jpg" alt="Pickpocket — Divya Bandaru" loading="lazy">
+        <div class="play-icon"><i class="fas fa-play"></i></div>
+        <div class="screen-card-label">
+          <div class="role">Short Film · 2022 · Avanti Cinema</div>
+          <div class="film">Pickpocket</div>
+          <div class="detail">Writer &amp; Director · Chai Bisket</div>
         </div>
       </div>
-
-      <!-- Sequel Trailer -->
-      <div>
-        <p class="video-card-label">Sequel · Trailer</p>
-        <div class="video-wrap">
-          <iframe src="https://www.youtube.com/embed/4vFj38ncr7s" title="Pickpocket 2: The Murder Plan — Official Trailer" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-        </div>
-        <div class="video-card-meta">
-          <div class="video-card-title">Pickpocket 2: The Murder Plan</div>
-          <div class="video-card-desc">Official trailer for the sequel to Pickpocket. The story continues.</div>
+      <div class="screen-card" data-yt="eMLJ47QIfws">
+        <img src="https://img.youtube.com/vi/eMLJ47QIfws/hqdefault.jpg" alt="Etthulu — Divya Bandaru" loading="lazy">
+        <div class="play-icon"><i class="fas fa-play"></i></div>
+        <div class="screen-card-label">
+          <div class="role">Short Film · Avanti Cinema</div>
+          <div class="film">Etthulu</div>
+          <div class="detail">Writer &amp; Director</div>
         </div>
       </div>
-
+      <div class="screen-card" data-yt="AOhvokWcCRw">
+        <img src="https://img.youtube.com/vi/AOhvokWcCRw/hqdefault.jpg" alt="Inner City Blues — Divya Bandaru" loading="lazy">
+        <div class="play-icon"><i class="fas fa-play"></i></div>
+        <div class="screen-card-label">
+          <div class="role">Short Film · Avanti Cinema</div>
+          <div class="film">Inner City Blues</div>
+          <div class="detail">Writer &amp; Director</div>
+        </div>
+      </div>
+      <div class="screen-card" data-yt="4vFj38ncr7s">
+        <img src="https://img.youtube.com/vi/4vFj38ncr7s/hqdefault.jpg" alt="Pickpocket 2 — Murder Plan" loading="lazy">
+        <div class="play-icon"><i class="fas fa-play"></i></div>
+        <div class="screen-card-label">
+          <div class="role">Short Film · Avanti Cinema</div>
+          <div class="film">Pickpocket 2 — Murder Plan</div>
+          <div class="detail">Writer &amp; Director · Sequel</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -272,7 +301,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-section">
-        <div class="footer-logo"><span>MC</span> Joint</div>
+        <div class="footer-logo"><img src="" alt="MC Joint" style="height:48px;width:auto;" onerror="this.outerHTML='<span>MC</span> Joint'"></div>
         <p class="footer-desc">Masters of Ceremonies.<br>Music &middot; Talent &middot; Cinema &middot; Strategy</p>
         <div class="social-links" style="margin-top:1.5rem">
           <a href="https://www.instagram.com/mcjoint.in/" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -311,6 +340,24 @@
     entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); } });
   }, { threshold: 0.1 });
   faders.forEach(f => observer.observe(f));
+</script>
+<script>
+  (function(){
+    var modal=document.getElementById('ytModal');
+    var frame=document.getElementById('ytModalFrame');
+    var close=document.getElementById('ytModalClose');
+    document.querySelectorAll('.screen-card[data-yt]').forEach(function(card){
+      card.addEventListener('click',function(){
+        frame.src='https://www.youtube.com/embed/'+card.dataset.yt+'?autoplay=1&rel=0';
+        modal.classList.add('active');
+        document.body.style.overflow='hidden';
+      });
+    });
+    function closeModal(){modal.classList.remove('active');frame.src='';document.body.style.overflow='';}
+    close.addEventListener('click',closeModal);
+    modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+  })();
 </script>
 </body>
 </html>
