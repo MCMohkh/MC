@@ -1,0 +1,11 @@
+# Canonical redirects — old/spaced-name paths → clean slugs
+/clients/talent/Thanmai%20Bolt.html        /clients/talent/Thanmai%20Bolt.html    200
+/clients/talent/--Divya-Bandaru.html       /clients/talent/divya-bandaru.html     301
+/clients/talent/divya-bandaru.html         /clients/talent/--Divya-Bandaru.html   200
+/clients/talent/Prashanth%20Podagatlapalli.html  /clients/talent/prashanth-podagatlapalli.html  301
+/clients/talent/Nalgonda%20Gaddar%20Narsanna.html  /clients/talent/nalgonda-gaddar.html  301
+/clients/talent/Manoj-Juloori.html         /clients/talent/manoj-juloori.html     301
+/clients/talent/Niklesh-Sunkoji.html       /clients/talent/niklesh-sunkoji.html   301
+/clients/talent/Sindhu-Dakavarapu.html     /clients/talent/sindhu-dakavarapu.html 301
+/clients/talent/Sai-Yogi-G.html            /clients/talent/sai-yogi-g.html        301
+/clients/talent/Sai-Prasanna-K.html        /clients/talent/sai-prasanna.html      301
