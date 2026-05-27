@@ -211,13 +211,13 @@
       font-weight: 700;
     }
   </style>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-620G3QZX5M"></script>
+  <!-- Google Analytics GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-620G3QZX5M');
+    gtag('config', 'G-XXXXXXXXXX');
   </script>
 </head>
 <body>
@@ -373,19 +373,21 @@
 
   // Countdown redirect
   let seconds = 10;
+  let cancelled = false;
   const el = document.getElementById('countdown');
   const timer = setInterval(function() {
     seconds--;
     if (el) el.textContent = seconds;
     if (seconds <= 0) {
       clearInterval(timer);
-      window.location.href = 'index.html';
+      if (!cancelled) window.location.href = '/';
     }
   }, 1000);
 
-  // Cancel redirect if user interacts
-  ['click','keydown','touchstart','mousemove'].forEach(function(evt) {
+  // Cancel only on deliberate user interaction (not mousemove — fires on load)
+  ['click','keydown','touchstart'].forEach(function(evt) {
     document.addEventListener(evt, function cancelRedirect() {
+      cancelled = true;
       clearInterval(timer);
       const note = document.querySelector('.redirect-note');
       if (note) note.style.display = 'none';
