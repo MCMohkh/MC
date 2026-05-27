@@ -235,3 +235,66 @@ footer { background: var(--black); color: var(--white); padding: 4rem 0 2rem; }
 .mc-lb-counter { position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.5); font-size: 0.75rem; font-family: 'Montserrat', sans-serif; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; z-index: 10000; }
 .mc-lb-caption { position: fixed; bottom: 3rem; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.75); font-size: 0.8rem; font-family: 'Inter', sans-serif; text-align: center; max-width: 600px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; z-index: 10000; }
 @media (max-width: 640px) { .mc-lb-prev { left: 0.4rem; } .mc-lb-next { right: 0.4rem; } .mc-gallery { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); } }
+
+/* ─── WHATSAPP FLOATING BUTTON ─────────────────────────────────────────────── */
+.wa-float {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(37,211,102,0.4);
+  z-index: 9000;
+  transition: transform 0.2s, box-shadow 0.2s;
+  animation: wa-pop 0.4s cubic-bezier(0.34,1.56,0.64,1) 1.5s both;
+}
+.wa-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 24px rgba(37,211,102,0.55);
+}
+@keyframes wa-pop {
+  from { transform: scale(0); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+/* Tooltip on hover */
+.wa-float::before {
+  content: 'Chat on WhatsApp';
+  position: absolute;
+  right: calc(100% + 0.75rem);
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 0.4rem 0.75rem;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s;
+  font-family: 'Inter', sans-serif;
+}
+.wa-float:hover::before { opacity: 1; }
+
+/* ─── SEARCH ICON IN NAV ─────────────────────────────────────────────────── */
+.nav-search-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--dark-grey);
+  font-size: 0.9rem;
+  padding: 0 0.25rem;
+  transition: color 0.2s;
+  display: none;
+}
+@media(min-width: 768px) { .nav-search-btn { display: inline-flex; align-items: center; } }
+.nav-search-btn:hover { color: var(--red); }

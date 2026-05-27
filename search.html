@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search — MC Joint</title>
+  <meta name="description" content="Search MC Joint's talent roster, film projects, music releases and articles.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.mcjoint.in/search.html">
+  <link rel="icon" type="image/png" href="">
+  <link rel="icon" type="image/svg+xml" href="">
+  <link rel="apple-touch-icon" href="">
+  <meta property="og:title" content="Search — MC Joint">
+  <meta property="og:description" content="Search talent, projects, articles and more.">
+  <meta property="og:image" content="">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-620G3QZX5M"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-620G3QZX5M');</script>
+  <style>
+    .search-hero{background:var(--black);padding:130px 0 60px;text-align:center;}
+    .search-hero h1{color:#fff;font-size:clamp(2rem,5vw,3rem);margin-bottom:.5rem;}
+    .search-hero p{color:#888;font-size:1rem;}
+    .search-wrap{max-width:640px;margin:2.5rem auto 0;position:relative;}
+    .search-input{width:100%;padding:1.1rem 3.5rem 1.1rem 1.5rem;font-size:1rem;font-family:'Inter',sans-serif;border:2px solid #333;background:#111;color:#fff;outline:none;border-radius:0;transition:border-color .2s;}
+    .search-input:focus{border-color:var(--red);}
+    .search-input::placeholder{color:#555;}
+    .search-icon{position:absolute;right:1.25rem;top:50%;transform:translateY(-50%);color:#555;font-size:1rem;pointer-events:none;}
+    .filter-bar{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.5rem 0 2rem;justify-content:center;}
+    .filter-btn{padding:.4rem .9rem;border:1px solid #e0e0e0;background:#fff;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;cursor:pointer;transition:all .2s;font-family:'Montserrat',sans-serif;}
+    .filter-btn.active,.filter-btn:hover{background:var(--black);color:#fff;border-color:var(--black);}
+    .filter-btn[data-filter="talent"].active{background:var(--red);border-color:var(--red);}
+    .results-count{font-size:.8rem;color:var(--grey);margin-bottom:1.5rem;text-transform:uppercase;letter-spacing:.08em;font-weight:600;}
+    .results-grid{display:grid;grid-template-columns:1fr;gap:.75rem;}
+    @media(min-width:640px){.results-grid{grid-template-columns:1fr 1fr;}}
+    @media(min-width:1024px){.results-grid{grid-template-columns:1fr 1fr 1fr;}}
+    .result-card{border:1px solid #eee;padding:1.25rem;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:.4rem;transition:border-color .2s,transform .2s;}
+    .result-card:hover{border-color:var(--red);transform:translateY(-2px);}
+    .result-type{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;display:flex;align-items:center;gap:.4rem;}
+    .result-type.talent{color:var(--red);}
+    .result-type.work{color:#1a73e8;}
+    .result-type.blog{color:#0a8a0a;}
+    .result-type.page{color:#888;}
+    .result-title{font-family:'Montserrat',sans-serif;font-size:.95rem;font-weight:700;line-height:1.3;}
+    .result-subtitle{font-size:.75rem;color:var(--grey);}
+    .result-desc{font-size:.8rem;color:var(--dark-grey);line-height:1.5;margin-top:.2rem;}
+    .no-results{text-align:center;padding:4rem 0;color:var(--grey);}
+    .no-results i{font-size:2.5rem;color:#ddd;margin-bottom:1rem;display:block;}
+    .no-results p{font-size:.9rem;}
+    .popular-section{margin-top:3rem;}
+    .popular-section h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:var(--grey);margin-bottom:1rem;}
+    .popular-pills{display:flex;flex-wrap:wrap;gap:.5rem;}
+    .popular-pill{padding:.4rem .9rem;border:1px solid #eee;font-size:.78rem;cursor:pointer;color:var(--dark-grey);transition:all .2s;background:#fff;}
+    .popular-pill:hover{border-color:var(--red);color:var(--red);}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container"><div class="header-content">
+    <a class="logo" href="index.html"><img src="" alt="MC Joint" style="height:42px;width:auto;" onerror="this.outerHTML='<span>MC</span> Joint'"></a>
+    <nav>
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+      <div class="nav-dropdown"><a href="clients/index.html">Clients ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="clients/businesses.html">Businesses</a>
+          <a href="clients/talent.html">Talent</a>
+          <a href="clients/associates.html">Associates</a>
+        </div>
+      </div>
+      <a href="works.html">Our Works</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="nav-search-btn" onclick="window.location.href='search.html'" aria-label="Search"><i class="fas fa-search"></i></button>
+    <a href="contact.html" class="btn btn-primary header-cta">Work With Us</a>
+    <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+  </div></div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+  <a href="clients/index.html">Clients</a><a href="works.html">Our Works</a>
+  <a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+</div>
+
+<div class="search-hero">
+  <div class="container">
+    <span style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:var(--red);display:block;margin-bottom:.75rem;">MC Joint</span>
+    <h1>Search</h1>
+    <p>Find talent, projects, music and articles</p>
+    <div class="search-wrap">
+      <input class="search-input" id="searchInput" type="search" placeholder="Search artists, films, projects…" autocomplete="off" autofocus>
+      <i class="fas fa-search search-icon"></i>
+    </div>
+  </div>
+</div>
+
+<section style="padding-top:2rem;">
+  <div class="container">
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="talent">Talent</button>
+      <button class="filter-btn" data-filter="work">Projects</button>
+      <button class="filter-btn" data-filter="blog">Articles</button>
+      <button class="filter-btn" data-filter="page">Pages</button>
+    </div>
+
+    <div id="resultsCount" class="results-count" style="display:none;"></div>
+    <div id="resultsGrid" class="results-grid"></div>
+
+    <div id="noResults" class="no-results" style="display:none;">
+      <i class="fas fa-search"></i>
+      <p>No results for "<span id="noResultsQuery"></span>"</p>
+      <p style="margin-top:.5rem;">Try a different search — artist name, film title, or project type.</p>
+    </div>
+
+    <div id="popularSection" class="popular-section">
+      <h3>Popular searches</h3>
+      <div class="popular-pills">
+        <span class="popular-pill" data-query="Vivek Sagar">Vivek Sagar</span>
+        <span class="popular-pill" data-query="Rohit Penumatsa">Rohit Penumatsa</span>
+        <span class="popular-pill" data-query="Gopi Galla Goa Trip">Gopi Galla Goa Trip</span>
+        <span class="popular-pill" data-query="Jagadeesh">Jagadeesh</span>
+        <span class="popular-pill" data-query="Sheeshmahal">Sheeshmahal</span>
+        <span class="popular-pill" data-query="Smaran">Smaran</span>
+        <span class="popular-pill" data-query="Avanti Cinema">Avanti Cinema</span>
+        <span class="popular-pill" data-query="Camp Sasi">Camp Sasi</span>
+        <span class="popular-pill" data-query="Muni Myatari">Muni Myatari</span>
+        <span class="popular-pill" data-query="Pawon Ramesh">Pawon Ramesh</span>
+        <span class="popular-pill" data-query="music distribution">Music Distribution</span>
+        <span class="popular-pill" data-query="Tapeloop">Tapeloop</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <div class="footer-logo"><img src="" alt="MC Joint" style="height:48px;width:auto;" loading="lazy"></div>
+        <p class="footer-desc">Masters of Ceremonies.<br>Music · Talent · Cinema · Strategy</p>
+        <div class="social-links" style="margin-top:1.5rem">
+          <a href="https://www.instagram.com/mcjoint.in/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://in.linkedin.com/company/mcjoint-in" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/mcjointin" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.youtube.com/@MCJoint" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-section"><h4>Navigate</h4><ul>
+        <li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li>
+        <li><a href="works.html">Our Works</a></li><li><a href="blog.html">Blog</a></li>
+      </ul></div>
+      <div class="footer-section"><h4>Clients</h4><ul>
+        <li><a href="clients/businesses.html">Businesses</a></li>
+        <li><a href="clients/talent.html">Talent</a></li>
+        <li><a href="clients/associates.html">Associates</a></li>
+      </ul></div>
+      <div class="footer-section"><h4>Contact</h4><ul>
+        <li><a href="mailto:info@mcjoint.in">info@mcjoint.in</a></li>
+        <li><a href="tel:+919014414114">+91 90144 14114</a></li>
+        <li><a href="contact.html">Get In Touch</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> MC Joint — Masters of Ceremonies. All rights reserved.</p>
+      <a href="https://www.mcjoint.in">www.mcjoint.in</a>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+let searchIndex = [];
+let activeFilter = 'all';
+
+// Load index
+fetch('search-index.json')
+  .then(r => r.json())
+  .then(data => {
+    searchIndex = data;
+    // Show all on load
+    renderResults(data);
+  });
+
+const input = document.getElementById('searchInput');
+const grid = document.getElementById('resultsGrid');
+const countEl = document.getElementById('resultsCount');
+const noResults = document.getElementById('noResults');
+const popularSection = document.getElementById('popularSection');
+
+// URL param support (?q=vivek)
+const urlQ = new URLSearchParams(window.location.search).get('q');
+if (urlQ) { input.value = urlQ; }
+
+function score(item, q) {
+  const ql = q.toLowerCase();
+  const titleL = item.title.toLowerCase();
+  const descL = item.desc.toLowerCase();
+  const tagsL = (item.tags || '').toLowerCase();
+  if (titleL === ql) return 100;
+  if (titleL.startsWith(ql)) return 80;
+  if (titleL.includes(ql)) return 60;
+  if (tagsL.includes(ql)) return 40;
+  if (descL.includes(ql)) return 20;
+  return 0;
+}
+
+function typeIcon(type) {
+  const icons = {talent:'fa-user',work:'fa-film',blog:'fa-newspaper',page:'fa-home'};
+  return icons[type] || 'fa-circle';
+}
+function typeLabel(type) {
+  return {talent:'Talent',work:'Project',blog:'Article',page:'Page'}[type] || type;
+}
+
+function renderResults(items) {
+  const q = input.value.trim();
+  const filtered = activeFilter === 'all' ? items : items.filter(i => i.type === activeFilter);
+
+  if (filtered.length === 0 && q) {
+    grid.innerHTML = '';
+    noResults.style.display = 'block';
+    document.getElementById('noResultsQuery').textContent = q;
+    countEl.style.display = 'none';
+    popularSection.style.display = 'block';
+    return;
+  }
+
+  noResults.style.display = 'none';
+  popularSection.style.display = q ? 'none' : 'block';
+
+  if (q) {
+    countEl.style.display = 'block';
+    countEl.textContent = `${filtered.length} result${filtered.length !== 1 ? 's' : ''} for "${q}"`;
+  } else {
+    countEl.style.display = 'none';
+  }
+
+  grid.innerHTML = filtered.map(item => `
+    <a class="result-card" href="${item.url}">
+      <div class="result-type ${item.type}">
+        <i class="fas ${typeIcon(item.type)}"></i> ${typeLabel(item.type)}
+      </div>
+      <div class="result-title">${item.title}</div>
+      ${item.subtitle ? `<div class="result-subtitle">${item.subtitle}</div>` : ''}
+      ${item.desc ? `<div class="result-desc">${item.desc}</div>` : ''}
+    </a>
+  `).join('');
+}
+
+function doSearch() {
+  const q = input.value.trim();
+  if (!q) { renderResults(searchIndex); return; }
+  const scored = searchIndex
+    .map(item => ({ item, s: score(item, q) }))
+    .filter(x => x.s > 0)
+    .sort((a, b) => b.s - a.s)
+    .map(x => x.item);
+  renderResults(scored);
+}
+
+input.addEventListener('input', doSearch);
+
+// Filter buttons
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeFilter = btn.dataset.filter;
+    doSearch();
+  });
+});
+
+// Popular pills
+document.querySelectorAll('.popular-pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    input.value = pill.dataset.query;
+    doSearch();
+    input.focus();
+  });
+});
+
+// Run on load if URL param
+if (urlQ) doSearch();
+</script>
+<a class="wa-float" href="https://wa.me/919014414114?text=Hi%20MC%20Joint%2C%20I%27d%20like%20to%20discuss%20a%20project" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+</body>
+</html>
