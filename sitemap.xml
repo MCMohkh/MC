@@ -329,4 +329,63 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- ── WORKS PAGES ───────────────────────────────────────────────── -->
+  <url>
+    <loc>https://www.mcjoint.in/works/avanti-cinema.html</loc>
+    <lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+    <image:image>
+      <image:loc></image:loc>
+      <image:title>Avanti Cinema — 6 Years of Storytelling | MC Joint</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mcjoint.in/works/chivaraku-migiledhi.html</loc>
+    <lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc></image:loc>
+      <image:title>Chivaraku Migiledhi — Music Distribution | MC Joint</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mcjoint.in/works/gopi-galla-goa-trip.html</loc>
+    <lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <image:image>
+      <image:loc></image:loc>
+      <image:title>Gopi Galla Goa Trip — Film Campaign | MC Joint</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mcjoint.in/works/projects.html</loc>
+    <lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc></image:loc>
+      <image:title>Projects — MC Joint Portfolio</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mcjoint.in/works/sheeshmahal.html</loc>
+    <lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <image:image>
+      <image:loc>)%20-%20Tapeloop%20Records%20-%20MC%20Joint.jpg</image:loc>
+      <image:title>Sheeshmahal — A Decade in the Making | Avanti Cinema × MC Joint</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mcjoint.in/works/story-discussion-s2.html</loc>
+    <lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc></image:loc>
+      <image:title>Story Discussion Season 2 | MC Joint</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mcjoint.in/works/viral-video.html</loc>
+    <lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <image:image>
+      <image:loc></image:loc>
+      <image:title>Viral Video — Film by Prashanth Podagatlapalli | MC Joint</image:title>
+    </image:image>
+  </url>
+
 </urlset>
