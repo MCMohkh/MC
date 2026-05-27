@@ -66,6 +66,14 @@
   <script type="application/ld+json">
   [{"@context":"https://schema.org","@type":"Service","serviceType":"Music Distribution","provider":{"@type":"Organization","name":"MC Joint","url":"https://www.mcjoint.in"},"areaServed":{"@type":"Country","name":"India"},"description":"MC Joint distributes independent music across Spotify, Apple Music, Amazon Music and more.","url":"https://www.mcjoint.in/services.html#distribution"},{"@context":"https://schema.org","@type":"Service","serviceType":"Talent Management","provider":{"@type":"Organization","name":"MC Joint","url":"https://www.mcjoint.in"},"areaServed":{"@type":"Country","name":"India"},"description":"MC Joint manages careers for composers, actors, lyricists, singers, and rappers from Hyderabad.","url":"https://www.mcjoint.in/services.html#talent"}]
   </script>
+  <!-- Google Analytics GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 <body>
 <header>
@@ -184,7 +192,7 @@
       <a href="clients/talent.html" class="btn btn-outline" style="margin-top:1.5rem">View Our Talent Roster</a>
     </div>
     <div class="service-block-visual">
-      <img src="" alt="Talent Management" onerror="this.style.display='none'">
+      <img src="" width="800" height="800" alt="Talent Management" onerror="this.style.display='none'">
     </div>
   </div>
 
@@ -255,7 +263,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-section">
-        <div class="footer-logo"><img src="" alt="MC Joint" style="height:48px;width:auto;" onerror="this.outerHTML='<span>MC</span> Joint'"></div>
+        <div class="footer-logo"><img src="" alt="MC Joint" style="height:48px;width:auto;" width="160" height="48" onerror="this.outerHTML='<span>MC</span> Joint'"></div>
         <p class="footer-desc">Masters of Ceremonies.<br>Music · Talent · Cinema · Strategy</p>
         <div class="social-links" style="margin-top:1.5rem">
           <a href="https://www.instagram.com/mcjoint.in/" target="_blank"><i class="fab fa-instagram"></i></a>

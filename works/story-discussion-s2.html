@@ -71,11 +71,19 @@
     .fade-in.visible{opacity:1;transform:none;}
     .divider{width:60px;height:4px;background:var(--red);margin:0 0 1.5rem;}
   </style>
+  <!-- Google Analytics GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 <body>
 <header>
   <div class="container"><div class="header-content">
-    <a class="logo" href="../index.html"><img src="" alt="MC Joint" style="height:42px;width:auto;" onerror="this.outerHTML='<span>MC</span> Joint'"></a>
+    <a class="logo" href="../index.html"><img src="" alt="MC Joint" style="height:42px;width:auto;" width="140" height="42" onerror="this.outerHTML='<span>MC</span> Joint'"></a>
     <nav>
       <a href="../index.html">Home</a><a href="../about.html">About</a><a href="../services.html">Services</a>
       <div class="nav-dropdown"><a href="../clients/index.html">Clients ▾</a>
@@ -170,14 +178,14 @@
         <div class="on-screen-grid">
           <div class="screen-card">
             <a href="https://www.youtube.com/watch?v=L_Wo0Rj-UjQ" target="_blank" rel="noopener">
-              <img src="https://img.youtube.com/vi/L_Wo0Rj-UjQ/hqdefault.jpg" alt="Story Discussion — Avanti Cinema" loading="lazy">
+              <img src="https://img.youtube.com/vi/L_Wo0Rj-UjQ/hqdefault.jpg" width="480" height="270" alt="Story Discussion — Avanti Cinema" loading="lazy">
               <div class="play-icon"><i class="fas fa-play"></i></div>
               <div class="screen-card-label"><div class="role">Avanti Cinema</div><div class="film">Story Discussion — Season Preview</div></div>
             </a>
           </div>
           <div class="screen-card">
             <a href="https://www.youtube.com/watch?v=oLHjl3F7YSM" target="_blank" rel="noopener">
-              <img src="https://img.youtube.com/vi/oLHjl3F7YSM/hqdefault.jpg" alt="Sheeshmahal — Avanti Cinema" loading="lazy">
+              <img src="https://img.youtube.com/vi/oLHjl3F7YSM/hqdefault.jpg" width="480" height="270" alt="Sheeshmahal — Avanti Cinema" loading="lazy">
               <div class="play-icon"><i class="fas fa-play"></i></div>
               <div class="screen-card-label"><div class="role">2024 · Avanti Cinema</div><div class="film"><a href="../works/sheeshmahal.html">Sheeshmahal</a> Trailer</div></div>
             </a>
@@ -229,7 +237,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-section">
-        <div class="footer-logo"><img src="" alt="MC Joint" style="height:48px;width:auto;" loading="lazy"></div>
+        <div class="footer-logo"><img src="" alt="MC Joint" style="height:48px;width:auto;" width="160" height="48" loading="lazy"></div>
         <p class="footer-desc">Masters of Ceremonies.<br>Music · Talent · Cinema · Strategy</p>
         <div class="social-links" style="margin-top:1.5rem">
           <a href="https://www.instagram.com/mcjoint.in/" target="_blank"><i class="fab fa-instagram"></i></a>

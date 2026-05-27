@@ -48,6 +48,14 @@
     .fade-in { opacity:0; transform:translateY(20px); transition:opacity 0.6s,transform 0.6s; }
     .fade-in.visible { opacity:1; transform:none; }
   </style>
+  <!-- Google Analytics GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 <body>
 <header>
@@ -85,7 +93,7 @@
     </div>
   </div>
   <div class="talent-profile-img">
-    <img src="" alt="Thanmai Bolt" onerror="this.style.display='none'">
+    <img src="" width="800" height="800" alt="Thanmai Bolt" onerror="this.style.display='none'">
     <div class="initial-bg">TB</div>
   </div>
 </div>

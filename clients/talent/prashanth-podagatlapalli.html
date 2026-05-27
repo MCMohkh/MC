@@ -100,6 +100,14 @@
     .play-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);width:44px;height:44px;background:rgba(225,6,0,0.92);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:1rem;pointer-events:none;transition:background 0.2s,transform 0.2s;}
     .screen-card:hover .play-icon{background:var(--red);transform:translate(-50%,-60%) scale(1.12);}
   </style>
+  <!-- Google Analytics GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 <body>
 <!-- ── YouTube inline modal ─────────────────────────────────── -->
@@ -113,7 +121,7 @@
 <header>
   <div class="container"><div class="header-content">
     <a class="logo" href="../../index.html" style="display:flex;align-items:center;">
-      <img src="" alt="MC Joint" style="height:42px;width:auto;" onerror="this.outerHTML='<span>MC</span> Joint'">
+      <img src="" alt="MC Joint" style="height:42px;width:auto;" width="140" height="42" onerror="this.outerHTML='<span>MC</span> Joint'">
     </a>
     <nav>
       <a href="../../index.html">Home</a><a href="../../about.html">About</a><a href="../../services.html">Services</a>
@@ -145,7 +153,7 @@
     </div>
   </div>
   <div class="talent-profile-img">
-    <img src="" alt="Prashanth Podagatlapalli — Writer, Director, Actor" onerror="this.style.display='none'">
+    <img src="" width="800" height="800" alt="Prashanth Podagatlapalli — Writer, Director, Actor" onerror="this.style.display='none'">
   </div>
 </div>
 
@@ -285,7 +293,7 @@
         <h3 style="margin-top:2.5rem;margin-bottom:1rem;">On Screen</h3>
         <div class="on-screen-grid">
           <div class="screen-card" data-yt="9z6iIruFiAI">
-            <img src="https://img.youtube.com/vi/9z6iIruFiAI/hqdefault.jpg" alt="Neramu Siksha — Prashanth Podagatlapalli" loading="lazy">
+            <img src="https://img.youtube.com/vi/9z6iIruFiAI/hqdefault.jpg" width="480" height="270" alt="Neramu Siksha — Prashanth Podagatlapalli" loading="lazy">
             <div class="play-icon"><i class="fas fa-play"></i></div>
             <div class="screen-card-label">
               <div class="role">Short Film · Avanti Cinema · Producer</div>
@@ -294,7 +302,7 @@
             </div>
           </div>
           <div class="screen-card" data-yt="SQv_-MlApB4">
-            <img src="https://img.youtube.com/vi/SQv_-MlApB4/hqdefault.jpg" alt="Ranganaayaki" loading="lazy">
+            <img src="https://img.youtube.com/vi/SQv_-MlApB4/hqdefault.jpg" width="480" height="270" alt="Ranganaayaki" loading="lazy">
             <div class="play-icon"><i class="fas fa-play"></i></div>
             <div class="screen-card-label">
               <div class="role">Film · 2021 · Avanti Cinema</div>
@@ -303,7 +311,7 @@
             </div>
           </div>
           <div class="screen-card" data-yt="F3iU2GrwRHs">
-            <img src="https://img.youtube.com/vi/F3iU2GrwRHs/hqdefault.jpg" alt="Vellipomakey" loading="lazy">
+            <img src="https://img.youtube.com/vi/F3iU2GrwRHs/hqdefault.jpg" width="480" height="270" alt="Vellipomakey" loading="lazy">
             <div class="play-icon"><i class="fas fa-play"></i></div>
             <div class="screen-card-label">
               <div class="role">Feature Film · 2017</div>
@@ -342,8 +350,8 @@
     <span class="section-label">Gallery</span>
     <h3 style="margin-bottom:1.5rem;">Photos</h3>
     <div class="mc-gallery">
-      <div class="mc-gallery-item"><img src="" alt="Prashanth Podagatlapalli" loading="lazy"></div>
-      <div class="mc-gallery-item"><img src="" alt="Prashanth Podagatlapalli — Avanti Cinema" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="" width="800" height="800" alt="Prashanth Podagatlapalli" loading="lazy"></div>
+      <div class="mc-gallery-item"><img width="400" height="400" src="" alt="Prashanth Podagatlapalli — Avanti Cinema" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -352,7 +360,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-section">
-        <div class="footer-logo"><img src="" alt="MC Joint" style="height:48px;width:auto;" onerror="this.outerHTML='<span>MC</span> Joint'"></div>
+        <div class="footer-logo"><img src="" alt="MC Joint" style="height:48px;width:auto;" width="160" height="48" onerror="this.outerHTML='<span>MC</span> Joint'"></div>
         <p class="footer-desc">Masters of Ceremonies.<br>Music · Talent · Cinema · Strategy</p>
         <div class="social-links" style="margin-top:1.5rem">
           <a href="https://www.instagram.com/mcjoint.in/" target="_blank"><i class="fab fa-instagram"></i></a>

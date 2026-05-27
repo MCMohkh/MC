@@ -114,6 +114,14 @@
     .toc-list li a::before{content:counter(toc,decimal-leading-zero);font-family:'Montserrat',sans-serif;font-weight:800;font-size:0.65rem;color:var(--red);flex-shrink:0;padding-top:0.1rem}
     .toc-list li a:hover{color:var(--red)}
   </style>
+  <!-- Google Analytics GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 <body>
 <header>
@@ -311,7 +319,7 @@
             </div>
           </a>
           <a class="related-post" href="story-discussion-s2.html">
-            <div class="related-post-thumb"><img src="" alt="Story Discussion" onerror="this.style.display='none'"></div>
+            <div class="related-post-thumb"><img src="" width="800" height="800" alt="Story Discussion" onerror="this.style.display='none'"></div>
             <div>
               <div class="related-post-cat">Cinema</div>
               <div class="related-post-title"><a href="works/story-discussion-s2.html">Story Discussion Season 2</a>: Our First Breakthrough</div>
