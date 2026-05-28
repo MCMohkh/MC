@@ -388,4 +388,14 @@
     </image:image>
   </url>
 
+
+  <url>
+    <loc>https://www.mcjoint.in/works/beyond-physical.html</loc>
+    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <image:image>
+      <image:loc></image:loc>
+      <image:title>Beyond Physical — Documentary Series by Flintstory, directed by Prashanth Podagatlapalli</image:title>
+      <image:caption>A documentary series exploring parkour, boxing, BMX, CrossFit and yoga. Directed by Prashanth Podagatlapalli, produced by Flintstory.</image:caption>
+    </image:image>
+  </url>
 </urlset>
