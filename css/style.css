@@ -18,6 +18,10 @@
 
 html { scroll-behavior: smooth; }
 
+a { color: var(--red); }
+a:visited { color: var(--red-dark); }
+a:hover { color: var(--red-dark); }
+
 body {
   font-family: 'Inter', sans-serif;
   background-color: var(--white);
