@@ -14,7 +14,7 @@
     <lastBuildDate>Thu, 28 May 2026 00:00:00 +0530</lastBuildDate>
     <ttl>1440</ttl>
     <image>
-      <url></url>
+      <url>/images/logos/MC Joint Logo-5-MC Joint Block Logo.png</url>
       <title>MC Joint</title>
       <link>https://www.mcjoint.in</link>
       <width>144</width><height>144</height>
@@ -60,7 +60,7 @@
       <description>Sheeshmahal is a landmark Telugu film by Avanti Cinema, directed by Rohit Penumatsa and Camp Sasi with music by Vivek Sagar. A decade in the making, distributed and strategised by MC Joint.</description>
       <pubDate>Mon, 15 Jul 2024 00:00:00 +0530</pubDate>
       <dc:creator>MC Joint</dc:creator>
-      <media:thumbnail url="" width="400" height="225"/>
+      <media:thumbnail url="/images/homepage/Hero-slide-x.jpg" width="400" height="225"/>
     </item>
 
     <item>
