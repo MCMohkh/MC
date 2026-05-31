@@ -60,6 +60,28 @@
     .fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.6s,transform 0.6s;}
     .fade-in.visible{opacity:1;transform:none;}
     .coming-soon-note{background:rgba(225,6,0,0.06);border:1px dashed rgba(225,6,0,0.3);padding:1.25rem 1.5rem;color:var(--dark-grey);font-size:0.875rem;line-height:1.6;margin-top:1.5rem;}
+
+    /* ── Collapsible filmography ─────────────────────────────────── */
+    .filmography-wrap { position: relative; }
+    .filmography-wrap .discography li.film-hidden { display: none; }
+    .filmography-fade {
+      position: absolute; bottom: 0; left: 0; right: 0; height: 80px;
+      background: linear-gradient(to bottom, transparent, var(--white, #fff));
+      pointer-events: none; transition: opacity .3s;
+    }
+    .filmography-wrap.open .filmography-fade { opacity: 0; pointer-events: none; }
+    .filmography-wrap.open .discography li.film-hidden { display: flex; }
+    .btn-film-toggle {
+      display: inline-flex; align-items: center; gap: .45rem;
+      margin-top: 1rem; padding: .55rem 1.1rem;
+      background: none; border: 1px solid var(--red); color: var(--red);
+      font-family: 'Montserrat', sans-serif; font-size: .75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .08em; cursor: pointer;
+      transition: background .2s, color .2s;
+    }
+    .btn-film-toggle:hover { background: var(--red); color: #fff; }
+    .btn-film-toggle .film-toggle-icon { transition: transform .3s; }
+    .filmography-wrap.open .btn-film-toggle .film-toggle-icon { transform: rotate(180deg); }
   </style>
   <!-- Google Analytics GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-620G3QZX5M"></script>
