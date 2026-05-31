@@ -6,8 +6,8 @@
   <link rel="icon" type="image/png" href="//images/logos/MC Joint Logo-5-MC Joint Block Logo.png">
   <link rel="apple-touch-icon" href="//images/logos/MC Joint Logo-5-MC Joint Block Logo.png">
   <title>Associates — MC Joint Creative Network</title>
-  <meta name="description" content="Strategic partners and collaborators who form the extended MC Joint ecosystem — bringing specialist expertise across film, music, and digital in Hyderabad.">
-  <meta name="keywords" content="MC Joint associates, design district hyd, flintstory, creative network Hyderabad, Tapeloop Records, Wolfgang Studios, Rohit Penumatsa">
+  <meta name="description" content="Strategic partners and collaborators who form the extended MC Joint ecosystem — bringing specialist expertise across film, music, fitness and digital in Hyderabad.">
+  <meta name="keywords" content="MC Joint associates, design district hyd, flintstory, creative network Hyderabad, Tapeloop Records, Wolfgang Studios, Rohit Penumatsa, F45 Hyderabad, Dynevo, Mohammed Abrar">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.mcjoint.in/clients/associates.html">
   <meta property="og:url" content="https://www.mcjoint.in/clients/associates.html">
@@ -37,6 +37,18 @@
     .associate-card p { font-size:0.875rem; color:var(--dark-grey); }
     .fade-in { opacity:0; transform:translateY(20px); transition:opacity 0.6s,transform 0.6s; }
     .fade-in.visible { opacity:1; transform:none; }
+
+    /* dual-logo layout for Dynevo+F45 card */
+    .associate-icon-dual {
+      display:flex; align-items:center; gap:0.5rem;
+      margin-bottom:1.25rem; height:56px;
+    }
+    .associate-icon-dual img {
+      height:40px; width:auto; object-fit:contain;
+    }
+    .associate-icon-dual .logo-sep {
+      font-size:0.65rem; font-weight:700; color:#aaa; letter-spacing:0.05em;
+    }
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","name":"MC Joint","alternateName":"Masters of Ceremonies","url":"https://www.mcjoint.in","logo":"/images/logos/MC Joint Logo-5-MC Joint Block Logo.png","description":"Hyderabad-based creative agency for music distribution, talent management, and cinema strategy.","foundingDate":"2018","address":{"@type":"PostalAddress","addressLocality":"Hyderabad","addressRegion":"Telangana","addressCountry":"IN"},"contactPoint":{"@type":"ContactPoint","telephone":"+91-90144-14114","email":"info@mcjoint.in","contactType":"customer service"},"sameAs":["https://www.instagram.com/mcjoint.in/","https://in.linkedin.com/company/mcjoint-in","https://x.com/mcjointin","https://www.youtube.com/@MCJoint"]}
@@ -60,6 +72,27 @@
     "Indian Fashion Industry",
     "Creative Entrepreneurship"
   ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Hyderabad",
+    "addressRegion": "Telangana",
+    "addressCountry": "IN"
+  }
+}
+</script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mohammed Abrar",
+  "jobTitle": "Fitness Entrepreneur",
+  "description": "Founder and owner of F45 Training Hyderabad, operating under the Dynevo brand. Built one of Hyderabad's most active fitness communities and led the city's dominant presence at HYROX events in Bangkok, Bangalore and Delhi.",
+  "worksFor": [
+    {"@type": "Organization", "name": "F45 Training Hyderabad"},
+    {"@type": "Organization", "name": "Dynevo"}
+  ],
+  "knowsAbout": ["Functional Fitness", "HYROX", "Community Building", "Fitness Studio Management"],
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Hyderabad",
@@ -120,7 +153,7 @@
   <div class="container">
     <span class="page-hero-eyebrow"><a href="index.html" style="color:var(--grey);text-decoration:none;">Clients</a> / Associates</span>
     <h1>Associates</h1>
-    <p>Strategic partners and collaborators who form the extended MC Joint ecosystem — bringing specialist expertise across film, music, and digital.</p>
+    <p>Strategic partners and collaborators who form the extended MC Joint ecosystem — bringing specialist expertise across film, music, fitness and digital.</p>
   </div>
 </div>
 
@@ -128,30 +161,49 @@
   <div class="container">
     <div class="grid-3">
 
+      <!-- Design District -->
       <div class="associate-card fade-in">
-  <div class="associate-icon" style="background:white; border:1px solid #eee;">
-  <img loading="lazy" src="/images/mc/MC Joint Masters of Ceremonies Hyderabad Talent Agency Hyderabad.jpg"
-       alt="Design District Hyd Logo"
-       style="max-width:100%; max-height:100%; object-fit:contain;">
-</div>
-  <h3>Aishwarya Agarwal</h3>
-  <span class="role">Entrepreneur · Design District Hyd</span>
-  <p>
-    With Design District, Aishwarya is opening a new chapter. A space where fashion meets purpose, talent is celebrated, and every label tells a story beyond trends.</p>
-  </div>
+        <div class="associate-icon" style="background:black; border:1px solid #eee; padding:8px;">
+          <img loading="lazy" src="/images/logos/mc-associate-Design District - Logo white svg.svg"
+               alt="Design District Hyd Logo"
+               style="max-width:100%; max-height:100%; object-fit:contain;">
+        </div>
+        <h3>Aishwarya Agarwal</h3>
+        <span class="role">Entrepreneur · Design District Hyd</span>
+        <p>
+          With Design District, Aishwarya is opening a new chapter. A space where fashion meets purpose, talent is celebrated, and every label tells a story beyond trends.</p>
+      </div>
 
-
+      <!-- Dynevo / F45 — NEW CARD -->
       <div class="associate-card fade-in">
-  <div class="associate-icon"" style="background:white; border:1px solid #eee;">
-  <img loading="lazy" src="//images/logos/flintstory-Logo-PNG.png"
-       alt="Flintstory Logo"
-       style="max-width:100%; max-height:100%; object-fit:contain;">
-</div>
-  <h3>Flintstory</h3>
-  <span class="role">Culture Studio · Podcast</span>
-  <p>
-    At its heart, Flintstory is a creative media and podcasting collective from Hyderabad, championing genuine dialogues that reveal human stories, bold ideas, and inspiration across backgrounds.</p>
-  </div>
+        <div class="associate-icon-dual">
+          <img loading="lazy"
+               src="/images/logos/mc-associate-dynevo-f45 (1).png"
+               alt="Dynevo Logo"
+               onerror="this.style.display='none'">
+          <span class="logo-sep">×</span>
+          <img loading="lazy"
+               src="/images/logos/mc-associate-F45-logo.png"
+               alt="F45 Training Logo"
+               onerror="this.style.display='none'">
+        </div>
+        <h3>Mohammed Abrar</h3>
+        <span class="role">Fitness Entrepreneur · Dynevo &amp; F45 Hyderabad</span>
+        <p>Mohammed Abrar owns and manages F45 Training Hyderabad under the Dynevo banner, building one of the city's most committed functional fitness communities. His studio leads Hyderabad's HYROX charge — earning podiums and flags at Bangkok, Bangalore, and Delhi events.</p>
+      </div>
+
+      <!-- Flintstory -->
+      <div class="associate-card fade-in">
+        <div class="associate-icon" style="background:white; border:1px solid #eee;">
+          <img loading="lazy" src="//images/logos/flintstory-Logo-PNG.png"
+               alt="Flintstory Logo"
+               style="max-width:100%; max-height:100%; object-fit:contain;">
+        </div>
+        <h3>Flintstory</h3>
+        <span class="role">Culture Studio · Podcast</span>
+        <p>
+          At its heart, Flintstory is a creative media and podcasting collective from Hyderabad, championing genuine dialogues that reveal human stories, bold ideas, and inspiration across backgrounds.</p>
+      </div>
       
       
       <div class="associate-card fade-in">
