@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="../../css/style.css">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Person","name":"Pawon Ramesh","jobTitle":"Actor","description":"Pawon Ramesh is a Telugu actor represented by MC Joint. Known for George Reddy, Rakshasakavyam and Arcotia.","url":"https://www.mcjoint.in/clients/talent/pawon-ramesh.html","image":"/images/talent/Pawon%20Ramesh%20Actor%20Headshot%20Represented%20by%20MC%20Joint.jpg%20Ramesh%20Actor%20Headshot%20Represented%20by%20MC%20Joint.jpg%20Ramesh%20Actor%20Headshot%20Represented%20by%20MC%20Joint.jpg","worksFor":{"@type":"Organization","name":"MC Joint","url":"https://www.mcjoint.in"}}
+  {"@context":"https://schema.org","@type":"Person","name":"Pawon Ramesh","jobTitle":"Actor","description":"Pawon Ramesh is a Telugu actor represented by MC Joint. Known for George Reddy, Rakshasakavyam and Arcotia.","url":"https://www.mcjoint.in/clients/talent/pawon-ramesh.html","image":"/images/talent/Pawon Ramesh Actor Headshot Represented by MC Joint.jpg","worksFor":{"@type":"Organization","name":"MC Joint","url":"https://www.mcjoint.in"}}
   </script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","name":"MC Joint","url":"https://www.mcjoint.in"}
@@ -87,6 +87,14 @@
     .mc-gallery-item { aspect-ratio: 1; overflow: hidden; }
     .mc-gallery-item img { width: 100% !important; height: 100% !important; aspect-ratio: 1 !important; object-fit: cover; object-position: top center; display: block; }
 
+
+    .yt-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center;padding:1rem;}
+    .yt-modal.active{display:flex;}
+    .yt-modal-inner{position:relative;width:100%;max-width:900px;aspect-ratio:16/9;}
+    .yt-modal-inner iframe{width:100%;height:100%;border:none;}
+    .yt-modal-close{position:absolute;top:-40px;right:0;background:none;border:none;color:white;font-size:1.5rem;cursor:pointer;padding:4px 8px;line-height:1;opacity:0.8;}
+    .yt-modal-close:hover{opacity:1;}
+    .screen-card{cursor:pointer;}
     </style>
   <!-- Google Analytics GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-620G3QZX5M"></script>
@@ -99,6 +107,14 @@
   <link rel="alternate" type="application/rss+xml" title="MC Joint — Music, Talent &amp; Cinema" href="https://www.mcjoint.in/feed.xml">
 </head>
 <body>
+<!-- ── YouTube inline modal ─────────────────────────────────────────────── -->
+<div class="yt-modal" id="ytModal" role="dialog" aria-modal="true" aria-label="Video player">
+  <div class="yt-modal-inner">
+    <button class="yt-modal-close" id="ytModalClose" aria-label="Close video"><i class="fas fa-times"></i></button>
+    <iframe id="ytModalFrame" src="" allow="autoplay; encrypted-media" allowfullscreen title="Video"></iframe>
+  </div>
+</div>
+
 <header>
   <div class="container"><div class="header-content">
     <a class="logo" href="../../index.html" style="display:flex;align-items:center;">
@@ -137,7 +153,7 @@
     </div>
   </div>
   <div class="talent-profile-img">
-    <img loading="lazy" src="/images/talent/Pawon%20Ramesh%20Actor%20Headshot%20Represented%20by%20MC%20Joint.jpg%20Ramesh%20Actor%20Headshot%20Represented%20by%20MC%20Joint.jpg%20Ramesh%20Actor%20Headshot%20Represented%20by%20MC%20Joint.jpg" width="800" height="800" alt="Pawon Ramesh">
+    <img loading="lazy" src="/images/talent/Pawon Ramesh Actor Headshot Represented by MC Joint.jpg" width="800" height="800" alt="Pawon Ramesh">
   </div>
 </div>
 
@@ -184,20 +200,20 @@
         
                 <h3 style="margin-top:2.5rem;margin-bottom:1rem;">On Screen</h3>
         <div class="on-screen-grid">
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=An-vMK16QlA" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/An-vMK16QlA/hqdefault.jpg" alt="Gopi Galla Goa Trip — Pawon Ramesh as Aruna" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2025 · Avanti Cinema</div><div class="film">Gopi Galla Goa Trip</div><div class="detail">Actor as Aruna</div></div></a></div>
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=K0JqiRvESq8" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/K0JqiRvESq8/hqdefault.jpg" alt="Pawon Ramesh" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2025</div><div class="film">Gopi Galla Goa Trip</div><div class="detail">Scene / Clip</div></div></a></div>
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=1WAxF3_mOq8" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/1WAxF3_mOq8/hqdefault.jpg" alt="Pawon Ramesh" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2025</div><div class="film">Gopi Galla Goa Trip</div><div class="detail">Scene / Clip</div></div></a></div>
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=yDiPMCIaWc4" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/yDiPMCIaWc4/hqdefault.jpg" alt="Pawon Ramesh" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">Film</div><div class="film">Pawon Ramesh</div><div class="detail">Performance</div></div></a></div>
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=KCJc3XONdoM" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/KCJc3XONdoM/hqdefault.jpg" alt="Pawon Ramesh" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">Film</div><div class="film">Pawon Ramesh</div><div class="detail">Performance</div></div></a></div>
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=Pgwaj1CSkN8" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/Pgwaj1CSkN8/hqdefault.jpg" alt="Pawon Ramesh" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">Film</div><div class="film">Pawon Ramesh</div><div class="detail">Performance</div></div></a></div>
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=eMndboesG-E" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/eMndboesG-E/hqdefault.jpg" alt="Pawon Ramesh" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">Film</div><div class="film">Pawon Ramesh</div><div class="detail">Performance</div></div></a></div>
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=Y90JiXOSGAM" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/Y90JiXOSGAM/hqdefault.jpg" alt="Pawon Ramesh" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">Film</div><div class="film">Pawon Ramesh</div><div class="detail">Performance</div></div></a></div>
+          <div class="screen-card" data-yt="An-vMK16QlA"><img src="https://img.youtube.com/vi/An-vMK16QlA/hqdefault.jpg" alt="Gopi Galla Goa Trip — Pawon Ramesh as Aruna" loading="lazy" width="480" height="270"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2025 · Avanti Cinema</div><div class="film">Gopi Galla Goa Trip</div><div class="detail">Role: Aruna</div></div></div>
+          <div class="screen-card" data-yt="K0JqiRvESq8"><img src="https://img.youtube.com/vi/K0JqiRvESq8/hqdefault.jpg" alt="Pawon Ramesh" loading="lazy" width="480" height="270"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2025 · Avanti Cinema</div><div class="film">Iravaimoodu (23)</div><div class="detail">Short Film</div></div></div>
+          <div class="screen-card" data-yt="1WAxF3_mOq8"><img src="https://img.youtube.com/vi/1WAxF3_mOq8/hqdefault.jpg" alt="Pawon Ramesh" loading="lazy" width="480" height="270"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">Short Film · Avanti Cinema</div><div class="film">Martin Luther King</div><div class="detail">Short Film</div></div></div>
+          <div class="screen-card" data-yt="yDiPMCIaWc4"><img src="https://img.youtube.com/vi/yDiPMCIaWc4/hqdefault.jpg" alt="Pawon Ramesh" loading="lazy" width="480" height="270"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">Feature Film</div><div class="film">Raakshasa Kaavyam</div><div class="detail">Actor</div></div></div>
+          <div class="screen-card" data-yt="KCJc3XONdoM"><img src="https://img.youtube.com/vi/KCJc3XONdoM/hqdefault.jpg" alt="Pawon Ramesh" loading="lazy" width="480" height="270"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">Web Series · Avanti Cinema</div><div class="film">Story Discussion S2</div><div class="detail">Actor</div></div></div>
+          <div class="screen-card" data-yt="Pgwaj1CSkN8"><img src="https://img.youtube.com/vi/Pgwaj1CSkN8/hqdefault.jpg" alt="Pawon Ramesh" loading="lazy" width="480" height="270"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">Short Film · Avanti Cinema</div><div class="film">Pickpocket</div><div class="detail">Role: Young Reporter</div></div></div>
+          <div class="screen-card" data-yt="eMndboesG-E"><img src="https://img.youtube.com/vi/eMndboesG-E/hqdefault.jpg" alt="Pawon Ramesh" loading="lazy" width="480" height="270"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">Short Film</div><div class="film">Halahala</div><div class="detail">Short Film</div></div></div>
+          <div class="screen-card" data-yt="Y90JiXOSGAM"><img src="https://img.youtube.com/vi/Y90JiXOSGAM/hqdefault.jpg" alt="Pawon Ramesh" loading="lazy" width="480" height="270"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">Web Series · 2018</div><div class="film">Nirudyoga Natulu</div><div class="detail">Role: Journalist</div></div></div>
         </div>
         <h3 style="margin-top:2rem;margin-bottom:1rem;">Shorts</h3>
         <div class="on-screen-grid">
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=eMLJ47QIfws" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/eMLJ47QIfws/hqdefault.jpg" alt="Pawon Ramesh Short" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">Short</div><div class="film">Pawon Ramesh</div><div class="detail">Short clip</div></div></a></div>
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=mbKfwvUxkkg" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/mbKfwvUxkkg/hqdefault.jpg" alt="Pawon Ramesh Short" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">Short</div><div class="film">Pawon Ramesh</div><div class="detail">Short clip</div></div></a></div>
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=60E_a1T3AfI" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/60E_a1T3AfI/hqdefault.jpg" alt="Pawon Ramesh Short" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">Short</div><div class="film">Pawon Ramesh</div><div class="detail">Short clip</div></div></a></div>
+          <div class="screen-card" data-yt="eMLJ47QIfws"><img src="https://img.youtube.com/vi/eMLJ47QIfws/hqdefault.jpg" alt="Pawon Ramesh Short" loading="lazy" width="480" height="270"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">Short Film · Avanti Cinema</div><div class="film">Etthulu</div><div class="detail">Short Film</div></div></div>
+          <div class="screen-card" data-yt="mbKfwvUxkkg"><img src="https://img.youtube.com/vi/mbKfwvUxkkg/hqdefault.jpg" alt="Pawon Ramesh Short" loading="lazy" width="480" height="270"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">Short Film · Avanti Cinema</div><div class="film">Arcotia</div><div class="detail">Short Film</div></div></div>
+          <div class="screen-card" data-yt="60E_a1T3AfI"><img src="https://img.youtube.com/vi/60E_a1T3AfI/hqdefault.jpg" alt="Pawon Ramesh Short" loading="lazy" width="480" height="270"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">Short Film</div><div class="film">Athala Kuthala Paathaalam</div><div class="detail">Short Film</div></div></div>
         </div>
       </div>
       <div class="fade-in">
@@ -236,18 +252,32 @@
     <span class="section-label">Gallery</span>
     <h3 style="margin-bottom:1.5rem;">Photos</h3>
     <div class="mc-gallery">
-      <div class="mc-gallery-item"><img src="/images/talent/Actor-Pawon-Ramesh-MC-Talent-001.jpeg" alt="Pawon Ramesh — Actor headshot, MC Joint" loading="lazy"></div>
-      <div class="mc-gallery-item"><img src="/images/talent/Actor-Pawon-Ramesh-MC-Talent-002.jpeg" alt="Pawon Ramesh — Actor MC Joint" loading="lazy"></div>
-      <div class="mc-gallery-item"><img src="/images/talent/Actor-Pawon-Ramesh-MC-Talent-003.jpeg" alt="Pawon Ramesh Actor" loading="lazy"></div>
-      <div class="mc-gallery-item"><img src="/images/talent/Actor-Pawon-Ramesh-MC-Talent-004-with-actor-chiranjeevi.jpeg" alt="Pawon Ramesh with Chiranjeevi" loading="lazy"></div>
-      <div class="mc-gallery-item"><img src="/images/talent/Actor-Pawon-Ramesh-MC-Talent-007.jpeg" alt="Pawon Ramesh" loading="lazy"></div>
-      <div class="mc-gallery-item"><img src="/images/talent/Actor-Pawon-Ramesh-MC-Talent-008-early-theatre-days.jpeg" alt="Pawon Ramesh — early theatre days" loading="lazy"></div>
-      <div class="mc-gallery-item"><img src="/images/talent/Actor-Pawon-Ramesh-MC-Talent-009-Arcotia-poster.jpeg" alt="Pawon Ramesh — Arcotia poster" loading="lazy"></div>
-      <div class="mc-gallery-item"><img src="/images/talent/Actor-Pawon-Ramesh-MC-Talent-015-as-aruna-in-gopi-galla-goa-trip.jpeg" alt="Pawon Ramesh as Aruna in Gopi Galla Goa Trip" loading="lazy"></div>
-      <div class="mc-gallery-item"><img src="/images/talent/Actor-Pawon-Ramesh-MC-Talent-018-recieved-TGFA-award-solo.jpeg" alt="Pawon Ramesh — TGFA Award" loading="lazy"></div>
-      <div class="mc-gallery-item"><img src="/images/talent/Actor-Pawon-Ramesh-MC-Talent-020-in-game-changer-ram-charan.jpeg" alt="Pawon Ramesh in Game Changer with Ram Charan" loading="lazy"></div>
-      <div class="mc-gallery-item"><img src="/images/talent/Pawon%20Ramesh%20Actor%20Headshot%20Represented%20by%20MC%20Joint.jpg%20Ramesh%20Actor%20Headshot%20Represented%20by%20MC%20Joint.jpg Ramesh Actor Headshot Represented by MC Joint.jpg" alt="Pawon Ramesh headshot" loading="lazy"></div>
-      <div class="mc-gallery-item"><img src="/images/talent/Pawon%20Ramesh%20Actor%20Headshot%20Represented%20by%20MC%20Joint.jpg%20Ramesh%20Actor%20Headshot%20Represented%20by%20MC%20Joint.jpg Ramesh in Rakshasakavyam.jpg" alt="Pawon Ramesh in Rakshasakavyam" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/Actor-Pawon-Ramesh-MC-Talent-001.jpeg" alt="Pawon Ramesh — Actor headshot" loading="lazy" width="400" height="400"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/Actor-Pawon-Ramesh-MC-Talent-002.jpeg" alt="Pawon Ramesh — Actor, MC Joint" loading="lazy" width="400" height="400"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/Actor-Pawon-Ramesh-MC-Talent-003.jpeg" alt="Pawon Ramesh" loading="lazy" width="400" height="400"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/Actor-Pawon-Ramesh-MC-Talent-004-with-actor-chiranjeevi.jpeg" alt="Pawon Ramesh with Chiranjeevi" loading="lazy" width="400" height="400"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/Actor-Pawon-Ramesh-MC-Talent-005-with-chiranjeevi-deshamudurulu.jpeg" alt="Pawon Ramesh with Chiranjeevi — Deshamudurulu" loading="lazy" width="400" height="400"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/Actor-Pawon-Ramesh-MC-Talent-006-jhansi-thammareddy-bharadwaj.jpeg" alt="Pawon Ramesh with Jhansi, Thammar Reddy, Bharadwaj" loading="lazy" width="400" height="400"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/Actor-Pawon-Ramesh-MC-Talent-007.jpeg" alt="Pawon Ramesh" loading="lazy" width="400" height="400"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/Actor-Pawon-Ramesh-MC-Talent-008-early-theatre-days.jpeg" alt="Pawon Ramesh — early theatre days" loading="lazy" width="400" height="400"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/Actor-Pawon-Ramesh-MC-Talent-008-early-theatre-days-1.jpeg" alt="Pawon Ramesh — early theatre days" loading="lazy" width="400" height="400"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/Actor-Pawon-Ramesh-MC-Talent-009-Arcotia-poster.jpeg" alt="Pawon Ramesh — Arcotia" loading="lazy" width="400" height="400"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/Actor-Pawon-Ramesh-MC-Talent-010-with-laxman-meesala.jpeg" alt="Pawon Ramesh with Laxman Meesala" loading="lazy" width="400" height="400"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/Actor-Pawon-Ramesh-MC-Talent-011-at-nirudyoga-natulu-screening.jpeg" alt="Pawon Ramesh at Nirudyoga Natulu screening" loading="lazy" width="400" height="400"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/Actor-Pawon-Ramesh-MC-Talent-012-at-23-event.jpeg" alt="Pawon Ramesh at 23 event" loading="lazy" width="400" height="400"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/Actor-Pawon-Ramesh-MC-Talent-013-theatre-with-shereen-bombay-tailors.jpeg" alt="Pawon Ramesh in Bombay Tailors theatre with Shereen" loading="lazy" width="400" height="400"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/Actor-Pawon-Ramesh-MC-Talent-014-theatre-as-tailor-in-bombay-tailors.jpeg" alt="Pawon Ramesh as Tailor in Bombay Tailors" loading="lazy" width="400" height="400"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/Actor-Pawon-Ramesh-MC-Talent-015-as-aruna-in-gopi-galla-goa-trip.jpeg" alt="Pawon Ramesh as Aruna in Gopi Galla Goa Trip" loading="lazy" width="400" height="400"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/Actor-Pawon-Ramesh-MC-Talent-018-recieved-TGFA-award-solo.jpeg" alt="Pawon Ramesh receiving TGFA Award" loading="lazy" width="400" height="400"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/Actor-Pawon-Ramesh-MC-Talent-018-recieved-TGFA-award.jpeg" alt="Pawon Ramesh TGFA Award ceremony" loading="lazy" width="400" height="400"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/Actor-Pawon-Ramesh-MC-Talent-019-illu-poster.jpeg" alt="Pawon Ramesh — Illu (ETV Win)" loading="lazy" width="400" height="400"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/Actor-Pawon-Ramesh-MC-Talent-020-in-game-changer-ram-charan.jpeg" alt="Pawon Ramesh in Game Changer with Ram Charan" loading="lazy" width="400" height="400"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/Actor-Pawon-Ramesh-MC-Talent-022.jpeg" alt="Pawon Ramesh" loading="lazy" width="400" height="400"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/Pawon Ramesh Actor Headshot Represented by MC Joint.jpg" alt="Pawon Ramesh headshot — MC Joint" loading="lazy" width="400" height="400"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/Pawon Ramesh in Rakshasakavyam.jpg" alt="Pawon Ramesh in Rakshasakavyam" loading="lazy" width="400" height="400"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/Pawon Ramesh on the Sets of George Reddy.jpg" alt="Pawon Ramesh on the sets of George Reddy" loading="lazy" width="400" height="400"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/Pawon Ramesh with Abhay Bethiganti on Sets of George Reddy.jpg" alt="Pawon Ramesh with Abhay Bethiganti — George Reddy" loading="lazy" width="400" height="400"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/Pawon Ramesh in Gopi Galla Goa Trip.jpg" alt="Pawon Ramesh in Gopi Galla Goa Trip" loading="lazy" width="400" height="400"></div>
     </div>
 </section>
 
@@ -289,5 +319,23 @@
 <script src="../../js/main.js"></script>
 <script src="../../js/gallery-lightbox.js"></script>
 <a class="wa-float" href="https://wa.me/919014414114?text=Hi%20MC%20Joint%2C%20I%27d%20like%20to%20discuss%20a%20project" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<script>
+  (function(){
+    var modal=document.getElementById('ytModal');
+    var frame=document.getElementById('ytModalFrame');
+    var close=document.getElementById('ytModalClose');
+    document.querySelectorAll('.screen-card[data-yt]').forEach(function(card){
+      card.addEventListener('click',function(){
+        frame.src='https://www.youtube.com/embed/'+card.dataset.yt+'?autoplay=1&rel=0';
+        modal.classList.add('active');
+        document.body.style.overflow='hidden';
+      });
+    });
+    function closeModal(){modal.classList.remove('active');frame.src='';document.body.style.overflow='';}
+    close.addEventListener('click',closeModal);
+    modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+  })();
+</script>
 </body>
 </html>
