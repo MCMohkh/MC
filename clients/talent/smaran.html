@@ -93,7 +93,7 @@
     .sidebar-card .info-label { color: var(--grey); flex-shrink: 0; }
     .sidebar-card .info-value { font-weight: 600; text-align: right; word-break: break-word; }
     /* Filmography collapse */
-    .disc-hidden { display: none; }
+    .disc-hidden { display: none !important; }
     .disc-toggle-btn { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1rem; padding: 0.5rem 1.1rem; border: 1px solid var(--red); background: none; color: var(--red); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; cursor: pointer; transition: all 0.2s; }
     .disc-toggle-btn:hover { background: var(--red); color: white; }
     </style>
@@ -285,7 +285,7 @@
     var items = document.querySelectorAll('.disc-hidden');
     btn.addEventListener('click', function(){
       var open = btn.getAttribute('data-open') === '1';
-      items.forEach(function(el){ el.style.display = open ? 'none' : ''; });
+      items.forEach(function(el){ el.style.display = open ? '' : 'block'; });
       btn.setAttribute('data-open', open ? '0' : '1');
       btn.innerHTML = open
         ? '<i class="fas fa-chevron-down"></i> See Full Filmography (' + items.length + ' more)'
