@@ -59,10 +59,10 @@
     .disc-type { font-size:0.75rem; color:var(--grey); text-transform:uppercase; letter-spacing:0.05em; }
     .sidebar-card { background:var(--light-bg); padding:2rem; }
     .sidebar-card h3 { font-size:1rem; margin-bottom:1.25rem; }
-    .sidebar-card .info-row { display:flex; justify-content:space-between; padding:0.6rem 0; border-bottom:1px solid #e0e0e0; font-size:0.875rem; }
+    
     .sidebar-card .info-row:last-child { border:none; }
-    .sidebar-card .info-label { color:var(--grey); }
-    .sidebar-card .info-value { font-weight:600; }
+    
+    
     .back-link { display:inline-flex; align-items:center; gap:0.5rem; color:var(--grey); text-decoration:none; font-size:0.8rem; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; margin-bottom:1.5rem; }
     .back-link:hover { color:var(--red); }
     .fade-in { opacity:0; transform:translateY(20px); transition:opacity 0.6s,transform 0.6s; }
@@ -82,10 +82,6 @@
     .screen-card-label .film{font-size:.83rem;color:#fff;font-weight:600;margin-top:.15rem;}
     .screen-card-label .detail{font-size:.73rem;color:#888;margin-top:.1rem;}
     .play-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:42px;height:42px;background:rgba(225,6,0,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.9rem;pointer-events:none;}
-    /* Gallery: enforce square thumbnails regardless of img width/height attrs */
-    .mc-gallery { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0.75rem; }
-    .mc-gallery-item { aspect-ratio: 1; overflow: hidden; }
-    .mc-gallery-item img { width: 100% !important; height: 100% !important; aspect-ratio: 1 !important; object-fit: cover; object-position: top center; display: block; }
 
 
     .yt-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center;padding:1rem;}
@@ -95,7 +91,29 @@
     .yt-modal-close{position:absolute;top:-40px;right:0;background:none;border:none;color:white;font-size:1.5rem;cursor:pointer;padding:4px 8px;line-height:1;opacity:0.8;}
     .yt-modal-close:hover{opacity:1;}
     .screen-card{cursor:pointer;}
-    </style>
+  
+    /* ── Collapsible filmography ─────────────────────────────────── */
+    .filmography-wrap { position: relative; }
+    .filmography-wrap .discography li.film-hidden { display: none; }
+    .filmography-fade {
+      position: absolute; bottom: 0; left: 0; right: 0; height: 80px;
+      background: linear-gradient(to bottom, transparent, var(--white, #fff));
+      pointer-events: none; transition: opacity .3s;
+    }
+    .filmography-wrap.open .filmography-fade { opacity: 0; pointer-events: none; }
+    .filmography-wrap.open .discography li.film-hidden { display: flex; }
+    .btn-film-toggle {
+      display: inline-flex; align-items: center; gap: .45rem;
+      margin-top: 1rem; padding: .55rem 1.1rem;
+      background: none; border: 1px solid var(--red); color: var(--red);
+      font-family: 'Montserrat', sans-serif; font-size: .75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .08em; cursor: pointer;
+      transition: background .2s, color .2s;
+    }
+    .btn-film-toggle:hover { background: var(--red); color: #fff; }
+    .btn-film-toggle .film-toggle-icon { transition: transform .3s; }
+    .filmography-wrap.open .btn-film-toggle .film-toggle-icon { transform: rotate(180deg); }
+  </style>
   <!-- Google Analytics GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-620G3QZX5M"></script>
   <script>
@@ -200,21 +218,21 @@
         </ul>
         
                 <h3 style="margin-top:2.5rem;margin-bottom:1rem;">On Screen</h3>
-        <div class="on-screen-grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr));">
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=An-vMK16QlA" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/An-vMK16QlA/hqdefault.jpg" alt="Gopi Galla Goa Trip — Pawon Ramesh as Aruna" loading="lazy" style="aspect-ratio:16/9;"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2025 · Avanti Cinema</div><div class="film">Gopi Galla Goa Trip</div><div class="detail">Actor as Aruna</div></div></a></div>
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=K0JqiRvESq8" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/K0JqiRvESq8/hqdefault.jpg" alt="Iravaimoodu (23) — Pawon Ramesh" loading="lazy" style="aspect-ratio:16/9;"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2025</div><div class="film">Iravaimoodu (23)</div><div class="detail">Actor</div></div></a></div>
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=1WAxF3_mOq8" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/1WAxF3_mOq8/hqdefault.jpg" alt="Martin Luther King — Pawon Ramesh" loading="lazy" style="aspect-ratio:16/9;"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2023</div><div class="film">Martin Luther King</div><div class="detail">Scene</div></div></a></div>
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=yDiPMCIaWc4" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/yDiPMCIaWc4/hqdefault.jpg" alt="Raakshasa Kaavyam — Pawon Ramesh" loading="lazy" style="aspect-ratio:16/9;"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2023</div><div class="film">Raakshasa Kaavyam</div><div class="detail">Actor as Chaitanya</div></div></a></div>
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=KCJc3XONdoM" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/KCJc3XONdoM/hqdefault.jpg" alt="Story Discussion Season 2 — Pawon Ramesh" loading="lazy" style="aspect-ratio:16/9;"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2020–2021</div><div class="film">Story Discussion S2</div><div class="detail">Actor as Watchman Venkat</div></div></a></div>
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=Pgwaj1CSkN8" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/Pgwaj1CSkN8/hqdefault.jpg" alt="Pickpocket — Pawon Ramesh as Ramesh Anna" loading="lazy" style="aspect-ratio:16/9;"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2022 · Avanti Cinema</div><div class="film">Pickpocket</div><div class="detail">Actor as Ramesh Anna</div></div></a></div>
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=Y90JiXOSGAM" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/Y90JiXOSGAM/hqdefault.jpg" alt="Nirudyoga Natulu — Pawon Ramesh" loading="lazy" style="aspect-ratio:16/9;"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2018 · Avanti Cinema</div><div class="film">Nirudyoga Natulu</div><div class="detail">Actor as Pawan</div></div></a></div>
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=eMndboesG-E" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/eMndboesG-E/hqdefault.jpg" alt="Halahala short film — Pawon Ramesh" loading="lazy" style="aspect-ratio:16/9;"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2020 · Short Film</div><div class="film">Halahala</div><div class="detail">Actor as Madman</div></div></a></div>
+        <div class="on-screen-grid">
+          <div class="screen-card" data-yt="An-vMK16QlA"><img src="https://img.youtube.com/vi/An-vMK16QlA/hqdefault.jpg" alt="Gopi Galla Goa Trip — Pawon Ramesh as Aruna" loading="lazy" width="480" height="270"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">Theatrical Film · 2025</div><div class="film">Gopi Galla Goa Trip</div><div class="detail">Role: Aruna</div></div></div>
+          <div class="screen-card" data-yt="K0JqiRvESq8"><img src="https://img.youtube.com/vi/K0JqiRvESq8/hqdefault.jpg" alt="Pawon Ramesh" loading="lazy" width="480" height="270"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">Theatrical Film · 2025</div><div class="film">Iravaimoodu (23)</div><div class="detail">Avanti Cinema</div></div></div>
+          <div class="screen-card" data-yt="1WAxF3_mOq8"><img src="https://img.youtube.com/vi/1WAxF3_mOq8/hqdefault.jpg" alt="Pawon Ramesh" loading="lazy" width="480" height="270"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">Theatrical Film</div><div class="film">Martin Luther King</div><div class="detail">Avanti Cinema</div></div></div>
+          <div class="screen-card" data-yt="yDiPMCIaWc4"><img src="https://img.youtube.com/vi/yDiPMCIaWc4/hqdefault.jpg" alt="Pawon Ramesh" loading="lazy" width="480" height="270"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">Theatrical Film</div><div class="film">Raakshasa Kaavyam</div><div class="detail">Feature Film</div></div></div>
+          <div class="screen-card" data-yt="KCJc3XONdoM"><img src="https://img.youtube.com/vi/KCJc3XONdoM/hqdefault.jpg" alt="Pawon Ramesh" loading="lazy" width="480" height="270"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">Web Series · Avanti</div><div class="film">Story Discussion Season 2</div><div class="detail">Web Series</div></div></div>
+          <div class="screen-card" data-yt="Pgwaj1CSkN8"><img src="https://img.youtube.com/vi/Pgwaj1CSkN8/hqdefault.jpg" alt="Pawon Ramesh" loading="lazy" width="480" height="270"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">Web Feature Film</div><div class="film">Pickpocket</div><div class="detail">Dir. Divya Bandaru · Avanti Cinema</div></div></div>
+          <div class="screen-card" data-yt="eMndboesG-E"><img src="https://img.youtube.com/vi/eMndboesG-E/hqdefault.jpg" alt="Pawon Ramesh" loading="lazy" width="480" height="270"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">Short Film</div><div class="film">Halahala</div><div class="detail">Short Film</div></div></div>
+          <div class="screen-card" data-yt="Y90JiXOSGAM"><img src="https://img.youtube.com/vi/Y90JiXOSGAM/hqdefault.jpg" alt="Pawon Ramesh" loading="lazy" width="480" height="270"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">Web Series · 2018</div><div class="film">Nirudyoga Natulu</div><div class="detail">Web Series · Role: Journalist</div></div></div>
         </div>
-        <h3 style="margin-top:2rem;margin-bottom:1rem;">Short Films</h3>
-        <div class="on-screen-grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr));">
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=eMLJ47QIfws" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/eMLJ47QIfws/hqdefault.jpg" alt="Ettulu short film — Pawon Ramesh" loading="lazy" style="aspect-ratio:16/9;"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2022 · Short Film</div><div class="film">Ettulu</div><div class="detail">Actor</div></div></a></div>
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=mbKfwvUxkkg" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/mbKfwvUxkkg/hqdefault.jpg" alt="Arcotia short film — Pawon Ramesh" loading="lazy" style="aspect-ratio:16/9;"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2017 · Short Film · Meraki Award</div><div class="film">Arcotia</div><div class="detail">Actor as Thief · IMDb 9.2</div></div></a></div>
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=60E_a1T3AfI" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/60E_a1T3AfI/hqdefault.jpg" alt="Athala Kuthala Paathalam short film — Pawon Ramesh" loading="lazy" style="aspect-ratio:16/9;"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2016 · Short Film</div><div class="film">Athala Kuthala Paathalam</div><div class="detail">Actor as Younger Brother</div></div></a></div>
+        <h3 style="margin-top:2rem;margin-bottom:1rem;">Shorts</h3>
+        <div class="on-screen-grid">
+          <div class="screen-card" data-yt="eMLJ47QIfws"><img src="https://img.youtube.com/vi/eMLJ47QIfws/hqdefault.jpg" alt="Pawon Ramesh Short" loading="lazy" width="480" height="270"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">Short Film · Avanti</div><div class="film">Etthulu</div><div class="detail">Short Film</div></div></div>
+          <div class="screen-card" data-yt="mbKfwvUxkkg"><img src="https://img.youtube.com/vi/mbKfwvUxkkg/hqdefault.jpg" alt="Pawon Ramesh Short" loading="lazy" width="480" height="270"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">Short Film · Avanti</div><div class="film">Arcotia</div><div class="detail">Short Film</div></div></div>
+          <div class="screen-card" data-yt="60E_a1T3AfI"><img src="https://img.youtube.com/vi/60E_a1T3AfI/hqdefault.jpg" alt="Pawon Ramesh Short" loading="lazy" width="480" height="270"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">Short Film</div><div class="film">Athala Kuthala Paathaalam</div><div class="detail">Short Film</div></div></div>
         </div>
       </div>
       <div class="fade-in">

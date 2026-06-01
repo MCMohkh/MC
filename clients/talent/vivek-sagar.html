@@ -64,10 +64,10 @@
 
     .sidebar-card { background:var(--light-bg); padding:2rem; }
     .sidebar-card h3 { font-size:1rem; margin-bottom:1.25rem; }
-    .sidebar-card .info-row { display:flex; justify-content:space-between; padding:0.6rem 0; border-bottom:1px solid #e0e0e0; font-size:0.875rem; }
+    
     .sidebar-card .info-row:last-child { border:none; }
-    .sidebar-card .info-label { color:var(--grey); }
-    .sidebar-card .info-value { font-weight:600; }
+    
+    
 
     .back-link { display:inline-flex; align-items:center; gap:0.5rem; color:var(--grey); text-decoration:none; font-size:0.8rem; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; margin-bottom:1.5rem; }
     .back-link:hover { color:var(--red); }
@@ -89,7 +89,29 @@
     .screen-card-label .detail{font-size:.73rem;color:#888;margin-top:.1rem;}
     .play-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:42px;height:42px;background:rgba(225,6,0,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.9rem;pointer-events:none;}
 
-    </style>
+  
+    /* ── Collapsible filmography ─────────────────────────────────── */
+    .filmography-wrap { position: relative; }
+    .filmography-wrap .discography li.film-hidden { display: none; }
+    .filmography-fade {
+      position: absolute; bottom: 0; left: 0; right: 0; height: 80px;
+      background: linear-gradient(to bottom, transparent, var(--white, #fff));
+      pointer-events: none; transition: opacity .3s;
+    }
+    .filmography-wrap.open .filmography-fade { opacity: 0; pointer-events: none; }
+    .filmography-wrap.open .discography li.film-hidden { display: flex; }
+    .btn-film-toggle {
+      display: inline-flex; align-items: center; gap: .45rem;
+      margin-top: 1rem; padding: .55rem 1.1rem;
+      background: none; border: 1px solid var(--red); color: var(--red);
+      font-family: 'Montserrat', sans-serif; font-size: .75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .08em; cursor: pointer;
+      transition: background .2s, color .2s;
+    }
+    .btn-film-toggle:hover { background: var(--red); color: #fff; }
+    .btn-film-toggle .film-toggle-icon { transition: transform .3s; }
+    .filmography-wrap.open .btn-film-toggle .film-toggle-icon { transform: rotate(180deg); }
+  </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Person","name":"Vivek Sagar","jobTitle":"Music Composer","description":"Music composer, singer, and producer. Founder of Tapeloop Records. Known for Pelli Choopulu and Sheeshmahal.","url":"https://www.mcjoint.in/clients/talent/vivek-sagar.html","image":"/images/talent/talent-vivek-sagar.jpg","worksFor":{"@type":"Organization","name":"MC Joint","url":"https://www.mcjoint.in"},"knowsAbout":["Music Composition","Film Scoring","Independent Music","Telugu Cinema"]}
   </script>
@@ -160,7 +182,7 @@
         <p style="color:var(--dark-grey);margin-bottom:1rem;">His debut score for <em>Pelli Choopulu</em> (2016) earned him his first Filmfare nomination and announced a composer who understood that film music doesn't just accompany story — it <em>is</em> the story. Since then, credits like <em>Sammohanam</em>, <em>Brochevarevarura</em>, <em>Falaknuma Das</em>, <em>Ante Sundaraniki</em>, <em>Keedaa Cola</em>, <em><a href="../../works/avanti-cinema.html">Double Engine</a></em>, and <em>Sarangapani Jathakam</em> have confirmed that he is one of the most consistent creative forces working in Telugu cinema today.</p>
         <p style="color:var(--dark-grey);margin-bottom:1rem;">In 2010 he co-founded Tapeloop — a studio, label, and creative collective in Hyderabad that has nurtured a generation of independent artists. Through <a href="https://open.spotify.com/artist/7Fa8B0rJSmeeGjYCJJXrb3" target="_blank" rel="noopener">Tapeloop Records</a>, Vivek has released music that sits at the intersection of Telugu folk, blues, electronic, and Indian classical, refusing to be categorised.</p>
         <p style="color:var(--dark-grey);margin-bottom:1rem;">Our partnership with Vivek Sagar began through <a href="../../works/avanti-cinema.html">Avanti Cinema</a>. MC Joint is proud to serve as the exclusive distributor and marketing partner for his independent catalogue — music that deserves to reach every corner of the world.</p>
-        <div class="social-platform-links"><a href="https://www.imdb.com/name/nm6419400/" target="_blank" rel="noopener"><svg viewBox="0 0 48 20" fill="none" style="height:16px;"><rect width="48" height="20" rx="3" fill="#F5C518"/><text x="4" y="15" font-family="Arial Black,Arial" font-weight="900" font-size="13" fill="#000">IMDb</text></svg> IMDb</a><a href="https://open.spotify.com/artist/7Fa8B0rJSmeeGjYCJJXrb3" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#1DB954" style="height:16px;width:16px;"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg> Spotify</a></div>
+        <div class="social-platform-links"><a href="https://www.imdb.com/name/nm6419400/" target="_blank" rel="noopener"><svg viewBox="0 0 48 20" fill="none" style="height:16px;"><rect width="48" height="20" rx="3" fill="#F5C518"/><text x="4" y="15" font-family="Arial Black,Arial" font-weight="900" font-size="13" fill="#000">IMDb</text></svg> IMDb</a><a href="https://open.spotify.com/artist/7Fa8B0rJSmeeGjYCJJXrb3" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#1DB954" style="height:16px;width:16px;"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg> Spotify</a><a href="https://www.youtube.com/@VivekSagar" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" style="height:16px;width:16px;" fill="#FF0000"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg> YouTube</a></div>
         
         <h3 style="margin-top:2.5rem;margin-bottom:1rem;">Selected Filmography</h3>
         <ul class="discography">
@@ -200,16 +222,19 @@
             <span class="tag tag-red">MC Joint</span>
           </li>
         </ul>
+        <button class="disc-toggle-btn" id="disc-toggle-btn" data-open="0"><i class="fas fa-chevron-down"></i> Show Full Filmography (48 more)</button>
+        
         
         <h3 style="margin-top:2.5rem;margin-bottom:1rem;">On Screen</h3>
         <div class="on-screen-grid">
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=3hkFE8DlS7U" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/3hkFE8DlS7U/hqdefault.jpg" alt="Pelli Choopulu" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2016</div><div class="film">Pelli Choopulu</div><div class="detail">Music Composer</div></div></a></div>
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=PiN0V7_h3M0" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/PiN0V7_h3M0/hqdefault.jpg" alt="Sammohanam" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2018</div><div class="film">Sammohanam</div><div class="detail">Music Composer</div></div></a></div>
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=R80xTWgRbM8" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/R80xTWgRbM8/hqdefault.jpg" alt="Ante Sundaraniki" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2022</div><div class="film">Ante Sundaraniki</div><div class="detail">Music Composer</div></div></a></div>
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=GgmSBzgv2UE" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/GgmSBzgv2UE/hqdefault.jpg" alt="Double Engine" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2024</div><div class="film">Double Engine</div><div class="detail">Music Composer — Avanti Cinema</div></div></a></div>
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=oLHjl3F7YSM" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/oLHjl3F7YSM/hqdefault.jpg" alt="Sheeshmahal" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2024</div><div class="film">Sheeshmahal</div><div class="detail">Music Composer — Avanti Cinema</div></div></a></div>
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=An-vMK16QlA" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/An-vMK16QlA/hqdefault.jpg" alt="Gopi Galla Goa Trip" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2025</div><div class="film">Gopi Galla Goa Trip</div><div class="detail">Music Composer — Avanti Cinema</div></div></a></div>
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=7Fa8B0rJSmeeGjYCJJXrb3" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/7Fa8B0rJSmeeGjYCJJXrb3/hqdefault.jpg" alt="Tapeloop Records" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">Tapeloop Records</div><div class="film">Independent Music</div><div class="detail">Founder — Vivek Sagar</div></div></a></div>
+          <div class="screen-card" data-yt="_KozTSvdwuM"><img src="https://img.youtube.com/vi/_KozTSvdwuM/hqdefault.jpg" alt="Pelli Choopulu" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2016</div><div class="film">Pelli Choopulu</div><div class="detail">Music Composer</div></div></div>
+          <div class="screen-card" data-yt="_sr3gmQwyuI"><img src="https://img.youtube.com/vi/_sr3gmQwyuI/hqdefault.jpg" alt="Sainma" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2014</div><div class="film">Sainma</div><div class="detail">Music Composer</div></div></div>
+          <div class="screen-card" data-yt="HLQWGHXp-4c"><img src="https://img.youtube.com/vi/HLQWGHXp-4c/hqdefault.jpg" alt="Ee Nagaraniki Emaindi" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2018</div><div class="film">Ee Nagaraniki Emaindi</div><div class="detail">Music Composer</div></div></div>
+          <div class="screen-card" data-yt="K1DHMRR3vBc"><img src="https://img.youtube.com/vi/K1DHMRR3vBc/hqdefault.jpg" alt="Sheeshmahal" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2024</div><div class="film">Sheeshmahal</div><div class="detail">Music Composer · Avanti Cinema</div></div></div>
+          <div class="screen-card" data-yt="sVgbSuhl4hs"><img src="https://img.youtube.com/vi/sVgbSuhl4hs/hqdefault.jpg" alt="Sammohanam" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2018</div><div class="film">Sammohanam</div><div class="detail">Music Composer</div></div></div>
+          <div class="screen-card" data-yt="E2-lUmpKwEo"><img src="https://img.youtube.com/vi/E2-lUmpKwEo/hqdefault.jpg" alt="Ante Sundharaniki" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2022</div><div class="film">Ante Sundharaniki</div><div class="detail">Music Composer</div></div></div>
+          <div class="screen-card" data-yt="yxaYn4ZQ63Y"><img src="https://img.youtube.com/vi/yxaYn4ZQ63Y/hqdefault.jpg" alt="Keedaa Cola" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2023</div><div class="film">Keedaa Cola</div><div class="detail">Music Composer</div></div></div>
+          <div class="screen-card" data-yt="XFwPEkNALeg"><img src="https://img.youtube.com/vi/XFwPEkNALeg/hqdefault.jpg" alt="Chivaraku Migiledhi" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2024</div><div class="film">Chivaraku Migiledhi</div><div class="detail">Music Composer · Avanti Cinema</div></div></div>
         </div>
       </div>
       <div class="fade-in">
@@ -289,5 +314,20 @@
 <script src="../../js/main.js"></script>
 <script src="../../js/gallery-lightbox.js"></script>
 <a class="wa-float" href="https://wa.me/919014414114?text=Hi%20MC%20Joint%2C%20I%27d%20like%20to%20discuss%20a%20project" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <script>
+  (function(){
+    var btn = document.getElementById('disc-toggle-btn');
+    if (!btn) return;
+    var items = document.querySelectorAll('.disc-hidden');
+    btn.addEventListener('click', function(){
+      var open = btn.getAttribute('data-open') === '1';
+      items.forEach(function(el){ el.style.display = open ? '' : 'block'; });
+      btn.setAttribute('data-open', open ? '0' : '1');
+      btn.innerHTML = open
+        ? '<i class="fas fa-chevron-down"></i> See Full Filmography (' + items.length + ' more)'
+        : '<i class="fas fa-chevron-up"></i> Show Less';
+    });
+  })();
+  </script>
 </body>
 </html>

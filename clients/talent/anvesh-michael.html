@@ -59,10 +59,10 @@
     .disc-type { font-size:0.75rem; color:var(--grey); text-transform:uppercase; letter-spacing:0.05em; }
     .sidebar-card { background:var(--light-bg); padding:2rem; }
     .sidebar-card h3 { font-size:1rem; margin-bottom:1.25rem; }
-    .sidebar-card .info-row { display:flex; justify-content:space-between; padding:0.6rem 0; border-bottom:1px solid #e0e0e0; font-size:0.875rem; }
+    
     .sidebar-card .info-row:last-child { border:none; }
-    .sidebar-card .info-label { color:var(--grey); }
-    .sidebar-card .info-value { font-weight:600; }
+    
+    
     .back-link { display:inline-flex; align-items:center; gap:0.5rem; color:var(--grey); text-decoration:none; font-size:0.8rem; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; margin-bottom:1.5rem; }
     .back-link:hover { color:var(--red); }
     .fade-in { opacity:0; transform:translateY(20px); transition:opacity 0.6s,transform 0.6s; }
@@ -83,7 +83,29 @@
     .screen-card-label .detail{font-size:.73rem;color:#888;margin-top:.1rem;}
     .play-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:42px;height:42px;background:rgba(225,6,0,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.9rem;pointer-events:none;}
 
-    </style>
+  
+    /* ── Collapsible filmography ─────────────────────────────────── */
+    .filmography-wrap { position: relative; }
+    .filmography-wrap .discography li.film-hidden { display: none; }
+    .filmography-fade {
+      position: absolute; bottom: 0; left: 0; right: 0; height: 80px;
+      background: linear-gradient(to bottom, transparent, var(--white, #fff));
+      pointer-events: none; transition: opacity .3s;
+    }
+    .filmography-wrap.open .filmography-fade { opacity: 0; pointer-events: none; }
+    .filmography-wrap.open .discography li.film-hidden { display: flex; }
+    .btn-film-toggle {
+      display: inline-flex; align-items: center; gap: .45rem;
+      margin-top: 1rem; padding: .55rem 1.1rem;
+      background: none; border: 1px solid var(--red); color: var(--red);
+      font-family: 'Montserrat', sans-serif; font-size: .75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .08em; cursor: pointer;
+      transition: background .2s, color .2s;
+    }
+    .btn-film-toggle:hover { background: var(--red); color: #fff; }
+    .btn-film-toggle .film-toggle-icon { transition: transform .3s; }
+    .filmography-wrap.open .btn-film-toggle .film-toggle-icon { transform: rotate(180deg); }
+  </style>
   <!-- Google Analytics GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-620G3QZX5M"></script>
   <script>
@@ -258,5 +280,20 @@
 <script src="../../js/main.js"></script>
 <script src="../../js/gallery-lightbox.js"></script>
 <a class="wa-float" href="https://wa.me/919014414114?text=Hi%20MC%20Joint%2C%20I%27d%20like%20to%20discuss%20a%20project" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <script>
+  (function(){
+    var btn = document.getElementById('disc-toggle-btn');
+    if (!btn) return;
+    var items = document.querySelectorAll('.disc-hidden');
+    btn.addEventListener('click', function(){
+      var open = btn.getAttribute('data-open') === '1';
+      items.forEach(function(el){ el.style.display = open ? 'none' : ''; });
+      btn.setAttribute('data-open', open ? '0' : '1');
+      btn.innerHTML = open
+        ? '<i class="fas fa-chevron-down"></i> See Full Filmography (' + items.length + ' more)'
+        : '<i class="fas fa-chevron-up"></i> Show Less';
+    });
+  })();
+  </script>
 </body>
 </html>
