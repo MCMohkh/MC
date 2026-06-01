@@ -170,6 +170,11 @@
     .disc-hidden { display:none !important; }
     .disc-toggle-btn { display:inline-flex; align-items:center; gap:0.4rem; margin-top:1rem; padding:0.5rem 1.1rem; border:1px solid var(--red); background:none; color:var(--red); font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; cursor:pointer; transition:all 0.2s; }
     .disc-toggle-btn:hover { background:var(--red); color:white; }
+  
+    /* Gallery: 1x1 square thumbnails */
+    .mc-gallery { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)) !important; gap: 0.75rem !important; }
+    .mc-gallery-item { aspect-ratio: 1 !important; overflow: hidden !important; position: relative; }
+    .mc-gallery-item img { width: 100% !important; height: 100% !important; max-height: none !important; aspect-ratio: 1 !important; object-fit: cover !important; object-position: top center; display: block !important; }
   </style>
   <!-- Google Analytics GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-620G3QZX5M"></script>
@@ -363,16 +368,16 @@
       <div class="fade-in">
                 <div class="sidebar-card">
           <h3>Quick Info</h3>
-          <div class="info-row" style="align-items:flex-start;"><span class="info-label" style="flex-shrink:0;min-width:90px;">Category</span><span class="info-value">Actor</span></div>
-          <div class="info-row" style="align-items:flex-start;"><span class="info-label" style="flex-shrink:0;min-width:90px;">Training</span><span class="info-value" style="text-align:right;">Theatre Arts Diploma,<br>Univ. of Hyderabad</span></div>
-          <div class="info-row" style="align-items:flex-start;"><span class="info-label" style="flex-shrink:0;min-width:90px;">Stage Shows</span><span class="info-value">250+ performances</span></div>
-          <div class="info-row" style="align-items:flex-start;"><span class="info-label" style="flex-shrink:0;min-width:90px;">Known For</span><span class="info-value" style="text-align:right;">Gopi Galla Goa Trip,<br>Pickpocket, Arcotia</span></div>
-          <div class="info-row" style="align-items:flex-start;"><span class="info-label" style="flex-shrink:0;min-width:90px;">From</span><span class="info-value">Nellore, AP</span></div>
-          <div class="info-row" style="align-items:flex-start;"><span class="info-label" style="flex-shrink:0;min-width:90px;">Based In</span><span class="info-value">Hyderabad</span></div>
-          <div class="info-row" style="align-items:flex-start;"><span class="info-label" style="flex-shrink:0;min-width:90px;">Languages</span><span class="info-value">Telugu, Hindi, English</span></div>
-          <div class="info-row" style="align-items:flex-start;"><span class="info-label" style="flex-shrink:0;min-width:90px;">Also Does</span><span class="info-value">Mime, Stand-up Comedy</span></div>
-          <div class="info-row" style="align-items:flex-start;"><span class="info-label" style="flex-shrink:0;min-width:90px;">Award</span><span class="info-value" style="text-align:right;">Meraki FF —<br>Best Short Film (Arcotia)</span></div>
-          <div class="info-row" style="align-items:flex-start;"><span class="info-label" style="flex-shrink:0;min-width:90px;">Services</span><span class="info-value">Talent Representation</span></div>
+          <div class="info-row"><span class="info-label">Category</span><span class="info-value">Actor</span></div>
+          <div class="info-row"><span class="info-label">Training</span><span class="info-value">Theatre Arts Diploma,<br>Univ. of Hyderabad</span></div>
+          <div class="info-row"><span class="info-label">Stage Shows</span><span class="info-value">250+ performances</span></div>
+          <div class="info-row"><span class="info-label">Known For</span><span class="info-value">Gopi Galla Goa Trip,<br>Pickpocket, Arcotia</span></div>
+          <div class="info-row"><span class="info-label">From</span><span class="info-value">Nellore, AP</span></div>
+          <div class="info-row"><span class="info-label">Based In</span><span class="info-value">Hyderabad</span></div>
+          <div class="info-row"><span class="info-label">Languages</span><span class="info-value">Telugu, Hindi, English</span></div>
+          <div class="info-row"><span class="info-label">Also Does</span><span class="info-value">Mime, Stand-up Comedy</span></div>
+          <div class="info-row"><span class="info-label">Award</span><span class="info-value">Meraki FF —<br>Best Short Film (Arcotia)</span></div>
+          <div class="info-row"><span class="info-label">Services</span><span class="info-value">Talent Representation</span></div>
         </div>
         <div style="margin-top:1.5rem;">
           <a href="../../contact.html" class="btn btn-primary" style="width:100%;text-align:center;display:block;">Enquire About Booking</a>
