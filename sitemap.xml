@@ -5,137 +5,140 @@
   <!-- ── CORE PAGES ──────────────────────────────────────────────────── -->
   <url>
     <loc>https://www.mcjoint.in/</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>weekly</changefreq><priority>1.0</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>weekly</changefreq><priority>1.0</priority>
     <image:image>
-      <image:loc>/images/mc/MC Joint Masters of Ceremonies Hyderabad Talent Agency Hyderabad.jpg</image:loc>
+      <image:loc>https://www.mcjoint.in/images/mc/MC Joint Masters of Ceremonies Hyderabad Talent Agency Hyderabad.jpg</image:loc>
       <image:title>MC Joint — Music, Talent &amp; Cinema Agency, Hyderabad</image:title>
       <image:caption>MC Joint is Hyderabad's creative agency for music distribution, talent management and Telugu cinema strategy.</image:caption>
     </image:image>
   </url>
   <url>
     <loc>https://www.mcjoint.in/about.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
     <image:image>
-      <image:loc>/images/mc/MC Joint Founder Sonu Mohkh.jpg</image:loc>
+      <image:loc>https://www.mcjoint.in/images/mc/MC Joint Founder Sonu Mohkh.jpg</image:loc>
       <image:title>MC Joint Founders — Sonu Mohkh, Sai Charan, NJay</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.mcjoint.in/services.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.mcjoint.in/works.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
     <image:image>
-      <image:loc></image:loc>
+      <image:loc>https://www.mcjoint.in/images/homepage/hero-slide-1.jpg</image:loc>
       <image:title>MC Joint Works — Projects, Films and Campaigns</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.mcjoint.in/blog.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.mcjoint.in/contact.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>yearly</changefreq><priority>0.7</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>yearly</changefreq><priority>0.7</priority>
   </url>
 
   <!-- ── WORKS / PROJECT PAGES ───────────────────────────────────────── -->
   <url>
     <loc>https://www.mcjoint.in/works/avanti-cinema.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
     <image:image>
-      <image:loc></image:loc>
+      <image:loc>https://www.mcjoint.in/images/talent/Rohit Penumatsa for MC.jpg</image:loc>
       <image:title>Avanti Cinema — Six Years of Independent Telugu Storytelling</image:title>
       <image:caption>Avanti Cinema's journey from Pickpocket to Sheeshmahal and Gopi Galla Goa Trip. MC Joint's longest-standing creative partnership.</image:caption>
     </image:image>
   </url>
   <url>
     <loc>https://www.mcjoint.in/works/beyond-physical.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
     <image:image>
-      <image:loc></image:loc>
+      <image:loc>https://www.mcjoint.in/images/projects/Beyond-Physical x01.jpg</image:loc>
       <image:title>Beyond Physical — Documentary Series by Flintstory</image:title>
       <image:caption>A documentary series exploring parkour, boxing, BMX, CrossFit and yoga. Directed by Prashanth Podagatlapalli, produced by Flintstory.</image:caption>
     </image:image>
   </url>
   <url>
     <loc>https://www.mcjoint.in/works/sheeshmahal.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
     <image:image>
-      <image:loc>/images/homepage/Hero-slide-x.jpg</image:loc>
+      <image:loc>https://www.mcjoint.in/images/homepage/hero-slide-2.jpg</image:loc>
       <image:title>Sheeshmahal — A Decade in the Making | Avanti Cinema</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.mcjoint.in/works/gopi-galla-goa-trip.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
     <image:image>
-      <image:loc></image:loc>
+      <image:loc>https://www.mcjoint.in/images/homepage/On Sets of Gopi Galla Goa Trip.jpg</image:loc>
       <image:title>Gopi Galla Goa Trip — Rural Telangana Comedy | Avanti Cinema</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.mcjoint.in/works/viral-video.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
     <image:image>
-      <image:loc></image:loc>
+      <image:loc>https://www.mcjoint.in/images/projects/Beyond-Physical x03.jpg</image:loc>
       <image:title>Viral Video — Debut Film by Prashanth Podagatlapalli | MC Joint</image:title>
-      <image:caption>Viral Video is the debut directorial feature by Prashanth Podagatlapalli, currently in post-production. Cast: Pooja Bhavani, Feroze MNA, Muni Myatari.</image:caption>
     </image:image>
   </url>
   <url>
     <loc>https://www.mcjoint.in/works/chivaraku-migiledhi.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.mcjoint.in/images/projects/MC-Project-chivaraku-migiledhi-jagadeesh-prathap-bandari-rohit-penumatsa-camp-sasi-vivek-sagar (1).jpg</image:loc>
+      <image:title>Chivaraku Migiledi — Avanti Cinema × MC Joint</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.mcjoint.in/works/story-discussion-s2.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
     <image:image>
-      <image:loc></image:loc>
+      <image:loc>https://www.mcjoint.in/images/projects/MC-Project-Story-discussion-season-2-poster-camp-sasi-as-prakash-chowdary.jpg</image:loc>
       <image:title>Story Discussion Season 2 | Avanti Cinema × MC Joint</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.mcjoint.in/works/projects.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
   </url>
 
   <!-- ── BLOG / ARTICLES ─────────────────────────────────────────────── -->
   <url>
     <loc>https://www.mcjoint.in/avanti-cinema-transformation.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
     <image:image>
-      <image:loc></image:loc>
+      <image:loc>https://www.mcjoint.in/images/talent/Rohit Penumatsa for MC.jpg</image:loc>
       <image:title>Avanti Cinema Transformation — Rohit Penumatsa &amp; Camp Sasi</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.mcjoint.in/story-discussion-s2.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
     <image:image>
-      <image:loc></image:loc>
+      <image:loc>https://www.mcjoint.in/images/talent/talent-smaran-sai.jpg</image:loc>
       <image:title>Story Discussion Season 2 with Smaran — MC Joint</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.mcjoint.in/tapeloop-music-distribution.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
     <image:image>
-      <image:loc></image:loc>
+      <image:loc>https://www.mcjoint.in/images/talent/talent-vivek-sagar.jpg</image:loc>
       <image:title>Tapeloop Music Distribution by Vivek Sagar — MC Joint</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.mcjoint.in/viral-video-screening.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.mcjoint.in/nalgonda-gaddar-narsanna.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
     <image:image>
-      <image:loc></image:loc>
+      <image:loc>https://www.mcjoint.in/images/talent/talent-nalgonda-gaddar.jpg</image:loc>
       <image:title>Nalgonda Gaddar Narsanna — Folk Artist</image:title>
     </image:image>
   </url>
@@ -143,208 +146,197 @@
   <!-- ── CLIENTS ─────────────────────────────────────────────────────── -->
   <url>
     <loc>https://www.mcjoint.in/clients/</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.mcjoint.in/clients/talent.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>weekly</changefreq><priority>0.9</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>weekly</changefreq><priority>0.9</priority>
     <image:image>
-      <image:loc>/images/mc/MC Joint Masters of Ceremonies Hyderabad Talent Agency Hyderabad.jpg</image:loc>
+      <image:loc>https://www.mcjoint.in/images/mc/MC Joint Masters of Ceremonies Hyderabad Talent Agency Hyderabad.jpg</image:loc>
       <image:title>MC Joint Talent Roster — Telugu Actors, Musicians and Filmmakers</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.mcjoint.in/clients/businesses.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.mcjoint.in/clients/associates.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>yearly</changefreq><priority>0.5</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
   </url>
 
   <!-- ── TALENT PROFILES ─────────────────────────────────────────────── -->
   <url>
     <loc>https://www.mcjoint.in/clients/talent/vivek-sagar.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
     <image:image>
-      <image:loc></image:loc>
+      <image:loc>https://www.mcjoint.in/images/talent/talent-vivek-sagar.jpg</image:loc>
       <image:title>Vivek Sagar — Music Composer, Tapeloop Records</image:title>
-      <image:caption>Vivek Sagar is a music composer and founder of Tapeloop Records, represented by MC Joint. Known for Pelli Choopulu and Sheeshmahal.</image:caption>
+      <image:caption>Vivek Sagar is a music composer and founder of Tapeloop Records, represented by MC Joint. Known for Pelli Choopulu, Ante Sundharaniki and Sheeshmahal.</image:caption>
     </image:image>
   </url>
   <url>
     <loc>https://www.mcjoint.in/clients/talent/smaran.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
     <image:image>
-      <image:loc></image:loc>
+      <image:loc>https://www.mcjoint.in/images/talent/talent-smaran-sai.jpg</image:loc>
       <image:title>Smaran — Singer &amp; Composer, Wolfgang Studios</image:title>
-      <image:caption>Smaran is a singer and composer at Wolfgang Studios, represented by MC Joint. Known for Ranganaayaki, Pickpocket and Alakanaka.</image:caption>
+      <image:caption>Smaran (Smaran Sai) is a music composer and singer at Wolfgang Studios, known for RX 100, Kotha Poradu and Pickpocket. Represented by MC Joint.</image:caption>
     </image:image>
   </url>
   <url>
     <loc>https://www.mcjoint.in/clients/talent/rohit-penumatsa.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
     <image:image>
-      <image:loc></image:loc>
+      <image:loc>https://www.mcjoint.in/images/talent/Rohit Penumatsa for MC.jpg</image:loc>
       <image:title>Rohit Penumatsa — Director &amp; Filmmaker, Avanti Cinema</image:title>
-      <image:caption>Rohit Penumatsa is a Telugu filmmaker and co-director of Avanti Cinema. Known for Sheeshmahal, Gopi Galla Goa Trip and Double Engine.</image:caption>
+      <image:caption>Rohit Penumatsa is a Telugu filmmaker and director of Avanti Cinema. Known for Gopi Galla Goa Trip, Sheeshmahal, Chivaraku Migiledi and Story Discussion.</image:caption>
     </image:image>
   </url>
   <url>
     <loc>https://www.mcjoint.in/clients/talent/camp-sasi.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
     <image:image>
-      <image:loc></image:loc>
-      <image:title>Camp Sasi — Director &amp; Filmmaker, Avanti Cinema</image:title>
-      <image:caption>Camp Sasi is a Telugu filmmaker and co-director of Avanti Cinema. Known for Sheeshmahal, Gopi Galla Goa Trip and Story Discussion.</image:caption>
+      <image:loc>https://www.mcjoint.in/images/talent/talent-camp-sasi.jpg</image:loc>
+      <image:title>Camp Sasi — Writer, Director &amp; Actor, Avanti Cinema</image:title>
+      <image:caption>Camp Sasi is a Telugu writer, director and actor with Avanti Cinema. Known for Gopi Galla Goa Trip, Sheeshmahal and Story Discussion.</image:caption>
     </image:image>
   </url>
   <url>
-    <loc>https://www.mcjoint.in/clients/talent/prashanth-podagatlapalli.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <loc>https://www.mcjoint.in/clients/talent/pawon-ramesh.html</loc>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.9</priority>
     <image:image>
-      <image:loc></image:loc>
-      <image:title>Prashanth Podagatlapalli — Writer, Director &amp; Producer</image:title>
-      <image:caption>Telugu writer-director known for Viral Video (debut), Beyond Physical documentary series, and Neramu Siksha. Rama Naidu Film School graduate.</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.mcjoint.in/clients/talent/Thanmai%20Bolt.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
-    <image:image>
-      <image:loc></image:loc>
-      <image:title>Thanmai Bolt — Actress, Singer &amp; Visual Artist</image:title>
-      <image:caption>Telugu actress known for Mangalavaram, Palasa 1978 and Kotha Poradu. Also performs music as Bølt. Represented by MC Joint.</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.mcjoint.in/clients/talent/sai-prasanna.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
-    <image:image>
-      <image:loc>/images/mc/MC Joint Masters of Ceremonies Hyderabad Talent Agency Hyderabad.jpg</image:loc>
-      <image:title>Sai Prasanna (Kondra) — Actress &amp; Writer, Kotha Poradu</image:title>
-      <image:caption>Telugu actress known for Sukanya in Kotha Poradu on AHA, Virata Parvam and W/O Anirvesh. Represented by MC Joint.</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.mcjoint.in/clients/talent/ajith-mohan.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
-    <image:image>
-      <image:loc></image:loc>
-      <image:title>Ajith Mohan — Telugu Actor, Gopi Galla Goa Trip</image:title>
-      <image:caption>Ajith Mohan (also known as Ajith Mohan Baachi) stars as Gopi in Gopi Galla Goa Trip and appeared in Double Engine. Represented by MC Joint.</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.mcjoint.in/clients/talent/muni-myatari.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
-    <image:image>
-      <image:loc></image:loc>
-      <image:title>Muni Myatari — Telugu Theatre &amp; Film Actor</image:title>
-      <image:caption>Muni Myatari is a Telugu theatre and film actor known for Double Engine, Disha Encounter and Kotha Poradu. Represented by MC Joint.</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.mcjoint.in/clients/talent/divya-bandaru.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
-    <image:image>
-      <image:loc></image:loc>
-      <image:title>Divya Bandaru — Writer &amp; Director, Pickpocket</image:title>
-      <image:caption>Telugu writer-director at Avanti Cinema known for Pickpocket, Etthulu and Inner City Blues. Represented by MC Joint.</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.mcjoint.in/clients/talent/jagadeesh.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image>
-      <image:loc></image:loc>
-      <image:title>Jagadeesh Prathap Bandari — Telugu Actor</image:title>
+      <image:loc>https://www.mcjoint.in/images/talent/Pawon Ramesh Actor Headshot Represented by MC Joint.jpg</image:loc>
+      <image:title>Pawon Ramesh — Telugu Actor, Gopi Galla Goa Trip &amp; George Reddy</image:title>
+      <image:caption>Pawon Ramesh is a Telugu film and theatre actor known for Gopi Galla Goa Trip (2025), George Reddy (2019) and the Meraki Film Festival award-winning Arcotia. Represented by MC Joint.</image:caption>
     </image:image>
   </url>
   <url>
     <loc>https://www.mcjoint.in/clients/talent/raj-tirandasu.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
     <image:image>
-      <image:loc></image:loc>
-      <image:title>Raj Tirandasu — Telugu Actor, Kotha Poradu &amp; Madhu Babu</image:title>
+      <image:loc>https://www.mcjoint.in/images/talent/Raj Tirandasu for MC Joint.png</image:loc>
+      <image:title>Raj Tirandasu — Telugu Actor, Tillu Square &amp; Pushpa: The Rise</image:title>
+      <image:caption>Raj Tirandasu is a Telugu actor known for Tillu Square, OG, Pushpa: The Rise (as Mogileesu) and Chivaraku Migiledi. Represented by MC Joint.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mcjoint.in/clients/talent/prashanth-podagatlapalli.html</loc>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.mcjoint.in/images/talent/talent-prashant-podagatlapalli.jpg</image:loc>
+      <image:title>Prashanth Podagatlapalli — Writer, Director &amp; Producer</image:title>
+      <image:caption>Telugu writer-director known for Viral Video, Beyond Physical documentary series. Represented by MC Joint.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mcjoint.in/clients/talent/ajith-mohan.html</loc>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.mcjoint.in/images/talent/Ajith Mohan x01.jpg</image:loc>
+      <image:title>Ajith Mohan — Telugu Actor, Gopi Galla Goa Trip</image:title>
+      <image:caption>Ajith Mohan stars as Gopi in Gopi Galla Goa Trip and appeared in Double Engine. Represented by MC Joint.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mcjoint.in/clients/talent/sai-prasanna.html</loc>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.mcjoint.in/images/talent/talent-sai-prasanna.jpg</image:loc>
+      <image:title>Sai Prasanna — Actress, Kotha Poradu &amp; Virata Parvam</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mcjoint.in/clients/talent/jagadeesh.html</loc>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.mcjoint.in/images/talent/talent-jagadeesh-prathap-bandari.jpg</image:loc>
+      <image:title>Jagadeesh Prathap Bandari — Telugu Actor</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mcjoint.in/clients/talent/muni-myatari.html</loc>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.mcjoint.in/images/talent/talent-muni-myatari.jpg</image:loc>
+      <image:title>Muni Myatari — Telugu Theatre &amp; Film Actor</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mcjoint.in/clients/talent/divya-bandaru.html</loc>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.mcjoint.in/images/talent/Divya Bandaru.jpg</image:loc>
+      <image:title>Divya Bandaru — Writer &amp; Director, Pickpocket</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.mcjoint.in/clients/talent/raju-shivaratri.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
     <image:image>
-      <image:loc></image:loc>
+      <image:loc>https://www.mcjoint.in/images/talent/Raju-Shivaratri-MC-Joint.jpg</image:loc>
       <image:title>Raju Shivaratri — Telugu Actor, Gopi Galla Goa Trip</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.mcjoint.in/clients/talent/ravi-nidamarthy.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
     <image:image>
-      <image:loc></image:loc>
+      <image:loc>https://www.mcjoint.in/images/talent/talent-ravi-nidamarthy.jpg</image:loc>
       <image:title>Ravi Nidamarthy — Actor &amp; Music Composer</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://www.mcjoint.in/clients/talent/pawon-ramesh.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
-    <image:image>
-      <image:loc></image:loc>
-      <image:title>Pawon Ramesh — Telugu Actor, George Reddy &amp; Gopi Galla Goa Trip</image:title>
-    </image:image>
-  </url>
-  <url>
     <loc>https://www.mcjoint.in/clients/talent/anvesh-michael.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
     <image:image>
-      <image:loc></image:loc>
+      <image:loc>https://www.mcjoint.in/images/talent/talent-anvesh-michael.jpg</image:loc>
       <image:title>Anvesh Michael — Telugu Actor</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.mcjoint.in/clients/talent/nalgonda-gaddar.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
     <image:image>
-      <image:loc></image:loc>
+      <image:loc>https://www.mcjoint.in/images/talent/talent-nalgonda-gaddar.jpg</image:loc>
       <image:title>Nalgonda Gaddar Narsanna — Telugu Folk Singer</image:title>
-      <image:caption>Folk singer whose voice rang across both Telugu states in the 2023 elections. Represented by MC Joint since late 2021.</image:caption>
     </image:image>
   </url>
   <url>
     <loc>https://www.mcjoint.in/clients/talent/faraz-og.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
     <image:image>
-      <image:loc></image:loc>
-      <image:title>Faraz OG — Independent Rapper, B12 Band, Zaruri Behes</image:title>
+      <image:loc>https://www.mcjoint.in/images/talent/talent-faraz-og.jpg</image:loc>
+      <image:title>Faraz OG — Independent Rapper, B12 Collective</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.mcjoint.in/clients/talent/kiyaan.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.mcjoint.in/clients/talent/ink-toxic.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.mcjoint.in/clients/talent/lazy-sharath-pawar.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.mcjoint.in/clients/talent/manoj-juloori.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.mcjoint.in/clients/talent/niklesh-sunkoji.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.mcjoint.in/clients/talent/sai-yogi-g.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.mcjoint.in/clients/talent/sindhu-dakavarapu.html</loc>
-    <lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
   </url>
 
 </urlset>
