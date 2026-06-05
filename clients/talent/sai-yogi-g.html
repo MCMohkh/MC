@@ -114,6 +114,10 @@
     .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s;}
     .fade-in.visible{opacity:1;transform:none;}
     .pull-quote{border-left:4px solid var(--red);padding:1.25rem 1.5rem;background:var(--light-bg);margin:2rem 0;font-style:italic;color:var(--dark-grey);font-size:.95rem;line-height:1.7;}
+  
+    .disc-hidden { display: none !important; }
+    .disc-toggle-btn { display:inline-flex;align-items:center;gap:0.4rem;margin-top:1rem;padding:0.5rem 1.1rem;border:1px solid var(--red);background:none;color:var(--red);font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;cursor:pointer;transition:all 0.2s; }
+    .disc-toggle-btn:hover { background:var(--red);color:white; }
   </style>
 </head>
 <body>
@@ -205,63 +209,26 @@
         <h3 style="margin-top:2.5rem;margin-bottom:1rem;">Filmography — Actor</h3>
         <div class="filmography-wrap" data-limit="4">
         <ul class="discography">
-          <li><div>
-            <div class="disc-title">Saree</div>
-            <div class="disc-type">Theatrical Feature Film · 2025</div>
-            <div class="disc-role">Dir. Ram Gopal Varma</div>
-          </div><span class="tag tag-red">MC Joint</span></li>
-          <li><div>
-            <div class="disc-title">Neramu Shiksha</div>
-            <div class="disc-type">Short Film · 2025 · Avanti Cinema</div>
-            <div class="disc-role">Dir. Rohit Penumatsa &amp; Camp Sasi</div>
-          </div><span class="tag tag-red">MC Joint</span></li>
-          <li><div>
-            <div class="disc-title">Double Engine</div>
-            <div class="disc-type">Theatrical Film · 2024 · Avanti Cinema</div>
-            <div class="disc-role">Dir. Rohit Penumatsa &amp; Camp Sasi</div>
-          </div><span class="tag tag-red">MC Joint</span></li>
-          <li><div>
-            <div class="disc-title">Chivaraku Migiledhi</div>
-            <div class="disc-type">Theatrical Film · 2024 · Avanti Cinema</div>
-            <div class="disc-role">Dir. Rohit Penumatsa &amp; Camp Sasi</div>
-          </div><span class="tag tag-red">MC Joint</span></li>
-          <li><div>
-            <div class="disc-title">Pickpocket</div>
-            <div class="disc-type">Web Feature Film · 2022 · Avanti Cinema</div>
-            <div class="disc-role">Role: Pickpocket · Dir. Divya Bandaru</div>
-          </div><span class="tag tag-red">MC Joint</span></li>
-          <li><div>
-            <div class="disc-title">Story Discussion</div>
-            <div class="disc-type">Web Series · 2022 · Avanti Cinema</div>
-            <div class="disc-role">Dir. Rohit Penumatsa &amp; Camp Sasi</div>
-          </div><span class="tag tag-red">MC Joint</span></li>
-          <li><div>
-            <div class="disc-title">Nirudyoga Natulu</div>
-            <div class="disc-type">Web Series · 2017 · Avanti Cinema</div>
-            <div class="disc-role">Dir. Rohit Penumatsa &amp; Camp Sasi · First screen role</div>
-          </div><span class="tag tag-red">MC Joint</span></li>
-          <!-- Upcoming -->
-          <li><div>
-            <div class="disc-title">The Murder Plan (Pickpocket 2)</div>
-            <div class="disc-type">Web Feature Film · Upcoming · Avanti Cinema</div>
-            <div class="disc-role">Dir. Divya Bandaru</div>
-          </div><span class="tag tag-red">Upcoming</span></li>
-          <li><div>
-            <div class="disc-title">Viral Video</div>
-            <div class="disc-type">Feature Film · Upcoming</div>
-            <div class="disc-role">Dir. Prashanth Podagatlapalli</div>
-          </div><span class="tag tag-red">Upcoming</span></li>
-          <li><div>
-            <div class="disc-title">Videshi</div>
-            <div class="disc-type">Feature Film · Upcoming</div>
-            <div class="disc-role">Dir. TBD</div>
-          </div><span class="tag tag-red">Upcoming</span></li>
-          <li><div>
-            <div class="disc-title">Ameerlog</div>
-            <div class="disc-type">Feature Film · Upcoming</div>
-            <div class="disc-role">Dir. Ramana Reddy</div>
-          </div><span class="tag tag-red">Upcoming</span></li>
+          <li><div><div class="disc-title">Neramu Shiksha</div><div class="disc-type">2025 · Short Film · Actor · Dir. Rohit &amp; Sasi</div></div></li>
+          <li><div><div class="disc-title">Saree</div><div class="disc-type">2025 · Theatrical Film · Actor · Dir. Ram Gopal Varma</div></div></li>
+          <li><div><div class="disc-title">Double Engine</div><div class="disc-type">2024 · Theatrical Film · Actor · Dir. Rohit &amp; Sasi · Avanti Cinema</div></div></li>
+          <li class="disc-hidden"><div><div class="disc-title">Chivaraku Migiledhi</div><div class="disc-type">2024 · Actor · Avanti Cinema</div></div></li>
+          <li class="disc-hidden"><div><div class="disc-title">Pickpocket</div><div class="disc-type">2022 · Actor · Dir. Divya Bandaru · Avanti Cinema</div></div></li>
+          <li class="disc-hidden"><div><div class="disc-title">Story Discussion</div><div class="disc-type">2022 · Web Series · Actor · Dir. Rohit &amp; Sasi · Avanti Cinema</div></div></li>
+          <li class="disc-hidden"><div><div class="disc-title">Nirudyoga Natulu</div><div class="disc-type">2017 · Web Series · Actor · Dir. Rohit &amp; Sasi</div></div></li>
+          <li class="disc-hidden"><div><div class="disc-title">The Murder Plan (Pickpocket 2)</div><div class="disc-type">Upcoming · Web Feature Film · Actor · Dir. Divya Bandaru</div></div></li>
+          <li class="disc-hidden"><div><div class="disc-title">Viral Video</div><div class="disc-type">Upcoming · Feature Film · Actor · Dir. Prashanth Podagatlapalli</div></div></li>
+          <li class="disc-hidden"><div><div class="disc-title">Videshi</div><div class="disc-type">Upcoming · Feature Film · Actor</div></div></li>
+          <li class="disc-hidden"><div><div class="disc-title">Ameerlog</div><div class="disc-type">Upcoming · Feature Film · Actor · Dir. Ramana Reddy</div></div></li>
+          <li class="disc-hidden"><div><div class="disc-title">Metal Marfa — Gopi Galla Goa Trip</div><div class="disc-type">2025 · Lyricist</div></div></li>
+          <li class="disc-hidden"><div><div class="disc-title">Pelliki Pille — Viral Video</div><div class="disc-type">Upcoming · Lyricist</div></div></li>
+          <li class="disc-hidden"><div><div class="disc-title">Dongalu — Videshi</div><div class="disc-type">Upcoming · Lyricist</div></div></li>
+          <li class="disc-hidden"><div><div class="disc-title">Hyderabad Players</div><div class="disc-type">Shorts · Director</div></div></li>
+          <li class="disc-hidden"><div><div class="disc-title">Bhoothagaanam</div><div class="disc-type">Theatre · Actor</div></div></li>
+          <li class="disc-hidden"><div><div class="disc-title">Gulaab</div><div class="disc-type">Theatre · Actor</div></div></li>
+          <li class="disc-hidden"><div><div class="disc-title">Paraayi</div><div class="disc-type">Theatre · Actor</div></div></li>
         </ul>
+        <button class="disc-toggle-btn" id="disc-toggle-btn" data-open="0"><i class="fas fa-chevron-down"></i> Show Full Filmography (15 more)</button>
         </div>
 
         <h3 style="margin-top:2.5rem;margin-bottom:1rem;">Lyrics</h3>
@@ -309,87 +276,15 @@
         <!-- ON SCREEN -->
         <h3 style="margin-top:2.5rem;margin-bottom:1rem;">On Screen</h3>
         <div class="on-screen-grid">
-          <div class="screen-card" data-yt="9z6iIruFiAI">
-            <img src="https://img.youtube.com/vi/9z6iIruFiAI/hqdefault.jpg" width="480" height="270" alt="Neramu Shiksha — Sai Yogi G" loading="lazy">
-            <div class="play-icon"><i class="fas fa-play"></i></div>
-            <div class="screen-card-label">
-              <div class="role">Showreel · Short Film · 2025</div>
-              <div class="film">Neramu Shiksha</div>
-              <div class="detail">Avanti Cinema · Dir. Rohit &amp; Sasi</div>
-            </div>
-          </div>
-          <div class="screen-card" data-yt="zyCCQ17KVIo">
-            <img src="https://img.youtube.com/vi/zyCCQ17KVIo/hqdefault.jpg" width="480" height="270" alt="Metal Marfa — Gopi Galla Goa Trip" loading="lazy">
-            <div class="play-icon"><i class="fas fa-play"></i></div>
-            <div class="screen-card-label">
-              <div class="role">Lyricist · 2025 · Avanti Cinema</div>
-              <div class="film">Metal Marfa — Gopi Galla Goa Trip</div>
-              <div class="detail">Song written by Sai Yogi G</div>
-            </div>
-          </div>
-          <div class="screen-card" data-yt="d4smuFiKAJw">
-            <img src="https://img.youtube.com/vi/d4smuFiKAJw/hqdefault.jpg" width="480" height="270" alt="Chivaraku Migiledhi 2024" loading="lazy">
-            <div class="play-icon"><i class="fas fa-play"></i></div>
-            <div class="screen-card-label">
-              <div class="role">Theatrical Film · 2024</div>
-              <div class="film">Chivaraku Migiledhi</div>
-              <div class="detail">Avanti Cinema</div>
-            </div>
-          </div>
-          <div class="screen-card" data-yt="h2I6UmoqNOY">
-            <img src="https://img.youtube.com/vi/h2I6UmoqNOY/hqdefault.jpg" width="480" height="270" alt="Double Engine 2024" loading="lazy">
-            <div class="play-icon"><i class="fas fa-play"></i></div>
-            <div class="screen-card-label">
-              <div class="role">Theatrical Film · 2024</div>
-              <div class="film">Double Engine</div>
-              <div class="detail">Avanti Cinema · Dir. Rohit &amp; Sasi</div>
-            </div>
-          </div>
-          <div class="screen-card" data-yt="4vFj38ncr7s">
-            <img src="https://img.youtube.com/vi/4vFj38ncr7s/hqdefault.jpg" width="480" height="270" alt="The Murder Plan — Pickpocket 2" loading="lazy">
-            <div class="play-icon"><i class="fas fa-play"></i></div>
-            <div class="screen-card-label">
-              <div class="role">Web Feature · Upcoming</div>
-              <div class="film">The Murder Plan (Pickpocket 2)</div>
-              <div class="detail">Dir. Divya Bandaru · Avanti Cinema</div>
-            </div>
-          </div>
-          <div class="screen-card" data-yt="Pgwaj1CSkN8">
-            <img src="https://img.youtube.com/vi/Pgwaj1CSkN8/hqdefault.jpg" width="480" height="270" alt="Pickpocket 2022" loading="lazy">
-            <div class="play-icon"><i class="fas fa-play"></i></div>
-            <div class="screen-card-label">
-              <div class="role">Web Feature Film · 2022</div>
-              <div class="film">Pickpocket</div>
-              <div class="detail">Role: Pickpocket · Dir. Divya Bandaru</div>
-            </div>
-          </div>
-          <div class="screen-card" data-yt="_qfMmPtC3U4">
-            <img src="https://img.youtube.com/vi/_qfMmPtC3U4/hqdefault.jpg" width="480" height="270" alt="Nirudyoga Natulu web series" loading="lazy">
-            <div class="play-icon"><i class="fas fa-play"></i></div>
-            <div class="screen-card-label">
-              <div class="role">Web Series · 2017 · Avanti Cinema</div>
-              <div class="film">Nirudyoga Natulu</div>
-              <div class="detail">First full-length screen role</div>
-            </div>
-          </div>
-          <div class="screen-card" data-yt="KCJc3XONdoM">
-            <img src="https://img.youtube.com/vi/KCJc3XONdoM/hqdefault.jpg" width="480" height="270" alt="Story Discussion web series" loading="lazy">
-            <div class="play-icon"><i class="fas fa-play"></i></div>
-            <div class="screen-card-label">
-              <div class="role">Web Series · Avanti Cinema</div>
-              <div class="film">Story Discussion</div>
-              <div class="detail">Dir. Rohit Penumatsa &amp; Camp Sasi</div>
-            </div>
-          </div>
-          <div class="screen-card" data-yt="yKaMi32AItM">
-            <img src="https://img.youtube.com/vi/yKaMi32AItM/hqdefault.jpg" width="480" height="270" alt="Hyderabad Players" loading="lazy">
-            <div class="play-icon"><i class="fas fa-play"></i></div>
-            <div class="screen-card-label">
-              <div class="role">Short Film Series · Director</div>
-              <div class="film">Hyderabad Players</div>
-              <div class="detail">Directed by Sai Yogi G</div>
-            </div>
-          </div>
+          <div class="screen-card" data-yt="9z6iIruFiAI"><img src="https://img.youtube.com/vi/9z6iIruFiAI/hqdefault.jpg" alt="Neramu Shiksha" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2025 · Showreel</div><div class="film">Neramu Shiksha</div><div class="detail">Actor · Dir. Rohit &amp; Sasi</div></div></div>
+          <div class="screen-card" data-yt="zyCCQ17KVIo"><img src="https://img.youtube.com/vi/zyCCQ17KVIo/hqdefault.jpg" alt="Metal Marfa" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2025 · Gopi Galla Goa Trip</div><div class="film">Metal Marfa</div><div class="detail">Lyricist</div></div></div>
+          <div class="screen-card" data-yt="d4smuFiKAJw"><img src="https://img.youtube.com/vi/d4smuFiKAJw/hqdefault.jpg" alt="Chivaraku Migiledhi" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2024 · Avanti Cinema</div><div class="film">Chivaraku Migiledhi</div><div class="detail">Actor</div></div></div>
+          <div class="screen-card" data-yt="h2I6UmoqNOY"><img src="https://img.youtube.com/vi/h2I6UmoqNOY/hqdefault.jpg" alt="Double Engine" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2024 · Avanti Cinema</div><div class="film">Double Engine</div><div class="detail">Actor · Dir. Rohit &amp; Sasi</div></div></div>
+          <div class="screen-card" data-yt="4vFj38ncr7s"><img src="https://img.youtube.com/vi/4vFj38ncr7s/hqdefault.jpg" alt="The Murder Plan" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">Upcoming</div><div class="film">The Murder Plan</div><div class="detail">Actor · Dir. Divya Bandaru</div></div></div>
+          <div class="screen-card" data-yt="Pgwaj1CSkN8"><img src="https://img.youtube.com/vi/Pgwaj1CSkN8/hqdefault.jpg" alt="Pickpocket" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2022 · Avanti Cinema</div><div class="film">Pickpocket</div><div class="detail">Actor · Dir. Divya Bandaru</div></div></div>
+          <div class="screen-card" data-yt="KCJc3XONdoM"><img src="https://img.youtube.com/vi/KCJc3XONdoM/hqdefault.jpg" alt="Story Discussion" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">Web Series</div><div class="film">Story Discussion</div><div class="detail">Actor · Dir. Rohit &amp; Sasi</div></div></div>
+          <div class="screen-card" data-yt="_qfMmPtC3U4"><img src="https://img.youtube.com/vi/_qfMmPtC3U4/hqdefault.jpg" alt="Nirudyoga Natulu" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2017 · Web Series</div><div class="film">Nirudyoga Natulu</div><div class="detail">Actor · Dir. Rohit &amp; Sasi</div></div></div>
+          <div class="screen-card" data-yt="yKaMi32AItM"><img src="https://img.youtube.com/vi/yKaMi32AItM/hqdefault.jpg" alt="Hyderabad Players" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">Short</div><div class="film">Hyderabad Players</div><div class="detail">Director</div></div></div>
         </div>
       </div>
 
