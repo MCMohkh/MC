@@ -2,27 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sai Yogi G — Actor, Lyricist & Director | MC Joint</title>
+  <meta name="description" content="Sai Yogi G is a Hyderabadi actor, lyricist and short film director represented by MC Joint. Known for Nirudyoga Natulu, Pickpocket, Saree (Ram Gopal Varma), Double Engine and Neramu Shiksha. Theatre credits include Bhoothagaanam, Gulaab and Paraayi.">
+  <meta name="keywords" content="Sai Yogi G, Telugu actor Hyderabad, Nirudyoga Natulu actor, Pickpocket Avanti Cinema, Saree Ram Gopal Varma, MC Joint talent, Hyderabad actor Deccani, lyricist Gopi Galla Goa Trip">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.mcjoint.in/clients/talent/sai-yogi-g.html">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
-  <link rel="apple-touch-icon" sizes="512x512" href="/favicon.png">
-<title>Sai Yogi G — Actor | MC Joint</title>
-  <meta name="description" content="Sai Yogi G is a Telugu actor represented by MC Joint, Hyderabad. Available for feature films, web series, and OTT projects.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://www.mcjoint.in/clients/talent/sai-yogi-g.html">  <meta property="og:description" content="Sai Yogi G is a Telugu actor represented by MC Joint, Hyderabad.">
+  <link rel="alternate" type="application/rss+xml" title="MC Joint" href="https://www.mcjoint.in/feed.xml">
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://www.mcjoint.in/clients/talent/sai-yogi-g.html">
-  <meta property="og:title" content="Sai Yogi G — Actor | MC Joint">
-  <meta property="og:image" content="//images/mc/MC Joint Masters of Ceremonies Hyderabad Talent Agency Hyderabad.jpg">
+  <meta property="og:title" content="Sai Yogi G — Actor, Lyricist &amp; Director | MC Joint">
+  <meta property="og:description" content="Hyderabadi actor, lyricist and director known for Nirudyoga Natulu, Pickpocket, Saree (RGV), Double Engine. Theatre: Bhoothagaanam, Gulaab, Paraayi. Represented by MC Joint.">
+  <meta property="og:image" content="https://www.mcjoint.in/images/mc/MC Joint Masters of Ceremonies Hyderabad Talent Agency Hyderabad.jpg">
   <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
   <meta property="og:locale" content="en_IN"><meta property="og:site_name" content="MC Joint">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="//images/mc/MC Joint Masters of Ceremonies Hyderabad Talent Agency Hyderabad.jpg">
+  <meta name="twitter:title" content="Sai Yogi G — Actor, Lyricist &amp; Director | MC Joint">
+  <meta name="twitter:image" content="https://www.mcjoint.in/images/mc/MC Joint Masters of Ceremonies Hyderabad Talent Agency Hyderabad.jpg">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Person","name":"Sai Yogi G","jobTitle":"Actor",
+  {"@context":"https://schema.org","@type":"Person","name":"Sai Yogi G",
+   "jobTitle":"Actor, Lyricist & Director",
+   "description":"Hyderabadi actor, lyricist and short film director. Known for Nirudyoga Natulu, Pickpocket, Saree (RGV), Double Engine and Neramu Shiksha. Theatre: Bhoothagaanam, Gulaab, Paraayi.",
    "url":"https://www.mcjoint.in/clients/talent/sai-yogi-g.html",
+   "sameAs":["https://www.instagram.com/saiyogi_/"],
    "worksFor":{"@type":"Organization","name":"MC Joint","url":"https://www.mcjoint.in"}}
   </script>
-  
+  <!-- Google Analytics GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-620G3QZX5M"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-620G3QZX5M');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -43,73 +51,98 @@
     .talent-social-link:hover{border-color:var(--red);color:white;background:rgba(225,6,0,0.12);}
     .profile-body{display:grid;grid-template-columns:1fr;gap:3rem;}
     @media(min-width:1024px){.profile-body{grid-template-columns:2fr 1fr;}}
+    /* Filmography */
     .discography{list-style:none;margin:0;padding:0;}
     .discography li{padding:1rem 0;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;}
     .discography li:last-child{border:none;}
     .disc-title{font-weight:700;font-size:0.9rem;}
     .disc-type{font-size:0.75rem;color:var(--grey);text-transform:uppercase;letter-spacing:0.05em;margin-top:0.2rem;}
     .disc-role{font-size:0.8rem;color:#555;margin-top:0.15rem;}
+    /* Collapsible filmography */
+    .filmography-wrap{position:relative;}
+    .filmography-wrap .discography li.film-hidden{display:none;}
+    .filmography-fade{position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(to bottom,transparent,var(--white,#fff));pointer-events:none;transition:opacity .3s;}
+    .filmography-wrap.open .filmography-fade{opacity:0;pointer-events:none;}
+    .filmography-wrap.open .discography li.film-hidden{display:flex;}
+    .btn-film-toggle{display:inline-flex;align-items:center;gap:.45rem;margin-top:1rem;padding:.55rem 1.1rem;background:none;border:1px solid var(--red);color:var(--red);font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;cursor:pointer;transition:background .2s,color .2s;}
+    .btn-film-toggle:hover{background:var(--red);color:#fff;}
+    .btn-film-toggle .film-toggle-icon{transition:transform .3s;}
+    .filmography-wrap.open .btn-film-toggle .film-toggle-icon{transform:rotate(180deg);}
+    /* Sidebar */
     .sidebar-card{background:var(--light-bg);padding:2rem;}
     .sidebar-card h3{font-size:1rem;margin-bottom:1.25rem;}
     .sidebar-card .info-row{display:flex;justify-content:space-between;padding:0.6rem 0;border-bottom:1px solid #e0e0e0;font-size:0.875rem;}
     .sidebar-card .info-row:last-child{border:none;}
     .sidebar-card .info-label{color:var(--grey);}
     .sidebar-card .info-value{font-weight:600;text-align:right;}
-    .back-link{display:inline-flex;align-items:center;gap:0.5rem;color:var(--grey);text-decoration:none;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.08em;font-weight:600;margin-bottom:1.5rem;}
+    /* Videos */
+    .on-screen-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.25rem;margin-top:1.5rem;}
+    .screen-card{position:relative;overflow:hidden;background:#111;cursor:pointer;}
+    .screen-card img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform 0.3s;display:block;}
+    .screen-card:hover img{transform:scale(1.04);}
+    .screen-card-label{padding:0.75rem;background:rgba(0,0,0,0.88);}
+    .screen-card-label .role{font-size:0.7rem;color:var(--red);font-weight:700;text-transform:uppercase;letter-spacing:0.08em;}
+    .screen-card-label .film{font-size:0.85rem;color:#fff;font-weight:600;margin-top:0.2rem;}
+    .screen-card-label .detail{font-size:0.75rem;color:#888;margin-top:0.15rem;}
+    .play-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);width:44px;height:44px;background:rgba(225,6,0,0.92);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:1rem;pointer-events:none;transition:background 0.2s,transform 0.2s;}
+    .screen-card:hover .play-icon{background:var(--red);transform:translate(-50%,-60%) scale(1.12);}
+    /* YT Modal */
+    .yt-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center;padding:1rem;}
+    .yt-modal.active{display:flex;}
+    .yt-modal-inner{position:relative;width:100%;max-width:900px;aspect-ratio:16/9;}
+    .yt-modal-inner iframe{width:100%;height:100%;border:none;}
+    .yt-modal-close{position:absolute;top:-40px;right:0;background:none;border:none;color:white;font-size:1.5rem;cursor:pointer;padding:4px 8px;line-height:1;opacity:0.8;}
+    .yt-modal-close:hover{opacity:1;}
+    /* Gallery */
+    .mc-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;}
+    .mc-gallery-item{position:relative;aspect-ratio:1;overflow:hidden;cursor:zoom-in;background:#111;}
+    .mc-gallery-item img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .35s;display:block;}
+    .mc-gallery-item:hover img{transform:scale(1.06);}
+    .mc-gallery-item::after{content:'\f00e';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;bottom:8px;right:10px;color:rgba(255,255,255,0.7);font-size:1rem;pointer-events:none;opacity:0;transition:opacity .2s;}
+    .mc-gallery-item:hover::after{opacity:1;}
+    .mc-lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:9998;align-items:center;justify-content:center;}
+    .mc-lightbox.active{display:flex;}
+    .mc-lightbox-inner img{max-width:90vw;max-height:88vh;object-fit:contain;}
+    .mc-lb-btn{position:fixed;top:20px;right:24px;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;z-index:10001;padding:8px;}
+    .mc-lb-prev,.mc-lb-next{position:fixed;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;font-size:1.4rem;cursor:pointer;z-index:10001;padding:12px 16px;}
+    .mc-lb-prev{left:16px;}.mc-lb-next{right:16px;}
+    .mc-lb-prev:hover,.mc-lb-next:hover{background:rgba(255,255,255,.2);}
+    .mc-lb-caption{position:fixed;bottom:48px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.7);font-size:.85rem;max-width:80vw;text-align:center;pointer-events:none;}
+    .mc-lb-counter{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.45);font-size:.78rem;pointer-events:none;}
+    .back-link{display:inline-flex;align-items:center;gap:.5rem;color:var(--grey);text-decoration:none;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-bottom:1.5rem;}
     .back-link:hover{color:var(--red);}
-    .fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.6s,transform 0.6s;}
+    .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s;}
     .fade-in.visible{opacity:1;transform:none;}
-    .coming-soon-note{background:rgba(225,6,0,0.06);border:1px dashed rgba(225,6,0,0.3);padding:1.25rem 1.5rem;color:var(--dark-grey);font-size:0.875rem;line-height:1.6;margin-top:1.5rem;}
-
-    /* ── Collapsible filmography ─────────────────────────────────── */
-    .filmography-wrap { position: relative; }
-    .filmography-wrap .discography li.film-hidden { display: none; }
-    .filmography-fade {
-      position: absolute; bottom: 0; left: 0; right: 0; height: 80px;
-      background: linear-gradient(to bottom, transparent, var(--white, #fff));
-      pointer-events: none; transition: opacity .3s;
-    }
-    .filmography-wrap.open .filmography-fade { opacity: 0; pointer-events: none; }
-    .filmography-wrap.open .discography li.film-hidden { display: flex; }
-    .btn-film-toggle {
-      display: inline-flex; align-items: center; gap: .45rem;
-      margin-top: 1rem; padding: .55rem 1.1rem;
-      background: none; border: 1px solid var(--red); color: var(--red);
-      font-family: 'Montserrat', sans-serif; font-size: .75rem; font-weight: 700;
-      text-transform: uppercase; letter-spacing: .08em; cursor: pointer;
-      transition: background .2s, color .2s;
-    }
-    .btn-film-toggle:hover { background: var(--red); color: #fff; }
-    .btn-film-toggle .film-toggle-icon { transition: transform .3s; }
-    .filmography-wrap.open .btn-film-toggle .film-toggle-icon { transform: rotate(180deg); }
+    .pull-quote{border-left:4px solid var(--red);padding:1.25rem 1.5rem;background:var(--light-bg);margin:2rem 0;font-style:italic;color:var(--dark-grey);font-size:.95rem;line-height:1.7;}
   </style>
-  <!-- Google Analytics GA4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-620G3QZX5M"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-620G3QZX5M');
-  </script>
-  <link rel="alternate" type="application/rss+xml" title="MC Joint — Music, Talent &amp; Cinema" href="https://www.mcjoint.in/feed.xml">
 </head>
 <body>
+
+<!-- YT Modal -->
+<div class="yt-modal" id="ytModal" role="dialog" aria-modal="true" aria-label="Video player">
+  <div class="yt-modal-inner">
+    <button class="yt-modal-close" id="ytModalClose" aria-label="Close video"><i class="fas fa-times"></i></button>
+    <iframe id="ytModalFrame" src="" allow="autoplay; encrypted-media" allowfullscreen title="Video"></iframe>
+  </div>
+</div>
+
 <header>
   <div class="container"><div class="header-content">
     <a class="logo" href="../../index.html" style="display:flex;align-items:center;">
-      <img src="/images/logos/MC Joint Logo-5-MC Joint Block Logo.png" alt="MC Joint" style="height:42px;width:auto;" width="140" height="42" onerror="this.outerHTML='<span>MC</span> Joint'">
+      <img src="/images/logos/MC Joint Logo-5-MC Joint Block Logo.png" alt="MC Joint" style="height:42px;width:auto;" width="140" height="42" loading="eager" onerror="this.outerHTML='<span>MC</span> Joint'">
     </a>
     <nav>
       <a href="../../index.html">Home</a><a href="../../about.html">About</a><a href="../../services.html">Services</a>
       <div class="nav-dropdown">
         <a href="../index.html" class="active">Clients ▾</a>
         <div class="nav-dropdown-menu">
-          <a href="../businesses.html">Businesses</a><a href="../talent.html">Talent</a><a href="../associates.html">Associates</a>
+          <a href="../businesses.html">Businesses</a>
+          <a href="../talent.html">Talent</a>
+          <a href="../associates.html">Associates</a>
         </div>
       </div>
       <a href="../../works.html">Our Works</a><a href="../../blog.html">Blog</a><a href="../../contact.html">Contact</a>
     </nav>
-    <button class="nav-search-btn" onclick="window.location.href='../../search.html'" aria-label="Search"><i class="fas fa-search"></i></button>
     <a href="../../contact.html" class="btn btn-primary header-cta">Work With Us</a>
     <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
   </div></div>
@@ -120,60 +153,286 @@
   <a href="../../blog.html">Blog</a><a href="../../contact.html">Contact</a>
 </div>
 
+<!-- HERO -->
 <div class="talent-profile-hero">
   <div class="container">
     <div class="talent-profile-info">
       <a class="back-link" href="../talent.html"><i class="fas fa-arrow-left"></i> All Talent</a>
-      <span class="talent-profile-role">Actor · Telugu Cinema</span>
+      <span class="talent-profile-role">Actor · Lyricist · Director</span>
       <h1>Sai Yogi G</h1>
-      <p style="margin-top:1rem;">The performers who make ensemble work look effortless are the hardest ones to replace. Sai Yogi G is one of them — credited in <em>Double Engine</em>, <em>Chivaraku Migiledhi</em>, and <em>Pickpocket</em>, all Avanti Cinema productions.</p>
-      
+      <p style="margin-top:1rem;">Pure Hyderabadi — and everything that means. Sai Yogi carries a city's accent, its street energy, and its storytelling instinct into every role he plays. He is equally at home in the intensity of a theatre stage, the precision of a film set, and the quiet work of writing a lyric that lands in someone's chest. He has been part of the Avanti Cinema universe from nearly the beginning — and he keeps finding new ways to make his presence felt in it.</p>
+      <div class="talent-social-links">
+        <a class="talent-social-link" href="https://www.instagram.com/saiyogi_/" target="_blank" rel="noopener">
+          <i class="fab fa-instagram"></i> @saiyogi_
+        </a>
+      </div>
     </div>
   </div>
   <div class="talent-profile-img">
-    <img loading="lazy" src="/images/mc/MC Joint Masters of Ceremonies Hyderabad Talent Agency Hyderabad.jpg" alt="Sai Yogi G" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-    <div class="initial-block" style="display:none">SY</div>
+    <!-- Photo to be added -->
+    <div class="initial-block">SY</div>
   </div>
 </div>
 
+<!-- BODY -->
 <section>
   <div class="container">
     <div class="profile-body">
+
+      <!-- Main column -->
       <div class="fade-in">
-                <h2>About Sai Yogi G</h2>
+        <h2>About Sai Yogi</h2>
         <div class="divider"></div>
-        <p style="color:var(--dark-grey);margin-bottom:1rem;">Sai Yogi G is a Telugu actor with an easy, grounded screen presence that makes him especially compelling in ensemble casts and character-driven narratives. His instinct in a scene is to anchor it — to be the point of stillness that other characters move around, rather than compete for focus.</p>
-        <p style="color:var(--dark-grey);margin-bottom:1rem;">His three credits are all Avanti Cinema productions — <em>Pickpocket</em> (2022, dir. Divya Bandaru), <em>Double Engine</em> (2024, dir. Rohit Penumatsa), and <em>Chivaraku Migiledhi</em> (2024). Three films across two years, each part of the same creative ecosystem that MC Joint distributes and supports. His consistent presence across these projects reflects exactly the kind of trust directors extend to actors who do the work without needing to be asked twice.</p>
-        <p style="color:var(--dark-grey);margin-bottom:1rem;">MC Joint represents him for Telugu feature films, web series, and OTT projects, with a focus on the character-driven, story-first productions that match his strengths.</p>
-        
-        <h3 style="margin-top:2.5rem;margin-bottom:1rem;">Credits</h3>
+        <p style="color:var(--dark-grey);margin-bottom:1rem;">
+          Sai Yogi G is a Hyderabad-based actor, lyricist and filmmaker whose work spans stage, screen and song. He speaks the city — Deccani, Telugu and English — with the fluency of someone who grew up on its streets and learned his craft through workshops with Natarang Theatre Group and B Studio before the industry had a chance to smooth any of it out.
+        </p>
+
+        <div class="pull-quote">
+          "I strive to perform the roles that come my way to meet the expectations of my director."
+        </div>
+
+        <p style="color:var(--dark-grey);margin-bottom:1rem;">
+          His screen career began with <em>Nirudyoga Natulu</em> — Avanti Cinema's debut web series — where he played his first full-length character. Since then he has appeared in nearly every Avanti Cinema project: <em>Pickpocket</em>, <em>Double Engine</em>, <em>Chivaraku Migiledhi</em> and the short film <em>Neramu Shiksha</em>. In 2025 he made his theatrical feature debut in <em>Saree</em>, directed by Ram Gopal Varma — a significant step up in commercial profile for an actor who earned it the slow, credible way.
+        </p>
+        <p style="color:var(--dark-grey);margin-bottom:1rem;">
+          He is also a lyricist with screen credits. <em>Metal Marfa</em> from <em>Gopi Galla Goa Trip</em> is his. He wrote <em>Pelliki Pille</em> for the upcoming <em>Viral Video</em> and <em>Dongalu</em> for <em>Videshi</em> — both in post-production. Writing, for him, is an extension of the same instinct that makes him a compelling actor: he knows what lands and what doesn't, and he trusts that knowledge.
+        </p>
+        <p style="color:var(--dark-grey);">
+          As a director he has made short films including the <em>Hyderabad Players</em> series. On stage his most notable performances include <em>Bhoothagaanam</em> with Natarang Theatre Group (performed six times; strong audience response), <em>Gulaab</em> at Rangbhoomi Hyderabad (antagonist lead, two shows), and <em>Paraayi</em> with B Studio at IIIT Campus. He is part of the MC Joint roster and available for feature film, web, OTT and theatrical projects.
+        </p>
+
+        <!-- FILMOGRAPHY -->
+        <h3 style="margin-top:2.5rem;margin-bottom:1rem;">Filmography — Actor</h3>
+        <div class="filmography-wrap" data-limit="4">
         <ul class="discography">
-<li><div><div class="disc-title">Pickpocket</div><div class="disc-type">2022</div><div class="disc-role">Actor · Dir. Divya Bandaru · Avanti Cinema</div></div></li>
-<li><div><div class="disc-title">Double Engine</div><div class="disc-type">2024</div><div class="disc-role">Actor · Dir. Rohit Penumatsa · Avanti Cinema</div></div></li>
-<li><div><div class="disc-title">Chivaraku Migiledhi</div><div class="disc-type">2024</div><div class="disc-role">Actor · Avanti Cinema</div></div></li>
+          <li><div>
+            <div class="disc-title">Saree</div>
+            <div class="disc-type">Theatrical Feature Film · 2025</div>
+            <div class="disc-role">Dir. Ram Gopal Varma</div>
+          </div><span class="tag tag-red">MC Joint</span></li>
+          <li><div>
+            <div class="disc-title">Neramu Shiksha</div>
+            <div class="disc-type">Short Film · 2025 · Avanti Cinema</div>
+            <div class="disc-role">Dir. Rohit Penumatsa &amp; Camp Sasi</div>
+          </div><span class="tag tag-red">MC Joint</span></li>
+          <li><div>
+            <div class="disc-title">Double Engine</div>
+            <div class="disc-type">Theatrical Film · 2024 · Avanti Cinema</div>
+            <div class="disc-role">Dir. Rohit Penumatsa &amp; Camp Sasi</div>
+          </div><span class="tag tag-red">MC Joint</span></li>
+          <li><div>
+            <div class="disc-title">Chivaraku Migiledhi</div>
+            <div class="disc-type">Theatrical Film · 2024 · Avanti Cinema</div>
+            <div class="disc-role">Dir. Rohit Penumatsa &amp; Camp Sasi</div>
+          </div><span class="tag tag-red">MC Joint</span></li>
+          <li><div>
+            <div class="disc-title">Pickpocket</div>
+            <div class="disc-type">Web Feature Film · 2022 · Avanti Cinema</div>
+            <div class="disc-role">Role: Pickpocket · Dir. Divya Bandaru</div>
+          </div><span class="tag tag-red">MC Joint</span></li>
+          <li><div>
+            <div class="disc-title">Story Discussion</div>
+            <div class="disc-type">Web Series · 2022 · Avanti Cinema</div>
+            <div class="disc-role">Dir. Rohit Penumatsa &amp; Camp Sasi</div>
+          </div><span class="tag tag-red">MC Joint</span></li>
+          <li><div>
+            <div class="disc-title">Nirudyoga Natulu</div>
+            <div class="disc-type">Web Series · 2017 · Avanti Cinema</div>
+            <div class="disc-role">Dir. Rohit Penumatsa &amp; Camp Sasi · First screen role</div>
+          </div><span class="tag tag-red">MC Joint</span></li>
+          <!-- Upcoming -->
+          <li><div>
+            <div class="disc-title">The Murder Plan (Pickpocket 2)</div>
+            <div class="disc-type">Web Feature Film · Upcoming · Avanti Cinema</div>
+            <div class="disc-role">Dir. Divya Bandaru</div>
+          </div><span class="tag tag-red">Upcoming</span></li>
+          <li><div>
+            <div class="disc-title">Viral Video</div>
+            <div class="disc-type">Feature Film · Upcoming</div>
+            <div class="disc-role">Dir. Prashanth Podagatlapalli</div>
+          </div><span class="tag tag-red">Upcoming</span></li>
+          <li><div>
+            <div class="disc-title">Videshi</div>
+            <div class="disc-type">Feature Film · Upcoming</div>
+            <div class="disc-role">Dir. TBD</div>
+          </div><span class="tag tag-red">Upcoming</span></li>
+          <li><div>
+            <div class="disc-title">Ameerlog</div>
+            <div class="disc-type">Feature Film · Upcoming</div>
+            <div class="disc-role">Dir. Ramana Reddy</div>
+          </div><span class="tag tag-red">Upcoming</span></li>
         </ul>
-        <p style="color:var(--grey);font-size:.85rem;margin-top:1.5rem;">For bookings and enquiries: <a href="mailto:info@mcjoint.in">info@mcjoint.in</a></p>
+        </div>
+
+        <h3 style="margin-top:2.5rem;margin-bottom:1rem;">Lyrics</h3>
+        <ul class="discography">
+          <li><div>
+            <div class="disc-title">Metal Marfa</div>
+            <div class="disc-type">Gopi Galla Goa Trip · 2025 · Avanti Cinema</div>
+          </div><span class="tag tag-red">MC Joint</span></li>
+          <li><div>
+            <div class="disc-title">Pelliki Pille</div>
+            <div class="disc-type">Viral Video · Upcoming · Dir. Prashanth Podagatlapalli</div>
+          </div><span class="tag tag-red">Upcoming</span></li>
+          <li><div>
+            <div class="disc-title">Dongalu</div>
+            <div class="disc-type">Videshi · Upcoming</div>
+          </div><span class="tag tag-red">Upcoming</span></li>
+        </ul>
+
+        <h3 style="margin-top:2.5rem;margin-bottom:1rem;">Theatre</h3>
+        <ul class="discography">
+          <li><div>
+            <div class="disc-title">Bhoothagaanam</div>
+            <div class="disc-type">Stage Play · Natarang Theatre Group</div>
+            <div class="disc-role">6 performances · Strong audience response</div>
+          </div><span class="tag tag-red">Stage</span></li>
+          <li><div>
+            <div class="disc-title">Gulaab</div>
+            <div class="disc-type">Stage Play · Rangbhoomi, Hyderabad</div>
+            <div class="disc-role">Antagonist lead · 2 performances</div>
+          </div><span class="tag tag-red">Stage</span></li>
+          <li><div>
+            <div class="disc-title">Paraayi</div>
+            <div class="disc-type">Stage Play · B Studio · IIIT Campus, Hyderabad</div>
+          </div><span class="tag tag-red">Stage</span></li>
+        </ul>
+
+        <h3 style="margin-top:2.5rem;margin-bottom:1rem;">Direction</h3>
+        <ul class="discography">
+          <li><div>
+            <div class="disc-title">Hyderabad Players</div>
+            <div class="disc-type">Short Films · Series</div>
+          </div><span class="tag tag-red">Director</span></li>
+        </ul>
+
+        <!-- ON SCREEN -->
+        <h3 style="margin-top:2.5rem;margin-bottom:1rem;">On Screen</h3>
+        <div class="on-screen-grid">
+          <div class="screen-card" data-yt="9z6iIruFiAI">
+            <img src="https://img.youtube.com/vi/9z6iIruFiAI/hqdefault.jpg" width="480" height="270" alt="Neramu Shiksha — Sai Yogi G" loading="lazy">
+            <div class="play-icon"><i class="fas fa-play"></i></div>
+            <div class="screen-card-label">
+              <div class="role">Showreel · Short Film · 2025</div>
+              <div class="film">Neramu Shiksha</div>
+              <div class="detail">Avanti Cinema · Dir. Rohit &amp; Sasi</div>
+            </div>
+          </div>
+          <div class="screen-card" data-yt="zyCCQ17KVIo">
+            <img src="https://img.youtube.com/vi/zyCCQ17KVIo/hqdefault.jpg" width="480" height="270" alt="Metal Marfa — Gopi Galla Goa Trip" loading="lazy">
+            <div class="play-icon"><i class="fas fa-play"></i></div>
+            <div class="screen-card-label">
+              <div class="role">Lyricist · 2025 · Avanti Cinema</div>
+              <div class="film">Metal Marfa — Gopi Galla Goa Trip</div>
+              <div class="detail">Song written by Sai Yogi G</div>
+            </div>
+          </div>
+          <div class="screen-card" data-yt="d4smuFiKAJw">
+            <img src="https://img.youtube.com/vi/d4smuFiKAJw/hqdefault.jpg" width="480" height="270" alt="Chivaraku Migiledhi 2024" loading="lazy">
+            <div class="play-icon"><i class="fas fa-play"></i></div>
+            <div class="screen-card-label">
+              <div class="role">Theatrical Film · 2024</div>
+              <div class="film">Chivaraku Migiledhi</div>
+              <div class="detail">Avanti Cinema</div>
+            </div>
+          </div>
+          <div class="screen-card" data-yt="h2I6UmoqNOY">
+            <img src="https://img.youtube.com/vi/h2I6UmoqNOY/hqdefault.jpg" width="480" height="270" alt="Double Engine 2024" loading="lazy">
+            <div class="play-icon"><i class="fas fa-play"></i></div>
+            <div class="screen-card-label">
+              <div class="role">Theatrical Film · 2024</div>
+              <div class="film">Double Engine</div>
+              <div class="detail">Avanti Cinema · Dir. Rohit &amp; Sasi</div>
+            </div>
+          </div>
+          <div class="screen-card" data-yt="4vFj38ncr7s">
+            <img src="https://img.youtube.com/vi/4vFj38ncr7s/hqdefault.jpg" width="480" height="270" alt="The Murder Plan — Pickpocket 2" loading="lazy">
+            <div class="play-icon"><i class="fas fa-play"></i></div>
+            <div class="screen-card-label">
+              <div class="role">Web Feature · Upcoming</div>
+              <div class="film">The Murder Plan (Pickpocket 2)</div>
+              <div class="detail">Dir. Divya Bandaru · Avanti Cinema</div>
+            </div>
+          </div>
+          <div class="screen-card" data-yt="Pgwaj1CSkN8">
+            <img src="https://img.youtube.com/vi/Pgwaj1CSkN8/hqdefault.jpg" width="480" height="270" alt="Pickpocket 2022" loading="lazy">
+            <div class="play-icon"><i class="fas fa-play"></i></div>
+            <div class="screen-card-label">
+              <div class="role">Web Feature Film · 2022</div>
+              <div class="film">Pickpocket</div>
+              <div class="detail">Role: Pickpocket · Dir. Divya Bandaru</div>
+            </div>
+          </div>
+          <div class="screen-card" data-yt="_qfMmPtC3U4">
+            <img src="https://img.youtube.com/vi/_qfMmPtC3U4/hqdefault.jpg" width="480" height="270" alt="Nirudyoga Natulu web series" loading="lazy">
+            <div class="play-icon"><i class="fas fa-play"></i></div>
+            <div class="screen-card-label">
+              <div class="role">Web Series · 2017 · Avanti Cinema</div>
+              <div class="film">Nirudyoga Natulu</div>
+              <div class="detail">First full-length screen role</div>
+            </div>
+          </div>
+          <div class="screen-card" data-yt="KCJc3XONdoM">
+            <img src="https://img.youtube.com/vi/KCJc3XONdoM/hqdefault.jpg" width="480" height="270" alt="Story Discussion web series" loading="lazy">
+            <div class="play-icon"><i class="fas fa-play"></i></div>
+            <div class="screen-card-label">
+              <div class="role">Web Series · Avanti Cinema</div>
+              <div class="film">Story Discussion</div>
+              <div class="detail">Dir. Rohit Penumatsa &amp; Camp Sasi</div>
+            </div>
+          </div>
+          <div class="screen-card" data-yt="yKaMi32AItM">
+            <img src="https://img.youtube.com/vi/yKaMi32AItM/hqdefault.jpg" width="480" height="270" alt="Hyderabad Players" loading="lazy">
+            <div class="play-icon"><i class="fas fa-play"></i></div>
+            <div class="screen-card-label">
+              <div class="role">Short Film Series · Director</div>
+              <div class="film">Hyderabad Players</div>
+              <div class="detail">Directed by Sai Yogi G</div>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <!-- Sidebar -->
       <div class="fade-in">
         <div class="sidebar-card">
           <h3>Talent Info</h3>
-<div class="info-row"><span class="info-label">Category</span><span class="info-value">Actor</span></div>
-<div class="info-row"><span class="info-label">Based In</span><span class="info-value">Hyderabad</span></div>
-<div class="info-row"><span class="info-label">Partnership</span><span class="info-value">Talent Representation</span></div>
-<div style="margin-top:1.5rem;">
-        <h3 style="margin-top:2.5rem;margin-bottom:1rem;">On Screen</h3>
-        <div class="on-screen-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.25rem;">
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=5P7pEqSTojo" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/5P7pEqSTojo/hqdefault.jpg" alt="Pickpocket" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2022 · Avanti Cinema</div><div class="film">Pickpocket</div><div class="detail">Dir. Divya Bandaru</div></div></a></div>
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=GgmSBzgv2UE" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/GgmSBzgv2UE/hqdefault.jpg" alt="Double Engine" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2024 · Avanti Cinema</div><div class="film">Double Engine</div><div class="detail">Dir. Rohit Penumatsa</div></div></a></div>
+          <div class="info-row"><span class="info-label">Name</span><span class="info-value">Sai Yogi G</span></div>
+          <div class="info-row"><span class="info-label">Category</span><span class="info-value">Actor · Lyricist · Director</span></div>
+          <div class="info-row"><span class="info-label">Height</span><span class="info-value">5'8" (172.72cm)</span></div>
+          <div class="info-row"><span class="info-label">Playing Age</span><span class="info-value">25–35</span></div>
+          <div class="info-row"><span class="info-label">Languages</span><span class="info-value">Deccani · Telugu · English</span></div>
+          <div class="info-row"><span class="info-label">Skills</span><span class="info-value">Acting · Writing · Filmy Dance</span></div>
+          <div class="info-row"><span class="info-label">Theatre</span><span class="info-value">Natarang · B Studio</span></div>
+          <div class="info-row"><span class="info-label">Based In</span><span class="info-value">Hyderabad</span></div>
+          <div class="info-row"><span class="info-label">Represented by</span><span class="info-value">MC Joint</span></div>
         </div>
 
+        <div style="margin-top:1.5rem;">
           <a href="../../contact.html" class="btn btn-primary" style="width:100%;text-align:center;display:block;">Enquire About Booking</a>
         </div>
         <div style="margin-top:1rem;">
           <a href="../talent.html" class="btn btn-outline" style="width:100%;text-align:center;display:block;">View All Talent</a>
         </div>
+
+        <div style="margin-top:2rem;">
+          <h3 style="font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1rem;color:var(--grey);">Find Sai Yogi Online</h3>
+          <div style="display:flex;flex-direction:column;gap:.6rem;">
+            <a href="https://www.instagram.com/saiyogi_/" target="_blank" rel="noopener" class="talent-social-link" style="justify-content:flex-start;"><i class="fab fa-instagram"></i> @saiyogi_</a>
+          </div>
+        </div>
       </div>
+
     </div>
+  </div>
+</section>
+
+<!-- GALLERY placeholder -->
+<section style="background:var(--light-bg);padding:3rem 0;">
+  <div class="container">
+    <span class="section-label">Gallery</span>
+    <h3 style="margin-bottom:.5rem;">Photos</h3>
+    <p style="color:var(--grey);font-size:.875rem;margin-bottom:1.5rem;">Gallery coming soon — photos being added.</p>
   </div>
 </section>
 
@@ -181,7 +440,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-section">
-        <div class="footer-logo"><img loading="lazy" src="/images/logos/MC Joint Logo-5-MC Joint Block Logo.png" alt="MC Joint" style="height:48px;width:auto;" width="160" height="48" onerror="this.outerHTML='<span>MC</span> Joint'"></div>
+        <div class="footer-logo"><img src="/images/logos/MC Joint Logo-5-MC Joint Block Logo.png" alt="MC Joint" style="height:48px;width:auto;" width="160" height="48" loading="lazy" onerror="this.outerHTML='<span>MC</span> Joint'"></div>
         <p class="footer-desc">Masters of Ceremonies.<br>Music · Talent · Cinema · Strategy</p>
         <div class="social-links" style="margin-top:1.5rem">
           <a href="https://www.instagram.com/mcjoint.in/" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -208,22 +467,44 @@
     </div>
   </div>
 </footer>
+
 <script src="../../js/main.js"></script>
-<a class="wa-float" href="https://wa.me/919014414114?text=Hi%20MC%20Joint%2C%20I%27d%20like%20to%20discuss%20a%20project" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
-  <script>
-  (function(){
-    var btn = document.getElementById('disc-toggle-btn');
-    if (!btn) return;
-    var items = document.querySelectorAll('.disc-hidden');
-    btn.addEventListener('click', function(){
-      var open = btn.getAttribute('data-open') === '1';
-      items.forEach(function(el){ el.style.display = open ? 'none' : ''; });
-      btn.setAttribute('data-open', open ? '0' : '1');
-      btn.innerHTML = open
-        ? '<i class="fas fa-chevron-down"></i> See Full Filmography (' + items.length + ' more)'
-        : '<i class="fas fa-chevron-up"></i> Show Less';
+<script src="../../js/gallery-lightbox.js"></script>
+<script>
+(function(){
+  // YT Modal
+  var modal=document.getElementById('ytModal');
+  var frame=document.getElementById('ytModalFrame');
+  var close=document.getElementById('ytModalClose');
+  document.querySelectorAll('.screen-card[data-yt]').forEach(function(card){
+    card.addEventListener('click',function(){
+      frame.src='https://www.youtube.com/embed/'+card.dataset.yt+'?autoplay=1&rel=0';
+      modal.classList.add('active');
+      document.body.style.overflow='hidden';
     });
-  })();
-  </script>
+  });
+  function closeModal(){modal.classList.remove('active');frame.src='';document.body.style.overflow='';}
+  close.addEventListener('click',closeModal);
+  modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+
+  // Collapsible filmography
+  document.querySelectorAll('.filmography-wrap').forEach(function(wrap){
+    var items=wrap.querySelectorAll('.discography li');
+    var limit=parseInt(wrap.dataset.limit||'4',10);
+    if(items.length<=limit)return;
+    items.forEach(function(li,i){if(i>=limit)li.classList.add('film-hidden');});
+    var fade=document.createElement('div');fade.className='filmography-fade';wrap.appendChild(fade);
+    var btn=document.createElement('button');btn.className='btn-film-toggle';
+    btn.innerHTML='Show full filmography <span class="film-toggle-icon">&#9660;</span>';
+    wrap.parentNode.insertBefore(btn,wrap.nextSibling);
+    btn.addEventListener('click',function(){
+      var open=wrap.classList.toggle('open');
+      btn.innerHTML=(open?'Show less':'Show full filmography')+' <span class="film-toggle-icon">&#9660;</span>';
+      if(!open)wrap.scrollIntoView({behavior:'smooth',block:'nearest'});
+    });
+  });
+})();
+</script>
 </body>
 </html>
