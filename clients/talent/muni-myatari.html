@@ -114,6 +114,16 @@
     .btn-film-toggle:hover { background: var(--red); color: #fff; }
     .btn-film-toggle .film-toggle-icon { transition: transform .3s; }
     .filmography-wrap.open .btn-film-toggle .film-toggle-icon { transform: rotate(180deg); }
+  
+    /* Quick Info alignment */
+    .sidebar-card .info-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0; font-size: 0.875rem; gap: 0.5rem; }
+    .sidebar-card .info-label { color: var(--grey); flex-shrink: 0; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+    .sidebar-card .info-value { font-weight: 600; text-align: right; word-break: break-word; font-size: 0.875rem; }
+    .sidebar-card .info-row:last-child { border: none; }
+  
+    .mc-gallery { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)) !important; gap: 0.75rem !important; }
+    .mc-gallery-item { aspect-ratio: 1 !important; overflow: hidden !important; position: relative; }
+    .mc-gallery-item img { width: 100% !important; height: 100% !important; max-height: none !important; aspect-ratio: 1 !important; object-fit: cover !important; object-position: top center; display: block !important; }
   </style>
   <!-- Google Analytics GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-620G3QZX5M"></script>
@@ -205,15 +215,15 @@
       <div class="fade-in">
                 <div class="sidebar-card">
           <h3>Quick Info</h3>
-          <div class="info-row" style="align-items:flex-start;"><span class="info-label" style="flex-shrink:0;min-width:110px;">Category</span><span class="info-value">Actor</span></div>
-          <div class="info-row" style="align-items:flex-start;"><span class="info-label" style="flex-shrink:0;min-width:110px;">Known For</span><span class="info-value" style="text-align:right;">Double Engine,<br>Kotha Poradu</span></div>
-          <div class="info-row" style="align-items:flex-start;"><span class="info-label" style="flex-shrink:0;min-width:110px;">Based In</span><span class="info-value">Hyderabad</span></div>
-          <div class="info-row" style="align-items:flex-start;"><span class="info-label" style="flex-shrink:0;min-width:110px;">Height</span><span class="info-value">5'4"</span></div>
-          <div class="info-row" style="align-items:flex-start;"><span class="info-label" style="flex-shrink:0;min-width:110px;">Languages</span><span class="info-value">Telugu, Hindi, English</span></div>
-          <div class="info-row" style="align-items:flex-start;"><span class="info-label" style="flex-shrink:0;min-width:110px;">Character Age</span><span class="info-value">18 – 26</span></div>
-          <div class="info-row" style="align-items:flex-start;"><span class="info-label" style="flex-shrink:0;min-width:110px;">Training</span><span class="info-value">Theatre</span></div>
-          <div class="info-row" style="align-items:flex-start;"><span class="info-label" style="flex-shrink:0;min-width:110px;">Partnership</span><span class="info-value">Since 2021</span></div>
-          <div class="info-row" style="align-items:flex-start;"><span class="info-label" style="flex-shrink:0;min-width:110px;">Services</span><span class="info-value">Talent Representation</span></div>
+          <div class="info-row"><span class="info-label">Category</span><span class="info-value">Actor</span></div>
+          <div class="info-row"><span class="info-label">Known For</span><span class="info-value">Double Engine,<br>Kotha Poradu</span></div>
+          <div class="info-row"><span class="info-label">Based In</span><span class="info-value">Hyderabad</span></div>
+          <div class="info-row"><span class="info-label">Height</span><span class="info-value">5'4"</span></div>
+          <div class="info-row"><span class="info-label">Languages</span><span class="info-value">Telugu, Hindi, English</span></div>
+          <div class="info-row"><span class="info-label">Character Age</span><span class="info-value">18 – 26</span></div>
+          <div class="info-row"><span class="info-label">Training</span><span class="info-value">Theatre</span></div>
+          <div class="info-row"><span class="info-label">Partnership</span><span class="info-value">Since 2021</span></div>
+          <div class="info-row"><span class="info-label">Services</span><span class="info-value">Talent Representation</span></div>
         </div>
         <div style="margin-top:1.5rem;">
           <a href="../../contact.html" class="btn btn-primary" style="width:100%;text-align:center;display:block;">Enquire About Booking</a>
