@@ -122,6 +122,11 @@
     .mc-gallery { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)) !important; gap: 0.75rem !important; }
     .mc-gallery-item { aspect-ratio: 1 !important; overflow: hidden !important; position: relative; }
     .mc-gallery-item img { width: 100% !important; height: 100% !important; aspect-ratio: 1 !important; object-fit: cover !important; object-position: top center; display: block !important; }
+  
+    /* Sidebar CTA buttons — explicit colors */
+    .sidebar-card .btn-primary { background: var(--red) !important; color: #fff !important; border-color: var(--red) !important; }
+    .sidebar-card .btn-outline { color: #111 !important; border-color: #111 !important; }
+    .btn-primary.header-cta { background: var(--red) !important; color: #fff !important; }
   </style>
 </head>
 <body>
@@ -177,7 +182,7 @@
     </div>
   </div>
   <div class="talent-profile-img">
-    <img src="/images/talent/MC-Talent-Sai-Yogi-Actor-headshot.jpeg" alt="Sai Yogi G — Actor, Lyricist, Director" style="width:100%;height:100%;object-fit:cover;object-position:top center;">
+    <img src="/images/talent/MC-Talent-Sai-Yogi-Actor-headshot-5.jpg" alt="Sai Yogi G — Actor, Lyricist, Director" style="width:100%;height:100%;object-fit:cover;object-position:top center;">
   </div>
 </div>
 
@@ -246,6 +251,14 @@
             <div class="disc-title">Dongalu</div>
             <div class="disc-type">Videshi · Upcoming</div>
           </div><span class="tag tag-red">Upcoming</span></li>
+          <li><div>
+            <div class="disc-title">Musafir</div>
+            <div class="disc-type">Kotha Poradu · 2020 · Avanti Cinema · AHA</div>
+          </div><span class="tag tag-red">MC Joint</span></li>
+          <li><div>
+            <div class="disc-title">Baataponti Poye Poragada</div>
+            <div class="disc-type">Nirudyoga Natulu · 2018 · Avanti Cinema</div>
+          </div><span class="tag tag-red">MC Joint</span></li>
         </ul>
 
         <h3 style="margin-top:2.5rem;margin-bottom:1rem;">Theatre</h3>
@@ -331,7 +344,7 @@
     <span class="section-label">Gallery</span>
     <h2 style="margin-bottom:1.5rem;">In Frame</h2>
     <div class="mc-gallery">
-      <div class="mc-gallery-item"><img loading="lazy" src="/images/talent/MC-Talent-Sai-Yogi-Actor-headshot.jpeg" alt="Sai Yogi G — Actor" onerror="this.closest('.mc-gallery-item').style.display='none'"></div>
+      <div class="mc-gallery-item"><img loading="lazy" src="/images/talent/MC-Talent-Sai-Yogi-Actor-headshot-5.jpg" alt="Sai Yogi G — Actor" onerror="this.closest('.mc-gallery-item').style.display='none'"></div>
       <div class="mc-gallery-item"><img loading="lazy" src="/images/talent/MC-Talent-Sai-Yogi-Actor-headshot-1.jpeg" alt="Sai Yogi G — Headshot" onerror="this.closest('.mc-gallery-item').style.display='none'"></div>
       <div class="mc-gallery-item"><img loading="lazy" src="/images/talent/MC-Talent-Sai-Yogi-Actor-headshot-2.jpeg" alt="Sai Yogi G — Headshot" onerror="this.closest('.mc-gallery-item').style.display='none'"></div>
       <div class="mc-gallery-item"><img loading="lazy" src="/images/talent/MC-Talent-Sai-Yogi-Actor-headshot-3.jpeg" alt="Sai Yogi G — Headshot" onerror="this.closest('.mc-gallery-item').style.display='none'"></div>
@@ -430,5 +443,24 @@
   });
 })();
 </script>
+  <script>
+  (function(){
+    var btn=document.getElementById('disc-toggle-btn');
+    if(!btn)return;
+    var items=document.querySelectorAll('li.disc-hidden');
+    var total=items.length;
+    btn.addEventListener('click',function(){
+      var open=btn.getAttribute('data-open')==='1';
+      items.forEach(function(el){
+        if(open){ el.style.cssText=''; }
+        else { el.style.setProperty('display','block','important'); }
+      });
+      btn.setAttribute('data-open',open?'0':'1');
+      btn.innerHTML=open
+        ?'<i class="fas fa-chevron-down"></i> Show Full Filmography ('+total+' more)'
+        :'<i class="fas fa-chevron-up"></i> Hide Full Filmography ✕';
+    });
+  })();
+  </script>
 </body>
 </html>
