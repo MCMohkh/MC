@@ -118,6 +118,10 @@
     .disc-hidden { display: none !important; }
     .disc-toggle-btn { display:inline-flex;align-items:center;gap:0.4rem;margin-top:1rem;padding:0.5rem 1.1rem;border:1px solid var(--red);background:none;color:var(--red);font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;cursor:pointer;transition:all 0.2s; }
     .disc-toggle-btn:hover { background:var(--red);color:white; }
+  
+    .mc-gallery { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)) !important; gap: 0.75rem !important; }
+    .mc-gallery-item { aspect-ratio: 1 !important; overflow: hidden !important; position: relative; }
+    .mc-gallery-item img { width: 100% !important; height: 100% !important; aspect-ratio: 1 !important; object-fit: cover !important; object-position: top center; display: block !important; }
   </style>
 </head>
 <body>
@@ -132,36 +136,36 @@
 
 <header>
   <div class="container"><div class="header-content">
-    <a class="logo" href="../../index.html" style="display:flex;align-items:center;">
+    <a class="logo" href="/index.html" style="display:flex;align-items:center;">
       <img src="/images/logos/MC Joint Logo-5-MC Joint Block Logo.png" alt="MC Joint" style="height:42px;width:auto;" width="140" height="42" loading="eager" onerror="this.outerHTML='<span>MC</span> Joint'">
     </a>
     <nav>
-      <a href="../../index.html">Home</a><a href="../../about.html">About</a><a href="../../services.html">Services</a>
+      <a href="/index.html">Home</a><a href="/about.html">About</a><a href="/services.html">Services</a>
       <div class="nav-dropdown">
-        <a href="../index.html" class="active">Clients ▾</a>
+        <a href="/index.html" class="active">Clients ▾</a>
         <div class="nav-dropdown-menu">
-          <a href="../businesses.html">Businesses</a>
-          <a href="../talent.html">Talent</a>
-          <a href="../associates.html">Associates</a>
+          <a href="/clients/businesses.html">Businesses</a>
+          <a href="/clients/talent.html">Talent</a>
+          <a href="/clients/associates.html">Associates</a>
         </div>
       </div>
-      <a href="../../works.html">Our Works</a><a href="../../blog.html">Blog</a><a href="../../contact.html">Contact</a>
+      <a href="/works.html">Our Works</a><a href="/blog.html">Blog</a><a href="/contact.html">Contact</a>
     </nav>
-    <a href="../../contact.html" class="btn btn-primary header-cta">Work With Us</a>
+    <a href="/contact.html" class="btn btn-primary header-cta">Work With Us</a>
     <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
   </div></div>
 </header>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="../../index.html">Home</a><a href="../../about.html">About</a><a href="../../services.html">Services</a>
-  <a href="../index.html">Clients</a><a href="../../works.html">Our Works</a>
-  <a href="../../blog.html">Blog</a><a href="../../contact.html">Contact</a>
+  <a href="/index.html">Home</a><a href="/about.html">About</a><a href="/services.html">Services</a>
+  <a href="/index.html">Clients</a><a href="/works.html">Our Works</a>
+  <a href="/blog.html">Blog</a><a href="/contact.html">Contact</a>
 </div>
 
 <!-- HERO -->
 <div class="talent-profile-hero">
   <div class="container">
     <div class="talent-profile-info">
-      <a class="back-link" href="../talent.html"><i class="fas fa-arrow-left"></i> All Talent</a>
+      <a class="back-link" href="/clients/talent.html"><i class="fas fa-arrow-left"></i> All Talent</a>
       <span class="talent-profile-role">Actor · Lyricist · Director</span>
       <h1>Sai Yogi G</h1>
       <p style="margin-top:1rem;">Pure Hyderabadi — and everything that means. Sai Yogi carries a city's accent, its street energy, and its storytelling instinct into every role he plays. He is equally at home in the intensity of a theatre stage, the precision of a film set, and the quiet work of writing a lyric that lands in someone's chest. He has been part of the Avanti Cinema universe from nearly the beginning — and he keeps finding new ways to make his presence felt in it.</p>
@@ -207,7 +211,6 @@
 
         <!-- FILMOGRAPHY -->
         <h3 style="margin-top:2.5rem;margin-bottom:1rem;">Filmography — Actor</h3>
-        <div class="filmography-wrap" data-limit="4">
         <ul class="discography">
           <li><div><div class="disc-title">Neramu Shiksha</div><div class="disc-type">2025 · Short Film · Actor · Dir. Rohit &amp; Sasi</div></div></li>
           <li><div><div class="disc-title">Saree</div><div class="disc-type">2025 · Theatrical Film · Actor · Dir. Ram Gopal Varma</div></div></li>
@@ -304,10 +307,10 @@
         </div>
 
         <div style="margin-top:1.5rem;">
-          <a href="../../contact.html" class="btn btn-primary" style="width:100%;text-align:center;display:block;">Enquire About Booking</a>
+          <a href="/contact.html" class="btn btn-primary" style="width:100%;text-align:center;display:block;">Enquire About Booking</a>
         </div>
         <div style="margin-top:1rem;">
-          <a href="../talent.html" class="btn btn-outline" style="width:100%;text-align:center;display:block;">View All Talent</a>
+          <a href="/clients/talent.html" class="btn btn-outline" style="width:100%;text-align:center;display:block;">View All Talent</a>
         </div>
 
         <div style="margin-top:2rem;">
@@ -322,12 +325,18 @@
   </div>
 </section>
 
-<!-- GALLERY placeholder -->
-<section style="background:var(--light-bg);padding:3rem 0;">
+<!-- GALLERY -->
+<section style="padding:3rem 0;">
   <div class="container">
     <span class="section-label">Gallery</span>
-    <h3 style="margin-bottom:.5rem;">Photos</h3>
-    <p style="color:var(--grey);font-size:.875rem;margin-bottom:1.5rem;">Gallery coming soon — photos being added.</p>
+    <h2 style="margin-bottom:1.5rem;">In Frame</h2>
+    <div class="mc-gallery">
+      <div class="mc-gallery-item"><img loading="lazy" src="/images/talent/Anvesh Michael - with Rohit Penumatsa and Raj Tirandasu.jpg" alt="Sai Yogi G on set" onerror="this.closest('.mc-gallery-item').style.display='none'"></div>
+      <div class="mc-gallery-item"><img loading="lazy" src="/images/projects/MC-project-Sasi-Vibes-rajahmundry.jpg" alt="Sai Yogi G — Sasi Vibes, Rajahmundry" onerror="this.closest('.mc-gallery-item').style.display='none'"></div>
+      <div class="mc-gallery-item"><img loading="lazy" src="/images/projects/MC-Project-chivaraku-migiledhi-jagadeesh-prathap-bandari-rohit-penumatsa-camp-sasi-vivek-sagar (1).jpg" alt="Sai Yogi G — Chivaraku Migiledhi" onerror="this.closest('.mc-gallery-item').style.display='none'"></div>
+      <div class="mc-gallery-item"><img loading="lazy" src="/images/homepage/On Sets of Gopi Galla Goa Trip.jpg" alt="On the sets of Gopi Galla Goa Trip" onerror="this.closest('.mc-gallery-item').style.display='none'"></div>
+    </div>
+    <p style="color:var(--grey);font-size:0.8rem;margin-top:1rem;">More photos coming soon.</p>
   </div>
 </section>
 
@@ -345,11 +354,11 @@
         </div>
       </div>
       <div class="footer-section"><h4>Navigate</h4><ul>
-        <li><a href="../../about.html">About Us</a></li><li><a href="../../services.html">Services</a></li>
-        <li><a href="../../works.html">Our Works</a></li><li><a href="../../blog.html">Blog</a></li>
+        <li><a href="/about.html">About Us</a></li><li><a href="/services.html">Services</a></li>
+        <li><a href="/works.html">Our Works</a></li><li><a href="/blog.html">Blog</a></li>
       </ul></div>
       <div class="footer-section"><h4>Clients</h4><ul>
-        <li><a href="../businesses.html">Businesses</a></li><li><a href="../talent.html">Talent</a></li><li><a href="../associates.html">Associates</a></li>
+        <li><a href="/clients/businesses.html">Businesses</a></li><li><a href="/clients/talent.html">Talent</a></li><li><a href="/clients/associates.html">Associates</a></li>
       </ul></div>
       <div class="footer-section"><h4>Contact</h4><ul>
         <li><a href="mailto:info@mcjoint.in">info@mcjoint.in</a></li>
