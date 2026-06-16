@@ -74,9 +74,33 @@
     /* Sidebar */
     .sidebar-card { background:var(--light-bg); padding:2rem; }
     .sidebar-card h3 { font-size:1rem; margin-bottom:1.25rem; }
-    
+    .sidebar-card .info-row { display:flex; justify-content:space-between; align-items:baseline; padding:0.6rem 0; border-bottom:1px solid #e0e0e0; font-size:0.875rem; gap:1rem; }
     .sidebar-card .info-row:last-child { border:none; }
-    
+    .sidebar-card .info-label { color:var(--grey); font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; flex-shrink:0; }
+    .sidebar-card .info-value { font-weight:600; text-align:right; color:var(--black); }
+    /* Social links in sidebar (light background) */
+    .sidebar-social-link { display:inline-flex; align-items:center; gap:0.5rem; padding:0.5rem 0.9rem; border:1px solid #ddd; color:var(--dark-grey); text-decoration:none; font-family:'Montserrat',sans-serif; font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; transition:all 0.2s; }
+    .sidebar-social-link:hover { border-color:var(--red); color:var(--red); background:rgba(225,6,0,0.04); }
+    /* On-screen / video cards */
+    .on-screen-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:1.25rem; margin-top:1.5rem; }
+    .screen-card { position:relative; overflow:hidden; background:#111; cursor:pointer; }
+    .screen-card img { width:100%; aspect-ratio:16/9; object-fit:cover; transition:transform 0.3s; display:block; }
+    .screen-card:hover img { transform:scale(1.04); }
+    .screen-card-label { padding:0.75rem; background:rgba(0,0,0,0.88); }
+    .screen-card-label, .screen-card-label * { text-decoration:none; }
+    .screen-card-label .role { font-size:0.7rem; color:var(--red); font-weight:700; text-transform:uppercase; letter-spacing:0.08em; text-decoration:none; }
+    .screen-card-label .film { font-size:0.85rem; color:#fff; font-weight:600; margin-top:0.2rem; text-decoration:none; }
+    .screen-card-label .detail { font-size:0.75rem; color:#888; margin-top:0.15rem; text-decoration:none; }
+    .screen-card, .screen-card a { text-decoration:none; }
+    .play-icon { position:absolute; top:50%; left:50%; transform:translate(-50%,-60%); width:44px; height:44px; background:rgba(225,6,0,0.92); border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-size:1rem; pointer-events:none; transition:background 0.2s, transform 0.2s; }
+    .screen-card:hover .play-icon { background:var(--red); transform:translate(-50%,-60%) scale(1.12); }
+    /* YT Modal */
+    .yt-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.92); z-index:9999; align-items:center; justify-content:center; padding:1rem; }
+    .yt-modal.active { display:flex; }
+    .yt-modal-inner { position:relative; width:100%; max-width:900px; aspect-ratio:16/9; }
+    .yt-modal-inner iframe { width:100%; height:100%; border:none; }
+    .yt-modal-close { position:absolute; top:-40px; right:0; background:none; border:none; color:white; font-size:1.5rem; cursor:pointer; padding:4px 8px; line-height:1; opacity:0.8; }
+    .yt-modal-close:hover { opacity:1; }
     
 
     .back-link { display:inline-flex; align-items:center; gap:0.5rem; color:var(--grey); text-decoration:none; font-size:0.8rem; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; margin-bottom:1.5rem; }
@@ -112,10 +136,6 @@
     .screen-card{position:relative;overflow:hidden;background:#111;cursor:pointer;}
     .screen-card img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform 0.3s;display:block;}
     .screen-card:hover img{transform:scale(1.04);}
-    .screen-card-label{padding:0.75rem;background:rgba(0,0,0,0.88);}
-    .screen-card-label .role{font-size:0.7rem;color:var(--red);font-weight:700;text-transform:uppercase;letter-spacing:0.08em;}
-    .screen-card-label .film{font-size:0.85rem;color:#fff;font-weight:600;margin-top:0.2rem;}
-    .screen-card-label .detail{font-size:0.75rem;color:#888;margin-top:0.15rem;}
     .play-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);width:44px;height:44px;background:rgba(225,6,0,0.92);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:1rem;pointer-events:none;transition:background 0.2s,transform 0.2s;}
     .screen-card:hover .play-icon{background:var(--red);transform:translate(-50%,-60%) scale(1.12);}
 
@@ -271,6 +291,13 @@
           </li>
           <li>
             <div>
+              <div class="disc-title">Vikatakavi</div>
+              <div class="disc-type">Web Series · ZEE5 · 2024</div>
+              <div class="disc-role">Lead Role</div>
+            </div>
+          </li>
+          <li>
+            <div>
               <div class="disc-title"><a href="https://www.imdb.com/title/tt20259046/" target="_blank" rel="noopener">Pareshan</a></div>
               <div class="disc-type">Feature Film · 2023</div>
               <div class="disc-rating"><i class="fas fa-star"></i> 5.7 IMDb</div>
@@ -309,8 +336,9 @@
         </ul>
         <h3 style="margin-top:2.5rem;margin-bottom:1rem;">On Screen</h3>
         <div class="on-screen-grid">
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=uy8tkUFAsnA" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/uy8tkUFAsnA/hqdefault.jpg" alt="Kotha Poradu" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2020 · AHA</div><div class="film">Kotha Poradu</div><div class="detail">Actress as Sukanya</div></div></a></div>
-        </div>
+          <div class="screen-card" data-yt="AaYzn5bgQfc">
+            <img src="https://img.youtube.com/vi/AaYzn5bgQfc/hqdefault.jpg" width="480" height="270" alt="Kotha Poradu" loading="lazy">
+            <div class="play-icon"><i class="fas fa-play"></i></div>
             <div class="screen-card-label">
               <div class="role">Web Series · AHA · 2020</div>
               <div class="film">Kotha Poradu</div>
@@ -323,7 +351,7 @@
             <div class="screen-card-label">
               <div class="role">Short Film · 2021 · Avanti Cinema</div>
               <div class="film">The Scene</div>
-              <div class="detail">Dir. Avanti Cinema</div>
+              <div class="detail">Avanti Cinema</div>
             </div>
           </div>
           <div class="screen-card" data-yt="MPmYVLYJWfs">
@@ -353,6 +381,15 @@
               <div class="detail">Role: Swaroopa</div>
             </div>
           </div>
+          <div class="screen-card" data-yt="lSLVrxtztM8">
+            <img src="https://img.youtube.com/vi/lSLVrxtztM8/hqdefault.jpg" width="480" height="270" alt="Vikatakavi" loading="lazy">
+            <div class="play-icon"><i class="fas fa-play"></i></div>
+            <div class="screen-card-label">
+              <div class="role">Web Series · ZEE5 · 2024</div>
+              <div class="film">Vikatakavi</div>
+              <div class="detail">Lead Role</div>
+            </div>
+          </div>
           <div class="screen-card" data-yt="H-YLqvds4ZU">
             <img src="https://img.youtube.com/vi/H-YLqvds4ZU/hqdefault.jpg" width="480" height="270" alt="W/O Anirvesh" loading="lazy">
             <div class="play-icon"><i class="fas fa-play"></i></div>
@@ -369,12 +406,15 @@
       <div class="fade-in">
         <div class="sidebar-card">
           <h3>Talent Info</h3>
-<div class="info-row"><span class="info-label">Category</span><span class="info-value">Actress / Writer</span></div>
-<div class="info-row"><span class="info-label">Known For</span><span class="info-value">Kotha Poradu, Virata Parvam</span></div>
-<div class="info-row"><span class="info-label">Based In</span><span class="info-value">Hyderabad</span></div>
-<div class="info-row"><span class="info-label">IMDb</span><span class="info-value">imdb.com/name/nm11325467</span></div>
-<div class="info-row"><span class="info-label">Partnership</span><span class="info-value">Talent Representation</span></div>
-<div style="margin-top:1.5rem;">
+          <div class="info-row"><span class="info-label">Full Name</span><span class="info-value">Sai Prasanna Kondra</span></div>
+          <div class="info-row"><span class="info-label">Category</span><span class="info-value">Actress · Writer</span></div>
+          <div class="info-row"><span class="info-label">Known For</span><span class="info-value">Kotha Poradu, Virata Parvam</span></div>
+          <div class="info-row"><span class="info-label">Also Does</span><span class="info-value">Producer · @ayuevents</span></div>
+          <div class="info-row"><span class="info-label">Based In</span><span class="info-value">Hyderabad</span></div>
+          <div class="info-row"><span class="info-label">Services</span><span class="info-value">Talent Representation</span></div>
+        </div>
+
+        <div style="margin-top:1.5rem;">
           <a href="../../contact.html" class="btn btn-primary" style="width:100%;text-align:center;display:block;">Enquire About Booking</a>
         </div>
         <div style="margin-top:1rem;">
@@ -384,9 +424,9 @@
         <div style="margin-top:2rem;">
           <h3 style="font-size:0.85rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1rem;color:var(--grey);">Find Sai Prasanna Online</h3>
           <div style="display:flex;flex-direction:column;gap:0.6rem;">
-            <a href="https://www.instagram.com/s_presooo/" target="_blank" rel="noopener" class="talent-social-link" style="justify-content:flex-start;"><i class="fab fa-instagram"></i> @s_presooo</a>
-            <a href="https://www.imdb.com/name/nm11325467/" target="_blank" rel="noopener" class="talent-social-link" style="justify-content:flex-start;"><i class="fas fa-film"></i> IMDb Profile</a>
-            <a href="https://www.facebook.com/saiprasannaofficial/" target="_blank" rel="noopener" class="talent-social-link" style="justify-content:flex-start;"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="https://www.instagram.com/s_presooo/" target="_blank" rel="noopener" class="sidebar-social-link"><i class="fab fa-instagram"></i> @s_presooo</a>
+            <a href="https://www.imdb.com/name/nm11325467/" target="_blank" rel="noopener" class="sidebar-social-link"><i class="fas fa-film"></i> IMDb Profile</a>
+            <a href="https://www.facebook.com/saiprasannaofficial/" target="_blank" rel="noopener" class="sidebar-social-link"><i class="fab fa-facebook-f"></i> Facebook</a>
           </div>
         </div>
       </div>
