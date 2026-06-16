@@ -140,6 +140,15 @@
     .btn-film-toggle:hover { background: var(--red); color: #fff; }
     .btn-film-toggle .film-toggle-icon { transition: transform .3s; }
     .filmography-wrap.open .btn-film-toggle .film-toggle-icon { transform: rotate(180deg); }
+
+    /* Quick Info rows */
+    .info-row{display:flex;justify-content:space-between;align-items:flex-start;padding:.65rem 0;border-bottom:1px solid #e5e5e5;font-size:.85rem;gap:1rem;}
+    .info-row:last-child{border:none;}
+    .info-label{color:var(--grey);flex-shrink:0;min-width:100px;}
+    .info-value{font-weight:600;text-align:right;}
+    /* Sidebar social links (light bg — dark text) */
+    .sidebar-social-link{display:flex;align-items:center;gap:.6rem;padding:.55rem 1rem;border:1px solid #ddd;color:var(--dark-grey);text-decoration:none;font-family:'Montserrat',sans-serif;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;transition:all .2s;background:#fff;}
+    .sidebar-social-link:hover{border-color:var(--red);color:var(--red);}
   </style>
   <!-- Google Analytics GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-620G3QZX5M"></script>
@@ -309,72 +318,27 @@
         </ul>
         <h3 style="margin-top:2.5rem;margin-bottom:1rem;">On Screen</h3>
         <div class="on-screen-grid">
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=uy8tkUFAsnA" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/uy8tkUFAsnA/hqdefault.jpg" alt="Kotha Poradu" loading="lazy"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2020 · AHA</div><div class="film">Kotha Poradu</div><div class="detail">Actress as Sukanya</div></div></a></div>
+          <div class="screen-card"><a href="https://www.youtube.com/watch?v=uy8tkUFAsnA" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/uy8tkUFAsnA/hqdefault.jpg" alt="Kotha Poradu — Sai Prasanna as Sukanya" loading="lazy" style="aspect-ratio:16/9;"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2020 · AHA</div><div class="film">Kotha Poradu</div><div class="detail">Actress as Sukanya</div></div></a></div>
+          <div class="screen-card"><a href="https://www.youtube.com/watch?v=z1Su6yI0AQY" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/z1Su6yI0AQY/hqdefault.jpg" alt="The Scene — Sai Prasanna" loading="lazy" style="aspect-ratio:16/9;"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2021 · Short Film · Avanti Cinema</div><div class="film">The Scene</div><div class="detail">Actress</div></div></a></div>
+          <div class="screen-card"><a href="https://www.youtube.com/watch?v=MPmYVLYJWfs" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/MPmYVLYJWfs/hqdefault.jpg" alt="Virata Parvam — Sai Prasanna as Kavitha" loading="lazy" style="aspect-ratio:16/9;"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2022 · Feature Film</div><div class="film">Virata Parvam</div><div class="detail">Role: Kavitha · Dir. Venu Udugula</div></div></a></div>
+          <div class="screen-card"><a href="https://www.youtube.com/watch?v=Rh8_isGdF3g" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/Rh8_isGdF3g/hqdefault.jpg" alt="Pareshan — Sai Prasanna" loading="lazy" style="aspect-ratio:16/9;"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2023 · Feature Film</div><div class="film">Pareshan</div><div class="detail">Trailer</div></div></a></div>
+          <div class="screen-card"><a href="https://www.youtube.com/watch?v=JlIafWjDn0k" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/JlIafWjDn0k/hqdefault.jpg" alt="Bheemadevarapally Branchi — Sai Prasanna as Swaroopa" loading="lazy" style="aspect-ratio:16/9;"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2023 · Feature Film</div><div class="film">Bheemadevarapally Branchi</div><div class="detail">Role: Swaroopa</div></div></a></div>
+          <div class="screen-card"><a href="https://www.youtube.com/watch?v=H-YLqvds4ZU" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/H-YLqvds4ZU/hqdefault.jpg" alt="W/O Anirvesh — Sai Prasanna as Vichelitha" loading="lazy" style="aspect-ratio:16/9;"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2025 · Feature Film</div><div class="film">W/O Anirvesh</div><div class="detail">Role: Vichelitha</div></div></a></div>
         </div>
-            <div class="screen-card-label">
-              <div class="role">Web Series · AHA · 2020</div>
-              <div class="film">Kotha Poradu</div>
-              <div class="detail">Role: Sukanya — Breakthrough</div>
-            </div>
-          </div>
-          <div class="screen-card" data-yt="z1Su6yI0AQY">
-            <img src="https://img.youtube.com/vi/z1Su6yI0AQY/hqdefault.jpg" width="480" height="270" alt="The Scene" loading="lazy">
-            <div class="play-icon"><i class="fas fa-play"></i></div>
-            <div class="screen-card-label">
-              <div class="role">Short Film · 2021 · Avanti Cinema</div>
-              <div class="film">The Scene</div>
-              <div class="detail">Dir. Avanti Cinema</div>
-            </div>
-          </div>
-          <div class="screen-card" data-yt="MPmYVLYJWfs">
-            <img src="https://img.youtube.com/vi/MPmYVLYJWfs/hqdefault.jpg" width="480" height="270" alt="Virata Parvam" loading="lazy">
-            <div class="play-icon"><i class="fas fa-play"></i></div>
-            <div class="screen-card-label">
-              <div class="role">Feature Film · 2022</div>
-              <div class="film">Virata Parvam</div>
-              <div class="detail">Role: Kavitha · Dir. Venu Udugula</div>
-            </div>
-          </div>
-          <div class="screen-card" data-yt="Rh8_isGdF3g">
-            <img src="https://img.youtube.com/vi/Rh8_isGdF3g/hqdefault.jpg" width="480" height="270" alt="Pareshan" loading="lazy">
-            <div class="play-icon"><i class="fas fa-play"></i></div>
-            <div class="screen-card-label">
-              <div class="role">Feature Film · 2023</div>
-              <div class="film">Pareshan</div>
-              <div class="detail">Trailer</div>
-            </div>
-          </div>
-          <div class="screen-card" data-yt="JlIafWjDn0k">
-            <img src="https://img.youtube.com/vi/JlIafWjDn0k/hqdefault.jpg" width="480" height="270" alt="Bheemadevarapally Branchi" loading="lazy">
-            <div class="play-icon"><i class="fas fa-play"></i></div>
-            <div class="screen-card-label">
-              <div class="role">Feature Film · 2023</div>
-              <div class="film">Bheemadevarapally Branchi</div>
-              <div class="detail">Role: Swaroopa</div>
-            </div>
-          </div>
-          <div class="screen-card" data-yt="H-YLqvds4ZU">
-            <img src="https://img.youtube.com/vi/H-YLqvds4ZU/hqdefault.jpg" width="480" height="270" alt="W/O Anirvesh" loading="lazy">
-            <div class="play-icon"><i class="fas fa-play"></i></div>
-            <div class="screen-card-label">
-              <div class="role">Feature Film · 2025</div>
-              <div class="film">W/O Anirvesh</div>
-              <div class="detail">Role: Vichelitha</div>
-            </div>
-          </div>
-        </div>
-      </div>
+      </div><!-- /main column -->
 
       <!-- ── Sidebar ── -->
       <div class="fade-in">
         <div class="sidebar-card">
-          <h3>Talent Info</h3>
-<div class="info-row"><span class="info-label">Category</span><span class="info-value">Actress / Writer</span></div>
-<div class="info-row"><span class="info-label">Known For</span><span class="info-value">Kotha Poradu, Virata Parvam</span></div>
-<div class="info-row"><span class="info-label">Based In</span><span class="info-value">Hyderabad</span></div>
-<div class="info-row"><span class="info-label">IMDb</span><span class="info-value">imdb.com/name/nm11325467</span></div>
-<div class="info-row"><span class="info-label">Partnership</span><span class="info-value">Talent Representation</span></div>
-<div style="margin-top:1.5rem;">
+          <h3>Quick Info</h3>
+          <div class="info-row"><span class="info-label">Category</span><span class="info-value">Actress / Writer</span></div>
+          <div class="info-row" style="align-items:flex-start;"><span class="info-label">Known For</span><span class="info-value" style="text-align:right;">Kotha Poradu,<br>Virata Parvam</span></div>
+          <div class="info-row"><span class="info-label">Based In</span><span class="info-value">Hyderabad</span></div>
+          <div class="info-row"><span class="info-label">IMDb</span><span class="info-value"><a href="https://www.imdb.com/name/nm11325467/" target="_blank" rel="noopener" style="color:var(--red);">View Profile</a></span></div>
+          <div class="info-row"><span class="info-label">Services</span><span class="info-value">Talent Representation</span></div>
+        </div>
+
+        <div style="margin-top:1.5rem;">
           <a href="../../contact.html" class="btn btn-primary" style="width:100%;text-align:center;display:block;">Enquire About Booking</a>
         </div>
         <div style="margin-top:1rem;">
@@ -384,19 +348,73 @@
         <div style="margin-top:2rem;">
           <h3 style="font-size:0.85rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1rem;color:var(--grey);">Find Sai Prasanna Online</h3>
           <div style="display:flex;flex-direction:column;gap:0.6rem;">
-            <a href="https://www.instagram.com/s_presooo/" target="_blank" rel="noopener" class="talent-social-link" style="justify-content:flex-start;"><i class="fab fa-instagram"></i> @s_presooo</a>
-            <a href="https://www.imdb.com/name/nm11325467/" target="_blank" rel="noopener" class="talent-social-link" style="justify-content:flex-start;"><i class="fas fa-film"></i> IMDb Profile</a>
-            <a href="https://www.facebook.com/saiprasannaofficial/" target="_blank" rel="noopener" class="talent-social-link" style="justify-content:flex-start;"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="https://www.instagram.com/s_presooo/" target="_blank" rel="noopener" class="sidebar-social-link"><i class="fab fa-instagram"></i> @s_presooo</a>
+            <a href="https://www.imdb.com/name/nm11325467/" target="_blank" rel="noopener" class="sidebar-social-link"><i class="fas fa-film"></i> IMDb Profile</a>
+            <a href="https://www.facebook.com/saiprasannaofficial/" target="_blank" rel="noopener" class="sidebar-social-link"><i class="fab fa-facebook-f"></i> Facebook</a>
           </div>
         </div>
-      </div>
+      </div><!-- /sidebar -->
 
+    </div><!-- /profile-body -->
+  </div><!-- /container -->
+</section>
+
+<!-- ── GALLERY ─────────────────────────────────────────────────────────── -->
+<section style="background:var(--light-bg);padding:3rem 0;">
+  <div class="container">
+    <h2 style="margin-bottom:1.5rem;">Gallery</h2>
+    <div class="mc-gallery">
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-012-Red-black-MC-Main-Picture.jpg" alt="Sai Prasanna — main headshot, red and black" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-001.jpg" alt="Sai Prasanna — headshot" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-002.jpg" alt="Sai Prasanna — headshot" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-002-floral.jpg" alt="Sai Prasanna — floral headshot" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-003-White-top-1.jpg" alt="Sai Prasanna — white top" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-003-White-top-2.jpg" alt="Sai Prasanna — white top" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-003-White-top-3.jpg" alt="Sai Prasanna — white top" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-003-White-top-4.jpg" alt="Sai Prasanna — white top" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-004-1.jpg" alt="Sai Prasanna — headshot" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-004-2.jpg" alt="Sai Prasanna — headshot" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-004-3-monochrome.jpg" alt="Sai Prasanna — monochrome headshot" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-005-Traditional.jpg" alt="Sai Prasanna — traditional look" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-005-Traditional-red-dress.jpg" alt="Sai Prasanna — traditional red dress" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-006-Traditional.jpg" alt="Sai Prasanna — traditional headshot" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-006-Traditional-1.jpg" alt="Sai Prasanna — traditional look" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-006-Gloomy-1.jpg" alt="Sai Prasanna — gloomy mood shoot" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-006-Gloomy-2.jpg" alt="Sai Prasanna — gloomy mood shoot" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-006-Gloomy-3.jpg" alt="Sai Prasanna — gloomy mood shoot" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-007-white-shirt-1.jpg" alt="Sai Prasanna — white shirt" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-007-white-shirt-1-smile.jpg" alt="Sai Prasanna — white shirt, smiling" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-008-Candid-light.jpg" alt="Sai Prasanna — candid in light" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-008-Candid-Monochrome.jpg" alt="Sai Prasanna — candid monochrome" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-008-Candid-sunlight-red-top.jpg" alt="Sai Prasanna — sunlight, red top" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-009-Casuals-1.jpg" alt="Sai Prasanna — casuals" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-009-Casuals-2.jpg" alt="Sai Prasanna — casuals" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-009-Casuals-3.jpg" alt="Sai Prasanna — casuals" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-010-Neon-Lights-1.jpg" alt="Sai Prasanna — neon lights" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-011-blue-Jeans-grey-Top-1.jpg" alt="Sai Prasanna — blue jeans grey top" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-011-blue-Jeans-grey-Top-2.jpg" alt="Sai Prasanna — blue jeans grey top" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-011-blue-Jeans-grey-Top-3.jpg" alt="Sai Prasanna — blue jeans grey top" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-011-blue-Jeans-grey-Top-4.jpg" alt="Sai Prasanna — blue jeans grey top" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-011-blue-Jeans-grey-Top-5.jpg" alt="Sai Prasanna — blue jeans grey top" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Photoshoot-Street-Blue-Skirt.jpg" alt="Sai Prasanna — street photoshoot, blue skirt" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Photoshoot-Street-Blue-Skirt-Metro.jpg" alt="Sai Prasanna — metro photoshoot" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Photoshoot-Street-Blue-Skirt-Metro-1.jpg" alt="Sai Prasanna — metro photoshoot" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Photoshoot-Street-Blue-Skirt-Metro-2.jpg" alt="Sai Prasanna — metro photoshoot" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Photoshoot-Street-Blue-Skirt-Metro-3.jpg" alt="Sai Prasanna — metro photoshoot" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Photoshoot-Street-Blue-Skirt-Metro-4.jpg" alt="Sai Prasanna — metro photoshoot" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Photoshoot-Street-MHM-01.jpg" alt="Sai Prasanna — street photoshoot" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Photoshoot-Street-MHM-02.jpg" alt="Sai Prasanna — street photoshoot" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Photoshoot-Street-MHM-03.jpg" alt="Sai Prasanna — street photoshoot" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Casual-photoshoot-001.jpg" alt="Sai Prasanna — casual shoot" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Casual-photoshoot-002.jpg" alt="Sai Prasanna — casual shoot" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Mirror-Selfie-01.jpg" alt="Sai Prasanna — mirror selfie" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-Mirror-Selfie-02.jpg" alt="Sai Prasanna — mirror selfie" loading="lazy"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Talent-Sai-Prasanna-K-with-Adivi-Sesh-Mrunal-Thakur-Dacoit-Promotions.jpg" alt="Sai Prasanna with Adivi Sesh and Mrunal Thakur at Dacoit promotions" loading="lazy"></div>
     </div>
   </div>
 </section>
-
-<!-- ── GALLERY (photos to be added) ─────────────────────────────────────── -->
-<section style="background:var(--light-bg);padding:3rem 0;">
+<!-- original gallery replaced -->
+<section style="display:none;">
   <div class="container">
     <span class="section-label">Gallery</span>
     <h3 style="margin-bottom:0.5rem;">Photos</h3>
