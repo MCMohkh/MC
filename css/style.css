@@ -22,6 +22,8 @@ a { color: var(--red); }
 a:visited { color: var(--red-dark); }
 a.btn-primary:visited, .btn-primary:visited { color: #ffffff !important; }
 a.btn-outline:visited, .btn-outline:visited { color: var(--red) !important; }
+a.btn-outline-light:visited, .btn-outline-light:visited { color: #ffffff !important; }
+a.btn-white:visited, .btn-white:visited { color: var(--black) !important; }
 a.btn-white:visited { color: var(--black) !important; }
 a:hover { color: var(--red-dark); }
 
@@ -63,12 +65,24 @@ section { padding: 5rem 0; }
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
 }
-.btn-primary { background-color: var(--red) !important; color: #ffffff !important; border-color: var(--red) !important; text-decoration: none !important; }
-.btn-primary:hover { background-color: var(--red-dark) !important; color: #ffffff !important; transform: translateY(-2px); }
-.btn-outline { border: 2px solid var(--red); color: var(--red) !important; background: transparent !important; }
-.btn-outline:hover { background-color: var(--red); color: var(--white); }
-.btn-white { color: var(--black) !important; border: 2px solid var(--white); color: var(--white); background: transparent; }
-.btn-white:hover { background-color: var(--white); color: var(--black); }
+.btn-primary { background-color: var(--red) !important; color: #ffffff !important; border: 2px solid var(--red) !important; text-decoration: none !important; }
+.btn-primary:hover { background-color: var(--red-dark) !important; border-color: var(--red-dark) !important; color: #ffffff !important; transform: translateY(-2px); }
+
+/* btn-outline: red border + red text — for use on WHITE/LIGHT backgrounds */
+.btn-outline { border: 2px solid var(--red) !important; color: var(--red) !important; background: transparent !important; text-decoration: none !important; }
+.btn-outline:hover { background-color: var(--red) !important; color: #ffffff !important; }
+
+/* btn-outline-light: white border + white text — for use on DARK/BLACK backgrounds */
+.btn-outline-light { border: 2px solid rgba(255,255,255,0.7) !important; color: #ffffff !important; background: transparent !important; text-decoration: none !important; }
+.btn-outline-light:hover { background: rgba(255,255,255,0.15) !important; border-color: #ffffff !important; }
+
+/* btn-outline-red-on-dark: red border + white text — for use on DARK backgrounds with red accent */
+.btn-outline-red-on-dark { border: 2px solid var(--red) !important; color: #ffffff !important; background: transparent !important; text-decoration: none !important; }
+.btn-outline-red-on-dark:hover { background-color: var(--red) !important; color: #ffffff !important; }
+
+/* btn-white: white background + dark text — for use on RED/COLOURED backgrounds */
+.btn-white { background: #ffffff !important; color: var(--black) !important; border: 2px solid #ffffff !important; text-decoration: none !important; }
+.btn-white:hover { background: #f0f0f0 !important; border-color: #f0f0f0 !important; color: var(--black) !important; transform: translateY(-2px); }
 
 /* HEADER */
 header {
