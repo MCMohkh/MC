@@ -9,3 +9,10 @@
 /clients/talent/Sindhu-Dakavarapu.html     /clients/talent/sindhu-dakavarapu.html 301
 /clients/talent/Sai-Yogi-G.html            /clients/talent/sai-yogi-g.html        301
 /clients/talent/Sai-Prasanna-K.html        /clients/talent/sai-prasanna.html      301
+
+# Old root-level Digital Footprint service pages → canonical /services/ versions
+/digital-footprint.html      /services/digital-footprint.html       301
+/imdb-management.html        /services/imdb-management.html         301
+/wikipedia-consulting.html   /services/wikipedia-consulting.html    301
+/knowledge-panel.html        /services/google-knowledge-panel.html  301
+/pr-notability.html          /services/pr-notability.html           301
