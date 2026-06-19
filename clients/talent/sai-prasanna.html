@@ -13,14 +13,14 @@
   <meta property="og:url" content="https://www.mcjoint.in/clients/talent/sai-prasanna.html">
   <meta property="og:title" content="Sai Prasanna — Actress & Writer | MC Joint">
   <meta property="og:description" content="Telugu actress and writer known for Sukanya in Kotha Poradu on AHA. Also Virata Parvam, Bheemadevarapally Branchi, W/O Anirvesh. Represented by MC Joint.">
-  <meta property="og:image" content="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-012-Red-black-MC-Main-Picture.jpg">
+  <meta property="og:image" content="https://www.mcjoint.in/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-012-Red-black-MC-Main-Picture.jpg">
   <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Sai Prasanna — Telugu Actress | MC Joint">
   <meta property="og:locale" content="en_IN"><meta property="og:site_name" content="MC Joint">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Sai Prasanna — Actress & Writer | MC Joint">
   <meta name="twitter:description" content="Telugu actress known for Sukanya in Kotha Poradu on AHA. Represented by MC Joint.">
-  <meta name="twitter:image" content="/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-012-Red-black-MC-Main-Picture.jpg">
+  <meta name="twitter:image" content="https://www.mcjoint.in/images/talent/MC-Talent-Sai-Prasanna-K-Headshot-012-Red-black-MC-Main-Picture.jpg">
   <meta name="twitter:image:alt" content="Sai Prasanna — Telugu Actress | MC Joint">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Person","name":"Sai Prasanna",
@@ -68,15 +68,37 @@
     .disc-title a:hover { color:var(--red); }
     .disc-type { font-size:0.75rem; color:var(--grey); text-transform:uppercase; letter-spacing:0.05em; margin-top:0.2rem; }
     .disc-role { font-size:0.8rem; color:#555; margin-top:0.15rem; }
-    .disc-rating { font-size:0.72rem; font-weight:700; color:#f5a623; margin-top:0.15rem; }
-    .disc-rating i { font-size:0.65rem; }
 
     /* Sidebar */
     .sidebar-card { background:var(--light-bg); padding:2rem; }
     .sidebar-card h3 { font-size:1rem; margin-bottom:1.25rem; }
-    
+    .sidebar-card .info-row { display:flex; justify-content:space-between; align-items:baseline; padding:0.6rem 0; border-bottom:1px solid #e0e0e0; font-size:0.875rem; gap:1rem; }
     .sidebar-card .info-row:last-child { border:none; }
-    
+    .sidebar-card .info-label { color:var(--grey); font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; flex-shrink:0; }
+    .sidebar-card .info-value { font-weight:600; text-align:right; color:var(--black); }
+    /* Social links in sidebar (light background) */
+    .sidebar-social-link { display:inline-flex; align-items:center; gap:0.5rem; padding:0.5rem 0.9rem; border:1px solid #ddd; color:var(--dark-grey); text-decoration:none; font-family:'Montserrat',sans-serif; font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; transition:all 0.2s; }
+    .sidebar-social-link:hover { border-color:var(--red); color:var(--red); background:rgba(225,6,0,0.04); }
+    /* On-screen / video cards */
+    .on-screen-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:1.25rem; margin-top:1.5rem; }
+    .screen-card { position:relative; overflow:hidden; background:#111; cursor:pointer; }
+    .screen-card img { width:100%; aspect-ratio:16/9; object-fit:cover; transition:transform 0.3s; display:block; }
+    .screen-card:hover img { transform:scale(1.04); }
+    .screen-card-label { padding:0.75rem; background:rgba(0,0,0,0.88); }
+    .screen-card-label, .screen-card-label * { text-decoration:none; }
+    .screen-card-label .role { font-size:0.7rem; color:var(--red); font-weight:700; text-transform:uppercase; letter-spacing:0.08em; text-decoration:none; }
+    .screen-card-label .film { font-size:0.85rem; color:#fff; font-weight:600; margin-top:0.2rem; text-decoration:none; }
+    .screen-card-label .detail { font-size:0.75rem; color:#888; margin-top:0.15rem; text-decoration:none; }
+    .screen-card, .screen-card a { text-decoration:none; }
+    .play-icon { position:absolute; top:50%; left:50%; transform:translate(-50%,-60%); width:44px; height:44px; background:rgba(225,6,0,0.92); border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-size:1rem; pointer-events:none; transition:background 0.2s, transform 0.2s; }
+    .screen-card:hover .play-icon { background:var(--red); transform:translate(-50%,-60%) scale(1.12); }
+    /* YT Modal */
+    .yt-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.92); z-index:9999; align-items:center; justify-content:center; padding:1rem; }
+    .yt-modal.active { display:flex; }
+    .yt-modal-inner { position:relative; width:100%; max-width:900px; aspect-ratio:16/9; }
+    .yt-modal-inner iframe { width:100%; height:100%; border:none; }
+    .yt-modal-close { position:absolute; top:-40px; right:0; background:none; border:none; color:white; font-size:1.5rem; cursor:pointer; padding:4px 8px; line-height:1; opacity:0.8; }
+    .yt-modal-close:hover { opacity:1; }
     
 
     .back-link { display:inline-flex; align-items:center; gap:0.5rem; color:var(--grey); text-decoration:none; font-size:0.8rem; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; margin-bottom:1.5rem; }
@@ -112,10 +134,6 @@
     .screen-card{position:relative;overflow:hidden;background:#111;cursor:pointer;}
     .screen-card img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform 0.3s;display:block;}
     .screen-card:hover img{transform:scale(1.04);}
-    .screen-card-label{padding:0.75rem;background:rgba(0,0,0,0.88);}
-    .screen-card-label .role{font-size:0.7rem;color:var(--red);font-weight:700;text-transform:uppercase;letter-spacing:0.08em;}
-    .screen-card-label .film{font-size:0.85rem;color:#fff;font-weight:600;margin-top:0.2rem;}
-    .screen-card-label .detail{font-size:0.75rem;color:#888;margin-top:0.15rem;}
     .play-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);width:44px;height:44px;background:rgba(225,6,0,0.92);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:1rem;pointer-events:none;transition:background 0.2s,transform 0.2s;}
     .screen-card:hover .play-icon{background:var(--red);transform:translate(-50%,-60%) scale(1.12);}
 
@@ -251,84 +269,152 @@
         <ul class="discography">
           <li>
             <div>
-              <div class="disc-title"><a href="https://www.imdb.com/title/tt35365172/" target="_blank" rel="noopener">Viswa Guru Jai Sree Ramanuj</a></div>
+              <div class="disc-title">Viswa Guru Jai Sree Ramanuj</div>
               <div class="disc-type">Feature Film · 2025</div>
               <div class="disc-role">Role: Goda Devi</div>
             </div>
           </li>
           <li>
             <div>
-              <div class="disc-title"><a href="https://www.imdb.com/title/tt35947180/" target="_blank" rel="noopener">W/O Anirvesh</a></div>
+              <div class="disc-title">W/O Anirvesh</div>
               <div class="disc-type">Feature Film · 2025</div>
               <div class="disc-role">Role: Vichelitha</div>
-              <div class="disc-rating"><i class="fas fa-star"></i> 7.2 IMDb</div>
             </div>
           </li>
           <li>
             <div>
-              <div class="disc-title"><a href="https://www.imdb.com/title/tt26685759/" target="_blank" rel="noopener">Bheemadevarapally Branchi</a></div>
+              <div class="disc-title">Bheemadevarapally Branchi</div>
               <div class="disc-type">Feature Film · 2023</div>
               <div class="disc-role">Role: Swaroopa</div>
-              <div class="disc-rating"><i class="fas fa-star"></i> 7.2 IMDb</div>
             </div>
           </li>
           <li>
             <div>
-              <div class="disc-title"><a href="https://www.imdb.com/title/tt20259046/" target="_blank" rel="noopener">Pareshan</a></div>
+              <div class="disc-title">Vikatakavi</div>
+              <div class="disc-type">Web Series · ZEE5 · 2024</div>
+              <div class="disc-role">Lead Role</div>
+            </div>
+          </li>
+          <li>
+            <div>
+              <div class="disc-title">Pareshan</div>
               <div class="disc-type">Feature Film · 2023</div>
-              <div class="disc-rating"><i class="fas fa-star"></i> 5.7 IMDb</div>
             </div>
           </li>
           <li>
             <div>
-              <div class="disc-title"><a href="https://www.imdb.com/title/tt11023732/" target="_blank" rel="noopener">Virata Parvam</a></div>
+              <div class="disc-title">Virata Parvam</div>
               <div class="disc-type">Feature Film · 2022</div>
               <div class="disc-role">Role: Kavitha · Dir. Venu Udugula</div>
-              <div class="disc-rating"><i class="fas fa-star"></i> 6.6 IMDb</div>
             </div>
           </li>
           <li>
             <div>
-              <div class="disc-title"><a href="https://www.imdb.com/title/tt15013816/" target="_blank" rel="noopener">The Scene</a></div>
+              <div class="disc-title">The Scene</div>
               <div class="disc-type">Short Film · 2021</div>
             </div>
           </li>
           <li>
             <div>
-              <div class="disc-title"><a href="https://www.imdb.com/title/tt9054552/" target="_blank" rel="noopener">Story Discussion</a></div>
+              <div class="disc-title">Story Discussion</div>
               <div class="disc-type">Web Series · <a href="../../works/avanti-cinema.html">Avanti Cinema</a> · 2021 · 1 episode</div>
               <div class="disc-role">Role: Chinki (Tenant Michael's Girlfriend)</div>
-              <div class="disc-rating"><i class="fas fa-star"></i> 9.1 IMDb</div>
             </div>
           </li>
           <li>
             <div>
-              <div class="disc-title"><a href="https://www.imdb.com/title/tt11728852/" target="_blank" rel="noopener">Kotha Poradu</a></div>
+              <div class="disc-title">Kotha Poradu</div>
               <div class="disc-type">Web Series · AHA · 2020 — Breakthrough Role</div>
               <div class="disc-role">Role: <strong>Sukanya</strong></div>
-              <div class="disc-rating"><i class="fas fa-star"></i> 8.1 IMDb</div>
             </div>
           </li>
         </ul>
         <h3 style="margin-top:2.5rem;margin-bottom:1rem;">On Screen</h3>
         <div class="on-screen-grid">
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=uy8tkUFAsnA" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/uy8tkUFAsnA/hqdefault.jpg" alt="Kotha Poradu — Sai Prasanna as Sukanya" loading="lazy" style="aspect-ratio:16/9;"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2020 · AHA</div><div class="film">Kotha Poradu</div><div class="detail">Actress as Sukanya</div></div></a></div>
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=z1Su6yI0AQY" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/z1Su6yI0AQY/hqdefault.jpg" alt="The Scene — Sai Prasanna" loading="lazy" style="aspect-ratio:16/9;"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2021 · Short Film · Avanti Cinema</div><div class="film">The Scene</div><div class="detail">Actress</div></div></a></div>
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=MPmYVLYJWfs" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/MPmYVLYJWfs/hqdefault.jpg" alt="Virata Parvam — Sai Prasanna as Kavitha" loading="lazy" style="aspect-ratio:16/9;"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2022 · Feature Film</div><div class="film">Virata Parvam</div><div class="detail">Role: Kavitha · Dir. Venu Udugula</div></div></a></div>
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=Rh8_isGdF3g" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/Rh8_isGdF3g/hqdefault.jpg" alt="Pareshan — Sai Prasanna" loading="lazy" style="aspect-ratio:16/9;"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2023 · Feature Film</div><div class="film">Pareshan</div><div class="detail">Trailer</div></div></a></div>
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=JlIafWjDn0k" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/JlIafWjDn0k/hqdefault.jpg" alt="Bheemadevarapally Branchi — Sai Prasanna as Swaroopa" loading="lazy" style="aspect-ratio:16/9;"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2023 · Feature Film</div><div class="film">Bheemadevarapally Branchi</div><div class="detail">Role: Swaroopa</div></div></a></div>
-          <div class="screen-card"><a href="https://www.youtube.com/watch?v=H-YLqvds4ZU" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/H-YLqvds4ZU/hqdefault.jpg" alt="W/O Anirvesh — Sai Prasanna as Vichelitha" loading="lazy" style="aspect-ratio:16/9;"><div class="play-icon"><i class="fas fa-play"></i></div><div class="screen-card-label"><div class="role">2025 · Feature Film</div><div class="film">W/O Anirvesh</div><div class="detail">Role: Vichelitha</div></div></a></div>
+          <div class="screen-card" data-yt="AaYzn5bgQfc">
+            <img src="https://img.youtube.com/vi/AaYzn5bgQfc/hqdefault.jpg" width="480" height="270" alt="Kotha Poradu" loading="lazy">
+            <div class="play-icon"><i class="fas fa-play"></i></div>
+            <div class="screen-card-label">
+              <div class="role">Web Series · AHA · 2020</div>
+              <div class="film">Kotha Poradu</div>
+              <div class="detail">Role: Sukanya — Breakthrough</div>
+            </div>
+          </div>
+          <div class="screen-card" data-yt="z1Su6yI0AQY">
+            <img src="https://img.youtube.com/vi/z1Su6yI0AQY/hqdefault.jpg" width="480" height="270" alt="The Scene" loading="lazy">
+            <div class="play-icon"><i class="fas fa-play"></i></div>
+            <div class="screen-card-label">
+              <div class="role">Short Film · 2021 · Avanti Cinema</div>
+              <div class="film">The Scene</div>
+              <div class="detail">Avanti Cinema</div>
+            </div>
+          </div>
+          <div class="screen-card" data-yt="MPmYVLYJWfs">
+            <img src="https://img.youtube.com/vi/MPmYVLYJWfs/hqdefault.jpg" width="480" height="270" alt="Virata Parvam" loading="lazy">
+            <div class="play-icon"><i class="fas fa-play"></i></div>
+            <div class="screen-card-label">
+              <div class="role">Feature Film · 2022</div>
+              <div class="film">Virata Parvam</div>
+              <div class="detail">Role: Kavitha · Dir. Venu Udugula</div>
+            </div>
+          </div>
+          <div class="screen-card" data-yt="Rh8_isGdF3g">
+            <img src="https://img.youtube.com/vi/Rh8_isGdF3g/hqdefault.jpg" width="480" height="270" alt="Pareshan" loading="lazy">
+            <div class="play-icon"><i class="fas fa-play"></i></div>
+            <div class="screen-card-label">
+              <div class="role">Feature Film · 2023</div>
+              <div class="film">Pareshan</div>
+              <div class="detail">Trailer</div>
+            </div>
+          </div>
+          <div class="screen-card" data-yt="JlIafWjDn0k">
+            <img src="https://img.youtube.com/vi/JlIafWjDn0k/hqdefault.jpg" width="480" height="270" alt="Bheemadevarapally Branchi" loading="lazy">
+            <div class="play-icon"><i class="fas fa-play"></i></div>
+            <div class="screen-card-label">
+              <div class="role">Feature Film · 2023</div>
+              <div class="film">Bheemadevarapally Branchi</div>
+              <div class="detail">Role: Swaroopa</div>
+            </div>
+          </div>
+          <div class="screen-card" data-yt="lSLVrxtztM8">
+            <img src="https://img.youtube.com/vi/lSLVrxtztM8/hqdefault.jpg" width="480" height="270" alt="Vikatakavi" loading="lazy">
+            <div class="play-icon"><i class="fas fa-play"></i></div>
+            <div class="screen-card-label">
+              <div class="role">Web Series · ZEE5 · 2024</div>
+              <div class="film">Vikatakavi</div>
+              <div class="detail">Lead Role</div>
+            </div>
+          </div>
+          <div class="screen-card" data-yt="e3kHe-JupE4">
+            <img src="https://img.youtube.com/vi/e3kHe-JupE4/hqdefault.jpg" width="480" height="270" alt="W/O Anirvesh" loading="lazy">
+            <div class="play-icon"><i class="fas fa-play"></i></div>
+            <div class="screen-card-label">
+              <div class="role">Feature Film · 2025</div>
+              <div class="film">W/O Anirvesh</div>
+              <div class="detail">Role: Vichelitha</div>
+            </div>
+          </div>
+          <div class="screen-card" data-yt="f6gDBtu4MLc">
+            <img src="https://img.youtube.com/vi/f6gDBtu4MLc/hqdefault.jpg" width="480" height="270" alt="Mension House Mallesh" loading="lazy">
+            <div class="play-icon"><i class="fas fa-play"></i></div>
+            <div class="screen-card-label">
+              <div class="role">Web Series</div>
+              <div class="film">Mension House Mallesh</div>
+              <div class="detail"></div>
+            </div>
+          </div>
         </div>
-      </div><!-- /main column -->
+      </div>
 
       <!-- ── Sidebar ── -->
       <div class="fade-in">
         <div class="sidebar-card">
-          <h3>Quick Info</h3>
-          <div class="info-row"><span class="info-label">Category</span><span class="info-value">Actress / Writer</span></div>
-          <div class="info-row" style="align-items:flex-start;"><span class="info-label">Known For</span><span class="info-value" style="text-align:right;">Kotha Poradu,<br>Virata Parvam</span></div>
+          <h3>Talent Info</h3>
+          <div class="info-row"><span class="info-label">Full Name</span><span class="info-value">Sai Prasanna Kondra</span></div>
+          <div class="info-row"><span class="info-label">Category</span><span class="info-value">Actress · Writer</span></div>
+          <div class="info-row"><span class="info-label">Known For</span><span class="info-value">Kotha Poradu, Virata Parvam</span></div>
+          <div class="info-row"><span class="info-label">Also Does</span><span class="info-value">Producer · @ayuevents</span></div>
           <div class="info-row"><span class="info-label">Based In</span><span class="info-value">Hyderabad</span></div>
-          <div class="info-row"><span class="info-label">IMDb</span><span class="info-value"><a href="https://www.imdb.com/name/nm11325467/" target="_blank" rel="noopener" style="color:var(--red);">View Profile</a></span></div>
           <div class="info-row"><span class="info-label">Services</span><span class="info-value">Talent Representation</span></div>
         </div>
 
