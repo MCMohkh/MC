@@ -410,24 +410,6 @@
 <script src="../../js/main.js"></script>
 <script src="../../js/gallery-lightbox.js"></script>
 
-<script>
-  (function(){
-    var modal=document.getElementById('ytModal');
-    var frame=document.getElementById('ytModalFrame');
-    var close=document.getElementById('ytModalClose');
-    document.querySelectorAll('.screen-card[data-yt]').forEach(function(card){
-      card.addEventListener('click',function(){
-        frame.src='https://www.youtube.com/embed/'+card.dataset.yt+'?autoplay=1&rel=0';
-        modal.classList.add('active');
-        document.body.style.overflow='hidden';
-      });
-    });
-    function closeModal(){modal.classList.remove('active');frame.src='';document.body.style.overflow='';}
-    close.addEventListener('click',closeModal);
-    modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
-    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
-  })();
-</script>
 <a class="wa-float" href="https://wa.me/919014414114?text=Hi%20MC%20Joint%2C%20I%27d%20like%20to%20discuss%20a%20project" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
 </body>
 </html>
