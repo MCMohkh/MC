@@ -363,8 +363,15 @@
     <span class="section-label">Gallery</span>
     <h3 style="margin-bottom:1.5rem;">Photos</h3>
     <div class="mc-gallery">
-      <div class="mc-gallery-item"><img src="/images/talent/talent-prashant-podagatlapalli.jpg" width="800" height="800" alt="Prashanth Podagatlapalli" loading="lazy"></div>
-      <div class="mc-gallery-item"><img width="400" height="400" src="/images/projects/Marketing-film-Pickpocket.jpg" alt="Prashanth Podagatlapalli — Avanti Cinema" loading="lazy"></div>
+      <div class="mc-gallery-item" onclick="mcOpenLB(0)"><img loading="lazy" src="/images/posters/viral-video-prashant-podagatlapalli-firstlook-mc-joint-vertical.jpg" alt="Viral Video — First Look Poster" onerror="this.closest('.mc-gallery-item').style.display='none'"></div>
+      <div class="mc-gallery-item" onclick="mcOpenLB(1)"><img loading="lazy" src="/images/posters/Viral-Video-Poster-MC-Joint-Prashanth-Podagatlapalli-title.jpeg" alt="Viral Video — Title Poster" onerror="this.closest('.mc-gallery-item').style.display='none'"></div>
+      <div class="mc-gallery-item" onclick="mcOpenLB(2)"><img loading="lazy" src="/images/posters/MC-Projct-Prashanth-podagatlapalli-film-Viral Video Coming Soon First look Poster.jpg" alt="Viral Video — Coming Soon Poster" onerror="this.closest('.mc-gallery-item').style.display='none'"></div>
+      <div class="mc-gallery-item" onclick="mcOpenLB(3)"><img loading="lazy" src="/images/posters/Viral-Video-Poster-MC-Joint-Prashanth-Podagatlapalli-laxman meesala.jpeg" alt="Viral Video — Laxman Meesala" onerror="this.closest('.mc-gallery-item').style.display='none'"></div>
+      <div class="mc-gallery-item" onclick="mcOpenLB(4)"><img loading="lazy" src="/images/posters/Viral-Video-Poster-MC-Joint-Prashanth-Podagatlapalli-Feroz-mna-muni-myatari.jpeg" alt="Viral Video — Feroz, Muni Myatari" onerror="this.closest('.mc-gallery-item').style.display='none'"></div>
+      <div class="mc-gallery-item" onclick="mcOpenLB(5)"><img loading="lazy" src="/images/posters/Viral-Video-Poster-MC-Joint-Prashanth-Podagatlapalli-Pooja-Bhavani-Kaushik-M .jpeg" alt="Viral Video — Pooja Bhavani, Kaushik M" onerror="this.closest('.mc-gallery-item').style.display='none'"></div>
+      <div class="mc-gallery-item" onclick="mcOpenLB(6)"><img loading="lazy" src="/images/posters/MC-Projct-Prashanth-podagatlapalli-film-character-poster-Bheema-Rao.jpg" alt="Viral Video — Character Poster: Bheema Rao" onerror="this.closest('.mc-gallery-item').style.display='none'"></div>
+      <div class="mc-gallery-item" onclick="mcOpenLB(7)"><img loading="lazy" src="/images/posters/MC-Projct-Prashanth-podagatlapalli-film-character-poster-Feroze.jpg" alt="Viral Video — Character Poster: Feroze" onerror="this.closest('.mc-gallery-item').style.display='none'"></div>
+      <div class="mc-gallery-item" onclick="mcOpenLB(8)"><img loading="lazy" src="/images/posters/MC-Projct-Prashanth-podagatlapalli-film-character-poster-Sruthi.jpg" alt="Viral Video — Character Poster: Sruthi" onerror="this.closest('.mc-gallery-item').style.display='none'"></div>
     </div>
   </div>
 </section>
@@ -403,24 +410,48 @@
 <script src="../../js/main.js"></script>
 <script src="../../js/gallery-lightbox.js"></script>
 
-<script>
-  (function(){
-    var modal=document.getElementById('ytModal');
-    var frame=document.getElementById('ytModalFrame');
-    var close=document.getElementById('ytModalClose');
-    document.querySelectorAll('.screen-card[data-yt]').forEach(function(card){
-      card.addEventListener('click',function(){
-        frame.src='https://www.youtube.com/embed/'+card.dataset.yt+'?autoplay=1&rel=0';
-        modal.classList.add('active');
-        document.body.style.overflow='hidden';
-      });
-    });
-    function closeModal(){modal.classList.remove('active');frame.src='';document.body.style.overflow='';}
-    close.addEventListener('click',closeModal);
-    modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
-    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
-  })();
-</script>
 <a class="wa-float" href="https://wa.me/919014414114?text=Hi%20MC%20Joint%2C%20I%27d%20like%20to%20discuss%20a%20project" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+<div id="mcLb" style="position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,0.94);display:none;align-items:center;justify-content:center;">
+  <img id="mcLbImg" src="" alt="" style="max-width:90vw;max-height:85vh;object-fit:contain;">
+  <button onclick="mcCloseLB()" style="position:absolute;top:20px;right:24px;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;line-height:1;">&times;</button>
+  <button onclick="mcNavLB(-1)" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);background:none;border:none;color:#fff;font-size:2.5rem;cursor:pointer;">&#8249;</button>
+  <button onclick="mcNavLB(1)" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);background:none;border:none;color:#fff;font-size:2.5rem;cursor:pointer;">&#8250;</button>
+  <div id="mcLbCounter" style="position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.7);font-size:0.85rem;"></div>
+</div>
+<script>
+  var mcLbImages = [{"src": "/images/posters/viral-video-prashant-podagatlapalli-firstlook-mc-joint-vertical.jpg", "alt": "Viral Video \u2014 First Look Poster"}, {"src": "/images/posters/Viral-Video-Poster-MC-Joint-Prashanth-Podagatlapalli-title.jpeg", "alt": "Viral Video \u2014 Title Poster"}, {"src": "/images/posters/MC-Projct-Prashanth-podagatlapalli-film-Viral Video Coming Soon First look Poster.jpg", "alt": "Viral Video \u2014 Coming Soon Poster"}, {"src": "/images/posters/Viral-Video-Poster-MC-Joint-Prashanth-Podagatlapalli-laxman meesala.jpeg", "alt": "Viral Video \u2014 Laxman Meesala"}, {"src": "/images/posters/Viral-Video-Poster-MC-Joint-Prashanth-Podagatlapalli-Feroz-mna-muni-myatari.jpeg", "alt": "Viral Video \u2014 Feroz, Muni Myatari"}, {"src": "/images/posters/Viral-Video-Poster-MC-Joint-Prashanth-Podagatlapalli-Pooja-Bhavani-Kaushik-M .jpeg", "alt": "Viral Video \u2014 Pooja Bhavani, Kaushik M"}, {"src": "/images/posters/MC-Projct-Prashanth-podagatlapalli-film-character-poster-Bheema-Rao.jpg", "alt": "Viral Video \u2014 Character Poster: Bheema Rao"}, {"src": "/images/posters/MC-Projct-Prashanth-podagatlapalli-film-character-poster-Feroze.jpg", "alt": "Viral Video \u2014 Character Poster: Feroze"}, {"src": "/images/posters/MC-Projct-Prashanth-podagatlapalli-film-character-poster-Sruthi.jpg", "alt": "Viral Video \u2014 Character Poster: Sruthi"}];
+  var mcLbCurrent = 0;
+  function mcOpenLB(i){
+    mcLbCurrent = i;
+    var lb = document.getElementById('mcLb');
+    document.getElementById('mcLbImg').src = mcLbImages[i].src;
+    document.getElementById('mcLbImg').alt = mcLbImages[i].alt;
+    document.getElementById('mcLbCounter').textContent = (i+1) + ' / ' + mcLbImages.length;
+    lb.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function mcCloseLB(){
+    document.getElementById('mcLb').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+  function mcNavLB(dir){
+    mcLbCurrent = (mcLbCurrent + dir + mcLbImages.length) % mcLbImages.length;
+    document.getElementById('mcLbImg').src = mcLbImages[mcLbCurrent].src;
+    document.getElementById('mcLbImg').alt = mcLbImages[mcLbCurrent].alt;
+    document.getElementById('mcLbCounter').textContent = (mcLbCurrent+1) + ' / ' + mcLbImages.length;
+  }
+  document.getElementById('mcLb').addEventListener('click', function(e){
+    if (e.target.id === 'mcLb') mcCloseLB();
+  });
+  document.addEventListener('keydown', function(e){
+    var lb = document.getElementById('mcLb');
+    if (lb.style.display !== 'flex') return;
+    if (e.key === 'Escape') mcCloseLB();
+    if (e.key === 'ArrowLeft') mcNavLB(-1);
+    if (e.key === 'ArrowRight') mcNavLB(1);
+  });
+</script>
+
 </body>
 </html>
