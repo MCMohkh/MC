@@ -584,4 +584,22 @@
       <image:caption>From a pitch trailer to a packed premiere — Prashant Podagatlapalli&#x27;s debut film Viral Video got its first official screening at Ramanaidu Studios, hosted by MC Joint on 23 November 2025.</image:caption>
     </image:image>
   </url>
+  <url>
+    <loc>https://www.mcjoint.in/index.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.mcjoint.in/blog-1.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.mcjoint.in/search.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
 </urlset>
