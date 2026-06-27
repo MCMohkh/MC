@@ -71,6 +71,30 @@
     .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s;}
     .fade-in.visible{opacity:1;transform:none;}
     .divider{width:60px;height:4px;background:var(--red);margin:0 0 1.5rem;}
+
+    /* ── Gallery lightbox ─────────────────────────────── */
+    .mc-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.75rem;}
+    .mc-gallery-item{position:relative;aspect-ratio:1;overflow:hidden;cursor:zoom-in;background:#111;}
+    .mc-gallery-item img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .35s;display:block;}
+    .mc-gallery-item:hover img{transform:scale(1.06);}
+    .mc-gallery-item::after{content:'\f00e';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;bottom:8px;right:10px;color:rgba(255,255,255,.8);font-size:.9rem;opacity:0;transition:opacity .2s;}
+    .mc-gallery-item:hover::after{opacity:1;}
+    .mc-lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:9998;align-items:center;justify-content:center;}
+    .mc-lightbox.active{display:flex;}
+    .mc-lightbox-inner img{max-width:90vw;max-height:88vh;object-fit:contain;}
+    .mc-lb-btn{position:fixed;top:20px;right:24px;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;z-index:10001;padding:8px;}
+    .mc-lb-prev,.mc-lb-next{position:fixed;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;font-size:1.4rem;cursor:pointer;z-index:10001;padding:12px 16px;}
+    .mc-lb-prev{left:16px;}.mc-lb-next{right:16px;}
+    .mc-lb-caption{position:fixed;bottom:48px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.7);font-size:.85rem;max-width:80vw;text-align:center;}
+    .mc-lb-counter{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.45);font-size:.78rem;}
+
+    .yt-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;align-items:center;justify-content:center;padding:1rem;}
+    .yt-modal.active{display:flex;}
+    .yt-modal-inner{position:relative;width:100%;max-width:900px;aspect-ratio:16/9;}
+    .yt-modal-inner iframe{width:100%;height:100%;border:none;}
+    .yt-modal-close{position:absolute;top:-40px;right:0;background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;opacity:.8;}
+    .yt-modal-close:hover{opacity:1;}
+    .screen-card[data-yt]{cursor:pointer;}
   </style>
   <!-- Google Analytics GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-620G3QZX5M"></script>
@@ -86,6 +110,13 @@
   </script>
 </head>
 <body>
+
+<div class="yt-modal" id="ytModal" role="dialog" aria-modal="true">
+  <div class="yt-modal-inner">
+    <button class="yt-modal-close" id="ytModalClose"><i class="fas fa-times"></i></button>
+    <iframe id="ytModalFrame" src="" allow="autoplay; encrypted-media" allowfullscreen title="Video"></iframe>
+  </div>
+</div>
 <header>
   <div class="container"><div class="header-content">
     <a class="logo" href="../index.html"><img src="/images/logos/MC Masters of Ceremonies Logo svg.svg" alt="MC Joint" style="height:42px;width:auto;" width="140" height="42" onerror="this.outerHTML='<span>MC</span> Joint'"></a>
@@ -191,19 +222,17 @@
 
         <span class="section-label-sm">Watch Story Discussion</span>
         <div class="on-screen-grid">
-          <div class="screen-card">
-            <a href="https://www.youtube.com/watch?v=L_Wo0Rj-UjQ" target="_blank" rel="noopener">
-              <img src="https://img.youtube.com/vi/L_Wo0Rj-UjQ/hqdefault.jpg" width="480" height="270" alt="Story Discussion — Avanti Cinema" loading="lazy">
+          <div class="screen-card" data-yt="NC33ge8fggo" data-list="PLlWNXBzd0XYfJoSEziP1ubGz7ci2pSUjh">
+            <img src="https://img.youtube.com/vi/NC33ge8fggo/hqdefault.jpg" width="480" height="270" alt="Story Discussion — Avanti Cinema" loading="lazy">
               <div class="play-icon"><i class="fas fa-play"></i></div>
-              <div class="screen-card-label"><div class="role">Avanti Cinema</div><div class="film">Story Discussion — Season Preview</div></div>
-            </a>
+            <div class="play-icon"><i class="fas fa-play"></i></div>
+              <div class="screen-card-label"><div class="role">Web Series · Avanti Cinema</div><div class="film">Story Discussion — Full Season</div></div>
           </div>
-          <div class="screen-card">
-            <a href="https://www.youtube.com/watch?v=oLHjl3F7YSM" target="_blank" rel="noopener">
-              <img src="https://img.youtube.com/vi/oLHjl3F7YSM/hqdefault.jpg" width="480" height="270" alt="Sheeshmahal — Avanti Cinema" loading="lazy">
+          <div class="screen-card" data-yt="oLHjl3F7YSM">
+            <img src="https://img.youtube.com/vi/oLHjl3F7YSM/hqdefault.jpg" width="480" height="270" alt="Sheeshmahal — Avanti Cinema" loading="lazy">
               <div class="play-icon"><i class="fas fa-play"></i></div>
-              <div class="screen-card-label"><div class="role">2024 · Avanti Cinema</div><div class="film"><a href="../works/sheeshmahal.html">Sheeshmahal</a> Trailer</div></div>
-            </a>
+            <div class="play-icon"><i class="fas fa-play"></i></div>
+              <div class="screen-card-label"><div class="role">2024 · Avanti Cinema</div><div class="film">Sheeshmahal — Trailer</div></div>
           </div>
         </div>
       </div>
@@ -316,4 +345,66 @@
 <script src="../js/main.js"></script>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 <a class="wa-float" href="https://wa.me/919014414114?text=Hi%20MC%20Joint%2C%20I%27d%20like%20to%20discuss%20a%20project" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+<div id="mcLightbox" class="mc-lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="mc-lb-btn" id="mcLbClose" aria-label="Close">&#10005;</button>
+  <button class="mc-lb-prev" id="mcLbPrev" aria-label="Previous">&#8249;</button>
+  <div class="mc-lightbox-inner"><img id="mcLbImg" src="" alt=""></div>
+  <button class="mc-lb-next" id="mcLbNext" aria-label="Next">&#8250;</button>
+  <div class="mc-lb-caption" id="mcLbCaption"></div>
+  <div class="mc-lb-counter" id="mcLbCounter"></div>
+</div>
+<script>
+(function(){
+  var lb=document.getElementById('mcLightbox');
+  var lbImg=document.getElementById('mcLbImg');
+  var lbCap=document.getElementById('mcLbCaption');
+  var lbCtr=document.getElementById('mcLbCounter');
+  var items=[].slice.call(document.querySelectorAll('.mc-gallery-item img'));
+  var cur=0;
+  function open(i){
+    cur=i;
+    lbImg.src=items[i].src;
+    lbImg.alt=items[i].alt||'';
+    lbCap.textContent=items[i].alt||'';
+    lbCtr.textContent=(i+1)+' / '+items.length;
+    lb.classList.add('active');
+    document.body.style.overflow='hidden';
+  }
+  function close(){lb.classList.remove('active');document.body.style.overflow='';}
+  items.forEach(function(img,i){
+    img.parentNode.style.cursor='zoom-in';
+    img.parentNode.addEventListener('click',function(){open(i);});
+  });
+  document.getElementById('mcLbClose').addEventListener('click',close);
+  document.getElementById('mcLbPrev').addEventListener('click',function(){open((cur-1+items.length)%items.length);});
+  document.getElementById('mcLbNext').addEventListener('click',function(){open((cur+1)%items.length);});
+  lb.addEventListener('click',function(e){if(e.target===lb)close();});
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('active'))return;
+    if(e.key==='Escape')close();
+    if(e.key==='ArrowLeft')open((cur-1+items.length)%items.length);
+    if(e.key==='ArrowRight')open((cur+1)%items.length);
+  });
+})();
+</script>
+<script>
+(function(){
+  var modal=document.getElementById('ytModal');
+  var frame=document.getElementById('ytModalFrame');
+  var close=document.getElementById('ytModalClose');
+  document.querySelectorAll('.screen-card[data-yt]').forEach(function(card){
+    card.addEventListener('click',function(){
+      var vid=card.dataset.yt;
+      var list=card.dataset.list||'';
+      frame.src='https://www.youtube.com/embed/'+vid+'?autoplay=1&rel=0'+(list?'&list='+list:'');
+      modal.classList.add('active');document.body.style.overflow='hidden';
+    });
+  });
+  function closeModal(){modal.classList.remove('active');frame.src='';document.body.style.overflow='';}
+  close.addEventListener('click',closeModal);
+  modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+})();
+</script>
 </body></html>
