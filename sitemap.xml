@@ -15,7 +15,7 @@
 
   <url>
     <loc>https://www.mcjoint.in/blog-imdb-page-matters.html</loc>
-    <lastmod>2026-06-28</lastmod>
+    <lastmod>2026-06-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -26,7 +26,7 @@
 
   <url>
     <loc>https://www.mcjoint.in/blog.html</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-06-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -81,7 +81,7 @@
 
   <url>
     <loc>https://www.mcjoint.in/avanti-cinema-transformation.html</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-06-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -92,7 +92,7 @@
 
   <url>
     <loc>https://www.mcjoint.in/nalgonda-gaddar-narsanna.html</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-06-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -103,7 +103,7 @@
 
   <url>
     <loc>https://www.mcjoint.in/story-discussion-s2.html</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-06-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -114,7 +114,7 @@
 
   <url>
     <loc>https://www.mcjoint.in/tapeloop-music-distribution.html</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-06-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -125,7 +125,7 @@
 
   <url>
     <loc>https://www.mcjoint.in/viral-video-screening.html</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-06-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -584,6 +584,17 @@
       <image:title>Viral Video</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://www.mcjoint.in/works/b12-collective.html</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.mcjoint.in/images/talent/B12%20MC%20Joint/MC-Talent-B12-Main-header-trio-faraz-og-kiyaan-ink-toxic-BTS-Zaban-hai-0.jpg</image:loc>
+      <image:title>Building India's Next Rap Wave — B12 Collective</image:title>
+    </image:image>
+  </url>
+
 
   <url>
     <loc>https://www.mcjoint.in/index.html</loc>
