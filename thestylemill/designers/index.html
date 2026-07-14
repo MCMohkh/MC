@@ -30,14 +30,14 @@ const TSM_CONFIG = {
   cities: {
     hyderabad: { label:'Hyderabad', date:'20 September 2026', venue:'Taj Deccan, Road No. 1, Banjara Hills, Hyderabad', deadline:'31 August 2026', layoutReady:true,
       pricing:{ standard:{label:'3 × 2 mtr',price:12000,currency:'₹'}, small:{label:'2 × 2 mtr',price:8000,currency:'₹'}, premium:{label:'4 × 2 mtr',price:20000,currency:'₹'} }, booked:[] },
-    surat: { label:'Surat', date:'27 September 2026', venue:'To Be Announced', deadline:'10 September 2026', layoutReady:false,
+    surat: { label:'Surat', date:'27 September 2026', venue:'Avadh Orchid, Surat', deadline:'10 September 2026', layoutReady:false,
       pricing:{ standard:{label:'3 × 2 mtr',price:10000,currency:'₹'}, small:{label:'2 × 2 mtr',price:7000,currency:'₹'}, premium:{label:'4 × 2 mtr',price:18000,currency:'₹'} }, booked:[] },
-    chennai: { label:'Chennai', date:'04 October 2026', venue:'To Be Announced', deadline:'17 September 2026', layoutReady:false,
-      pricing:{ standard:{label:'3 × 2 mtr',price:11000,currency:'₹'}, small:{label:'2 × 2 mtr',price:7500,currency:'₹'}, premium:{label:'4 × 2 mtr',price:19000,currency:'₹'} }, booked:[] },
-    jaipur: { label:'Jaipur', date:'11 October 2026', venue:'To Be Announced', deadline:'24 September 2026', layoutReady:false,
-      pricing:{ standard:{label:'3 × 2 mtr',price:10000,currency:'₹'}, small:{label:'2 × 2 mtr',price:7000,currency:'₹'}, premium:{label:'4 × 2 mtr',price:18000,currency:'₹'} }, booked:[] },
-    raipur: { label:'Raipur', date:'18 October 2026', venue:'To Be Announced', deadline:'01 October 2026', layoutReady:false,
+    raipur: { label:'Raipur', date:'04 October 2026', venue:'Hyatt, Raipur', deadline:'17 September 2026', layoutReady:false,
       pricing:{ standard:{label:'3 × 2 mtr',price:9000,currency:'₹'}, small:{label:'2 × 2 mtr',price:6500,currency:'₹'}, premium:{label:'4 × 2 mtr',price:16000,currency:'₹'} }, booked:[] },
+    jaipur: { label:'Jaipur', date:'11 October 2026', venue:'Hilton, Jaipur', deadline:'24 September 2026', layoutReady:false,
+      pricing:{ standard:{label:'3 × 2 mtr',price:10000,currency:'₹'}, small:{label:'2 × 2 mtr',price:7000,currency:'₹'}, premium:{label:'4 × 2 mtr',price:18000,currency:'₹'} }, booked:[] },
+    chennai: { label:'Chennai', date:'18 October 2026', venue:'Amythyst, Chennai', deadline:'01 October 2026', layoutReady:false,
+      pricing:{ standard:{label:'3 × 2 mtr',price:11000,currency:'₹'}, small:{label:'2 × 2 mtr',price:7500,currency:'₹'}, premium:{label:'4 × 2 mtr',price:19000,currency:'₹'} }, booked:[] },
   }
 };
 </script>
@@ -84,9 +84,9 @@ const TSM_CONFIG = {
       <div class="city-selector" id="citySelectorBtns">
         <button class="city-btn active" data-city="hyderabad">Hyderabad — 20 Sep</button>
         <button class="city-btn" data-city="surat">Surat — 27 Sep</button>
-        <button class="city-btn" data-city="chennai">Chennai — 04 Oct</button>
+        <button class="city-btn" data-city="raipur">Raipur — 04 Oct</button>
         <button class="city-btn" data-city="jaipur">Jaipur — 11 Oct</button>
-        <button class="city-btn" data-city="raipur">Raipur — 18 Oct</button>
+        <button class="city-btn" data-city="chennai">Chennai — 18 Oct</button>
       </div>
     </div>
 
@@ -194,32 +194,36 @@ const TSM_CONFIG = {
       <div style="background:var(--green);padding:3rem;text-align:center;color:var(--cream);">
         <i class="fas fa-map" style="font-size:2rem;color:var(--gold);margin-bottom:1rem;display:block;"></i>
         <h3 style="color:var(--cream);font-style:italic;margin-bottom:.5rem;">Surat — 27 September 2026</h3>
-        <p style="color:rgba(242,232,213,.7);margin-bottom:1.5rem;">Venue and floor plan being finalised. Register below and we'll send the layout and pricing once confirmed.</p>
+        <p style="color:rgba(242,232,213,.6);font-size:.85rem;margin-bottom:.75rem;">Avadh Orchid, Surat</p>
+        <p style="color:rgba(242,232,213,.7);margin-bottom:1.5rem;">Floor plan being finalised. Register below and we'll send the layout and pricing once confirmed.</p>
         <a href="#booking-form" class="btn-tsm-primary">Register Interest for Surat</a>
       </div>
     </div>
-    <div class="city-panel fade-up" id="panel-chennai">
+    <div class="city-panel fade-up" id="panel-raipur">
       <div style="background:var(--green);padding:3rem;text-align:center;color:var(--cream);">
         <i class="fas fa-map" style="font-size:2rem;color:var(--gold);margin-bottom:1rem;display:block;"></i>
-        <h3 style="color:var(--cream);font-style:italic;margin-bottom:.5rem;">Chennai — 04 October 2026</h3>
-        <p style="color:rgba(242,232,213,.7);margin-bottom:1.5rem;">Venue and floor plan being finalised. Register below — we'll reach out with details.</p>
-        <a href="#booking-form" class="btn-tsm-primary">Register Interest for Chennai</a>
+        <h3 style="color:var(--cream);font-style:italic;margin-bottom:.5rem;">Raipur — 04 October 2026</h3>
+        <p style="color:rgba(242,232,213,.6);font-size:.85rem;margin-bottom:.75rem;">Hyatt, Raipur</p>
+        <p style="color:rgba(242,232,213,.7);margin-bottom:1.5rem;">Floor plan being finalised. Register below — we'll reach out with details.</p>
+        <a href="#booking-form" class="btn-tsm-primary">Register Interest for Raipur</a>
       </div>
     </div>
     <div class="city-panel fade-up" id="panel-jaipur">
       <div style="background:var(--green);padding:3rem;text-align:center;color:var(--cream);">
         <i class="fas fa-map" style="font-size:2rem;color:var(--gold);margin-bottom:1rem;display:block;"></i>
         <h3 style="color:var(--cream);font-style:italic;margin-bottom:.5rem;">Jaipur — 11 October 2026</h3>
-        <p style="color:rgba(242,232,213,.7);margin-bottom:1.5rem;">Venue and floor plan being finalised. Register below — we'll reach out with details.</p>
+        <p style="color:rgba(242,232,213,.6);font-size:.85rem;margin-bottom:.75rem;">Hilton, Jaipur</p>
+        <p style="color:rgba(242,232,213,.7);margin-bottom:1.5rem;">Floor plan being finalised. Register below — we'll reach out with details.</p>
         <a href="#booking-form" class="btn-tsm-primary">Register Interest for Jaipur</a>
       </div>
     </div>
-    <div class="city-panel fade-up" id="panel-raipur">
+    <div class="city-panel fade-up" id="panel-chennai">
       <div style="background:var(--green);padding:3rem;text-align:center;color:var(--cream);">
         <i class="fas fa-map" style="font-size:2rem;color:var(--gold);margin-bottom:1rem;display:block;"></i>
-        <h3 style="color:var(--cream);font-style:italic;margin-bottom:.5rem;">Raipur — 18 October 2026</h3>
-        <p style="color:rgba(242,232,213,.7);margin-bottom:1.5rem;">Venue and floor plan being finalised. Register below — we'll reach out with details.</p>
-        <a href="#booking-form" class="btn-tsm-primary">Register Interest for Raipur</a>
+        <h3 style="color:var(--cream);font-style:italic;margin-bottom:.5rem;">Chennai — 18 October 2026</h3>
+        <p style="color:rgba(242,232,213,.6);font-size:.85rem;margin-bottom:.75rem;">Amythyst, Chennai</p>
+        <p style="color:rgba(242,232,213,.7);margin-bottom:1.5rem;">Floor plan being finalised. Register below — we'll reach out with details.</p>
+        <a href="#booking-form" class="btn-tsm-primary">Register Interest for Chennai</a>
       </div>
     </div>
   </div>
