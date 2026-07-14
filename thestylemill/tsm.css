@@ -62,7 +62,7 @@ a  { color: var(--green); text-decoration: none; }
   border-bottom: 1px solid rgba(201,169,110,.15); padding: .9rem 0;
 }
 .tsm-nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
-.tsm-nav-logo img { height: 36px; width: auto; filter: brightness(0) invert(1); }
+.tsm-nav-logo img { height: 36px; width: auto; }
 .tsm-nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
 .tsm-nav-links a {
   font-family: var(--font-ui); font-size: .7rem; font-weight: 600;
@@ -104,7 +104,7 @@ a  { color: var(--green); text-decoration: none; }
   pointer-events: none;
 }
 .tsm-hero-logo { margin-bottom: 2rem; }
-.tsm-hero-logo img { height: 80px; width: auto; filter: brightness(0) invert(1); }
+.tsm-hero-logo img { height: 80px; width: auto; }
 @media(max-width:768px) { .tsm-hero-logo img { height: 56px; } }
 .tsm-hero-season {
   font-family: var(--font-ui); font-size: .7rem; font-weight: 700;
@@ -291,7 +291,7 @@ a  { color: var(--green); text-decoration: none; }
 
 /* ── FOOTER ────────────────────────────────────────────────── */
 .tsm-footer { background: #111; padding: 3rem 2rem; text-align: center; }
-.tsm-footer-logo img { height: 40px; width: auto; filter: brightness(0) invert(1); opacity: .5; margin-bottom: 1rem; }
+.tsm-footer-logo img { height: 40px; width: auto; opacity: .85; margin-bottom: 1rem; }
 .tsm-footer p { font-size: .8rem; color: #666; }
 .tsm-footer a { color: #888; }
 .tsm-footer a:hover { color: var(--gold); }
