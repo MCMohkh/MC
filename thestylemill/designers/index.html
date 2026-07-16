@@ -32,14 +32,14 @@ const TSM_CONFIG = {
       pricing:{ standard:{label:'3 × 2 mtr',price:60000,currency:'₹'}, small:{label:'2 × 2 mtr',price:50000,currency:'₹'}, premium:{label:'4 × 2 mtr',price:70000,currency:'₹'} },
       special:{ '01':85000, '24':85000, '25':85000, '02':75000, '24B':75000, '26':75000 },
       booked:[] },
-    surat: { label:'Surat', date:'27 September 2026', venue:'Avadh, Dumas Rd, Opp Airport, Dumas, Surat, Gujarat 394550', deadline:'10 September 2026', layoutReady:false,
+    surat: { label:'Surat', date:'27 September 2026', venue:'Avadh, Dumas Rd, Opp Airport, Dumas, Surat, Gujarat 394550', deadline:'10 September 2026', layoutReady:true,
       pricing:{ standard:{label:'3 × 2 mtr',price:0,currency:'₹'}, small:{label:'2 × 2 mtr',price:0,currency:'₹'}, premium:{label:'6 × 3 mtr',price:0,currency:'₹'} }, booked:[] },
     raipur: { label:'Raipur', date:'04 October 2026', venue:'Hyatt, Magneto The Mall, N.H. 6, Jivan Vihar, Labhandih, Raipur, Chhattisgarh 492001', deadline:'17 September 2026', layoutReady:true,
       pricing:{ standard:{label:'2.5 × 2.5 mtr',price:60000,currency:'₹',gst:true} }, booked:[] },
-    jaipur: { label:'Jaipur', date:'11 October 2026', venue:'Hilton, Geejgarh House, 42, Hawa Sadak, Jaipur, Rajasthan 302006', deadline:'24 September 2026', layoutReady:false,
-      pricing:{ standard:{label:'TBD',price:0,currency:'₹'} }, booked:[] },
+    jaipur: { label:'Jaipur', date:'11 October 2026', venue:'Hilton, Geejgarh House, 42, Hawa Sadak, Jaipur, Rajasthan 302006', deadline:'24 September 2026', layoutReady:true,
+      pricing:{ standard:{label:'3 × 2 mtr',price:0,currency:'₹'}, small:{label:'2 × 2 mtr',price:0,currency:'₹'}, compact:{label:'3 × 1.5 mtr',price:0,currency:'₹'} }, booked:[] },
     chennai: { label:'Chennai', date:'18 October 2026', venue:'Amethyst, Whites Road, Royapettah, Chennai', deadline:'01 October 2026', layoutReady:true,
-      pricing:{ standard:{label:'4 × 2 mtr',price:60000,currency:'₹',gst:true} }, booked:[] },
+      pricing:{ standard:{label:'3 Rack Spaces',price:60000,currency:'₹',gst:true} }, booked:[] },
   }
 };
 </script>
@@ -78,6 +78,7 @@ const TSM_CONFIG = {
   </div>
 </section>
 
+
 <section class="section bg-cream-d" id="book">
   <div class="container">
     <div class="fade-up" style="margin-bottom:2rem;">
@@ -97,118 +98,82 @@ const TSM_CONFIG = {
         <div>
           <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--green);">Hyderabad</div>
           <div style="font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);">20 September 2026</div>
-          <div style="font-size:.8rem;color:var(--muted);margin-top:.3rem;">Taj Deccan, Banjara Hills</div>
+          <div style="font-size:.8rem;color:var(--muted);margin-top:.3rem;">Taj Deccan, Road No. 1, Banjara Hills, Hyderabad</div>
         </div>
         <div style="text-align:right;">
           <div style="font-family:'Montserrat',sans-serif;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);">Booking Deadline</div>
           <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--red-book);" id="deadline-hyderabad"></div>
         </div>
       </div>
-
       <span class="eyebrow">Step 2 — Pick Your Stall</span>
       <h3 style="margin-bottom:1rem;font-style:italic;">Click a stall to select it.</h3>
-
-      <div class="stall-legend">
-        <div class="legend-item"><div class="legend-dot l-standard"></div>3 × 2 mtr — ₹60,000</div>
-        <div class="legend-item"><div class="legend-dot l-small"></div>2 × 2 mtr — ₹50,000</div>
-        <div class="legend-item"><div class="legend-dot l-premium"></div>4 × 2 mtr — ₹70,000</div>
-        <div class="legend-item"><div class="legend-dot l-booked"></div>Booked</div>
-        <div class="legend-item"><div class="legend-dot l-selected"></div>Your Selection</div>
+      <div class="stall-picker-layout">
+        <div class="venue-reference">
+        <img src="/images/The%20Style%20Mill/Hyderabad-Taj-Deccan-layout-with-prices.jpeg" alt="Hyderabad Taj Deccan — official venue floor plan" onclick="openLightbox(this.src)">
+        <div class="venue-reference-caption"><i class="fas fa-expand"></i> Click to enlarge the official floor plan.</div>
       </div>
-      <p style="font-size:.78rem;color:var(--muted);margin:-.5rem 0 1rem;font-style:italic;"><i class="fas fa-star" style="color:var(--gold);"></i> Premium combo stalls — 01, 24, 25: ₹85,000 each · 02, 24B, 26: ₹75,000 each</p>
-
-      <div class="stall-map-wrap">
-        <svg id="hyderabad-map" viewBox="0 0 680 580" width="680" xmlns="http://www.w3.org/2000/svg" font-family="Montserrat,sans-serif">
-          <rect width="680" height="580" fill="#f9f5ee"/>
-          <rect x="20" y="20" width="640" height="540" fill="none" stroke="#1C3D35" stroke-width="1.5" stroke-dasharray="4,3"/>
-          <text x="15" y="390" fill="#1C3D35" font-size="9" font-weight="700" transform="rotate(-90,15,390)" text-anchor="middle" letter-spacing="2">ENTRY</text>
-          <rect x="30" y="340" width="4" height="120" fill="#1C3D35"/>
-
-          <g class="stall-slot available" data-stall="01" data-type="standard"><rect x="155" y="480" width="60" height="48" rx="2"/><text x="185" y="509" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">01</text></g>
-          <g class="stall-slot available" data-stall="02" data-type="standard"><rect x="220" y="480" width="60" height="48" rx="2"/><text x="250" y="509" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">02</text></g>
-          <g class="stall-slot available" data-stall="03" data-type="standard"><rect x="285" y="480" width="60" height="48" rx="2"/><text x="315" y="509" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">03</text></g>
-          <g class="stall-slot available" data-stall="04" data-type="standard"><rect x="350" y="480" width="60" height="48" rx="2"/><text x="380" y="509" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">04</text></g>
-          <g class="stall-slot available-premium" data-stall="05" data-type="premium"><rect x="555" y="455" width="78" height="72" rx="2"/><text x="594" y="496" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">05</text></g>
-
-          <g class="stall-slot available" data-stall="06" data-type="standard"><rect x="598" y="380" width="48" height="60" rx="2"/><text x="622" y="415" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">06</text></g>
-          <g class="stall-slot available" data-stall="07" data-type="standard"><rect x="598" y="315" width="48" height="60" rx="2"/><text x="622" y="350" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">07</text></g>
-          <g class="stall-slot available" data-stall="08" data-type="standard"><rect x="598" y="250" width="48" height="60" rx="2"/><text x="622" y="285" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">08</text></g>
-
-          <g class="stall-slot available" data-stall="09" data-type="standard"><rect x="598" y="185" width="48" height="54" rx="2"/><text x="622" y="216" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">09</text></g>
-          <g class="stall-slot available" data-stall="10" data-type="standard"><rect x="598" y="126" width="48" height="54" rx="2"/><text x="622" y="157" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">10</text></g>
-          <g class="stall-slot available" data-stall="11" data-type="standard"><rect x="598" y="67" width="48" height="54" rx="2"/><text x="622" y="98" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">11</text></g>
-
-          <g class="stall-slot available-premium" data-stall="12" data-type="premium"><rect x="505" y="30" width="80" height="72" rx="2"/><text x="545" y="71" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">12</text></g>
-
-          <g class="stall-slot available-small" data-stall="13" data-type="small"><rect x="420" y="30" width="48" height="50" rx="2"/><text x="444" y="60" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">13</text></g>
-          <g class="stall-slot available-small" data-stall="14" data-type="small"><rect x="365" y="30" width="48" height="50" rx="2"/><text x="389" y="60" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">14</text></g>
-          <g class="stall-slot available-small" data-stall="15" data-type="small"><rect x="310" y="30" width="48" height="50" rx="2"/><text x="334" y="60" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">15</text></g>
-          <g class="stall-slot available-small" data-stall="16" data-type="small"><rect x="218" y="30" width="48" height="50" rx="2"/><text x="242" y="60" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">16</text></g>
-          <g class="stall-slot available-small" data-stall="17" data-type="small"><rect x="163" y="30" width="48" height="50" rx="2"/><text x="187" y="60" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">17</text></g>
-
-          <g class="stall-slot available-premium" data-stall="18" data-type="premium"><rect x="30" y="30" width="80" height="72" rx="2"/><text x="70" y="71" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">18</text></g>
-
-          <g class="stall-slot available-small" data-stall="19" data-type="small"><rect x="30" y="107" width="48" height="50" rx="2"/><text x="54" y="137" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">19</text></g>
-          <g class="stall-slot available" data-stall="20" data-type="standard"><rect x="30" y="162" width="48" height="60" rx="2"/><text x="54" y="197" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">20</text></g>
-          <g class="stall-slot available" data-stall="21" data-type="standard"><rect x="30" y="227" width="48" height="60" rx="2"/><text x="54" y="262" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">21</text></g>
-          <g class="stall-slot available" data-stall="22" data-type="standard"><rect x="30" y="292" width="48" height="60" rx="2"/><text x="54" y="327" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">22</text></g>
-          <g class="stall-slot available" data-stall="23" data-type="standard"><rect x="30" y="357" width="48" height="60" rx="2"/><text x="54" y="392" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">23</text></g>
-          <g class="stall-slot available" data-stall="24" data-type="standard"><rect x="30" y="422" width="48" height="30" rx="2"/><text x="54" y="441" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">24</text></g>
-          <g class="stall-slot available" data-stall="24B" data-type="standard"><rect x="30" y="452" width="48" height="30" rx="2"/><text x="54" y="471" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">24B</text></g>
-
-          <g class="stall-slot available" data-stall="25" data-type="standard"><rect x="155" y="415" width="55" height="50" rx="2"/><text x="182" y="445" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">25</text></g>
-          <g class="stall-slot available" data-stall="26" data-type="standard"><rect x="155" y="360" width="55" height="50" rx="2"/><text x="182" y="390" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">26</text></g>
-          <g class="stall-slot available" data-stall="27" data-type="standard"><rect x="155" y="305" width="55" height="50" rx="2"/><text x="182" y="335" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">27</text></g>
-          <g class="stall-slot available-small" data-stall="28" data-type="small"><rect x="155" y="255" width="55" height="45" rx="2"/><text x="182" y="283" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">28</text></g>
-          <g class="stall-slot available-small" data-stall="29" data-type="small"><rect x="155" y="207" width="55" height="43" rx="2"/><text x="182" y="233" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">29</text></g>
-          <g class="stall-slot available" data-stall="30" data-type="standard"><rect x="155" y="155" width="55" height="47" rx="2"/><text x="182" y="183" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">30</text></g>
-          <g class="stall-slot available" data-stall="31" data-type="standard"><rect x="155" y="103" width="55" height="47" rx="2"/><text x="182" y="131" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">31</text></g>
-
-          <g class="stall-slot available" data-stall="32" data-type="standard"><rect x="215" y="103" width="55" height="47" rx="2"/><text x="242" y="131" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">32</text></g>
-          <g class="stall-slot available" data-stall="33" data-type="standard"><rect x="215" y="155" width="55" height="47" rx="2"/><text x="242" y="183" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">33</text></g>
-          <g class="stall-slot available-small" data-stall="34" data-type="small"><rect x="215" y="207" width="55" height="43" rx="2"/><text x="242" y="233" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">34</text></g>
-          <g class="stall-slot available-small" data-stall="35" data-type="small"><rect x="215" y="255" width="55" height="45" rx="2"/><text x="242" y="283" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">35</text></g>
-          <g class="stall-slot available" data-stall="36" data-type="standard"><rect x="215" y="305" width="55" height="50" rx="2"/><text x="242" y="335" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">36</text></g>
-          <g class="stall-slot available" data-stall="37" data-type="standard"><rect x="215" y="360" width="55" height="50" rx="2"/><text x="242" y="390" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">37</text></g>
-          <g class="stall-slot available" data-stall="38" data-type="standard"><rect x="215" y="415" width="55" height="50" rx="2"/><text x="242" y="445" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">38</text></g>
-
-          <g class="stall-slot available" data-stall="39" data-type="standard"><rect x="415" y="415" width="55" height="50" rx="2"/><text x="442" y="445" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">39</text></g>
-          <g class="stall-slot available" data-stall="40" data-type="standard"><rect x="415" y="360" width="55" height="50" rx="2"/><text x="442" y="390" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">40</text></g>
-          <g class="stall-slot available" data-stall="41" data-type="standard"><rect x="415" y="305" width="55" height="50" rx="2"/><text x="442" y="335" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">41</text></g>
-          <g class="stall-slot available-small" data-stall="42" data-type="small"><rect x="415" y="255" width="55" height="45" rx="2"/><text x="442" y="283" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">42</text></g>
-          <g class="stall-slot available-small" data-stall="43" data-type="small"><rect x="415" y="207" width="55" height="43" rx="2"/><text x="442" y="233" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">43</text></g>
-          <g class="stall-slot available" data-stall="44" data-type="standard"><rect x="415" y="155" width="55" height="47" rx="2"/><text x="442" y="183" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">44</text></g>
-          <g class="stall-slot available" data-stall="45" data-type="standard"><rect x="415" y="103" width="55" height="47" rx="2"/><text x="442" y="131" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">45</text></g>
-
-          <g class="stall-slot available" data-stall="46" data-type="standard"><rect x="475" y="103" width="55" height="47" rx="2"/><text x="502" y="131" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">46</text></g>
-          <g class="stall-slot available" data-stall="47" data-type="standard"><rect x="475" y="155" width="55" height="47" rx="2"/><text x="502" y="183" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">47</text></g>
-          <g class="stall-slot available-small" data-stall="48" data-type="small"><rect x="475" y="207" width="55" height="43" rx="2"/><text x="502" y="233" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">48</text></g>
-          <g class="stall-slot available-small" data-stall="49" data-type="small"><rect x="475" y="255" width="55" height="45" rx="2"/><text x="502" y="283" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">49</text></g>
-          <g class="stall-slot available" data-stall="50" data-type="standard"><rect x="475" y="305" width="55" height="50" rx="2"/><text x="502" y="335" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">50</text></g>
-          <g class="stall-slot available" data-stall="51" data-type="standard"><rect x="475" y="360" width="55" height="50" rx="2"/><text x="502" y="390" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">51</text></g>
-          <g class="stall-slot available" data-stall="52" data-type="standard"><rect x="475" y="415" width="55" height="50" rx="2"/><text x="502" y="445" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">52</text></g>
-
-          <text x="340" y="555" text-anchor="middle" fill="#8B7355" font-size="9" font-weight="600" letter-spacing="1">← 65 Fts →</text>
-        </svg>
+        <div class="stall-picker-grid-col" id="hyderabad-grid">
+        <div class="stall-disclaimer"><i class="fas fa-circle-info"></i><span>These positions are for reference only — please view the layout image alongside for a clear understanding of the position, location and size of each stall.</span></div>
+        <div class="stall-grid-group">
+          <span class="stall-grid-group-label">Premium — 4 × 2 mtr — ₹70,000</span>
+          <div class="stall-grid"><button type="button" class="stall-slot stall-chip available" data-stall="05" data-type="premium">05</button><button type="button" class="stall-slot stall-chip available" data-stall="12" data-type="premium">12</button><button type="button" class="stall-slot stall-chip available" data-stall="18" data-type="premium">18</button></div>
+        </div>
+        <div class="stall-grid-group">
+          <span class="stall-grid-group-label">Compact — 2 × 2 mtr — ₹50,000</span>
+          <div class="stall-grid"><button type="button" class="stall-slot stall-chip available" data-stall="13" data-type="small">13</button><button type="button" class="stall-slot stall-chip available" data-stall="14" data-type="small">14</button><button type="button" class="stall-slot stall-chip available" data-stall="15" data-type="small">15</button><button type="button" class="stall-slot stall-chip available" data-stall="16" data-type="small">16</button><button type="button" class="stall-slot stall-chip available" data-stall="17" data-type="small">17</button><button type="button" class="stall-slot stall-chip available" data-stall="19" data-type="small">19</button><button type="button" class="stall-slot stall-chip available" data-stall="28" data-type="small">28</button><button type="button" class="stall-slot stall-chip available" data-stall="29" data-type="small">29</button><button type="button" class="stall-slot stall-chip available" data-stall="34" data-type="small">34</button><button type="button" class="stall-slot stall-chip available" data-stall="35" data-type="small">35</button><button type="button" class="stall-slot stall-chip available" data-stall="42" data-type="small">42</button><button type="button" class="stall-slot stall-chip available" data-stall="43" data-type="small">43</button><button type="button" class="stall-slot stall-chip available" data-stall="48" data-type="small">48</button><button type="button" class="stall-slot stall-chip available" data-stall="49" data-type="small">49</button></div>
+        </div>
+        <div class="stall-grid-group">
+          <span class="stall-grid-group-label">Standard — 3 × 2 mtr — ₹60,000 (gold ring = combo pricing, see note below)</span>
+          <div class="stall-grid"><button type="button" class="stall-slot stall-chip available" data-stall="01" data-type="standard">01</button><button type="button" class="stall-slot stall-chip available" data-stall="02" data-type="standard">02</button><button type="button" class="stall-slot stall-chip available" data-stall="03" data-type="standard">03</button><button type="button" class="stall-slot stall-chip available" data-stall="04" data-type="standard">04</button><button type="button" class="stall-slot stall-chip available" data-stall="06" data-type="standard">06</button><button type="button" class="stall-slot stall-chip available" data-stall="07" data-type="standard">07</button><button type="button" class="stall-slot stall-chip available" data-stall="08" data-type="standard">08</button><button type="button" class="stall-slot stall-chip available" data-stall="09" data-type="standard">09</button><button type="button" class="stall-slot stall-chip available" data-stall="10" data-type="standard">10</button><button type="button" class="stall-slot stall-chip available" data-stall="11" data-type="standard">11</button><button type="button" class="stall-slot stall-chip available" data-stall="20" data-type="standard">20</button><button type="button" class="stall-slot stall-chip available" data-stall="21" data-type="standard">21</button><button type="button" class="stall-slot stall-chip available" data-stall="22" data-type="standard">22</button><button type="button" class="stall-slot stall-chip available" data-stall="23" data-type="standard">23</button><button type="button" class="stall-slot stall-chip available" data-stall="24" data-type="standard">24</button><button type="button" class="stall-slot stall-chip available" data-stall="24B" data-type="standard">24B</button><button type="button" class="stall-slot stall-chip available" data-stall="25" data-type="standard">25</button><button type="button" class="stall-slot stall-chip available" data-stall="26" data-type="standard">26</button><button type="button" class="stall-slot stall-chip available" data-stall="27" data-type="standard">27</button><button type="button" class="stall-slot stall-chip available" data-stall="30" data-type="standard">30</button><button type="button" class="stall-slot stall-chip available" data-stall="31" data-type="standard">31</button><button type="button" class="stall-slot stall-chip available" data-stall="32" data-type="standard">32</button><button type="button" class="stall-slot stall-chip available" data-stall="33" data-type="standard">33</button><button type="button" class="stall-slot stall-chip available" data-stall="36" data-type="standard">36</button><button type="button" class="stall-slot stall-chip available" data-stall="37" data-type="standard">37</button><button type="button" class="stall-slot stall-chip available" data-stall="38" data-type="standard">38</button><button type="button" class="stall-slot stall-chip available" data-stall="39" data-type="standard">39</button><button type="button" class="stall-slot stall-chip available" data-stall="40" data-type="standard">40</button><button type="button" class="stall-slot stall-chip available" data-stall="41" data-type="standard">41</button><button type="button" class="stall-slot stall-chip available" data-stall="44" data-type="standard">44</button><button type="button" class="stall-slot stall-chip available" data-stall="45" data-type="standard">45</button><button type="button" class="stall-slot stall-chip available" data-stall="46" data-type="standard">46</button><button type="button" class="stall-slot stall-chip available" data-stall="47" data-type="standard">47</button><button type="button" class="stall-slot stall-chip available" data-stall="50" data-type="standard">50</button><button type="button" class="stall-slot stall-chip available" data-stall="51" data-type="standard">51</button><button type="button" class="stall-slot stall-chip available" data-stall="52" data-type="standard">52</button></div>
+        </div>
       </div>
-      <p style="font-size:.78rem;color:var(--muted);margin-top:.75rem;font-style:italic;"><i class="fas fa-info-circle"></i> Click any available stall to select it. Scroll horizontally on mobile.</p>
+      </div>
+      <p style="font-size:.78rem;color:var(--muted);margin-top:1rem;font-style:italic;"><i class="fas fa-star" style="color:var(--gold);"></i> Premium combo stalls — 01, 24, 25: ₹85,000 each · 02, 24B, 26: ₹75,000 each (shown with a gold ring on the grid above)</p>
     </div>
 
     <div class="city-panel fade-up" id="panel-surat">
-      <div style="background:var(--green);padding:3rem;text-align:center;color:var(--cream);">
-        <i class="fas fa-map" style="font-size:2rem;color:var(--gold);margin-bottom:1rem;display:block;"></i>
-        <h3 style="color:var(--cream);font-style:italic;margin-bottom:.5rem;">Surat — 27 September 2026</h3>
-        <p style="color:rgba(242,232,213,.6);font-size:.85rem;margin-bottom:1.25rem;">Avadh, Dumas Rd, Opp Airport, Dumas, Surat, Gujarat 394550</p>
-        <div style="display:inline-flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-bottom:1.5rem;">
-          <span style="font-size:.72rem;font-family:'Montserrat',sans-serif;font-weight:700;padding:.35rem .8rem;background:rgba(242,232,213,.1);border:1px solid rgba(201,169,110,.3);color:var(--gold);">25 × 3m×2m Stalls</span>
-          <span style="font-size:.72rem;font-family:'Montserrat',sans-serif;font-weight:700;padding:.35rem .8rem;background:rgba(242,232,213,.1);border:1px solid rgba(201,169,110,.3);color:var(--gold);">2 × 6m×3m Stalls</span>
-          <span style="font-size:.72rem;font-family:'Montserrat',sans-serif;font-weight:700;padding:.35rem .8rem;background:rgba(242,232,213,.1);border:1px solid rgba(201,169,110,.3);color:var(--gold);">22 × 2m×2m Stalls</span>
-          <span style="font-size:.72rem;font-family:'Montserrat',sans-serif;font-weight:700;padding:.35rem .8rem;background:rgba(242,232,213,.1);border:1px solid rgba(201,169,110,.3);color:var(--gold);">8 Table Stalls</span>
+      <div style="display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:start;margin-bottom:1.5rem;background:#fff;padding:1.25rem 1.5rem;border:1px solid rgba(28,61,53,.1);">
+        <div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--green);">Surat</div>
+          <div style="font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);">27 September 2026</div>
+          <div style="font-size:.8rem;color:var(--muted);margin-top:.3rem;">Avadh, Dumas Rd, Opp Airport, Dumas, Surat, Gujarat 394550</div>
         </div>
-        <p style="color:rgba(242,232,213,.7);margin-bottom:1.5rem;">57 stalls total across 4 categories. Exact pricing being finalised — register below and we'll send the full layout and rate card as soon as it's confirmed.</p>
-        <a href="#booking-form" class="btn-tsm-primary">Register Interest for Surat</a>
+        <div style="text-align:right;">
+          <div style="font-family:'Montserrat',sans-serif;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);">Booking Deadline</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--red-book);" id="deadline-surat"></div>
+        </div>
+      </div>
+      <span class="eyebrow">Step 2 — Pick Your Stall</span>
+      <h3 style="margin-bottom:1rem;font-style:italic;">Click a stall to select it.</h3>
+      <div class="stall-picker-layout">
+        <div class="venue-reference">
+        <img src="/images/The%20Style%20Mill/Surat-Layout-Orchid-1.jpg" alt="Surat Avadh — official venue floor plan (Orchid Hall)" onclick="openLightbox(this.src)">
+        <div class="venue-reference-caption"><i class="fas fa-expand"></i> Click to enlarge the official floor plan.</div>
+      </div>
+        <div class="stall-picker-grid-col">
+        <div class="stall-disclaimer"><i class="fas fa-circle-info"></i><span>These positions are for reference only — please view the layout image alongside for a clear understanding of the position, location and size of each stall.</span></div>
+        <div id="surat-grid">
+          <div class="stall-grid-group">
+            <span class="stall-grid-group-label">F Category — 3 × 2 mtr — 25 stalls — Pricing TBD</span>
+            <div class="stall-grid"><button type="button" class="stall-slot stall-chip available" data-stall="F1" data-type="standard">F1</button><button type="button" class="stall-slot stall-chip available" data-stall="F2" data-type="standard">F2</button><button type="button" class="stall-slot stall-chip available" data-stall="F3" data-type="standard">F3</button><button type="button" class="stall-slot stall-chip available" data-stall="F4" data-type="standard">F4</button><button type="button" class="stall-slot stall-chip available" data-stall="F5" data-type="standard">F5</button><button type="button" class="stall-slot stall-chip available" data-stall="F6" data-type="standard">F6</button><button type="button" class="stall-slot stall-chip available" data-stall="F7" data-type="standard">F7</button><button type="button" class="stall-slot stall-chip available" data-stall="F8" data-type="standard">F8</button><button type="button" class="stall-slot stall-chip available" data-stall="F9" data-type="standard">F9</button><button type="button" class="stall-slot stall-chip available" data-stall="F10" data-type="standard">F10</button><button type="button" class="stall-slot stall-chip available" data-stall="F11" data-type="standard">F11</button><button type="button" class="stall-slot stall-chip available" data-stall="F12" data-type="standard">F12</button><button type="button" class="stall-slot stall-chip available" data-stall="F13" data-type="standard">F13</button><button type="button" class="stall-slot stall-chip available" data-stall="F14" data-type="standard">F14</button><button type="button" class="stall-slot stall-chip available" data-stall="F15" data-type="standard">F15</button><button type="button" class="stall-slot stall-chip available" data-stall="F16" data-type="standard">F16</button><button type="button" class="stall-slot stall-chip available" data-stall="F17" data-type="standard">F17</button><button type="button" class="stall-slot stall-chip available" data-stall="F18" data-type="standard">F18</button><button type="button" class="stall-slot stall-chip available" data-stall="F19" data-type="standard">F19</button><button type="button" class="stall-slot stall-chip available" data-stall="F20" data-type="standard">F20</button><button type="button" class="stall-slot stall-chip available" data-stall="F21" data-type="standard">F21</button><button type="button" class="stall-slot stall-chip available" data-stall="F22" data-type="standard">F22</button><button type="button" class="stall-slot stall-chip available" data-stall="F23" data-type="standard">F23</button><button type="button" class="stall-slot stall-chip available" data-stall="F24" data-type="standard">F24</button><button type="button" class="stall-slot stall-chip available" data-stall="F25" data-type="standard">F25</button></div>
+          </div>
+          <div class="stall-grid-group">
+            <span class="stall-grid-group-label">J Category — 6 × 3 mtr — 2 stalls — Pricing TBD</span>
+            <div class="stall-grid"><button type="button" class="stall-slot stall-chip available" data-stall="J1" data-type="premium">J1</button><button type="button" class="stall-slot stall-chip available" data-stall="J2" data-type="premium">J2</button></div>
+          </div>
+          <div class="stall-grid-group">
+            <span class="stall-grid-group-label">W Category — 2 × 2 mtr — 22 stalls — Pricing TBD</span>
+            <div class="stall-grid"><button type="button" class="stall-slot stall-chip available" data-stall="W1" data-type="small">W1</button><button type="button" class="stall-slot stall-chip available" data-stall="W2" data-type="small">W2</button><button type="button" class="stall-slot stall-chip available" data-stall="W3" data-type="small">W3</button><button type="button" class="stall-slot stall-chip available" data-stall="W4" data-type="small">W4</button><button type="button" class="stall-slot stall-chip available" data-stall="W5" data-type="small">W5</button><button type="button" class="stall-slot stall-chip available" data-stall="W6" data-type="small">W6</button><button type="button" class="stall-slot stall-chip available" data-stall="W7" data-type="small">W7</button><button type="button" class="stall-slot stall-chip available" data-stall="W8" data-type="small">W8</button><button type="button" class="stall-slot stall-chip available" data-stall="W9" data-type="small">W9</button><button type="button" class="stall-slot stall-chip available" data-stall="W10" data-type="small">W10</button><button type="button" class="stall-slot stall-chip available" data-stall="W11" data-type="small">W11</button><button type="button" class="stall-slot stall-chip available" data-stall="W12" data-type="small">W12</button><button type="button" class="stall-slot stall-chip available" data-stall="W13" data-type="small">W13</button><button type="button" class="stall-slot stall-chip available" data-stall="W14" data-type="small">W14</button><button type="button" class="stall-slot stall-chip available" data-stall="W15" data-type="small">W15</button><button type="button" class="stall-slot stall-chip available" data-stall="W16" data-type="small">W16</button><button type="button" class="stall-slot stall-chip available" data-stall="W17" data-type="small">W17</button><button type="button" class="stall-slot stall-chip available" data-stall="W18" data-type="small">W18</button><button type="button" class="stall-slot stall-chip available" data-stall="W19" data-type="small">W19</button><button type="button" class="stall-slot stall-chip available" data-stall="W20" data-type="small">W20</button><button type="button" class="stall-slot stall-chip available" data-stall="W21" data-type="small">W21</button><button type="button" class="stall-slot stall-chip available" data-stall="W22" data-type="small">W22</button></div>
+          </div>
+        </div>
+        <div class="stall-grid-group">
+          <span class="stall-grid-group-label">Not for Booking</span>
+          <div class="stall-grid"><div class="stall-chip trial-room">8 × Trial Room</div><div class="stall-chip not-bookable">8 × Table Stall (A1–A8)</div></div>
+        </div>
+      </div>
       </div>
     </div>
+
     <div class="city-panel fade-up" id="panel-raipur">
       <div style="display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:start;margin-bottom:1.5rem;background:#fff;padding:1.25rem 1.5rem;border:1px solid rgba(28,61,53,.1);">
         <div>
@@ -223,74 +188,68 @@ const TSM_CONFIG = {
       </div>
       <span class="eyebrow">Step 2 — Pick Your Stall</span>
       <h3 style="margin-bottom:1rem;font-style:italic;">Click a stall to select it.</h3>
-      <div class="stall-legend">
-        <div class="legend-item"><div class="legend-dot l-standard"></div>2.5 × 2.5 mtr — ₹60,000 + GST</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#F5A623;"></div>Stall 22J — Special Position</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#E893C7;"></div>Meeting Tables (Not for Booking)</div>
-        <div class="legend-item"><div class="legend-dot l-booked"></div>Booked</div>
-        <div class="legend-item"><div class="legend-dot l-selected"></div>Your Selection</div>
+      <div class="stall-picker-layout">
+        <div class="venue-reference">
+        <img src="/images/The%20Style%20Mill/Raipur-layout-all-stalls-priced-60000.jpeg" alt="Raipur Hyatt — official venue floor plan" onclick="openLightbox(this.src)">
+        <div class="venue-reference-caption"><i class="fas fa-expand"></i> Click to enlarge the official floor plan.</div>
       </div>
-      <div class="stall-map-wrap">
-        <svg id="raipur-map" viewBox="0 0 700 400" width="700" xmlns="http://www.w3.org/2000/svg" font-family="Montserrat,sans-serif">
-          <rect width="700" height="400" fill="#f9f5ee"/>
-          <rect x="20" y="20" width="660" height="360" fill="none" stroke="#1C3D35" stroke-width="1.5" stroke-dasharray="4,3"/>
-          <text x="650" y="18" text-anchor="end" fill="#8B7355" font-size="9" font-style="italic">Hyatt Ballroom</text>
-
-          <!-- Top-left row: 1-5 -->
-          <g class="stall-slot available" data-stall="1" data-type="standard"><rect x="110" y="45" width="50" height="42" rx="2"/><text x="135" y="70" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">1</text></g>
-          <g class="stall-slot available" data-stall="2" data-type="standard"><rect x="166" y="45" width="50" height="42" rx="2"/><text x="191" y="70" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">2</text></g>
-          <g class="stall-slot available" data-stall="3" data-type="standard"><rect x="222" y="45" width="50" height="42" rx="2"/><text x="247" y="70" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">3</text></g>
-          <g class="stall-slot available" data-stall="4" data-type="standard"><rect x="278" y="45" width="50" height="42" rx="2"/><text x="303" y="70" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">4</text></g>
-          <g class="stall-slot available" data-stall="5" data-type="standard"><rect x="334" y="45" width="50" height="42" rx="2"/><text x="359" y="70" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">5</text></g>
-
-          <!-- Top-right row: 6-10 -->
-          <g class="stall-slot available" data-stall="6" data-type="standard"><rect x="400" y="45" width="50" height="42" rx="2"/><text x="425" y="70" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">6</text></g>
-          <g class="stall-slot available" data-stall="7" data-type="standard"><rect x="456" y="45" width="50" height="42" rx="2"/><text x="481" y="70" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">7</text></g>
-          <g class="stall-slot available" data-stall="8" data-type="standard"><rect x="512" y="45" width="50" height="42" rx="2"/><text x="537" y="70" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">8</text></g>
-          <g class="stall-slot available" data-stall="9" data-type="standard"><rect x="568" y="45" width="50" height="42" rx="2"/><text x="593" y="70" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">9</text></g>
-          <g class="stall-slot available" data-stall="10" data-type="standard"><rect x="624" y="45" width="46" height="42" rx="2"/><text x="647" y="70" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">10</text></g>
-
-          <!-- Left column: 24, 23 -->
-          <g class="stall-slot available" data-stall="24" data-type="standard"><rect x="40" y="160" width="50" height="42" rx="2"/><text x="65" y="185" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">24</text></g>
-          <g class="stall-slot available" data-stall="23" data-type="standard"><rect x="40" y="206" width="50" height="42" rx="2"/><text x="65" y="231" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">23</text></g>
-
-          <!-- Right column: 11, 12 -->
-          <g class="stall-slot available" data-stall="11" data-type="standard"><rect x="610" y="160" width="50" height="42" rx="2"/><text x="635" y="185" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">11</text></g>
-          <g class="stall-slot available" data-stall="12" data-type="standard"><rect x="610" y="206" width="50" height="42" rx="2"/><text x="635" y="231" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">12</text></g>
-
-          <!-- Middle tables (not for sale) -->
-          <rect x="195" y="165" width="42" height="34" rx="2" fill="#E893C7"/><text x="216" y="186" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">t1</text>
-          <rect x="251" y="165" width="42" height="34" rx="2" fill="#E893C7"/><text x="272" y="186" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">t2</text>
-          <rect x="307" y="165" width="42" height="34" rx="2" fill="#E893C7"/><text x="328" y="186" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">t3</text>
-          <rect x="363" y="165" width="42" height="34" rx="2" fill="#E893C7"/><text x="384" y="186" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">t4</text>
-          <rect x="419" y="165" width="42" height="34" rx="2" fill="#E893C7"/><text x="440" y="186" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">t5</text>
-
-          <!-- Bottom row: 22J, 21, 20 | gate | 19-13 -->
-          <g class="stall-slot available" data-stall="22J" data-type="standard"><rect x="40" y="310" width="50" height="42" rx="2" style="fill:#F5A623;"/><text x="65" y="335" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">22 J</text></g>
-          <g class="stall-slot available" data-stall="21" data-type="standard"><rect x="96" y="310" width="50" height="42" rx="2"/><text x="121" y="335" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">21</text></g>
-          <g class="stall-slot available" data-stall="20" data-type="standard"><rect x="152" y="310" width="50" height="42" rx="2"/><text x="177" y="335" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">20</text></g>
-
-          <text x="230" y="335" text-anchor="middle" fill="#1C3D35" font-size="9" font-weight="700" letter-spacing="1">GATE</text>
-
-          <g class="stall-slot available" data-stall="19" data-type="standard"><rect x="262" y="310" width="50" height="42" rx="2"/><text x="287" y="335" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">19</text></g>
-          <g class="stall-slot available" data-stall="18" data-type="standard"><rect x="318" y="310" width="50" height="42" rx="2"/><text x="343" y="335" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">18</text></g>
-          <g class="stall-slot available" data-stall="17" data-type="standard"><rect x="374" y="310" width="50" height="42" rx="2"/><text x="399" y="335" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">17</text></g>
-          <g class="stall-slot available" data-stall="16" data-type="standard"><rect x="430" y="310" width="50" height="42" rx="2"/><text x="455" y="335" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">16</text></g>
-          <g class="stall-slot available" data-stall="15" data-type="standard"><rect x="486" y="310" width="50" height="42" rx="2"/><text x="511" y="335" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">15</text></g>
-          <g class="stall-slot available" data-stall="14" data-type="standard"><rect x="542" y="310" width="50" height="42" rx="2"/><text x="567" y="335" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">14</text></g>
-          <g class="stall-slot available" data-stall="13" data-type="standard"><rect x="598" y="310" width="50" height="42" rx="2"/><text x="623" y="335" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">13</text></g>
-        </svg>
+        <div class="stall-picker-grid-col">
+        <div class="stall-disclaimer"><i class="fas fa-circle-info"></i><span>These positions are for reference only — please view the layout image alongside for a clear understanding of the position, location and size of each stall.</span></div>
+        <div class="stall-grid-group">
+          <span class="stall-grid-group-label">All Stalls — 2.5 × 2.5 mtr — ₹60,000 + GST (22J = special position, same price)</span>
+          <div class="stall-grid" id="raipur-grid"><button type="button" class="stall-slot stall-chip available" data-stall="1" data-type="standard">1</button><button type="button" class="stall-slot stall-chip available" data-stall="2" data-type="standard">2</button><button type="button" class="stall-slot stall-chip available" data-stall="3" data-type="standard">3</button><button type="button" class="stall-slot stall-chip available" data-stall="4" data-type="standard">4</button><button type="button" class="stall-slot stall-chip available" data-stall="5" data-type="standard">5</button><button type="button" class="stall-slot stall-chip available" data-stall="6" data-type="standard">6</button><button type="button" class="stall-slot stall-chip available" data-stall="7" data-type="standard">7</button><button type="button" class="stall-slot stall-chip available" data-stall="8" data-type="standard">8</button><button type="button" class="stall-slot stall-chip available" data-stall="9" data-type="standard">9</button><button type="button" class="stall-slot stall-chip available" data-stall="10" data-type="standard">10</button><button type="button" class="stall-slot stall-chip available" data-stall="11" data-type="standard">11</button><button type="button" class="stall-slot stall-chip available" data-stall="12" data-type="standard">12</button><button type="button" class="stall-slot stall-chip available" data-stall="13" data-type="standard">13</button><button type="button" class="stall-slot stall-chip available" data-stall="14" data-type="standard">14</button><button type="button" class="stall-slot stall-chip available" data-stall="15" data-type="standard">15</button><button type="button" class="stall-slot stall-chip available" data-stall="16" data-type="standard">16</button><button type="button" class="stall-slot stall-chip available" data-stall="17" data-type="standard">17</button><button type="button" class="stall-slot stall-chip available" data-stall="18" data-type="standard">18</button><button type="button" class="stall-slot stall-chip available" data-stall="19" data-type="standard">19</button><button type="button" class="stall-slot stall-chip available" data-stall="20" data-type="standard">20</button><button type="button" class="stall-slot stall-chip available" data-stall="21" data-type="standard">21</button><button type="button" class="stall-slot stall-chip available" data-stall="22" data-type="standard">22</button><button type="button" class="stall-slot stall-chip available" data-stall="23" data-type="standard">23</button><button type="button" class="stall-slot stall-chip available" data-stall="24" data-type="standard">24</button><button type="button" class="stall-slot stall-chip available" data-stall="22J" data-type="standard">22 J</button></div>
+        </div>
+        <div class="stall-grid-group">
+          <span class="stall-grid-group-label">Not for Booking</span>
+          <div class="stall-grid"><div class="stall-chip not-bookable">t1</div><div class="stall-chip not-bookable">t2</div><div class="stall-chip not-bookable">t3</div><div class="stall-chip not-bookable">t4</div><div class="stall-chip not-bookable">t5</div></div>
+        </div>
       </div>
-      <p style="font-size:.78rem;color:var(--muted);margin-top:.75rem;font-style:italic;"><i class="fas fa-info-circle"></i> All stalls 2.5 × 2.5 mtr. Price ₹60,000 + GST per stall. Pink tables (t1–t5) are meeting tables, not for booking.</p>
+      </div>
     </div>
 
     <div class="city-panel fade-up" id="panel-jaipur">
-      <div style="background:var(--green);padding:3rem;text-align:center;color:var(--cream);">
-        <i class="fas fa-map" style="font-size:2rem;color:var(--gold);margin-bottom:1rem;display:block;"></i>
-        <h3 style="color:var(--cream);font-style:italic;margin-bottom:.5rem;">Jaipur — 11 October 2026</h3>
-        <p style="color:rgba(242,232,213,.6);font-size:.85rem;margin-bottom:.75rem;">Hilton, Geejgarh House, 42, Hawa Sadak, Jaipur, Rajasthan 302006</p>
-        <p style="color:rgba(242,232,213,.7);margin-bottom:1.5rem;">Floor plan and stall pricing being finalised. Register your interest below — we'll reach out with layout and pricing details as soon as they're confirmed.</p>
-        <a href="#booking-form" class="btn-tsm-primary">Register Interest for Jaipur</a>
+      <div style="display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:start;margin-bottom:1.5rem;background:#fff;padding:1.25rem 1.5rem;border:1px solid rgba(28,61,53,.1);">
+        <div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--green);">Jaipur</div>
+          <div style="font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);">11 October 2026</div>
+          <div style="font-size:.8rem;color:var(--muted);margin-top:.3rem;">Hilton, Geejgarh House, 42, Hawa Sadak, Jaipur, Rajasthan 302006</div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-family:'Montserrat',sans-serif;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);">Booking Deadline</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--red-book);" id="deadline-jaipur"></div>
+        </div>
+      </div>
+      <span class="eyebrow">Step 2 — Pick Your Stall</span>
+      <h3 style="margin-bottom:1rem;font-style:italic;">Click a stall to select it.</h3>
+      <div class="stall-picker-layout">
+        <div class="venue-reference">
+        <img src="/images/The%20Style%20Mill/Jaipur-Layout-Turquoise-Hall.jpg" alt="Jaipur Hilton — Turquoise Hall 1 & 2 official venue floor plan" onclick="openLightbox(this.src)">
+        <div class="venue-reference-caption"><i class="fas fa-expand"></i> Click to enlarge the official floor plan.</div>
+      </div>
+        <div class="stall-picker-grid-col">
+        <div style="background:#FFF8E7;border:1px solid #E8D9A8;padding:.85rem 1.25rem;margin-bottom:1rem;font-size:.82rem;color:var(--mid);">
+          <i class="fas fa-triangle-exclamation" style="color:#C9962E;"></i> This layout shows the confirmed section of Turquoise Hall. Stalls 1–4 and full hall dimensions are pending the complete plan from the venue — we'll update this the moment it's confirmed.
+        </div>
+        <div class="stall-disclaimer"><i class="fas fa-circle-info"></i><span>These positions are for reference only — please view the layout image alongside for a clear understanding of the position, location and size of each stall.</span></div>
+        <div id="jaipur-grid">
+          <div class="stall-grid-group">
+            <span class="stall-grid-group-label">3 × 1.5 mtr — Pricing TBD</span>
+            <div class="stall-grid"><button type="button" class="stall-slot stall-chip available" data-stall="5" data-type="compact">5</button><button type="button" class="stall-slot stall-chip available" data-stall="6" data-type="compact">6</button><button type="button" class="stall-slot stall-chip available" data-stall="7" data-type="compact">7</button><button type="button" class="stall-slot stall-chip available" data-stall="8" data-type="compact">8</button><button type="button" class="stall-slot stall-chip available" data-stall="9" data-type="compact">9</button></div>
+          </div>
+          <div class="stall-grid-group">
+            <span class="stall-grid-group-label">3 × 2 mtr — Pricing TBD</span>
+            <div class="stall-grid"><button type="button" class="stall-slot stall-chip available" data-stall="25" data-type="standard">25</button><button type="button" class="stall-slot stall-chip available" data-stall="26" data-type="standard">26</button><button type="button" class="stall-slot stall-chip available" data-stall="27" data-type="standard">27</button><button type="button" class="stall-slot stall-chip available" data-stall="28" data-type="standard">28</button><button type="button" class="stall-slot stall-chip available" data-stall="29" data-type="standard">29</button><button type="button" class="stall-slot stall-chip available" data-stall="10" data-type="standard">10</button><button type="button" class="stall-slot stall-chip available" data-stall="11" data-type="standard">11</button><button type="button" class="stall-slot stall-chip available" data-stall="12" data-type="standard">12</button><button type="button" class="stall-slot stall-chip available" data-stall="13" data-type="standard">13</button></div>
+          </div>
+          <div class="stall-grid-group">
+            <span class="stall-grid-group-label">2 × 2 mtr — Pricing TBD</span>
+            <div class="stall-grid"><button type="button" class="stall-slot stall-chip available" data-stall="24" data-type="small">24</button><button type="button" class="stall-slot stall-chip available" data-stall="23" data-type="small">23</button><button type="button" class="stall-slot stall-chip available" data-stall="22" data-type="small">22</button><button type="button" class="stall-slot stall-chip available" data-stall="21" data-type="small">21</button><button type="button" class="stall-slot stall-chip available" data-stall="20" data-type="small">20</button><button type="button" class="stall-slot stall-chip available" data-stall="19" data-type="small">19</button><button type="button" class="stall-slot stall-chip available" data-stall="18" data-type="small">18</button><button type="button" class="stall-slot stall-chip available" data-stall="17" data-type="small">17</button><button type="button" class="stall-slot stall-chip available" data-stall="16" data-type="small">16</button><button type="button" class="stall-slot stall-chip available" data-stall="15" data-type="small">15</button><button type="button" class="stall-slot stall-chip available" data-stall="14" data-type="small">14</button><button type="button" class="stall-slot stall-chip available" data-stall="37" data-type="small">37</button><button type="button" class="stall-slot stall-chip available" data-stall="38" data-type="small">38</button><button type="button" class="stall-slot stall-chip available" data-stall="39" data-type="small">39</button><button type="button" class="stall-slot stall-chip available" data-stall="40" data-type="small">40</button><button type="button" class="stall-slot stall-chip available" data-stall="41" data-type="small">41</button><button type="button" class="stall-slot stall-chip available" data-stall="42" data-type="small">42</button><button type="button" class="stall-slot stall-chip available" data-stall="43" data-type="small">43</button><button type="button" class="stall-slot stall-chip available" data-stall="36" data-type="small">36</button><button type="button" class="stall-slot stall-chip available" data-stall="35" data-type="small">35</button><button type="button" class="stall-slot stall-chip available" data-stall="34" data-type="small">34</button><button type="button" class="stall-slot stall-chip available" data-stall="33" data-type="small">33</button><button type="button" class="stall-slot stall-chip available" data-stall="32" data-type="small">32</button><button type="button" class="stall-slot stall-chip available" data-stall="31" data-type="small">31</button><button type="button" class="stall-slot stall-chip available" data-stall="30" data-type="small">30</button></div>
+          </div>
+        </div>
+        <div class="stall-grid-group">
+          <span class="stall-grid-group-label">Not for Booking</span>
+          <div class="stall-grid"><div class="stall-chip trial-room">Trial Room</div><div class="stall-chip not-bookable">T-18</div><div class="stall-chip not-bookable">T-19</div><div class="stall-chip not-bookable">T-20</div><div class="stall-chip not-bookable">T-21</div><div class="stall-chip not-bookable">T-22</div></div>
+        </div>
+      </div>
       </div>
     </div>
 
@@ -308,70 +267,34 @@ const TSM_CONFIG = {
       </div>
       <span class="eyebrow">Step 2 — Pick Your Stall</span>
       <h3 style="margin-bottom:1rem;font-style:italic;">Click a stall to select it.</h3>
-      <div class="stall-legend">
-        <div class="legend-item"><div class="legend-dot l-standard"></div>4 × 2 mtr — ₹60,000 + GST</div>
-        <div class="legend-item"><div class="legend-dot l-booked"></div>Booked</div>
-        <div class="legend-item"><div class="legend-dot l-selected"></div>Your Selection</div>
+      <div class="stall-picker-layout">
+        <div class="venue-reference">
+        <img src="/images/The%20Style%20Mill/Chennai-layout-all-stalls-priced-60000.jpeg" alt="Chennai Amethyst — official venue floor plan" onclick="openLightbox(this.src)">
+        <div class="venue-reference-caption"><i class="fas fa-expand"></i> Click to enlarge the official floor plan.</div>
       </div>
-      <div class="stall-map-wrap">
-        <svg id="chennai-map" viewBox="0 0 620 560" width="620" xmlns="http://www.w3.org/2000/svg" font-family="Montserrat,sans-serif">
-          <rect width="620" height="560" fill="#f9f5ee"/>
-          <rect x="20" y="20" width="580" height="520" fill="none" stroke="#1C3D35" stroke-width="1.5" stroke-dasharray="4,3"/>
-          <rect x="35" y="35" width="110" height="50" fill="none" stroke="#1C3D35" stroke-width="1"/><text x="90" y="65" text-anchor="middle" fill="#1C3D35" font-size="10" font-weight="700">TRIAL ROOM</text>
-
-          <!-- Top row: L5-L8 -->
-          <g class="stall-slot available" data-stall="L5" data-type="standard"><rect x="170" y="35" width="60" height="42" rx="2"/><text x="200" y="60" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">L5</text></g>
-          <g class="stall-slot available" data-stall="L6" data-type="standard"><rect x="238" y="35" width="60" height="42" rx="2"/><text x="268" y="60" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">L6</text></g>
-          <g class="stall-slot available" data-stall="L7" data-type="standard"><rect x="306" y="35" width="60" height="42" rx="2"/><text x="336" y="60" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">L7</text></g>
-          <g class="stall-slot available" data-stall="L8" data-type="standard"><rect x="374" y="35" width="60" height="42" rx="2"/><text x="404" y="60" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">L8</text></g>
-
-          <!-- Right column: L9-L12 -->
-          <g class="stall-slot available" data-stall="L9" data-type="standard"><rect x="530" y="35" width="60" height="42" rx="2"/><text x="560" y="60" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">L9</text></g>
-          <g class="stall-slot available" data-stall="L10" data-type="standard"><rect x="530" y="87" width="60" height="42" rx="2"/><text x="560" y="112" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">L10</text></g>
-          <g class="stall-slot available" data-stall="L11" data-type="standard"><rect x="530" y="139" width="60" height="42" rx="2"/><text x="560" y="164" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">L11</text></g>
-          <g class="stall-slot available" data-stall="L12" data-type="standard"><rect x="530" y="191" width="60" height="42" rx="2"/><text x="560" y="216" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">L12</text></g>
-
-          <!-- Left column: L4-L1 -->
-          <g class="stall-slot available" data-stall="L4" data-type="standard"><rect x="35" y="105" width="60" height="42" rx="2"/><text x="65" y="130" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">L4</text></g>
-          <g class="stall-slot available" data-stall="L3" data-type="standard"><rect x="35" y="157" width="60" height="42" rx="2"/><text x="65" y="182" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">L3</text></g>
-          <g class="stall-slot available" data-stall="L2" data-type="standard"><rect x="35" y="209" width="60" height="42" rx="2"/><text x="65" y="234" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">L2</text></g>
-          <g class="stall-slot available" data-stall="L1" data-type="standard"><rect x="35" y="261" width="60" height="42" rx="2"/><text x="65" y="286" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">L1</text></g>
-
-          <!-- Inner M stalls: top row M5,M6,M7 -->
-          <g class="stall-slot available" data-stall="M5" data-type="standard"><rect x="210" y="115" width="56" height="40" rx="2"/><text x="238" y="139" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">M5</text></g>
-          <g class="stall-slot available" data-stall="M6" data-type="standard"><rect x="278" y="115" width="56" height="40" rx="2"/><text x="306" y="139" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">M6</text></g>
-          <g class="stall-slot available" data-stall="M7" data-type="standard"><rect x="346" y="115" width="56" height="40" rx="2"/><text x="374" y="139" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">M7</text></g>
-          <g class="stall-slot available" data-stall="M8" data-type="standard"><rect x="414" y="115" width="56" height="40" rx="2"/><text x="442" y="139" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">M8</text></g>
-
-          <!-- Inner left column M4-M1 -->
-          <g class="stall-slot available" data-stall="M4" data-type="standard"><rect x="140" y="167" width="56" height="38" rx="2"/><text x="168" y="190" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">M4</text></g>
-          <g class="stall-slot available" data-stall="M3" data-type="standard"><rect x="140" y="215" width="56" height="38" rx="2"/><text x="168" y="238" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">M3</text></g>
-          <g class="stall-slot available" data-stall="M2" data-type="standard"><rect x="140" y="263" width="56" height="38" rx="2"/><text x="168" y="286" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">M2</text></g>
-          <g class="stall-slot available" data-stall="M1" data-type="standard"><rect x="140" y="311" width="56" height="38" rx="2"/><text x="168" y="334" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">M1</text></g>
-
-          <!-- Inner center M12,M13,M14 -->
-          <g class="stall-slot available" data-stall="M12" data-type="standard"><rect x="240" y="180" width="56" height="38" rx="2"/><text x="268" y="203" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">M12</text></g>
-          <g class="stall-slot available" data-stall="M13" data-type="standard"><rect x="240" y="228" width="56" height="38" rx="2"/><text x="268" y="251" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">M13</text></g>
-          <g class="stall-slot available" data-stall="M14" data-type="standard"><rect x="240" y="276" width="56" height="38" rx="2"/><text x="268" y="299" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">M14</text></g>
-
-          <!-- Inner right column M9,M10,M11 -->
-          <g class="stall-slot available" data-stall="M9" data-type="standard"><rect x="370" y="180" width="56" height="38" rx="2"/><text x="398" y="203" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">M9</text></g>
-          <g class="stall-slot available" data-stall="M10" data-type="standard"><rect x="370" y="228" width="56" height="38" rx="2"/><text x="398" y="251" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">M10</text></g>
-          <g class="stall-slot available" data-stall="M11" data-type="standard"><rect x="370" y="276" width="56" height="38" rx="2"/><text x="398" y="299" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">M11</text></g>
-
-          <!-- Bottom row: L16,L15,L14,L13 -->
-          <g class="stall-slot available" data-stall="L16" data-type="standard"><rect x="140" y="470" width="60" height="42" rx="2"/><text x="170" y="495" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">L16</text></g>
-          <g class="stall-slot available" data-stall="L15" data-type="standard"><rect x="208" y="470" width="60" height="42" rx="2"/><text x="238" y="495" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">L15</text></g>
-          <g class="stall-slot available" data-stall="L14" data-type="standard"><rect x="276" y="470" width="60" height="42" rx="2"/><text x="306" y="495" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">L14</text></g>
-          <g class="stall-slot available" data-stall="L13" data-type="standard"><rect x="344" y="470" width="60" height="42" rx="2"/><text x="374" y="495" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">L13</text></g>
-
-          <rect x="35" y="470" width="90" height="42" fill="none" stroke="#1C3D35" stroke-width="1"/><text x="80" y="495" text-anchor="middle" fill="#1C3D35" font-size="11" font-weight="700">ENTRY</text>
-        </svg>
+        <div class="stall-picker-grid-col">
+        <div class="stall-disclaimer"><i class="fas fa-circle-info"></i><span>These positions are for reference only — please view the layout image alongside for a clear understanding of the position, location and size of each stall.</span></div>
+        <div id="chennai-grid">
+          <div class="stall-grid-group">
+            <span class="stall-grid-group-label">Perimeter Stalls (L1–L16) — 3 Rack Spaces — ₹60,000 + GST</span>
+            <div class="stall-grid"><button type="button" class="stall-slot stall-chip available" data-stall="L1" data-type="standard">L1</button><button type="button" class="stall-slot stall-chip available" data-stall="L2" data-type="standard">L2</button><button type="button" class="stall-slot stall-chip available" data-stall="L3" data-type="standard">L3</button><button type="button" class="stall-slot stall-chip available" data-stall="L4" data-type="standard">L4</button><button type="button" class="stall-slot stall-chip available" data-stall="L5" data-type="standard">L5</button><button type="button" class="stall-slot stall-chip available" data-stall="L6" data-type="standard">L6</button><button type="button" class="stall-slot stall-chip available" data-stall="L7" data-type="standard">L7</button><button type="button" class="stall-slot stall-chip available" data-stall="L8" data-type="standard">L8</button><button type="button" class="stall-slot stall-chip available" data-stall="L9" data-type="standard">L9</button><button type="button" class="stall-slot stall-chip available" data-stall="L10" data-type="standard">L10</button><button type="button" class="stall-slot stall-chip available" data-stall="L11" data-type="standard">L11</button><button type="button" class="stall-slot stall-chip available" data-stall="L12" data-type="standard">L12</button><button type="button" class="stall-slot stall-chip available" data-stall="L13" data-type="standard">L13</button><button type="button" class="stall-slot stall-chip available" data-stall="L14" data-type="standard">L14</button><button type="button" class="stall-slot stall-chip available" data-stall="L15" data-type="standard">L15</button><button type="button" class="stall-slot stall-chip available" data-stall="L16" data-type="standard">L16</button></div>
+          </div>
+          <div class="stall-grid-group">
+            <span class="stall-grid-group-label">Inner Stalls (M1–M14) — 3 Rack Spaces — ₹60,000 + GST</span>
+            <div class="stall-grid"><button type="button" class="stall-slot stall-chip available" data-stall="M1" data-type="standard">M1</button><button type="button" class="stall-slot stall-chip available" data-stall="M2" data-type="standard">M2</button><button type="button" class="stall-slot stall-chip available" data-stall="M3" data-type="standard">M3</button><button type="button" class="stall-slot stall-chip available" data-stall="M4" data-type="standard">M4</button><button type="button" class="stall-slot stall-chip available" data-stall="M5" data-type="standard">M5</button><button type="button" class="stall-slot stall-chip available" data-stall="M6" data-type="standard">M6</button><button type="button" class="stall-slot stall-chip available" data-stall="M7" data-type="standard">M7</button><button type="button" class="stall-slot stall-chip available" data-stall="M8" data-type="standard">M8</button><button type="button" class="stall-slot stall-chip available" data-stall="M9" data-type="standard">M9</button><button type="button" class="stall-slot stall-chip available" data-stall="M10" data-type="standard">M10</button><button type="button" class="stall-slot stall-chip available" data-stall="M11" data-type="standard">M11</button><button type="button" class="stall-slot stall-chip available" data-stall="M12" data-type="standard">M12</button><button type="button" class="stall-slot stall-chip available" data-stall="M13" data-type="standard">M13</button><button type="button" class="stall-slot stall-chip available" data-stall="M14" data-type="standard">M14</button></div>
+          </div>
+        </div>
       </div>
-      <p style="font-size:.78rem;color:var(--muted);margin-top:.75rem;font-style:italic;"><i class="fas fa-info-circle"></i> All 30 stalls (L1–L16 perimeter, M1–M14 inner) are 4 × 2 mtr. Flat price ₹60,000 + GST per stall.</p>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- Lightbox for venue reference images -->
+<div class="tsm-lightbox" id="tsmLightbox" onclick="closeLightbox()">
+  <button class="tsm-lightbox-close" onclick="closeLightbox()" aria-label="Close"><i class="fas fa-times"></i></button>
+  <img id="tsmLightboxImg" src="" alt="Venue floor plan enlarged">
+</div>
 
 <section class="section bg-cream" id="booking-form">
   <div class="container">
@@ -436,7 +359,7 @@ const TSM_CONFIG = {
 const urlCity = new URLSearchParams(window.location.search).get('city') || 'hyderabad';
 let selectedCity = urlCity;
 
-const CITY_MAP_IDS = { hyderabad:'hyderabad-map', raipur:'raipur-map', chennai:'chennai-map' };
+const CITY_MAP_IDS = { hyderabad:'hyderabad-grid', surat:'surat-grid', raipur:'raipur-grid', jaipur:'jaipur-grid', chennai:'chennai-grid' };
 
 function showCity(city) {
   selectedCity = city;
@@ -447,26 +370,27 @@ function showCity(city) {
   clearStallSelection();
   const dl = document.getElementById('deadline-' + city);
   if(dl) dl.textContent = 'Deadline: ' + TSM_CONFIG.cities[city].deadline;
-  if(CITY_MAP_IDS[city]) { applyBookedStalls(city); applySpecialStalls(city); }
+  applyBookedStalls(city);
+  applySpecialStalls(city);
 }
 document.querySelectorAll('.city-btn').forEach(btn => btn.addEventListener('click', () => showCity(btn.dataset.city)));
 showCity(urlCity);
 
 function applyBookedStalls(city) {
-  const mapId = CITY_MAP_IDS[city];
-  if(!mapId) return;
+  const gridId = CITY_MAP_IDS[city];
+  if(!gridId) return;
   (TSM_CONFIG.cities[city].booked || []).forEach(stallNum => {
-    const el = document.querySelector(`#${mapId} [data-stall="${stallNum}"]`);
-    if(el) { el.classList.remove('available','available-premium','available-small'); el.classList.add('booked'); }
+    const el = document.querySelector(`#${gridId} [data-stall="${stallNum}"]`);
+    if(el) { el.classList.remove('available','available-premium','available-small','available-special'); el.classList.add('booked'); el.disabled = true; }
   });
 }
 function applySpecialStalls(city) {
-  const mapId = CITY_MAP_IDS[city];
-  if(!mapId) return;
+  const gridId = CITY_MAP_IDS[city];
+  if(!gridId) return;
   const special = TSM_CONFIG.cities[city].special || {};
   Object.keys(special).forEach(stallNum => {
-    const el = document.querySelector(`#${mapId} [data-stall="${stallNum}"] rect`);
-    if(el) { el.setAttribute('stroke', '#C9A96E'); el.setAttribute('stroke-width', '3'); }
+    const el = document.querySelector(`#${gridId} [data-stall="${stallNum}"]`);
+    if(el && !el.classList.contains('booked')) el.classList.add('available-special');
   });
 }
 
@@ -475,7 +399,7 @@ function clearStallSelection() {
     s.classList.remove('selected');
     const t = s.dataset.type;
     if(t==='premium') s.classList.add('available-premium');
-    else if(t==='small') s.classList.add('available-small');
+    else if(t==='small' || t==='compact') s.classList.add('available-small');
     else s.classList.add('available');
   });
   document.getElementById('f_stall_number').value = '';
@@ -493,8 +417,8 @@ document.querySelectorAll('.stall-slot:not(.booked)').forEach(slot => {
     const specialPrice = (cityConf.special && cityConf.special[stallNum]) || null;
     const finalPrice = specialPrice || typeConf.price;
     const gstNote = typeConf.gst ? ' + GST' : '';
-    const priceLabel = typeConf.currency + finalPrice.toLocaleString('en-IN') + gstNote;
-    const sizeLabel = specialPrice ? typeConf.label + ' · Premium Combo Pricing' : typeConf.label + ' · ' + (stallType==='premium' ? 'Corner/Entry Premium' : stallType==='small' ? 'Compact' : 'Standard');
+    const priceLabel = finalPrice > 0 ? (typeConf.currency + finalPrice.toLocaleString('en-IN') + gstNote) : 'Pricing to be confirmed';
+    const sizeLabel = specialPrice ? typeConf.label + ' · Premium Combo Pricing' : typeConf.label + ' · ' + (stallType==='premium' ? 'Premium' : (stallType==='small'||stallType==='compact') ? 'Compact' : 'Standard');
     clearStallSelection();
     this.classList.remove('available','available-premium','available-small');
     this.classList.add('selected');
@@ -509,6 +433,15 @@ document.querySelectorAll('.stall-slot:not(.booked)').forEach(slot => {
     setTimeout(() => document.getElementById('booking-form').scrollIntoView({behavior:'smooth', block:'start'}), 200);
   });
 });
+
+function openLightbox(src) {
+  document.getElementById('tsmLightboxImg').src = src;
+  document.getElementById('tsmLightbox').classList.add('open');
+}
+function closeLightbox() {
+  document.getElementById('tsmLightbox').classList.remove('open');
+}
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox(); });
 
 document.getElementById('designerForm').addEventListener('submit', function(e) {
   e.preventDefault();
