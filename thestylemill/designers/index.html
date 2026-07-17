@@ -17,15 +17,8 @@
 </head>
 <body>
 
-<!-- Hidden Netlify form declaration (needed for static detection) -->
-<form name="tsm-designer-booking" data-netlify="true" netlify-honeypot="bot-field" hidden>
-  <input type="text" name="name"><input type="tel" name="phone"><input type="email" name="email">
-  <input type="url" name="instagram"><input type="hidden" name="selected_city"><input type="hidden" name="stall_number">
-  <input type="hidden" name="stall_size"><input type="hidden" name="stall_price"><input type="url" name="lookbook">
-  <textarea name="message"></textarea>
-</form>
-
 <script>
+const TSM_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbzWW5KSVd386wAdcA1oYxadaq0HZCUjpq1W8L42T2w674wsIubrkeE64KdUyIS1OZdE7g/exec';
 const TSM_CONFIG = {
   cities: {
     hyderabad: { label:'Hyderabad', date:'20 September 2026', venue:'Taj Deccan, Road No. 1, Banjara Hills, Hyderabad', deadline:'31 August 2026', layoutReady:true,
@@ -310,9 +303,7 @@ const TSM_CONFIG = {
       <div class="stall-price" id="displayStallPrice"></div>
     </div>
 
-    <form name="tsm-designer-booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="designerForm" class="fade-up">
-      <input type="hidden" name="form-name" value="tsm-designer-booking">
-      <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+    <form method="POST" id="designerForm" class="fade-up">
       <input type="hidden" name="selected_city" id="f_city" value="Hyderabad">
       <input type="hidden" name="stall_number" id="f_stall_number" value="">
       <input type="hidden" name="stall_size" id="f_stall_size" value="">
@@ -445,12 +436,43 @@ document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox
 
 document.getElementById('designerForm').addEventListener('submit', function(e) {
   e.preventDefault();
+  const form = this;
   const btn = document.getElementById('formSubmitBtn');
   btn.textContent = 'Sending...'; btn.disabled = true;
-  fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:new URLSearchParams(new FormData(this)).toString() })
-    .then(() => { document.getElementById('formSuccess').classList.add('visible'); this.style.display='none'; })
+
+  const payload = {
+    formType: 'designer',
+    city: selectedCity,
+    stall_number: document.getElementById('f_stall_number').value,
+    stall_size: document.getElementById('f_stall_size').value,
+    stall_price: document.getElementById('f_stall_price').value,
+    name: form.querySelector('[name="name"]').value,
+    phone: form.querySelector('[name="phone"]').value,
+    email: form.querySelector('[name="email"]').value,
+    instagram: form.querySelector('[name="instagram"]').value,
+    lookbook: form.querySelector('[name="lookbook"]').value,
+    message: form.querySelector('[name="message"]').value,
+  };
+
+  fetch(TSM_WEBAPP_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' }, // avoids CORS preflight to Apps Script
+    body: JSON.stringify(payload)
+  })
+    .then(() => { document.getElementById('formSuccess').classList.add('visible'); form.style.display='none'; })
     .catch(() => { btn.textContent='Submit Registration →'; btn.disabled=false; alert('Something went wrong. Please try again or WhatsApp us at +91 9000008909.'); });
 });
+
+// ── Live-sync booked stalls from Google Sheet on page load ────
+fetch(TSM_WEBAPP_URL)
+  .then(r => r.json())
+  .then(data => {
+    Object.keys(data).forEach(city => {
+      if (TSM_CONFIG.cities[city]) TSM_CONFIG.cities[city].booked = data[city];
+    });
+    applyBookedStalls(selectedCity);
+  })
+  .catch(() => { /* fail silently — site still works with whatever was already shown */ });
 
 const io = new IntersectionObserver(entries => { entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible'); io.unobserve(e.target);} }); }, {threshold:0.08});
 document.querySelectorAll('.fade-up').forEach(el => io.observe(el));

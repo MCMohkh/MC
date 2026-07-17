@@ -17,11 +17,6 @@
 </head>
 <body>
 
-<form name="tsm-visitor-registration" data-netlify="true" netlify-honeypot="bot-field" hidden>
-  <input type="text" name="name"><input type="tel" name="phone"><input type="email" name="email">
-  <select name="city"></select><select name="source"></select>
-</form>
-
 <nav class="tsm-nav">
   <div class="container tsm-nav-inner">
     <a href="../index.html" class="tsm-nav-logo"><img src="/images/The%20Style%20Mill/TSM-Logo-White.png" alt="The Style Mill"></a>
@@ -89,9 +84,7 @@
         <p class="pass-note">A confirmation with this pass will be sent to your WhatsApp and email. Please show it at the venue entrance.</p>
       </div>
 
-      <form name="tsm-visitor-registration" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="visitForm" class="fade-up">
-        <input type="hidden" name="form-name" value="tsm-visitor-registration">
-        <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+      <form method="POST" id="visitForm" class="fade-up">
 
         <div class="tsm-form-section">
           <div class="form-grid">
@@ -152,13 +145,23 @@
 </footer>
 
 <script>
+const TSM_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbzWW5KSVd386wAdcA1oYxadaq0HZCUjpq1W8L42T2w674wsIubrkeE64KdUyIS1OZdE7g/exec';
+
 document.getElementById('visitForm').addEventListener('submit', function(e) {
   e.preventDefault();
+  const form = this;
   const name = document.getElementById('visitorName').value;
   const city = document.getElementById('visitorCity').value;
+  const phone = form.querySelector('[name="phone"]').value;
+  const email = form.querySelector('[name="email"]').value;
+  const source = form.querySelector('[name="source"]').value;
   const btn = document.getElementById('visitSubmitBtn');
   btn.textContent = 'Sending...'; btn.disabled = true;
-  fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:new URLSearchParams(new FormData(this)).toString() })
+  fetch(TSM_WEBAPP_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify({ formType: 'visitor', name, phone, email, city, source })
+  })
     .then(() => {
       document.getElementById('passName').textContent = name;
       document.getElementById('passCity').textContent = city;
