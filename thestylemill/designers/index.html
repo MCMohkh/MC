@@ -24,19 +24,19 @@
 const TSM_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbzWW5KSVd386wAdcA1oYxadaq0HZCUjpq1W8L42T2w674wsIubrkeE64KdUyIS1OZdE7g/exec';
 const TSM_CONFIG = {
   cities: {
-    hyderabad: { label:'Hyderabad', date:'20 September 2026', venue:'Taj Deccan, Road No. 1, Banjara Hills, Hyderabad', deadline:'31 August 2026', layoutReady:true,
+    hyderabad: { label:'Hyderabad', date:'20 September 2026', venue:'Taj Deccan, Road No. 1, Banjara Hills, Hyderabad', layoutReady:true,
       pricing:{ standard:{label:'3 × 2 mtr',price:60000,currency:'₹'}, small:{label:'2 × 2 mtr',price:50000,currency:'₹'}, premium:{label:'4 × 2 mtr',price:70000,currency:'₹'} },
       special:{ '01':85000, '24':85000, '25':85000, '02':75000, '24B':75000, '26':75000 },
       booked:[] },
-    surat: { label:'Surat', date:'27 September 2026', venue:'Avadh, Dumas Rd, Opp Airport, Dumas, Surat, Gujarat 394550', deadline:'10 September 2026', layoutReady:true,
+    surat: { label:'Surat', date:'27 September 2026', venue:'Avadh, Dumas Rd, Opp Airport, Dumas, Surat, Gujarat 394550', layoutReady:true,
       pricing:{ standard:{label:'3 × 2 mtr',price:70000,currency:'₹'}, small:{label:'2 × 2 mtr',price:60000,currency:'₹'} },
       special:{ '01':80000,'04':80000,'06':80000,'33':80000,'36':80000,'45':80000,'46':80000,'48':70000,'49':70000 },
       booked:[] },
-    raipur: { label:'Raipur', date:'04 October 2026', venue:'Hyatt, Magneto The Mall, N.H. 6, Jivan Vihar, Labhandih, Raipur, Chhattisgarh 492001', deadline:'17 September 2026', layoutReady:true,
+    raipur: { label:'Raipur', date:'04 October 2026', venue:'Hyatt, Magneto The Mall, N.H. 6, Jivan Vihar, Labhandih, Raipur, Chhattisgarh 492001', layoutReady:true,
       pricing:{ standard:{label:'2.5 × 2.5 mtr',price:60000,currency:'₹',gst:true} }, booked:[] },
-    jaipur: { label:'Jaipur', date:'11 October 2026', venue:'Hilton, Geejgarh House, 42, Hawa Sadak, Jaipur, Rajasthan 302006', deadline:'24 September 2026', layoutReady:true,
+    jaipur: { label:'Jaipur', date:'11 October 2026', venue:'Hilton, Geejgarh House, 42, Hawa Sadak, Jaipur, Rajasthan 302006', layoutReady:true,
       pricing:{ standard:{label:'3 × 2 mtr',price:0,currency:'₹'}, small:{label:'2 × 2 mtr',price:0,currency:'₹'}, compact:{label:'3 × 1.5 mtr',price:0,currency:'₹'} }, booked:[] },
-    chennai: { label:'Chennai', date:'18 October 2026', venue:'Amethyst, Whites Road, Royapettah, Chennai', deadline:'01 October 2026', layoutReady:true,
+    chennai: { label:'Chennai', date:'18 October 2026', venue:'Amethyst, Whites Road, Royapettah, Chennai', layoutReady:true,
       pricing:{ standard:{label:'3 Rack Spaces',price:60000,currency:'₹',gst:true} }, booked:[] },
   }
 };
@@ -92,17 +92,13 @@ const TSM_CONFIG = {
     </div>
 
     <div class="city-panel active fade-up" id="panel-hyderabad">
-      <div style="display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:start;margin-bottom:1.5rem;background:#fff;padding:1.25rem 1.5rem;border:1px solid rgba(28,61,53,.1);">
+      <div style="display:grid;grid-template-columns:1fr;gap:1.5rem;align-items:start;margin-bottom:1.5rem;background:#fff;padding:1.25rem 1.5rem;border:1px solid rgba(28,61,53,.1);">
         <div>
           <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--green);">Hyderabad</div>
           <div style="font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);">20 September 2026</div>
           <div style="font-size:.8rem;color:var(--muted);margin-top:.3rem;">Taj Deccan, Road No. 1, Banjara Hills, Hyderabad</div>
         </div>
-        <div style="text-align:right;">
-          <div style="font-family:'Montserrat',sans-serif;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);">Booking Deadline</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--red-book);" id="deadline-hyderabad"></div>
         </div>
-      </div>
       <span class="eyebrow">Step 2 — Pick Your Stall</span>
       <h3 style="margin-bottom:1rem;font-style:italic;">Click a stall to select it.</h3>
       <div class="stall-picker-layout">
@@ -130,17 +126,13 @@ const TSM_CONFIG = {
     </div>
 
     <div class="city-panel fade-up" id="panel-surat">
-      <div style="display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:start;margin-bottom:1.5rem;background:#fff;padding:1.25rem 1.5rem;border:1px solid rgba(28,61,53,.1);">
+      <div style="display:grid;grid-template-columns:1fr;gap:1.5rem;align-items:start;margin-bottom:1.5rem;background:#fff;padding:1.25rem 1.5rem;border:1px solid rgba(28,61,53,.1);">
         <div>
           <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--green);">Surat</div>
           <div style="font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);">27 September 2026</div>
           <div style="font-size:.8rem;color:var(--muted);margin-top:.3rem;">Avadh, Dumas Rd, Opp Airport, Dumas, Surat, Gujarat 394550</div>
         </div>
-        <div style="text-align:right;">
-          <div style="font-family:'Montserrat',sans-serif;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);">Booking Deadline</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--red-book);" id="deadline-surat"></div>
         </div>
-      </div>
       <span class="eyebrow">Step 2 — Pick Your Stall</span>
       <h3 style="margin-bottom:1rem;font-style:italic;">Click a stall to select it.</h3>
       <div class="stall-picker-layout">
@@ -170,17 +162,13 @@ const TSM_CONFIG = {
     </div>
 
     <div class="city-panel fade-up" id="panel-raipur">
-      <div style="display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:start;margin-bottom:1.5rem;background:#fff;padding:1.25rem 1.5rem;border:1px solid rgba(28,61,53,.1);">
+      <div style="display:grid;grid-template-columns:1fr;gap:1.5rem;align-items:start;margin-bottom:1.5rem;background:#fff;padding:1.25rem 1.5rem;border:1px solid rgba(28,61,53,.1);">
         <div>
           <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--green);">Raipur</div>
           <div style="font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);">04 October 2026</div>
           <div style="font-size:.8rem;color:var(--muted);margin-top:.3rem;">Hyatt, Magneto The Mall, N.H. 6, Jivan Vihar, Labhandih, Raipur, Chhattisgarh 492001</div>
         </div>
-        <div style="text-align:right;">
-          <div style="font-family:'Montserrat',sans-serif;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);">Booking Deadline</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--red-book);" id="deadline-raipur"></div>
         </div>
-      </div>
       <span class="eyebrow">Step 2 — Pick Your Stall</span>
       <h3 style="margin-bottom:1rem;font-style:italic;">Click a stall to select it.</h3>
       <div class="stall-picker-layout">
@@ -203,17 +191,13 @@ const TSM_CONFIG = {
     </div>
 
     <div class="city-panel fade-up" id="panel-jaipur">
-      <div style="display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:start;margin-bottom:1.5rem;background:#fff;padding:1.25rem 1.5rem;border:1px solid rgba(28,61,53,.1);">
+      <div style="display:grid;grid-template-columns:1fr;gap:1.5rem;align-items:start;margin-bottom:1.5rem;background:#fff;padding:1.25rem 1.5rem;border:1px solid rgba(28,61,53,.1);">
         <div>
           <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--green);">Jaipur</div>
           <div style="font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);">11 October 2026</div>
           <div style="font-size:.8rem;color:var(--muted);margin-top:.3rem;">Hilton, Geejgarh House, 42, Hawa Sadak, Jaipur, Rajasthan 302006</div>
         </div>
-        <div style="text-align:right;">
-          <div style="font-family:'Montserrat',sans-serif;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);">Booking Deadline</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--red-book);" id="deadline-jaipur"></div>
         </div>
-      </div>
       <span class="eyebrow">Step 2 — Pick Your Stall</span>
       <h3 style="margin-bottom:1rem;font-style:italic;">Click a stall to select it.</h3>
       <div class="stall-picker-layout">
@@ -249,17 +233,13 @@ const TSM_CONFIG = {
     </div>
 
     <div class="city-panel fade-up" id="panel-chennai">
-      <div style="display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:start;margin-bottom:1.5rem;background:#fff;padding:1.25rem 1.5rem;border:1px solid rgba(28,61,53,.1);">
+      <div style="display:grid;grid-template-columns:1fr;gap:1.5rem;align-items:start;margin-bottom:1.5rem;background:#fff;padding:1.25rem 1.5rem;border:1px solid rgba(28,61,53,.1);">
         <div>
           <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--green);">Chennai</div>
           <div style="font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);">18 October 2026</div>
           <div style="font-size:.8rem;color:var(--muted);margin-top:.3rem;">Amethyst, Whites Road, Royapettah, Chennai</div>
         </div>
-        <div style="text-align:right;">
-          <div style="font-family:'Montserrat',sans-serif;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);">Booking Deadline</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--red-book);" id="deadline-chennai"></div>
         </div>
-      </div>
       <span class="eyebrow">Step 2 — Pick Your Stall</span>
       <h3 style="margin-bottom:1rem;font-style:italic;">Click a stall to select it.</h3>
       <div class="stall-picker-layout">
@@ -361,8 +341,6 @@ function showCity(city) {
   document.getElementById('f_city').value = TSM_CONFIG.cities[city].label;
   document.getElementById('displayCity').value = TSM_CONFIG.cities[city].label;
   clearStallSelection();
-  const dl = document.getElementById('deadline-' + city);
-  if(dl) dl.textContent = 'Deadline: ' + TSM_CONFIG.cities[city].deadline;
   applyBookedStalls(city);
   applySpecialStalls(city);
 }
