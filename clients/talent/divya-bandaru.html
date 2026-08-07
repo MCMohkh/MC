@@ -151,6 +151,22 @@
     .btn-film-toggle:hover { background: var(--red); color: #fff; }
     .btn-film-toggle .film-toggle-icon { transition: transform .3s; }
     .filmography-wrap.open .btn-film-toggle .film-toggle-icon { transform: rotate(180deg); }
+
+    /* ── Gallery lightbox ─────────────────────────────────────────── */
+    .mc-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;}
+    .mc-gallery-item{position:relative;aspect-ratio:1;overflow:hidden;cursor:zoom-in;background:#111;}
+    .mc-gallery-item img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .35s;display:block;}
+    .mc-gallery-item:hover img{transform:scale(1.06);}
+    .mc-gallery-item::after{content:'\f00e';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;bottom:8px;right:10px;color:rgba(255,255,255,.8);font-size:.9rem;opacity:0;transition:opacity .2s;}
+    .mc-gallery-item:hover::after{opacity:1;}
+    .mc-lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:9998;align-items:center;justify-content:center;}
+    .mc-lightbox.active{display:flex;}
+    .mc-lightbox-inner img{max-width:90vw;max-height:88vh;object-fit:contain;}
+    .mc-lb-btn{position:fixed;top:20px;right:24px;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;z-index:10001;padding:8px;}
+    .mc-lb-prev,.mc-lb-next{position:fixed;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;font-size:1.4rem;cursor:pointer;z-index:10001;padding:12px 16px;}
+    .mc-lb-prev{left:16px;}.mc-lb-next{right:16px;}
+    .mc-lb-caption{position:fixed;bottom:48px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.7);font-size:.85rem;max-width:80vw;text-align:center;}
+    .mc-lb-counter{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.45);font-size:.78rem;}
   </style>
 
   <script type="application/ld+json">
@@ -338,6 +354,9 @@
     <h2 style="margin-bottom:1.5rem;">In Frame</h2>
     <div class="mc-gallery">
       <div class="mc-gallery-item"><img loading="lazy" src="/images/talent/Divya Bandaru.jpg" alt="Divya Bandaru — Writer &amp; Director, Avanti Cinema"></div>
+      <div class="mc-gallery-item"><img loading="lazy" src="/images/posters/placeholders/inner-city-blues-poster-placeholder.svg" alt="Inner City Blues — Short Film, Written &amp; Directed by Divya Bandaru" width="400" height="400"></div>
+      <div class="mc-gallery-item"><img loading="lazy" src="https://img.youtube.com/vi/4vFj38ncr7s/hqdefault.jpg" alt="The Murder Plan (Pickpocket 2) — Writer &amp; Director, Divya Bandaru" width="400" height="400"></div>
+      <div class="mc-gallery-item"><img loading="lazy" src="/images/posters/placeholders/nude-poster-placeholder.svg" alt="Nude — Screenplay by Divya Bandaru, In Production Pitch" width="400" height="400"></div>
       <div class="mc-gallery-item"><img loading="lazy" src="/images/posters/viral-video-prashant-podagatlapalli-firstlook-mc-joint-vertical.jpg" alt="Viral Video — Divya Bandaru, Additional Writer" width="400" height="400"></div>
       <div class="mc-gallery-item"><img loading="lazy" src="/images/posters/2022%20Pickpocket/mc-avanti-cinema-Pickpocket-feature-divya-bandaru-avanti-cinema-shashank-raghavula-first-look.png" alt="Pickpocket — first look" width="400" height="400"></div>
       <div class="mc-gallery-item"><img loading="lazy" src="/images/posters/2022%20Pickpocket/mc-avanti-cinema-Pickpocket-feature-divya-bandaru-avanti-cinema-shashank-raghavula-.jpg" alt="Pickpocket — Dir. Divya Bandaru" width="400" height="400"></div>
@@ -415,5 +434,48 @@
   })();
 </script>
 <a class="wa-float" href="https://wa.me/919014414114?text=Hi%20MC%20Joint%2C%20I%27d%20like%20to%20discuss%20a%20project" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+<div id="mcLightbox" class="mc-lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="mc-lb-btn" id="mcLbClose" aria-label="Close">&#10005;</button>
+  <button class="mc-lb-prev" id="mcLbPrev" aria-label="Previous">&#8249;</button>
+  <div class="mc-lightbox-inner"><img id="mcLbImg" src="" alt=""></div>
+  <button class="mc-lb-next" id="mcLbNext" aria-label="Next">&#8250;</button>
+  <div class="mc-lb-caption" id="mcLbCaption"></div>
+  <div class="mc-lb-counter" id="mcLbCounter"></div>
+</div>
+<script>
+(function(){
+  var lb=document.getElementById('mcLightbox');
+  var lbImg=document.getElementById('mcLbImg');
+  var lbCap=document.getElementById('mcLbCaption');
+  var lbCtr=document.getElementById('mcLbCounter');
+  var items=[].slice.call(document.querySelectorAll('.mc-gallery-item img'));
+  var cur=0;
+  function open(i){
+    cur=i;
+    lbImg.src=items[i].src;
+    lbImg.alt=items[i].alt||'';
+    lbCap.textContent=items[i].alt||'';
+    lbCtr.textContent=(i+1)+' / '+items.length;
+    lb.classList.add('active');
+    document.body.style.overflow='hidden';
+  }
+  function close(){lb.classList.remove('active');document.body.style.overflow='';}
+  items.forEach(function(img,i){
+    img.parentNode.style.cursor='zoom-in';
+    img.parentNode.addEventListener('click',function(){open(i);});
+  });
+  document.getElementById('mcLbClose').addEventListener('click',close);
+  document.getElementById('mcLbPrev').addEventListener('click',function(){open((cur-1+items.length)%items.length);});
+  document.getElementById('mcLbNext').addEventListener('click',function(){open((cur+1)%items.length);});
+  lb.addEventListener('click',function(e){if(e.target===lb)close();});
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('active'))return;
+    if(e.key==='Escape')close();
+    if(e.key==='ArrowLeft')open((cur-1+items.length)%items.length);
+    if(e.key==='ArrowRight')open((cur+1)%items.length);
+  });
+})();
+</script>
 </body>
 </html>
