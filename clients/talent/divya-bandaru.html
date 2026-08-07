@@ -71,9 +71,12 @@
     /* Sidebar */
     .sidebar-card { background:var(--light-bg); padding:2rem; }
     .sidebar-card h3 { font-size:1rem; margin-bottom:1.25rem; }
-    
+    .sidebar-card .info-row { display:flex; justify-content:space-between; align-items:flex-start; padding:0.6rem 0; border-bottom:1px solid #e0e0e0; font-size:0.875rem; gap:0.75rem; }
     .sidebar-card .info-row:last-child { border:none; }
-    
+    .sidebar-card .info-label { color:var(--grey); flex-shrink:0; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; font-weight:600; }
+    .sidebar-card .info-value { text-align:right; font-weight:600; color:var(--dark); }
+    .sidebar-card .info-value a { color:inherit; text-decoration:underline; text-decoration-color:#ccc; }
+    .sidebar-card .info-value a:hover { color:var(--red); text-decoration-color:var(--red); }
     
 
     .back-link { display:inline-flex; align-items:center; gap:0.5rem; color:var(--grey); text-decoration:none; font-size:0.8rem; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; margin-bottom:1.5rem; }
@@ -238,6 +241,7 @@
         <div class="divider"></div>
         <p style="color:var(--dark-grey);margin-bottom:1rem;">Divya Bandaru is an actor, writer, and director working at the intersection of indie Telugu cinema and short-form storytelling. She co-wrote and directed <strong>Etthulu</strong> (2022) alongside Camp Sasi, and wrote and directed <strong>Pickpocket</strong> (2022) — a crime short that went on to garner enough attention to spawn a sequel.</p>
         <p style="color:var(--dark-grey);margin-bottom:1rem;">As an actress, she has appeared in <strong>Ranganaayaki</strong> and <strong>Nirudyoga Natulu</strong>, where she played the role of <em>The Landlord</em> under the screen name <strong>Divya Bakshi</strong>. Her work spans both sides of the camera, reflecting a deep investment in storytelling at every level of production.</p>
+        <p style="color:var(--dark-grey);margin-bottom:1rem;">Her short film <strong>Lal Darwaza</strong>, which she wrote and directed, has been shortlisted for screening at the <strong>Seoul International New Wave Film Awards 2026</strong> and continues its festival run. She recently completed the screenplay for <strong>Nude</strong>, currently in the production pitch stage and submitted to international film festivals for production funding. She is also credited as additional writer on <strong>Viral Video</strong>, and is presently writing and pitching her next feature film.</p>
 
         
         <div class="social-platform-links"><a href="https://www.imdb.com/name/nm10155334/" target="_blank" rel="noopener"><svg viewBox="0 0 48 20" fill="none" style="height:16px;"><rect width="48" height="20" rx="3" fill="#F5C518"/><text x="4" y="15" font-family="Arial Black,Arial" font-weight="900" font-size="13" fill="#000">IMDb</text></svg> IMDb</a><a href="https://www.instagram.com/divya.bandaru.r/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" style="height:16px;width:16px;"><defs><linearGradient id="igGdb" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="50%" stop-color="#dc2743"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><path fill="url(#igGdb)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg> Instagram</a></div>
@@ -246,13 +250,17 @@
         <div class="credits-block">
           <h3>As Director &amp; Writer</h3>
           <ul class="discography">
+            <li><div><div class="disc-title">Lal Darwaza</div><div class="disc-type">Short Film · Writer &amp; Director · On Festival Run · Honorary Mention, Seoul International New Wave Film Awards 2026</div></div></li>
+            <li><div><div class="disc-title">Nude</div><div class="disc-type">Feature Film · Screenplay Writer · In Production Pitch · Submitted to international festivals for production funding</div></div></li>
+            <li><div><div class="disc-title">The Murder Plan (Pickpocket 2)</div><div class="disc-type">Feature Film · Writer &amp; Director · In Post-Production</div></div></li>
+            <li><div><div class="disc-title">Viral Video</div><div class="disc-type">Feature Film · Additional Writer</div></div></li>
             <li><div><div class="disc-title">Pickpocket</div><div class="disc-type">2022 · Feature Film · Writer &amp; Director · Avanti Cinema</div></div></li>
             <li><div><div class="disc-title">Etthulu</div><div class="disc-type">Short Film · Writer &amp; Director</div></div></li>
             <li><div><div class="disc-title">Inner City Blues</div><div class="disc-type">Short Film · Writer &amp; Director · Avanti Cinema</div></div></li>
-            <li><div><div class="disc-title">The Murder Plan (Pickpocket 2)</div><div class="disc-type">TBD · Writer &amp; Director · Upcoming</div></div></li>
             <li><div><div class="disc-title">Ranganaayaki</div><div class="disc-type">Actress as Divya Bakshi</div></div></li>
             <li><div><div class="disc-title">Nirudyoga Natulu</div><div class="disc-type">2018 · TV Series · Actress as The Landlord (as Divya Bakshi)</div></div></li>
           </ul>
+          <p style="color:var(--grey);font-size:0.82rem;margin-top:1rem;font-style:italic;">Currently writing and pitching her next feature film.</p>
         </div>
 
         <!-- ACTING CREDITS -->
@@ -284,8 +292,10 @@
           <div class="info-row"><span class="info-label">Category</span><span class="info-value">Writer · Director · Actress</span></div>
           <div class="info-row"><span class="info-label">Screen Name</span><span class="info-value">Divya Bakshi</span></div>
           <div class="info-row"><span class="info-label">City</span><span class="info-value">Hyderabad</span></div>
-          <div class="info-row"><span class="info-label">Known For</span><span class="info-value">Pickpocket, Etthulu, The Murder Plan</span></div>
-          <div class="info-row"><span class="info-label">IMDb</span><span class="info-value"><a href="https://www.imdb.com/name/nm10155334/" target="_blank" rel="noopener" style="color:inherit;">nm10155334</a></span></div>
+          <div class="info-row"><span class="info-label">Known For</span><span class="info-value">Pickpocket, Lal Darwaza, The Murder Plan</span></div>
+          <div class="info-row"><span class="info-label">Latest</span><span class="info-value">Lal Darwaza — Seoul International New Wave Film Awards 2026</span></div>
+          <div class="info-row"><span class="info-label">IMDb</span><span class="info-value"><a href="https://www.imdb.com/name/nm10155334/" target="_blank" rel="noopener">nm10155334</a></span></div>
+          <div class="info-row"><span class="info-label">Instagram</span><span class="info-value"><a href="https://www.instagram.com/divya.bandaru.r/" target="_blank" rel="noopener">@divya.bandaru.r</a></span></div>
           <div class="info-row"><span class="info-label">Services</span><span class="info-value">Talent Representation</span></div>
         </div>
         <div style="margin-top:1.5rem;">
@@ -295,7 +305,7 @@
           
         <div class="sidebar-card" style="margin-top:1.5rem;">
           <h3 style="font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;color:var(--grey);margin-bottom:1rem;">Related Works &amp; Articles</h3>
-          <a href="../../works/pickpocket.html" style="display:flex;align-items:center;gap:.6rem;padding:.5rem 0;border-bottom:1px solid #eee;text-decoration:none;color:var(--dark-grey);font-size:.85rem;transition:color .2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--dark-grey)'"><i class="fas fa-film" style="color:var(--red);font-size:.75rem;flex-shrink:0;"></i><span>Pickpocket</span><span style="margin-left:auto;font-size:.7rem;color:var(--grey);font-weight:700;text-transform:uppercase;letter-spacing:.06em;">Works</span></a>
+          <a href="../../works/viral-video.html" style="display:flex;align-items:center;gap:.6rem;padding:.5rem 0;border-bottom:1px solid #eee;text-decoration:none;color:var(--dark-grey);font-size:.85rem;transition:color .2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--dark-grey)'"><i class="fas fa-film" style="color:var(--red);font-size:.75rem;flex-shrink:0;"></i><span>Viral Video</span><span style="margin-left:auto;font-size:.7rem;color:var(--grey);font-weight:700;text-transform:uppercase;letter-spacing:.06em;">Works</span></a>
           <a href="../../works/avanti-cinema.html" style="display:flex;align-items:center;gap:.6rem;padding:.5rem 0;border-bottom:1px solid #eee;text-decoration:none;color:var(--dark-grey);font-size:.85rem;transition:color .2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--dark-grey)'"><i class="fas fa-film" style="color:var(--red);font-size:.75rem;flex-shrink:0;"></i><span>Avanti Cinema — Full Service Partnership</span><span style="margin-left:auto;font-size:.7rem;color:var(--grey);font-weight:700;text-transform:uppercase;letter-spacing:.06em;">Works</span></a>
           <a href="../../works/story-discussion-s2.html" style="display:flex;align-items:center;gap:.6rem;padding:.5rem 0;border-bottom:1px solid #eee;text-decoration:none;color:var(--dark-grey);font-size:.85rem;transition:color .2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--dark-grey)'"><i class="fas fa-film" style="color:var(--red);font-size:.75rem;flex-shrink:0;"></i><span>Story Discussion Season 2</span><span style="margin-left:auto;font-size:.7rem;color:var(--grey);font-weight:700;text-transform:uppercase;letter-spacing:.06em;">Works</span></a>
         </div>
@@ -328,6 +338,7 @@
     <h2 style="margin-bottom:1.5rem;">In Frame</h2>
     <div class="mc-gallery">
       <div class="mc-gallery-item"><img loading="lazy" src="/images/talent/Divya Bandaru.jpg" alt="Divya Bandaru — Writer &amp; Director, Avanti Cinema"></div>
+      <div class="mc-gallery-item"><img loading="lazy" src="/images/posters/viral-video-prashant-podagatlapalli-firstlook-mc-joint-vertical.jpg" alt="Viral Video — Divya Bandaru, Additional Writer" width="400" height="400"></div>
       <div class="mc-gallery-item"><img loading="lazy" src="/images/posters/2022%20Pickpocket/mc-avanti-cinema-Pickpocket-feature-divya-bandaru-avanti-cinema-shashank-raghavula-first-look.png" alt="Pickpocket — first look" width="400" height="400"></div>
       <div class="mc-gallery-item"><img loading="lazy" src="/images/posters/2022%20Pickpocket/mc-avanti-cinema-Pickpocket-feature-divya-bandaru-avanti-cinema-shashank-raghavula-.jpg" alt="Pickpocket — Dir. Divya Bandaru" width="400" height="400"></div>
       <div class="mc-gallery-item"><img loading="lazy" src="/images/posters/2022%20Pickpocket/mc-avanti-cinema-Pickpocket-feature-divya-bandaru-avanti-cinema-shashank-raghavula-film-screenshot.png" alt="Pickpocket — film still" width="400" height="400"></div>
