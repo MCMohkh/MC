@@ -1,231 +1,460 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <title>Check In — The Style Mill</title>
   <meta name="robots" content="noindex, nofollow">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="../tsm.css">
+  <!-- NOTE: fully self-contained on purpose. checkin.html lives beside tsm.css, so the old "../tsm.css" path was broken. -->
   <style>
-    .checkin-topbar{display:flex;align-items:center;justify-content:center;padding:1.25rem 1rem;background:var(--dark,#1C3D35);}
-    .checkin-topbar img{height:34px;}
-    .chip-group{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.6rem;}
+    :root{
+      --green:#1C3D35; --green-d:#12291F; --gold:#C9A96E; --gold-d:#A98B4F;
+      --cream:#F2E8D5; --paper:#FBF7EE; --muted:#6D685C; --line:rgba(28,61,53,.16);
+      --serif:'Cormorant Garamond',Georgia,serif; --sans:'Montserrat',system-ui,sans-serif;
+    }
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;} *{transition:none !important;}}
+    body{margin:0;background:var(--paper);color:var(--green);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-text-size-adjust:100%;}
+    [hidden]{display:none !important;}
+    :focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+    button{font-family:inherit;}
+
+    /* ---------- Hero: twill weave, a nod to the "mill" ---------- */
+    .hero{
+      background-color:var(--green);
+      background-image:
+        repeating-linear-gradient(135deg, rgba(201,169,110,.07) 0 1px, transparent 1px 7px),
+        radial-gradient(120% 80% at 50% 0%, rgba(201,169,110,.14), transparent 60%);
+      color:var(--cream);text-align:center;padding:2rem 1.25rem 5.5rem;
+    }
+    .hero img{height:38px;width:auto;display:block;margin:0 auto 2.25rem;}
+    .hero .where{font-size:.78rem;letter-spacing:.06em;color:var(--gold);margin:0 0 .9rem;font-weight:500;}
+    .hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.3rem,9vw,3.4rem);line-height:1.05;margin:0 0 1rem;}
+    .hero h1 em{font-style:italic;color:var(--gold);}
+    .hero p.lede{max-width:34ch;margin:0 auto;color:rgba(242,232,213,.72);font-size:.9rem;}
+
+    /* ---------- Form card ---------- */
+    .card{
+      position:relative;max-width:620px;margin:-3rem auto 0;background:#fff;
+      border:1px solid var(--line);border-top:3px solid var(--gold);padding:1.75rem 1.4rem 0;
+    }
+    @media(min-width:640px){.card{padding:2.25rem 2.5rem 0;margin-top:-3.5rem;}}
+    fieldset{border:0;padding:0;margin:0 0 2.1rem;min-width:0;}
+    legend{padding:0;width:100%;}
+    .q{font-family:var(--serif);font-size:1.55rem;font-weight:500;line-height:1.15;display:flex;justify-content:space-between;align-items:baseline;gap:1rem;}
+    .q .count{font-family:var(--sans);font-size:.72rem;font-weight:600;color:var(--gold-d);white-space:nowrap;}
+    .hint{margin:.3rem 0 1rem;font-size:.8rem;color:var(--muted);}
+    .sub{font-size:.74rem;font-weight:600;color:var(--muted);margin:1.15rem 0 .5rem;padding-bottom:.35rem;border-bottom:1px solid var(--line);}
+    .sub:first-of-type{margin-top:.25rem;}
+
+    .field{margin-bottom:1rem;}
+    .field label{display:block;font-size:.76rem;font-weight:600;margin-bottom:.35rem;}
+    .field label span{font-weight:400;color:var(--muted);}
+    .field input{
+      width:100%;padding:.85rem .9rem;font:inherit;font-size:16px;color:var(--green);background:var(--paper);
+      border:1px solid var(--line);border-radius:2px;min-height:48px;
+    }
+    .field input::placeholder{color:#a39d90;}
+    .field input:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(201,169,110,.35);}
+
+    /* ---------- Chips ---------- */
+    .chips{display:flex;flex-wrap:wrap;gap:.5rem;}
     .chip{
-      border:1.5px solid rgba(28,61,53,.25);background:#fff;color:var(--dark,#1C3D35);
-      font-family:'Montserrat',sans-serif;font-size:.82rem;font-weight:600;
-      padding:.7rem 1.1rem;border-radius:999px;cursor:pointer;user-select:none;
-      transition:all .15s ease;min-height:44px;display:flex;align-items:center;
+      display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:.55rem .95rem;
+      background:#fff;color:var(--green);border:1px solid rgba(28,61,53,.28);border-radius:2px;
+      font-size:.82rem;font-weight:500;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent;
+      transition:background .15s,color .15s,border-color .15s;
     }
-    .chip i{margin-right:.4rem;font-size:.8rem;opacity:.6;}
-    .chip.active{background:var(--green,#1C3D35);border-color:var(--green,#1C3D35);color:#F2E8D5;}
-    .chip.active i{opacity:1;}
+    .chip::before{content:'';width:0;overflow:hidden;font-family:'Font Awesome 6 Free';font-weight:900;font-size:.68rem;transition:width .15s;}
+    .chip.on{background:var(--green);border-color:var(--green);color:var(--cream);}
+    .chip.on::before{content:'\f00c';width:.8rem;color:var(--gold);}
     .chip:active{transform:scale(.97);}
-    .checkin-section-label{font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted,#7a7268);margin-top:1.75rem;display:block;}
-    #mapSection{display:none;}
-    #mapSection.visible{display:block;}
-    #checkinFormSection.hidden{display:none;}
-    .map-wrap{max-width:640px;margin:0 auto;text-align:center;}
-    .map-wrap img{width:100%;height:auto;border:1px solid rgba(28,61,53,.15);}
-    .directory-search{max-width:480px;margin:2rem auto 1rem;position:relative;}
-    .directory-search input{
-      width:100%;padding:.85rem 1rem .85rem 2.6rem;border:1.5px solid rgba(28,61,53,.2);
-      font-family:'Montserrat',sans-serif;font-size:.9rem;border-radius:6px;
+    @media(hover:hover){.chip:not(.on):hover{border-color:var(--green);background:var(--paper);}}
+
+    /* ---------- Sticky submit ---------- */
+    .submit-bar{position:sticky;bottom:0;margin:0 -1.4rem;padding:1.6rem 1.4rem 1.1rem;background:linear-gradient(to bottom,rgba(255,255,255,0),#fff 38%);}
+    @media(min-width:640px){.submit-bar{margin:0 -2.5rem;padding:1.6rem 2.5rem 1.4rem;}}
+    .btn{
+      width:100%;min-height:54px;border:0;border-radius:2px;background:var(--gold);color:var(--green-d);
+      font-size:.95rem;font-weight:700;cursor:pointer;transition:background .15s;
     }
-    .directory-search i{position:absolute;left:1rem;top:50%;transform:translateY(-50%);color:var(--muted,#7a7268);}
-    .directory-list{max-width:480px;margin:0 auto;max-height:360px;overflow-y:auto;border:1px solid rgba(28,61,53,.12);}
-    .directory-row{
-      display:flex;justify-content:space-between;gap:1rem;padding:.7rem 1rem;
-      border-bottom:1px solid rgba(28,61,53,.08);font-family:'Montserrat',sans-serif;font-size:.85rem;
+    .btn:hover{background:#d6b97f;}
+    .btn:disabled{opacity:.65;cursor:wait;}
+    .fine{margin:.65rem 0 0;text-align:center;font-size:.72rem;color:var(--muted);}
+
+    /* ---------- Map + directory ---------- */
+    .floor{max-width:760px;margin:0 auto;padding:2.5rem 1.1rem 3rem;}
+    .floor-head{text-align:center;margin-bottom:1.5rem;}
+    .floor-head .hi{font-size:.85rem;color:var(--gold-d);font-weight:600;margin:0 0 .35rem;}
+    .floor-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,7vw,2.8rem);line-height:1.05;margin:0;}
+    .floor-head button.link{margin-top:.7rem;background:none;border:0;color:var(--muted);font-size:.74rem;text-decoration:underline;cursor:pointer;padding:.4rem;}
+
+    .map-frame{position:relative;border:1px solid var(--line);background:#fff;padding:.5rem;cursor:zoom-in;}
+    .map-frame img{width:100%;height:auto;display:block;}
+    .map-frame .zoom{
+      position:absolute;right:.9rem;bottom:.9rem;background:var(--green);color:var(--cream);
+      font-size:.72rem;font-weight:600;padding:.5rem .8rem;border-radius:2px;pointer-events:none;
     }
-    .directory-row:last-child{border-bottom:none;}
-    .directory-row .stall-no{font-weight:700;color:var(--green,#1C3D35);min-width:3.2rem;}
-    .directory-row .stall-name{flex:1;text-align:right;color:var(--dark,#1C3D35);}
-    .directory-row.tbc .stall-name{font-style:italic;color:var(--muted,#7a7268);}
-    .directory-empty{padding:1.5rem;text-align:center;color:var(--muted,#7a7268);font-size:.85rem;font-style:italic;}
-    .checkin-note{max-width:480px;margin:1.5rem auto 0;text-align:center;font-size:.8rem;color:var(--muted,#7a7268);}
+    .map-frame .zoom i{color:var(--gold);margin-right:.35rem;}
+
+    .find{position:sticky;top:0;z-index:5;background:var(--paper);padding:1.4rem 0 .8rem;}
+    .find h3{font-family:var(--serif);font-weight:500;font-size:1.5rem;margin:0 0 .6rem;}
+    .search{position:relative;}
+    .search i{position:absolute;left:.95rem;top:50%;transform:translateY(-50%);color:var(--muted);font-size:.85rem;}
+    .search input{
+      width:100%;min-height:48px;padding:.75rem .9rem .75rem 2.5rem;font:inherit;font-size:16px;color:var(--green);
+      background:#fff;border:1px solid var(--line);border-radius:2px;
+    }
+    .search input:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(201,169,110,.35);}
+
+    .stalls{list-style:none;margin:0;padding:0;background:#fff;border:1px solid var(--line);}
+    .stall{display:flex;align-items:center;gap:.9rem;padding:.55rem .6rem .55rem .9rem;border-bottom:1px solid var(--line);min-height:56px;}
+    .stall:last-child{border-bottom:0;}
+    .stall .no{
+      flex:0 0 3.4rem;text-align:center;font-family:var(--serif);font-size:1.15rem;font-weight:600;color:var(--green);
+      border-right:1px solid var(--line);padding-right:.9rem;line-height:1.1;
+    }
+    .stall .name{flex:1;font-size:.9rem;font-weight:500;line-height:1.3;}
+    .stall .name small{display:block;font-weight:400;font-size:.72rem;color:var(--muted);font-style:italic;}
+    .stall .links{display:flex;gap:.15rem;}
+    .stall .links a{
+      width:44px;height:44px;display:flex;align-items:center;justify-content:center;color:var(--green);text-decoration:none;
+      border-radius:50%;font-size:1.05rem;
+    }
+    .stall .links a:hover{background:var(--cream);color:var(--gold-d);}
+    .empty{padding:1.75rem 1rem;text-align:center;color:var(--muted);font-size:.85rem;background:#fff;border:1px solid var(--line);}
+    .floor-note{margin:1.1rem auto 0;max-width:46ch;text-align:center;font-size:.76rem;color:var(--muted);}
+
+    /* ---------- Map lightbox ---------- */
+    .lightbox{position:fixed;inset:0;z-index:50;background:rgba(18,41,31,.94);display:flex;flex-direction:column;}
+    .lightbox-bar{display:flex;justify-content:space-between;align-items:center;padding:.75rem 1rem;color:var(--cream);font-size:.8rem;}
+    .lightbox-bar button{background:var(--gold);color:var(--green-d);border:0;border-radius:2px;font-weight:700;font-size:.8rem;padding:.65rem 1rem;min-height:44px;cursor:pointer;}
+    .lightbox-scroll{flex:1;overflow:auto;-webkit-overflow-scrolling:touch;padding:0 .5rem 1rem;}
+    .lightbox-scroll img{width:220vw;max-width:1600px;height:auto;display:block;background:#fff;}
+    @media(min-width:900px){.lightbox-scroll img{width:100%;max-width:1200px;margin:0 auto;}}
+
+    footer{background:var(--green-d);color:rgba(242,232,213,.6);text-align:center;padding:2rem 1rem;font-size:.75rem;}
+    footer img{height:30px;margin-bottom:1rem;}
+    footer .social a{color:var(--cream);font-size:1.15rem;margin:0 .6rem;text-decoration:none;}
+    footer .mc{margin-top:1rem;font-size:.7rem;} footer .mc a{color:var(--gold);}
   </style>
 </head>
 <body>
 
-<div class="checkin-topbar">
-  <a href="../index.html"><img src="/images/The%20Style%20Mill/TSM-Logo-White.png" alt="The Style Mill"></a>
-</div>
+<header class="hero">
+  <a href="index.html"><img src="/images/The%20Style%20Mill/TSM-Logo-White.png" alt="The Style Mill"></a>
+  <p class="where">Taj Deccan, Hyderabad · 20 September</p>
+  <h1>You're in.<br><em>Let's find your look.</em></h1>
+  <p class="lede">Tell us what you're shopping for and the floor map opens right after.</p>
+</header>
 
-<div class="page-header" style="background:var(--dark);">
-  <span class="eyebrow">Hyderabad · Taj Deccan · 20 September</span>
-  <h1>You're Here.<br>Let's Get You Shopping.</h1>
-  <p style="color:rgba(242,232,213,.65);">A few quick details, then the full floor map and every designer's stall number unlocks below.</p>
-</div>
+<!-- ============ CHECK-IN FORM ============ -->
+<main id="formSection">
+  <form class="card" id="checkinForm" novalidate>
 
-<section class="section bg-cream-d" id="checkinFormSection">
-  <div class="container">
-    <div class="visit-form-wrap">
+    <fieldset>
+      <legend class="q">Your details</legend>
+      <p class="hint">Just so we can say hello and follow up after the show.</p>
+      <div class="field"><label for="ciName">Full name</label><input type="text" id="ciName" autocomplete="name" placeholder="Your full name" required></div>
+      <div class="field"><label for="ciPhone">Phone (WhatsApp)</label><input type="tel" id="ciPhone" autocomplete="tel" inputmode="tel" placeholder="+91 XXXXX XXXXX" required></div>
+      <div class="field"><label for="ciEmail">Email <span>(optional)</span></label><input type="email" id="ciEmail" autocomplete="email" placeholder="you@email.com"></div>
+    </fieldset>
 
-      <form id="checkinForm">
-        <div class="tsm-form-section">
-          <div class="form-grid">
-            <div class="form-group"><label>Full Name *</label><input type="text" name="name" id="ciName" placeholder="Your full name" required></div>
-            <div class="form-group"><label>Phone *</label><input type="tel" name="phone" id="ciPhone" placeholder="+91 XXXXX XXXXX" required></div>
-            <div class="form-group form-full"><label>Email</label><input type="email" name="email" id="ciEmail" placeholder="you@email.com"></div>
-          </div>
+    <fieldset>
+      <legend class="q">What's the occasion? <span class="count" data-count="occasionGroup"></span></legend>
+      <p class="hint">Pick as many as apply.</p>
+      <div class="chips" id="occasionGroup" role="group" aria-label="Occasion"></div>
+    </fieldset>
 
-          <span class="checkin-section-label">What are you shopping for today?</span>
-          <div class="chip-group" id="shoppingForGroup">
-            <button type="button" class="chip" data-value="Festive"><i class="fas fa-check"></i>Festive</button>
-            <button type="button" class="chip" data-value="Wedding"><i class="fas fa-check"></i>Wedding</button>
-            <button type="button" class="chip" data-value="Casual"><i class="fas fa-check"></i>Casual</button>
-            <button type="button" class="chip" data-value="Relaxed"><i class="fas fa-check"></i>Relaxed</button>
-          </div>
+    <fieldset>
+      <legend class="q">What are you looking for? <span class="count" data-count="lookingGroup"></span></legend>
+      <p class="hint">Tap everything you'd like to see today.</p>
+      <div id="lookingGroup"></div>
+      <div class="field" style="margin-top:1.1rem;">
+        <label for="ciNotes">Something specific in mind? <span>(optional)</span></label>
+        <input type="text" id="ciNotes" maxlength="200" placeholder="e.g. pastel sherwani for a day wedding">
+      </div>
+    </fieldset>
 
-          <span class="checkin-section-label">Who are you shopping for / with?</span>
-          <div class="chip-group" id="shoppingWithGroup">
-            <button type="button" class="chip" data-value="Myself"><i class="fas fa-check"></i>Myself</button>
-            <button type="button" class="chip" data-value="Husband"><i class="fas fa-check"></i>Husband</button>
-            <button type="button" class="chip" data-value="Wife"><i class="fas fa-check"></i>Wife</button>
-            <button type="button" class="chip" data-value="Father"><i class="fas fa-check"></i>Father</button>
-            <button type="button" class="chip" data-value="Mother"><i class="fas fa-check"></i>Mother</button>
-            <button type="button" class="chip" data-value="Brother"><i class="fas fa-check"></i>Brother</button>
-            <button type="button" class="chip" data-value="Sister"><i class="fas fa-check"></i>Sister</button>
-            <button type="button" class="chip" data-value="Friend(s)"><i class="fas fa-check"></i>Friend(s)</button>
-          </div>
+    <fieldset>
+      <legend class="q">Budget for one outfit</legend>
+      <p class="hint">A rough range is plenty. Pick one.</p>
+      <div class="chips" id="budgetGroup" role="group" aria-label="Budget per outfit"></div>
+    </fieldset>
 
-          <div class="form-submit-row" style="margin-top:2rem;">
-            <button type="submit" class="btn-tsm-primary" id="checkinSubmitBtn">Show Me The Map →</button>
-          </div>
-        </div>
-      </form>
+    <fieldset>
+      <legend class="q">Who are you shopping for or with? <span class="count" data-count="withGroup"></span></legend>
+      <p class="hint">Pick as many as apply.</p>
+      <div class="chips" id="withGroup" role="group" aria-label="Shopping for or with"></div>
+    </fieldset>
 
+    <div class="submit-bar">
+      <button type="submit" class="btn" id="checkinSubmitBtn">Open the floor map</button>
+      <p class="fine" id="formError" role="alert" hidden style="color:#9b2c2c;font-weight:600;"></p>
+      <p class="fine" id="formFine">Takes under a minute. No spam, ever.</p>
     </div>
+  </form>
+  <div style="height:3rem;"></div>
+</main>
+
+<!-- ============ FLOOR MAP + DIRECTORY ============ -->
+<section class="floor" id="mapSection" hidden>
+  <div class="floor-head">
+    <p class="hi" id="welcomeLine">Welcome</p>
+    <h2>The floor, stall by stall.</h2>
+    <button type="button" class="link" id="notYou">Not you? Check in again</button>
   </div>
-</section>
 
-<section class="section bg-cream" id="mapSection">
-  <div class="container">
-    <div class="text-center fade-up" style="margin-bottom:2rem;">
-      <span class="eyebrow">You're In</span>
-      <h2 style="font-style:italic;">The Floor, Stall by Stall.</h2>
-      <div class="divider divider-center"></div>
-    </div>
+  <div class="map-frame" id="mapFrame" role="button" tabindex="0" aria-label="Enlarge floor map">
+    <img src="/images/The%20Style%20Mill/Hyd-Stall-Layout.jpeg" alt="The Style Mill Hyderabad stall layout at Taj Deccan">
+    <span class="zoom"><i class="fas fa-magnifying-glass-plus"></i>Tap to enlarge</span>
+  </div>
 
-    <div class="map-wrap">
-      <img src="/images/The%20Style%20Mill/Hyd-Stall-Layout.jpeg" alt="The Style Mill — Hyderabad Taj Deccan stall layout">
-    </div>
-
-    <div class="directory-search">
+  <div class="find">
+    <h3>Find a designer</h3>
+    <div class="search">
       <i class="fas fa-search"></i>
-      <input type="text" id="directorySearch" placeholder="Search a designer or stall number...">
+      <input type="search" id="directorySearch" placeholder="Search by name or stall number" autocomplete="off">
     </div>
-    <div class="directory-list" id="directoryList"></div>
-
-    <p class="checkin-note">Two or three stalls are still being finalised on this map — if you can't find someone, ask any team member on the floor.</p>
   </div>
+  <ul class="stalls" id="directoryList"></ul>
+
+  <p class="floor-note">Stalls 34, 35, 42, 43, 48 and 49 are trial rooms. Two stalls are still being finalised, so ask any team member on the floor if you can't find someone.</p>
 </section>
 
-<footer class="tsm-footer">
-  <div class="tsm-footer-logo"><img src="/images/The%20Style%20Mill/TSM-Logo-White.png" alt="The Style Mill"></div>
-  <p style="color:#555;font-size:.8rem;">Season 6 · Diwali Edit 2026</p>
-  <div class="tsm-social-links">
-    <a href="https://www.instagram.com/the_stylemill/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-    <a href="https://wa.me/919000008909" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Floor map" hidden>
+  <div class="lightbox-bar"><span>Scroll to move around the map</span><button type="button" id="lightboxClose">Close</button></div>
+  <div class="lightbox-scroll"><img src="/images/The%20Style%20Mill/Hyd-Stall-Layout.jpeg" alt="Full-size stall layout"></div>
+</div>
+
+<footer>
+  <img src="/images/The%20Style%20Mill/TSM-Logo-White.png" alt="The Style Mill"><br>
+  Season 6 · Diwali Edit 2026
+  <div class="social" style="margin-top:.9rem;">
+    <a href="https://www.instagram.com/the_stylemill/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://wa.me/919000008909" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
   </div>
-  <div class="tsm-footer-mc">Campaign Strategy &amp; Digital by <a href="/">MC Joint, Hyderabad</a></div>
+  <div class="mc">Campaign Strategy &amp; Digital by <a href="/">MC Joint, Hyderabad</a></div>
 </footer>
 
 <script>
-// ---- Apps Script endpoint — same deployment used by the Visit page ----
 const TSM_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbwluZtzjR40VDNhCK1fxj3iOj2mR_YoZa2wr-bMhofwYUafMEUhkWTrBppbWL3xyyD9cw/exec';
+const STORAGE_KEY = 'tsm_checkin_hyd_2026';
 
-// ---- Stall directory — exactly as supplied; gaps (34,35,42,43,48,49) are Trial Room space ----
-const STALL_DIRECTORY = [
-  {no:'1', name:'Heartistry'}, {no:'2', name:'Varun Chakkilam'}, {no:'3', name:'Label J'},
-  {no:'4', name:'Payal & Rishab'}, {no:'5', name:'Naman ahuja'}, {no:'6', name:'Riqo'},
-  {no:'7', name:'House of koa'}, {no:'8', name:'Nimai'}, {no:'9', name:'Keshawa'},
-  {no:'10', name:'Modello domani'}, {no:'11', name:'Modello domani'}, {no:'12', name:'Shreyansh'},
-  {no:'13', name:'Shay Studio'}, {no:'14', name:'Kudrat by Chirag'}, {no:'15', name:'Golden brush'},
-  {no:'16/T1', name:'Akanksha jewellery'}, {no:'17/T2', name:'House of matches'}, {no:'18', name:'Kanishk Ethnics'},
-  {no:'19', name:'Manav (Anuradha) Grewal'}, {no:'20', name:'Ashish Bunker Jaipur'}, {no:'21', name:'uniqa'},
-  {no:'22', name:'Sanhi'}, {no:'23', name:'Amrit Dawani'}, {no:'24', name:'Adyaaye'},
-  {no:'24B', name:'Amrit Dawani'}, {no:'25', name:'Gargee Designs'}, {no:'26', name:'Gargee Designs'},
-  {no:'27', name:'I Stylo by dana designs'}, {no:'28', name:'Saje x Rohit Doshi'}, {no:'29', name:'Saje Multi Designer'},
-  {no:'30', name:'Aastha Sanghvi'}, {no:'31', name:'Amansh'}, {no:'32', name:'So Man'},
-  {no:'33', name:'Shay studio'}, {no:'36', name:'Abraham & thakore'}, {no:'37', name:'Gabana'},
-  {no:'38', name:'Archana Jain'}, {no:'39', name:'Siddharth Kakkar'}, {no:'40', name:'Shubh Vastram Jodhpur'},
-  {no:'41', name:'Statement'}, {no:'44', name:'Naymish'}, {no:'45', name:'Darshika'},
-  {no:'46', name:'Abees'}, {no:'47', name:'ARVA BY PALAK AGRAWAL GUPTA'}, {no:'50', name:'Divyansh & Garvit || KARMACODE'},
-  {no:'51', name:'Divyansh & Garvit || KARMACODE'}, {no:'52', name:'House of Jama'},
-  {no:'53', name:'Abraham & Thakore', tbc:true}, {no:'54', name:'Aakanksha Jewels & Diamonds', tbc:true},
+/* =====================================================================
+   OPTIONS — edit these lists to change the buttons. Nothing else to touch.
+   ===================================================================== */
+const OCCASIONS = ['Festive','Wedding','Sangeet / Mehendi','Reception','Party wear','Office / Formal','Casual','Relaxed','Gifting','Just browsing'];
+
+const LOOKING_FOR = [
+  { group:'Wedding & festive', items:['Sherwani','Bandhgala / Jodhpuri','Kurta set','Indo-western','Nehru / Bundi jacket','Waistcoat'] },
+  { group:'Everyday & smart',  items:['Casual kurta','Shirts','Linen / resort wear','Blazer / suit','Co-ord set','Trousers'] },
+  { group:'Finishing touches', items:['Footwear','Jewellery','Stoles & accessories','Unstitched fabric'] }
 ];
 
-function renderDirectory(filter) {
+const BUDGETS = ['Under ₹5k','₹5k – 10k','₹10k – 20k','₹20k – 40k','₹40k +','Not sure yet'];
+
+const SHOPPING_WITH = ['Myself','Husband','Wife','Father','Mother','Brother','Sister','Son','Friend(s)','Groom'];
+
+/* =====================================================================
+   STALL DIRECTORY — gaps (34,35,42,43,48,49) are trial room space.
+   ig = Instagram handle, web = website. Add or fix links here.
+   ===================================================================== */
+const STALLS = [
+  {no:'1',  name:'Heartistry', ig:'heartistryofficial_', web:'https://heartistry.in/'},
+  {no:'2',  name:'Varun Chakkilam'},
+  {no:'3',  name:'Label J', ig:'labeljmensco', web:'https://labeljmensco.com/'},
+  {no:'4',  name:'Payal & Rishab'},
+  {no:'5',  name:'Naman Ahuja', ig:'namanahujadesignhouse', web:'https://namanahuja.com/'},
+  {no:'6',  name:'Riqo', ig:'riqostudio'},
+  {no:'7',  name:'House of Koa'},
+  {no:'8',  name:'Nimai', ig:'shopnimai', web:'https://shopnimai.in/'},
+  {no:'9',  name:'Keshawa', ig:'keshawaofficial', web:'https://keshawaofficial.com/'},
+  {no:'10', name:'Modello Domani'},
+  {no:'11', name:'Modello Domani'},
+  {no:'12', name:'Shreyansh', ig:'shreyansh_designs', web:'https://shreyanshdesigns.com/'},
+  {no:'13', name:'Shay Studio', ig:'shaystudio.in', web:'https://shaystudio.in/'},
+  {no:'14', name:'Kudrat by Chirag', ig:'kudratcouture', web:'https://shopnavaa.com/collections/kudrat-by-chirag'},
+  {no:'15', name:'Golden Brush', ig:'thegoldenbrush_official'},
+  {no:'16/T1', name:'Akanksha Jewellery'},
+  {no:'17/T2', name:'House of Matches'},
+  {no:'18', name:'Kanishk Ethnics'},
+  {no:'19', name:'Manav (Anuradha) Grewal', ig:'anuradhagrewalofficial', web:'https://anuradhagrewal.in/'},
+  {no:'20', name:'Ashish Bunker Jaipur', ig:'ashishbunkerjaipur'},
+  {no:'21', name:'Uniqa', ig:'uniqa.co.in', web:'https://uniqa.co.in/'},
+  {no:'22', name:'Sanhi', ig:'sanhi.in', web:'https://sanhi.in/'},
+  {no:'23', name:'Amrit Dawani', ig:'amritdawaniofficial', web:'https://amritdawani.com/'},
+  {no:'24', name:'Adyaaye', ig:'adyaaye_official', web:'https://adyaaye.com/'},
+  {no:'24B',name:'Amrit Dawani', ig:'amritdawaniofficial', web:'https://amritdawani.com/'},
+  {no:'25', name:'Gargee Designs', ig:'gargee_designers', web:'https://gargee.com/'},
+  {no:'26', name:'Gargee Designs', ig:'gargee_designers', web:'https://gargee.com/'},
+  {no:'27', name:'I Stylo by Dana Designs', ig:'i_stylo.in'},
+  {no:'28', name:'Saje x Rohit Doshi'},
+  {no:'29', name:'Saje Multi Designer'},
+  {no:'30', name:'Aastha Sanghvi'},
+  {no:'31', name:'Amansh', ig:'studio.amansh'},
+  {no:'32', name:'So Man', web:'https://somanstore.com/'},
+  {no:'33', name:'Shay Studio', ig:'shaystudio.in', web:'https://shaystudio.in/'},
+  {no:'36', name:'Abraham & Thakore', ig:'abrahamandthakore', web:'https://www.abrahamandthakore.com/'},
+  {no:'37', name:'Gabana'},
+  {no:'38', name:'Archana Jain'},
+  {no:'39', name:'Siddharth Kakkar', ig:'sidharthkkakkar', web:'https://sidharthkkakkar.com/'},
+  {no:'40', name:'Shubh Vastram Jodhpur', ig:'shubh.vastram', web:'https://shubhvastramdesigns.com/'},
+  {no:'41', name:'Statement', ig:'thestatementhyd'},
+  {no:'44', name:'Naymish', ig:'naymish'},
+  {no:'45', name:'Darshika'},
+  {no:'46', name:'Abees', ig:'abees_official', web:'https://abees.in/'},
+  {no:'47', name:'Arva by Palak Agrawal Gupta', ig:'arvafashion.men'},
+  {no:'50', name:'Divyansh & Garvit | Karmacode', ig:'divyanshgarvitindia'},
+  {no:'51', name:'Divyansh & Garvit | Karmacode', ig:'divyanshgarvitindia'},
+  {no:'52', name:'House of Jama', ig:'house_of_jama', web:'https://jamaartofdressing.com/'},
+  {no:'53', name:'Abraham & Thakore', tbc:true, ig:'abrahamandthakore', web:'https://www.abrahamandthakore.com/'},
+  {no:'54', name:'Aakanksha Jewels & Diamonds', tbc:true}
+];
+
+/* ---------- Directory ---------- */
+function renderDirectory(filter){
   const list = document.getElementById('directoryList');
   const f = (filter || '').trim().toLowerCase();
-  const rows = STALL_DIRECTORY.filter(s =>
-    !f || s.no.toLowerCase().includes(f) || s.name.toLowerCase().includes(f)
-  );
-  if (!rows.length) {
-    list.innerHTML = '<div class="directory-empty">No match — try a different name or number.</div>';
+  const rows = STALLS.filter(s => !f || s.no.toLowerCase().includes(f) || s.name.toLowerCase().includes(f));
+  if(!rows.length){
+    list.outerHTML = '<div class="empty" id="directoryList">No match. Try another name or a stall number.</div>';
     return;
   }
-  list.innerHTML = rows.map(s => `
-    <div class="directory-row${s.tbc ? ' tbc' : ''}">
-      <span class="stall-no">#${s.no}</span>
-      <span class="stall-name">${s.name}${s.tbc ? ' (location TBC)' : ''}</span>
-    </div>
-  `).join('');
+  const html = rows.map(s => {
+    const links = [];
+    if(s.ig)  links.push(`<a href="https://www.instagram.com/${s.ig}/" target="_blank" rel="noopener" aria-label="${s.name} on Instagram"><i class="fab fa-instagram"></i></a>`);
+    if(s.web) links.push(`<a href="${s.web}" target="_blank" rel="noopener" aria-label="${s.name} website"><i class="fas fa-globe"></i></a>`);
+    return `<li class="stall">
+      <span class="no">${s.no}</span>
+      <span class="name">${s.name}${s.tbc ? '<small>Location to be confirmed</small>' : ''}</span>
+      <span class="links">${links.join('')}</span>
+    </li>`;
+  }).join('');
+  const el = document.getElementById('directoryList');
+  if(el.tagName !== 'UL'){ el.outerHTML = '<ul class="stalls" id="directoryList"></ul>'; }
+  document.getElementById('directoryList').innerHTML = html;
 }
 renderDirectory('');
 document.getElementById('directorySearch').addEventListener('input', e => renderDirectory(e.target.value));
 
-// ---- Chip toggle logic ----
-function setupChipGroup(groupId) {
-  const group = document.getElementById(groupId);
-  const selected = new Set();
-  group.querySelectorAll('.chip').forEach(chip => {
-    chip.addEventListener('click', () => {
-      const v = chip.dataset.value;
-      if (selected.has(v)) { selected.delete(v); chip.classList.remove('active'); }
-      else { selected.add(v); chip.classList.add('active'); }
+/* ---------- Chips ---------- */
+function buildChips(container, items, selected, multi, countEl){
+  items.forEach(label => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'chip'; b.textContent = label; b.setAttribute('aria-pressed','false');
+    b.addEventListener('click', () => {
+      if(multi){
+        if(selected.has(label)){ selected.delete(label); b.classList.remove('on'); b.setAttribute('aria-pressed','false'); }
+        else { selected.add(label); b.classList.add('on'); b.setAttribute('aria-pressed','true'); }
+      } else {
+        const was = selected.has(label);
+        selected.clear();
+        container.querySelectorAll('.chip').forEach(c => { c.classList.remove('on'); c.setAttribute('aria-pressed','false'); });
+        if(!was){ selected.add(label); b.classList.add('on'); b.setAttribute('aria-pressed','true'); }
+      }
+      if(countEl) countEl.textContent = selected.size ? selected.size + ' selected' : '';
     });
+    container.appendChild(b);
   });
-  return selected;
 }
-const shoppingForSelected = setupChipGroup('shoppingForGroup');
-const shoppingWithSelected = setupChipGroup('shoppingWithGroup');
+const sel = { occasion:new Set(), looking:new Set(), budget:new Set(), with:new Set() };
+const countFor = id => document.querySelector(`[data-count="${id}"]`);
 
-// ---- Submit: log check-in (best-effort), then reveal the map regardless ----
-document.getElementById('checkinForm').addEventListener('submit', function(e) {
-  e.preventDefault();
+buildChips(document.getElementById('occasionGroup'), OCCASIONS, sel.occasion, true, countFor('occasionGroup'));
+buildChips(document.getElementById('budgetGroup'), BUDGETS, sel.budget, false, null);
+buildChips(document.getElementById('withGroup'), SHOPPING_WITH, sel.with, true, countFor('withGroup'));
+
+const lookingWrap = document.getElementById('lookingGroup');
+LOOKING_FOR.forEach(g => {
+  const h = document.createElement('div'); h.className = 'sub'; h.textContent = g.group;
+  const c = document.createElement('div'); c.className = 'chips';
+  lookingWrap.appendChild(h); lookingWrap.appendChild(c);
+  buildChips(c, g.items, sel.looking, true, countFor('lookingGroup'));
+});
+
+/* ---------- Reveal map ---------- */
+function showMap(firstName, scroll){
+  document.getElementById('formSection').hidden = true;
+  document.getElementById('mapSection').hidden = false;
+  document.getElementById('welcomeLine').textContent = firstName ? 'Welcome, ' + firstName : 'Welcome';
+  window.scrollTo({top:0, behavior: scroll ? 'smooth' : 'auto'});
+}
+function showForm(){
+  document.getElementById('mapSection').hidden = true;
+  document.getElementById('formSection').hidden = false;
   const btn = document.getElementById('checkinSubmitBtn');
-  btn.textContent = 'One moment...'; btn.disabled = true;
+  btn.textContent = 'Open the floor map'; btn.disabled = false;
+  window.scrollTo({top:0});
+}
+
+// Returning visitor (venue wifi drops, page reloads): skip straight to the map
+try {
+  const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+  if(saved && saved.name) showMap(saved.name.split(' ')[0], false);
+} catch(e) {}
+
+document.getElementById('notYou').addEventListener('click', () => {
+  try { localStorage.removeItem(STORAGE_KEY); } catch(e) {}
+  showForm();
+});
+
+/* ---------- Submit ---------- */
+document.getElementById('checkinForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const name  = document.getElementById('ciName').value.trim();
+  const phone = document.getElementById('ciPhone').value.trim();
+  const err   = document.getElementById('formError');
+
+  if(!name || phone.replace(/\D/g,'').length < 10){
+    err.textContent = !name ? 'Please add your name.' : 'Please add a valid phone number.';
+    err.hidden = false; document.getElementById('formFine').hidden = true;
+    document.getElementById(!name ? 'ciName' : 'ciPhone').focus();
+    return;
+  }
+  err.hidden = true;
+
+  const btn = document.getElementById('checkinSubmitBtn');
+  btn.textContent = 'One moment…'; btn.disabled = true;
 
   const payload = {
     formType: 'checkin',
     city: 'Hyderabad',
-    name: document.getElementById('ciName').value,
-    phone: document.getElementById('ciPhone').value,
-    email: document.getElementById('ciEmail').value,
-    shoppingFor: Array.from(shoppingForSelected).join(', '),
-    shoppingWith: Array.from(shoppingWithSelected).join(', ')
+    name, phone,
+    email: document.getElementById('ciEmail').value.trim(),
+    shoppingFor: Array.from(sel.occasion).join(', '),      // occasion (same column as before)
+    shoppingWith: Array.from(sel.with).join(', '),         // same column as before
+    lookingFor: Array.from(sel.looking).join(', '),        // NEW
+    budget: Array.from(sel.budget).join(', '),             // NEW
+    notes: document.getElementById('ciNotes').value.trim() // NEW
   };
 
-  function reveal() {
-    document.getElementById('checkinFormSection').classList.add('hidden');
-    const mapSection = document.getElementById('mapSection');
-    mapSection.classList.add('visible');
-    mapSection.scrollIntoView({behavior:'smooth'});
-  }
+  // Log best-effort. Never make a visitor wait more than 4s on flaky venue wifi.
+  const send = fetch(TSM_WEBAPP_URL, {
+    method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify(payload)
+  }).catch(() => console.warn('Check-in log failed to send. Showing map anyway.'));
+  const timeout = new Promise(r => setTimeout(r, 4000));
 
-  fetch(TSM_WEBAPP_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-    body: JSON.stringify(payload)
-  })
-    .then(reveal)
-    // Venue wifi can be unreliable — don't block a visitor's access to the map over a logging failure.
-    .catch(() => { console.warn('Check-in log failed to send — showing map anyway.'); reveal(); });
+  Promise.race([send, timeout]).then(() => {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify({name})); } catch(e) {}
+    showMap(name.split(' ')[0], true);
+  });
 });
+
+/* ---------- Map lightbox ---------- */
+const lb = document.getElementById('lightbox'), frame = document.getElementById('mapFrame');
+const openLb = () => { lb.hidden = false; document.body.style.overflow = 'hidden'; };
+const closeLb = () => { lb.hidden = true; document.body.style.overflow = ''; };
+frame.addEventListener('click', openLb);
+frame.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openLb(); } });
+document.getElementById('lightboxClose').addEventListener('click', closeLb);
+document.addEventListener('keydown', e => { if(e.key === 'Escape' && !lb.hidden) closeLb(); });
 </script>
 </body>
 </html>
