@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <title>Check In — The Style Mill</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../tsm.css">
+  <style>
+    .checkin-topbar{display:flex;align-items:center;justify-content:center;padding:1.25rem 1rem;background:var(--dark,#1C3D35);}
+    .checkin-topbar img{height:34px;}
+    .chip-group{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.6rem;}
+    .chip{
+      border:1.5px solid rgba(28,61,53,.25);background:#fff;color:var(--dark,#1C3D35);
+      font-family:'Montserrat',sans-serif;font-size:.82rem;font-weight:600;
+      padding:.7rem 1.1rem;border-radius:999px;cursor:pointer;user-select:none;
+      transition:all .15s ease;min-height:44px;display:flex;align-items:center;
+    }
+    .chip i{margin-right:.4rem;font-size:.8rem;opacity:.6;}
+    .chip.active{background:var(--green,#1C3D35);border-color:var(--green,#1C3D35);color:#F2E8D5;}
+    .chip.active i{opacity:1;}
+    .chip:active{transform:scale(.97);}
+    .checkin-section-label{font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted,#7a7268);margin-top:1.75rem;display:block;}
+    #mapSection{display:none;}
+    #mapSection.visible{display:block;}
+    #checkinFormSection.hidden{display:none;}
+    .map-wrap{max-width:640px;margin:0 auto;text-align:center;}
+    .map-wrap img{width:100%;height:auto;border:1px solid rgba(28,61,53,.15);}
+    .directory-search{max-width:480px;margin:2rem auto 1rem;position:relative;}
+    .directory-search input{
+      width:100%;padding:.85rem 1rem .85rem 2.6rem;border:1.5px solid rgba(28,61,53,.2);
+      font-family:'Montserrat',sans-serif;font-size:.9rem;border-radius:6px;
+    }
+    .directory-search i{position:absolute;left:1rem;top:50%;transform:translateY(-50%);color:var(--muted,#7a7268);}
+    .directory-list{max-width:480px;margin:0 auto;max-height:360px;overflow-y:auto;border:1px solid rgba(28,61,53,.12);}
+    .directory-row{
+      display:flex;justify-content:space-between;gap:1rem;padding:.7rem 1rem;
+      border-bottom:1px solid rgba(28,61,53,.08);font-family:'Montserrat',sans-serif;font-size:.85rem;
+    }
+    .directory-row:last-child{border-bottom:none;}
+    .directory-row .stall-no{font-weight:700;color:var(--green,#1C3D35);min-width:3.2rem;}
+    .directory-row .stall-name{flex:1;text-align:right;color:var(--dark,#1C3D35);}
+    .directory-row.tbc .stall-name{font-style:italic;color:var(--muted,#7a7268);}
+    .directory-empty{padding:1.5rem;text-align:center;color:var(--muted,#7a7268);font-size:.85rem;font-style:italic;}
+    .checkin-note{max-width:480px;margin:1.5rem auto 0;text-align:center;font-size:.8rem;color:var(--muted,#7a7268);}
+  </style>
+</head>
+<body>
+
+<div class="checkin-topbar">
+  <a href="../index.html"><img src="/images/The%20Style%20Mill/TSM-Logo-White.png" alt="The Style Mill"></a>
+</div>
+
+<div class="page-header" style="background:var(--dark);">
+  <span class="eyebrow">Hyderabad · Taj Deccan · 20 September</span>
+  <h1>You're Here.<br>Let's Get You Shopping.</h1>
+  <p style="color:rgba(242,232,213,.65);">A few quick details, then the full floor map and every designer's stall number unlocks below.</p>
+</div>
+
+<section class="section bg-cream-d" id="checkinFormSection">
+  <div class="container">
+    <div class="visit-form-wrap">
+
+      <form id="checkinForm">
+        <div class="tsm-form-section">
+          <div class="form-grid">
+            <div class="form-group"><label>Full Name *</label><input type="text" name="name" id="ciName" placeholder="Your full name" required></div>
+            <div class="form-group"><label>Phone *</label><input type="tel" name="phone" id="ciPhone" placeholder="+91 XXXXX XXXXX" required></div>
+            <div class="form-group form-full"><label>Email</label><input type="email" name="email" id="ciEmail" placeholder="you@email.com"></div>
+          </div>
+
+          <span class="checkin-section-label">What are you shopping for today?</span>
+          <div class="chip-group" id="shoppingForGroup">
+            <button type="button" class="chip" data-value="Festive"><i class="fas fa-check"></i>Festive</button>
+            <button type="button" class="chip" data-value="Wedding"><i class="fas fa-check"></i>Wedding</button>
+            <button type="button" class="chip" data-value="Casual"><i class="fas fa-check"></i>Casual</button>
+            <button type="button" class="chip" data-value="Relaxed"><i class="fas fa-check"></i>Relaxed</button>
+          </div>
+
+          <span class="checkin-section-label">Who are you shopping for / with?</span>
+          <div class="chip-group" id="shoppingWithGroup">
+            <button type="button" class="chip" data-value="Myself"><i class="fas fa-check"></i>Myself</button>
+            <button type="button" class="chip" data-value="Husband"><i class="fas fa-check"></i>Husband</button>
+            <button type="button" class="chip" data-value="Wife"><i class="fas fa-check"></i>Wife</button>
+            <button type="button" class="chip" data-value="Father"><i class="fas fa-check"></i>Father</button>
+            <button type="button" class="chip" data-value="Mother"><i class="fas fa-check"></i>Mother</button>
+            <button type="button" class="chip" data-value="Brother"><i class="fas fa-check"></i>Brother</button>
+            <button type="button" class="chip" data-value="Sister"><i class="fas fa-check"></i>Sister</button>
+            <button type="button" class="chip" data-value="Friend(s)"><i class="fas fa-check"></i>Friend(s)</button>
+          </div>
+
+          <div class="form-submit-row" style="margin-top:2rem;">
+            <button type="submit" class="btn-tsm-primary" id="checkinSubmitBtn">Show Me The Map →</button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<section class="section bg-cream" id="mapSection">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom:2rem;">
+      <span class="eyebrow">You're In</span>
+      <h2 style="font-style:italic;">The Floor, Stall by Stall.</h2>
+      <div class="divider divider-center"></div>
+    </div>
+
+    <div class="map-wrap">
+      <img src="/images/The%20Style%20Mill/Hyd-Stall-Layout.jpeg" alt="The Style Mill — Hyderabad Taj Deccan stall layout">
+    </div>
+
+    <div class="directory-search">
+      <i class="fas fa-search"></i>
+      <input type="text" id="directorySearch" placeholder="Search a designer or stall number...">
+    </div>
+    <div class="directory-list" id="directoryList"></div>
+
+    <p class="checkin-note">Two or three stalls are still being finalised on this map — if you can't find someone, ask any team member on the floor.</p>
+  </div>
+</section>
+
+<footer class="tsm-footer">
+  <div class="tsm-footer-logo"><img src="/images/The%20Style%20Mill/TSM-Logo-White.png" alt="The Style Mill"></div>
+  <p style="color:#555;font-size:.8rem;">Season 6 · Diwali Edit 2026</p>
+  <div class="tsm-social-links">
+    <a href="https://www.instagram.com/the_stylemill/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+    <a href="https://wa.me/919000008909" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+  </div>
+  <div class="tsm-footer-mc">Campaign Strategy &amp; Digital by <a href="/">MC Joint, Hyderabad</a></div>
+</footer>
+
+<script>
+// ---- Apps Script endpoint — same deployment used by the Visit page ----
+const TSM_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbwluZtzjR40VDNhCK1fxj3iOj2mR_YoZa2wr-bMhofwYUafMEUhkWTrBppbWL3xyyD9cw/exec';
+
+// ---- Stall directory — exactly as supplied; gaps (34,35,42,43,48,49) are Trial Room space ----
+const STALL_DIRECTORY = [
+  {no:'1', name:'Heartistry'}, {no:'2', name:'Varun Chakkilam'}, {no:'3', name:'Label J'},
+  {no:'4', name:'Payal & Rishab'}, {no:'5', name:'Naman ahuja'}, {no:'6', name:'Riqo'},
+  {no:'7', name:'House of koa'}, {no:'8', name:'Nimai'}, {no:'9', name:'Keshawa'},
+  {no:'10', name:'Modello domani'}, {no:'11', name:'Modello domani'}, {no:'12', name:'Shreyansh'},
+  {no:'13', name:'Shay Studio'}, {no:'14', name:'Kudrat by Chirag'}, {no:'15', name:'Golden brush'},
+  {no:'16/T1', name:'Akanksha jewellery'}, {no:'17/T2', name:'House of matches'}, {no:'18', name:'Kanishk Ethnics'},
+  {no:'19', name:'Manav (Anuradha) Grewal'}, {no:'20', name:'Ashish Bunker Jaipur'}, {no:'21', name:'uniqa'},
+  {no:'22', name:'Sanhi'}, {no:'23', name:'Amrit Dawani'}, {no:'24', name:'Adyaaye'},
+  {no:'24B', name:'Amrit Dawani'}, {no:'25', name:'Gargee Designs'}, {no:'26', name:'Gargee Designs'},
+  {no:'27', name:'I Stylo by dana designs'}, {no:'28', name:'Saje x Rohit Doshi'}, {no:'29', name:'Saje Multi Designer'},
+  {no:'30', name:'Aastha Sanghvi'}, {no:'31', name:'Amansh'}, {no:'32', name:'So Man'},
+  {no:'33', name:'Shay studio'}, {no:'36', name:'Abraham & thakore'}, {no:'37', name:'Gabana'},
+  {no:'38', name:'Archana Jain'}, {no:'39', name:'Siddharth Kakkar'}, {no:'40', name:'Shubh Vastram Jodhpur'},
+  {no:'41', name:'Statement'}, {no:'44', name:'Naymish'}, {no:'45', name:'Darshika'},
+  {no:'46', name:'Abees'}, {no:'47', name:'ARVA BY PALAK AGRAWAL GUPTA'}, {no:'50', name:'Divyansh & Garvit || KARMACODE'},
+  {no:'51', name:'Divyansh & Garvit || KARMACODE'}, {no:'52', name:'House of Jama'},
+  {no:'53', name:'Abraham & Thakore', tbc:true}, {no:'54', name:'Aakanksha Jewels & Diamonds', tbc:true},
+];
+
+function renderDirectory(filter) {
+  const list = document.getElementById('directoryList');
+  const f = (filter || '').trim().toLowerCase();
+  const rows = STALL_DIRECTORY.filter(s =>
+    !f || s.no.toLowerCase().includes(f) || s.name.toLowerCase().includes(f)
+  );
+  if (!rows.length) {
+    list.innerHTML = '<div class="directory-empty">No match — try a different name or number.</div>';
+    return;
+  }
+  list.innerHTML = rows.map(s => `
+    <div class="directory-row${s.tbc ? ' tbc' : ''}">
+      <span class="stall-no">#${s.no}</span>
+      <span class="stall-name">${s.name}${s.tbc ? ' (location TBC)' : ''}</span>
+    </div>
+  `).join('');
+}
+renderDirectory('');
+document.getElementById('directorySearch').addEventListener('input', e => renderDirectory(e.target.value));
+
+// ---- Chip toggle logic ----
+function setupChipGroup(groupId) {
+  const group = document.getElementById(groupId);
+  const selected = new Set();
+  group.querySelectorAll('.chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const v = chip.dataset.value;
+      if (selected.has(v)) { selected.delete(v); chip.classList.remove('active'); }
+      else { selected.add(v); chip.classList.add('active'); }
+    });
+  });
+  return selected;
+}
+const shoppingForSelected = setupChipGroup('shoppingForGroup');
+const shoppingWithSelected = setupChipGroup('shoppingWithGroup');
+
+// ---- Submit: log check-in (best-effort), then reveal the map regardless ----
+document.getElementById('checkinForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('checkinSubmitBtn');
+  btn.textContent = 'One moment...'; btn.disabled = true;
+
+  const payload = {
+    formType: 'checkin',
+    city: 'Hyderabad',
+    name: document.getElementById('ciName').value,
+    phone: document.getElementById('ciPhone').value,
+    email: document.getElementById('ciEmail').value,
+    shoppingFor: Array.from(shoppingForSelected).join(', '),
+    shoppingWith: Array.from(shoppingWithSelected).join(', ')
+  };
+
+  function reveal() {
+    document.getElementById('checkinFormSection').classList.add('hidden');
+    const mapSection = document.getElementById('mapSection');
+    mapSection.classList.add('visible');
+    mapSection.scrollIntoView({behavior:'smooth'});
+  }
+
+  fetch(TSM_WEBAPP_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify(payload)
+  })
+    .then(reveal)
+    // Venue wifi can be unreliable — don't block a visitor's access to the map over a logging failure.
+    .catch(() => { console.warn('Check-in log failed to send — showing map anyway.'); reveal(); });
+});
+</script>
+</body>
+</html>
