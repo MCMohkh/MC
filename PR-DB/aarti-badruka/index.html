@@ -6,97 +6,69 @@
   <meta name="robots" content="noindex, nofollow">
   <title>Aarti Badruka's Circle — MC</title>
   <link rel="icon" type="image/png" sizes="512x512" href="https://www.mcjoint.in/favicon.png">
-
   <style>
-    :root{
-      --black:#0b0b0b; --panel:#151515; --line:#292929;
-      --white:#f5f4f1; --muted:#918d87; --red:#e10600;
-    }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;min-height:100%;background:var(--black);color:var(--white)}
-    body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;min-height:100vh}
+    html,body{margin:0;min-height:100%;background:#0b0b0b;color:#f5f4f1}
+    body{font-family:Inter,Arial,sans-serif}
+    .wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px 20px}
+    .card{width:min(680px,100%);text-align:center;padding:58px 34px;border:1px solid #292929;border-radius:10px;background:#151515}
+    .logo{display:inline-flex;background:#fff;border-radius:4px;padding:7px 13px;margin-bottom:30px}
+    .logo img{height:18px;width:auto;display:block}
+    .eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#918d87;margin-bottom:14px}
+    h1{font-family:Georgia,serif;font-size:34px;line-height:1.15;margin:0 0 18px;font-weight:500}
+    p{color:#aaa59d;line-height:1.7;font-size:14px;margin:0 auto 28px;max-width:520px}
+    .note{font-size:12px;color:#6f6b66;border-top:1px solid #292929;padding-top:22px;margin-top:28px}
+    a{color:#f5f4f1}
+    .direct{display:inline-block;color:#fff;background:#e10600;text-decoration:none;padding:12px 20px;border-radius:5px;font-size:13px;font-weight:600}
+    .pagelinks{position:fixed;bottom:16px;left:0;right:0;text-align:center;font-size:11px;color:#555}
+    .pagelinks a{color:#777;text-decoration:none}
     iframe{border:0;width:100%;height:100vh;display:block}
-    .hidden{display:none!important}
-    .landing{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 24px 80px;text-align:center}
-    .logo-chip{background:#fff;border-radius:4px;padding:7px 15px;display:inline-flex;align-items:center;line-height:1}
-    .logo-chip img{height:18px;width:auto;display:block}
-    .landing-card{width:min(620px,100%);margin-top:34px;padding:46px 34px;background:var(--panel);border:1px solid var(--line);border-radius:10px}
-    .eyebrow{font-size:11px;letter-spacing:3.5px;text-transform:uppercase;color:var(--muted);margin-bottom:15px}
-    .glyph{width:34px;height:2px;background:var(--red);margin:0 auto 22px}
-    h1{margin:0 0 14px;font-family:Montserrat,Arial,sans-serif;font-size:30px;line-height:1.25}
-    p{margin:0 auto;max-width:470px;color:var(--muted);font-size:14px;line-height:1.75}
-    .note{margin-top:24px;padding-top:20px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
-    .pagelinks{position:fixed;left:0;right:0;bottom:14px;z-index:5;display:flex;justify-content:center;align-items:center;gap:10px;font-size:11px;letter-spacing:.3px;color:rgba(245,244,241,.35)}
-    .pagelinks a{color:rgba(245,244,241,.55);text-decoration:none}
-    .pagelinks a:hover{color:var(--white)}
-    .pagelinks span{color:rgba(245,244,241,.25)}
+    .join-mode .pagelinks{display:none}
   </style>
 </head>
 <body>
+<script>
+  const WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbzfKXPPE7ENMFG7yke16XWh03S98Q0u4JgkOAQ8VZ3uJfBVYUy4xeZxrWoAaV-Z26uQ/exec';
+  const TOKEN = new URLSearchParams(window.location.search).get('token') || '';
 
-  <div id="landing" class="landing">
-    <span class="logo-chip">
-      <img src="https://www.mcjoint.in/images/logos/MC%20Joint%20Logo-5-MC%20Joint%20Block%20Logo.png"
-           alt="MC" onerror="this.parentElement.innerHTML='MC'">
-    </span>
-
-    <div class="landing-card">
-      <div class="eyebrow">Private Network</div>
-      <div class="glyph"></div>
-      <h1>Aarti Badruka's Circle</h1>
-      <p>
-        A private guest and contact network for Aarti Badruka's PR,
-        events, launches and gatherings.
-      </p>
-      <div class="note">
-        This page is accessed through a private invitation link.
-        If you were invited, please use the complete link you received.
+  if (TOKEN) {
+    document.body.className = 'join-mode';
+    const iframe = document.createElement('iframe');
+    iframe.src = WEBAPP_URL + '?page=join&token=' + encodeURIComponent(TOKEN);
+    iframe.setAttribute('allow', 'geolocation');
+    document.body.appendChild(iframe);
+  } else {
+    document.body.innerHTML = `
+      <div class="wrap">
+        <main class="card">
+          <span class="logo">
+            <img src="https://www.mcjoint.in/images/logos/MC%20Joint%20Logo-5-MC%20Joint%20Block%20Logo.png"
+                 alt="MC"
+                 onerror="this.parentElement.textContent='MC'">
+          </span>
+          <div class="eyebrow">MC Joint · Private Network</div>
+          <h1>Aarti Badruka's Circle</h1>
+          <p>
+            A private contact network curated for Aarti Badruka's PR, events,
+            collaborations and professional outreach.
+          </p>
+          <p class="note">
+            This is an invitation-only network. If you received an invitation,
+            please use the personal link shared with you.
+          </p>
+        </main>
       </div>
-    </div>
-  </div>
-
-  <iframe id="app-frame" class="hidden" title="Aarti Badruka's Circle"></iframe>
-
-  <div class="pagelinks">
-    <a href="./about.html">What is this?</a>
-    <span>·</span>
-    <a id="open-direct" href="#" target="_blank" rel="noopener" class="hidden">Open directly ↗</a>
-  </div>
-
-  <script>
-    const WEBAPP_URL =
-      'https://script.google.com/macros/s/AKfycbzfKXPPE7ENMFG7yke16XWh03S98Q0u4JgkOAQ8VZ3uJfBVYUy4xeZxrWoAaV-Z26uQ/exec';
-
-    const TOKEN = new URLSearchParams(window.location.search).get('token') || '';
-
-    // No token: show the branded landing page.
-    // Token present: load the private Join form.
-    if (TOKEN) {
-      const target = WEBAPP_URL + '?page=join&token=' + encodeURIComponent(TOKEN);
-
-      document.getElementById('landing').classList.add('hidden');
-
-      const iframe = document.getElementById('app-frame');
-      iframe.classList.remove('hidden');
-      iframe.src = target;
-
-      const direct = document.getElementById('open-direct');
-      direct.href = target;
-      direct.classList.remove('hidden');
-    }
-  </script>
-
-  <noscript>
-    <div class="landing">
-      <span class="logo-chip">
-        <img src="https://www.mcjoint.in/images/logos/MC%20Joint%20Logo-5-MC%20Joint%20Block%20Logo.png" alt="MC">
-      </span>
-      <div class="landing-card">
-        <h1>Aarti Badruka's Circle</h1>
-        <p>JavaScript is required to open an invitation.</p>
+      <div class="pagelinks">
+        <a href="./about.html">What is this?</a>
       </div>
-    </div>
-  </noscript>
-
+    `;
+  }
+</script>
+<noscript>
+  <div class="wrap"><main class="card">
+    <h1>Aarti Badruka's Circle</h1>
+    <p>Please enable JavaScript to continue.</p>
+  </main></div>
+</noscript>
 </body>
 </html>
