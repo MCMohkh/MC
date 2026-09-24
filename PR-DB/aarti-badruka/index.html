@@ -3,67 +3,163 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Keep this out of search results — this is a private invite page. -->
   <meta name="robots" content="noindex, nofollow">
   <title>Aarti Badruka's Circle — MC</title>
   <link rel="icon" type="image/png" sizes="512x512" href="https://www.mcjoint.in/favicon.png">
+
   <style>
-    html, body { margin:0; padding:0; height:100%; background:#0b0b0b; }
-    iframe { border:0; width:100%; height:100%; display:block; }
-    .fallback {
-      display:none; height:100%; flex-direction:column; align-items:center; justify-content:center; gap:18px;
-      font-family:Inter,Arial,sans-serif; color:#f5f4f1; text-align:center; padding:80px 20px;
+    :root{
+      --black:#0b0b0b;
+      --white:#f5f4f1;
+      --muted:rgba(245,244,241,.55);
+      --line:rgba(245,244,241,.12);
+      --red:#e10600;
     }
-    .fallback a { color:#e10600; }
-    .fallback .logo-chip{background:#fff;border-radius:4px;padding:7px 15px;display:inline-flex}
-    .fallback .logo-chip img{height:18px}
+
+    *{box-sizing:border-box}
+
+    html,body{
+      margin:0;
+      padding:0;
+      width:100%;
+      height:100%;
+      background:var(--black);
+      overflow:hidden;
+    }
+
+    body{
+      font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+    }
+
+    #app-frame{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:calc(100% - 38px);
+      border:0;
+      display:block;
+      background:var(--black);
+    }
 
     .pagelinks{
-      position:fixed; bottom:14px; left:0; right:0; z-index:5;
-      display:flex; justify-content:center; align-items:center; gap:10px;
-      font-family:Inter,Arial,sans-serif; font-size:11px; letter-spacing:.3px;
-      color:rgba(245,244,241,.35); pointer-events:none;
+      position:fixed;
+      left:0;
+      right:0;
+      bottom:0;
+      height:38px;
+      z-index:10;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:10px;
+      background:rgba(11,11,11,.96);
+      border-top:1px solid var(--line);
+      font-size:11px;
+      letter-spacing:.3px;
+      color:var(--muted);
     }
-    .pagelinks a{ color:rgba(245,244,241,.55); text-decoration:none; pointer-events:auto; }
-    .pagelinks a:hover{ color:#f5f4f1; }
-    .pagelinks span{ color:rgba(245,244,241,.25); }
+
+    .pagelinks a{
+      color:var(--muted);
+      text-decoration:none;
+      transition:color .15s ease;
+    }
+
+    .pagelinks a:hover{
+      color:var(--white);
+    }
+
+    .pagelinks span{
+      color:rgba(245,244,241,.25);
+    }
+
+    .fallback{
+      width:100%;
+      height:100%;
+      display:none;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:18px;
+      color:var(--white);
+      text-align:center;
+      padding:40px 20px;
+    }
+
+    .fallback a{color:var(--red)}
+
+    .logo-chip{
+      background:#fff;
+      border-radius:4px;
+      padding:7px 15px;
+      display:inline-flex;
+    }
+
+    .logo-chip img{height:18px}
   </style>
 </head>
+
 <body>
-  <!--
-    Share links look like:
-      https://www.mcjoint.in/PR-DB/For-Aarti-Badruka/?token=abc123def456
+  <iframe
+    id="app-frame"
+    title="Aarti Badruka's Circle"
+    allow="geolocation"
+    referrerpolicy="strict-origin-when-cross-origin">
+  </iframe>
 
-    This page reads ?token= from its own URL and passes it straight through
-    to the Apps Script Join form, so this one static page covers every
-    invite token created from the Admin dashboard — no per-invite file
-    needed. Visiting with no token (or an expired/inactive one) still
-    loads the form, which shows its own "This invitation has closed" screen.
-
-    Deployment ID: AKfycbzfKXPPE7ENMFG7yke16XWh03S98Q0u4JgkOAQ8VZ3uJfBVYUy4xeZxrWoAaV-Z26uQ
-    See about.html (next to this file) for what this page is and why it exists.
-  -->
   <div class="pagelinks">
     <a href="./about.html">What is this?</a>
     <span>·</span>
     <a id="open-direct" href="#" target="_blank" rel="noopener">Open directly ↗</a>
   </div>
-  <script>
-    const WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbzfKXPPE7ENMFG7yke16XWh03S98Q0u4JgkOAQ8VZ3uJfBVYUy4xeZxrWoAaV-Z26uQ/exec';
-    const TOKEN = new URLSearchParams(window.location.search).get('token') || '';
 
-    const target = WEBAPP_URL + '?page=join&token=' + encodeURIComponent(TOKEN);
-    const iframe = document.createElement('iframe');
+  <div class="fallback" id="fallback">
+    <span class="logo-chip">
+      <img
+        src="https://www.mcjoint.in/images/logos/MC%20Joint%20Logo-5-MC%20Joint%20Block%20Logo.png"
+        alt="MC"
+        onerror="this.parentElement.innerHTML='MC'">
+    </span>
+    <p>
+      Please
+      <a id="fallback-link" href="#" target="_blank" rel="noopener">click here to continue</a>.
+    </p>
+  </div>
+
+  <script>
+    const WEBAPP_URL =
+      'https://script.google.com/macros/s/AKfycbzfKXPPE7ENMFG7yke16XWh03S98Q0u4JgkOAQ8VZ3uJfBVYUy4xeZxrWoAaV-Z26uQ/exec';
+
+    const TOKEN =
+      new URLSearchParams(window.location.search).get('token') || '';
+
+    const target =
+      WEBAPP_URL +
+      '?page=join&token=' +
+      encodeURIComponent(TOKEN);
+
+    const iframe = document.getElementById('app-frame');
     iframe.src = target;
-    iframe.setAttribute('allow', 'geolocation');
-    document.body.appendChild(iframe);
 
     document.getElementById('open-direct').href = target;
+    document.getElementById('fallback-link').href = target;
+
+    iframe.addEventListener('error', () => {
+      iframe.style.display = 'none';
+      document.getElementById('fallback').style.display = 'flex';
+    });
   </script>
+
   <noscript>
     <div class="fallback" style="display:flex">
-      <span class="logo-chip"><img src="https://www.mcjoint.in/images/logos/MC%20Joint%20Logo-5-MC%20Joint%20Block%20Logo.png" alt="MC" onerror="this.parentElement.innerHTML='MC'"></span>
-      <p>Please <a href="https://script.google.com/macros/s/AKfycbzfKXPPE7ENMFG7yke16XWh03S98Q0u4JgkOAQ8VZ3uJfBVYUy4xeZxrWoAaV-Z26uQ/exec?page=join">click here to continue</a>, or see <a href="./about.html">what this page is</a>.</p>
+      <span class="logo-chip">
+        <img
+          src="https://www.mcjoint.in/images/logos/MC%20Joint%20Logo-5-MC%20Joint%20Block%20Logo.png"
+          alt="MC"
+          onerror="this.parentElement.innerHTML='MC'">
+      </span>
+      <p>JavaScript is required to open this invitation.</p>
     </div>
   </noscript>
 </body>
