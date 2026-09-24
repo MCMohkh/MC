@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Keep this out of search results — this is a private invite page. -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>Aarti Badruka's Circle — MC</title>
+  <link rel="icon" type="image/png" sizes="512x512" href="https://www.mcjoint.in/favicon.png">
+  <style>
+    html, body { margin:0; padding:0; height:100%; background:#0b0b0b; }
+    iframe { border:0; width:100%; height:100%; display:block; }
+    .fallback {
+      display:none; height:100%; flex-direction:column; align-items:center; justify-content:center; gap:18px;
+      font-family:Inter,Arial,sans-serif; color:#f5f4f1; text-align:center; padding:80px 20px;
+    }
+    .fallback a { color:#e10600; }
+    .fallback .logo-chip{background:#fff;border-radius:4px;padding:7px 15px;display:inline-flex}
+    .fallback .logo-chip img{height:18px}
+
+    .pagelinks{
+      position:fixed; bottom:14px; left:0; right:0; z-index:5;
+      display:flex; justify-content:center; align-items:center; gap:10px;
+      font-family:Inter,Arial,sans-serif; font-size:11px; letter-spacing:.3px;
+      color:rgba(245,244,241,.35); pointer-events:none;
+    }
+    .pagelinks a{ color:rgba(245,244,241,.55); text-decoration:none; pointer-events:auto; }
+    .pagelinks a:hover{ color:#f5f4f1; }
+    .pagelinks span{ color:rgba(245,244,241,.25); }
+  </style>
+</head>
+<body>
+  <!--
+    Share links look like:
+      https://www.mcjoint.in/PR-DB/For-Aarti-Badruka/?token=abc123def456
+
+    This page reads ?token= from its own URL and passes it straight through
+    to the Apps Script Join form, so this one static page covers every
+    invite token created from the Admin dashboard — no per-invite file
+    needed. Visiting with no token (or an expired/inactive one) still
+    loads the form, which shows its own "This invitation has closed" screen.
+
+    Deployment ID: AKfycbzfKXPPE7ENMFG7yke16XWh03S98Q0u4JgkOAQ8VZ3uJfBVYUy4xeZxrWoAaV-Z26uQ
+    See about.html (next to this file) for what this page is and why it exists.
+  -->
+  <div class="pagelinks">
+    <a href="./about.html">What is this?</a>
+    <span>·</span>
+    <a id="open-direct" href="#" target="_blank" rel="noopener">Open directly ↗</a>
+  </div>
+  <script>
+    const WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbzfKXPPE7ENMFG7yke16XWh03S98Q0u4JgkOAQ8VZ3uJfBVYUy4xeZxrWoAaV-Z26uQ/exec';
+    const TOKEN = new URLSearchParams(window.location.search).get('token') || '';
+
+    const target = WEBAPP_URL + '?page=join&token=' + encodeURIComponent(TOKEN);
+    const iframe = document.createElement('iframe');
+    iframe.src = target;
+    iframe.setAttribute('allow', 'geolocation');
+    document.body.appendChild(iframe);
+
+    document.getElementById('open-direct').href = target;
+  </script>
+  <noscript>
+    <div class="fallback" style="display:flex">
+      <span class="logo-chip"><img src="https://www.mcjoint.in/images/logos/MC%20Joint%20Logo-5-MC%20Joint%20Block%20Logo.png" alt="MC" onerror="this.parentElement.innerHTML='MC'"></span>
+      <p>Please <a href="https://script.google.com/macros/s/AKfycbzfKXPPE7ENMFG7yke16XWh03S98Q0u4JgkOAQ8VZ3uJfBVYUy4xeZxrWoAaV-Z26uQ/exec?page=join">click here to continue</a>, or see <a href="./about.html">what this page is</a>.</p>
+    </div>
+  </noscript>
+</body>
+</html>
