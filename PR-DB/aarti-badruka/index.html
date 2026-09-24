@@ -9,158 +9,94 @@
 
   <style>
     :root{
-      --black:#0b0b0b;
-      --white:#f5f4f1;
-      --muted:rgba(245,244,241,.55);
-      --line:rgba(245,244,241,.12);
-      --red:#e10600;
+      --black:#0b0b0b; --panel:#151515; --line:#292929;
+      --white:#f5f4f1; --muted:#918d87; --red:#e10600;
     }
-
     *{box-sizing:border-box}
-
-    html,body{
-      margin:0;
-      padding:0;
-      width:100%;
-      height:100%;
-      background:var(--black);
-      overflow:hidden;
-    }
-
-    body{
-      font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-    }
-
-    #app-frame{
-      position:fixed;
-      top:0;
-      left:0;
-      width:100%;
-      height:calc(100% - 38px);
-      border:0;
-      display:block;
-      background:var(--black);
-    }
-
-    .pagelinks{
-      position:fixed;
-      left:0;
-      right:0;
-      bottom:0;
-      height:38px;
-      z-index:10;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      gap:10px;
-      background:rgba(11,11,11,.96);
-      border-top:1px solid var(--line);
-      font-size:11px;
-      letter-spacing:.3px;
-      color:var(--muted);
-    }
-
-    .pagelinks a{
-      color:var(--muted);
-      text-decoration:none;
-      transition:color .15s ease;
-    }
-
-    .pagelinks a:hover{
-      color:var(--white);
-    }
-
-    .pagelinks span{
-      color:rgba(245,244,241,.25);
-    }
-
-    .fallback{
-      width:100%;
-      height:100%;
-      display:none;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      gap:18px;
-      color:var(--white);
-      text-align:center;
-      padding:40px 20px;
-    }
-
-    .fallback a{color:var(--red)}
-
-    .logo-chip{
-      background:#fff;
-      border-radius:4px;
-      padding:7px 15px;
-      display:inline-flex;
-    }
-
-    .logo-chip img{height:18px}
+    html,body{margin:0;padding:0;min-height:100%;background:var(--black);color:var(--white)}
+    body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;min-height:100vh}
+    iframe{border:0;width:100%;height:100vh;display:block}
+    .hidden{display:none!important}
+    .landing{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 24px 80px;text-align:center}
+    .logo-chip{background:#fff;border-radius:4px;padding:7px 15px;display:inline-flex;align-items:center;line-height:1}
+    .logo-chip img{height:18px;width:auto;display:block}
+    .landing-card{width:min(620px,100%);margin-top:34px;padding:46px 34px;background:var(--panel);border:1px solid var(--line);border-radius:10px}
+    .eyebrow{font-size:11px;letter-spacing:3.5px;text-transform:uppercase;color:var(--muted);margin-bottom:15px}
+    .glyph{width:34px;height:2px;background:var(--red);margin:0 auto 22px}
+    h1{margin:0 0 14px;font-family:Montserrat,Arial,sans-serif;font-size:30px;line-height:1.25}
+    p{margin:0 auto;max-width:470px;color:var(--muted);font-size:14px;line-height:1.75}
+    .note{margin-top:24px;padding-top:20px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+    .pagelinks{position:fixed;left:0;right:0;bottom:14px;z-index:5;display:flex;justify-content:center;align-items:center;gap:10px;font-size:11px;letter-spacing:.3px;color:rgba(245,244,241,.35)}
+    .pagelinks a{color:rgba(245,244,241,.55);text-decoration:none}
+    .pagelinks a:hover{color:var(--white)}
+    .pagelinks span{color:rgba(245,244,241,.25)}
   </style>
 </head>
-
 <body>
-  <iframe
-    id="app-frame"
-    title="Aarti Badruka's Circle"
-    allow="geolocation"
-    referrerpolicy="strict-origin-when-cross-origin">
-  </iframe>
+
+  <div id="landing" class="landing">
+    <span class="logo-chip">
+      <img src="https://www.mcjoint.in/images/logos/MC%20Joint%20Logo-5-MC%20Joint%20Block%20Logo.png"
+           alt="MC" onerror="this.parentElement.innerHTML='MC'">
+    </span>
+
+    <div class="landing-card">
+      <div class="eyebrow">Private Network</div>
+      <div class="glyph"></div>
+      <h1>Aarti Badruka's Circle</h1>
+      <p>
+        A private guest and contact network for Aarti Badruka's PR,
+        events, launches and gatherings.
+      </p>
+      <div class="note">
+        This page is accessed through a private invitation link.
+        If you were invited, please use the complete link you received.
+      </div>
+    </div>
+  </div>
+
+  <iframe id="app-frame" class="hidden" title="Aarti Badruka's Circle"></iframe>
 
   <div class="pagelinks">
     <a href="./about.html">What is this?</a>
     <span>·</span>
-    <a id="open-direct" href="#" target="_blank" rel="noopener">Open directly ↗</a>
-  </div>
-
-  <div class="fallback" id="fallback">
-    <span class="logo-chip">
-      <img
-        src="https://www.mcjoint.in/images/logos/MC%20Joint%20Logo-5-MC%20Joint%20Block%20Logo.png"
-        alt="MC"
-        onerror="this.parentElement.innerHTML='MC'">
-    </span>
-    <p>
-      Please
-      <a id="fallback-link" href="#" target="_blank" rel="noopener">click here to continue</a>.
-    </p>
+    <a id="open-direct" href="#" target="_blank" rel="noopener" class="hidden">Open directly ↗</a>
   </div>
 
   <script>
     const WEBAPP_URL =
       'https://script.google.com/macros/s/AKfycbzfKXPPE7ENMFG7yke16XWh03S98Q0u4JgkOAQ8VZ3uJfBVYUy4xeZxrWoAaV-Z26uQ/exec';
 
-    const TOKEN =
-      new URLSearchParams(window.location.search).get('token') || '';
+    const TOKEN = new URLSearchParams(window.location.search).get('token') || '';
 
-    const target =
-      WEBAPP_URL +
-      '?page=join&token=' +
-      encodeURIComponent(TOKEN);
+    // No token: show the branded landing page.
+    // Token present: load the private Join form.
+    if (TOKEN) {
+      const target = WEBAPP_URL + '?page=join&token=' + encodeURIComponent(TOKEN);
 
-    const iframe = document.getElementById('app-frame');
-    iframe.src = target;
+      document.getElementById('landing').classList.add('hidden');
 
-    document.getElementById('open-direct').href = target;
-    document.getElementById('fallback-link').href = target;
+      const iframe = document.getElementById('app-frame');
+      iframe.classList.remove('hidden');
+      iframe.src = target;
 
-    iframe.addEventListener('error', () => {
-      iframe.style.display = 'none';
-      document.getElementById('fallback').style.display = 'flex';
-    });
+      const direct = document.getElementById('open-direct');
+      direct.href = target;
+      direct.classList.remove('hidden');
+    }
   </script>
 
   <noscript>
-    <div class="fallback" style="display:flex">
+    <div class="landing">
       <span class="logo-chip">
-        <img
-          src="https://www.mcjoint.in/images/logos/MC%20Joint%20Logo-5-MC%20Joint%20Block%20Logo.png"
-          alt="MC"
-          onerror="this.parentElement.innerHTML='MC'">
+        <img src="https://www.mcjoint.in/images/logos/MC%20Joint%20Logo-5-MC%20Joint%20Block%20Logo.png" alt="MC">
       </span>
-      <p>JavaScript is required to open this invitation.</p>
+      <div class="landing-card">
+        <h1>Aarti Badruka's Circle</h1>
+        <p>JavaScript is required to open an invitation.</p>
+      </div>
     </div>
   </noscript>
+
 </body>
 </html>
