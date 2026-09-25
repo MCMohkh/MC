@@ -1,73 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow">
-  <title>Aarti Badruka's Circle — MC</title>
-  <link rel="icon" type="image/png" sizes="512x512" href="https://www.mcjoint.in/favicon.png">
-  <style>
-    *{box-sizing:border-box}
-    html,body{margin:0;min-height:100%;background:#0b0b0b;color:#f5f4f1}
-    body{font-family:Inter,Arial,sans-serif}
-    .wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px 20px}
-    .card{width:min(680px,100%);text-align:center;padding:58px 34px;border:1px solid #292929;border-radius:10px;background:#151515}
-    .logo{display:inline-flex;background:#fff;border-radius:4px;padding:7px 13px;margin-bottom:30px}
-    .logo img{height:18px;width:auto;display:block}
-    .eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#918d87;margin-bottom:14px}
-    h1{font-family:Georgia,serif;font-size:34px;line-height:1.15;margin:0 0 18px;font-weight:500}
-    p{color:#aaa59d;line-height:1.7;font-size:14px;margin:0 auto 28px;max-width:520px}
-    .note{font-size:12px;color:#6f6b66;border-top:1px solid #292929;padding-top:22px;margin-top:28px}
-    a{color:#f5f4f1}
-    .direct{display:inline-block;color:#fff;background:#e10600;text-decoration:none;padding:12px 20px;border-radius:5px;font-size:13px;font-weight:600}
-    .pagelinks{position:fixed;bottom:16px;left:0;right:0;text-align:center;font-size:11px;color:#555}
-    .pagelinks a{color:#777;text-decoration:none}
-    iframe{border:0;width:100%;height:100vh;display:block}
-    .join-mode .pagelinks{display:none}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Aarti Badruka — PR, Events &amp; Collaborations</title>
+<link rel="icon" type="image/png" sizes="512x512" href="https://www.mcjoint.in/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0b0b0b; --panel:#151515; --panel-2:#1b1b1b; --line:#292929;
+    --white:#f5f4f1; --muted:#918d87;
+    --red:#e10600; --red-soft:#ff4a42;
+    --display:'Montserrat',Arial,sans-serif; --sans:'Inter',-apple-system,Segoe UI,Roboto,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--white);margin:0;background:var(--black);-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .container{max-width:1000px;margin:0 auto;padding:0 24px}
+
+  /* Subtle top bar — MC present, not dominant */
+  .topbar{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-bottom:1px solid var(--line)}
+  .topbar-inner{display:flex;align-items:center;justify-content:space-between;width:100%}
+  .mc-badge{display:flex;align-items:center;gap:8px;opacity:.75;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+  .mc-badge img{height:14px;width:auto;display:block;filter:grayscale(1) brightness(1.6)}
+  nav.site-nav{display:flex;align-items:center;gap:26px}
+  nav.site-nav a{font-size:13px;color:var(--muted);text-decoration:none;letter-spacing:.3px}
+  nav.site-nav a:hover{color:var(--white)}
+  .btn{
+    display:inline-block;background:var(--red);color:#fff;border:none;padding:11px 20px;border-radius:6px;
+    font-size:13px;font-weight:700;letter-spacing:.5px;text-decoration:none;cursor:pointer;font-family:var(--sans)
+  }
+  .btn:hover{background:var(--red-soft)}
+  .btn-outline{background:transparent;border:1px solid var(--line);color:var(--white)}
+  .btn-outline:hover{border-color:var(--muted)}
+
+  /* HERO */
+  .hero{padding:90px 0 70px;text-align:center}
+  .hero .eyebrow{font-size:11px;letter-spacing:3.5px;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+  .hero h1{font-family:Georgia,serif;font-weight:500;font-size:clamp(36px,6vw,58px);line-height:1.1;margin:0 0 20px}
+  .hero p.tagline{color:var(--muted);font-size:16px;line-height:1.7;max-width:560px;margin:0 auto 34px}
+  .hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .hero-glyph{width:34px;height:2px;background:var(--red);margin:26px auto 0}
+
+  section{padding:70px 0;border-top:1px solid var(--line)}
+  .section-eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:10px;font-weight:700;font-family:var(--display)}
+  h2{font-family:var(--display);font-weight:700;font-size:28px;margin:0 0 26px}
+
+  /* ABOUT */
+  .about-body p{color:var(--muted);font-size:15px;line-height:1.85;margin:0 0 16px;max-width:680px}
+  .about-more{display:inline-block;margin-top:8px;font-size:12.5px;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px}
+  .about-more:hover{color:var(--white);border-color:var(--muted)}
+
+  /* WORK */
+  .work-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+  .work-card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:26px;transition:border-color .2s}
+  .work-card:hover{border-color:var(--muted)}
+  .work-tag{display:inline-block;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--red);margin-bottom:12px;font-weight:700}
+  .work-card h3{font-family:var(--display);font-weight:700;font-size:16px;margin:0 0 8px}
+  .work-card p{color:var(--muted);font-size:13.5px;line-height:1.7;margin:0}
+  .work-note{color:#5c5955;font-size:12px;margin-top:26px;font-style:italic}
+
+  /* CONTACT / REQUEST */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+  @media(max-width:760px){.contact-grid{grid-template-columns:1fr}}
+  .contact-copy p{color:var(--muted);font-size:14.5px;line-height:1.8;max-width:420px}
+  .contact-copy ul{color:var(--muted);font-size:13.5px;line-height:2;padding-left:18px;margin-top:20px}
+  form.contact-form{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:28px}
+  label{display:block;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin:16px 0 6px;font-weight:600}
+  label:first-child{margin-top:0}
+  input,select,textarea{
+    width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:5px;font-size:14px;font-family:var(--sans);
+    background:var(--panel-2);color:var(--white)
+  }
+  input::placeholder,textarea::placeholder{color:#5c5955}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--red)}
+  textarea{resize:vertical;min-height:80px}
+  .form-btn{width:100%;margin-top:22px;padding:14px;font-size:13px;letter-spacing:1px;text-transform:uppercase}
+  .form-note{font-size:11.5px;color:#5c5955;margin-top:14px;text-align:center;line-height:1.6}
+  .form-msg{margin-top:14px;font-size:13px;text-align:center;display:none}
+  .form-msg.ok{color:#5ec99a}
+  .form-msg.err{color:#ff4a42}
+
+  /* FOOTER */
+  footer{padding:44px 0 30px;border-top:1px solid var(--line);text-align:center}
+  .footer-logo{display:inline-flex;align-items:center;gap:8px;opacity:.7;margin-bottom:10px}
+  .footer-logo img{height:16px;width:auto}
+  .fine-print{color:#5c5955;font-size:10.5px;letter-spacing:1px;text-transform:uppercase}
+
+  .redirect-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px 20px}
+  .redirect-card{width:min(680px,100%);text-align:center;padding:58px 34px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+</style>
 </head>
 <body>
+
+<div id="site-root"></div>
+
 <script>
+  // Apps Script web apps refuse to be iframed from another domain, so an
+  // invite link does a top-level redirect straight to the join page rather
+  // than embedding it. Same as before — checked first, before anything else
+  // on this page renders.
   const WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbzfKXPPE7ENMFG7yke16XWh03S98Q0u4JgkOAQ8VZ3uJfBVYUy4xeZxrWoAaV-Z26uQ/exec';
+  const LOGO = 'https://www.mcjoint.in/images/logos/MC%20Joint%20Logo-5-MC%20Joint%20Block%20Logo.png';
   const TOKEN = new URLSearchParams(window.location.search).get('token') || '';
+  const root = document.getElementById('site-root');
 
   if (TOKEN) {
-    document.body.className = 'join-mode';
-    const iframe = document.createElement('iframe');
-    iframe.src = WEBAPP_URL + '?page=join&token=' + encodeURIComponent(TOKEN);
-    iframe.setAttribute('allow', 'geolocation');
-    document.body.appendChild(iframe);
-  } else {
-    document.body.innerHTML = `
-      <div class="wrap">
-        <main class="card">
-          <span class="logo">
-            <img src="https://www.mcjoint.in/images/logos/MC%20Joint%20Logo-5-MC%20Joint%20Block%20Logo.png"
-                 alt="MC"
-                 onerror="this.parentElement.textContent='MC'">
-          </span>
-          <div class="eyebrow">MC Joint · Private Network</div>
-          <h1>Aarti Badruka's Circle</h1>
-          <p>
-            A private contact network curated for Aarti Badruka's PR, events,
-            collaborations and professional outreach.
-          </p>
-          <p class="note">
-            This is an invitation-only network. If you received an invitation,
-            please use the personal link shared with you.
-          </p>
-        </main>
-      </div>
-      <div class="pagelinks">
-        <a href="./about.html">What is this?</a>
-      </div>
+    root.innerHTML = `
+      <div class="redirect-wrap"><main class="redirect-card">
+        <div class="footer-logo"><img src="${LOGO}" alt="MC" onerror="this.parentElement.textContent='MC'"></div>
+        <h1 style="font-family:Georgia,serif;font-size:26px;font-weight:500;margin:18px 0 10px">Taking you to your invitation…</h1>
+        <p style="color:#918d87;font-size:13px">If nothing happens, <a href="${WEBAPP_URL}?page=join&token=${encodeURIComponent(TOKEN)}" style="color:#f5f4f1">tap here</a>.</p>
+      </main></div>
     `;
+    window.location.replace(WEBAPP_URL + '?page=join&token=' + encodeURIComponent(TOKEN));
+  } else {
+    buildSite();
+  }
+
+  function buildSite() {
+    root.innerHTML = `
+      <header class="container topbar">
+        <div class="topbar-inner">
+          <div class="mc-badge"><img src="${LOGO}" alt="MC" onerror="this.remove()"> Powered by MC</div>
+          <nav class="site-nav">
+            <a href="#about">About</a>
+            <a href="#work">Work</a>
+            <a href="#contact">Get in Touch</a>
+            <a href="#contact" class="btn" onclick="presetInquiry('Request an Invite')">Request an Invite</a>
+          </nav>
+        </div>
+      </header>
+
+      <section class="hero container" style="border-top:none;padding-top:90px">
+        <div class="eyebrow">PR · Events · Collaborations</div>
+        <h1>Aarti Badruka</h1>
+        <p class="tagline">Curating the people, partners and moments behind Hyderabad's most talked-about events — a private circle built on relationships, not mailing lists.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn" onclick="presetInquiry('Request an Invite')">Request an Invite</a>
+          <a href="#work" class="btn btn-outline">See Her Work</a>
+        </div>
+        <div class="hero-glyph"></div>
+      </section>
+
+      <section id="about" class="container">
+        <div class="section-eyebrow">About</div>
+        <h2>A trusted name in Hyderabad PR</h2>
+        <div class="about-body">
+          <p>[Editable] Aarti Badruka has spent over a decade at the intersection of fashion, design and society events in Hyderabad — building the guest lists, partnerships and press relationships that make a launch feel like an occasion. This network is how she keeps that circle warm between events.</p>
+          <p>[Editable] Add a second paragraph here — notable long-term partners, the kind of events she's known for, or what makes an invite from her worth opening.</p>
+          <a class="about-more" href="./about.html">Curious how this private network itself works? →</a>
+        </div>
+      </section>
+
+      <section id="work" class="container">
+        <div class="section-eyebrow">Portfolio</div>
+        <h2>A selection of her work</h2>
+        <div class="work-grid">
+          <div class="work-card">
+            <span class="work-tag">Fashion</span>
+            <h3>[Event / Client Name]</h3>
+            <p>[Editable] One or two lines on the event — what it was, scale, and Aarti's role in it.</p>
+          </div>
+          <div class="work-card">
+            <span class="work-tag">Interiors</span>
+            <h3>[Event / Client Name]</h3>
+            <p>[Editable] One or two lines on the event — what it was, scale, and Aarti's role in it.</p>
+          </div>
+          <div class="work-card">
+            <span class="work-tag">Corporate</span>
+            <h3>[Event / Client Name]</h3>
+            <p>[Editable] One or two lines on the event — what it was, scale, and Aarti's role in it.</p>
+          </div>
+          <div class="work-card">
+            <span class="work-tag">Weddings &amp; Social</span>
+            <h3>[Event / Client Name]</h3>
+            <p>[Editable] One or two lines on the event — what it was, scale, and Aarti's role in it.</p>
+          </div>
+          <div class="work-card">
+            <span class="work-tag">Art &amp; Culture</span>
+            <h3>[Event / Client Name]</h3>
+            <p>[Editable] One or two lines on the event — what it was, scale, and Aarti's role in it.</p>
+          </div>
+          <div class="work-card">
+            <span class="work-tag">Retail Launch</span>
+            <h3>[Event / Client Name]</h3>
+            <p>[Editable] One or two lines on the event — what it was, scale, and Aarti's role in it.</p>
+          </div>
+        </div>
+        <p class="work-note">Placeholder cards — swap in real event names, one-liners, and (optionally) a photo per card whenever ready.</p>
+      </section>
+
+      <section id="contact" class="container">
+        <div class="section-eyebrow">Get in Touch</div>
+        <h2>Say hello, or request an invite</h2>
+        <div class="contact-grid">
+          <div class="contact-copy">
+            <p>Whether you'd like to be considered for the Circle, explore a partnership, or just say hello — this reaches Aarti's team directly.</p>
+            <ul>
+              <li>Invite requests are reviewed and sent personally, not auto-approved</li>
+              <li>Press &amp; collaboration enquiries are usually answered within a few days</li>
+              <li>Your details are never sold or shared onward</li>
+            </ul>
+          </div>
+          <form class="contact-form" id="inquiry-form" onsubmit="return submitInquiry(event)">
+            <label>What can we help with?</label>
+            <select id="inq-type">
+              <option>Request an Invite</option>
+              <option>Press / Collaboration</option>
+              <option>General Inquiry</option>
+            </select>
+            <label>Name *</label>
+            <input id="inq-name" required placeholder="Your full name">
+            <label>Email</label>
+            <input id="inq-email" type="email" placeholder="you@example.com">
+            <label>Phone</label>
+            <input id="inq-phone" type="tel" placeholder="10-digit mobile number">
+            <label>Message</label>
+            <textarea id="inq-message" placeholder="A line or two of context is helpful"></textarea>
+            <button class="btn form-btn" id="inq-submit" type="submit">Send</button>
+            <div class="form-msg" id="inq-msg"></div>
+            <div class="form-note">At least an email or a phone number is needed so we can get back to you.</div>
+          </form>
+        </div>
+      </section>
+
+      <footer class="container">
+        <div class="footer-logo"><img src="${LOGO}" alt="MC" onerror="this.remove()"></div>
+        <div class="fine-print">Powered by MC</div>
+      </footer>
+    `;
+  }
+
+  function presetInquiry(type) {
+    setTimeout(() => {
+      const sel = document.getElementById('inq-type');
+      if (sel) sel.value = type;
+    }, 50);
+  }
+
+  function submitInquiry(evt) {
+    evt.preventDefault();
+    const name = document.getElementById('inq-name').value.trim();
+    const email = document.getElementById('inq-email').value.trim();
+    const phone = document.getElementById('inq-phone').value.trim();
+    const msgEl = document.getElementById('inq-msg');
+    msgEl.style.display = 'none';
+
+    if (!name || (!email && !phone)) {
+      msgEl.className = 'form-msg err';
+      msgEl.textContent = 'Please add your name and at least an email or phone number.';
+      msgEl.style.display = 'block';
+      return false;
+    }
+
+    const data = {
+      formType: 'inquiry',
+      type: document.getElementById('inq-type').value,
+      name: name, email: email, phone: phone,
+      message: document.getElementById('inq-message').value.trim()
+    };
+
+    const btn = document.getElementById('inq-submit');
+    btn.disabled = true; btn.textContent = 'Sending…';
+
+    // Sent as a plain-text body on purpose — this avoids a CORS preflight,
+    // which Apps Script's web app endpoint doesn't handle. Fired with
+    // no-cors, so we don't try to read the response back; the write +
+    // notification already happened server-side by the time this resolves.
+    fetch(WEBAPP_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: JSON.stringify(data)
+    }).then(() => {
+      btn.disabled = false; btn.textContent = 'Send';
+      document.getElementById('inquiry-form').reset();
+      msgEl.className = 'form-msg ok';
+      msgEl.textContent = "Thank you — we'll be in touch shortly.";
+      msgEl.style.display = 'block';
+    }).catch(() => {
+      btn.disabled = false; btn.textContent = 'Send';
+      msgEl.className = 'form-msg err';
+      msgEl.textContent = 'Something went wrong — please try again in a moment.';
+      msgEl.style.display = 'block';
+    });
+    return false;
   }
 </script>
 <noscript>
-  <div class="wrap"><main class="card">
-    <h1>Aarti Badruka's Circle</h1>
-    <p>Please enable JavaScript to continue.</p>
+  <div class="redirect-wrap"><main class="redirect-card">
+    <h1 style="font-family:Georgia,serif">Aarti Badruka</h1>
+    <p style="color:#918d87">Please enable JavaScript to view this page.</p>
   </main></div>
 </noscript>
 </body>
