@@ -14,7 +14,7 @@
     <lastBuildDate>Thu, 28 May 2026 00:00:00 +0530</lastBuildDate>
     <ttl>1440</ttl>
     <image>
-      <url>/images/logos/MC Joint Logo-5-MC Joint Block Logo.png</url>
+      <url>https://www.mcjoint.in/images/mc/mc-joint-logo-5-mc-joint-block-logo.png</url>
       <title>MC Joint</title>
       <link>https://www.mcjoint.in</link>
       <width>144</width><height>144</height>
@@ -30,7 +30,7 @@
       <description>Beyond Physical is a documentary series produced by Flintstory and directed by Prashanth Podagatlapalli, exploring the discipline and philosophy behind parkour, boxing, BMX cycling, CrossFit and yoga. Five episodes shot across Hyderabad; currently in post-production.</description>
       <pubDate>Wed, 28 May 2026 00:00:00 +0530</pubDate>
       <dc:creator>MC Joint</dc:creator>
-      <media:thumbnail url="" width="400" height="225"/>
+       width="400" height="225"/>
     </item>
 
     <item>
@@ -40,7 +40,7 @@
       <description>Viral Video is the debut directorial feature by writer-director Prashanth Podagatlapalli, currently in post-production. Cast: Pooja Bhavani, Feroze MNA, Laxman Meesala, Muni Myatari. Music: Ravi Nidamarthy. Editor: Rohit Penumatsa.</description>
       <pubDate>Mon, 20 Jan 2025 00:00:00 +0530</pubDate>
       <dc:creator>MC Joint</dc:creator>
-      <media:thumbnail url="" width="400" height="225"/>
+       width="400" height="225"/>
     </item>
 
     <item>
@@ -50,7 +50,7 @@
       <description>Gopi Galla Goa Trip is a rural Telangana adventure-comedy directed by Rohit Penumatsa and Camp Sasi, starring Ajith Mohan as Gopi and featuring Raju Shivaratri and Pawon Ramesh. Produced by Avanti Cinema, represented by MC Joint.</description>
       <pubDate>Fri, 10 Jan 2025 00:00:00 +0530</pubDate>
       <dc:creator>MC Joint</dc:creator>
-      <media:thumbnail url="" width="400" height="225"/>
+      <media:thumbnail url="https://www.mcjoint.in/images/talent/MC-Raju-Shivaratri-in-Gopi-Galla-Goa-Trip.png" width="400" height="225"/>
     </item>
 
     <item>
@@ -70,7 +70,7 @@
       <description>A retrospective on Avanti Cinema's journey — from Pickpocket to Sheeshmahal. Directed by Rohit Penumatsa and Camp Sasi. MC Joint's longest-standing creative partnership in Telugu independent cinema.</description>
       <pubDate>Thu, 01 Jun 2023 00:00:00 +0530</pubDate>
       <dc:creator>MC Joint</dc:creator>
-      <media:thumbnail url="" width="400" height="225"/>
+      <media:thumbnail url="https://www.mcjoint.in/images/talent/talent-rohit-penumatsa.jpg" width="400" height="225"/>
     </item>
 
     <item>
@@ -80,7 +80,7 @@
       <description>Nalgonda Gaddar Narsanna's folk songs resonated across both Telugu states during the 2023 elections — lending his voice to all parties alike. Represented by MC Joint since late 2021.</description>
       <pubDate>Tue, 01 Aug 2023 00:00:00 +0530</pubDate>
       <dc:creator>MC Joint</dc:creator>
-      <media:thumbnail url="" width="400" height="225"/>
+       width="400" height="225"/>
     </item>
 
     <item>
@@ -90,7 +90,7 @@
       <description>The story of how Rohit Penumatsa and Camp Sasi built Avanti Cinema into one of Telugu independent cinema's most distinctive voices, and how MC Joint helped shape their strategy.</description>
       <pubDate>Fri, 01 Sep 2023 00:00:00 +0530</pubDate>
       <dc:creator>MC Joint</dc:creator>
-      <media:thumbnail url="" width="400" height="225"/>
+      <media:thumbnail url="https://www.mcjoint.in/images/talent/talent-rohit-penumatsa.jpg" width="400" height="225"/>
     </item>
 
     <item>
@@ -100,7 +100,7 @@
       <description>How MC Joint partnered with Vivek Sagar and Tapeloop Records to build distribution infrastructure for independent Telugu cinema music — treating every soundtrack with major-label rigour.</description>
       <pubDate>Mon, 01 May 2023 00:00:00 +0530</pubDate>
       <dc:creator>MC Joint</dc:creator>
-      <media:thumbnail url="" width="400" height="225"/>
+      <media:thumbnail url="https://www.mcjoint.in/images/talent/talent-vivek-sagar.jpg" width="400" height="225"/>
     </item>
 
     <item>
@@ -110,7 +110,7 @@
       <description>Story Discussion Season 2 with Smaran — MC Joint's deep-dive series on storytelling craft in Telugu independent cinema.</description>
       <pubDate>Thu, 01 Dec 2022 00:00:00 +0530</pubDate>
       <dc:creator>MC Joint</dc:creator>
-      <media:thumbnail url="" width="400" height="225"/>
+      <media:thumbnail url="https://www.mcjoint.in/images/talent/talent-smaran-sai.jpg" width="400" height="225"/>
     </item>
 
   </channel>
