@@ -6,7 +6,7 @@
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
   <link rel="apple-touch-icon" sizes="512x512" href="/favicon.png">
 <title>Beyond Physical — Documentary Series | Flintstory × MC Joint</title>
-  <meta name="description" content="Beyond Physical is a documentary series produced by Flintstory, directed by Prashanth Podagatlapalli, exploring parkour, boxing, yoga, BMX, CrossFit and the discipline behind physical pursuits.">
+  <meta name="description" content="Beyond Physical is a documentary series by Flintstory, directed by Prashanth Podagatlapalli, on the discipline behind parkour, boxing, yoga, BMX and CrossFit.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://mcjoint.in/works/beyond-physical.html">  <link rel="alternate" type="application/rss+xml" title="MC Joint — Music, Talent &amp; Cinema" href="https://mcjoint.in/feed.xml">
   <meta property="og:type" content="article">
@@ -36,9 +36,8 @@
   <!-- Google Analytics GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-620G3QZX5M"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-620G3QZX5M');</script>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preload" href="/fonts/montserrat-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../css/style.css">
   <style>
     /* ── Hero ─────────────────────────────────────────────────────────── */
@@ -98,7 +97,7 @@
     .mc-gallery-item { position: relative; aspect-ratio: 1; overflow: hidden; cursor: zoom-in; background: #111; }
     .mc-gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s; display: block; }
     .mc-gallery-item:hover img { transform: scale(1.06); }
-    .mc-gallery-item::after { content:'\f00e'; font-family:'Font Awesome 6 Free'; font-weight:900; position:absolute; bottom:8px; right:10px; color:rgba(255,255,255,0.7); font-size:1rem; pointer-events:none; opacity:0; transition:opacity .2s; }
+    .mc-gallery-item::after { content:''; width:1em; height:1em; background:currentColor; -webkit-mask:var(--ic-zoom) center/contain no-repeat; mask:var(--ic-zoom) center/contain no-repeat; position:absolute; bottom:8px; right:10px; color:rgba(255,255,255,0.7); font-size:1rem; pointer-events:none; opacity:0; transition:opacity .2s; }
     .mc-gallery-item:hover::after { opacity: 1; }
     .mc-lightbox { display:none; position:fixed; inset:0; background:rgba(0,0,0,.94); z-index:9998; align-items:center; justify-content:center; }
     .mc-lightbox.active { display:flex; }
@@ -368,6 +367,14 @@
       <div class="mc-gallery-item" onclick="bpOpenLB(9)" style="cursor:zoom-in;"><img src="/images/posters/project-beyond-physical-mc-3.webp" alt="Beyond Physical — Production still 3" loading="lazy" width="1599" height="899" decoding="async"></div>
       <div class="mc-gallery-item" onclick="bpOpenLB(10)" style="cursor:zoom-in;"><img src="/images/posters/project-beyond-physical-mc-4.webp" alt="Beyond Physical — Production still 4" loading="lazy" width="1599" height="899" decoding="async"></div>
     </div>
+  </div>
+</section>
+
+<!-- related -->
+<section class="related" aria-label="Related">
+  <div class="container">
+    <h2 class="related-title">Related</h2>
+    <div class="related-grid"><div><h3>Services involved</h3><ul><li><a href="/services.html#production">Content Production &amp; Development</a></li></ul></div><div><h3>More projects</h3><ul><li><a href="/works/story-discussion-s2.html">Story Discussion S2</a></li><li><a href="/works/gopi-galla-goa-trip.html">Gopi Galla Goa Trip</a></li><li><a href="/works/sheeshmahal.html">Sheeshmahal</a></li><li><a href="/works/projects.html">All projects →</a></li></ul></div></div>
   </div>
 </section>
 
