@@ -6,10 +6,6 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <title>Check In — The Style Mill</title>
   <meta name="robots" content="noindex, nofollow">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <!-- Social share preview (same image as the Home and Visit pages) -->
   <meta property="og:type" content="website">
@@ -27,6 +23,7 @@
   <meta name="twitter:image" content="https://mcjoint.in/images/the-style-mill/tsm-season6-og-share.jpg">
   
   <!-- NOTE: fully self-contained on purpose. checkin.html lives beside tsm.css, so the old "../tsm.css" path was broken. -->
+  <link rel="stylesheet" href="/css/microsite.css">
   <style>
     :root{
       --green:#1C3D35; --green-d:#12291F; --gold:#C9A96E; --gold-d:#A98B4F;
@@ -87,9 +84,9 @@
       font-size:.82rem;font-weight:500;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent;
       transition:background .15s,color .15s,border-color .15s;
     }
-    .chip::before{content:'';width:0;overflow:hidden;font-family:'Font Awesome 6 Free';font-weight:900;font-size:.68rem;transition:width .15s;}
+    .chip::before{content:'';display:inline-block;width:0;height:.8rem;overflow:hidden;background:currentColor;-webkit-mask:var(--ic-check) center/contain no-repeat;mask:var(--ic-check) center/contain no-repeat;transition:width .15s;}
     .chip.on{background:var(--green);border-color:var(--green);color:var(--cream);}
-    .chip.on::before{content:'\f00c';width:.8rem;color:var(--gold);}
+    .chip.on::before{width:.8rem;background:var(--gold);}
     .chip:active{transform:scale(.97);}
     @media(hover:hover){.chip:not(.on):hover{border-color:var(--green);background:var(--paper);}}
 
