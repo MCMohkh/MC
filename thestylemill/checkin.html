@@ -6,27 +6,24 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <title>Check In — The Style Mill</title>
   <meta name="robots" content="noindex, nofollow">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <!-- Social share preview (same image as the Home and Visit pages) -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.mcjoint.in/thestylemill/checkin.html">
+  <meta property="og:url" content="https://mcjoint.in/thestylemill/checkin.html">
   <meta property="og:site_name" content="The Style Mill × MC Joint">
   <meta property="og:title" content="Check In — The Style Mill · Hyderabad">
   <meta property="og:description" content="You're here. Check in for the full floor map and every designer's stall number.">
-  <meta property="og:image" content="https://www.mcjoint.in/images/the-style-mill/tsm-season6-og-share.jpg">
+  <meta property="og:image" content="https://mcjoint.in/images/the-style-mill/tsm-season6-og-share.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="The Style Mill Season 6 · Diwali Edit 2026">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Check In — The Style Mill · Hyderabad">
   <meta name="twitter:description" content="You're here. Check in for the full floor map and every designer's stall number.">
-  <meta name="twitter:image" content="https://www.mcjoint.in/images/the-style-mill/tsm-season6-og-share.jpg">
+  <meta name="twitter:image" content="https://mcjoint.in/images/the-style-mill/tsm-season6-og-share.jpg">
   
   <!-- NOTE: fully self-contained on purpose. checkin.html lives beside tsm.css, so the old "../tsm.css" path was broken. -->
+  <link rel="stylesheet" href="/css/microsite.css">
   <style>
     :root{
       --green:#1C3D35; --green-d:#12291F; --gold:#C9A96E; --gold-d:#A98B4F;
@@ -87,9 +84,9 @@
       font-size:.82rem;font-weight:500;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent;
       transition:background .15s,color .15s,border-color .15s;
     }
-    .chip::before{content:'';width:0;overflow:hidden;font-family:'Font Awesome 6 Free';font-weight:900;font-size:.68rem;transition:width .15s;}
+    .chip::before{content:'';display:inline-block;width:0;height:.8rem;overflow:hidden;background:currentColor;-webkit-mask:var(--ic-check) center/contain no-repeat;mask:var(--ic-check) center/contain no-repeat;transition:width .15s;}
     .chip.on{background:var(--green);border-color:var(--green);color:var(--cream);}
-    .chip.on::before{content:'\f00c';width:.8rem;color:var(--gold);}
+    .chip.on::before{width:.8rem;background:var(--gold);}
     .chip:active{transform:scale(.97);}
     @media(hover:hover){.chip:not(.on):hover{border-color:var(--green);background:var(--paper);}}
 
@@ -164,7 +161,7 @@
 <body>
 
 <header class="hero">
-  <a href="index.html"><img src="/images/the-style-mill/tsm-logo-white.png" alt="The Style Mill"></a>
+  <a href="index.html"><img src="/images/the-style-mill/tsm-logo-white.webp" alt="The Style Mill"></a>
   <p class="where">Taj Deccan, Hyderabad · 20 September</p>
   <h1>You're in.<br><em>Let's find your look.</em></h1>
   <p class="lede">Tell us what you're shopping for and the floor map opens right after.</p>
@@ -228,7 +225,7 @@
   </div>
 
   <div class="map-frame" id="mapFrame" role="button" tabindex="0" aria-label="Enlarge floor map">
-    <img src="/images/the-style-mill/hyd-stall-layout.jpeg" alt="The Style Mill Hyderabad stall layout at Taj Deccan">
+    <img src="/images/the-style-mill/hyd-stall-layout.webp" alt="The Style Mill Hyderabad stall layout at Taj Deccan">
     <span class="zoom"><i class="fas fa-magnifying-glass-plus"></i>Tap to enlarge</span>
   </div>
 
@@ -246,11 +243,11 @@
 
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Floor map" hidden>
   <div class="lightbox-bar"><span>Scroll to move around the map</span><button type="button" id="lightboxClose">Close</button></div>
-  <div class="lightbox-scroll"><img src="/images/the-style-mill/hyd-stall-layout.jpeg" alt="Full-size stall layout"></div>
+  <div class="lightbox-scroll"><img src="/images/the-style-mill/hyd-stall-layout.webp" alt="Full-size stall layout"></div>
 </div>
 
 <footer>
-  <img src="/images/the-style-mill/tsm-logo-white.png" alt="The Style Mill"><br>
+  <img src="/images/the-style-mill/tsm-logo-white.webp" alt="The Style Mill"><br>
   Season 6 · Diwali Edit 2026
   <div class="social" style="margin-top:.9rem;">
     <a href="https://www.instagram.com/the_stylemill/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>

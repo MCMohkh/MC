@@ -15,12 +15,12 @@
   <meta name="geo.placename" content="Hyderabad">
   <meta name="geo.position" content="17.3850;78.4867">
   <meta name="ICBM" content="17.3850, 78.4867">
-  <link rel="canonical" href="https://www.mcjoint.in/"><!-- Open Graph -->
+  <link rel="canonical" href="https://mcjoint.in/"><!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.mcjoint.in/">
+  <meta property="og:url" content="https://mcjoint.in/">
   <meta property="og:title" content="MC Joint — Music, Talent &amp; Cinema Agency">
   <meta property="og:description" content="Hyderabad's creative agency for music distribution, talent management, and cinema strategy. Representing artists since 2018.">
-  <meta property="og:image" content="https://www.mcjoint.in/images/mc/mc-joint-masters-of-ceremonies-hyderabad-talent-agency-hyderabad.jpg">
+  <meta property="og:image" content="https://mcjoint.in/images/mc/mc-joint-masters-of-ceremonies-hyderabad-talent-agency-hyderabad.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="MC Joint — Music, Talent & Cinema Agency, Hyderabad">
@@ -31,13 +31,11 @@
   <meta name="twitter:site" content="@mcjointin">
   <meta name="twitter:title" content="MC Joint — Music, Talent &amp; Cinema Agency">
   <meta name="twitter:description" content="Hyderabad's creative agency for music distribution, talent management, and cinema strategy.">
-  <meta name="twitter:image" content="https://www.mcjoint.in/images/mc/mc-joint-masters-of-ceremonies-hyderabad-talent-agency-hyderabad.jpg">
+  <meta name="twitter:image" content="https://mcjoint.in/images/mc/mc-joint-masters-of-ceremonies-hyderabad-talent-agency-hyderabad.jpg">
   <meta name="twitter:image:alt" content="MC Joint — Music, Talent & Cinema Agency, Hyderabad">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preload" href="/fonts/montserrat-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
 
   <!-- Organisation Schema -->
@@ -47,7 +45,7 @@
     "@type": "Organization",
     "name": "MC Joint",
     "alternateName": "Masters of Ceremonies",
-    "url": "https://www.mcjoint.in",
+    "url": "https://mcjoint.in",
     "logo": "/images/mc/mc-joint-logo-5-mc-joint-block-logo.png",
     "description": "Hyderabad-based creative agency for music distribution, talent management, and cinema strategy.",
     "foundingDate": "2018",
@@ -77,8 +75,8 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "MC Joint",
-    "image": "https://www.mcjoint.in/images/mc/mc-joint-logo-5-mc-joint-block-logo.png",
-    "url": "https://www.mcjoint.in",
+    "image": "https://mcjoint.in/images/mc/mc-joint-logo-5-mc-joint-block-logo.png",
+    "url": "https://mcjoint.in",
     "telephone": "+91-90144-14114",
     "email": "info@mcjoint.in",
     "priceRange": "$$",
@@ -178,7 +176,7 @@
     .services-strip { background: var(--light-bg); }
     .services-grid { display: grid; grid-template-columns: 1fr; gap: 0; border: 1px solid #e0e0e0; }
     @media(min-width:768px){ .services-grid { grid-template-columns: repeat(2,1fr); } }
-    @media(min-width:1024px){ .services-grid { grid-template-columns: repeat(4,1fr); } }
+    @media(min-width:1024px){ .services-grid { grid-template-columns: repeat(3,1fr); } }
     .service-card {
       padding: 2.5rem 2rem; border-right: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0;
       transition: background 0.3s; cursor:default;
@@ -415,7 +413,7 @@
     gtag('js', new Date());
     gtag('config', 'G-620G3QZX5M');
   </script>
-  <link rel="alternate" type="application/rss+xml" title="MC Joint — Music, Talent &amp; Cinema" href="https://www.mcjoint.in/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="MC Joint — Music, Talent &amp; Cinema" href="https://mcjoint.in/feed.xml">
 </head>
 <body>
 
@@ -423,62 +421,42 @@
 <header>
   <div class="container">
     <div class="header-content">
-      <a class="logo" href="index.html">
-        <img src="/images/mc/mc-joint-logo-5-mc-joint-block-logo.png" alt="MC Joint — Masters of Ceremonies" width="160" height="42" fetchpriority="high" onerror="this.outerHTML='<span>MC</span> Joint'">
-      </a>
-      <nav>
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
+      <a class="logo" href="/"><img src="/images/mc/mc-joint-logo-5-mc-joint-block-logo.webp" alt="MC Joint — Masters of Ceremonies" width="160" height="42" fetchpriority="high" onerror="this.outerHTML='<span>MC</span> Joint'"></a>
+      <nav aria-label="Main">
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
         <div class="nav-dropdown">
-        <a href="services.html">Services ▾</a>
-        <div class="nav-dropdown-menu">
-          <a href="services/digital-footprint.html">Digital Footprint</a>
-          <a href="services/imdb-management.html">IMDb Management</a>
-          <a href="services/wikipedia-consulting.html">Wikipedia Consulting</a>
-          <a href="services/google-knowledge-panel.html">Knowledge Panel</a>
-          <a href="services/pr-notability.html">PR &amp; Notability</a>
-        </div>
-      </div>
-        <div class="nav-dropdown">
-          <a href="clients/index.html">Clients ▾</a>
+          <a href="/services.html">Services ▾</a>
           <div class="nav-dropdown-menu">
-            <a href="clients/businesses.html">Businesses</a>
-            <a href="clients/talent.html">Talent</a>
-            <a href="clients/associates.html">Associates</a>
+            <span class="nav-label">Core Services</span><a href="/services.html#production">Content Production &amp; Development</a><a href="/services.html#distribution">Music Distribution &amp; Sound Production</a><a href="/services.html#talent">Talent Management &amp; Representation</a><a href="/services.html#digital">Digital Strategy &amp; Brand Partnerships</a>
+            <span class="nav-label">Creative</span><a href="/services/branding-design.html">Branding &amp; Design</a>
+            <span class="nav-label">Digital Footprint</span><a href="/services/digital-footprint.html">Digital Footprint Overview</a><a href="/services/imdb-management.html">IMDb Management</a><a href="/services/wikipedia-consulting.html">Wikipedia Consulting</a><a href="/services/google-knowledge-panel.html">Google Knowledge Panel</a><a href="/services/pr-notability.html">PR &amp; Notability</a>
           </div>
         </div>
         <div class="nav-dropdown">
-        <a href="works.html">Our Works ▾</a>
-        <div class="nav-dropdown-menu">
-          <a href="works/projects.html">Projects</a>
+          <a href="/clients/">Clients ▾</a>
+          <div class="nav-dropdown-menu"><a href="/clients/businesses.html">Businesses</a><a href="/clients/associates.html">Associates</a><a href="/clients/talent.html">Talent</a></div>
         </div>
-      </div>
-        <a href="blog.html">Blog</a>
-        <a href="contact.html">Contact</a>
+        <div class="nav-dropdown">
+          <a href="/works.html">Works ▾</a>
+          <div class="nav-dropdown-menu"><a href="/works.html">Client Works</a><a href="/works/projects.html">Projects</a></div>
+        </div>
+        <a href="/contact.html">Contact</a>
       </nav>
-      <button class="nav-search-btn" onclick="window.location.href='search.html'" aria-label="Search"><i class="fas fa-search"></i></button>
-    <a href="contact.html" class="btn btn-primary header-cta">Work With Us</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <a href="/contact.html" class="btn btn-primary header-cta">Work With Us</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="services.html">Services</a>
-  <a href="clients/index.html">Clients</a>
-  <div class="nav-dropdown">
-        <a href="works.html">Our Works ▾</a>
-        <div class="nav-dropdown-menu">
-          <a href="works/projects.html">Projects</a>
-        </div>
-      </div>
-  <a href="blog.html">Blog</a>
-  <a href="contact.html">Contact</a>
+  <a href="/">Home</a>
+  <a href="/about.html">About</a>
+  <details><summary>Services</summary><div><a href="/services.html">All Services</a><a href="/services.html#production">Content Production &amp; Development</a><a href="/services.html#distribution">Music Distribution &amp; Sound Production</a><a href="/services.html#talent">Talent Management &amp; Representation</a><a href="/services.html#digital">Digital Strategy &amp; Brand Partnerships</a><a href="/services/branding-design.html">Branding &amp; Design</a><a href="/services/digital-footprint.html">Digital Footprint Overview</a><a href="/services/imdb-management.html">IMDb Management</a><a href="/services/wikipedia-consulting.html">Wikipedia Consulting</a><a href="/services/google-knowledge-panel.html">Google Knowledge Panel</a><a href="/services/pr-notability.html">PR &amp; Notability</a></div></details>
+  <details><summary>Clients</summary><div><a href="/clients/">Overview</a><a href="/clients/businesses.html">Businesses</a><a href="/clients/associates.html">Associates</a><a href="/clients/talent.html">Talent</a></div></details>
+  <details><summary>Works</summary><div><a href="/works.html">Client Works</a><a href="/works/projects.html">Projects</a></div></details>
+  <a href="/contact.html">Contact</a>
 </div>
 
 <!-- HERO -->
@@ -553,54 +531,30 @@
       <div class="intro-visual fade-in">
         <div class="intro-image-box intro-slider" id="introSlider" style="aspect-ratio:4/5;">
           <div class="intro-slide intro-slide--active">
-            <img src="/images/talent/Raju-Shivaratri-MC-Joint.jpg" alt="Raju Shivaratri — Telugu actor represented by MC Joint, Hyderabad" width="600" height="750" fetchpriority="high" loading="eager">
+            <img src="/images/talent/Raju-Shivaratri-MC-Joint.webp" alt="Raju Shivaratri — Telugu actor represented by MC Joint, Hyderabad" width="600" height="750" fetchpriority="high" loading="eager" decoding="async">
             <div class="img-label">Raju Shivaratri</div>
           </div>
           <div class="intro-slide">
-            <img src="/images/talent/pawon-ramesh-actor-headshot-represented-by-mc-joint.jpg" alt="Pawon Ramesh — Telugu actor, George Reddy, represented by MC Joint Hyderabad" width="600" height="750" loading="lazy">
+            <img src="/images/talent/pawon-ramesh-actor-headshot-represented-by-mc-joint.webp" alt="Pawon Ramesh — Telugu actor, George Reddy, represented by MC Joint Hyderabad" width="600" height="750" loading="lazy" decoding="async">
             <div class="img-label">Pawon Ramesh</div>
           </div>
           <div class="intro-slide">
-            <img src="/images/talent/talent-vivek-sagar.jpg" alt="Vivek Sagar — music composer, Tapeloop Records, Sheeshmahal, MC Joint" width="600" height="750" loading="lazy">
+            <img src="/images/talent/talent-vivek-sagar.webp" alt="Vivek Sagar — music composer, Tapeloop Records, Sheeshmahal, MC Joint" width="600" height="750" loading="lazy" decoding="async">
             <div class="img-label">Vivek Sagar</div>
           </div>
           <div class="intro-slide">
-            <img src="/images/talent/talent-raj-tirandasu.jpg" alt="Raj Tirandasu — Telugu actor, Pushpa cast, represented by MC Joint" width="600" height="750" loading="lazy">
+            <img src="/images/talent/talent-raj-tirandasu.webp" alt="Raj Tirandasu — Telugu actor, Pushpa cast, represented by MC Joint" width="600" height="750" loading="lazy" decoding="async">
             <div class="img-label">Raj Tirandasu</div>
           </div>
           <div class="intro-slide">
-            <img src="/images/talent/talent-rohit-penumatsa.jpg" alt="Rohit Penumatsa — Telugu filmmaker, Avanti Cinema director, MC Joint" width="600" height="750" loading="lazy">
+            <img src="/images/talent/talent-rohit-penumatsa.webp" alt="Rohit Penumatsa — Telugu filmmaker, Avanti Cinema director, MC Joint" width="600" height="750" loading="lazy" decoding="async">
             <div class="img-label">Rohit Penumatsa</div>
           </div>
           <div class="intro-slide">
-            <img src="/images/talent/talent-ravi-nidamarthy.jpg" alt="Ravi Nidamarthy — film composer, Akrama Sambandham, represented by MC Joint Hyderabad" width="600" height="750" loading="lazy">
+            <img src="/images/talent/talent-ravi-nidamarthy.webp" alt="Ravi Nidamarthy — film composer, Akrama Sambandham, represented by MC Joint Hyderabad" width="600" height="750" loading="lazy" decoding="async">
             <div class="img-label">Ravi Nidamarthy</div>
           </div>
-          <div class="intro-slide">
-            <img src="/images/talent/talent-camp-sasi.jpg" alt="Camp Sasi — Telugu actor and indie filmmaker, Avanti Cinema, MC Joint" width="600" height="750" loading="lazy">
-            <div class="img-label">Camp Sasi</div>
           </div>
-          <div class="intro-slide">
-            <img src="/images/talent/talent-anvesh-michael.jpg" alt="Anvesh Michael — Telugu actor, Mallesham, represented by MC Joint Hyderabad" width="600" height="750" loading="lazy">
-            <div class="img-label">Anvesh Michael</div>
-          </div>
-          <div class="intro-slide">
-            <img src="/images/talent/talent-thanmai-bolt.jpg" alt="Thanmai Bolt — singer and vocalist represented by MC Joint Hyderabad" width="600" height="750" loading="lazy">
-            <div class="img-label">Thanmai Bolt</div>
-          </div>
-          <div class="intro-slide">
-            <img src="/images/talent/talent-jagadeesh-prathap-bandari.jpg" alt="Jagadeesh Prathap Bandari — Telugu actor, Pushpa 2, represented by MC Joint Hyderabad" width="600" height="750" loading="lazy">
-            <div class="img-label">Jagadeesh Prathap Bandari</div>
-          </div>
-          <div class="intro-slide">
-            <img src="/images/talent/talent-prashant-podagatlapalli.jpg" alt="Prashanth Podagatlapalli — filmmaker, H2O Arts, Beyond Physical documentary, MC Joint" width="600" height="750" loading="lazy">
-            <div class="img-label">Prashanth Podagatlapalli</div>
-          </div>
-          <div class="intro-slide">
-            <img src="/images/talent/talent-smaran-sai.jpg" alt="Smaran — Telugu music composer, Wolfgang Studios, Ranganaayaki, MC Joint" width="600" height="750" loading="lazy">
-            <div class="img-label">Smaran</div>
-          </div>
-        </div>
         <div class="intro-badge">
           <strong>8+</strong>
           Years of<br>Craft
@@ -618,27 +572,39 @@
     <div class="services-grid fade-in">
       <div class="service-card">
         <span class="service-icon"><i class="fas fa-film"></i></span>
-        <h3>Content Production</h3>
-        <p>Original IP creation, script development, and full-service video production from pre to post.</p>
-        <a href="services.html#production">Learn More →</a>
+        <h3>Content Production &amp; Development</h3>
+        <p>Original IP, script development and full-service video production from pre to post.</p>
+        <a href="/services.html#production">Learn More →</a>
       </div>
       <div class="service-card">
         <span class="service-icon"><i class="fas fa-music"></i></span>
-        <h3>Music Distribution</h3>
-        <p>Digital distribution across Spotify, Apple Music, Amazon Music and all major platforms.</p>
-        <a href="services.html#distribution">Learn More →</a>
+        <h3>Music Distribution &amp; Sound Production</h3>
+        <p>Distribution across Spotify, Apple Music, Amazon Music and more, plus scores and OSTs.</p>
+        <a href="/services.html#distribution">Learn More →</a>
       </div>
       <div class="service-card">
         <span class="service-icon"><i class="fas fa-star"></i></span>
-        <h3>Talent Management</h3>
+        <h3>Talent Management &amp; Representation</h3>
         <p>Connecting artists, musicians, actors and filmmakers with the right opportunities.</p>
-        <a href="services.html#talent">Learn More →</a>
+        <a href="/services.html#talent">Learn More →</a>
       </div>
       <div class="service-card">
         <span class="service-icon"><i class="fas fa-chart-line"></i></span>
-        <h3>Digital Strategy</h3>
-        <p>Digital footprint management, brand partnerships, and audience growth at scale.</p>
-        <a href="services.html#digital">Learn More →</a>
+        <h3>Digital Strategy &amp; Brand Partnerships</h3>
+        <p>Social strategy, brand sponsorships and audience growth at scale.</p>
+        <a href="/services.html#digital">Learn More →</a>
+      </div>
+      <div class="service-card">
+        <span class="service-icon"><i class="fas fa-pen-nib"></i></span>
+        <h3>Branding &amp; Design</h3>
+        <p>Identity, film and series key art, music artwork, event branding and websites.</p>
+        <a href="/services/branding-design.html">Learn More →</a>
+      </div>
+      <div class="service-card">
+        <span class="service-icon"><i class="fas fa-fingerprint"></i></span>
+        <h3>Digital Footprint</h3>
+        <p>IMDb, Wikipedia, Google Knowledge Panel and PR — be findable and credible online.</p>
+        <a href="/services/digital-footprint.html">Learn More →</a>
       </div>
     </div>
   </div>
@@ -655,7 +621,7 @@
     <div class="works-grid fade-in">
       <a href="works/avanti-cinema.html" class="work-card" style="text-decoration:none;color:inherit;display:block;">
         <div class="work-thumb">
-          <img src="/images/talent/rohit-penumatsa-with-camp-sasi.jpg" alt="Rohit Penumatsa and Camp Sasi — Avanti Cinema directors, full-service partnership with MC Joint Hyderabad" width="800" height="450" loading="lazy">
+          <img src="/images/talent/rohit-penumatsa-with-camp-sasi.webp" alt="Rohit Penumatsa and Camp Sasi — Avanti Cinema directors, full-service partnership with MC Joint Hyderabad" width="800" height="450" loading="lazy" decoding="async">
           <div class="work-thumb-overlay"><i class="fas fa-arrow-right"></i></div>
         </div>
         <div class="work-info">
@@ -666,7 +632,7 @@
       </a>
       <a href="works/sheeshmahal.html" class="work-card" style="text-decoration:none;color:inherit;display:block;">
         <div class="work-thumb">
-          <img src="/images/talent/talent-vivek-sagar.jpg" alt="Vivek Sagar — Tapeloop Records music distribution by MC Joint, Sheeshmahal composer" width="800" height="450" loading="lazy">
+          <img src="/images/talent/talent-vivek-sagar.webp" alt="Vivek Sagar — Tapeloop Records music distribution by MC Joint, Sheeshmahal composer" width="800" height="450" loading="lazy" decoding="async">
           <div class="work-thumb-overlay"><i class="fas fa-arrow-right"></i></div>
         </div>
         <div class="work-info">
@@ -677,7 +643,7 @@
       </a>
       <a href="works/pickpocket.html" class="work-card" style="text-decoration:none;color:inherit;display:block;">
         <div class="work-thumb">
-          <img src="/images/projects/mc-project-Pickpocket-feature-divya-bandaru-avanti-cinema-shashank-raghavula-Marketing-film-Pickpocket.jpg" alt="Pickpocket Telugu film — marketing partnership by MC Joint Hyderabad, Divya Bandaru" width="800" height="450" loading="lazy">
+          <img src="/images/projects/mc-project-Pickpocket-feature-divya-bandaru-avanti-cinema-shashank-raghavula-Marketing-film-Pickpocket.webp" alt="Pickpocket Telugu film — marketing partnership by MC Joint Hyderabad, Divya Bandaru" width="800" height="450" loading="lazy" decoding="async">
           <div class="work-thumb-overlay"><i class="fas fa-arrow-right"></i></div>
         </div>
         <div class="work-info">
@@ -696,55 +662,55 @@
 
     <!-- Set 1 -->
     <a href="https://www.chaibisket.com/" target="_blank" rel="noopener noreferrer">
-      <img src="/images/logos/partner-chai-bisket.png" alt="Chai Bisket — digital partner of MC Joint Hyderabad" width="140" height="60" loading="lazy">
+      <img src="/images/logos/partner-chai-bisket.webp" alt="Chai Bisket — digital partner of MC Joint Hyderabad" width="140" height="60" loading="lazy" decoding="async">
     </a>
 
     <a href="https://flintstory.netlify.app/" target="_blank" rel="noopener noreferrer">
-      <img src="/images/logos/flintstory-Logo-PNG.png" alt="Flintstory — content production partner of MC Joint Hyderabad" width="140" height="60" loading="lazy">
+      <img src="/images/logos/flintstory-Logo-PNG.webp" alt="Flintstory — content production partner of MC Joint Hyderabad" width="140" height="60" loading="lazy" decoding="async">
     </a>
 
     <a href="https://www.designdistricthyd.com/" target="_blank" rel="noopener noreferrer">
-      <img src="/images/logos/mc-associate-design-district-logo-white-svg.svg" alt="Design District Hyderabad — associate partner of MC Joint" width="140" height="60" loading="lazy" style="background:#111;">
+      <img src="/images/logos/mc-associate-design-district-logo-white-svg.svg" alt="Design District Hyderabad — associate partner of MC Joint" width="140" height="60" loading="lazy" style="background:#111;" decoding="async">
     </a>
 
     <a href="https://viralvideofilm.netlify.app/" target="_blank" rel="noopener noreferrer">
-      <img src="/images/logos/partner-h2o-arts.png" alt="H2O Arts — film studio, Prashanth Podagatlapalli, partner of MC Joint" width="140" height="60" loading="lazy">
+      <img src="/images/logos/partner-h2o-arts.webp" alt="H2O Arts — film studio, Prashanth Podagatlapalli, partner of MC Joint" width="140" height="60" loading="lazy" decoding="async">
     </a>
 
     <a href="/thestylemill/">
-      <img src="/images/the-style-mill/tsm-logo-main.png" alt="The Style Mill — menswear exhibition, MC Joint campaign partner" width="140" height="60" loading="lazy">
+      <img src="/images/the-style-mill/tsm-logo-main.webp" alt="The Style Mill — menswear exhibition, MC Joint campaign partner" width="140" height="60" loading="lazy" decoding="async">
     </a>
 
     <a href="https://www.avanticinema.com/" target="_blank" rel="noopener noreferrer">
-      <img src="/images/logos/partner-avanti-cinema.png" alt="Avanti Cinema — Telugu film production, MC Joint cinema partner Hyderabad" width="140" height="60" loading="lazy">
+      <img src="/images/logos/partner-avanti-cinema.webp" alt="Avanti Cinema — Telugu film production, MC Joint cinema partner Hyderabad" width="140" height="60" loading="lazy" decoding="async">
     </a>
 
     <a href="https://www.instagram.com/wolfgangstudio.in/" target="_blank" rel="noopener noreferrer">
-      <img src="/images/logos/Partner-Wolfgang-studio-smaran.png" alt="Wolfgang Studio — Smaran music label, MC Joint distribution partner" width="140" height="60" loading="lazy">
+      <img src="/images/logos/Partner-Wolfgang-studio-smaran.webp" alt="Wolfgang Studio — Smaran music label, MC Joint distribution partner" width="140" height="60" loading="lazy" decoding="async">
     </a>
 
     <a href="https://www.instagram.com/tapelooprecords/?hl=en" target="_blank" rel="noopener noreferrer">
-      <img src="/images/logos/partner-tapeloop-studios.png" alt="Tapeloop Records — Vivek Sagar independent music label, MC Joint distribution partner" width="140" height="60" loading="lazy">
+      <img src="/images/logos/partner-tapeloop-studios.webp" alt="Tapeloop Records — Vivek Sagar independent music label, MC Joint distribution partner" width="140" height="60" loading="lazy" decoding="async">
     </a>
 
     <a href="https://www.raastafilms.com/" target="_blank" rel="noopener noreferrer">
-      <img src="/images/logos/raasta-films-logo.webp" alt="Raasta Films — Telugu film production associate of MC Joint Hyderabad" width="140" height="60" loading="lazy">
+      <img src="/images/logos/raasta-films-logo.webp" alt="Raasta Films — Telugu film production associate of MC Joint Hyderabad" width="140" height="60" loading="lazy" decoding="async">
     </a>
 
     <a href="https://in.linkedin.com/in/harikasula" target="_blank" rel="noopener noreferrer">
-      <img src="/images/logos/partner-psybe-labs.png" alt="Psybe Labs — technology associate partner of MC Joint" width="140" height="60" loading="lazy">
+      <img src="/images/logos/partner-psybe-labs.webp" alt="Psybe Labs — technology associate partner of MC Joint" width="140" height="60" loading="lazy" decoding="async">
     </a>
 
     <a href="https://petrichorinvestments.in/" target="_blank" rel="noopener noreferrer">
-      <img src="/images/logos/Petrichor-Logo-PNG.png" alt="Petrichor Investments — investment associate of MC Joint Hyderabad" width="140" height="60" loading="lazy">
+      <img src="/images/logos/Petrichor-Logo-PNG.webp" alt="Petrichor Investments — investment associate of MC Joint Hyderabad" width="140" height="60" loading="lazy" decoding="async">
     </a>
 
     <a href="https://www.brandhill.com/" target="_blank" rel="noopener noreferrer">
-      <img src="/images/logos/Partner-Brandhill.png" alt="Brand Hill — digital branding partner of MC Joint Hyderabad" width="140" height="60" loading="lazy">
+      <img src="/images/logos/Partner-Brandhill.webp" alt="Brand Hill — digital branding partner of MC Joint Hyderabad" width="140" height="60" loading="lazy" decoding="async">
     </a>
 
     <a href="https://www.arhamedia.in/" target="_blank" rel="noopener noreferrer">
-      <img src="/images/logos/partner-arha-media.png" alt="Arha Media — Aha streaming platform, digital footprint client of MC Joint" width="140" height="60" loading="lazy">
+      <img src="/images/logos/partner-arha-media.webp" alt="Arha Media — Aha streaming platform, digital footprint client of MC Joint" width="140" height="60" loading="lazy" decoding="async">
     </a>
 
     <!-- Duplicate for seamless loop -->
@@ -753,55 +719,55 @@
     <!-- Just duplicate the above block once more below this line -->
     
     <a href="https://www.chaibisket.com/" target="_blank" rel="noopener noreferrer">
-      <img loading="lazy" width="200" height="80" src="/images/logos/partner-chai-bisket.png" alt="Chai Bisket">
+      <img loading="lazy" width="200" height="80" src="/images/logos/partner-chai-bisket.webp" alt="Chai Bisket" decoding="async">
     </a>
 
     <a href="https://flintstory.netlify.app/" target="_blank" rel="noopener noreferrer">
-      <img loading="lazy" src="/images/logos/flintstory-Logo-PNG.png" alt="Flintstory">
+      <img loading="lazy" src="/images/logos/flintstory-Logo-PNG.webp" alt="Flintstory" width="1920" height="561" decoding="async">
     </a>
 
     <a href="https://www.designdistricthyd.com/" target="_blank" rel="noopener noreferrer">
-      <img loading="lazy" src="/images/logos/mc-associate-design-district-logo-white-svg.svg" alt="Design District Hyd" style="background:#111;">
+      <img loading="lazy" src="/images/logos/mc-associate-design-district-logo-white-svg.svg" alt="Design District Hyd" style="background:#111;" decoding="async">
     </a>
 
     <a href="https://viralvideofilm.netlify.app/" target="_blank" rel="noopener noreferrer">
-      <img loading="lazy" src="/images/logos/partner-h2o-arts.png" alt="H2O Arts">
+      <img loading="lazy" src="/images/logos/partner-h2o-arts.webp" alt="H2O Arts" width="269" height="121" decoding="async">
     </a>
 
     <a href="/thestylemill/">
-      <img loading="lazy" src="/images/the-style-mill/tsm-logo-main.png" alt="The Style Mill">
+      <img loading="lazy" src="/images/the-style-mill/tsm-logo-main.webp" alt="The Style Mill" width="641" height="292" decoding="async">
     </a>
 
     <a href="https://www.avanticinema.com/" target="_blank" rel="noopener noreferrer">
-      <img loading="lazy" src="/images/logos/partner-avanti-cinema.png" alt="Avanti Cinema">
+      <img loading="lazy" src="/images/logos/partner-avanti-cinema.webp" alt="Avanti Cinema" width="269" height="121" decoding="async">
     </a>
 
     <a href="https://www.instagram.com/wolfgangstudio.in/" target="_blank" rel="noopener noreferrer">
-      <img loading="lazy" src="/images/logos/Partner-Wolfgang-studio-smaran.png" alt="Wolfgang Studio">
+      <img loading="lazy" src="/images/logos/Partner-Wolfgang-studio-smaran.webp" alt="Wolfgang Studio" width="269" height="121" decoding="async">
     </a>
 
     <a href="https://www.instagram.com/tapelooprecords/?hl=en" target="_blank" rel="noopener noreferrer">
-      <img loading="lazy" src="/images/logos/partner-tapeloop-studios.png" alt="Tapeloop Records">
+      <img loading="lazy" src="/images/logos/partner-tapeloop-studios.webp" alt="Tapeloop Records" width="269" height="121" decoding="async">
     </a>
 
     <a href="https://www.raastafilms.com/" target="_blank" rel="noopener noreferrer">
-      <img loading="lazy" src="/images/logos/raasta-films-logo.webp" alt="Raasta Films">
+      <img loading="lazy" src="/images/logos/raasta-films-logo.webp" alt="Raasta Films" width="2718" height="2324" decoding="async">
     </a>
 
     <a href="https://in.linkedin.com/in/harikasula" target="_blank" rel="noopener noreferrer">
-      <img loading="lazy" src="/images/logos/partner-psybe-labs.png" alt="Psybe Labs">
+      <img loading="lazy" src="/images/logos/partner-psybe-labs.webp" alt="Psybe Labs" width="300" height="300" decoding="async">
     </a>
 
     <a href="https://petrichorinvestments.in/" target="_blank" rel="noopener noreferrer">
-      <img loading="lazy" src="/images/logos/Petrichor-Logo-PNG.png" alt="Petrichor Investments">
+      <img loading="lazy" src="/images/logos/Petrichor-Logo-PNG.webp" alt="Petrichor Investments" width="1920" height="561" decoding="async">
     </a>
 
     <a href="https://www.brandhill.com/" target="_blank" rel="noopener noreferrer">
-      <img loading="lazy" src="/images/logos/Partner-Brandhill.png" alt="Brand Hill">
+      <img loading="lazy" src="/images/logos/Partner-Brandhill.webp" alt="Brand Hill" width="269" height="121" decoding="async">
     </a>
 
     <a href="https://www.arhamedia.in/" target="_blank" rel="noopener noreferrer">
-      <img loading="lazy" src="/images/logos/partner-arha-media.png" alt="Arha Media">
+      <img loading="lazy" src="/images/logos/partner-arha-media.webp" alt="Arha Media" width="269" height="121" decoding="async">
     </a>
 
     
@@ -822,218 +788,218 @@
     <div class="talent-marquee">
       <a class="talent-pill" href="clients/talent/jagadeesh.html" aria-label="Jagadeesh Prathap Bandari — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/talent/talent-jagadeesh-prathap-bandari.jpg" alt="Jagadeesh Prathap Bandari" width="160" height="160" loading="lazy">
+          <img src="/images/talent/talent-jagadeesh-prathap-bandari.webp" alt="Jagadeesh Prathap Bandari" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Jagadeesh Prathap Bandari</span>
       </a>
       <a class="talent-pill" href="clients/talent/vivek-sagar.html" aria-label="Vivek Sagar — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/talent/talent-vivek-sagar.jpg" alt="Vivek Sagar" width="160" height="160" loading="lazy">
+          <img src="/images/talent/talent-vivek-sagar.webp" alt="Vivek Sagar" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Vivek Sagar</span>
       </a>
       <a class="talent-pill" href="clients/talent/smaran.html" aria-label="Smaran — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/talent/talent-smaran-sai.jpg" alt="Smaran" width="160" height="160" loading="lazy">
+          <img src="/images/talent/talent-smaran-sai.webp" alt="Smaran" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Smaran</span>
       </a>
       <a class="talent-pill" href="clients/talent/raj-tirandasu.html" aria-label="Raj Tirandasu — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/talent/talent-raj-tirandasu.jpg" alt="Raj Tirandasu" width="160" height="160" loading="lazy">
+          <img src="/images/talent/talent-raj-tirandasu.webp" alt="Raj Tirandasu" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Raj Tirandasu</span>
       </a>
       <a class="talent-pill" href="clients/talent/ravi-nidamarthy.html" aria-label="Ravi Nidamarthy — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/talent/talent-ravi-nidamarthy.jpg" alt="Ravi Nidamarthy" width="160" height="160" loading="lazy">
+          <img src="/images/talent/talent-ravi-nidamarthy.webp" alt="Ravi Nidamarthy" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Ravi Nidamarthy</span>
       </a>
       <a class="talent-pill" href="clients/talent/pawon-ramesh.html" aria-label="Pawon Ramesh — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/talent/talent-Pawon-ramesh.jpg" alt="Pawon Ramesh" width="160" height="160" loading="lazy">
+          <img src="/images/talent/talent-Pawon-ramesh.webp" alt="Pawon Ramesh" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Pawon Ramesh</span>
       </a>
       <a class="talent-pill" href="clients/talent/ajith-mohan.html" aria-label="Ajith Mohan — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/talent/ajith-mohan-x01.jpg" alt="Ajith Mohan" width="160" height="160" loading="lazy">
+          <img src="/images/talent/ajith-mohan-x01.webp" alt="Ajith Mohan" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Ajith Mohan</span>
       </a>
       <a class="talent-pill" href="clients/talent/rohit-penumatsa.html" aria-label="Rohit Penumatsa — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/talent/talent-rohit-penumatsa.jpg" alt="Rohit Penumatsa" width="160" height="160" loading="lazy">
+          <img src="/images/talent/talent-rohit-penumatsa.webp" alt="Rohit Penumatsa" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Rohit Penumatsa</span>
       </a>
       <a class="talent-pill" href="clients/talent/camp-sasi.html" aria-label="Camp Sasi — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/talent/talent-camp-sasi.jpg" alt="Camp Sasi" width="160" height="160" loading="lazy">
+          <img src="/images/talent/talent-camp-sasi.webp" alt="Camp Sasi" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Camp Sasi</span>
       </a>
       <a class="talent-pill" href="clients/talent/raju-shivaratri.html" aria-label="Raju Shivaratri — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/talent/Raju-Shivaratri-MC-Joint.jpg" alt="Raju Shivaratri" width="160" height="160" loading="lazy">
+          <img src="/images/talent/Raju-Shivaratri-MC-Joint.webp" alt="Raju Shivaratri" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Raju Shivaratri</span>
       </a>
       <a class="talent-pill" href="clients/talent/anvesh-michael.html" aria-label="Anvesh Michael — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/talent/talent-anvesh-michael.jpg" alt="Anvesh Michael" width="160" height="160" loading="lazy">
+          <img src="/images/talent/talent-anvesh-michael.webp" alt="Anvesh Michael" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Anvesh Michael</span>
       </a>
       <a class="talent-pill" href="clients/talent/muni-myatari.html" aria-label="Muni Myatari — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="https://www.mcjoint.in/images/talent/muni-myatari/Muni-Myatari-Actor-MC-headshot.jpeg" alt="Muni Myatari" width="160" height="160" loading="lazy">
+          <img src="https://mcjoint.in/images/talent/muni-myatari/Muni-Myatari-Actor-MC-headshot.webp" alt="Muni Myatari" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Muni Myatari</span>
       </a>
       <a class="talent-pill" href="clients/talent/faraz-og.html" aria-label="Faraz OG — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/albums/zaruri-behes-faraz-og-mc-joint.jpg" alt="Faraz OG" width="160" height="160" loading="lazy">
+          <img src="/images/albums/zaruri-behes-faraz-og-mc-joint.webp" alt="Faraz OG" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Faraz OG</span>
       </a>
       <a class="talent-pill" href="clients/talent/thanmai-bolt.html" aria-label="Thanmai Bolt — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/talent/talent-thanmai-bolt.jpg" alt="Thanmai Bolt" width="160" height="160" loading="lazy">
+          <img src="/images/talent/talent-thanmai-bolt.webp" alt="Thanmai Bolt" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Thanmai Bolt</span>
       </a>
       <a class="talent-pill" href="clients/talent/prashanth-podagatlapalli.html" aria-label="Prashanth Podagatlapalli — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/talent/talent-prashant-podagatlapalli.jpg" alt="Prashanth Podagatlapalli" width="160" height="160" loading="lazy">
+          <img src="/images/talent/talent-prashant-podagatlapalli.webp" alt="Prashanth Podagatlapalli" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Prashanth Podagatlapalli</span>
       </a>
       <a class="talent-pill" href="clients/talent/kiyaan.html" aria-label="Kiyaan — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/mc/mc-joint-masters-of-ceremonies-hyderabad-talent-agency-hyderabad.jpg" alt="Kiyaan" width="160" height="160" loading="lazy">
+          <img src="/images/mc/mc-joint-masters-of-ceremonies-hyderabad-talent-agency-hyderabad.webp" alt="Kiyaan" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Kiyaan</span>
       </a>
       <a class="talent-pill" href="clients/talent/ink-toxic.html" aria-label="INK Toxic — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/mc/mc-joint-masters-of-ceremonies-hyderabad-talent-agency-hyderabad.jpg" alt="INK Toxic" width="160" height="160" loading="lazy">
+          <img src="/images/mc/mc-joint-masters-of-ceremonies-hyderabad-talent-agency-hyderabad.webp" alt="INK Toxic" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">INK Toxic</span>
       </a>
       <a class="talent-pill" href="clients/talent/lazy-sharath-pawar.html" aria-label="Lazy (Sharath Pawar) — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/mc/mc-joint-masters-of-ceremonies-hyderabad-talent-agency-hyderabad.jpg" alt="Lazy (Sharath Pawar)" width="160" height="160" loading="lazy">
+          <img src="/images/mc/mc-joint-masters-of-ceremonies-hyderabad-talent-agency-hyderabad.webp" alt="Lazy (Sharath Pawar)" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Lazy (Sharath Pawar)</span>
       </a>
       <!-- duplicate for seamless infinite scroll -->
       <a class="talent-pill" href="clients/talent/jagadeesh.html" aria-label="Jagadeesh Prathap Bandari — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/talent/talent-jagadeesh-prathap-bandari.jpg" alt="Jagadeesh Prathap Bandari" width="160" height="160" loading="lazy">
+          <img src="/images/talent/talent-jagadeesh-prathap-bandari.webp" alt="Jagadeesh Prathap Bandari" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Jagadeesh Prathap Bandari</span>
       </a>
       <a class="talent-pill" href="clients/talent/vivek-sagar.html" aria-label="Vivek Sagar — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/talent/talent-vivek-sagar.jpg" alt="Vivek Sagar" width="160" height="160" loading="lazy">
+          <img src="/images/talent/talent-vivek-sagar.webp" alt="Vivek Sagar" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Vivek Sagar</span>
       </a>
       <a class="talent-pill" href="clients/talent/smaran.html" aria-label="Smaran — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/talent/talent-smaran-sai.jpg" alt="Smaran" width="160" height="160" loading="lazy">
+          <img src="/images/talent/talent-smaran-sai.webp" alt="Smaran" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Smaran</span>
       </a>
       <a class="talent-pill" href="clients/talent/raj-tirandasu.html" aria-label="Raj Tirandasu — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/talent/talent-raj-tirandasu.jpg" alt="Raj Tirandasu" width="160" height="160" loading="lazy">
+          <img src="/images/talent/talent-raj-tirandasu.webp" alt="Raj Tirandasu" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Raj Tirandasu</span>
       </a>
       <a class="talent-pill" href="clients/talent/ravi-nidamarthy.html" aria-label="Ravi Nidamarthy — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/talent/talent-ravi-nidamarthy.jpg" alt="Ravi Nidamarthy" width="160" height="160" loading="lazy">
+          <img src="/images/talent/talent-ravi-nidamarthy.webp" alt="Ravi Nidamarthy" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Ravi Nidamarthy</span>
       </a>
       <a class="talent-pill" href="clients/talent/pawon-ramesh.html" aria-label="Pawon Ramesh — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/talent/talent-Pawon-ramesh.jpg" alt="Pawon Ramesh" width="160" height="160" loading="lazy">
+          <img src="/images/talent/talent-Pawon-ramesh.webp" alt="Pawon Ramesh" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Pawon Ramesh</span>
       </a>
       <a class="talent-pill" href="clients/talent/ajith-mohan.html" aria-label="Ajith Mohan — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/talent/ajith-mohan-x01.jpg" alt="Ajith Mohan" width="160" height="160" loading="lazy">
+          <img src="/images/talent/ajith-mohan-x01.webp" alt="Ajith Mohan" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Ajith Mohan</span>
       </a>
       <a class="talent-pill" href="clients/talent/rohit-penumatsa.html" aria-label="Rohit Penumatsa — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/talent/talent-rohit-penumatsa.jpg" alt="Rohit Penumatsa" width="160" height="160" loading="lazy">
+          <img src="/images/talent/talent-rohit-penumatsa.webp" alt="Rohit Penumatsa" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Rohit Penumatsa</span>
       </a>
       <a class="talent-pill" href="clients/talent/camp-sasi.html" aria-label="Camp Sasi — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/talent/talent-camp-sasi.jpg" alt="Camp Sasi" width="160" height="160" loading="lazy">
+          <img src="/images/talent/talent-camp-sasi.webp" alt="Camp Sasi" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Camp Sasi</span>
       </a>
       <a class="talent-pill" href="clients/talent/raju-shivaratri.html" aria-label="Raju Shivaratri — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/talent/Raju-Shivaratri-MC-Joint.jpg" alt="Raju Shivaratri" width="160" height="160" loading="lazy">
+          <img src="/images/talent/Raju-Shivaratri-MC-Joint.webp" alt="Raju Shivaratri" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Raju Shivaratri</span>
       </a>
       <a class="talent-pill" href="clients/talent/anvesh-michael.html" aria-label="Anvesh Michael — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/talent/talent-anvesh-michael.jpg" alt="Anvesh Michael" width="160" height="160" loading="lazy">
+          <img src="/images/talent/talent-anvesh-michael.webp" alt="Anvesh Michael" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Anvesh Michael</span>
       </a>
       <a class="talent-pill" href="clients/talent/muni-myatari.html" aria-label="Muni Myatari — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="https://www.mcjoint.in/images/talent/muni-myatari/Muni-Myatari-Actor-MC-headshot.jpeg" alt="Muni Myatari" width="160" height="160" loading="lazy">
+          <img src="https://mcjoint.in/images/talent/muni-myatari/Muni-Myatari-Actor-MC-headshot.webp" alt="Muni Myatari" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Muni Myatari</span>
       </a>
       <a class="talent-pill" href="clients/talent/faraz-og.html" aria-label="Faraz OG — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/albums/zaruri-behes-faraz-og-mc-joint.jpg" alt="Faraz OG" width="160" height="160" loading="lazy">
+          <img src="/images/albums/zaruri-behes-faraz-og-mc-joint.webp" alt="Faraz OG" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Faraz OG</span>
       </a>
       <a class="talent-pill" href="clients/talent/thanmai-bolt.html" aria-label="Thanmai Bolt — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/talent/talent-thanmai-bolt.jpg" alt="Thanmai Bolt" width="160" height="160" loading="lazy">
+          <img src="/images/talent/talent-thanmai-bolt.webp" alt="Thanmai Bolt" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Thanmai Bolt</span>
       </a>
       <a class="talent-pill" href="clients/talent/prashanth-podagatlapalli.html" aria-label="Prashanth Podagatlapalli — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/talent/talent-prashant-podagatlapalli.jpg" alt="Prashanth Podagatlapalli" width="160" height="160" loading="lazy">
+          <img src="/images/talent/talent-prashant-podagatlapalli.webp" alt="Prashanth Podagatlapalli" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Prashanth Podagatlapalli</span>
       </a>
       <a class="talent-pill" href="clients/talent/kiyaan.html" aria-label="Kiyaan — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/mc/mc-joint-masters-of-ceremonies-hyderabad-talent-agency-hyderabad.jpg" alt="Kiyaan" width="160" height="160" loading="lazy">
+          <img src="/images/mc/mc-joint-masters-of-ceremonies-hyderabad-talent-agency-hyderabad.webp" alt="Kiyaan" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Kiyaan</span>
       </a>
       <a class="talent-pill" href="clients/talent/ink-toxic.html" aria-label="INK Toxic — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/mc/mc-joint-masters-of-ceremonies-hyderabad-talent-agency-hyderabad.jpg" alt="INK Toxic" width="160" height="160" loading="lazy">
+          <img src="/images/mc/mc-joint-masters-of-ceremonies-hyderabad-talent-agency-hyderabad.webp" alt="INK Toxic" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">INK Toxic</span>
       </a>
       <a class="talent-pill" href="clients/talent/lazy-sharath-pawar.html" aria-label="Lazy (Sharath Pawar) — MC Joint Talent">
         <div class="talent-pill-thumb">
-          <img src="/images/mc/mc-joint-masters-of-ceremonies-hyderabad-talent-agency-hyderabad.jpg" alt="Lazy (Sharath Pawar)" width="160" height="160" loading="lazy">
+          <img src="/images/mc/mc-joint-masters-of-ceremonies-hyderabad-talent-agency-hyderabad.webp" alt="Lazy (Sharath Pawar)" width="160" height="160" loading="lazy" decoding="async">
         </div>
         <span class="talent-pill-label">Lazy (Sharath Pawar)</span>
       </a>
@@ -1046,52 +1012,6 @@
 </section>
 
 <!-- INSIGHTS -->
-<section>
-  <div class="container">
-    <span class="section-label">Blog</span>
-    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2rem;flex-wrap:wrap;gap:1rem;">
-      <h2 style="margin-bottom:0">Inside the MC Circle</h2>
-      <a href="blog.html" class="btn btn-outline">All Posts</a>
-    </div>
-    <div class="grid-3 fade-in">
-      <div class="insight-card">
-        <div class="insight-img">
-          <img src="/images/projects/mc-project-avanti-cinema-first-meeting-amid-covid19-1.jpg" alt="Avanti Cinema team's first meeting during the COVID-19 lockdown" width="800" height="450" loading="lazy">
-        </div>
-        <div class="insight-body">
-          <span class="tag tag-red">Cinema</span>
-          <h3>Transforming Avanti Cinema during lockdown</h3>
-          <p>How we reimagined cinema experiences in unprecedented times.</p>
-          <a href="avanti-cinema-transformation.html">Read More →</a>
-        </div>
-      </div>
-      <div class="insight-card">
-        <div class="insight-img">
-          <img src="/images/projects/MC-Project-Story-discussion-season-2-poster-camp-sasi-as-prakash-chowdary.jpg" alt="Story Discussion Season 2 poster — Camp Sasi as Prakash Chowdary" width="800" height="450" loading="lazy">
-        </div>
-        <div class="insight-body">
-          <span class="tag tag-red">Music</span>
-          <h3>Story Discussion Season 2: A community-first release</h3>
-          <p>Building narratives that resonate with audiences worldwide.</p>
-          <a href="story-discussion-s2.html">Read More →</a>
-        </div>
-      </div>
-      <div class="insight-card">
-        <div class="insight-img">
-          <img src="/images/talent/MC-talent-Nalgonda-Gaddar-Narsanna-1.jpg" alt="Nalgonda Gaddar Narsanna — folk music catalogue distributed by MC Joint" width="800" height="450" loading="lazy">
-        </div>
-        <div class="insight-body">
-          <span class="tag tag-red">Distribution</span>
-          <h3>Building a folk catalogue with Nalgonda Gaddar Narsanna</h3>
-          <p>Preserving cultural heritage through music distribution.</p>
-          <a href="nalgonda-gaddar-narsanna.html">Read More →</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA BAND -->
 <section class="cta-band">
   <div class="container">
     <h2>Have a Story, Sound,<br>or Career to Build?</h2>
@@ -1109,51 +1029,20 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-section">
-        <div class="footer-logo">
-          <img src="/images/mc/mc-joint-logo-5-mc-joint-block-logo.png" alt="MC Joint — Masters of Ceremonies, Hyderabad" width="160" height="44" loading="lazy">
-        </div>
+        <div class="footer-logo"><img src="/images/mc/mc-joint-logo-5-mc-joint-block-logo.webp" alt="MC Joint — Masters of Ceremonies, Hyderabad" width="160" height="44" loading="lazy" decoding="async"></div>
         <p class="footer-desc">Masters of Ceremonies.<br>Music · Talent · Cinema · Strategy</p>
-        <div class="social-links" style="margin-top:1.5rem">
-          <a href="https://www.instagram.com/mcjoint.in/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-          <a href="https://in.linkedin.com/company/mcjoint-in" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-          <a href="https://x.com/mcjointin" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
-          <a href="https://www.youtube.com/@MCJoint" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-        </div>
+        <div class="social-links" style="margin-top:1.5rem"><a href="https://www.instagram.com/mcjoint.in/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="https://in.linkedin.com/company/mcjoint-in" target="_blank" rel="noopener noreferrer" aria-label="Linkedin"><i class="fab fa-linkedin"></i></a><a href="https://x.com/mcjointin" target="_blank" rel="noopener noreferrer" aria-label="X-Twitter"><i class="fab fa-x-twitter"></i></a><a href="https://www.youtube.com/@MCJoint" target="_blank" rel="noopener noreferrer" aria-label="Youtube"><i class="fab fa-youtube"></i></a></div>
       </div>
-      <div class="footer-section">
-        <h4>Navigate</h4>
-        <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><div class="nav-dropdown">
-        <a href="works.html">Our Works ▾</a>
-        <div class="nav-dropdown-menu">
-          <a href="works/projects.html">Projects</a>
-        </div>
-      </div></li>
-          <li><a href="blog.html">Blog</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Clients</h4>
-        <ul>
-          <li><a href="clients/businesses.html">Businesses</a></li>
-          <li><a href="clients/talent.html">Talent</a></li>
-          <li><a href="clients/associates.html">Associates</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:info@mcjoint.in">info@mcjoint.in</a></li>
-          <li><a href="tel:+919014414114">+91 90144 14114</a></li>
-          <li><a href="contact.html">Get In Touch</a></li>
-        </ul>
-      </div>
+      <div class="footer-section"><h4>Services</h4><ul><li><a href="/services.html#production">Content Production &amp; Development</a></li><li><a href="/services.html#distribution">Music Distribution &amp; Sound Production</a></li><li><a href="/services.html#talent">Talent Management &amp; Representation</a></li><li><a href="/services.html#digital">Digital Strategy &amp; Brand Partnerships</a></li><li><a href="/services/branding-design.html">Branding &amp; Design</a></li><li><a href="/services/digital-footprint.html">Digital Footprint</a></li></ul></div>
+      <div class="footer-section"><h4>Clients &amp; Works</h4><ul><li><a href="/clients/businesses.html">Businesses</a></li><li><a href="/clients/associates.html">Associates</a></li><li><a href="/clients/talent.html">Talent</a></li><li><a href="/works.html">Client Works</a></li><li><a href="/works/projects.html">Projects</a></li></ul></div>
+      <div class="footer-section"><h4>Contact</h4><ul>
+        <li><a href="mailto:info@mcjoint.in">info@mcjoint.in</a></li>
+        <li><a href="tel:+919014414114">+91 90144 14114</a></li>
+        <li><a href="/contact.html">Get In Touch</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <p>&copy; <span id="year"></span> MC Joint — Masters of Ceremonies. All rights reserved.</p>
-      <a href="https://www.mcjoint.in">www.mcjoint.in</a>
+      <p class="footer-links"><a href="/about.html">About</a> · <a href="/blog.html">Blog</a> · <a href="https://mcjoint.in">mcjoint.in</a></p>
     </div>
   </div>
 </footer>

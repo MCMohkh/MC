@@ -32,3 +32,24 @@
 /images/talent/B12%20MC%20Joint/MC-Talent-B12-Main-header-trio-faraz-og-kiyaan-ink-toxic-BTS-Zaban-hai-0.jpg  /images/talent/b12-mc-joint/mc-talent-b12-main-header-trio-faraz-og-kiyaan-ink-toxic-bts-zaban-hai-0.jpg  301
 /images/talent/Divya%20Bandaru.jpg  /images/talent/divya-bandaru.jpg  301
 /images/talent/Pawon%20Ramesh%20Actor%20Headshot%20Represented%20by%20MC%20Joint.jpg  /images/talent/pawon-ramesh-actor-headshot-represented-by-mc-joint.jpg  301
+
+# --- Site restructure (Oct 2026): merged / moved pages ---
+/blog-imdb-page-matters            /blog/imdb-page-matters.html            301
+/blog-imdb-page-matters.html       /blog/imdb-page-matters.html            301
+/avanti-cinema-transformation      /works/avanti-cinema.html               301
+/avanti-cinema-transformation.html /works/avanti-cinema.html               301
+/story-discussion-s2               /works/story-discussion-s2.html         301
+/story-discussion-s2.html          /works/story-discussion-s2.html         301
+/viral-video-screening             /works/viral-video.html                 301
+/viral-video-screening.html        /works/viral-video.html                 301
+/tapeloop-music-distribution       /clients/businesses.html#tapeloop-records  301
+/tapeloop-music-distribution.html  /clients/businesses.html#tapeloop-records  301
+/nalgonda-gaddar-narsanna          /clients/talent/nalgonda-gaddar.html    301
+/nalgonda-gaddar-narsanna.html     /clients/talent/nalgonda-gaddar.html    301
+/search                            /                                       301
+/search.html                       /                                       301
+/search-index.json                 /                                       301
+
+# --- Talent page templates are for internal use only; never serve them ---
+/clients/talent/template-*         /404.html                               404!
+/clients/talent/TEMPLATE-GUIDE.md  /404.html                               404!

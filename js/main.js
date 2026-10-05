@@ -23,10 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (yr) yr.textContent = new Date().getFullYear();
 
   // Active nav link
-  const path = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('nav a').forEach(a => {
-    const href = a.getAttribute('href').split('/').pop();
-    if (href === path) a.classList.add('active');
+  const norm = p => (p.split('#')[0].replace(/\/index\.html$/, '/').replace(/\.html$/, '').replace(/\/$/, '')) || '/';
+  const here = norm(window.location.pathname);
+  document.querySelectorAll('nav > a, nav > .nav-dropdown > a').forEach(a => {
+    if (norm(a.getAttribute('href')) === here) a.classList.add('active');
   });
 
   // Animated counters

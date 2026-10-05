@@ -5,4 +5,4 @@ Disallow: /404.html
 Disallow: /admin/
 Disallow: /PR-DB/
 
-Sitemap: https://www.mcjoint.in/sitemap.xml
+Sitemap: https://mcjoint.in/sitemap.xml
