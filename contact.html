@@ -151,8 +151,9 @@
           </div>
         </div>
 
-        <form name="contact" method="POST" data-netlify="true" action="/thanks.html">
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html" data-mc-form="contact">
           <input type="hidden" name="form-name" value="contact">
+          <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
           <input type="hidden" name="inquiry-type" id="inquiryTypeField" value="General">
           <div class="form-row">
             <div class="form-group">
@@ -179,7 +180,8 @@
             <textarea id="message" name="message" placeholder="Tell us about your project, your music, or what you're looking for..." required></textarea>
           </div>
           <button type="submit" class="btn btn-primary" style="width:100%;padding:1rem;font-size:0.85rem;">Send Message →</button>
-          <p style="font-size:0.78rem;color:var(--grey);margin-top:1rem;text-align:center;">We aim to respond within 24 hours.</p>
+          <p class="form-status hint" role="alert" aria-live="polite" hidden style="text-align:center;margin-top:1rem;"></p>
+          <p style="font-size:0.78rem;color:var(--grey);margin-top:1rem;text-align:center;">We usually reply within 3–5 business days.</p>
         </form>
       </div>
 
@@ -244,7 +246,7 @@
           <h3 style="color:white;font-size:1rem;margin-bottom:0.75rem;">What Happens After You Reach Out?</h3>
           <ul style="list-style:none;color:#aaa;font-size:0.875rem;">
             <li style="padding:0.4rem 0;border-bottom:1px solid #222;">1. We read every message personally</li>
-            <li style="padding:0.4rem 0;border-bottom:1px solid #222;">2. We respond within 24 hours</li>
+            <li style="padding:0.4rem 0;border-bottom:1px solid #222;">2. We usually reply in 3–5 business days</li>
             <li style="padding:0.4rem 0;border-bottom:1px solid #222;">3. We schedule an introductory call if it's a fit</li>
             <li style="padding:0.4rem 0;">4. We build a plan together from there</li>
           </ul>
@@ -277,7 +279,8 @@
     </div>
   </div>
 </footer>
-<script src="js/main.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/forms.js" defer></script>
 <script>
   document.querySelectorAll('.inquiry-type').forEach(el => {
     el.addEventListener('click', () => {

@@ -73,6 +73,8 @@
     /* ── Episode grid ─────────────────────────────────────────────────── */
     .episodes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); gap: 1.25rem; margin-top: 1.5rem; }
     .ep-card { background: var(--light-bg); overflow: hidden; }
+    .ep-card-text { display:flex; align-items:center; justify-content:center; text-align:center; padding:1.5rem 1rem; }
+    .ep-card-text .ep-card-body { padding:0; }
     .ep-card-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
     .ep-card-body { padding: .85rem 1rem; }
     .ep-card-label { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--red); }
@@ -162,7 +164,7 @@
 
 <!-- ── HERO ─────────────────────────────────────────────────────────────── -->
 <div class="project-hero">
-  <img class="project-hero-img" src="/images/posters/project-beyond-physical-mc-5.webp" alt="Beyond Physical — MC Joint and Avanti Cinema documentary project" loading="eager" width="1599" height="899" decoding="async">
+  <img class="project-hero-img" src="/images/posters/project-beyond-physical-mc-5.webp" alt="Parkour athletes before the shoot — Beyond Physical documentary series" loading="eager" width="1599" height="899" decoding="async">
   <div class="project-hero-bg"></div>
   <div class="container">
     <div class="project-hero-content">
@@ -226,8 +228,7 @@
         <!-- Episodes -->
         <h3 style="margin-top:2.5rem;margin-bottom:1rem;">Episodes</h3>
         <div class="episodes-grid">
-          <div class="ep-card">
-            <img src="/images/posters/project-beyond-physical-mc-1.webp" alt="Parkour — Beyond Physical" class="ep-card-img" width="400" height="225" loading="lazy" decoding="async">
+          <div class="ep-card ep-card-text">
             <div class="ep-card-body">
               <div class="ep-card-label">Episode 1</div>
               <div class="ep-card-title">Parkour</div>
@@ -235,8 +236,7 @@
               <span class="ep-status ep-shot">Shot</span>
             </div>
           </div>
-          <div class="ep-card">
-            <img src="/images/posters/project-beyond-physical-mc-3.webp" alt="Boxing — Beyond Physical" class="ep-card-img" width="400" height="225" loading="lazy" decoding="async">
+          <div class="ep-card ep-card-text">
             <div class="ep-card-body">
               <div class="ep-card-label">Episode 2</div>
               <div class="ep-card-title">Boxing</div>
@@ -244,8 +244,7 @@
               <span class="ep-status ep-shot">Shot</span>
             </div>
           </div>
-          <div class="ep-card">
-            <img src="/images/posters/project-beyond-physical-mc-4.webp" alt="BMX & Skateboarding — Beyond Physical" class="ep-card-img" width="400" height="225" loading="lazy" decoding="async">
+          <div class="ep-card ep-card-text">
             <div class="ep-card-body">
               <div class="ep-card-label">Episode 3</div>
               <div class="ep-card-title">BMX &amp; Skateboarding</div>
@@ -253,8 +252,7 @@
               <span class="ep-status ep-shot">Shot</span>
             </div>
           </div>
-          <div class="ep-card">
-            <img src="/images/posters/project-beyond-physical-mc-5.webp" alt="CrossFit — Beyond Physical" class="ep-card-img" width="400" height="225" loading="lazy" decoding="async">
+          <div class="ep-card ep-card-text">
             <div class="ep-card-body">
               <div class="ep-card-label">Episode 4</div>
               <div class="ep-card-title">CrossFit</div>
@@ -263,7 +261,7 @@
             </div>
           </div>
           <div class="ep-card">
-            <img src="/images/posters/project-beyond-physical-mc-2.webp" alt="Yoga — Beyond Physical" class="ep-card-img" width="400" height="225" loading="lazy" decoding="async">
+            <img src="/images/posters/project-beyond-physical-mc-2.webp" alt="The crew heading out to shoot — Beyond Physical" class="ep-card-img" width="400" height="225" loading="lazy" decoding="async">
             <div class="ep-card-body">
               <div class="ep-card-label">Episode 5</div>
               <div class="ep-card-title">Yoga</div>
@@ -358,17 +356,12 @@
     <span class="section-label">Gallery</span>
     <h3 style="margin-bottom:1.5rem;">Stills</h3>
     <div class="mc-gallery">
-      <div class="mc-gallery-item" onclick="bpOpenLB(0)" style="cursor:zoom-in;"><img src="/images/posters/project-beyond-physical-mc-5.webp" alt="Beyond Physical — main still" loading="lazy" width="1599" height="899" decoding="async"></div>
-      <div class="mc-gallery-item" onclick="bpOpenLB(1)" style="cursor:zoom-in;"><img src="/images/posters/project-beyond-physical-mc-1.webp" alt="Beyond Physical — Parkour" loading="lazy" width="1599" height="899" decoding="async"></div>
-      <div class="mc-gallery-item" onclick="bpOpenLB(2)" style="cursor:zoom-in;"><img src="/images/posters/project-beyond-physical-mc-2.webp" alt="Beyond Physical — Boxing" loading="lazy" width="1599" height="899" decoding="async"></div>
-      <div class="mc-gallery-item" onclick="bpOpenLB(3)" style="cursor:zoom-in;"><img src="/images/posters/project-beyond-physical-mc-3.webp" alt="Beyond Physical — BMX & Skateboarding" loading="lazy" width="1599" height="899" decoding="async"></div>
-      <div class="mc-gallery-item" onclick="bpOpenLB(4)" style="cursor:zoom-in;"><img src="/images/posters/project-beyond-physical-mc-4.webp" alt="Beyond Physical — CrossFit" loading="lazy" width="1599" height="899" decoding="async"></div>
-      <div class="mc-gallery-item" onclick="bpOpenLB(5)" style="cursor:zoom-in;"><img src="/images/posters/project-beyond-physical-mc-5.webp" alt="Beyond Physical — Yoga" loading="lazy" width="1599" height="899" decoding="async"></div>
-      <div class="mc-gallery-item" onclick="bpOpenLB(6)" style="cursor:zoom-in;"><img src="/images/posters/project-beyond-physical-mc-6.webp" alt="Beyond Physical — Behind the Scenes" loading="lazy" width="1599" height="899" decoding="async"></div>
-      <div class="mc-gallery-item" onclick="bpOpenLB(7)" style="cursor:zoom-in;"><img src="/images/posters/project-beyond-physical-mc-1.webp" alt="Beyond Physical — Production still 1" loading="lazy" width="1599" height="899" decoding="async"></div>
-      <div class="mc-gallery-item" onclick="bpOpenLB(8)" style="cursor:zoom-in;"><img src="/images/posters/project-beyond-physical-mc-2.webp" alt="Beyond Physical — Production still 2" loading="lazy" width="1599" height="899" decoding="async"></div>
-      <div class="mc-gallery-item" onclick="bpOpenLB(9)" style="cursor:zoom-in;"><img src="/images/posters/project-beyond-physical-mc-3.webp" alt="Beyond Physical — Production still 3" loading="lazy" width="1599" height="899" decoding="async"></div>
-      <div class="mc-gallery-item" onclick="bpOpenLB(10)" style="cursor:zoom-in;"><img src="/images/posters/project-beyond-physical-mc-4.webp" alt="Beyond Physical — Production still 4" loading="lazy" width="1599" height="899" decoding="async"></div>
+      <div class="mc-gallery-item" onclick="bpOpenLB(0)" style="cursor:zoom-in;"><img src="/images/posters/project-beyond-physical-mc-5.webp" alt="Parkour, before the shoot — Beyond Physical" loading="lazy" width="1599" height="899" decoding="async"></div>
+      <div class="mc-gallery-item" onclick="bpOpenLB(1)" style="cursor:zoom-in;"><img src="/images/posters/project-beyond-physical-mc-1.webp" alt="Wall Ride Park (BMX) — Beyond Physical" loading="lazy" width="1599" height="899" decoding="async"></div>
+      <div class="mc-gallery-item" onclick="bpOpenLB(2)" style="cursor:zoom-in;"><img src="/images/posters/project-beyond-physical-mc-3.webp" alt="Parkour — Beyond Physical" loading="lazy" width="1599" height="899" decoding="async"></div>
+      <div class="mc-gallery-item" onclick="bpOpenLB(3)" style="cursor:zoom-in;"><img src="/images/posters/project-beyond-physical-mc-4.webp" alt="Parkour — Beyond Physical" loading="lazy" width="1599" height="899" decoding="async"></div>
+      <div class="mc-gallery-item" onclick="bpOpenLB(4)" style="cursor:zoom-in;"><img src="/images/posters/project-beyond-physical-mc-2.webp" alt="The crew heading out to shoot — Beyond Physical" loading="lazy" width="1599" height="899" decoding="async"></div>
+      <div class="mc-gallery-item" onclick="bpOpenLB(5)" style="cursor:zoom-in;"><img src="/images/posters/project-beyond-physical-mc-6.webp" alt="Behind the scenes — Beyond Physical" loading="lazy" width="1599" height="899" decoding="async"></div>
     </div>
   </div>
 </section>
@@ -416,7 +409,7 @@
   <div id="bpLbCounter" style="position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.7);font-size:0.85rem;"></div>
 </div>
 <script>
-  var bpLbImages = [{"src":"/images/posters/project-beyond-physical-mc-5.webp","alt":"Beyond Physical — main still"},{"src":"/images/posters/project-beyond-physical-mc-1.webp","alt":"Beyond Physical — Parkour"},{"src":"/images/posters/project-beyond-physical-mc-2.webp","alt":"Beyond Physical — Boxing"},{"src":"/images/posters/project-beyond-physical-mc-3.webp","alt":"Beyond Physical — BMX & Skateboarding"},{"src":"/images/posters/project-beyond-physical-mc-4.webp","alt":"Beyond Physical — CrossFit"},{"src":"/images/posters/project-beyond-physical-mc-5.webp","alt":"Beyond Physical — Yoga"},{"src":"/images/posters/project-beyond-physical-mc-6.webp","alt":"Beyond Physical — Behind the Scenes"},{"src":"/images/posters/project-beyond-physical-mc-1.webp","alt":"Beyond Physical — Production still 1"},{"src":"/images/posters/project-beyond-physical-mc-2.webp","alt":"Beyond Physical — Production still 2"},{"src":"/images/posters/project-beyond-physical-mc-3.webp","alt":"Beyond Physical — Production still 3"},{"src":"/images/posters/project-beyond-physical-mc-4.webp","alt":"Beyond Physical — Production still 4"}];
+  var bpLbImages = [{"src": "/images/posters/project-beyond-physical-mc-5.webp", "alt": "Parkour, before the shoot — Beyond Physical"}, {"src": "/images/posters/project-beyond-physical-mc-1.webp", "alt": "Wall Ride Park (BMX) — Beyond Physical"}, {"src": "/images/posters/project-beyond-physical-mc-3.webp", "alt": "Parkour — Beyond Physical"}, {"src": "/images/posters/project-beyond-physical-mc-4.webp", "alt": "Parkour — Beyond Physical"}, {"src": "/images/posters/project-beyond-physical-mc-2.webp", "alt": "The crew heading out to shoot — Beyond Physical"}, {"src": "/images/posters/project-beyond-physical-mc-6.webp", "alt": "Behind the scenes — Beyond Physical"}];
   var bpLbCurrent = 0;
   function bpOpenLB(i){
     bpLbCurrent = i;
