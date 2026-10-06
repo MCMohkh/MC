@@ -20,5 +20,5 @@ Static site (HTML/CSS/JS), deployed on Netlify. Primary domain: `https://mcjoint
 - Talent page templates live in `clients/talent/template-*.html` and are blocked from serving by `_redirects`.
 - Merged/removed pages are redirected in `_redirects`.
 
-## Forms (Netlify Forms)
-`contact`, `representation`, `talent-enquiry` — all post to `/thanks.html`. Set up email notifications in Netlify → Forms → Form notifications.
+## Forms
+`contact`, `representation`, `talent-enquiry` post (via `js/forms.js`) to a Google Apps Script web app that writes to a Google Sheet and sends email / WhatsApp / Telegram alerts. The endpoint URL is `MC_FORMS_ENDPOINT` in `js/forms.js`. Netlify Forms is not used (form detection can be switched off in Netlify).

@@ -1,11 +1,9 @@
 /* MC Joint — form handler.
  * Sends form submissions to a Google Apps Script web app (writes a row to a Google Sheet and
- * notifies by email / WhatsApp / Telegram). See the Apps Script file delivered with this change.
- *
- * Until MC_FORMS_ENDPOINT is set, forms fall back to a normal submit (Netlify Forms).
+ * notifies by email / WhatsApp / Telegram). Forms are marked with data-mc-form="<name>".
  */
 (function () {
-  var MC_FORMS_ENDPOINT = ''; // e.g. 'https://script.google.com/macros/s/AKfycb.../exec'
+  var MC_FORMS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzgmoJlJhIgYfz2VwatAIx_Dvs1YLdIC6SQfWhl0UB6PPGng3VKsVWsmTuobRkJ2Sfk/exec';
   var FALLBACK_EMAIL = 'info@mcjoint.in';
 
   var forms = document.querySelectorAll('form[data-mc-form]');
@@ -16,37 +14,45 @@
     var status = form.querySelector('.form-status');
     var btn = form.querySelector('[type=submit]');
     var btnText = btn ? btn.textContent : '';
+    var busy = false;
 
-    function say(msg, isError) {
+    function say(msg) {
       if (!status) return;
       status.hidden = !msg;
       status.textContent = msg || '';
-      status.style.color = isError ? '#c00' : '';
+      status.style.color = msg ? '#c00' : '';
     }
+    function reset() { busy = false; if (btn) { btn.disabled = false; btn.textContent = btnText; } }
+    function fail() {
+      reset();
+      say('Sorry, that did not go through. Please try again, or email us at ' + FALLBACK_EMAIL + '.');
+    }
+    function done() { location.href = '/thanks.html'; }
 
     form.addEventListener('submit', function (e) {
-      if (!MC_FORMS_ENDPOINT) return; // not configured yet: normal submit
       e.preventDefault();
-      if (form.querySelector('[name=bot-field]') && form.querySelector('[name=bot-field]').value) return; // honeypot
+      if (busy) return;
+      var trap = form.querySelector('[name=bot-field]');
+      if (trap && trap.value) return; // honeypot filled: bot
 
       var data = new URLSearchParams();
-      new FormData(form).forEach(function (value, key) {
-        if (key === 'form-name') return;
-        data.append(key, value);
-      });
+      new FormData(form).forEach(function (value, key) { data.append(key, value); });
       data.append('form', form.getAttribute('data-mc-form'));
       data.append('page', location.href);
       data.append('elapsed_ms', String(Date.now() - opened));
 
+      busy = true;
       if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
       say('');
 
-      // Apps Script web apps do not send CORS headers, so use no-cors (fire-and-forget).
-      fetch(MC_FORMS_ENDPOINT, { method: 'POST', mode: 'no-cors', body: data })
-        .then(function () { location.href = '/thanks.html'; })
+      // 1) Normal request: lets us read the handler's answer.
+      fetch(MC_FORMS_ENDPOINT, { method: 'POST', body: data })
+        .then(function (res) { return res.json(); })
+        .then(function (json) { if (json && json.ok) done(); else fail(); })
         .catch(function () {
-          if (btn) { btn.disabled = false; btn.textContent = btnText; }
-          say('Sorry, that did not go through. Please try again, or email us at ' + FALLBACK_EMAIL + '.', true);
+          // 2) The browser blocked reading the answer (or the network dropped). Send once more
+          //    without reading it; a rare duplicate row is better than a lost enquiry.
+          fetch(MC_FORMS_ENDPOINT, { method: 'POST', mode: 'no-cors', body: data }).then(done).catch(fail);
         });
     });
   });
