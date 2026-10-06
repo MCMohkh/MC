@@ -3,92 +3,25 @@
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
-  <link rel="apple-touch-icon" sizes="512x512" href="/favicon.png">
-<title>Blog — MC Joint | Music, Film & Talent Insights</title>
-  <meta name="description" content="Insights from MC Joint on music distribution, talent representation, Telugu cinema strategy and the South Indian creative industry.">
-  <meta name="keywords" content="MC Joint blog, Telugu music industry, South Indian cinema, talent management insights, Hyderabad creative agency">
+  <link rel="icon" type="image/png" href="/images/mc/mc-joint-logo-5-mc-joint-block-logo.png">
+  <title>Case Studies — Film, Music &amp; Digital Strategy | MC Joint</title>
+  <meta name="description" content="Case studies from MC Joint: Avanti Cinema, Tapeloop Records and Pickpocket. Digital strategy, music distribution and film marketing from Hyderabad.">
+  <meta name="geo.region" content="IN-TG"><meta name="geo.placename" content="Hyderabad">
   <meta name="robots" content="index, follow">
-  <meta name="author" content="MC Joint">
-  <meta name="geo.region" content="IN-TG">
-  <link rel="canonical" href="https://mcjoint.in/blog.html"><meta property="og:type" content="website">
-  <meta property="og:url" content="https://mcjoint.in/blog.html">
-  <meta property="og:title" content="Blog — MC Joint | Music, Film & Talent Insights">
-  <meta property="og:description" content="Insights from MC Joint on music distribution, talent representation, Telugu cinema strategy and the South Indian creative industry.">
+  <link rel="canonical" href="https://mcjoint.in/case-studies/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mcjoint.in/case-studies/">
+  <meta property="og:title" content="Case Studies — Film, Music &amp; Digital Strategy | MC Joint">
+  <meta property="og:description" content="Case studies from MC Joint: Avanti Cinema, Tapeloop Records and Pickpocket. Digital strategy, music distribution and film marketing from Hyderabad.">
   <meta property="og:image" content="https://mcjoint.in/images/mc/mc-joint-masters-of-ceremonies-hyderabad-talent-agency-hyderabad.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="MC Joint Blog — Music, Film & Talent Insights">
-  <meta property="og:locale" content="en_IN">
-  <meta property="og:site_name" content="MC Joint">
+  <meta property="og:locale" content="en_IN"><meta property="og:site_name" content="MC Joint">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@mcjointin">
-  <meta name="twitter:title" content="Blog — MC Joint | Music, Film & Talent Insights">
-  <meta name="twitter:description" content="Insights from MC Joint on music distribution, talent representation, and South Indian cinema.">
-  <meta name="twitter:image" content="https://mcjoint.in/images/mc/mc-joint-masters-of-ceremonies-hyderabad-talent-agency-hyderabad.jpg">
-  <meta name="twitter:image:alt" content="MC Joint Blog — Music, Film & Talent Insights">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mcjoint.in/"}, {"@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://mcjoint.in/case-studies/"}]}</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-620G3QZX5M"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-620G3QZX5M');</script>
   <link rel="preload" href="/fonts/montserrat-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css">
-  <style>
-    .blog-grid { display:grid; grid-template-columns:1fr; gap:2rem; }
-    @media(min-width:768px){ .blog-grid { grid-template-columns:repeat(2,1fr); } }
-    @media(min-width:1024px){ .blog-grid { grid-template-columns:repeat(3,1fr); } }
-
-    .blog-card { border:1px solid #eee; overflow:hidden; display:flex; flex-direction:column; transition:transform 0.3s,box-shadow 0.3s; }
-    .blog-card:hover { transform:translateY(-4px); box-shadow:0 12px 32px rgba(0,0,0,0.1); }
-    .blog-card.featured { grid-column:1/-1; }
-    @media(min-width:768px){
-      .blog-card.featured { display:grid; grid-template-columns:1fr 1fr; }
-      .blog-card.featured .blog-card-img { aspect-ratio:auto; min-height:340px; }
-    }
-    .blog-card-img { aspect-ratio:16/9; background:linear-gradient(135deg,#1a1a2e,#0d0d1a); overflow:hidden; }
-    .blog-card-img img { width:100%; height:100%; object-fit:cover; transition:transform 0.4s; }
-    .blog-card:hover .blog-card-img img { transform:scale(1.04); }
-    .blog-card-body { padding:1.75rem; flex:1; display:flex; flex-direction:column; }
-    .blog-card.featured .blog-card-body { padding:2.5rem; justify-content:center; }
-    .blog-card-body .tag { margin-bottom:0.75rem; }
-    .blog-card-body h3 { font-size:1rem; line-height:1.4; margin-bottom:0.75rem; }
-    .blog-card.featured .blog-card-body h3 { font-size:1.5rem; }
-    .blog-card-body p { font-size:0.875rem; color:var(--dark-grey); flex:1; }
-    .blog-card-footer { display:flex; align-items:center; justify-content:space-between; margin-top:1.25rem; padding-top:1.25rem; border-top:1px solid #f0f0f0; }
-    .blog-date { font-size:0.78rem; color:var(--grey); }
-    .blog-read-more { font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--red); text-decoration:none; }
-
-    .blog-sidebar { position:sticky; top:90px; }
-    .sidebar-section { margin-bottom:2.5rem; padding-bottom:2.5rem; border-bottom:1px solid #eee; }
-    .sidebar-section:last-child { border:none; }
-    .sidebar-section h4 { font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--grey); margin-bottom:1rem; }
-    .category-pills { display:flex; flex-wrap:wrap; gap:0.5rem; }
-    .category-pill { padding:0.4rem 0.9rem; border:1px solid #ddd; font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.06em; cursor:pointer; transition:all 0.2s; text-decoration:none; color:var(--black); }
-    .category-pill:hover { border-color:var(--red); color:var(--red); }
-
-    .blog-layout { display:grid; grid-template-columns:1fr; gap:3rem; }
-    @media(min-width:1024px){ .blog-layout { grid-template-columns:1fr 300px; } }
-
-    .fade-in { opacity:0; transform:translateY(20px); transition:opacity 0.6s,transform 0.6s; }
-    .fade-in.visible { opacity:1; transform:none; }
-  </style>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-620G3QZX5M"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-620G3QZX5M');
-  </script>
-  <!-- Google Analytics GA4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-620G3QZX5M"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-620G3QZX5M');
-  </script>
-  <link rel="alternate" type="application/rss+xml" title="MC Joint — Music, Talent &amp; Cinema" href="https://mcjoint.in/feed.xml">
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Blog","name":"MC Joint Blog","description":"Insights on music distribution, talent representation and South Indian cinema from MC Joint.","url":"https://mcjoint.in/blog.html","publisher":{"@type":"Organization","name":"MC Joint","url":"https://mcjoint.in"}}
-  </script>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 <header>
@@ -132,35 +65,14 @@
   <details><summary>Works</summary><div><a href="/works.html">Client Works</a><a href="/works/projects.html">Projects</a><a href="/case-studies/">Case Studies</a></div></details>
   <details><summary>Contact</summary><div><a href="/contact.html">Contact Us</a><a href="/get-represented.html">Submit Music / Get Represented</a><a href="/contact-talent.html">Contact a Talent</a></div></details>
 </div>
-
 <div class="page-hero">
   <div class="container">
-    <span class="page-hero-eyebrow">Journal</span>
-    <h1>Journal</h1>
-    <p>Notes on music, cinema, talent and digital presence from the MC Joint team.</p>
+    <span class="page-hero-eyebrow">Case Studies</span>
+    <h1>What we did,<br>and what happened</h1>
+    <p>Short, factual write-ups of work we have done with clients and partners.</p>
   </div>
 </div>
-
-<section>
-  <div class="container">
-    <div class="blog-grid">
-      <div class="blog-card featured fade-in">
-        <div class="blog-card-img"><img loading="lazy" src="/images/mc/mc-joint-masters-of-ceremonies-hyderabad-talent-agency-hyderabad.webp" alt="Why Your IMDb Page Matters More Than You Think" width="1200" height="630" decoding="async"></div>
-        <div class="blog-card-body">
-          <span class="tag tag-red">Digital Footprint</span>
-          <h3><a href="/blog/imdb-page-matters.html">Why Your IMDb Page Matters More Than You Think</a></h3>
-          <p>A practical guide to digital footprint management for filmmakers and production houses in the streaming era — and why a properly maintained IMDb profile is non-negotiable.</p>
-          <div class="blog-card-footer">
-            <span class="blog-date">MC Joint Team</span>
-            <a class="blog-read-more" href="/blog/imdb-page-matters.html">Read More →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <p style="text-align:center;margin-top:3rem;color:var(--grey);">More articles are on the way. In the meantime, see our <a href="/works/projects.html" style="color:var(--red);">Projects</a> and <a href="/services.html" style="color:var(--red);">Services</a>.</p>
-  </div>
-</section>
-
+<section><div class="container"><div class="cs-cards"><a class="cs-card" href="/case-studies/avanti-cinema.html"><img loading="lazy" src="/images/projects/MC-Project-Story-discussion-season-2-poster-camp-sasi-as-prakash-chowdary.webp" alt="Avanti Cinema case study" width="640" height="360"><div><span class="section-label">Case study</span><h3>Avanti Cinema</h3><p>Six years, an OTT platform, a music catalogue and four film releases.</p></div></a><a class="cs-card" href="/case-studies/tapeloop-records.html"><img loading="lazy" src="/images/albums/chivaraku-migiledhi-tapeloop-records-mc-joint.webp" alt="Tapeloop Records case study" width="640" height="360"><div><span class="section-label">Case study</span><h3>Tapeloop Records</h3><p>A distribution pipeline for Telugu film music with composer Vivek Sagar.</p></div></a><a class="cs-card" href="/case-studies/pickpocket.html"><img loading="lazy" src="/images/projects/mc-project-Pickpocket-feature-divya-bandaru-avanti-cinema-shashank-raghavula-Marketing-film-Pickpocket.webp" alt="Pickpocket case study" width="640" height="360"><div><span class="section-label">Case study</span><h3>Pickpocket</h3><p>Marketing a debut film: digital strategy, distribution and the soundtrack release.</p></div></a></div><p style="margin-top:2.5rem;">For individual films, series and releases, see <a href="/works/projects.html">Projects</a>. For what we do for client businesses, see <a href="/works.html">Client Works</a>.</p></div></section>
 <footer>
   <div class="container">
     <div class="footer-grid">
@@ -184,7 +96,6 @@
     </div>
   </div>
 </footer>
-<script src="js/main.js"></script>
-<a class="wa-float" href="https://wa.me/919014414114?text=Hi%20MC%20Joint%2C%20I%27d%20like%20to%20discuss%20a%20project" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<script src="/js/main.js"></script>
 </body>
 </html>

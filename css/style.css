@@ -339,6 +339,54 @@ footer { background: var(--black); color: var(--white); padding: 4rem 0 2rem; }
 .footer-links a:hover { color:var(--red); }
 img { max-width:100%; height:auto; }
 
+
+/* ===== Forms, FAQ, landing + case-study blocks ===== */
+.mc-form .form-group{margin-bottom:1.25rem}
+.mc-form label{display:block;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem;color:#333}
+.mc-form input[type=text],.mc-form input[type=email],.mc-form input[type=tel],.mc-form input[type=url],.mc-form select,.mc-form textarea{width:100%;padding:.85rem 1rem;border:1px solid #ddd;border-radius:6px;font:inherit;font-size:.95rem;background:#fff}
+.mc-form input:focus,.mc-form select:focus,.mc-form textarea:focus{outline:none;border-color:var(--red)}
+.mc-form textarea{min-height:140px;resize:vertical}
+.mc-form .form-row{display:grid;grid-template-columns:1fr;gap:0 1rem}
+@media(min-width:700px){.mc-form .form-row{grid-template-columns:1fr 1fr}}
+.mc-form .hint{font-size:.78rem;color:#777;margin-top:.3rem}
+.mc-form .check{display:flex;gap:.6rem;align-items:flex-start;font-size:.85rem;text-transform:none;letter-spacing:0;font-weight:500}
+.mc-form .check input{margin-top:.2rem}
+.choice-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.6rem}
+.choice{border:1px solid #ddd;border-radius:6px;padding:.8rem 1rem;cursor:pointer;display:flex;gap:.5rem;align-items:center;font-size:.9rem;text-transform:none;letter-spacing:0;font-weight:600;margin:0}
+.choice:has(input:checked){border-color:var(--red);background:#fff5f5}
+.form-aside{background:#fafafa;border:1px solid #eee;border-radius:8px;padding:1.5rem}
+.form-aside h3{font-size:1rem;margin-bottom:.6rem}.form-aside li{margin:.4rem 0;font-size:.92rem}.form-aside ul{padding-left:1.1rem}
+.form-layout{display:grid;grid-template-columns:1fr;gap:2.5rem}
+@media(min-width:900px){.form-layout{grid-template-columns:1.6fr 1fr}}
+.profile-actions{margin-top:1.5rem;display:flex;gap:.75rem;flex-wrap:wrap}
+.prose{max-width:760px}.prose h2{margin-top:2.5rem}.prose p,.prose li{color:#444;line-height:1.7}
+.prose ul{padding-left:1.2rem}.prose li{margin:.35rem 0}
+.hl-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;margin:1.5rem 0}
+.hl-card{border:1px solid #eee;border-radius:8px;padding:1.25rem;background:#fff}
+.hl-card h3{font-size:1rem;margin-bottom:.4rem}.hl-card p{font-size:.9rem;color:#555;margin:0}
+.steps{counter-reset:s;list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.steps li{counter-increment:s;border-left:3px solid var(--red);padding:.25rem 0 .25rem 1rem}
+.steps li::before{content:"0" counter(s);display:block;font-weight:800;color:var(--red);font-size:.8rem}
+.faq-group{margin:2.5rem 0 .5rem;font-size:1.1rem}
+.faq details{border-bottom:1px solid #eee;padding:1rem 0}
+.faq summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--red);font-size:1.3rem;line-height:1}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{margin:.75rem 0 0;color:#444;line-height:1.7}
+.cs-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;background:#fafafa;border:1px solid #eee;border-radius:8px;padding:1.25rem;margin:1.5rem 0 2rem}
+.cs-facts dt{font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#999}
+.cs-facts dd{margin:.2rem 0 0;font-weight:600}
+.cs-results{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin:1.25rem 0}
+.cs-results div{border-top:3px solid var(--red);padding-top:.6rem}
+.cs-results strong{display:block;font-size:1.6rem;line-height:1.1}
+.cs-results span{font-size:.82rem;color:#666}
+.cs-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:2rem}
+.cs-card{display:block;border:1px solid #eee;border-radius:8px;overflow:hidden;color:inherit;text-decoration:none;background:#fff}
+.cs-card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#111}
+.cs-card div{padding:1.25rem}.cs-card h3{font-size:1.1rem;margin:.3rem 0}.cs-card p{font-size:.9rem;color:#555;margin:0}
+.cs-card:hover{border-color:var(--red)}
+
 /* Related links block */
 .related{background:#fafafa;border-top:1px solid #eee;padding:2.5rem 0}
 .related-title{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:#999;margin-bottom:1.25rem;font-weight:800}
