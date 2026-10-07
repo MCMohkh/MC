@@ -26,62 +26,8 @@
   <link rel="preload" href="/fonts/montserrat-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../../css/style.css">
-  <style>
-    .talent-profile-hero{background:var(--black);padding-top:100px;padding-bottom:0;display:grid;grid-template-columns:1fr;min-height:70vh;}
-    @media(min-width:1024px){.talent-profile-hero{grid-template-columns:1fr 480px;}}
-    .talent-profile-info{padding:4rem 0;display:flex;flex-direction:column;justify-content:center;}
-    .talent-profile-info h1{color:white;font-size:clamp(2.5rem,6vw,4rem);}
-    .talent-profile-role{font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;color:var(--red);margin-bottom:1rem;display:block;}
-    .talent-profile-info p{color:#aaa;max-width:520px;}
-    .talent-profile-img{background:linear-gradient(160deg,#1a1a1a,#0d0d0d);overflow:hidden;min-height:400px;display:flex;align-items:center;justify-content:center;position:relative;}
-    @media(min-width:1024px){.talent-profile-img{min-height:auto;}}
-    .talent-profile-img img{width:100%;height:100%;object-fit:cover;object-position:top;}
-    .initial-block{font-family:'Montserrat',sans-serif;font-weight:900;font-size:10rem;color:rgba(225,6,0,0.15);user-select:none;}
-    .talent-social-links{display:flex;gap:0.75rem;margin-top:1.75rem;flex-wrap:wrap;}
-    .talent-social-link{display:inline-flex;align-items:center;gap:0.5rem;padding:0.55rem 1rem;border:1px solid rgba(255,255,255,0.18);color:rgba(255,255,255,0.75);text-decoration:none;font-family:'Montserrat',sans-serif;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;transition:all 0.25s;}
-    .talent-social-link:hover{border-color:var(--red);color:white;background:rgba(225,6,0,0.12);}
-    .profile-body{display:grid;grid-template-columns:1fr;gap:3rem;}
-    @media(min-width:1024px){.profile-body{grid-template-columns:2fr 1fr;}}
-    .discography{list-style:none;margin:0;padding:0;}
-    .discography li{padding:1rem 0;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;}
-    .discography li:last-child{border:none;}
-    .disc-title{font-weight:700;font-size:0.9rem;}
-    .disc-type{font-size:0.75rem;color:var(--grey);text-transform:uppercase;letter-spacing:0.05em;margin-top:0.2rem;}
-    .disc-role{font-size:0.8rem;color:#555;margin-top:0.15rem;}
-    .sidebar-card{background:var(--light-bg);padding:2rem;}
-    .sidebar-card h3{font-size:1rem;margin-bottom:1.25rem;}
-    .sidebar-card .info-row{display:flex;justify-content:space-between;padding:0.6rem 0;border-bottom:1px solid #e0e0e0;font-size:0.875rem;}
-    .sidebar-card .info-row:last-child{border:none;}
-    .sidebar-card .info-label{color:var(--grey);}
-    .sidebar-card .info-value{font-weight:600;text-align:right;}
-    .back-link{display:inline-flex;align-items:center;gap:0.5rem;color:var(--grey);text-decoration:none;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.08em;font-weight:600;margin-bottom:1.5rem;}
-    .back-link:hover{color:var(--red);}
-    .fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.6s,transform 0.6s;}
-    .fade-in.visible{opacity:1;transform:none;}
-    .coming-soon-note{background:rgba(225,6,0,0.06);border:1px dashed rgba(225,6,0,0.3);padding:1.25rem 1.5rem;color:var(--dark-grey);font-size:0.875rem;line-height:1.6;margin-top:1.5rem;}
-
-    /* ── Collapsible filmography ─────────────────────────────────── */
-    .filmography-wrap { position: relative; }
-    .filmography-wrap .discography li.film-hidden { display: none; }
-    .filmography-fade {
-      position: absolute; bottom: 0; left: 0; right: 0; height: 80px;
-      background: linear-gradient(to bottom, transparent, var(--white, #fff));
-      pointer-events: none; transition: opacity .3s;
-    }
-    .filmography-wrap.open .filmography-fade { opacity: 0; pointer-events: none; }
-    .filmography-wrap.open .discography li.film-hidden { display: flex; }
-    .btn-film-toggle {
-      display: inline-flex; align-items: center; gap: .45rem;
-      margin-top: 1rem; padding: .55rem 1.1rem;
-      background: none; border: 1px solid var(--red); color: var(--red);
-      font-family: 'Montserrat', sans-serif; font-size: .75rem; font-weight: 700;
-      text-transform: uppercase; letter-spacing: .08em; cursor: pointer;
-      transition: background .2s, color .2s;
-    }
-    .btn-film-toggle:hover { background: var(--red); color: #fff; }
-    .btn-film-toggle .film-toggle-icon { transition: transform .3s; }
-    .filmography-wrap.open .btn-film-toggle .film-toggle-icon { transform: rotate(180deg); }
-  </style>
+  <link rel="stylesheet" href="/css/talent.css">
+  
   <!-- Google Analytics GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-620G3QZX5M"></script>
   <script>
@@ -182,7 +128,7 @@
 <div class="info-row"><span class="info-label">Based In</span><span class="info-value">Hyderabad</span></div>
 <div class="info-row"><span class="info-label">Partnership</span><span class="info-value">Music / Lyric Projects</span></div>
 <div style="margin-top:1.5rem;">
-          <a href="../../contact.html" class="btn btn-primary" style="width:100%;text-align:center;display:block;">Enquire About Booking</a>
+          <a class="btn btn-primary sidebar-btn" href="/contact-talent.html?talent=niklesh-sunkoji">Enquire About Booking</a>
         </div>
         <div style="margin-top:1rem;">
           
@@ -190,10 +136,11 @@
           <h3 style="font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;color:var(--grey);margin-bottom:1rem;">Related Works &amp; Articles</h3>
           <a href="../../works/avanti-cinema.html" style="display:flex;align-items:center;gap:.6rem;padding:.5rem 0;border-bottom:1px solid #eee;text-decoration:none;color:var(--dark-grey);font-size:.85rem;transition:color .2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--dark-grey)'"><i class="fas fa-film" style="color:var(--red);font-size:.75rem;flex-shrink:0;"></i><span>Avanti Cinema — Full Service Partnership</span><span style="margin-left:auto;font-size:.7rem;color:var(--grey);font-weight:700;text-transform:uppercase;letter-spacing:.06em;">Works</span></a>
         </div>
-        <a href="../talent.html" class="btn btn-outline" style="width:100%;text-align:center;display:block;">View All Talent</a>
+        <a class="btn btn-outline sidebar-btn" href="/clients/talent.html">View All Talent</a>
         </div>
       </div>
     </div>
+  </div>
   </div>
 </section>
 

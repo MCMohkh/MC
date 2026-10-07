@@ -118,7 +118,7 @@
     </div>
   </div>
 </section>
-<script>(function(){var s=new URLSearchParams(location.search).get('talent');if(!s)return;var o=document.querySelector('#talent option[value="'+s.replace(/[^a-z0-9-]/gi,'')+'"]');if(o){o.parentNode.value=o.value;var h=document.querySelector('.page-hero h1');if(h)h.innerHTML='Get in Touch<br>with '+o.textContent;}})();</script>
+<script>(function(){var q=new URLSearchParams(location.search);var pm={media:'Media / interview',hiring:'Hiring / booking',collab:'Collaboration',casting:'Casting',brand:'Brand partnership',event:'Event appearance'}[(q.get('purpose')||'').toLowerCase()];if(pm){var ps=document.getElementById('purpose');if(ps)ps.value=pm;}var s=q.get('talent');if(!s)return;var o=document.querySelector('#talent option[value="'+s.replace(/[^a-z0-9-]/gi,'')+'"]');if(o){o.parentNode.value=o.value;var h=document.querySelector('.page-hero h1');if(h)h.innerHTML='Get in Touch<br>with '+o.textContent;}})();</script>
 
 <footer>
   <div class="container">
