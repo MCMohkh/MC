@@ -27,7 +27,11 @@
       reset();
       say('Sorry, that did not go through. Please try again, or email us at ' + FALLBACK_EMAIL + '.');
     }
-    function done() { location.href = '/thanks.html'; }
+    function done() {
+      // A page can listen for 'mc-form-success' and call preventDefault() to show its own success state.
+      var ev = new CustomEvent('mc-form-success', { bubbles: true, cancelable: true });
+      if (form.dispatchEvent(ev)) location.href = '/thanks.html';
+    }
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
