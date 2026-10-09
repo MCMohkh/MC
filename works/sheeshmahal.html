@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="pg-works-sheeshmahal">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -19,76 +19,7 @@
   <meta name="twitter:image" content="https://mcjoint.in/images/albums/sheehsmahal-jukebox.jpeg">
   <link rel="preload" href="/fonts/montserrat-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../css/style.css">
-  <style>
-    .project-hero{background:var(--black);padding-top:110px;padding-bottom:0;min-height:78vh;display:grid;grid-template-columns:1fr;position:relative;overflow:hidden;}
-    @media(min-width:1024px){.project-hero{grid-template-columns:1fr 480px;}}
-    .project-hero-bg{position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(225,6,0,0.04) 0,rgba(225,6,0,0.04) 1px,transparent 0,transparent 50%);background-size:30px 30px;pointer-events:none;}
-    .project-hero-info{padding:4rem 0;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1;}
-    .project-hero-info h1{color:#fff;font-size:clamp(2.4rem,5.5vw,4rem);line-height:1.05;margin-bottom:1rem;letter-spacing:-0.02em;}
-    .project-hero-img{overflow:hidden;background:#0d0d1a;}
-    .project-hero-img img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
-    .project-eyebrow{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:var(--red);margin-bottom:1rem;display:block;}
-    .project-tagline{color:#aaa;font-size:1rem;max-width:480px;line-height:1.8;margin-top:.75rem;}
-    .project-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.75rem;}
-    .project-tags .tag{font-size:.72rem;padding:.35rem .8rem;border:1px solid #333;color:#888;text-transform:uppercase;letter-spacing:.06em;font-weight:600;}
-    .project-tags .tag-r{border-color:var(--red);color:var(--red);}
-    .back-link{display:inline-flex;align-items:center;gap:.5rem;color:#555;text-decoration:none;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;margin-bottom:2rem;transition:color .2s;}
-    .back-link:hover{color:var(--red);}
-    .project-body{display:grid;grid-template-columns:1fr;gap:3rem;}
-    @media(min-width:1024px){.project-body{grid-template-columns:2fr 1fr;}}
-    .section-label-sm{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:var(--red);margin-bottom:.75rem;display:block;}
-    .divider{width:60px;height:4px;background:var(--red);margin:0 0 1.5rem;}
-    .sidebar-info{background:var(--light-bg);padding:2rem;}
-    .sidebar-info h3{font-size:1rem;margin-bottom:1.25rem;}
-    .sidebar-info .row{display:flex;justify-content:space-between;align-items:flex-start;padding:.65rem 0;border-bottom:1px solid #e5e5e5;font-size:.85rem;gap:1rem;}
-    .sidebar-info .row:last-child{border:none;}
-    .sidebar-info .lbl{color:var(--grey);flex-shrink:0;}
-    .sidebar-info .val{font-weight:600;text-align:right;}
-    .phase-block{background:var(--light-bg);padding:1.5rem;border-left:3px solid var(--red);margin-bottom:1.5rem;}
-    .phase-block h4{font-size:.95rem;font-weight:700;margin-bottom:.5rem;}
-    .phase-block p{font-size:.87rem;color:var(--dark-grey);line-height:1.7;}
-    .phase-label{font-size:.68rem;color:var(--red);font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.4rem;display:block;}
-    /* Album / Tracklist */
-    .album-layout{display:grid;grid-template-columns:180px 1fr;gap:2rem;margin:1.5rem 0 2rem;align-items:start;}
-    @media(max-width:600px){.album-layout{grid-template-columns:1fr;}}
-    .album-art{width:100%;aspect-ratio:1;object-fit:cover;border-radius:2px;box-shadow:0 4px 24px rgba(0,0,0,.25);}
-    .tracklist{list-style:none;}
-    .tracklist li{display:grid;grid-template-columns:28px 1fr auto;align-items:center;gap:.5rem;padding:.6rem 0;border-bottom:1px solid #eee;font-size:.85rem;}
-    .tracklist li:last-child{border:none;}
-    .tracklist .num{font-size:.7rem;color:var(--red);font-weight:700;text-align:center;}
-    .tracklist .song-title{font-weight:600;}
-    .tracklist .song-artist{font-size:.75rem;color:var(--grey);}
-    .tracklist .lang-badge{font-size:.62rem;padding:.15rem .45rem;border:1px solid #ddd;color:#999;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;}
-    .jukebox-thumb{display:flex;align-items:center;gap:1rem;padding:1rem;border:1px solid #eee;text-decoration:none;color:inherit;transition:border-color .2s;margin-top:1rem;}
-    .jukebox-thumb:hover{border-color:var(--red);}
-    .jukebox-thumb img{width:60px;height:60px;object-fit:cover;flex-shrink:0;}
-    .jukebox-thumb .jb-title{font-weight:700;font-size:.88rem;}
-    .jukebox-thumb .jb-sub{font-size:.73rem;color:var(--grey);margin-top:.15rem;}
-    /* People chips */
-    .people-grid{display:flex;flex-wrap:wrap;gap:.5rem;margin:.75rem 0;}
-    .people-chip{font-size:.75rem;padding:.35rem .8rem;border:1px solid #e0e0e0;color:var(--dark-grey);text-decoration:none;transition:border-color .2s,color .2s;}
-    .people-chip:hover{border-color:var(--red);color:var(--red);}
-    .quote-block{border-left:3px solid var(--red);padding:1rem 1.5rem;background:var(--light-bg);margin:1.5rem 0;}
-    .quote-block p{font-size:.92rem;color:var(--dark-grey);line-height:1.7;font-style:italic;}
-    .quote-block cite{display:block;font-size:.75rem;color:var(--red);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-top:.5rem;font-style:normal;}
-    .on-screen-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.25rem;margin-top:1rem;}
-    .screen-card{position:relative;overflow:hidden;background:#111;}
-    .screen-card a{display:block;text-decoration:none;}
-    .screen-card img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .3s;}
-    .screen-card:hover img{transform:scale(1.03);}
-    .screen-card-label{padding:.65rem;background:rgba(0,0,0,.85);}
-    .screen-card-label .role{font-size:.68rem;color:var(--red);font-weight:700;text-transform:uppercase;letter-spacing:.08em;}
-    .screen-card-label .film{font-size:.82rem;color:#fff;font-weight:600;margin-top:.1rem;}
-    .play-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:40px;height:40px;background:rgba(225,6,0,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.85rem;pointer-events:none;}
-    .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s;}
-    .fade-in.visible{opacity:1;transform:none;}
-    .rupee-highlight{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:900;color:var(--red);}
-    .stat-row{display:flex;flex-wrap:wrap;gap:1.5rem;margin:1.5rem 0;}
-    .stat-item{text-align:center;flex:1;min-width:100px;}
-    .stat-item .num{font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:900;color:var(--red);line-height:1;}
-    .stat-item .lbl{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:#888;margin-top:.4rem;}
-  </style>
+  <link rel="stylesheet" href="/css/style.css">
   <!-- Google Analytics GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-620G3QZX5M"></script>
   <script>

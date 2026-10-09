@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="pg-clients-talent-template-singer-rapper pg-talent">
 <head>
   <meta charset="UTF-8">
   <meta name="robots" content="noindex, nofollow"><meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,112 +9,7 @@
 <title>[ARTIST NAME] — MC Joint</title>
   <link rel="preload" href="/fonts/montserrat-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../css/style.css">
-  <style>
-    /* ─── HERO — dark variant for rap artists ─── */
-    .talent-profile-hero {
-      background: var(--black); padding-top: 100px; padding-bottom: 0;
-      display: grid; grid-template-columns: 1fr; min-height: 70vh; position: relative;
-    }
-    @media(min-width:1024px){ .talent-profile-hero { grid-template-columns: 1fr 480px; } }
-
-    .talent-profile-info { padding: 4rem 0; display: flex; flex-direction: column; justify-content: center; }
-    .talent-profile-info h1 { color: white; font-size: clamp(2.5rem,6vw,4rem); }
-
-    .talent-roles { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; }
-    .talent-role-tag {
-      font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em;
-      color: var(--red); border: 1px solid var(--red); padding: 0.2rem 0.65rem;
-    }
-
-    .talent-profile-info p { color: #aaa; max-width: 520px; line-height: 1.75; }
-
-    /* Sound / style keywords */
-    .keyword-cloud { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }
-    .keyword-tag {
-      font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;
-      color: #888; border: 1px solid #333; padding: 0.2rem 0.6rem;
-    }
-
-    .talent-profile-img {
-      background: linear-gradient(160deg,#0d0d0d,#1a0000);
-      overflow: hidden; min-height: 400px; position: relative;
-    }
-    @media(min-width:1024px){ .talent-profile-img { min-height: auto; } }
-    .talent-profile-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
-    .talent-profile-img .initial-bg {
-      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-      font-family: 'Montserrat',sans-serif; font-weight: 900; font-size: 8rem; color: rgba(225,6,0,0.15);
-    }
-
-    /* ─── BODY — dark variant for section background ─── */
-    /* For pure rappers, the body section can stay light (default) OR use the dark variant below.
-       Uncomment the dark variant block on the <section> element if preferred. */
-    .profile-body { display: grid; grid-template-columns: 1fr; gap: 3rem; }
-    @media(min-width:1024px){ .profile-body { grid-template-columns: 2fr 1fr; } }
-
-    /* ─── DISCOGRAPHY / TRACKS TABLE ─── */
-    .tracks-list { list-style: none; }
-    .tracks-list li {
-      padding: 1rem 0; border-bottom: 1px solid #eee;
-      display: grid; grid-template-columns: 1fr auto; align-items: flex-start; gap: 1rem;
-    }
-    .tracks-list li:last-child { border: none; }
-    .track-title { font-weight: 700; font-size: 0.9rem; margin-bottom: 0.2rem; }
-    /* EP / Collab / Feature details */
-    .track-meta { font-size: 0.75rem; color: var(--grey); }
-    .track-meta em { font-style: normal; color: #555; }
-    /* Type badge: Single, EP, Feature, Freestyle, Collab */
-    .track-type {
-      font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
-      color: var(--red); border: 1px solid var(--red); padding: 0.18rem 0.55rem; white-space: nowrap; align-self: start;
-    }
-
-    /* ─── CYPHER / LIVE / EVENTS — for rappers ─── */
-    .events-list { list-style: none; }
-    .events-list li { padding: 0.65rem 0; border-bottom: 1px solid #eee; font-size: 0.875rem; color: var(--dark-grey); display: flex; justify-content: space-between; }
-    .events-list li:last-child { border: none; }
-    .event-name { font-weight: 600; }
-    .event-year { color: var(--grey); font-size: 0.8rem; }
-
-    /* ─── SIDEBAR ─── */
-    .sidebar-card { background: var(--light-bg); padding: 2rem; }
-    .sidebar-card h3 { font-size: 1rem; margin-bottom: 1.25rem; }
-    .sidebar-card .info-row {
-      display: flex; justify-content: space-between; align-items: flex-start;
-      padding: 0.6rem 0; border-bottom: 1px solid #e0e0e0; font-size: 0.875rem; gap: 1rem;
-    }
-    .sidebar-card .info-row:last-child { border: none; }
-    .sidebar-card .info-label { color: var(--grey); flex-shrink: 0; }
-    .sidebar-card .info-value { font-weight: 600; text-align: right; }
-    .service-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; justify-content: flex-end; }
-    .service-chip { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; background: var(--red); color: white; padding: 0.18rem 0.55rem; }
-
-    /* Streaming links */
-    .stream-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 0.75rem; }
-    .stream-link {
-      font-size: 0.75rem; font-weight: 600; text-decoration: none; color: var(--dark);
-      border: 1px solid #ccc; padding: 0.35rem 0.75rem; display: flex; align-items: center; gap: 0.4rem;
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .stream-link:hover { border-color: var(--red); color: var(--red); }
-
-    /* ─── ASSOCIATION BLOCK ─── */
-    .association-block {
-      background: var(--black); padding: 2rem; margin-top: 2rem; border-left: 3px solid var(--red);
-    }
-    .association-block h3 { color: white; font-size: 0.95rem; margin-bottom: 0.75rem; }
-    .association-block p { color: #999; font-size: 0.875rem; line-height: 1.7; margin: 0; }
-
-    .back-link {
-      display: inline-flex; align-items: center; gap: 0.5rem; color: var(--grey);
-      text-decoration: none; font-size: 0.8rem; text-transform: uppercase;
-      letter-spacing: 0.08em; font-weight: 600; margin-bottom: 1.5rem;
-    }
-    .back-link:hover { color: var(--red); }
-    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s, transform 0.6s; }
-    .fade-in.visible { opacity: 1; transform: none; }
-  </style>
+  <link rel="stylesheet" href="/css/style.css">
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-620G3QZX5M"></script>
   <script>

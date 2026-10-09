@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="pg-contact">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -26,43 +26,7 @@
   
   <link rel="preload" href="/fonts/montserrat-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css">
-  <style>
-    .contact-grid { display:grid; grid-template-columns:1fr; gap:4rem; }
-    @media(min-width:1024px){ .contact-grid { grid-template-columns:1fr 1fr; } }
-
-    .contact-form { }
-    .form-group { margin-bottom:1.5rem; }
-    .form-group label { display:block; font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.5rem; }
-    .form-group input, .form-group textarea, .form-group select {
-      width:100%; padding:0.875rem 1rem;
-      border:2px solid #eee; background:var(--white); font-family:'Inter',sans-serif; font-size:0.9rem;
-      transition:border-color 0.3s; outline:none;
-    }
-    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color:var(--red); }
-    .form-group textarea { min-height:140px; resize:vertical; }
-    .form-row { display:grid; grid-template-columns:1fr; gap:1rem; }
-    @media(min-width:640px){ .form-row { grid-template-columns:1fr 1fr; } }
-
-    .contact-info-block { }
-    .contact-info-item { display:flex; gap:1.25rem; margin-bottom:2rem; padding-bottom:2rem; border-bottom:1px solid #eee; }
-    .contact-info-item:last-child { border:none; }
-    .contact-info-icon { width:48px; height:48px; background:var(--red); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-    .contact-info-icon i { color:white; font-size:1.1rem; }
-    .contact-info-label { font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--grey); margin-bottom:0.35rem; }
-    .contact-info-value { font-size:0.95rem; font-weight:600; }
-    .contact-info-value a { color:var(--black); text-decoration:none; }
-    .contact-info-value a:hover { color:var(--red); }
-
-    .inquiry-types { display:grid; grid-template-columns:repeat(2,1fr); gap:0.75rem; margin-bottom:2rem; }
-    .inquiry-type { padding:1rem; border:2px solid #eee; cursor:pointer; text-align:center; transition:all 0.2s; }
-    .inquiry-type:hover, .inquiry-type.selected { border-color:var(--red); background:rgba(225,6,0,0.05); }
-    .inquiry-type i { display:block; font-size:1.25rem; color:var(--red); margin-bottom:0.5rem; }
-    .inquiry-type span { font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; }
-
-    .fade-in { opacity:0; transform:translateY(20px); transition:opacity 0.6s,transform 0.6s; }
-    .fade-in.visible { opacity:1; transform:none; }
-  </style>
+  <link rel="stylesheet" href="/css/style.css">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","name":"MC Joint","alternateName":"Masters of Ceremonies","url":"https://mcjoint.in","logo":"/images/mc/mc-joint-logo-5-mc-joint-block-logo.png","description":"Hyderabad-based creative agency for music distribution, talent management, and cinema strategy.","foundingDate":"2018","address":{"@type":"PostalAddress","addressLocality":"Hyderabad","addressRegion":"Telangana","addressCountry":"IN"},"contactPoint":{"@type":"ContactPoint","telephone":"+91-90144-14114","email":"info@mcjoint.in","contactType":"customer service"},"sameAs":["https://www.instagram.com/mcjoint.in/","https://in.linkedin.com/company/mcjoint-in","https://x.com/mcjointin","https://www.youtube.com/@MCJoint"]}
   </script>

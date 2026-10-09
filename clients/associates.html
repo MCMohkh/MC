@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="pg-clients-associates">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -23,32 +23,7 @@
   
   <link rel="preload" href="/fonts/montserrat-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../css/style.css">
-  <style>
-    .associate-card { padding:2rem; border:1px solid #eee; transition:all 0.3s; }
-    .associate-card:hover { border-color:var(--red); transform:translateY(-3px); box-shadow:0 8px 24px rgba(0,0,0,0.08); }
-    .associate-icon {   width:56px;   height:56px;   background:var(--red);   display:flex;   align-items:center;   justify-content:center;   margin-bottom:1.25rem; }
-    .associate-icon i { font-size:1.4rem; color:white; }
-    .associate-card h3 { font-size:1rem; margin-bottom:0.5rem; }
-    .associate-card .role { font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-bottom:0.75rem; display:block; }
-    .associate-card .role a {  color: var(--red);  text-decoration: none;}
-    .associate-card .role a:hover {  color: var(--red);  text-decoration: none;}
-    .associate-card p { font-size:0.875rem; color:var(--dark-grey); }
-    .fade-in { opacity:0; transform:translateY(20px); transition:opacity 0.6s,transform 0.6s; }
-    .fade-in.visible { opacity:1; transform:none; }
-
-    /* dual-logo layout for Dynevo+F45 card */
-    .associate-icon-dual {
-      display:flex; align-items:center; gap:0.5rem;
-      margin-bottom:1.25rem; height:56px;
-    }
-    .associate-icon-dual img {
-      height:40px; width:auto; object-fit:contain;
-    }
-    .associate-icon-dual .logo-sep {
-      font-size:0.65rem; font-weight:700; color:#aaa; letter-spacing:0.05em;
-    }
-  </style>
+  <link rel="stylesheet" href="/css/style.css">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","name":"MC Joint","alternateName":"Masters of Ceremonies","url":"https://mcjoint.in","logo":"/images/mc/mc-joint-logo-5-mc-joint-block-logo.png","description":"Hyderabad-based creative agency for music distribution, talent management, and cinema strategy.","foundingDate":"2018","address":{"@type":"PostalAddress","addressLocality":"Hyderabad","addressRegion":"Telangana","addressCountry":"IN"},"contactPoint":{"@type":"ContactPoint","telephone":"+91-90144-14114","email":"info@mcjoint.in","contactType":"customer service"},"sameAs":["https://www.instagram.com/mcjoint.in/","https://in.linkedin.com/company/mcjoint-in","https://x.com/mcjointin","https://www.youtube.com/@MCJoint"]}
   </script>
@@ -171,7 +146,7 @@
         <div class="associate-icon" style="background:black; border:1px solid #eee; padding:8px;">
           <img loading="lazy" src="/images/logos/mc-associate-design-district-logo-white-svg.svg"
                alt="Design District Hyd Logo"
-               style="max-width:100%; max-height:100%; object-fit:contain;" decoding="async">
+               style="max-width:100%; max-height:100%; object-fit:contain;" decoding="async" data-tone="light">
         </div>
         <h3 id="aishwarya-agarwal">Aishwarya Agarwal</h3>
         <span class="role">Entrepreneur · Design District Hyd</span>
@@ -185,12 +160,12 @@
           <img loading="lazy"
                src="/images/logos/mc-associate-dynevo-f45-2.webp"
                alt="Dynevo Logo"
-               onerror="this.style.display='none'" width="1758" height="1920" decoding="async">
+               onerror="this.style.display='none'" width="1758" height="1920" decoding="async" data-tone="dark">
           <span class="logo-sep">×</span>
           <img loading="lazy"
                src="/images/logos/mc-associate-F45-logo.webp"
                alt="F45 Training Logo"
-               onerror="this.style.display='none'" width="1920" height="801" decoding="async">
+               onerror="this.style.display='none'" width="1920" height="801" decoding="async" data-tone="dark">
         </div>
         <h3>Mohammed Abrar</h3>
         <span class="role">Fitness Entrepreneur · <span itemprop="affiliation">Dynevo</span> &amp; <span itemprop="affiliation">F45 Training Jubilee Hills</span>, Hyderabad</span>
@@ -200,10 +175,10 @@
 
       <!-- Flintstory -->
       <div class="associate-card fade-in">
-        <div class="associate-icon" style="background:white; border:1px solid #eee;">
+        <div class="associate-icon" style="background:#141414; border:1px solid #eee;">
           <img loading="lazy" src="/images/logos/flintstory-Logo-PNG.webp"
                alt="Flintstory Logo"
-               style="max-width:100%; max-height:100%; object-fit:contain;" decoding="async">
+               style="max-width:100%; max-height:100%; object-fit:contain;" decoding="async" data-tone="light">
         </div>
         <h3>Flintstory</h3>
         <span class="role">Culture Studio · Podcast</span>

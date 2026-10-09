@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="pg-services">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -28,36 +28,7 @@
   
   <link rel="preload" href="/fonts/montserrat-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css">
-  <style>
-    .service-block { display:grid; grid-template-columns:1fr; gap:3rem; align-items:start; padding:5rem 0; border-top:1px solid #eee; }
-    @media(min-width:1024px){ .service-block { grid-template-columns:1fr 1fr; } }
-    .service-block:nth-child(even) .service-block-visual { order:-1; }
-    @media(min-width:1024px){ .service-block:nth-child(even) .service-block-visual { order:initial; } }
-    .service-block-icon { width:64px; height:64px; background:var(--red); display:flex; align-items:center; justify-content:center; margin-bottom:1.5rem; }
-    .service-block-icon i { font-size:1.75rem; color:white; }
-    .service-block h2 { font-size:2rem; margin-bottom:1rem; }
-    .service-block p { color:var(--dark-grey); margin-bottom:1rem; }
-    .service-list { list-style:none; margin-top:1.5rem; }
-    .service-list li { padding:0.6rem 0; border-bottom:1px solid #f0f0f0; font-size:0.9rem; display:flex; align-items:center; gap:0.75rem; }
-    .service-list li::before { content:''; width:6px; height:6px; background:var(--red); border-radius:50%; flex-shrink:0; }
-    .service-block-visual { background:linear-gradient(135deg,#1a1a2e,#0d0d1a); aspect-ratio:4/3; overflow:hidden; }
-    .service-block-visual img { width:100%; height:100%; object-fit:cover; }
-
-    .platforms-grid { display:flex; flex-wrap:wrap; gap:1rem; margin-top:1.5rem; }
-    .platform-badge { display:flex; align-items:center; gap:0.5rem; background:#f5f5f5; padding:0.5rem 1rem; font-size:0.8rem; font-weight:600; }
-
-    .process-grid { display:grid; grid-template-columns:1fr; gap:0; }
-    @media(min-width:768px){ .process-grid { grid-template-columns:repeat(2,1fr); } }
-    @media(min-width:1024px){ .process-grid { grid-template-columns:repeat(4,1fr); } }
-    .process-step { padding:2rem; border-right:1px solid rgba(255,255,255,0.1); border-bottom:1px solid rgba(255,255,255,0.1); position:relative; }
-    .process-step-num { font-family:'Montserrat',sans-serif; font-weight:900; font-size:3rem; color:rgba(225,6,0,0.35); line-height:1; margin-bottom:1rem; }
-    .process-step h3 { font-size:0.95rem; margin-bottom:0.5rem; color:white; }
-    .process-step p { font-size:0.85rem; color:rgba(255,255,255,0.65); }
-
-    .fade-in { opacity:0; transform:translateY(20px); transition:opacity 0.6s,transform 0.6s; }
-    .fade-in.visible { opacity:1; transform:none; }
-  </style>
+  <link rel="stylesheet" href="/css/style.css">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","name":"MC Joint","alternateName":"Masters of Ceremonies","url":"https://mcjoint.in","logo":"/images/mc/mc-joint-logo-5-mc-joint-block-logo.png","description":"Hyderabad-based creative agency for music distribution, talent management, and cinema strategy.","foundingDate":"2018","address":{"@type":"PostalAddress","addressLocality":"Hyderabad","addressRegion":"Telangana","addressCountry":"IN"},"contactPoint":{"@type":"ContactPoint","telephone":"+91-90144-14114","email":"info@mcjoint.in","contactType":"customer service"},"sameAs":["https://www.instagram.com/mcjoint.in/","https://in.linkedin.com/company/mcjoint-in","https://x.com/mcjointin","https://www.youtube.com/@MCJoint"]}
   </script>

@@ -26,3 +26,9 @@ Static site (HTML/CSS/JS), deployed on Netlify. Primary domain: `https://mcjoint
 
 ## Press kits
 Every talent profile has a one/two-page PDF in `/press-kits/`. After editing a profile, rebuild with `python3 tools/build_press_kits.py [slug]` (needs `reportlab fonttools brotli pillow beautifulsoup4 lxml pymupdf`) and commit the PDFs. MC Joint's contact details used in the PDFs are at the top of `tools/build_press_kits.py`. The `tools/` folder is blocked from the public site in `_redirects`.
+
+## Styles (one file)
+All CSS lives in **`css/style.css`** — there are no other stylesheets and no `<style>` blocks in pages. It is organised in sections (fonts/icons, base, talent profiles, per-page styles, microsites) described in the comment at the top of the file.
+- Every page's `<html>` has a page class (`pg-…`); microsites also have `ms` plus their own class (`ms-tsm`, `ms-prdb`, `ms-thanks`).
+- Page-specific rules are written as `:where(.pg-<page>) <selector>` (zero extra specificity, so they can never leak onto another page).
+- Site-wide changes go in section 2 (BASE). Logo tiles: give a logo `<img>` `data-tone="dark"` (dark logo, light tile) or `data-tone="light"` (light logo, dark tile).
