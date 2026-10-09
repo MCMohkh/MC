@@ -11,6 +11,7 @@ Static site (HTML/CSS/JS), deployed on Netlify. Primary domain: `https://mcjoint
 - `/get-represented.html` — intake form (music distribution / representation) · `/contact-talent.html` — enquiries for a specific artist (noindex; every talent profile links to it with `?talent=<slug>`)
 - `/talent-management-hyderabad.html`, `/music-distribution-hyderabad.html`, `/film-marketing-hyderabad.html` — Hyderabad landing pages · `/faq.html` (FAQPage schema)
 - `/case-studies/` — hub + `avanti-cinema`, `tapeloop-records`, `pickpocket`
+- `/press-kit.html` — gated press-kit download (form, then PDF) · `/press-kits/<slug>-press-kit.pdf` — generated PDFs (noindex)
 - `/blog.html` — journal index; posts live in `/blog/<slug>.html` (add new posts to `feed.xml` and `sitemap.xml`)
 - `/thestylemill/` — event microsite · `/PR-DB/` — private, noindex
 
@@ -22,3 +23,12 @@ Static site (HTML/CSS/JS), deployed on Netlify. Primary domain: `https://mcjoint
 
 ## Forms
 `contact`, `representation`, `talent-enquiry` post (via `js/forms.js`) to a Google Apps Script web app that writes to a Google Sheet and sends email / WhatsApp / Telegram alerts. The endpoint URL is `MC_FORMS_ENDPOINT` in `js/forms.js`. Netlify Forms is not used (form detection can be switched off in Netlify).
+
+## Press kits
+Every talent profile has a one/two-page PDF in `/press-kits/`. After editing a profile, rebuild with `python3 tools/build_press_kits.py [slug]` (needs `reportlab fonttools brotli pillow beautifulsoup4 lxml pymupdf`) and commit the PDFs. MC Joint's contact details used in the PDFs are at the top of `tools/build_press_kits.py`. The `tools/` folder is blocked from the public site in `_redirects`.
+
+## Styles (one file)
+All CSS lives in **`css/style.css`** — there are no other stylesheets and no `<style>` blocks in pages. It is organised in sections (fonts/icons, base, talent profiles, per-page styles, microsites) described in the comment at the top of the file.
+- Every page's `<html>` has a page class (`pg-…`); microsites also have `ms` plus their own class (`ms-tsm`, `ms-prdb`, `ms-thanks`).
+- Page-specific rules are written as `:where(.pg-<page>) <selector>` (zero extra specificity, so they can never leak onto another page).
+- Site-wide changes go in section 2 (BASE). Logo tiles: give a logo `<img>` `data-tone="dark"` (dark logo, light tile) or `data-tone="light"` (light logo, dark tile).

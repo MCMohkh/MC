@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="pg-clients-talent-ajith-mohan pg-talent">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -29,109 +29,7 @@
   <meta name="twitter:image:alt" content="Ajith Mohan — Actor, MC Joint Hyderabad">
   <link rel="preload" href="/fonts/montserrat-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../css/style.css">
-  <style>
-    /* ── Hero ─────────────────────────────────────────────────────────── */
-    .talent-profile-hero { background:var(--black); padding-top:100px; padding-bottom:0; display:grid; grid-template-columns:1fr; min-height:70vh; position:relative; }
-    @media(min-width:1024px){ .talent-profile-hero { grid-template-columns:1fr 480px; } }
-    .talent-profile-info { padding:4rem 0 4rem; display:flex; flex-direction:column; justify-content:center; }
-    .talent-profile-info h1 { color:white; font-size:clamp(2.5rem,6vw,4rem); }
-    .talent-profile-role { font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.15em; color:var(--red); margin-bottom:1rem; display:block; }
-    .talent-profile-info p { color:#aaa; max-width:520px; }
-    .talent-profile-img { background:linear-gradient(160deg,#1a1a1a,#0d0d0d); overflow:hidden; min-height:400px; position:relative; }
-    @media(min-width:1024px){ .talent-profile-img { min-height:auto; } }
-    .talent-profile-img img { width:100%; height:100%; object-fit:cover; object-position:top; }
-
-    /* ── Social links ─────────────────────────────────────────────────── */
-    .talent-social-links { display:flex; gap:0.75rem; margin-top:1.75rem; flex-wrap:wrap; }
-    .talent-social-link { display:inline-flex; align-items:center; gap:0.5rem; padding:0.55rem 1rem; border:1px solid rgba(255,255,255,0.18); color:rgba(255,255,255,0.75); text-decoration:none; font-family:'Montserrat',sans-serif; font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; transition:all 0.25s; }
-    .talent-social-link:hover { border-color:var(--red); color:white; background:rgba(225,6,0,0.12); }
-
-    /* ── Body layout ──────────────────────────────────────────────────── */
-    .profile-body { display:grid; grid-template-columns:1fr; gap:3rem; }
-    @media(min-width:1024px){ .profile-body { grid-template-columns:2fr 1fr; } }
-
-    /* ── Filmography ──────────────────────────────────────────────────── */
-    .discography { list-style:none; }
-    .discography li { padding:1rem 0; border-bottom:1px solid #eee; display:flex; justify-content:space-between; align-items:flex-start; gap:1rem; }
-    .discography li:last-child { border:none; }
-    .disc-title { font-weight:700; font-size:0.9rem; }
-    .disc-type { font-size:0.75rem; color:var(--grey); text-transform:uppercase; letter-spacing:0.05em; margin-top:0.2rem; }
-    .disc-role { font-size:0.8rem; color:#555; margin-top:0.15rem; }
-
-    /* ── Sidebar ──────────────────────────────────────────────────────── */
-    .sidebar-card { background:var(--light-bg); padding:2rem; }
-    .sidebar-card h3 { font-size:1rem; margin-bottom:1.25rem; }
-    
-    .sidebar-card .info-row:last-child { border:none; }
-    
-    
-
-    /* ── On-screen / video cards ──────────────────────────────────────── */
-    .on-screen-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:1.25rem; margin-top:1.5rem; }
-    .screen-card { position:relative; overflow:hidden; background:#111; cursor:pointer; }
-    .screen-card img { width:100%; aspect-ratio:16/9; object-fit:cover; transition:transform 0.3s; display:block; }
-    .screen-card:hover img { transform:scale(1.04); }
-    .screen-card-label { padding:0.75rem; background:rgba(0,0,0,0.88); }
-    .screen-card-label .role { font-size:0.7rem; color:var(--red); font-weight:700; text-transform:uppercase; letter-spacing:0.08em; }
-    .screen-card-label .film { font-size:0.85rem; color:#fff; font-weight:600; margin-top:0.2rem; }
-    .screen-card-label .detail { font-size:0.75rem; color:#888; margin-top:0.15rem; }
-    .play-icon { position:absolute; top:50%; left:50%; transform:translate(-50%,-60%); width:44px; height:44px; background:rgba(225,6,0,0.92); border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-size:1rem; pointer-events:none; transition:background 0.2s, transform 0.2s; }
-    .screen-card:hover .play-icon { background:var(--red); transform:translate(-50%,-60%) scale(1.12); }
-
-    /* ── YouTube inline modal ─────────────────────────────────────────── */
-    .yt-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.92); z-index:9999; align-items:center; justify-content:center; padding:1rem; }
-    .yt-modal.active { display:flex; }
-    .yt-modal-inner { position:relative; width:100%; max-width:900px; aspect-ratio:16/9; }
-    .yt-modal-inner iframe { width:100%; height:100%; border:none; }
-    .yt-modal-close { position:absolute; top:-40px; right:0; background:none; border:none; color:white; font-size:1.5rem; cursor:pointer; padding:4px 8px; line-height:1; opacity:0.8; transition:opacity 0.2s; }
-    .yt-modal-close:hover { opacity:1; }
-
-    /* ── Gallery ──────────────────────────────────────────────────────── */
-    .mc-gallery { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:1rem; }
-    .mc-gallery-item { position:relative; aspect-ratio:1; overflow:hidden; cursor:zoom-in; background:#111; }
-    .mc-gallery-item img { width:100%; height:100%; object-fit:cover; object-position:top; transition:transform 0.35s; display:block; }
-    .mc-gallery-item:hover img { transform:scale(1.06); }
-    .mc-gallery-item::after { content:''; width:1em; height:1em; background:currentColor; -webkit-mask:var(--ic-zoom) center/contain no-repeat; mask:var(--ic-zoom) center/contain no-repeat; position:absolute; bottom:8px; right:10px; color:rgba(255,255,255,0.7); font-size:1rem; pointer-events:none; opacity:0; transition:opacity 0.2s; }
-    .mc-gallery-item:hover::after { opacity:1; }
-    .mc-lightbox { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.94); z-index:9998; align-items:center; justify-content:center; }
-    .mc-lightbox.active { display:flex; }
-    .mc-lightbox-inner { max-width:90vw; max-height:90vh; }
-    .mc-lightbox-inner img { max-width:90vw; max-height:88vh; object-fit:contain; }
-    .mc-lb-btn { position:fixed; top:20px; right:24px; background:none; border:none; color:#fff; font-size:1.6rem; cursor:pointer; z-index:10001; padding:8px; }
-    .mc-lb-prev,.mc-lb-next { position:fixed; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); color:#fff; font-size:1.4rem; cursor:pointer; z-index:10001; padding:12px 16px; transition:background 0.2s; }
-    .mc-lb-prev { left:16px; } .mc-lb-next { right:16px; }
-    .mc-lb-prev:hover,.mc-lb-next:hover { background:rgba(255,255,255,0.2); }
-    .mc-lb-caption { position:fixed; bottom:48px; left:50%; transform:translateX(-50%); color:rgba(255,255,255,0.7); font-size:0.85rem; font-family:'Montserrat',sans-serif; max-width:80vw; text-align:center; pointer-events:none; }
-    .mc-lb-counter { position:fixed; bottom:24px; left:50%; transform:translateX(-50%); color:rgba(255,255,255,0.45); font-size:0.78rem; font-family:'Montserrat',sans-serif; pointer-events:none; }
-
-    .back-link { display:inline-flex; align-items:center; gap:0.5rem; color:var(--grey); text-decoration:none; font-size:0.8rem; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; margin-bottom:1.5rem; }
-    .back-link:hover { color:var(--red); }
-    .fade-in { opacity:0; transform:translateY(20px); transition:opacity 0.6s,transform 0.6s; }
-    .fade-in.visible { opacity:1; transform:none; }
-
-    /* ── Collapsible filmography ─────────────────────────────────── */
-    .filmography-wrap { position: relative; }
-    .filmography-wrap .discography li.film-hidden { display: none; }
-    .filmography-fade {
-      position: absolute; bottom: 0; left: 0; right: 0; height: 80px;
-      background: linear-gradient(to bottom, transparent, var(--white, #fff));
-      pointer-events: none; transition: opacity .3s;
-    }
-    .filmography-wrap.open .filmography-fade { opacity: 0; pointer-events: none; }
-    .filmography-wrap.open .discography li.film-hidden { display: flex; }
-    .btn-film-toggle {
-      display: inline-flex; align-items: center; gap: .45rem;
-      margin-top: 1rem; padding: .55rem 1.1rem;
-      background: none; border: 1px solid var(--red); color: var(--red);
-      font-family: 'Montserrat', sans-serif; font-size: .75rem; font-weight: 700;
-      text-transform: uppercase; letter-spacing: .08em; cursor: pointer;
-      transition: background .2s, color .2s;
-    }
-    .btn-film-toggle:hover { background: var(--red); color: #fff; }
-    .btn-film-toggle .film-toggle-icon { transition: transform .3s; }
-    .filmography-wrap.open .btn-film-toggle .film-toggle-icon { transform: rotate(180deg); }
-  </style>
+  <link rel="stylesheet" href="/css/style.css">
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-620G3QZX5M"></script>
   <script>
@@ -300,22 +198,18 @@
         </div>
 
         <div style="margin-top:1.5rem;">
-          <a href="/contact.html" class="btn btn-primary" style="width:100%;text-align:center;display:block;background:#E10600!important;color:#fff!important;border:none;">ENQUIRE ABOUT BOOKING</a>
+          <a class="btn btn-primary sidebar-btn" href="/contact-talent.html?talent=ajith-mohan">Enquire About Booking</a>
         </div>
         <div style="margin-top:1rem;">
-          <a href="/clients/talent.html" class="btn btn-outline" style="width:100%;text-align:center;display:block;color:var(--red)!important;border:2px solid var(--red);">VIEW ALL TALENT</a>
+          <a class="btn btn-outline sidebar-btn" href="/clients/talent.html">View All Talent</a>
         <div style="margin-top:1rem;">
-          <a href="/#" target="_blank" rel="noopener" class="btn btn-outline" style="display:block;text-align:center;width:100%;display:flex;align-items:center;justify-content:center;gap:.5rem;" id="epk-btn-Ajith-Mohan">
-            <i class="fas fa-file-pdf" style="color:var(--red);"></i> Download Press Kit (EPK)
-          </a>
+          <a class="btn btn-outline sidebar-btn" href="/press-kit.html?talent=ajith-mohan"><i class="fas fa-file-pdf"></i> Download Press Kit</a>
         </div>
         </div>
 
-        <div style="margin-top:2rem;">
-          <h3 style="font-size:0.85rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1rem;color:var(--grey);">Find Ajith Online</h3>
-          <div style="display:flex;flex-direction:column;gap:0.6rem;">
-            <a href="https://www.instagram.com/ajithmohanbaachi/" target="_blank" rel="noopener" class="talent-social-link" style="justify-content:flex-start;"><i class="fab fa-instagram"></i> @ajithmohanbaachi</a>
-            <a href="https://www.imdb.com/name/nm15516403/" target="_blank" rel="noopener" class="talent-social-link" style="justify-content:flex-start;"><i class="fas fa-film"></i> IMDb Profile</a>
+        <div class="find-online"><h3>Find Ajith Online</h3><div class="find-online-links">
+            <a href="https://www.instagram.com/ajithmohanbaachi/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> @ajithmohanbaachi</a>
+            <a href="https://www.imdb.com/name/nm15516403/" target="_blank" rel="noopener"><i class="fas fa-film"></i> IMDb Profile</a>
           </div>
         </div>
       
@@ -339,8 +233,8 @@
     <div class="mc-gallery">
       <div class="mc-gallery-item"><img src="/images/talent/ajith-mohan-x01.webp" width="800" height="800" alt="Ajith Mohan" loading="lazy" decoding="async"></div>
       <div class="mc-gallery-item"><img src="/images/talent/raju-shivaratri-muni-myatari-ajith-mohan.webp" width="800" height="800" alt="Ajith Mohan with Raju Shivaratri and Muni Myatari" loading="lazy" decoding="async"></div>
-      <div class="mc-gallery-item"><img src="/images/talent/pawon-ramesh-in-gopi-galla-goa-trip.webp" width="800" height="800" alt="On the sets of Gopi Galla Goa Trip" loading="lazy" decoding="async"></div>
-      <div class="mc-gallery-item"><img src="/images/talent/MC-Raju-Shivaratri-in-Gopi-Galla-Goa-Trip.webp" width="800" height="800" alt="Gopi Galla Goa Trip — cast on location" loading="lazy" decoding="async"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/pawon-ramesh-in-gopi-galla-goa-trip.webp" width="800" height="800" alt="Still from Gopi Galla Goa Trip" loading="lazy" decoding="async"></div>
+      <div class="mc-gallery-item"><img src="/images/talent/MC-Raju-Shivaratri-in-Gopi-Galla-Goa-Trip.webp" width="800" height="800" alt="Still from Gopi Galla Goa Trip" loading="lazy" decoding="async"></div>
       <div class="mc-gallery-item"><img src="/images/talent/camp-sasi-gopi-galla-goa-trip.webp" width="800" height="800" alt="Gopi Galla Goa Trip — with Camp Sasi" loading="lazy" decoding="async"></div>
       <div class="mc-gallery-item"><img width="400" height="400" src="/images/homepage/on-sets-of-gopi-galla-goa-trip.webp" alt="On the sets of Gopi Galla Goa Trip" loading="lazy" decoding="async"></div>
     </div>

@@ -53,3 +53,6 @@
 # --- Talent page templates are for internal use only; never serve them ---
 /clients/talent/template-*         /404.html                               404!
 /clients/talent/TEMPLATE-GUIDE.md  /404.html                               404!
+
+# Build scripts are not part of the public site
+/tools/*   /404.html   404!

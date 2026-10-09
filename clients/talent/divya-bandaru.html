@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="pg-clients-talent-divya-bandaru pg-talent">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -31,142 +31,7 @@
   <meta property="og:type" content="profile">
   <link rel="preload" href="/fonts/montserrat-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../../css/style.css">
-  <style>
-    .talent-profile-hero {
-      background:var(--black); padding-top:100px; padding-bottom:0;
-      display:grid; grid-template-columns:1fr; min-height:70vh; position:relative;
-    }
-    @media(min-width:1024px){ .talent-profile-hero { grid-template-columns:1fr 480px; } }
-    .talent-profile-info { padding:4rem 0 4rem; display:flex; flex-direction:column; justify-content:center; }
-    .talent-profile-info h1 { color:white; font-size:clamp(2.5rem,6vw,4rem); }
-    .talent-profile-role { font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.15em; color:var(--red); margin-bottom:1rem; display:block; }
-    .talent-profile-info p { color:#aaa; max-width:520px; }
-    .talent-profile-img {
-      background:linear-gradient(160deg,#1a1a2e,#0d0d1a);
-      overflow:hidden; min-height:400px; position:relative;
-    }
-    @media(min-width:1024px){ .talent-profile-img { min-height:auto; } }
-    .talent-profile-img img { width:100%; height:100%; object-fit:cover; object-position:top; }
-    .talent-profile-img .initial-bg {
-      position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-      font-family:'Montserrat',sans-serif; font-weight:900; font-size:8rem; color:rgba(225,6,0,0.15);
-    }
-    .profile-body { display:grid; grid-template-columns:1fr; gap:3rem; }
-    @media(min-width:1024px){ .profile-body { grid-template-columns:2fr 1fr; } }
-
-    /* Filmography / credits list */
-    .discography { list-style:none; }
-    .discography li { padding:1rem 0; border-bottom:1px solid #eee; display:flex; justify-content:space-between; align-items:center; gap:1rem; }
-    .discography li:last-child { border:none; }
-    .disc-title { font-weight:600; font-size:0.9rem; }
-    .disc-type { font-size:0.75rem; color:var(--grey); text-transform:uppercase; letter-spacing:0.05em; margin-top:0.2rem; }
-
-    /* Role badge */
-    .role-badge { display:inline-block; font-size:0.68rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; padding:0.25rem 0.65rem; border-radius:2px; }
-    .role-director { background:var(--red); color:#fff; }
-    .role-actor { background:#222; color:#fff; border:1px solid #444; }
-
-    /* Sidebar */
-    .sidebar-card { background:var(--light-bg); padding:2rem; }
-    .sidebar-card h3 { font-size:1rem; margin-bottom:1.25rem; }
-    .sidebar-card .info-row { display:flex; justify-content:space-between; align-items:flex-start; padding:0.6rem 0; border-bottom:1px solid #e0e0e0; font-size:0.875rem; gap:0.75rem; }
-    .sidebar-card .info-row:last-child { border:none; }
-    .sidebar-card .info-label { color:var(--grey); flex-shrink:0; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; font-weight:600; }
-    .sidebar-card .info-value { text-align:right; font-weight:600; color:var(--dark); }
-    .sidebar-card .info-value a { color:inherit; text-decoration:underline; text-decoration-color:#ccc; }
-    .sidebar-card .info-value a:hover { color:var(--red); text-decoration-color:var(--red); }
-    
-
-    .back-link { display:inline-flex; align-items:center; gap:0.5rem; color:var(--grey); text-decoration:none; font-size:0.8rem; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; margin-bottom:1.5rem; }
-    .back-link:hover { color:var(--red); }
-
-    /* Video embeds */
-    .video-section { background:#0a0a0a; padding:5rem 0; }
-    .video-section .section-label { color:var(--red); font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.2em; margin-bottom:0.5rem; }
-    .video-section h2 { color:#fff; margin-bottom:0.5rem; }
-    .video-section .video-sub { color:#777; font-size:0.9rem; margin-bottom:2.5rem; }
-    .video-grid { display:grid; grid-template-columns:1fr; gap:2.5rem; }
-    @media(min-width:900px){ .video-grid { grid-template-columns:2fr 1fr; gap:2rem; } }
-    .video-wrap { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:4px; background:#111; }
-    .video-wrap iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
-    .video-card-label { font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:var(--red); margin-bottom:0.6rem; }
-    .video-card-title { color:#fff; font-size:1rem; font-weight:700; margin-bottom:0.4rem; }
-    .video-card-desc { color:#666; font-size:0.82rem; line-height:1.6; }
-    .video-card-meta { margin-top:1rem; }
-
-    .fade-in { opacity:0; transform:translateY(20px); transition:opacity 0.6s,transform 0.6s; }
-    .fade-in.visible { opacity:1; transform:none; }
-
-    /* Section divider style */
-    .credits-block { margin-top:2.5rem; }
-    .credits-block h3 { font-size:1rem; font-weight:800; text-transform:uppercase; letter-spacing:0.1em; color:var(--dark); margin-bottom:1rem; padding-bottom:0.5rem; border-bottom:2px solid var(--red); display:inline-block; }
-  
-    .social-platform-links{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem;margin-bottom:2rem;}
-    .social-platform-links a{display:inline-flex;align-items:center;gap:.45rem;padding:.45rem .9rem;border:1px solid #ddd;border-radius:4px;text-decoration:none;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--dark-grey);transition:all .2s;}
-    .social-platform-links a:hover{border-color:var(--red);color:var(--red);}
-    .social-platform-links a svg{flex-shrink:0;}
-    
-    .play-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:42px;height:42px;background:rgba(225,6,0,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.9rem;pointer-events:none;}
-
-    
-    /* ── YouTube inline modal ─────────────────────────────────────────── */
-    .yt-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center;padding:1rem;}
-    .yt-modal.active{display:flex;}
-    .yt-modal-inner{position:relative;width:100%;max-width:900px;aspect-ratio:16/9;}
-    .yt-modal-inner iframe{width:100%;height:100%;border:none;}
-    .yt-modal-close{position:absolute;top:-40px;right:0;background:none;border:none;color:white;font-size:1.5rem;cursor:pointer;padding:4px 8px;line-height:1;opacity:0.8;transition:opacity 0.2s;}
-    .yt-modal-close:hover{opacity:1;}
-    /* ── On-screen / video cards ──────────────────────────────────────── */
-    .on-screen-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.25rem;margin-top:1.5rem;}
-    .screen-card{position:relative;overflow:hidden;background:#111;cursor:pointer;}
-    .screen-card img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform 0.3s;display:block;}
-    .screen-card:hover img{transform:scale(1.04);}
-    .screen-card-label{padding:0.75rem;background:rgba(0,0,0,0.88);}
-    .screen-card-label .role{font-size:0.7rem;color:var(--red);font-weight:700;text-transform:uppercase;letter-spacing:0.08em;}
-    .screen-card-label .film{font-size:0.85rem;color:#fff;font-weight:600;margin-top:0.2rem;}
-    .screen-card-label .detail{font-size:0.75rem;color:#888;margin-top:0.15rem;}
-    .play-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);width:44px;height:44px;background:rgba(225,6,0,0.92);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:1rem;pointer-events:none;transition:background 0.2s,transform 0.2s;}
-    .screen-card:hover .play-icon{background:var(--red);transform:translate(-50%,-60%) scale(1.12);}
-
-    /* ── Collapsible filmography ─────────────────────────────────── */
-    .filmography-wrap { position: relative; }
-    .filmography-wrap .discography li.film-hidden { display: none; }
-    .filmography-fade {
-      position: absolute; bottom: 0; left: 0; right: 0; height: 80px;
-      background: linear-gradient(to bottom, transparent, var(--white, #fff));
-      pointer-events: none; transition: opacity .3s;
-    }
-    .filmography-wrap.open .filmography-fade { opacity: 0; pointer-events: none; }
-    .filmography-wrap.open .discography li.film-hidden { display: flex; }
-    .btn-film-toggle {
-      display: inline-flex; align-items: center; gap: .45rem;
-      margin-top: 1rem; padding: .55rem 1.1rem;
-      background: none; border: 1px solid var(--red); color: var(--red);
-      font-family: 'Montserrat', sans-serif; font-size: .75rem; font-weight: 700;
-      text-transform: uppercase; letter-spacing: .08em; cursor: pointer;
-      transition: background .2s, color .2s;
-    }
-    .btn-film-toggle:hover { background: var(--red); color: #fff; }
-    .btn-film-toggle .film-toggle-icon { transition: transform .3s; }
-    .filmography-wrap.open .btn-film-toggle .film-toggle-icon { transform: rotate(180deg); }
-
-    /* ── Gallery lightbox ─────────────────────────────────────────── */
-    .mc-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;}
-    .mc-gallery-item{position:relative;aspect-ratio:1;overflow:hidden;cursor:zoom-in;background:#111;}
-    .mc-gallery-item img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .35s;display:block;}
-    .mc-gallery-item:hover img{transform:scale(1.06);}
-    .mc-gallery-item::after{content:''; width:1em; height:1em; background:currentColor; -webkit-mask:var(--ic-zoom) center/contain no-repeat; mask:var(--ic-zoom) center/contain no-repeat;position:absolute;bottom:8px;right:10px;color:rgba(255,255,255,.8);font-size:.9rem;opacity:0;transition:opacity .2s;}
-    .mc-gallery-item:hover::after{opacity:1;}
-    .mc-lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:9998;align-items:center;justify-content:center;}
-    .mc-lightbox.active{display:flex;}
-    .mc-lightbox-inner img{max-width:90vw;max-height:88vh;object-fit:contain;}
-    .mc-lb-btn{position:fixed;top:20px;right:24px;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;z-index:10001;padding:8px;}
-    .mc-lb-prev,.mc-lb-next{position:fixed;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;font-size:1.4rem;cursor:pointer;z-index:10001;padding:12px 16px;}
-    .mc-lb-prev{left:16px;}.mc-lb-next{right:16px;}
-    .mc-lb-caption{position:fixed;bottom:48px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.7);font-size:.85rem;max-width:80vw;text-align:center;}
-    .mc-lb-counter{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.45);font-size:.78rem;}
-  </style>
+  <link rel="stylesheet" href="/css/style.css">
 
   <script type="application/ld+json">
   {
@@ -332,7 +197,7 @@
           <div class="info-row"><span class="info-label">Services</span><span class="info-value">Talent Representation</span></div>
         </div>
         <div style="margin-top:1.5rem;">
-          <a href="../../contact.html" class="btn btn-primary" style="width:100%;text-align:center;display:block;">Enquire About Booking</a>
+          <a class="btn btn-primary sidebar-btn" href="/contact-talent.html?talent=divya-bandaru">Enquire About Booking</a>
         </div>
         <div style="margin-top:1rem;">
           
@@ -343,8 +208,9 @@
           <a href="../../works/avanti-cinema.html" style="display:flex;align-items:center;gap:.6rem;padding:.5rem 0;border-bottom:1px solid #eee;text-decoration:none;color:var(--dark-grey);font-size:.85rem;transition:color .2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--dark-grey)'"><i class="fas fa-film" style="color:var(--red);font-size:.75rem;flex-shrink:0;"></i><span>Avanti Cinema — Full Service Partnership</span><span style="margin-left:auto;font-size:.7rem;color:var(--grey);font-weight:700;text-transform:uppercase;letter-spacing:.06em;">Works</span></a>
           <a href="../../works/story-discussion-s2.html" style="display:flex;align-items:center;gap:.6rem;padding:.5rem 0;border-bottom:1px solid #eee;text-decoration:none;color:var(--dark-grey);font-size:.85rem;transition:color .2s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--dark-grey)'"><i class="fas fa-film" style="color:var(--red);font-size:.75rem;flex-shrink:0;"></i><span>Story Discussion Season 2</span><span style="margin-left:auto;font-size:.7rem;color:var(--grey);font-weight:700;text-transform:uppercase;letter-spacing:.06em;">Works</span></a>
         </div>
-        <a href="../talent.html" class="btn btn-outline" style="width:100%;text-align:center;display:block;">View All Talent</a>
+        <a class="btn btn-outline sidebar-btn" href="/clients/talent.html">View All Talent</a>
         </div>
+          <div style="margin-top:1rem;"><a class="btn btn-outline sidebar-btn" href="/press-kit.html?talent=divya-bandaru"><i class="fas fa-file-pdf"></i> Download Press Kit</a></div>
       </div>
 
     </div>
@@ -379,9 +245,7 @@
       <div class="mc-gallery-item"><img loading="lazy" src="/images/posters/Lal-Darwaza/Lal-darwaza-divya-bandaru-film-screened-at-seoul-international-new-waves-film-awards-2026-poster-5.webp" alt="Lal Darwaza — Divya Bandaru's film screened at Seoul International New Waves Film Awards 2026, poster 5" width="400" height="400" decoding="async"></div>
       <div class="mc-gallery-item"><img loading="lazy" src="/images/posters/Lal-Darwaza/lal-darwaza-divya-bandaru-film-screened-at-seoul-international-new-waves-film-awards-2026-poster-6.webp" alt="Lal Darwaza — Divya Bandaru's film screened at Seoul International New Waves Film Awards 2026, poster 6" width="400" height="400" decoding="async"></div>
       <div class="mc-gallery-item"><img loading="lazy" src="/images/posters/Lal-Darwaza/lal-darwaza-divya-bandaru-film-screened-at-seoul-international-new-waves-film-awards-2026-poster-7.webp" alt="Lal Darwaza — Divya Bandaru's film screened at Seoul International New Waves Film Awards 2026, poster 7" width="400" height="400" decoding="async"></div>
-      <div class="mc-gallery-item"><img loading="lazy" src="/images/posters/placeholders/inner-city-blues-poster-placeholder.svg" alt="Inner City Blues — Short Film, Written &amp; Directed by Divya Bandaru" width="400" height="400" decoding="async"></div>
       <div class="mc-gallery-item"><img loading="lazy" src="https://img.youtube.com/vi/4vFj38ncr7s/hqdefault.jpg" alt="The Murder Plan (Pickpocket 2) — Writer &amp; Director, Divya Bandaru" width="400" height="400" decoding="async"></div>
-      <div class="mc-gallery-item"><img loading="lazy" src="/images/posters/placeholders/nude-poster-placeholder.svg" alt="Nude — Screenplay by Divya Bandaru, In Production Pitch" width="400" height="400" decoding="async"></div>
       <div class="mc-gallery-item"><img loading="lazy" src="/images/posters/viral-video-prashant-podagatlapalli-firstlook-mc-joint-vertical.webp" alt="Viral Video — Divya Bandaru, Additional Writer" width="400" height="400" decoding="async"></div>
       <div class="mc-gallery-item"><img loading="lazy" src="/images/posters/2022-pickpocket/mc-avanti-cinema-pickpocket-feature-divya-bandaru-avanti-cinema-shashank-raghavula-first-look.webp" alt="Pickpocket — first look" width="400" height="400" decoding="async"></div>
       <div class="mc-gallery-item"><img loading="lazy" src="/images/posters/2022-pickpocket/mc-avanti-cinema-pickpocket-feature-divya-bandaru-avanti-cinema-shashank-raghavula.webp" alt="Pickpocket — Dir. Divya Bandaru" width="400" height="400" decoding="async"></div>

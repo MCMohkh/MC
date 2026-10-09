@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="pg-blog">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -29,46 +29,7 @@
   <meta name="twitter:image:alt" content="MC Joint Blog — Music, Film & Talent Insights">
   <link rel="preload" href="/fonts/montserrat-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css">
-  <style>
-    .blog-grid { display:grid; grid-template-columns:1fr; gap:2rem; }
-    @media(min-width:768px){ .blog-grid { grid-template-columns:repeat(2,1fr); } }
-    @media(min-width:1024px){ .blog-grid { grid-template-columns:repeat(3,1fr); } }
-
-    .blog-card { border:1px solid #eee; overflow:hidden; display:flex; flex-direction:column; transition:transform 0.3s,box-shadow 0.3s; }
-    .blog-card:hover { transform:translateY(-4px); box-shadow:0 12px 32px rgba(0,0,0,0.1); }
-    .blog-card.featured { grid-column:1/-1; }
-    @media(min-width:768px){
-      .blog-card.featured { display:grid; grid-template-columns:1fr 1fr; }
-      .blog-card.featured .blog-card-img { aspect-ratio:auto; min-height:340px; }
-    }
-    .blog-card-img { aspect-ratio:16/9; background:linear-gradient(135deg,#1a1a2e,#0d0d1a); overflow:hidden; }
-    .blog-card-img img { width:100%; height:100%; object-fit:cover; transition:transform 0.4s; }
-    .blog-card:hover .blog-card-img img { transform:scale(1.04); }
-    .blog-card-body { padding:1.75rem; flex:1; display:flex; flex-direction:column; }
-    .blog-card.featured .blog-card-body { padding:2.5rem; justify-content:center; }
-    .blog-card-body .tag { margin-bottom:0.75rem; }
-    .blog-card-body h3 { font-size:1rem; line-height:1.4; margin-bottom:0.75rem; }
-    .blog-card.featured .blog-card-body h3 { font-size:1.5rem; }
-    .blog-card-body p { font-size:0.875rem; color:var(--dark-grey); flex:1; }
-    .blog-card-footer { display:flex; align-items:center; justify-content:space-between; margin-top:1.25rem; padding-top:1.25rem; border-top:1px solid #f0f0f0; }
-    .blog-date { font-size:0.78rem; color:var(--grey); }
-    .blog-read-more { font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--red); text-decoration:none; }
-
-    .blog-sidebar { position:sticky; top:90px; }
-    .sidebar-section { margin-bottom:2.5rem; padding-bottom:2.5rem; border-bottom:1px solid #eee; }
-    .sidebar-section:last-child { border:none; }
-    .sidebar-section h4 { font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--grey); margin-bottom:1rem; }
-    .category-pills { display:flex; flex-wrap:wrap; gap:0.5rem; }
-    .category-pill { padding:0.4rem 0.9rem; border:1px solid #ddd; font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.06em; cursor:pointer; transition:all 0.2s; text-decoration:none; color:var(--black); }
-    .category-pill:hover { border-color:var(--red); color:var(--red); }
-
-    .blog-layout { display:grid; grid-template-columns:1fr; gap:3rem; }
-    @media(min-width:1024px){ .blog-layout { grid-template-columns:1fr 300px; } }
-
-    .fade-in { opacity:0; transform:translateY(20px); transition:opacity 0.6s,transform 0.6s; }
-    .fade-in.visible { opacity:1; transform:none; }
-  </style>
+  <link rel="stylesheet" href="/css/style.css">
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-620G3QZX5M"></script>
   <script>

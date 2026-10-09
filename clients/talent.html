@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="pg-clients-talent">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -26,55 +26,7 @@
   
   <link rel="preload" href="/fonts/montserrat-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../css/style.css">
-  <style>
-    .talent-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; }
-    @media(min-width:768px){ .talent-grid { grid-template-columns:repeat(3,1fr); } }
-    @media(min-width:1024px){ .talent-grid { grid-template-columns:repeat(4,1fr); } }
-
-    .talent-card {
-      border:1px solid #eee; overflow:hidden;
-      text-decoration:none; color:inherit; display:block;
-      transition:transform 0.3s, box-shadow 0.3s;
-    }
-    .talent-card:hover { transform:translateY(-4px); box-shadow:0 12px 32px rgba(0,0,0,0.1); }
-    .talent-photo {
-      aspect-ratio:3/4; background:linear-gradient(160deg,#1a1a2e,#0d0d1a);
-      overflow:hidden; position:relative;
-    }
-    .talent-photo img { width:100%; height:100%; object-fit:cover; transition:transform 0.4s; }
-    .talent-card:hover .talent-photo img { transform:scale(1.04); }
-    .talent-photo-initial {
-      position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-      font-family:'Montserrat',sans-serif; font-weight:900; font-size:3rem; color:rgba(225,6,0,0.4);
-      pointer-events:none;
-    }
-    .talent-photo-overlay {
-      position:absolute; bottom:0; left:0; right:0;
-      background:linear-gradient(transparent, rgba(0,0,0,0.8));
-      padding:2rem 1rem 1rem;
-    }
-    .talent-cat { font-size:0.65rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); }
-    .talent-info { padding:1rem; }
-    .talent-info h3 { font-size:0.9rem; margin-bottom:0.25rem; line-height:1.3; }
-    .talent-info p { font-size:0.78rem; color:var(--grey); }
-    .talent-info a { display:inline-block; margin-top:0.5rem; font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--red); text-decoration:none; }
-
-    .section-divider { padding:3rem 0 1rem; border-top:3px solid var(--red); }
-    .section-divider h2 { font-size:1.5rem; }
-
-    .rap-section { background:var(--black); padding:5rem 0; }
-    .rap-section h2 { color:white; }
-    .rap-section .section-label { color:var(--grey); }
-    .rap-card { border:1px solid #333; overflow:hidden; color:white; }
-    .rap-card .talent-photo { background:linear-gradient(160deg,#0d0d0d,#1a0a0a); }
-    .rap-card .talent-info { background:transparent; padding:1rem; }
-    .rap-card .talent-info h3 { color:white; }
-    .rap-card .talent-info p { color:#888; }
-
-    .fade-in { opacity:0; transform:translateY(20px); transition:opacity 0.6s,transform 0.6s; }
-    .fade-in.visible { opacity:1; transform:none; }
-  </style>
+  <link rel="stylesheet" href="/css/style.css">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","name":"MC Joint","alternateName":"Masters of Ceremonies","url":"https://mcjoint.in","logo":"/images/mc/mc-joint-logo-5-mc-joint-block-logo.png","description":"Hyderabad-based creative agency for music distribution, talent management, and cinema strategy.","foundingDate":"2018","address":{"@type":"PostalAddress","addressLocality":"Hyderabad","addressRegion":"Telangana","addressCountry":"IN"},"contactPoint":{"@type":"ContactPoint","telephone":"+91-90144-14114","email":"info@mcjoint.in","contactType":"customer service"},"sameAs":["https://www.instagram.com/mcjoint.in/","https://in.linkedin.com/company/mcjoint-in","https://x.com/mcjointin","https://www.youtube.com/@MCJoint"]}
   </script>

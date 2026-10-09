@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="pg-clients">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -23,32 +23,7 @@
   
   <link rel="preload" href="/fonts/montserrat-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../css/style.css">
-  <style>
-    .client-category { display:flex; flex-direction:column; gap:3rem; }
-    .category-link-card {
-      display:block; text-decoration:none; color:inherit;
-      border:1px solid #eee; overflow:hidden; transition:all 0.3s;
-      position:relative;
-    }
-    .category-link-card:hover { transform:translateY(-4px); box-shadow:0 16px 48px rgba(0,0,0,0.12); }
-    .category-link-card:hover .cat-overlay { opacity:1; }
-    .cat-image { width:100%; aspect-ratio:21/9; background:linear-gradient(135deg,#1a1a2e,#0d0d1a); overflow:hidden; position:relative; }
-    .cat-image img { width:100%; height:100%; object-fit:cover; }
-    .cat-overlay {
-      position:absolute; inset:0; background:rgba(225,6,0,0.85); opacity:0;
-      transition:opacity 0.3s; display:flex; align-items:center; justify-content:center;
-      font-family:'Montserrat',sans-serif; font-weight:700; font-size:1rem;
-      text-transform:uppercase; letter-spacing:0.1em; color:white;
-    }
-    .cat-body { padding:2rem; display:flex; justify-content:space-between; align-items:center; }
-    .cat-body h2 { font-size:1.5rem; margin-bottom:0.5rem; }
-    .cat-body p { font-size:0.9rem; color:var(--dark-grey); }
-    .cat-arrow { width:48px; height:48px; background:var(--red); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-    .cat-arrow i { color:white; font-size:1.1rem; }
-    .fade-in { opacity:0; transform:translateY(20px); transition:opacity 0.6s,transform 0.6s; }
-    .fade-in.visible { opacity:1; transform:none; }
-  </style>
+  <link rel="stylesheet" href="/css/style.css">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","name":"MC Joint","alternateName":"Masters of Ceremonies","url":"https://mcjoint.in","logo":"/images/mc/mc-joint-logo-5-mc-joint-block-logo.png","description":"Hyderabad-based creative agency for music distribution, talent management, and cinema strategy.","foundingDate":"2018","address":{"@type":"PostalAddress","addressLocality":"Hyderabad","addressRegion":"Telangana","addressCountry":"IN"},"contactPoint":{"@type":"ContactPoint","telephone":"+91-90144-14114","email":"info@mcjoint.in","contactType":"customer service"},"sameAs":["https://www.instagram.com/mcjoint.in/","https://in.linkedin.com/company/mcjoint-in","https://x.com/mcjointin","https://www.youtube.com/@MCJoint"]}
   </script>
@@ -117,9 +92,9 @@
 <section>
   <div class="container">
     <div class="client-category">
-      <a class="category-link-card fade-in" href="businesses.html">
+      <a class="category-link-card fade-in" href="/clients/businesses.html">
         <div class="cat-image">
-          <img loading="lazy" src="/images/logos/partner-avanti-cinema.webp" alt="Businesses" onerror="this.style.display='none'" width="269" height="121" decoding="async">
+          <div class="cat-mosaic"><img loading="lazy" src="/images/logos/partner-avanti-cinema.webp" alt="Avanti Cinema" data-tone="dark" decoding="async" width="269" height="121"><img loading="lazy" src="/images/logos/partner-arha-media.webp" alt="Arha Media" data-tone="dark" decoding="async" width="269" height="121"><img loading="lazy" src="/images/logos/partner-chai-bisket.webp" alt="First Show / Chai Bisket" data-tone="dark" decoding="async" width="269" height="121"><img loading="lazy" src="/images/logos/partner-tapeloop-studios.webp" alt="Tapeloop Records" data-tone="dark" decoding="async" width="269" height="121"></div>
           <div class="cat-overlay">Explore Businesses →</div>
         </div>
         <div class="cat-body">
@@ -130,10 +105,9 @@
           <div class="cat-arrow"><i class="fas fa-arrow-right"></i></div>
         </div>
       </a>
-
-      <a class="category-link-card fade-in" href="talent.html">
+      <a class="category-link-card fade-in" href="/clients/talent.html">
         <div class="cat-image">
-          <img loading="lazy" src="/images/talent/talent-vivek-sagar.webp" width="800" height="800" alt="Talent" onerror="this.style.display='none'" decoding="async">
+          <div class="cat-mosaic"><img loading="lazy" src="/images/talent/talent-vivek-sagar.webp" alt="Vivek Sagar" decoding="async" width="300" height="300"><img loading="lazy" src="/images/talent/talent-smaran-sai.webp" alt="Smaran" decoding="async" width="300" height="300"><img loading="lazy" src="/images/talent/talent-thanmai-bolt.webp" alt="Thanmai Bolt" decoding="async" width="300" height="300"><img loading="lazy" src="/images/talent/pawon-ramesh-actor-headshot-represented-by-mc-joint.webp" alt="Pawon Ramesh" decoding="async" width="1397" height="1397"></div>
           <div class="cat-overlay">Meet the Artists →</div>
         </div>
         <div class="cat-body">
@@ -144,10 +118,9 @@
           <div class="cat-arrow"><i class="fas fa-arrow-right"></i></div>
         </div>
       </a>
-
-      <a class="category-link-card fade-in" href="associates.html">
+      <a class="category-link-card fade-in" href="/clients/associates.html">
         <div class="cat-image">
-          <img loading="lazy" src="/images/logos/partner-tapeloop-studios.webp" alt="Associates" onerror="this.style.display='none'" width="269" height="121" decoding="async">
+          <div class="cat-mosaic"><img loading="lazy" src="/images/logos/Partner-Wolfgang-studio-smaran.webp" alt="Wolfgang Studios" data-tone="light" decoding="async" width="269" height="121"><img loading="lazy" src="/images/logos/mc-associate-design-district-logo-white-svg.svg" alt="Design District Hyd" data-tone="light" decoding="async" width="269" height="121"><img loading="lazy" src="/images/logos/mc-associate-F45-logo.webp" alt="F45 Jubilee Hills" data-tone="dark" decoding="async" width="269" height="121"><img loading="lazy" src="/images/logos/flintstory-Logo-PNG.webp" alt="Flintstory" data-tone="light" decoding="async" width="269" height="121"></div>
           <div class="cat-overlay">View Associates →</div>
         </div>
         <div class="cat-body">

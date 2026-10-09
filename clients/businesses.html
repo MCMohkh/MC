@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="pg-clients-businesses">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -23,32 +23,7 @@
   
   <link rel="preload" href="/fonts/montserrat-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../css/style.css">
-  <style>
-    .client-card { border:1px solid #eee; overflow:hidden; }
-    .client-card-header { background:linear-gradient(135deg,#1a1a2e,#0d0d1a); aspect-ratio:16/7; display:flex; align-items:center; justify-content:center; overflow:hidden; position:relative; }
-    .client-card-header img { width:100%; height:100%; object-fit:cover; }
-    .client-card-logo {
-      position:absolute; top:1rem; left:1rem;
-      background:rgba(0,0,0,0.7); padding:0.5rem 1rem;
-      font-family:'Montserrat',sans-serif; font-weight:900; font-size:1.1rem; color:white;
-    }
-    .client-card-logo span { color:var(--red); }
-    .client-card-body { padding:1.75rem; }
-    .client-card-body h3 { font-size:1.1rem; margin-bottom:0.5rem; }
-    .client-card-body .client-role { font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--red); margin-bottom:1rem; display:block; }
-    .client-card-body p { font-size:0.875rem; color:var(--dark-grey); margin-bottom:1rem; }
-    .client-works { list-style:none; }
-    .client-works li { font-size:0.8rem; color:var(--grey); padding:0.3rem 0; border-bottom:1px dotted #eee; }
-    .client-works li em { color:var(--black); font-style:italic; }
-
-    .clients-grid { display:grid; grid-template-columns:1fr; gap:2rem; }
-    @media(min-width:768px){ .clients-grid { grid-template-columns:repeat(2,1fr); } }
-    @media(min-width:1024px){ .clients-grid { grid-template-columns:repeat(3,1fr); } }
-
-    .fade-in { opacity:0; transform:translateY(20px); transition:opacity 0.6s,transform 0.6s; }
-    .fade-in.visible { opacity:1; transform:none; }
-  </style>
+  <link rel="stylesheet" href="/css/style.css">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","name":"MC Joint","alternateName":"Masters of Ceremonies","url":"https://mcjoint.in","logo":"/images/mc/mc-joint-logo-5-mc-joint-block-logo.png","description":"Hyderabad-based creative agency for music distribution, talent management, and cinema strategy.","foundingDate":"2018","address":{"@type":"PostalAddress","addressLocality":"Hyderabad","addressRegion":"Telangana","addressCountry":"IN"},"contactPoint":{"@type":"ContactPoint","telephone":"+91-90144-14114","email":"info@mcjoint.in","contactType":"customer service"},"sameAs":["https://www.instagram.com/mcjoint.in/","https://in.linkedin.com/company/mcjoint-in","https://x.com/mcjointin","https://www.youtube.com/@MCJoint"]}
   </script>
@@ -120,7 +95,7 @@
 
       <div class="client-card card fade-in" id="avanti-cinema">
         <div class="client-card-header">
-          <img loading="lazy" src="/images/logos/partner-avanti-cinema.webp" alt="Avanti Cinema" onerror="this.style.display='none'" width="269" height="121" decoding="async">
+          <img loading="lazy" src="/images/logos/partner-avanti-cinema.webp" alt="Avanti Cinema" onerror="this.style.display='none'" width="269" height="121" decoding="async" data-tone="dark">
           <div class="client-card-logo">Avanti Cinema</div>
         </div>
         <div class="client-card-body">
@@ -141,7 +116,7 @@
 
       <div class="client-card card fade-in" id="arha-media">
         <div class="client-card-header">
-          <img loading="lazy" src="/images/logos/partner-arha-media.webp" alt="Arha Media" onerror="this.style.display='none'" width="269" height="121" decoding="async">
+          <img loading="lazy" src="/images/logos/partner-arha-media.webp" alt="Arha Media" onerror="this.style.display='none'" width="269" height="121" decoding="async" data-tone="dark">
           <div class="client-card-logo">Arha Media</div>
         </div>
         <div class="client-card-body">
@@ -153,7 +128,7 @@
 
       <div class="client-card card fade-in">
         <div class="client-card-header">
-          <img loading="lazy" src="/images/logos/partner-chai-bisket.webp" alt="First Show / Chai Bisket" onerror="this.style.display='none'" width="269" height="121" decoding="async">
+          <img loading="lazy" src="/images/logos/partner-chai-bisket.webp" alt="First Show / Chai Bisket" onerror="this.style.display='none'" width="269" height="121" decoding="async" data-tone="dark">
           <div class="client-card-logo">First Show</div>
         </div>
         <div class="client-card-body">
@@ -223,7 +198,7 @@
 
       <div class="client-card card fade-in">
         <div class="client-card-header">
-          <img loading="lazy" src="/images/logos/Petrichor-Logo-PNG.webp" alt="Pramanya Strategy" onerror="this.style.display='none'" width="1920" height="561" decoding="async">
+          <img loading="lazy" src="/images/logos/Petrichor-Logo-PNG.webp" alt="Pramanya Strategy" onerror="this.style.display='none'" width="1920" height="561" decoding="async" data-tone="dark">
           <div class="client-card-logo">Pramanya Strategy</div>
         </div>
         <div class="client-card-body">
@@ -235,7 +210,7 @@
 
       <div class="client-card card fade-in">
         <div class="client-card-header">
-          <img loading="lazy" src="/images/logos/Partner-Brandhill.webp" alt="Brand Hill" onerror="this.style.display='none'" width="269" height="121" decoding="async">
+          <img loading="lazy" src="/images/logos/Partner-Brandhill.webp" alt="Brand Hill" onerror="this.style.display='none'" width="269" height="121" decoding="async" data-tone="dark">
           <div class="client-card-logo">Brand Hill</div>
         </div>
         <div class="client-card-body">
@@ -256,16 +231,16 @@
     <span class="section-label">Partners &amp; Associates</span>
     <h2 style="margin-bottom:2.5rem;">Our Extended Network</h2>
     <div style="display:flex;flex-wrap:wrap;gap:2rem;align-items:center;justify-content:center;">
-      <img loading="lazy" src="/images/logos/raasta-films-logo.webp" alt="Raasta Films" style="height:52px;width:auto;object-fit:contain;filter:grayscale(1);opacity:0.7;transition:all 0.3s;" onmouseover="this.style.filter='none';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.7'" decoding="async">
-      <img loading="lazy" src="/images/logos/Partner-Wolfgang-studio-smaran.webp" alt="Wolfgang Studio" style="height:52px;width:auto;object-fit:contain;filter:grayscale(1);opacity:0.7;transition:all 0.3s;" onmouseover="this.style.filter='none';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.7'" decoding="async">
-      <img loading="lazy" src="/images/logos/partner-tapeloop-studios.webp" alt="Tapeloop Records" style="height:52px;width:auto;object-fit:contain;filter:grayscale(1);opacity:0.7;transition:all 0.3s;" onmouseover="this.style.filter='none';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.7'" decoding="async">
-      <img loading="lazy" src="/images/logos/partner-psybe-labs.webp" alt="Psybe Labs" style="height:52px;width:auto;object-fit:contain;filter:grayscale(1);opacity:0.7;transition:all 0.3s;" onmouseover="this.style.filter='none';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.7'" decoding="async">
-      <img loading="lazy" src="/images/logos/Petrichor-Logo-PNG.webp" alt="Petrichor Investments" style="height:52px;width:auto;object-fit:contain;filter:grayscale(1);opacity:0.7;transition:all 0.3s;" onmouseover="this.style.filter='none';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.7'" decoding="async">
-      <img loading="lazy" src="/images/logos/partner-h2o-arts.webp" alt="H2o Arts" style="height:52px;width:auto;object-fit:contain;filter:grayscale(1);opacity:0.7;transition:all 0.3s;" onmouseover="this.style.filter='none';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.7'" decoding="async">
-      <img loading="lazy" src="/images/logos/partner-chai-bisket.webp" alt="Chai Bisket" style="height:52px;width:auto;object-fit:contain;filter:grayscale(1);opacity:0.7;transition:all 0.3s;" onmouseover="this.style.filter='none';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.7'" decoding="async">
-      <img loading="lazy" src="/images/logos/Partner-Brandhill.webp" alt="Brand Hill" style="height:52px;width:auto;object-fit:contain;filter:grayscale(1);opacity:0.7;transition:all 0.3s;" onmouseover="this.style.filter='none';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.7'" decoding="async">
-      <img loading="lazy" src="/images/logos/partner-avanti-cinema.webp" alt="Avanti Cinema" style="height:52px;width:auto;object-fit:contain;filter:grayscale(1);opacity:0.7;transition:all 0.3s;" onmouseover="this.style.filter='none';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.7'" decoding="async">
-      <img loading="lazy" src="/images/logos/partner-arha-media.webp" alt="Arha Media" style="height:52px;width:auto;object-fit:contain;filter:grayscale(1);opacity:0.7;transition:all 0.3s;" onmouseover="this.style.filter='none';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.7'" decoding="async">
+      <img loading="lazy" src="/images/logos/raasta-films-logo.webp" alt="Raasta Films" style="height:52px;width:auto;object-fit:contain;filter:grayscale(1);opacity:0.7;transition:all 0.3s;" onmouseover="this.style.filter='none';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.7'" decoding="async" data-tone="dark">
+      <img loading="lazy" src="/images/logos/Partner-Wolfgang-studio-smaran.webp" alt="Wolfgang Studio" style="height:52px;width:auto;object-fit:contain;filter:grayscale(1);opacity:0.7;transition:all 0.3s;" onmouseover="this.style.filter='none';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.7'" decoding="async" data-tone="light">
+      <img loading="lazy" src="/images/logos/partner-tapeloop-studios.webp" alt="Tapeloop Records" style="height:52px;width:auto;object-fit:contain;filter:grayscale(1);opacity:0.7;transition:all 0.3s;" onmouseover="this.style.filter='none';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.7'" decoding="async" data-tone="dark">
+      <img loading="lazy" src="/images/logos/partner-psybe-labs.webp" alt="Psybe Labs" style="height:52px;width:auto;object-fit:contain;filter:grayscale(1);opacity:0.7;transition:all 0.3s;" onmouseover="this.style.filter='none';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.7'" decoding="async" data-tone="dark">
+      <img loading="lazy" src="/images/logos/Petrichor-Logo-PNG.webp" alt="Petrichor Investments" style="height:52px;width:auto;object-fit:contain;filter:grayscale(1);opacity:0.7;transition:all 0.3s;" onmouseover="this.style.filter='none';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.7'" decoding="async" data-tone="dark">
+      <img loading="lazy" src="/images/logos/partner-h2o-arts.webp" alt="H2o Arts" style="height:52px;width:auto;object-fit:contain;filter:grayscale(1);opacity:0.7;transition:all 0.3s;" onmouseover="this.style.filter='none';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.7'" decoding="async" data-tone="light">
+      <img loading="lazy" src="/images/logos/partner-chai-bisket.webp" alt="Chai Bisket" style="height:52px;width:auto;object-fit:contain;filter:grayscale(1);opacity:0.7;transition:all 0.3s;" onmouseover="this.style.filter='none';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.7'" decoding="async" data-tone="dark">
+      <img loading="lazy" src="/images/logos/Partner-Brandhill.webp" alt="Brand Hill" style="height:52px;width:auto;object-fit:contain;filter:grayscale(1);opacity:0.7;transition:all 0.3s;" onmouseover="this.style.filter='none';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.7'" decoding="async" data-tone="dark">
+      <img loading="lazy" src="/images/logos/partner-avanti-cinema.webp" alt="Avanti Cinema" style="height:52px;width:auto;object-fit:contain;filter:grayscale(1);opacity:0.7;transition:all 0.3s;" onmouseover="this.style.filter='none';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.7'" decoding="async" data-tone="dark">
+      <img loading="lazy" src="/images/logos/partner-arha-media.webp" alt="Arha Media" style="height:52px;width:auto;object-fit:contain;filter:grayscale(1);opacity:0.7;transition:all 0.3s;" onmouseover="this.style.filter='none';this.style.opacity='1'" onmouseout="this.style.filter='grayscale(1)';this.style.opacity='0.7'" decoding="async" data-tone="dark">
     </div>
   </div>
 </section>
