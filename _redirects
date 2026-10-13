@@ -5,7 +5,7 @@
 /clients/talent/Nalgonda%20Gaddar%20Narsanna.html  /clients/talent/nalgonda-gaddar.html  301
 /clients/talent/Manoj-Juloori.html         /clients/talent/manoj-juloori.html     301
 /clients/talent/Niklesh-Sunkoji.html       /clients/talent/niklesh-sunkoji.html   301
-/clients/talent/Sindhu-Dakavarapu.html     /clients/talent/sindhu-dakavarapu.html 301
+/clients/talent/Sindhu-Dakavarapu.html     /clients/talent.html 301
 /clients/talent/Sai-Yogi-G.html            /clients/talent/sai-yogi-g.html        301
 /clients/talent/Sai-Prasanna-K.html        /clients/talent/sai-prasanna.html      301
 
@@ -56,3 +56,7 @@
 
 # Build scripts are not part of the public site
 /tools/*   /404.html   404!
+
+# Profile removed (Oct 2026)
+/clients/talent/sindhu-dakavarapu        /clients/talent.html   301
+/clients/talent/sindhu-dakavarapu.html   /clients/talent.html   301
