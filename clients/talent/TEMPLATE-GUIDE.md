@@ -36,7 +36,6 @@
 | **Rohit Penumatsa** | `template-writer-director.html` | Writer · Director · Film Editor |
 | **Sai Prasanna K** | `template-actor.html` | Actress |
 | **Monica Busan** | `template-actor.html` | Actress |
-| **Sindhu Dakavarapu** | `template-actor.html` | Actress · Theatre Artist |
 | **Sai Yogi G** | `template-actor.html` | Actor · Lyricist · Writer |
 | **Smaran** | `template-music-composer.html` | Music Composer · Singer |
 | **Thanmai Bolt** | `template-actor.html` | Actress · Singer |

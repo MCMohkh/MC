@@ -32,3 +32,6 @@ All CSS lives in **`css/style.css`** — there are no other stylesheets and no `
 - Every page's `<html>` has a page class (`pg-…`); microsites also have `ms` plus their own class (`ms-tsm`, `ms-prdb`, `ms-thanks`).
 - Page-specific rules are written as `:where(.pg-<page>) <selector>` (zero extra specificity, so they can never leak onto another page).
 - Site-wide changes go in section 2 (BASE). Logo tiles: give a logo `<img>` `data-tone="dark"` (dark logo, light tile) or `data-tone="light"` (light logo, dark tile).
+
+## Adding images
+Put new images under `/images/<section>/` (e.g. `images/branding/` for portfolio work). Use lowercase-kebab-case names (`brand-identity-acme.webp`), WebP where possible (JPG/PNG only for social-share images), under 2 MB each. Add `width`/`height` and `loading="lazy"` on `<img>`; logos get `data-tone="dark|light"`. Talent photos: `images/talent/`, referenced from the profile page's hero.
